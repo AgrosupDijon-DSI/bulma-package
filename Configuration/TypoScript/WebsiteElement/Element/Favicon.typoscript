@@ -1,0 +1,44 @@
+################################################
+#### WEBSITE ELEMENT: BULMA PACKAGE FAVICON ####
+################################################
+
+lib.bulmaPackage.favicon =< lib.bulmaPackageSetting
+lib.bulmaPackage.favicon{
+
+    #############################
+    ### CONTENT OBJECT FIELDS ###
+    #############################
+    select.selectFields = favicon
+
+    renderObj {
+        ################
+        ### TEMPLATE ###
+        ################
+        templateName = Favicon
+
+        variables{
+            appleSizes = TEXT
+            appleSizes.value = {$plugin.bulma_package_websiteelements.favicon.appleSizes}
+
+            iconSizes = TEXT
+            iconSizes.value = {$plugin.bulma_package_websiteelements.favicon.iconSizes}
+        }
+
+        ##########################
+        ### DATA PREPROCESSING ###
+        ##########################
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references {
+                    fieldName = favicon
+                }
+                as = favicon
+            }
+        }
+    }
+}
+
+page.headerData{
+    10 < lib.bulmaPackage.favicon
+}

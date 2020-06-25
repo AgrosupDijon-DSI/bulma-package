@@ -1,0 +1,234 @@
+$fontsizeByCols: (1: 100%, 2: 80%, 3: 70%, 4: 50%, 5: 50%, 6: 50%, 7: 50%, 8: 50%, 9: 50%, 10: 50%);
+$maxCols: 10;
+
+.carousel{
+  &.is-fade{
+    background-color: $black;
+  }
+}
+
+.carousel-item{
+  // default
+  width: 100%;
+
+  .title:not(:last-child), .subtitle:not(:last-child){
+    margin-bottom: 1em;
+  }
+  .title.is-2{
+    font-size: 1.75em;
+  }
+  .subtitle.is-4{
+    font-size: 1.375em;
+  }
+  .button.is-large {
+    font-size: 1.375em;
+  }
+
+  @include desktop{
+    @for $i from 1 through $maxCols {
+      &.has-#{$i} {
+        width: (100 / $i) + '%';
+        font-size: map_get($fontsizeByCols, $i);
+        &.image.is-3by1{
+          padding-top: (33.3333 / $i) + '%';
+        }
+        &.image.is-3by2{
+          padding-top: (66.6666 / $i) + '%';
+        }
+        &.image.is-16by9{
+          padding-top: (56.25 / $i) + '%';
+        }
+        &.image.is-4by3{
+          padding-top: (75 / $i) + '%';
+        }
+        &.image.is-1by1{
+          padding-top: (100 / $i) + '%';
+        }
+        &.image.is-2by3{
+          padding-top: (150 / $i) + '%';
+        }
+        &.image.is-4by1{
+          padding-top: (25 / $i) + '%';
+        }
+        &.image.is-6by1{
+          padding-top: (16.6666 / $i) + '%';
+        }
+      }
+    }
+  }
+
+  @include tablet-only{
+    @for $i from 1 through $maxCols {
+      &.has-#{$i}-tablet {
+        width: (100 / $i) + '%';
+        font-size: map_get($fontsizeByCols, $i);
+        &.image.is-3by1-tablet{
+          padding-top: (33.3333 / $i) + '%';
+        }
+        &.image.is-3by2-tablet{
+          padding-top: (66.6666 / $i) + '%';
+        }
+        &.image.is-16by9-tablet{
+          padding-top: (56.25 / $i) + '%';
+        }
+        &.image.is-4by3-tablet{
+          padding-top: (75 / $i) + '%';
+        }
+        &.image.is-1by1-tablet{
+          padding-top: (100 / $i) + '%';
+        }
+        &.image.is-2by3-tablet{
+          padding-top: (150 / $i) + '%';
+        }
+        &.image.is-4by1-tablet{
+          padding-top: (25 / $i) + '%';
+        }
+        &.image.is-6by1-tablet{
+          padding-top: (16.6666 / $i) + '%';
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    @for $i from 1 through $maxCols {
+      &.has-#{$i}-mobile {
+        width: (100 / $i) + '%';
+        font-size: map_get($fontsizeByCols, $i);
+        &.image.is-3by1-mobile{
+          padding-top: (33.3333 / $i) + '%';
+        }
+        &.image.is-3by2-mobile{
+          padding-top: (66.6666 / $i) + '%';
+        }
+        &.image.is-16by9-mobile{
+          padding-top: (56.25 / $i) + '%';
+        }
+        &.image.is-4by3-mobile{
+          padding-top: (75 / $i) + '%';
+        }
+        &.image.is-1by1-mobile{
+          padding-top: (100 / $i) + '%';
+        }
+        &.image.is-2by3-mobile{
+          padding-top: (150 / $i) + '%';
+        }
+        &.image.is-4by1-mobile{
+          padding-top: (25 / $i) + '%';
+        }
+        &.image.is-6by1-mobile{
+          padding-top: (16.6666 / $i) + '%';
+        }
+      }
+    }
+    .has-ratio{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  figure{
+    figcaption{
+      display: none;
+      //position: absolute;
+      //bottom: 1rem;
+      //right: 1rem;
+      //color: $title-color;
+      //&.has-background-transparent-dark{
+      //  color: $light;
+      //}
+    }
+  }
+
+  img{
+    object-fit: cover;
+  }
+
+  .carousel-content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include tablet {
+      &.has-background-transparent-dark .content{
+        background-color: rgba(10, 10, 10, 0.6);
+        h1, h2{
+          color: $light;
+        }
+      }
+      &.has-background-transparent-light .content{
+        background-color: rgba(248, 249, 250, 0.6);
+      }
+    }
+    @include mobile {
+      &.has-background-transparent-dark{
+        background-color: rgba(10, 10, 10, 0.6);
+        h1, h2{
+          color: $light;
+        }
+      }
+      &.has-background-transparent-light{
+        background-color: rgba(248, 249, 250, 0.6);
+      }
+    }
+    &.has-text-light{
+      h1, h2{
+        color: $light;
+      }
+    }
+    &.has-text-dark{
+      h1, h2{
+        color: $dark;
+      }
+    }
+    .content{
+      padding: 2em 4em;
+      text-align: center;
+      max-width: 80%;
+      @include mobile {
+        padding: 1em;
+        max-width: none;
+      }
+    }
+
+    z-index: 1;
+  }
+}
+
+.flickity-page-dots {
+  bottom: 0.8rem;
+  .dot{
+    margin: 0;
+    border: 12px solid transparent;
+    border-bottom-width: 8px;
+    border-top-width: 8px;
+    box-sizing: content-box;
+    background-clip: padding-box;
+    background: none;
+    width: 15px;
+    height: 15px;
+    &:after{
+      border: 2px solid #fff;
+      background-color: $dark;
+      content: " ";
+      display: block;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+@include mobile {
+  .flickity-prev-next-button{
+    display: none;
+  }
+}

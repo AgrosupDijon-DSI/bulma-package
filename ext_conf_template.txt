@@ -1,0 +1,29 @@
+##############
+### PAGETS ###
+##############
+
+# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsRTE
+disablePageTsRTE = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsBackendLayouts
+disablePageTsBackendLayouts = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsTCEMAIN
+disablePageTsTCEMAIN = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsTCEFORM
+disablePageTsTCEFORM = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsContentElements
+disablePageTsContentElements = 0
+
+
+################
+### FEATURES ###
+################
+
+# cat=Features; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:feature.disableScssProcessing
+disableScssProcessing = 0
+
+# cat=Features; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:feature.disableCustomColorsAction
+disableCustomColorsAction = 0

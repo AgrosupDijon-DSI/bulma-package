@@ -1,0 +1,14 @@
+########################################
+#### CTYPE: BOOTSTRAP PACKAGE PANEL ####
+########################################
+
+tt_content.message >
+tt_content.message =< lib.contentElement
+tt_content.message {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Message
+
+}

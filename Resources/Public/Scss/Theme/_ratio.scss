@@ -1,0 +1,15 @@
+
+.image{
+  // First extend existing ratio to inherit all bulma configuration
+  &.is-4by1,
+  &.is-6by1{
+    @extend .is-3by1;
+  }
+  // Then define our own dimensions
+  &.is-4by1{
+    padding-top: 25%;
+  }
+  &.is-6by1{
+    padding-top: 16.6666%;
+  }
+}

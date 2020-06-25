@@ -1,0 +1,124 @@
+.textmedia{
+  &-in-text-left,
+  &-in-text-right,
+  &-above,
+  &-below{
+    & .textmedia-item:first-of-type{
+      margin-bottom: 1rem;
+    }
+  }
+  .content{
+    margin-bottom: 0;
+  }
+}
+
+@include from($mobile-small + 1){
+  .textmedia{
+    &-above,
+    &-below{
+      .textmedia-gallery{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .textmedia-gallery-80{
+        max-width: 80%;
+      }
+      .textmedia-gallery-60{
+        max-width: 60%;
+      }
+      .textmedia-gallery-40{
+        max-width: 40%;
+      }
+      .textmedia-gallery-20{
+        max-width: 20%;
+      }
+    }
+    &-left,
+    &-right{
+      .textmedia-gallery{
+        max-width: 50%;
+      }
+      .textmedia-gallery-80{
+        max-width: 40%;
+      }
+      .textmedia-gallery-60{
+        max-width: 30%;
+      }
+      .textmedia-gallery-40{
+        max-width: 20%;
+      }
+      .textmedia-gallery-20{
+        max-width: 10%;
+      }
+    }
+
+    &-in-text-left,
+    &-in-text-right{
+      .frame-type-textmedia &{
+        .textmedia-gallery{
+          width: 50%;
+        }
+        .textmedia-gallery-80{
+          width: 40%;
+        }
+        .textmedia-gallery-60{
+          width: 30%;
+        }
+        .textmedia-gallery-40{
+          width: 20%;
+        }
+        .textmedia-gallery-20{
+          width: 10%;
+        }
+      }
+      .frame-type-textpic &{
+        .textmedia-gallery{
+          max-width: 50%;
+        }
+        .textmedia-gallery-80{
+          max-width: 40%;
+        }
+        .textmedia-gallery-60{
+          max-width: 30%;
+        }
+        .textmedia-gallery-40{
+          max-width: 20%;
+        }
+        .textmedia-gallery-20{
+          max-width: 10%;
+        }
+      }
+    }
+
+    &-in-text-right{
+      .textmedia-gallery{
+        padding-left: $column-gap;
+        margin-left: $column-gap;
+      }
+    }
+
+    &-in-text-left{
+      .textmedia-gallery{
+        padding-right: $column-gap;
+        margin-right: $column-gap;
+      }
+    }
+
+    &-right{
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@include mobile-small{
+  .textmedia{
+    &-left,
+    &-right,
+    &-in-text-left,
+    &-in-text-right{
+      .textmedia-gallery{
+        width: 100%;
+      }
+    }
+  }
+}

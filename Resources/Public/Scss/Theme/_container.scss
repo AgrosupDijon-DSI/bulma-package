@@ -1,0 +1,10 @@
+.container {
+  @include until($tablet) {
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+  }
+  @include tablet-only {
+    padding-left: $gap;
+    padding-right: $gap;
+  }
+}

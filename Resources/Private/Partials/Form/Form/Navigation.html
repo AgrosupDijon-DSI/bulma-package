@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<nav class="form-navigation">
+	<div class="btn-toolbar" role="toolbar">
+		<div class="field is-grouped" role="group">
+			<f:if condition="{form.previousPage}">
+				<p class="control previous">
+					<f:form.hidden property="__currentPage" value="{form.previousPage.index}" />
+					<f:form.button type="button" onclick="document.forms['{form.formDefinition.identifier}'].submit();" class="button is-light" formnovalidate="formnovalidate">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}</f:form.button>
+				</p>
+			</f:if>
+			<f:if condition="{form.nextPage}">
+				<f:then>
+					<p class="control next">
+						<f:form.button property="__currentPage" value="{form.nextPage.index}" class="button is-primary">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}</f:form.button>
+					</p>
+				</f:then>
+				<f:else>
+					<p class="control next submit">
+						<f:form.button property="__currentPage" value="{form.pages -> f:count()}" class="button is-primary">
+							{formvh:translateElementProperty(element: form, renderingOptionProperty: 'submitButtonLabel')}
+						</f:form.button>
+					</p>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+</nav>
+</html>

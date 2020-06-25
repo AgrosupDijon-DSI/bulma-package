@@ -1,0 +1,138 @@
+########################################
+#### CTYPE: MENU THUMBNAIL SUBPAGES ####
+########################################
+
+tt_content.menu_thumbnail_dir >
+tt_content.menu_thumbnail_dir =< lib.contentElement
+tt_content.menu_thumbnail_dir {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = MenuThumbnailDir
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            special = directory
+            special.value.field = pages
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.fieldName = thumbnail
+                }
+            }
+        }
+        11 < .10
+        11 {
+            includeNotInMenu = 1
+            if {
+                isTrue.field = ignore_nav_hide
+            }
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+        20 {
+            delimiter = ,
+            fieldName = table_class
+            as = layoutClasses
+        }
+        90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        90 {
+            if {
+                isTrue.field = accessibility_bypass
+            }
+            table = tt_content
+            pidInList = this
+            orderBy = sorting
+            max = 1
+            where {
+                dataWrap = colPos = {field:colPos} AND sorting > {field:sorting}
+            }
+            as = nextContentElement
+        }
+    }
+
+}
+
+#########################
+### RESPONSIVE IMAGES ###
+#########################
+lib.contentElement.settings.responsiveimages.contentelements {
+    menu_thumbnail_dir {
+        # Default is 4 cols
+        0 {
+            class = is-3-widescreen is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
+            multiplier {
+                default = 0.25
+                widescreen = 0.25
+                desktop = 0.3333
+                tablet = 0.5
+                mobile = 0.5
+            }
+            gutters {
+                default = 24
+                widescreen = 24
+                desktop = 24
+                tablet = 24
+                mobile = 24
+            }
+        }
+        1 {
+            class = is-12
+        }
+        2 {
+            class = is-6-tablet is-6-mobile is-12-mobile-small
+            multiplier {
+                default = 0.5
+                widescreen = 0.5
+                desktop = 0.5
+                tablet = 0.5
+                mobile = 0.5
+            }
+            gutters {
+                default = 24
+                widescreen = 24
+                desktop = 24
+                tablet = 24
+                mobile = 24
+            }
+        }
+        3 {
+            class = is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
+            multiplier {
+                default = 0.3333
+                widescreen = 0.3333
+                desktop = 0.3333
+                tablet = 0.5
+                mobile = 0.5
+            }
+            gutters {
+                default = 24
+                widescreen = 24
+                desktop = 24
+                tablet = 24
+                mobile = 24
+            }
+        }
+        4 {
+            class = is-3-widescreen is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
+            multiplier {
+                default = 0.25
+                widescreen = 0.25
+                desktop = 0.3333
+                tablet = 0.5
+                mobile = 0.5
+            }
+            gutters {
+                default = 24
+                widescreen = 24
+                desktop = 24
+                tablet = 24
+                mobile = 24
+            }
+        }
+    }
+}

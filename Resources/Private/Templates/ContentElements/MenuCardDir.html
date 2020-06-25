@@ -1,0 +1,63 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{menu}">
+        <f:render partial="Menu/SkipNavigation" arguments="{_all}" />
+        <f:variable name="columnConfig">{settings.responsiveimages.contentelements.menu_card_dir.{data.cols}}</f:variable>
+        <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
+        <f:variable name="alignClass">
+            <f:switch expression="{data.table_header_position}">
+                <f:case value="1">has-text-centered</f:case>
+                <f:case value="2">has-text-right</f:case>
+            </f:switch>
+        </f:variable>
+        <f:variable name="allClasses" value="" />
+        <f:for each="{layoutClasses}" as="class">
+            <f:variable name="allClasses">{allClasses} {class}</f:variable>
+        </f:for>
+        <div class="columns is-multiline is-mobile card-menu card-menu-dir {allClasses}">
+            <f:for each="{menu}" as="page">
+                <div class="column {columnConfig.class}">
+
+                    <div class="card card-equal-height">
+                        <f:if condition="{page.files.0}">
+                            <div class="card-image">
+                                <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}" data-toggle="tooltip">
+                                    <f:render partial="Media/Rendering/Image" arguments="{file: page.files.0, data: page.data, settings: settings, variants: variants}" />
+                                </a>
+                            </div>
+                        </f:if>
+                        <div class="card-content">
+                            <f:if condition="{page.title}">
+                                <p class="title {alignClass}">
+                                    <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}" data-toggle="tooltip">
+                                        <f:format.crop maxCharacters="{settings.menucard.title.crop}">{page.title}</f:format.crop>
+                                    </a>
+                                </p>
+                            </f:if>
+                            <f:if condition="{page.data.subtitle}">
+                                <p class="subtitle {alignClass}">
+                                    <f:format.crop maxCharacters="{settings.menucard.subtitle.crop}">{page.data.subtitle}</f:format.crop>
+                                </p>
+                            </f:if>
+                            <f:if condition="{page.data.abstract}">
+                                <p class="content"><f:format.crop maxCharacters="{settings.menucard.abstract.crop}">{page.data.abstract}</f:format.crop></p>
+                            </f:if>
+                        </div>
+                        <f:if condition="{data.readmore_label}">
+                            <footer class="card-footer">
+                                <a class="card-footer-item" href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} class="card-link" title="{page.title}" data-toggle="tooltip">
+                                    {data.readmore_label}
+                                </a>
+                            </footer>
+                        </f:if>
+                    </div>
+
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+
+</f:section>
+</html>

@@ -1,0 +1,46 @@
+################
+#### HELPER ####
+################
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Helper/ContentElement.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Helper/ParseFunc.typoscript'
+
+#############################################################
+#### CONTENT ELEMENT RENDERING                           ####
+#### Manual inclusion to keep control over loading order ####
+#############################################################
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Header.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Text.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Bullets.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Uploads.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Div.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Image.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Video.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Textmedia.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Textpic.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Html.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Iframe.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Shortcut.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Table.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuAbstract.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuSitemap.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuSitemapPages.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuPages.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuSubpages.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuSection.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuSectionPages.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuCardList.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuCardDir.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuThumbnailDir.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuThumbnailList.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuCategorizedContent.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuCategorizedPages.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuRecentlyUpdated.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/MenuRelatedPages.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Message.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Accordion.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Tab.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/CardGroup.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/List.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Carousel.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/IconGroup.typoscript'

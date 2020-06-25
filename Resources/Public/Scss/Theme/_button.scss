@@ -1,0 +1,9 @@
+.button{
+  white-space: normal;
+  min-height: $control-height;
+  height: auto;
+}
+
+.buttons .dropdown:not(last-child):not(.is-fullwidth){
+  margin-right: 0.5rem;
+}

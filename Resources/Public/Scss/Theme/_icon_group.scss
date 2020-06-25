@@ -1,0 +1,75 @@
+
+.icon-group{
+  .column > a {
+    position: relative;
+    &:hover {
+      z-index: 0;
+      &:before{
+        background-color: $primary-light;
+        bottom: -0.75em;
+        left: -0.75em;
+        position: absolute;
+        right: -0.75em;
+        top: -0.75em;
+        content: "";
+        z-index: -1;
+      }
+      .icon, .content *{
+        color: $text !important;
+      }
+      text-decoration: none;
+    }
+  }
+  &-item{
+    display: flex;
+    align-content: stretch;
+    height: 100%;
+  }
+  .content{
+    flex-grow: 1;
+  }
+  &-top{
+    .icon-group-item{
+      flex-direction: column;
+      .icon, picture{
+        margin-left: auto;
+        margin-right: auto;
+        & + .content{
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  &-left{
+    .icon, picture{
+      & + .content{
+        margin-left: 1rem;
+      }
+    }
+  }
+  &-right{
+    .icon-group-item {
+      flex-direction: row-reverse;
+      .icon, picture{
+        & + .content{
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+  &-bottom{
+    .icon-group-item {
+      flex-direction: column-reverse;
+      .icon, picture{
+        margin-left: auto;
+        margin-right: auto;
+        & + .content{
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  .icon{
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,18 @@
+##################
+### CATEGORIES ###
+##################
+# customsubcategory=100_websitemodule=Templates
+
+########################
+#### WEBSITE MODULE ####
+########################
+module.tx_bulmapackage{
+    view {
+        # cat=bulma package: website module/100_websitemodule/001_templateRootPath; type=string; label=Template Root Path: Path to templates
+        templateRootPath = EXT:bulma_package/Resources/Private/Templates/
+        # cat=bulma package: website module/100_websitemodule/002_layoutRootPath; type=string; label=Layout Root Path: Path to layouts
+        layoutRootPath = EXT:bulma_package/Resources/Private/Layouts/
+        # cat=bulma package: website module/100_websitemodule/003_partialRootPath; type=string; label=Partial Root Path: Path to partials
+        partialRootPath = EXT:bulma_package/Resources/Private/Partials/
+    }
+}

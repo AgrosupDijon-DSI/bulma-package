@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Give renderCaption default value 1 if not set (see https://usetypo3.com/24-fluid-tips.html#c457)</f:comment>
+{renderCaption -> f:or(alternative: '1') -> f:variable(name: 'renderCaption')}
+<f:switch expression="{file.properties.type}">
+    <f:case value="2">
+        <f:render partial="Media/Type/Image" arguments="{file: file, data: data, settings: settings, variants: variants, renderCaption: renderCaption}" />
+    </f:case>
+    <f:case value="3">
+        <f:render partial="Media/Type/Audio" arguments="{file: file, data: data, settings: settings}" />
+    </f:case>
+    <f:case value="4">
+        <f:render partial="Media/Type/Video" arguments="{file: file, data: data, settings: settings, renderCaption: renderCaption}" />
+    </f:case>
+    <f:case value="5">
+        <f:comment>PDF</f:comment>
+        <f:render partial="Media/Type/Image" arguments="{file: file, data: data, settings: settings, variants: variants, renderCaption: renderCaption}" />
+    </f:case>
+    <f:defaultCase>
+        <f:comment>Deal with EXT:news images</f:comment>
+        <f:if condition="{file.originalResource}">
+            <f:then>
+                <f:render partial="Media/Type" arguments="{file: file.originalResource, data: data, settings: settings, variants: variants, renderCaption: renderCaption}" />
+            </f:then>
+            <f:else>
+                <!-- NOT SUPPORTED MEDIA TYPE -->
+            </f:else>
+        </f:if>
+    </f:defaultCase>
+</f:switch>
+</html>

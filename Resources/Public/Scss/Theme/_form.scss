@@ -1,0 +1,41 @@
+.field{
+  .control{
+    .is-password-confirmation{
+      margin-top: 0.75rem;
+    }
+  }
+}
+
+.input-list-radio, .input-list-checkbox{
+  .form-group:not(:last-child){
+    margin-bottom: 0.25rem;
+  }
+}
+
+.file-label{
+  .file-name{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-left-width: 1px;
+    & ~ .file-cta{
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+}
+
+span.required{
+  @extend .has-text-danger;
+}
+
+fieldset{
+  @extend .box;
+  legend{
+    @extend .subtitle;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+    background-color: $white;
+    border-top-left-radius: $box-radius;
+    border-top-right-radius: $box-radius;
+  }
+}

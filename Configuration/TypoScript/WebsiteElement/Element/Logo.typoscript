@@ -1,0 +1,32 @@
+##################################################
+#### WEBSITE ELEMENT: BULMA PACKAGE MAIN LOGO ####
+##################################################
+
+lib.bulmaPackage.logo =< lib.bulmaPackageSetting
+lib.bulmaPackage.logo{
+
+    #############################
+    ### CONTENT OBJECT FIELDS ###
+    #############################
+    select.selectFields = logo_main
+
+    renderObj {
+        ################
+        ### TEMPLATE ###
+        ################
+        templateName = MainLogo
+
+        ##########################
+        ### DATA PREPROCESSING ###
+        ##########################
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references {
+                    fieldName = logo_main
+                }
+                as = logoMain
+            }
+        }
+    }
+}

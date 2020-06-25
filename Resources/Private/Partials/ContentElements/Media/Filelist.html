@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{files}">
+    <ul class="media-list">
+        <f:for each="{files}" as="file" iteration="fileIterator">
+            <f:comment>Deal with EXT:news files</f:comment>
+            <f:if condition="{file.originalResource}">
+                <f:variable name="file" value="{file.originalResource}" />
+            </f:if>
+            <li class="media">
+                <f:if condition="{data.uploads_type} == 1 || {data.uploads_type} == 2">
+                    <div class="media-left">
+                        <a href="{file.publicUrl}"{f:if(condition: file.properties.title, then: ' title="{file.properties.title}"')}{f:if(condition: data.target, then: ' target="{data.target}"')}>
+                        <f:if condition="{data.uploads_type} == 2 && ({file.type} == 2 || {file.type} == 4 || {file.type} == 5) && {f:uri.image(src: 'file:{f:if(condition: file.originalFile, then: \'file:{file.originalFile.uid}\', else: \'file:{file.uid}\')}')} != '/'">
+                            <f:media file="{file}" width="{settings.uploads.preview.width}" height="{settings.uploads.preview.height}" alt="{file.properties.alternative}" />
+                        </f:if>
+                        <f:if condition="{data.uploads_type} == 1">
+                                <span class="icon is-medium">
+                                    <f:switch expression="{f:format.case(value: file.properties.extension, mode: 'lower')}">
+                                        <f:case value="mp3"><i class="far fa-2x fa-file-audio"></i></f:case>
+                                        <f:case value="avi"><i class="far fa-2x fa-file-video"></i></f:case>
+                                        <f:case value="mov"><i class="far fa-2x fa-file-video"></i></f:case>
+                                        <f:case value="mpg"><i class="far fa-2x fa-file-video"></i></f:case>
+                                        <f:case value="mpeg"><i class="far fa-2x fa-file-video"></i></f:case>
+                                        <f:case value="mkv"><i class="far fa-2x fa-file-video"></i></f:case>
+                                        <f:case value="jpg"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="gif"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="png"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="bmp"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="ai"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="eps"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="ico"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="tga"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="tif"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="svg"><i class="far fa-2x fa-file-image"></i></f:case>
+                                        <f:case value="pdf"><i class="far fa-2x fa-file-pdf"></i></f:case>
+                                        <f:case value="youtube"><i class="far fa-2x fa-file-video"></i></f:case>
+                                        <f:defaultCase><i class="far fa-2x fa-file"></i></f:defaultCase>
+                                    </f:switch>
+                                </span>
+                        </f:if>
+                        </a>
+                    </div>
+                </f:if>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a href="{file.publicUrl}"{f:if(condition: file.properties.title, then: ' title="{file.properties.title}"')}{f:if(condition: data.target, then: ' target="{data.target}"')}>
+                            <span class="uploads-filename">{f:if(condition: file.properties.title, then: file.properties.title, else: file.properties.name)}</span>
+                            </a>
+                        </p>
+                        <f:if condition="{data.uploads_description}">
+                            <f:if condition="{file.properties.description}">
+                                <p class="uploads-filedescription">{file.properties.description}</p>
+                            </f:if>
+                        </f:if>
+                        <f:if condition="{data.filelink_size}">
+                            <small><span class="uploads-filesize"><f:format.bytes value="{file.properties.size}" /></span></small>
+                        </f:if>
+                    </div>
+                </div>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+
+</html>

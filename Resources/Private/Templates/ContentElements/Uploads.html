@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{layoutClass} == frame-layout-3">
+        <f:then>
+            <f:if condition="{files}">
+                <f:variable name="columnConfig">{settings.responsiveimages.contentelements.card_group.{data.cols}}</f:variable>
+                <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
+                <f:variable name="alignClass">
+                    <f:switch expression="{data.table_header_position}">
+                        <f:case value="1">has-text-centered</f:case>
+                        <f:case value="2">has-text-right</f:case>
+                    </f:switch>
+                </f:variable>
+                <f:variable name="allClasses" value="" />
+                <f:for each="{layoutClasses}" as="class">
+                    <f:variable name="allClasses">{allClasses} {class}</f:variable>
+                </f:for>
+                <div class="columns is-multiline is-mobile card-group {allClasses}">
+                    <f:for each="{files}" as="file" iteration="iteration">
+                        <div class="column {columnConfig.class}">
+                            <div class="card card-equal-height">
+                                <f:if condition="{data.uploads_type} == 1 || {data.uploads_type} == 2">
+                                    <div class="card-image has-text-centered">
+                                        <a href="{file.publicUrl}"{f:if(condition: file.properties.title, then: ' title="{file.properties.title}"')}{f:if(condition: data.target, then: ' target="{data.target}"')}>
+                                        <f:if condition="{data.uploads_type} == 2 && ({file.type} == 2 || {file.type} == 4 || {file.type} == 5) && {f:uri.image(src: 'file:{f:if(condition: file.originalFile, then: \'file:{file.originalFile.uid}\', else: \'file:{file.uid}\')}')} != '/'">
+                                            <f:render partial="Media/Type" arguments="{file:file, data: data, settings: settings, variants: variants, renderCaption: 0}" />
+                                        </f:if>
+                                        <f:if condition="{data.uploads_type} == 1">
+                                            <span class="icon is-xl">
+                                                <f:switch expression="{f:format.case(value: file.properties.extension, mode: 'lower')}">
+                                                    <f:case value="mp3"><i class="far fa-file-audio"></i></f:case>
+                                                    <f:case value="avi"><i class="far fa-file-video"></i></f:case>
+                                                    <f:case value="mov"><i class="far fa-file-video"></i></f:case>
+                                                    <f:case value="mpg"><i class="far fa-file-video"></i></f:case>
+                                                    <f:case value="mpeg"><i class="far fa-file-video"></i></f:case>
+                                                    <f:case value="mkv"><i class="far fa-file-video"></i></f:case>
+                                                    <f:case value="jpg"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="gif"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="png"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="bmp"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="ai"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="eps"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="ico"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="tga"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="tif"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="svg"><i class="far fa-file-image"></i></f:case>
+                                                    <f:case value="pdf"><i class="far fa-file-pdf"></i></f:case>
+                                                    <f:case value="youtube"><i class="far fa-file-video"></i></f:case>
+                                                    <f:defaultCase><i class="far fa-file"></i></f:defaultCase>
+                                                </f:switch>
+                                            </span>
+                                        </f:if>
+                                        </a>
+                                    </div>
+                                </f:if>
+                                <div class="card-content">
+                                    <h3 class="title {alignClass}">
+                                        <a href="{file.publicUrl}"{f:if(condition: file.properties.title, then: ' title="{file.properties.title}"')}{f:if(condition: data.target, then: ' target="{data.target}"')}>
+                                            {f:if(condition: file.properties.title, then: file.properties.title, else: file.properties.name)}
+                                        </a>
+                                    </h3>
+                                    <f:if condition="{data.filelink_size}">
+                                        <h4 class="subtitle {alignClass}"><f:format.bytes value="{file.properties.size}" /></h4>
+                                    </f:if>
+                                    <f:if condition="{data.uploads_description}">
+                                        <div class="content">
+                                            {file.properties.description}
+                                        </div>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+            </f:if>
+        </f:then>
+        <f:else>
+            <f:render partial="Media/Filelist" arguments="{_all}" />
+        </f:else>
+    </f:if>
+
+</f:section>
+</html>

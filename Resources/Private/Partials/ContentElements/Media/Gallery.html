@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{files}">
+
+    <f:variable name="imagecols">{data.imagecols as integer}</f:variable>
+    <f:variable name="columnConfig">{settings.gallery.columns.{imagecols}}</f:variable>
+    <f:for each="{layoutClasses}" as="class">
+        <f:variable name="allClasses">{allClasses} {class}</f:variable>
+    </f:for>
+    <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
+    <div class="columns is-mobile is-multiline {allClasses}">
+        <f:for each="{files}" as="file" iteration="fileIteration">
+            <div class="column {columnConfig.class} has-text-centered">
+                <f:render partial="Media/Type" arguments="{file: file, data: data, settings: settings, variants: variants}" />
+            </div>
+        </f:for>
+    </div>
+
+</f:if>
+</html>

@@ -1,0 +1,30 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{data.tx_bulmapackage_accordion_item}">
+        <div class="accordion" id="accordion-{data.uid}">
+            <f:for each="{accordions}" as="accordion" iteration="iteration">
+                <div class="card">
+                    <div class="card-header" id="accordion-heading-{data.uid}-{accordion.data.uid}" data-target="accordion-{data.uid}-{accordion.data.uid}" data-action="collapse" data-parent="accordion-{data.uid}" aria-expanded="{f:if(condition: '{data.tx_bulmapackage_accordion_item_active} == {accordion.data.uid}', then: 'true', else: 'false')}" aria-controls="accordion-{data.uid}-{accordion.data.uid}">
+                        <p class="card-header-title">
+                            <a href="#accordion-{data.uid}-{accordion.data.uid}">{accordion.data.title}</a>
+                        </p>
+                        <a href="#accordion-{data.uid}-{accordion.data.uid}" class="card-header-icon" aria-label="more options">
+                          <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                          </span>
+                        </a>
+                    </div>
+                    <div id="accordion-{data.uid}-{accordion.data.uid}" class="is-collapsible {f:if(condition: '{data.tx_bulmapackage_accordion_item_active} == {accordion.data.uid}', then: ' is-active')}" aria-labelledby="accordion-heading-{data.uid}-{accordion.data.uid}" data-parent="accordion-{data.uid}">
+                        <div class="accordion-body">
+                            <div class="card-content">
+                                <f:for each="{accordion.records}" as="record">
+                                    <f:cObject typoscriptObjectPath="lib.contentElement.content">{record.data.uid}</f:cObject>
+                                </f:for>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+</f:section>

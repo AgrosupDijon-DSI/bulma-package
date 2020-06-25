@@ -1,0 +1,45 @@
+#################################################
+#### WEBSITE ELEMENT: BULMA PACKAGE PARTNERS ####
+#################################################
+
+lib.bulmaPackage.partners =< lib.bulmaPackageSetting
+lib.bulmaPackage.partners {
+
+    ##############
+    ### FIELDS ###
+    ##############
+    select.selectFields = logos_partners
+
+    renderObj {
+        ################
+        ### TEMPLATE ###
+        ################
+        templateName = Partners
+
+        ##########################
+        ### DATA PREPROCESSING ###
+        ##########################
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references {
+                    fieldName = logos_partners
+                }
+            }
+        }
+
+        ################
+        ### SETTINGS ###
+        ################
+        settings {
+            lightbox {
+                cssClass = {$plugin.bulma_package_websiteelements.lightbox.cssClass}
+                prefix = {$plugin.bulma_package_websiteelements.lightbox.prefix}
+                image {
+                    maxHeight = {$plugin.bulma_package_websiteelements.lightbox.image.maxHeight}
+                    maxWidth = {$plugin.bulma_package_websiteelements.lightbox.image.maxWidth}
+                }
+            }
+        }
+    }
+}

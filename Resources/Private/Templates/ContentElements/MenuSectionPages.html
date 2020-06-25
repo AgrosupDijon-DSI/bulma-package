@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{menu}">
+        <f:render partial="Menu/SkipNavigation" arguments="{_all}" />
+        <ul class="menu-list">
+            <f:for each="{menu}" as="page">
+                <li>
+                    <p class="menu-label">
+                        <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">{page.title}</a>
+                    </p>
+                    <f:if condition="{page.content}">
+                        <ul class="menu-list">
+                            <f:for each="{page.content}" as="element">
+                                <f:comment>
+                                    TODO : check if condition is needed <f:if condition="{element.data.colPos} == {data.colPos} && {element.data.header}"></f:if>
+                                </f:comment>
+                                <f:if condition="{element.data.header}">
+                                    <li>
+                                        <a href="{page.link}#c{element.data.uid}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.header}">{element.data.header}</a>
+                                    </li>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+
+</f:section>
+</html>

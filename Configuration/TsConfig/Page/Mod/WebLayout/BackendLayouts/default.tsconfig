@@ -1,0 +1,28 @@
+################################
+#### BACKENDLAYOUT: DEFAULT ####
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            default {
+                title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.1_column
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.content
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

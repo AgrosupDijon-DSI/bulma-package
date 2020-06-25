@@ -1,0 +1,15 @@
+####################################################
+#### WEBSITE ELEMENT: BULMA PACKAGE MENU LAYOUT ####
+####################################################
+
+lib.bulmaPackage.menuLayout =< lib.bulmaPackageSetting
+lib.bulmaPackage.menuLayout{
+
+    ##############
+    ### FIELDS ###
+    ##############
+    select.selectFields = menu_layout
+
+    renderObj = TEXT
+    renderObj.value.field = menu_layout
+}

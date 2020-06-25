@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{languageNavigation -> f:count()} > 1">
+    <f:for each="{languageNavigation}" as="language">
+        <f:if condition="{language.active}">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#" class="navbar-link is-active">{language.navigationTitle}</a>
+                <div class="navbar-dropdown">
+                    <f:render section="allLanguages" arguments="{languageNavigation: languageNavigation}" />
+                </div>
+            </div>
+        </f:if>
+    </f:for>
+</f:if>
+
+<f:section name="allLanguages">
+    <f:for each="{languageNavigation}" as="language">
+        <f:variable name="classActive"><f:if condition="{language.active}"> is-active</f:if></f:variable>
+        <f:if condition="{language.available}">
+            <f:then><a href="{language.link}" class="navbar-item{classActive}">{language.navigationTitle}</a></f:then>
+            <f:else><a class="navbar-item is-disable">{language.navigationTitle}</a></f:else>
+        </f:if>
+    </f:for>
+</f:section>
+</html>

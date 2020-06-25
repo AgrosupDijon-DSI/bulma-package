@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z"
+          product-name="bulma_package">
+        <header/>
+        <body>
+            <trans-unit id="overview.title">
+                <source>Website Management</source>
+            </trans-unit>
+            <trans-unit id="overview.noRootPages.title">
+                <source>No root pages found!</source>
+            </trans-unit>
+            <trans-unit id="overview.noRootPages.message">
+                <source>Please set at least one page as "Root Page" through page properties.</source>
+            </trans-unit>
+            <trans-unit id="overview.website">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="overview.configuration">
+                <source>Configuration</source>
+            </trans-unit>
+            <trans-unit id="overview.configuration.create">
+                <source>Create new configuration</source>
+            </trans-unit>
+            <trans-unit id="overview.configuration.edit">
+                <source>Edit configuration</source>
+            </trans-unit>
+            <trans-unit id="overview.configuration.translate">
+                <source>Translate configuration</source>
+            </trans-unit>
+            <trans-unit id="customColors.title">
+                <source>Colors Management</source>
+            </trans-unit>
+            <trans-unit id="customColors.noColor.message">
+                <source>No color yet!</source>
+            </trans-unit>
+            <trans-unit id="customColors.color.create">
+                <source>Create new color</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

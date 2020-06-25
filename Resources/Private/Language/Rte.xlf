@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z"
+          product-name="bulma_package">
+        <header/>
+        <body>
+            <trans-unit id="style.box">
+                <source>Box</source>
+            </trans-unit>
+            <trans-unit id="style.table.bordered">
+                <source>Table Bordered</source>
+            </trans-unit>
+            <trans-unit id="style.notification">
+                <source>Notification</source>
+            </trans-unit>
+            <trans-unit id="style.notification.primary">
+                <source>Notification Primary</source>
+            </trans-unit>
+            <trans-unit id="style.notification.success">
+                <source>Notification Success</source>
+            </trans-unit>
+            <trans-unit id="style.notification.info">
+                <source>Notification Info</source>
+            </trans-unit>
+            <trans-unit id="style.notification.warning">
+                <source>Notification Warning</source>
+            </trans-unit>
+            <trans-unit id="style.notification.danger">
+                <source>Notification Danger</source>
+            </trans-unit>
+            <trans-unit id="style.notification.light">
+                <source>Notification Light</source>
+            </trans-unit>
+            <trans-unit id="style.notification.dark">
+                <source>Notification Dark</source>
+            </trans-unit>
+            <trans-unit id="style.button">
+                <source>Button</source>
+            </trans-unit>
+            <trans-unit id="style.button.primary">
+                <source>Button Primary</source>
+            </trans-unit>
+            <trans-unit id="style.button.success">
+                <source>Button Success</source>
+            </trans-unit>
+            <trans-unit id="style.button.info">
+                <source>Button Info</source>
+            </trans-unit>
+            <trans-unit id="style.button.warning">
+                <source>Button Warning</source>
+            </trans-unit>
+            <trans-unit id="style.button.danger">
+                <source>Button Danger</source>
+            </trans-unit>
+            <trans-unit id="style.button.light">
+                <source>Button Light</source>
+            </trans-unit>
+            <trans-unit id="style.button.dark">
+                <source>Button Dark</source>
+            </trans-unit>
+            <trans-unit id="style.primary">
+                <source>Primary</source>
+            </trans-unit>
+            <trans-unit id="style.success">
+                <source>Success</source>
+            </trans-unit>
+            <trans-unit id="style.info">
+                <source>Info</source>
+            </trans-unit>
+            <trans-unit id="style.warning">
+                <source>Warning</source>
+            </trans-unit>
+            <trans-unit id="style.danger">
+                <source>Danger</source>
+            </trans-unit>
+            <trans-unit id="style.light">
+                <source>Light</source>
+            </trans-unit>
+            <trans-unit id="style.dark">
+                <source>Dark</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

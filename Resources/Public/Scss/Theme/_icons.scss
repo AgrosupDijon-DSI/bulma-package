@@ -1,0 +1,26 @@
+.icon{
+  &.is-medium{
+    i{
+      font-size: 2em;
+    }
+  }
+  &.is-large{
+    i{
+      font-size: 3em;
+    }
+  }
+  &.is-xl{
+    width: 6.25rem;
+    height: 6.25rem;
+    i{
+      font-size: 6.25rem;
+    }
+  }
+  &.is-xxl{
+    width: 12.5rem;
+    height: 12.5rem;
+    i{
+      font-size: 12.5rem;
+    }
+  }
+}

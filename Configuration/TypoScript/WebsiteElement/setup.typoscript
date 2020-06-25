@@ -1,0 +1,17 @@
+################
+#### HELPER ####
+################
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Helper/BulmaSettings.typoscript'
+
+
+#############################################################
+#### WEBSITE ELEMENT RENDERING                           ####
+#### Manual inclusion to keep control over loading order ####
+#############################################################
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Logo.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Analytics.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Partners.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/SocialsLinks.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Address.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/MenuLayout.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Favicon.typoscript'

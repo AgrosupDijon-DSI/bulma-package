@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header" />
+<f:section name="Main">
+
+    <f:variable name="ratio">
+        <f:switch expression="{data.table_header_position}">
+            <f:case value="0">is-16by9</f:case>
+            <f:case value="1">is-3by1</f:case>
+            <f:case value="2">is-3by2</f:case>
+            <f:case value="3">is-4by3</f:case>
+            <f:case value="4">is-4by1</f:case>
+            <f:case value="5">is-6by1</f:case>
+            <f:case value="6">is-1by1</f:case>
+            <f:case value="7">is-2by3</f:case>
+        </f:switch>
+    </f:variable>
+    <f:variable name="iframe"><asd:firstIframe>{data.bodytext}</asd:firstIframe></f:variable>
+
+    <f:if condition="{iframe}">
+        <div class="iframe-wrapper {ratio}">{iframe -> f:format.raw()}</div>
+    </f:if>
+
+</f:section>
+</html>

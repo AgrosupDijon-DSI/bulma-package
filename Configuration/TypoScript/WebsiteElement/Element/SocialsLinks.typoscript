@@ -1,0 +1,30 @@
+#################################################
+#### WEBSITE ELEMENT: BULMA PACKAGE PARTNERS ####
+#################################################
+
+lib.bulmaPackage.socialsLinks =< lib.bulmaPackageSetting
+lib.bulmaPackage.socialsLinks {
+
+    ##############
+    ### FIELDS ###
+    ##############
+    select.selectFields = uid
+
+    renderObj {
+        ################
+        ### TEMPLATE ###
+        ################
+        templateName = SocialsLinks
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            10 {
+                table = tx_bulmapackage_settings_link_item
+                pidInList.field = pid
+                selectFields = link, label, icon, force_label
+                orderBy = sorting
+                as = socialsLinks
+            }
+        }
+    }
+}

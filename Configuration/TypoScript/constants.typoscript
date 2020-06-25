@@ -1,0 +1,74 @@
+######################
+#### DEPENDENCIES ####
+######################
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/constants.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/constants.typoscript'
+
+############
+### PAGE ###
+############
+page {
+    fluidtemplate {
+        # cat=bulma package: templates/100/100; type=string; label=Layout Root Path: Path to layouts
+        layoutRootPath = EXT:bulma_package/Resources/Private/Layouts/Page/
+        # cat=bulma package: templates/100/110; type=string; label=Partial Root Path: Path to partials
+        partialRootPath = EXT:bulma_package/Resources/Private/Partials/Page/
+        # cat=bulma package: templates/100/120; type=string; label=Template Root Path: Path to templates
+        templateRootPath = EXT:bulma_package/Resources/Private/Templates/Page/
+    }
+    meta {
+        # cat=bulma package: meta data/110/100; type=string; label=viewport
+        viewport = width=device-width, initial-scale=1
+        # cat=bulma package: meta data/110/110; type=string; label=robots
+        robots = index,follow
+        # cat=bulma package: meta data/110/120; type=string; label=apple-mobile-web-app-capable
+        apple-mobile-web-app-capable = no
+        # cat=bulma package: meta data/110/130; type=string; label=compatible
+        compatible = IE=edge
+    }
+    navigation{
+        quickLinks{
+            # cat=bulma package: navigation/120/100; type=int+; label=quickLinks entry point
+            entryPoint = 0
+        }
+        # cat=bulma package: navigation/120/110; type=string; label=login page uid
+        loginPid =
+        loginPid := getEnv(BULMA_LOGIN_PAGE_UID)
+        # cat=bulma package: navigation/120/120; type=string; label=search page uid
+        searchPid =
+        searchPid := getEnv(BULMA_SEARCH_PAGE_UID)
+    }
+}
+
+#####################
+### BULMA PACKAGE ###
+#####################
+plugin.bulma_package{
+    settings {
+        # cat=bulma package: css parser/190/100; type=boolean; label=Override Parser Variables: If enabled the variables defined in your Scss files will be overridden with the ones defined as Page Layouts.
+        overrideParserVariables = 1
+        # cat=bulma package: css parser/190/110; type=boolean; label=CSS source mapping: Create a CSS source map useful to debug Scss in browser developer tools. Note: CSS compression will be disabled.
+        cssSourceMapping = 0
+    }
+    view {
+        # cat=bulma package: templates/200/layoutRootPath; type=string; label=Layout Root Path: Path to layouts
+        layoutRootPath = EXT:bulma_package/Resources/Private/Layouts/
+        # cat=bulma package: templates/200/partialRootPath; type=string; label=Partial Root Path: Path to partials
+        partialRootPath = EXT:bulma_package/Resources/Private/Partials/
+        # cat=bulma package: templates/200/templateRootPath; type=string; label=Template Root Path: Path to templates
+        templateRootPath = EXT:bulma_package/Resources/Private/Templates/
+    }
+}
+
+####################
+#### COMPONENTS ####
+####################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/CookieConsent/constants.typoscript">
+
+#############################################################
+#### EXTENSIONS                                          ####
+#### Manual inclusion to keep control over loading order ####
+#############################################################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/Form/constants.typoscript" condition="extension.isLoaded('form')">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/constants.typoscript" condition="extension.isLoaded('felogin')">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/constants.typoscript" condition="extension.isLoaded('indexed_search')">

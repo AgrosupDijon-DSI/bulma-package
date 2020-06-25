@@ -1,0 +1,79 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{records}">
+        <f:variable name="columnConfig">{settings.gallery.columns.{data.cols}}</f:variable>
+        <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
+        <f:switch expression="{data.table_header_position}">
+            <f:case value="0">
+                <f:variable name="iconAlignClass">icon-group-left</f:variable>
+                <f:variable name="imageConfig">{settings.responsiveimages.contentelements.icon_group.left}</f:variable>
+                <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{imageConfig.multiplier}" gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}" />
+            </f:case>
+            <f:case value="1"><f:variable name="iconAlignClass">icon-group-top</f:variable></f:case>
+            <f:case value="2">
+                <f:variable name="iconAlignClass">icon-group-right</f:variable>
+                <f:variable name="imageConfig">{settings.responsiveimages.contentelements.icon_group.right}</f:variable>
+                <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{imageConfig.multiplier}" gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}" />
+            </f:case>
+            <f:case value="3"><f:variable name="iconAlignClass">icon-group-bottom</f:variable></f:case>
+        </f:switch>
+
+        <f:for each="{layoutClasses}" as="class">
+            <f:variable name="allClasses">{allClasses} {class}</f:variable>
+        </f:for>
+        <div class="columns is-multiline is-mobile icon-group {iconAlignClass} {allClasses}">
+            <f:for each="{records}" as="item" iteration="iteration">
+                <div class="column {columnConfig.class}">
+                    <f:render section="LinkWrap" arguments="{link: item.data.link, linkTitle: item.data.header}" contentAs="content">
+                        <f:if condition="{item.data.icon_set} == '' && {item.iconFile.0}">
+                            <f:then>
+                                <span class="icon {item.data.icon_size}">
+                                    <f:render partial="Media/Rendering/Image"
+                                              arguments="{file: item.iconFile.0, data: data, settings: settings, variants: variants}"/>
+                                </span>
+                            </f:then>
+                            <f:else if="{item.data.icon}">
+                                <f:variable name="iconClass">
+                                    <f:switch expression="{item.data.icon_set}">
+                                        <f:case value="EXT:bulma_package/Resources/Public/Icons/Ionicons/">ion ion-{item.data.icon}</f:case>
+                                        <f:case value="EXT:bulma_package/Resources/Public/Icons/FontAwesome/regular/">far fa-{item.data.icon}</f:case>
+                                        <f:case value="EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/">fas fa-{item.data.icon}</f:case>
+                                        <f:case value="EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/">fab fa-{item.data.icon}</f:case>
+                                    </f:switch>
+                                </f:variable>
+                                <span class="icon {item.data.icon_size} {f:if(condition: item.data.icon_color, then: '{item.data.icon_color}')}">
+                                  <i class="{iconClass}"></i>
+                                </span>
+                            </f:else>
+                        </f:if>
+                        <f:if condition="{item.data.bodytext}">
+                            <div class="content">
+                                <f:format.html>{item.data.bodytext}</f:format.html>
+                            </div>
+                        </f:if>
+                    </f:render>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+
+</f:section>
+<f:section name="LinkWrap">
+
+    <f:if condition="{link}">
+        <f:then>
+            <f:link.typolink class="icon-group-item" parameter="{link}" title="{linkTitle -> asd:format.trim()}">
+                {content -> f:format.raw()}
+            </f:link.typolink>
+        </f:then>
+        <f:else>
+            <div class="icon-group-item">
+                {content -> f:format.raw()}
+            </div>
+        </f:else>
+    </f:if>
+
+</f:section>
+</html>

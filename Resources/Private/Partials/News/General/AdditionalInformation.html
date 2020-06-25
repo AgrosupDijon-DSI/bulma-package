@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="news-additional-informations">
+    <f:if condition="{newsItem.author}">
+        <div>
+            <f:render section="icon" arguments="{icon: 'fas fa-pen', showIcon:showIcons}"/>
+            <span itemprop="author"><f:translate key="author" arguments="{0:newsItem.author}"/></span>
+        </div>
+    </f:if>
+
+    <div>
+        <f:render section="icon" arguments="{icon: 'fas fa-calendar-alt', showIcon:showIcons}"/>
+        <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"><f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date></time>
+    </div>
+
+    <f:if condition="{newsItem.categories}">
+        <div>
+            <f:render section="icon" arguments="{icon: 'fas fa-tag', showIcon:showIcons}"/>
+            <span class="news-list-category"><f:spaceless>
+				<f:for each="{newsItem.categories}" as="category" iteration="i">
+					<f:if condition="{linkCategories}">
+						<f:then><f:link.page title="{category.title}"
+                                             pageUid="{f:if(condition: settings.listPid, then: settings.listPid, else:pageData.uid)}"
+                                             additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category}}}">{category.title}</f:link.page></f:then>
+						<f:else>{category.title}</f:else>
+					</f:if>{f:if(condition: '{i.isLast} == false', then:', ')}
+				</f:for>
+			</f:spaceless></span>
+        </div>
+    </f:if>
+
+    <f:if condition="{newsItem.tags}">
+        <div>
+            <f:render section="icon" arguments="{icon: 'fas fa-hashtag', showIcon:showIcons}"/>
+            <span itemprop="keywords"><f:spaceless>
+				<f:for each="{newsItem.tags}" as="tag" iteration="i">
+					<f:if condition="{linkTags}">
+						<f:then><f:link.page title="{tag.title}"
+                                             pageUid="{f:if(condition: settings.listPid, then: settings.listPid, else:pageData.uid)}"
+                                             additionalParams="{tx_news_pi1:{overwriteDemand:{tags: tag}}}">{tag.title}</f:link.page></f:then>
+						<f:else>{tag.title}</f:else>
+					</f:if>{f:if(condition: '{i.isLast} == false', then:', ')}
+				</f:for>
+			</f:spaceless></span>
+        </div>
+    </f:if>
+</div>
+
+<f:section name="icon">
+    <f:if condition="{showIcon}">
+		<span class="icon">
+			<i class="{icon}"></i>
+		</span>
+    </f:if>
+</f:section>
+</html>

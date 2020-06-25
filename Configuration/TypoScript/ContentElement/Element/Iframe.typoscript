@@ -1,0 +1,14 @@
+#####################
+#### CTYPE: HTML ####
+#####################
+
+tt_content.iframe >
+tt_content.iframe =< lib.contentElement
+tt_content.iframe {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Iframe
+
+}

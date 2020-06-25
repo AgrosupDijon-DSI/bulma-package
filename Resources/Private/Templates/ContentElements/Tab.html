@@ -1,0 +1,53 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{data.tx_bulmapackage_tab_item}">
+
+        <f:variable name="allClasses" value="" />
+
+        <f:if condition="{0: ''} == {tabClasses}">
+            <f:then><f:variable name="allClasses">tabs-default</f:variable></f:then>
+            <f:else>
+                <f:for each="{tabClasses}" as="class">
+                    <f:variable name="allClasses">{allClasses} is-{class}</f:variable>
+                    <f:if condition="{class} == 'toggle-rounded'">
+                        <f:variable name="allClasses">{allClasses} is-toggle</f:variable>
+                    </f:if>
+                </f:for>
+            </f:else>
+        </f:if>
+
+        <f:variable name="alignClass">
+            <f:switch expression="{data.table_header_position}">
+                <f:case value="1">is-centered</f:case>
+                <f:case value="2">is-right</f:case>
+            </f:switch>
+        </f:variable>
+
+        <div class="tabs-wrapper">
+            <f:variable name="activeTab">{tabs.0.data.uid}</f:variable>
+
+            <div class="tabs {allClasses} {alignClass}" id="tab-{data.uid}">
+                <ul role="tablist">
+                    <f:for each="{tabs}" as="tab" iteration="iteration">
+                        <li{f:if(condition: '{activeTab} == {tab.data.uid}',then: ' class="is-active"')}>
+                            <a id="tab-{data.uid}-{tab.data.uid}" class="nav-link{f:if(condition: '{activeTab} == {tab.data.uid}',then: ' active')}" data-toggle="tab" role="tab" aria-controls="tabcontent-{data.uid}-{tab.data.uid}" aria-selected="{f:if(condition: '{activeTab} == {tab.data.uid}',then: 'true', else: 'false')}">
+                                <span>{tab.data.title -> f:format.nl2br()}</span>
+                            </a>
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+            <div class="tabs-content" id="tabcontent-{data.uid}">
+                <ul>
+                    <f:for each="{tabs}" as="tab" iteration="iteration">
+                        <li role="tabpanel" class="{f:if(condition: '{activeTab} == {tab.data.uid}',then: 'is-active')}" id="tabcontent-{data.uid}-{tab.data.uid}">
+                            <f:for each="{tab.records}" as="record">
+                                <f:cObject typoscriptObjectPath="lib.contentElement.content">{record.data.uid}</f:cObject>
+                            </f:for>
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+        </div>
+    </f:if>
+</f:section>

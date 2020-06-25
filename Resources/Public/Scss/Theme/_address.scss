@@ -1,0 +1,14 @@
+address{
+  font-style: normal;
+  #phone, #email{
+    &:not(:first-child){
+      margin-top: 2rem;
+    }
+  }
+  #phone + #email{
+    margin-top: auto;
+  }
+  #phone{
+    font-weight: $weight-bold;
+  }
+}

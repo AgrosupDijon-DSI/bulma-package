@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header">
+    <f:render partial="Header/All" arguments="{_all}" />
+</f:section>
+<f:section name="Main">
+
+    <f:variable name="imageConfig">{settings.responsiveimages.contentelements.textmedia.left}</f:variable>
+    <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{imageConfig.multiplier}" gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}" />
+
+    <div class="textmedia textmedia-in-text-left is-clearfix">
+        <div class="textmedia-item textmedia-gallery is-pulled-left {f:if(condition: '{data.gallery_size}', then:'textmedia-gallery-{data.gallery_size}')}">
+            <f:render partial="Media/Gallery" arguments="{_all}" />
+        </div>
+        <div class="textmedia-item content">
+            <f:format.html>{data.bodytext}</f:format.html>
+        </div>
+    </div>
+
+</f:section>
+</html>

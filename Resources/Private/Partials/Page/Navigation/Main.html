@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:switch expression="{f:cObject(typoscriptObjectPath:'lib.bulmaPackage.menuLayout')}">
+    <f:case value="megamenu">
+        <f:render partial="Navigation/Mega" arguments="{_all}" />
+    </f:case>
+    <f:defaultCase>
+        <f:render partial="Navigation/Dropdown" arguments="{_all}" />
+    </f:defaultCase>
+</f:switch>
+</html>

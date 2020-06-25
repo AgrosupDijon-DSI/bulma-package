@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z"
+		  product-name="bulma_package">
+		<header/>
+		<body>
+			<trans-unit id="code_analytics.description">
+				<source>Only the tracking code, eg: UA-12345678-9</source>
+				<target>Uniquement le code de suivi, ex : UA-12345678-9</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

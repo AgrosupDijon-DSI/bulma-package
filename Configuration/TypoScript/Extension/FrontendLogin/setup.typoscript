@@ -1,0 +1,18 @@
+########################
+#### FRONTEND LOGIN ####
+########################
+plugin.tx_felogin_login {
+    view {
+        templateRootPaths {
+            1 = EXT:bulma_package/Resources/Private/Templates/FrontendLogin/
+            2 = {$plugin.bulma_package.view.templateRootPath}FrontendLogin/
+        }
+    }
+
+    settings{
+        email_fromName = Bleh
+        email {
+            templateName = {$styles.content.loginform.email.templateName}
+        }
+    }
+}

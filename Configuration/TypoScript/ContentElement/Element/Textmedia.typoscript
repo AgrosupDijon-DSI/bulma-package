@@ -1,0 +1,93 @@
+##########################
+#### CTYPE: TEXTMEDIA ####
+##########################
+
+tt_content.textmedia >
+tt_content.textmedia =< lib.contentElement
+tt_content.textmedia {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = TEXT
+    templateName.stdWrap.cObject = CASE
+    templateName.stdWrap.cObject {
+        key.field = imageorient
+        8 = TEXT
+        8.value = TextmediaBelow
+        17 = TEXT
+        17.value = TextmediaInTextRight
+        18 = TEXT
+        18.value = TextmediaInTextLeft
+        125 = TEXT
+        25 = TEXT
+        25.value = TextmediaRight
+        26 = TEXT
+        26.value = TextmediaLeft
+        125 = TEXT
+        125.value = TextmediaRight
+        126 = TEXT
+        126.value = TextmediaLeft
+        default = TEXT
+        default.value = TextmediaAbove
+    }
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = assets
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+        20 {
+            delimiter = ,
+            fieldName = table_class
+            as = layoutClasses
+        }
+    }
+}
+
+#########################
+### RESPONSIVE IMAGES ###
+#########################
+lib.contentElement.settings.responsiveimages.contentelements {
+    textmedia {
+        left {
+            multiplier {
+                default = 0.5
+                widescreen = 0.5
+                desktop = 0.5
+                tablet = 0.5
+                mobile = 0.5
+            }
+
+            gutters {
+                default = 24
+                widescreen = 24
+                desktop = 24
+                tablet = 24
+                mobile = 24
+            }
+        }
+
+        right {
+            multiplier {
+                default = 0.5
+                widescreen = 0.5
+                desktop = 0.5
+                tablet = 0.5
+                mobile = 0.5
+            }
+
+            gutters {
+                default = 24
+                widescreen = 24
+                desktop = 24
+                tablet = 24
+                mobile = 24
+            }
+        }
+    }
+}

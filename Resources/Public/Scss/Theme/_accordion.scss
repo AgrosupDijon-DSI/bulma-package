@@ -1,0 +1,62 @@
+// https://creativebulma.net/product/bulmacollapsible
+
+$collapse-transition-speed: .2s !default;
+$collapse-transition-style: ease !default;
+$message-body-padding: 1.25em 1.5em !default;
+
+.is-collapsible{
+  height: 0;
+  overflow-y: hidden;
+  transition: height $collapse-transition-speed $collapse-transition-style;
+
+  &.is-active{
+    transition: height $collapse-transition-speed $collapse-transition-style;
+  }
+  &.message-body{
+    padding: 0 !important;
+    .message-body-content{
+      padding: $message-body-padding
+    }
+  }
+}
+
+.accordion{
+  .card{
+    &:not(:last-of-type){
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.card-header{
+  &:hover{
+    cursor: pointer;
+    a{
+      color: $link-active;
+    }
+  }
+  i{
+    transition: transform $collapse-transition-speed $collapse-transition-style;
+  }
+  &.is-active{
+    a{
+      color: $link-active;
+    }
+    i{
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.accordion-body{
+  .frame{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &:first-of-type{
+      margin-top: 0;
+    }
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+}

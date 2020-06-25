@@ -1,0 +1,14 @@
+.cke_combopanel__styles {
+    width: 312px !important;
+}
+
+div[id$=tx_bulmapackage_icon_group_item] .icon-list .item img{
+    width: 32px;
+    height: 32px;
+}
+
+div[id$=tx_bulmapackage_settings_link_item] .icon-list .item .icon-size-small{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+}

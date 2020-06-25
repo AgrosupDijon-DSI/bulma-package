@@ -1,0 +1,81 @@
+<html
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+	xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+	data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/WebsiteModule"/>
+
+<f:section name="Buttons" />
+
+<f:section name="content">
+	<h1><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.title" /></h1>
+	<f:if condition="{pages}">
+		<f:then>
+			<div class="table-fit">
+				<table class="table table-striped table-hover table-condensed">
+					<thead>
+					<tr>
+						<th><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.website" /></th>
+						<th><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.configuration" /></th>
+					</tr>
+					</thead>
+					<tbody>
+					<f:for each="{pages}" as="page">
+						<tr>
+							<td nowrap valign="top">
+								<f:for each="{page.rootline}" as="rootLinePage" iteration="i">
+									<span style="width: 1px; height: 1px; display:inline-block; margin-left: {rootLinePage.margin}px"></span>
+									<f:if condition="{rootLinePage.uid} == {page.uid}">
+										<f:then>
+											<core:iconForRecord table="pages" row="{rootLinePage}" />
+											{rootLinePage.title} [ID: {page.uid}]
+										</f:then>
+										<f:else>
+											<core:iconForRecord table="pages" row="{rootLinePage}" />
+											{rootLinePage.title}<br>
+										</f:else>
+									</f:if>
+								</f:for>
+							</td>
+							<td>
+								<f:for each="{page.bulmaSettings}" as="bulmaSettings" key="language">
+									<f:if condition="{bulmaSettings}">
+										<f:then>
+											<be:link.editRecord class="btn btn-primary" table="tx_bulmapackage_settings" uid="{bulmaSettings.uid}">
+												<core:icon identifier="{languages.{bulmaSettings.sys_language_uid}.flagIdentifier}" /> <f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.configuration.edit" />
+											</be:link.editRecord>
+										</f:then>
+										<f:else>
+											<f:if condition="{language} == 0">
+												<f:then>
+													<be:link.newRecord class="btn btn-default" table="tx_bulmapackage_settings" pid="{page.uid}">
+														<core:icon identifier="{languages.{page.sys_language_uid}.flagIdentifier}" /> <f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.configuration.create" />
+													</be:link.newRecord>
+												</f:then>
+												<f:else if="{page.bulmaSettings.0}">
+													<f:variable name="justLocalized">tx_bulmapackage_settings%3A{page.bulmaSettings.0.uid}%3A{language}</f:variable>
+													<a class="btn btn-default" href="{be:moduleLink(route: 'tce_db', query: 'cmd[tx_bulmapackage_settings][{page.bulmaSettings.0.uid}][localize]={language}&redirect={returnUrl}&justLocalized={justLocalized -> f:format.urlencode()}')}">
+														<core:icon identifier="{languages.{language}.flagIdentifier}" /> <f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.configuration.translate" />
+													</a>
+												</f:else>
+											</f:if>
+										</f:else>
+									</f:if>
+								</f:for>
+							</td>
+						</tr>
+					</f:for>
+					</tbody>
+				</table>
+			</div>
+		</f:then>
+		<f:else>
+			<f:be.infobox state="-1" title="{f:translate(key: 'LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.noRootPages.title')}">
+				<p><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.noRootPages.message"/></p>
+			</f:be.infobox>
+		</f:else>
+	</f:if>
+</f:section>
+
+</html>

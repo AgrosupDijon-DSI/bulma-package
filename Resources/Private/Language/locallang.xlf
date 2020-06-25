@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z"
+          product-name="bulma_package">
+        <header/>
+        <body>
+            <trans-unit id="linktop">
+                <source>To top</source>
+            </trans-unit>
+            <trans-unit id="skiptomaincontent">
+                <source>Skip to main content</source>
+            </trans-unit>
+            <trans-unit id="skipnavigation">
+                <source>Skip navigation block</source>
+            </trans-unit>
+            <trans-unit id="lightbox-link-label">
+                <source>See more</source>
+            </trans-unit>
+            <trans-unit id="form.selectfile">
+                <source>Choose a file</source>
+            </trans-unit>
+            <trans-unit id="form.selectimage">
+                <source>Choose an image</source>
+            </trans-unit>
+            <trans-unit id="footer-title-contact">
+                <source>Contact</source>
+            </trans-unit>
+            <trans-unit id="footer-title-menu">
+                <source>Links</source>
+            </trans-unit>
+            <trans-unit id="footer-title-social">
+                <source>Follow us</source>
+            </trans-unit>
+            <trans-unit id="address.phone">
+                <source>Tel: </source>
+            </trans-unit>
+            <trans-unit id="address.fax">
+                <source>Fax: </source>
+            </trans-unit>
+            <trans-unit id="scrolltop">
+                <source>Scroll to top</source>
+            </trans-unit>
+            <trans-unit id="news_list_see_all">
+                <source>See all news</source>
+            </trans-unit>
+            <trans-unit id="news_filter_by_cat">
+                <source>Filtered by category:&#160;</source>
+            </trans-unit>
+            <trans-unit id="news_filter_by_tag">
+                <source>Filtered by tag:&#160;</source>
+            </trans-unit>
+            <trans-unit id="news_remove_filter">
+                <source>Remove filter</source>
+            </trans-unit>
+
+            <trans-unit id="cookieconsent.common.header">
+                <source>Cookies used on the website!</source>
+            </trans-unit>
+            <trans-unit id="cookieconsent.common.message">
+                <source>This website uses cookies to ensure you get the best experience on our website.</source>
+            </trans-unit>
+            <trans-unit id="cookieconsent.common.dismiss">
+                <source>Got it!</source>
+            </trans-unit>
+            <trans-unit id="cookieconsent.common.allow">
+                <source>Allow cookies</source>
+            </trans-unit>
+            <trans-unit id="cookieconsent.common.deny">
+                <source>Decline</source>
+            </trans-unit>
+            <trans-unit id="cookieconsent.common.link">
+                <source>Learn more</source>
+            </trans-unit>
+            <trans-unit id="cookieconsent.common.policy">
+                <source>Cookie settings</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

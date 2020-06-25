@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{files}">
+    <section id="partners" class="section">
+    <div class="container">
+        <div class="columns is-multiline is-vcentered is-mobile">
+            <f:for each="{files}" as="file" iteration="fileIteration">
+                <div class="column is-6-mobile has-text-centered">
+                    <f:if condition="{file.properties.title}">
+                        <h4 class="heading">
+                            <f:format.nl2br>{file.properties.title}</f:format.nl2br>
+                        </h4>
+                    </f:if>
+                    <f:if condition="{file.properties.link}">
+                        <f:then>
+                            <f:link.typolink parameter="{file.properties.link}" title="{file.properties.title}">
+                                <img src="{f:uri.image(image: file, maxWidth: 165)}" title="{file.properties.title}"
+                                     alt="{file.properties.alternative}">
+                            </f:link.typolink>
+                        </f:then>
+                        <f:else>
+                            <img src="{f:uri.image(image: file, maxWidth: 165)}" title="{file.properties.title}"
+                                 alt="{file.properties.alternative}">
+                        </f:else>
+                    </f:if>
+                </div>
+            </f:for>
+        </div>
+    </div>
+    </section>
+</f:if>
+</html>

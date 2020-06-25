@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.code_analytics}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={data.code_analytics}"></script>
+    <script>
+        var gaProperty = '{data.code_analytics}';
+        var disableStr = 'ga-disable-' + gaProperty;
+        if (document.cookie.indexOf(disableStr + '=true') > -1) {
+            window[disableStr] = true;
+        }
+
+        function googleAnalyticsOptOut() {
+            document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+            window[disableStr] = true;
+        }
+        function googleAnalyticsOptIn() {
+            document.cookie = disableStr + '=; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/';
+            window[disableStr] = false;
+        }
+
+        window.addEventListener('asd.cookie.enable', () => {
+            googleAnalyticsOptIn();
+        });
+
+        window.addEventListener('asd.cookie.disable', () => {
+            googleAnalyticsOptOut();
+        });
+
+        window.addEventListener('asd.cookie.revoke', () => {
+            googleAnalyticsOptOut();
+        });
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaProperty, {
+            'cookie_expires': 34000000,
+            'anonymize_ip': true
+        });
+    </script>
+</f:if>
+</html>

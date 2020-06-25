@@ -1,0 +1,57 @@
+.navbar-item.is-mega {
+  position: static;
+
+  .is-mega-menu-title {
+    margin-bottom: 0;
+    padding: .375rem 1rem;
+  }
+}
+
+@include from($navbar-breakpoint) {
+  .navbar-item.is-mega {
+    .navbar-dropdown {
+      right: 0;
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+
+      .navbar-item {
+        white-space: normal;
+      }
+    }
+
+    .columns {
+      padding: 3rem 0;
+    }
+
+    .column {
+      & > a{
+        font-weight: $weight-semibold;
+      }
+      ul {
+        margin-left: 1rem;
+        border-left: 1px solid $primary;
+      }
+    }
+  }
+}
+
+@include until($navbar-breakpoint) {
+  .navbar-dropdown {
+    .container.is-fluid {
+      padding: 0;
+    }
+
+    .columns {
+      margin: 0;
+    }
+
+    .column {
+      padding: 0;
+
+      ul {
+        margin-left: 1.5rem;
+        border-left: 1px solid $primary;
+      }
+    }
+  }
+}

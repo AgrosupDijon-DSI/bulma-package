@@ -1,0 +1,123 @@
+TYPO3:
+    CMS:
+        Form:
+            persistenceManager:
+                allowedExtensionPaths:
+                    110: EXT:bulma_package/Resources/Private/Forms/
+            prototypes:
+                standard:
+                    formElementsDefinition:
+                        Text:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        Email:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        Password:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        Telephone:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        Url:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        Number:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        Date:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        DatePicker:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: input
+                        Form:
+                            renderingOptions:
+                                translation:
+                                    translationFile:
+                                        110: 'EXT:bulma_package/Resources/Private/Language/locallang.xlf'
+#                                layoutRootPaths:
+#                                    20: 'EXT:bulma_package/Resources/Private/Layouts/Form/'
+                                templateRootPaths:
+                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/'
+                                partialRootPaths:
+                                    20: 'EXT:bulma_package/Resources/Private/Partials/Form/'
+                        Checkbox:
+                            properties:
+                                elementClassAttribute: 'is-checkradio'
+                                containerClassAttribute: 'control'
+                        GridRow:
+                            properties:
+                                elementClassAttribute: 'columns is-mobile is-multiline'
+                                gridColumnClassAutoConfiguration:
+                                    gridSize: 12
+                                    viewPorts:
+                                        xs:
+                                            classPattern: 'column is-{@numbersOfColumnsToUse}-mobile'
+                                        sm:
+                                            classPattern: 'is-{@numbersOfColumnsToUse}-tablet'
+                                        md:
+                                            classPattern: 'is-{@numbersOfColumnsToUse}-desktop'
+                                        lg:
+                                            classPattern: 'is-{@numbersOfColumnsToUse}-fullhd'
+                        Textarea:
+                            properties:
+                                containerClassAttribute: 'control'
+                                elementClassAttribute: 'textarea'
+                        MultiCheckbox:
+                            properties:
+                                containerClassAttribute: 'control'
+                                elementClassAttribute: 'is-checkradio'
+                        MultiSelect:
+                            properties:
+                                containerClassAttribute: 'control'
+                                elementClassAttribute: 'select'
+                        RadioButton:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: 'is-checkradio'
+                        SingleSelect:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: 'select'
+                        AdvancedPassword:
+                            properties:
+                                containerClassAttribute: 'control'
+                                elementClassAttribute: 'input'
+                                confirmationLabel: ''
+                                # Optional description (hint) for the first password input element
+                                passwordDescription: ''
+                                confirmationClassAttribute: 'input'
+                        FileUpload:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: 'file-input'
+                        ImageUpload:
+                            properties:
+                                containerClassAttribute: control
+                                elementClassAttribute: 'file-input'
+
+                    finishersDefinition:
+                        Confirmation:
+                            options:
+                                templateRootPaths:
+                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Confirmation/'
+
+            mixins:
+                formElementMixins:
+                    TextMixin:
+                        properties:
+                            elementClassAttribute: 'input'
+                    FormElementMixin:
+                        properties:
+                            containerClassAttribute: 'control'
+                            elementClassAttribute: ''
+                            elementErrorClassAttribute: 'is-danger'

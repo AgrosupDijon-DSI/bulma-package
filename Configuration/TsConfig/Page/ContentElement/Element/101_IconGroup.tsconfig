@@ -1,0 +1,16 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems.advanced {
+    elements {
+        icon_group {
+            iconIdentifier = content-bulmapackage-icon-group
+            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.icon_group
+            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.icon_group.description
+            tt_content_defValues {
+                CType = icon_group
+            }
+        }
+    }
+    show := addToList(icon_group)
+}

@@ -1,0 +1,3 @@
+tx_news.templateLayouts {
+    1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.4cols
+}

@@ -1,0 +1,6 @@
+
+.message{
+  .message-body{
+    @extend .content;
+  }
+}

@@ -1,0 +1,19 @@
+#######################################################
+#### WEBSITE ELEMENT: BULMA PACKAGE CODE ANALYTICS ####
+#######################################################
+
+lib.bulmaPackage.codeAnalytics =< lib.bulmaPackageSetting
+lib.bulmaPackage.codeAnalytics{
+
+    #############################
+    ### CONTENT OBJECT FIELDS ###
+    #############################
+    select.selectFields = code_analytics
+
+    renderObj {
+        ################
+        ### TEMPLATE ###
+        ################
+        templateName = Analytics
+    }
+}

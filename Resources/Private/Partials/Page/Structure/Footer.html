@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<footer class="footer">
+    <div class="container">
+        <div class="columns">
+            <f:cObject typoscriptObjectPath="lib.bulmaPackage.address" />
+            <f:if condition="{quickLinksNavigation}">
+                <div class="column">
+                    <p class="title is-3">{f:translate(key: 'footer-title-menu', extensionName: 'bulma_package')}</p>
+                    <f:render partial="Navigation/QuickLinks" arguments="{_all}" />
+                </div>
+            </f:if>
+            <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.bulmaPackage.socialsLinks') -> asd:format.trim()}">
+                <div class="column">
+                    <p class="title is-3">{f:translate(key: 'footer-title-social', extensionName: 'bulma_package')}</p>
+                    <f:cObject typoscriptObjectPath="lib.bulmaPackage.socialsLinks" />
+                </div>
+            </f:if>
+        </div>
+    </div>
+</footer>
+</html>

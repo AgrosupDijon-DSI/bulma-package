@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:if condition="{records}">
+        <f:variable name="imageConfig">{settings.responsiveimages.contentelements.carousel.{data.pi_flexform.cells}}</f:variable>
+        <f:variable name="imageConfigTablet">{settings.responsiveimages.contentelements.carousel.{data.pi_flexform.cells_tablet}}</f:variable>
+        <f:variable name="imageConfigMobile">{settings.responsiveimages.contentelements.carousel.{data.pi_flexform.cells_mobile}}</f:variable>
+
+        <f:alias map="{mergedImageConfig: {multiplier: {default: imageConfig.multiplier.default, widescreen: imageConfig.multiplier.widescreen, desktop: imageConfig.multiplier.desktop, tablet: imageConfigTablet.multiplier.tablet, mobile: imageConfigMobile.multiplier.mobile, mobile-small: imageConfigMobile.multiplier.mobile}}}">
+            <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{mergedImageConfig.multiplier}" />
+        </f:alias>
+
+        <div class="carousel {imageConfig.class}"
+             data-autoplay="{data.pi_flexform.autoPlay}"
+             data-wraparound="{f:if(condition:data.pi_flexform.wrapAround,then:'true',else:'false')}"
+             data-cellalign="{data.pi_flexform.cellAlign}"
+             data-pagedots="{f:if(condition:data.pi_flexform.pageDots,then:'true',else:'false')}"
+             data-prevnextbuttons="{f:if(condition:data.pi_flexform.prevNextButtons,then:'true',else:'false')}"
+             data-fade="{f:if(condition:data.pi_flexform.fade,then:'true',else:'false')}"
+             data-groupcells="{data.pi_flexform.groupCells}">
+            <f:for each="{records}" as="item" iteration="iteration">
+                <f:variable name="itemStyleColor"><f:if condition="{item.data.background_color}">background-color: {item.data.background_color};</f:if></f:variable>
+                <div class="carousel-item image has-{data.pi_flexform.cells} has-{data.pi_flexform.cells_tablet}-tablet has-{data.pi_flexform.cells_mobile}-mobile {data.pi_flexform.ratio} {data.pi_flexform.ratio_tablet}-tablet {data.pi_flexform.ratio_mobile}-mobile" style="{itemStyleColor}">
+                    <div class="has-ratio">
+                        <f:if condition="{item.data.header} || {item.data.subheader} || ({item.data.link} && {item.data.button_text})">
+                            <div class="carousel-content {f:if(condition: item.data.text_color, then: '{item.data.text_color}')}">
+                                <div class="content">
+                                    <f:if condition="{item.data.header}">
+                                        <h1 class="title is-2 is-spaced">{item.data.header}</h1>
+                                    </f:if>
+                                    <f:if condition="{item.data.subheader}">
+                                        <h2 class="subtitle is-4">{item.data.subheader}</h2>
+                                    </f:if>
+                                    <f:if condition="{item.data.link} && {item.data.button_text}">
+                                        <f:link.typolink parameter="{item.data.link}" class="button is-large {item.data.button_class}">{item.data.button_text}</f:link.typolink>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </f:if>
+                        <f:if condition="{item.image.0}">
+                            <f:render partial="Media/Type/Image" arguments="{file: item.image.0, data: item.data, settings: settings, variants: variants}" />
+                        </f:if>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+</f:section>
+</html>

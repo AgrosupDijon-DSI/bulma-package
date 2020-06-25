@@ -1,0 +1,29 @@
+// Use to generate rte.css
+@import "../../Contrib/bulma-scss/utilities/all";
+@import "../../Contrib/bulma-scss/base/all";
+@import "../../Contrib/bulma-scss/elements/content";
+@import "../../Contrib/bulma-scss/elements/button";
+@import "../../Contrib/bulma-scss/elements/box";
+@import "../../Contrib/bulma-scss/elements/notification";
+@import "../../Contrib/bulma-scss/elements/table";
+
+// Make button selectable again
+.button{
+  -webkit-touch-callout: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}
+
+.section {
+  padding: 1rem;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-striked {
+  text-decoration: line-through;
+}

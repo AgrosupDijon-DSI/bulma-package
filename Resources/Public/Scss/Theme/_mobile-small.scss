@@ -1,0 +1,128 @@
+$mobile-small: 576px !default;
+
+@mixin mobile-small {
+  @media screen and (max-width: $mobile-small), print {
+    @content;
+  }
+}
+
+/**
+ * Columns
+ */
+.column {
+  @include mobile-small {
+    &.is-narrow-mobile-md {
+      flex: none;
+    }
+
+    &.is-full-mobile-small {
+      flex: none;
+      width: 100%;
+    }
+
+    &.is-three-quarters-mobile-small {
+      flex: none;
+      width: 75%;
+    }
+
+    &.is-two-thirds-mobile-small {
+      flex: none;
+      width: 66.6666%;
+    }
+
+    &.is-half-mobile-small {
+      flex: none;
+      width: 50%;
+    }
+
+    &.is-one-third-mobile-small {
+      flex: none;
+      width: 33.3333%;
+    }
+
+    &.is-one-quarter-mobile-small {
+      flex: none;
+      width: 25%;
+    }
+
+    &.is-one-fifth-mobile-small {
+      flex: none;
+      width: 20%;
+    }
+
+    &.is-two-fifths-mobile-small {
+      flex: none;
+      width: 40%;
+    }
+
+    &.is-three-fifths-mobile-small {
+      flex: none;
+      width: 60%;
+    }
+
+    &.is-four-fifths-mobile-small {
+      flex: none;
+      width: 80%;
+    }
+
+    &.is-offset-three-quarters-mobile-small {
+      margin-left: 75%;
+    }
+
+    &.is-offset-two-thirds-mobile-small {
+      margin-left: 66.6666%;
+    }
+
+    &.is-offset-half-mobile-small {
+      margin-left: 50%;
+    }
+
+    &.is-offset-one-third-mobile-small {
+      margin-left: 33.3333%;
+    }
+
+    &.is-offset-one-quarter-mobile-small {
+      margin-left: 25%;
+    }
+
+    &.is-offset-one-fifth-mobile-small {
+      margin-left: 20%;
+    }
+
+    &.is-offset-two-fifths-mobile-small {
+      margin-left: 40%;
+    }
+
+    &.is-offset-three-fifths-mobile-small {
+      margin-left: 60%;
+    }
+
+    &.is-offset-four-fifths-mobile-small {
+      margin-left: 80%;
+    }
+
+    @for $i from 1 through 12 {
+      &.is-#{$i}-mobile-small {
+        flex: none;
+        width: percentage($i / 12);
+      }
+
+      &.is-offset-#{$i}-mobile-small {
+        margin-left: percentage($i / 12);
+      }
+    }
+  }
+}
+
+/**
+ * Visibility
+ */
+$displays: "block" "flex" "inline" "inline-block" "inline-flex";
+
+@each $display in $displays {
+  @include mobile-small {
+    .is-#{$display}-mobile-small {
+      display: #{$display} !important;
+    }
+  }
+}

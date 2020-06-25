@@ -1,0 +1,78 @@
+$frame-spacing: $block-spacing !default;
+
+.breadcrumb {
+  margin: $frame-spacing 0;
+}
+
+#main {
+  min-height: 100px;
+}
+
+.frame {
+  position: relative;
+  padding: $frame-spacing 0;
+
+  &:first-child {
+    padding-top: 0;
+    margin-top: $frame-spacing;
+
+    &[class*="has-background-"] {
+      margin-top: 0rem;
+      padding-top: $frame-spacing;
+
+      &.frame-space-before-no-space {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &.frame-space-before-no-space {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  &.frame-space-after-no-space {
+    padding-bottom: 0;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.has-background-#{$name} {
+      color: $color-invert;
+
+      &.frame-type-header {
+        .title, .subtitle {
+          color: $color-invert;
+        }
+      }
+
+      .subtitle,
+      th {
+        color: $color-invert;
+      }
+
+      [class="notification"] {
+        color: $text;
+      }
+    }
+  }
+}
+
+#main:not(.column) > .frame-fullwidth {
+  .container {
+    @extend .is-fluid;
+
+    .container {
+      padding: 0;
+    }
+  }
+}
+
+.frame-inner {
+  // Login
+  .frame-type-felogin_login & {
+    @extend .content;
+  }
+}

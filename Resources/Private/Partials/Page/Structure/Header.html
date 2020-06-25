@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <f:cObject typoscriptObjectPath="lib.bulmaPackage.logo" />
+
+                <f:if condition="{mainNavigation}">
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMainMenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </f:if>
+            </div>
+
+            <f:if condition="{mainNavigation} || {languageNavigation}">
+                <div id="navbarMainMenu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <f:render partial="Navigation/Main" arguments="{_all}" />
+                    </div>
+                    <div class="navbar-end">
+                        <f:if condition="{settings.searchPid}">
+                            <div class="navbar-item">
+                                <f:render partial="Structure/SearchForm" arguments="{_all}" />
+                            </div>
+                        </f:if>
+                        <f:render partial="Navigation/Language" arguments="{_all}" />
+                        <f:comment>
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-primary">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a class="button is-light">
+                                    Log in
+                                </a>
+                            </div>
+                        </div>
+                        </f:comment>
+                    </div>
+                </div>
+            </f:if>
+        </div>
+    </nav>
+</header>
+
+</html>

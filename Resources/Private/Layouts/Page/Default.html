@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+    <a class="is-sr-only" href="#main">
+        <span>{f:translate(key: 'skiptomaincontent', extensionName: 'bulma_package')}</span>
+    </a>
+    <f:render partial="Structure/Header" arguments="{_all}" />
+
+    <!--TYPO3SEARCH_begin-->
+    <f:render section="Content" />
+    <!--TYPO3SEARCH_end-->
+
+    <f:cObject typoscriptObjectPath="lib.bulmaPackage.partners" />
+
+    <f:render partial="Structure/Footer" arguments="{_all}" />
+    <f:render partial="Structure/ScrollTop" arguments="{_all}" />
+
+    <f:render partial="Structure/CookieConsent" arguments="{_all}" />
+    <f:cObject typoscriptObjectPath="lib.bulmaPackage.codeAnalytics" />
+</f:spaceless>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{settings.searchPid}">
+<f:form extensionName="indexedsearch" pluginName="pi2" controller="Search" action="search" method="post" pageUid="{settings.searchPid}">
+    <div class="tx-indexedsearch-hidden-fields">
+        <f:form.hidden name="search[_sections]" value="0"/>
+        <f:form.hidden name="search[_freeIndexUid]" value="_"/>
+        <f:form.hidden name="search[pointer]" value="0"/>
+        <f:form.hidden name="search[searchType]" value="{settings.searchParams.searchType}"/>
+        <f:form.hidden name="search[defaultOperand]" value="{settings.searchParams.defaultOperand}"/>
+        <f:form.hidden name="search[mediaType]" value="{settings.searchParams.mediaType}"/>
+        <f:form.hidden name="search[sortOrder]" value="{settings.searchParams.sortOrder}"/>
+        <f:form.hidden name="search[languageUid]" value="{settings.searchParams.languageUid}"/>
+        <f:form.hidden name="search[numberOfResults]" value="10"/>
+    </div>
+    <div class="field has-addons">
+        <div class="control">
+            <f:form.textfield placeholder="{f:translate(extensionName: 'indexed_search', key: 'form.submit')}" name="search[sword]" value="{sword}" class="input is-small" />
+        </div>
+        <div class="control">
+            <button class="button is-primary is-small">
+               <span class="icon is-small is-right">
+                    <i class="fas fa-search"></i>
+               </span>
+            </button>
+        </div>
+    </div>
+</f:form>
+</f:if>
+</html>

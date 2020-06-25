@@ -1,0 +1,26 @@
+#tx_indexedsearch{
+  & + .notification{
+    margin-top: 3rem;
+  }
+  & + div.content{
+    margin-top: 3rem;
+  }
+}
+
+.tx-indexedsearch-redMarkup{
+  @extend .has-text-success;
+}
+
+.tx-indexedsearch-browsebox{
+  @extend .pagination-list;
+  @extend .is-unstyled;
+  a{
+    @extend .pagination-link;
+  }
+  li + li{
+    margin-top: 0;
+  }
+  li.tx-indexedsearch-browselist-currentPage a{
+    @extend .is-current;
+  }
+}

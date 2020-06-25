@@ -1,0 +1,14 @@
+.news{
+  .news-additional-informations{
+    font-size: $small-font-size;
+  }
+
+  .news-gallery, .news-related{
+    margin-bottom: $block-spacing;
+  }
+  .news-related-links{
+    p{
+      margin-top: 0.25em;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{breadcrumb}">
+    <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <f:for each="{breadcrumb}" as="item">
+                    <li{f:if(condition: item.current, then: ' class="is-active"')}>
+                        <f:if condition="{item.current} && {breadcrumbExtendedValue} == ''">
+                            <f:then>
+                                <a href="#" aria-current="page">
+                                    <f:render section="BreadcrumbTitle" arguments="{item: item}" />
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <a href="{item.link}"{f:if(condition: item.target, then: ' target="{item.target}"')} title="{item.title}">
+                                    <f:render section="BreadcrumbTitle" arguments="{item: item}" />
+                                </a>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+                <f:if condition="{breadcrumbExtendedValue}">
+                    <li class="is-active" aria-current="page">
+                        <a aria-current="page">{breadcrumbExtendedValue}</a>
+                    </li>
+                </f:if>
+            </ul>
+        </nav>
+    </div>
+</f:if>
+<f:section name="BreadcrumbTitle">
+    <span>{item.title}</span>
+</f:section>
+</html>

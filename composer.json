@@ -1,0 +1,45 @@
+{
+  "name": "agrosup-dijon/bulma-package",
+  "type": "typo3-cms-extension",
+  "description": "Bulma Package delivers a full configured frontend theme for TYPO3, based on the Bulma CSS Framework.",
+  "keywords": [
+    "TYPO3 CMS",
+    "bulma",
+    "responsive",
+    "frontend",
+    "theme",
+    "web"
+  ],
+  "homepage": "https://cnerta-web.fr",
+  "authors": [
+    {
+      "name": "Sébastien Convers",
+      "email": "sebastien.convers@agrosupdijon.fr",
+      "role": "Developer",
+      "homepage": "https://cnerta-web.fr"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=7.2.0",
+    "typo3/cms-backend": "^9.5 || ^10.4",
+    "typo3/cms-core": "^9.5 || ^10.4",
+    "typo3/cms-extbase": "^9.5 || ^10.4",
+    "typo3/cms-extensionmanager": "^9.5 || ^10.4",
+    "typo3/cms-fluid": "^9.5 || ^10.4",
+    "typo3/cms-frontend": "^9.5 || ^10.4",
+    "typo3/cms-install": "^9.5 || ^10.4",
+    "typo3/cms-rte-ckeditor": "^9.5 || ^10.4",
+    "typo3/cms-seo": "^9.5 || ^10.4",
+    "scssphp/scssphp": "^1.0.8",
+    "ext-dom": "*"
+  },
+  "suggest": {
+    "georgringer/news": "^7.3 || ^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AgrosupDijon\\BulmaPackage\\": "Classes"
+    }
+  }
+}

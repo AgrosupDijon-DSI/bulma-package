@@ -1,0 +1,55 @@
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-striked {
+  text-decoration: line-through;
+}
+
+.subtitle + .subtitle {
+  margin-top: $subtitle-negative-margin;
+}
+
+.content{
+  dl{
+    dt{
+      font-weight: $weight-bold;
+    }
+  }
+
+  ul.list-normal:first-child {
+    margin-top: 0;
+  }
+
+  ul.is-unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.media-list{
+    @extend .is-unstyled;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:last-child{
+      margin-bottom: 0;
+    }
+    @each $name, $pair in $colors {
+      $color-invert: nth($pair, 2);
+
+      .has-background-#{$name} &{
+        color: $color-invert;
+      }
+    }
+  }
+
+  blockquote{
+    color: findColorInvert($content-blockquote-background-color);
+  }
+}

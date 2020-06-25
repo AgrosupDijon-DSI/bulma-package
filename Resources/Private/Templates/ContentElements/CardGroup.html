@@ -1,0 +1,81 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+
+    <f:if condition="{records}">
+        <f:variable name="columnConfig">{settings.responsiveimages.contentelements.card_group.{data.cols}}</f:variable>
+        <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
+        <f:variable name="alignClass">
+            <f:switch expression="{data.table_header_position}">
+                <f:case value="1">has-text-centered</f:case>
+                <f:case value="2">has-text-right</f:case>
+            </f:switch>
+        </f:variable>
+        <f:variable name="allClasses" value="" />
+        <f:for each="{layoutClasses}" as="class">
+            <f:variable name="allClasses">{allClasses} {class}</f:variable>
+        </f:for>
+        <div class="columns is-multiline is-mobile card-group {allClasses}">
+            <f:for each="{records}" as="item" iteration="iteration">
+                <div class="column {columnConfig.class}">
+                    <div class="card card-equal-height">
+                        <f:if condition="{item.media.0}">
+                            <div class="card-image">
+                                <f:render section="LinkWrap"
+                                          arguments="{link: item.data.link, linkTitle: item.data.header}"
+                                          contentAs="content">
+                                    <f:render partial="Media/Type" arguments="{file: item.media.0, data: data, settings: settings, variants: variants}" />
+                                </f:render>
+                            </div>
+                        </f:if>
+                        <f:if condition="{item.data.header} || {item.data.subheader} || {item.data.bodytext}">
+                            <div class="card-content">
+                                <f:if condition="{item.data.header}">
+                                    <h3 class="title {alignClass}">
+                                        <f:render section="LinkWrap"
+                                                  arguments="{link: item.data.link, linkTitle: item.data.header}"
+                                                  contentAs="content">
+                                            {item.data.header}
+                                        </f:render>
+                                    </h3>
+                                </f:if>
+                                <f:if condition="{item.data.subheader}">
+                                    <h4 class="subtitle {alignClass}">{item.data.subheader}</h4>
+                                </f:if>
+                                <f:if condition="{item.data.bodytext}">
+                                    <div class="content">
+                                        <f:format.html>{item.data.bodytext}</f:format.html>
+                                    </div>
+                                </f:if>
+                            </div>
+                        </f:if>
+                        <f:variable name="linkTitle">{item.data.link_title -> asd:format.trim()}</f:variable>
+                        <f:if condition="{item.data.link} && {linkTitle}">
+                            <footer class="card-footer">
+                                <a class="card-footer-item" title="{linkTitle}"
+                                   href="{f:uri.typolink(parameter: item.data.link)}">
+                                    {linkTitle}
+                                </a>
+                            </footer>
+                        </f:if>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+
+</f:section>
+
+<f:section name="LinkWrap">
+    <f:if condition="{link}">
+        <f:then>
+            <a href="{f:uri.typolink(parameter: link)}" {f:if(condition: linkTitle, then: ' title="{linkTitle ->
+            asd:format.trim()}"')}>{content -> f:format.raw()}</a>
+        </f:then>
+        <f:else>
+            {content -> f:format.raw()}
+        </f:else>
+    </f:if>
+</f:section>
+</html>

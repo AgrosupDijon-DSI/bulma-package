@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<f:render partial="Header/All" arguments="{data:contentObjectData}"/>
+	<!--TYPO3SEARCH_end-->
+
+	<f:if condition="!{settings.disableOverrideDemand}">
+		<f:if condition="{overwriteDemand.categories}">
+			<div class="notification is-info">
+				<div class="level">
+					<div class="level-left"><f:translate key="news_filter_by_cat" extensionName="bulma_package" /><strong>{categories.0.title}</strong></div>
+					<div class="level-right"><f:link.page><f:translate key="news_remove_filter" extensionName="bulma_package" /></f:link.page></div>
+				</div>
+			</div>
+		</f:if>
+		<f:if condition="{overwriteDemand.tags}">
+			<div class="notification is-info">
+				<div class="level">
+					<div class="level-left"><f:translate key="news_filter_by_tag" extensionName="bulma_package" /><strong>{tags.0.title}</strong></div>
+					<div class="level-right"><f:link.page><f:translate key="news_remove_filter" extensionName="bulma_package" /></f:link.page></div>
+				</div>
+			</div>
+		</f:if>
+	</f:if>
+
+	<f:if condition="{news}">
+		<f:then>
+			<div class="news-list-view columns is-multiline is-mobile" id="news-container-{contentObjectData.uid}">
+				<f:if condition="{settings.hidePagination}">
+					<f:then>
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,pageData:pageData}" />
+						</f:for>
+					</f:then>
+					<f:else>
+						<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+							<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,pageData:pageData}" />
+							</f:for>
+						</n:widget.paginate>
+					</f:else>
+				</f:if>
+				<f:if condition="{settings.listPid}">
+					<!-- Link to list -->
+					<div class="column is-full has-text-centered">
+						<f:link.page class="button is-primary" pageUid="{settings.listPid}">
+							<f:translate key="news_list_see_all" extensionName="bulma_package" />
+						</f:link.page>
+					</div>
+				</f:if>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="notification is-warning">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+</html>

@@ -1,0 +1,32 @@
+##########################################################
+### WEBSITE ELEMENT SETTINGS                           ###
+### Shared settings for Bulma package website elements ###
+##########################################################
+
+lib.bulmaPackageSetting = CONTENT
+lib.bulmaPackageSetting {
+
+    ######################
+    ### CONTENT OBJECT ###
+    ######################
+    table = tx_bulmapackage_settings
+    select {
+        pidInList = this
+    }
+    slide = -1
+
+    ################
+    ### TEMPLATE ###
+    ################
+    renderObj = FLUIDTEMPLATE
+    renderObj {
+        templateRootPaths {
+            0 = EXT:bulma_package/Resources/Private/Templates/WebsiteElement/
+            1 = {$plugin.bulma_package_websiteelements.view.templateRootPath}
+        }
+        variables{
+            rootPage = TEXT
+            rootPage.data = leveluid:0
+        }
+    }
+}

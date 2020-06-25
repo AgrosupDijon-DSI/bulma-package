@@ -1,0 +1,12 @@
+header{
+  .navbar{
+    @extend .has-shadow;
+  }
+
+  #navbarMainMenu{
+    flex-shrink: 1;
+    .navbar-start, .navbar-end{
+      flex-wrap: wrap;
+    }
+  }
+}

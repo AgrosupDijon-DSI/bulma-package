@@ -1,0 +1,107 @@
+plugin.tx_news {
+	view {
+		templateRootPaths {
+			0 = EXT:news/Resources/Private/Templates/
+			1 = EXT:bulma_package/Resources/Private/Templates/News/
+			2 = {$plugin.tx_news.view.bulma.templateRootPath}
+		}
+
+		partialRootPaths {
+			0 = EXT:news/Resources/Private/Partials/
+			# To be able to use our owns content elements partials within EXT:news
+			1 = EXT:bulma_package/Resources/Private/Partials/ContentElements/
+			2 = EXT:bulma_package/Resources/Private/Partials/News/
+			3 = {$plugin.tx_news.view.bulma.partialRootPath}
+		}
+
+		widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:bulma_package/Resources/Private/Templates/News/
+	}
+
+	settings {
+		displayDummyIfNoMedia = false
+		header.defaultHeaderType = {$plugin.bulma_package_contentelements.header.defaultHeaderType}
+		list {
+			media {
+				dummyImage = EXT:news/Resources/Public/Images/dummy-preview-image.png
+			}
+			paginate{
+				insertAbove = false
+				additionalClasses = {$plugin.tx_news.settings.list.paginate.additionalClasses}
+			}
+			showIcons = {$plugin.tx_news.settings.list.showIcons}
+			linkCategories = {$plugin.tx_news.settings.list.linkCategories}
+			linkTags = {$plugin.tx_news.settings.list.linkTags}
+		}
+		detail{
+			showIcons = {$plugin.tx_news.settings.detail.showIcons}
+			linkCategories = {$plugin.tx_news.settings.detail.linkCategories}
+			linkTags = {$plugin.tx_news.settings.detail.linkTags}
+			gallery{
+				cols = 6
+				lightbox = 1
+			}
+			uploads{
+				showDescription = 1
+				showFilesize = 1
+				# 1 : with file icon
+				# 2 : with preview if possible
+				previewType = 2
+			}
+		}
+		gallery < lib.contentElement.settings.gallery
+		lightbox < lib.contentElement.settings.lightbox
+		uploads < lib.contentElement.settings.uploads
+		responsiveimages{
+			variants < lib.contentElement.settings.responsiveimages.variants
+			list{
+				3 {
+					class = is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
+					multiplier {
+						default = 0.3333
+						widescreen = 0.3333
+						desktop = 0.3333
+						tablet = 0.5
+						mobile = 0.5
+					}
+					gutters {
+						default = 24
+						widescreen = 24
+						desktop = 24
+						tablet = 24
+						mobile = 24
+					}
+				}
+				4 {
+					class = is-3-widescreen is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
+					multiplier {
+						default = 0.25
+						widescreen = 0.25
+						desktop = 0.3333
+						tablet = 0.5
+						mobile = 0.5
+					}
+					gutters {
+						default = 24
+						widescreen = 24
+						desktop = 24
+						tablet = 24
+						mobile = 24
+					}
+				}
+			}
+		}
+	}
+}
+
+# Improved back links
+# https://docs.typo3.org/p/georgringer/news/master/en-us/AdministratorManual/Templates/Snippets/Index.html#improved-back-links
+page.includeJSFooterlibs {
+	bulma_news = EXT:bulma_package/Resources/Public/JavaScript/bulma.news.js
+}
+
+# Fake breadcrumb entry on news detail page
+# https://docs.typo3.org/p/georgringer/news/7.3/en-us/Misc/Changelog/7-2-0.html?highlight=addnewstomenuprocessor#id5
+page.10.dataProcessing{
+	50 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+	50.menus = breadcrumb
+}

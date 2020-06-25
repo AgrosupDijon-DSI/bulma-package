@@ -1,0 +1,35 @@
+<div class="media">
+    <div class="media-content">
+        <h4 class="media-heading">
+            <f:if condition="{settings.displayResultNumber}">
+                <span class="tx-indexedsearch-result-number">{row.result_number}</span>
+            </f:if>
+            <f:format.raw>{row.title}</f:format.raw>
+            <f:if condition="{settings.bulma.showPercentage}">
+                <span>{row.rating}</span>
+            </f:if>
+        </h4>
+        <f:if condition="{row.headerOnly} == 0">
+            <p><f:format.crop maxCharacters="{settings.results.summaryCropAfter}">{row.description -> f:format.raw() -> f:format.htmlentitiesDecode()}</f:format.crop></p>
+            <ul class="is-inline-block">
+                <f:if condition="{settings.bulma.showSize}">
+                    <li><strong><f:translate key="result.size" /></strong> {row.size}</li>
+                </f:if>
+                <f:if condition="{settings.bulma.showCreated}">
+                    <li><strong><f:translate key="result.created" /></strong> <f:format.date>@{row.created}</f:format.date></li>
+                </f:if>
+                <f:if condition="{settings.bulma.showModified}">
+                    <li><strong><f:translate key="result.modified" /></strong> <f:format.date>@{row.modified}</f:format.date></li>
+                </f:if>
+                <f:if condition="{settings.bulma.showPath}">
+                    <li><strong><f:translate key="result.path" /></strong> <f:format.raw>{row.path}</f:format.raw></li>
+                </f:if>
+            </ul>
+        </f:if>
+        <f:if condition="{row.subresults}">
+            <f:for each="{row.subresults.items}" as="subrow">
+                <f:render partial="Searchresult" arguments="{row: subrow}" />
+            </f:for>
+        </f:if>
+    </div>
+</div>

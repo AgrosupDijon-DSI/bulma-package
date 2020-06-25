@@ -1,0 +1,4 @@
+########################
+#### BACKENDLAYOUTS ####
+########################
+@import 'EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/*.tsconfig'

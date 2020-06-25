@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <div class="media-gallery {f:if(condition: '{data.gallery_size}', then:'media-gallery-{data.gallery_size}')}">
+        <f:render partial="Media/Gallery" arguments="{_all}" />
+    </div>
+
+</f:section>
+</html>

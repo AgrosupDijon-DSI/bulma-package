@@ -1,0 +1,5 @@
+##########################
+#### CONTENT ELEMENTS ####
+##########################
+@import 'EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/Categories.tsconfig'
+@import 'EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/Element/*.tsconfig'

@@ -1,0 +1,65 @@
+######################################
+#### CTYPE: BOOTSTRAP PACKAGE TAB ####
+######################################
+
+tt_content.tab >
+tt_content.tab =< lib.contentElement
+tt_content.tab {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Tab
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing{
+        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        10 {
+            if.isTrue.field = tx_bulmapackage_tab_item
+            table = tx_bulmapackage_tab_item
+            pidInList.field = pid
+            where = tt_content=###uid### AND deleted=0 AND hidden=0
+            orderBy = sorting
+            markers.uid.field = uid
+            as = tabs
+
+            dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            dataProcessing.10 {
+                if.isTrue.field = record
+                table = tt_content
+                pidInList.field = pid
+                where = tx_bulmapackage_tab_item_parent=###uid### AND deleted=0 AND hidden=0 AND colPos=###colPos### AND CType IN (###CType1###, ###CType2###, ###CType3###, ###CType4###, ###CType5###, ###CType6###, ###CType7###, ###CType8###, ###CType9###, ###CType10###, ###CType11###, ###CType12###, ###CType13###, ###CType14###, ###CType15###, ###CType16###, ###CType17###, ###CType18###)
+                orderBy = sorting
+                markers.colPos.value = 999
+                markers.CType1.value = header
+                markers.CType2.value = text
+                markers.CType3.value = textmedia
+                markers.CType4.value = image
+                markers.CType5.value = shortcut
+                markers.CType6.value = html
+                markers.CType7.value = video
+                markers.CType8.value = menu_card_dir
+                markers.CType9.value = menu_card_list
+                markers.CType10.value = menu_categorized_pages
+                markers.CType11.value = menu_pages
+                markers.CType12.value = menu_recently_updated
+                markers.CType13.value = menu_section
+                markers.CType14.value = menu_section_pages
+                markers.CType15.value = menu_sitemap_pages
+                markers.CType16.value = menu_subpages
+                markers.CType17.value = menu_thumbnail_dir
+                markers.CType18.value = menu_thumbnail_list
+                markers.uid.field = uid
+                as = records
+            }
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+        20 {
+            delimiter = ,
+            fieldName = table_class
+            as = tabClasses
+        }
+    }
+}

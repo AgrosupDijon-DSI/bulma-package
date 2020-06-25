@@ -1,0 +1,161 @@
+.navbar-item {
+  &:empty {
+    padding: 0;
+  }
+}
+
+.navbar-burger {
+  align-self: center;
+}
+
+.navbar-start, .navbar-end {
+  & > a, & > .navbar-item > a {
+    font-weight: $weight-semibold;
+  }
+}
+
+.navbar-link:hover:not(.is-arrowless) {
+  &::after {
+    border-color: $navbar-dropdown-item-active-color;
+  }
+}
+
+.nested.has-dropdown {
+  padding: 0;
+
+  & > .navbar-link {
+    width: 100%;
+
+    &:not(.is-arrowless) {
+      padding-right: 2.5em;
+    }
+
+    &.is-active {
+      color: $navbar-dropdown-item-active-color;
+    }
+
+    color: $navbar-dropdown-item-hover-color;
+
+    &:not(:focus):not(:hover) {
+      background-color: transparent;
+      color: $navbar-item-color;
+
+      &.is-active {
+        background-color: $navbar-dropdown-item-active-background-color;
+        color: $navbar-dropdown-item-active-color;
+
+        &:not(.is-arrowless):after {
+          border-color: $navbar-dropdown-item-active-color;
+        }
+      }
+    }
+  }
+}
+
+@include until($navbar-breakpoint) {
+  .navbar-menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    border-top: $navbar-dropdown-border-top;
+    border-color: $primary;
+    box-shadow: none;
+    padding: 0;
+
+    .navbar-start, .navbar-end {
+      & > .navbar-item {
+        border-bottom: $navbar-dropdown-border-top;
+        border-color: $primary;
+      }
+    }
+
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transition: 0.5s ease-in-out transform;
+
+    &.is-active {
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+    }
+
+    .navbar-link:not(.is-arrowless):after {
+      border: 0;
+    }
+  }
+
+  .navbar-dropdown {
+    padding: 0;
+  }
+
+  .nested.has-dropdown {
+
+    .navbar-link {
+      padding-left: 1.5rem;
+    }
+
+    .navbar-dropdown {
+      margin-left: 1.5rem;
+      border-left: 1px solid $primary;
+    }
+  }
+  .navbar > .container {
+    padding: 0;
+  }
+}
+
+@include from($navbar-breakpoint) {
+  // Separated from next block to fix edge not displaying .navbar-dropdown on hover
+  .navbar-item {
+    &.is-hoverable:focus-within {
+      .navbar-dropdown {
+        display: none;
+      }
+
+      & > .navbar-dropdown {
+        display: block;
+      }
+    }
+  }
+
+  .navbar-item {
+    &.is-active,
+    &.is-hoverable:focus,
+    &.is-hoverable:hover {
+      .navbar-dropdown {
+        display: none;
+      }
+
+      & > .navbar-dropdown {
+        display: block;
+      }
+    }
+  }
+
+  .navbar-dropdown {
+    border-top-color: $primary;
+    .navbar-item {
+      & > .navbar-link{
+        padding: 0.375rem 1rem;
+      }
+    }
+  }
+  .nested.has-dropdown {
+    & > .navbar-link {
+      &:not(.is-arrowless) {
+        &:after {
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+    .navbar-dropdown {
+      top: -10px;
+      margin-left: 100%;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 6px;
+      box-shadow: 0 4px 10px rgba(10, 10, 10, 0.1);
+      border-top: 0;
+      border-left: 2px solid $primary;
+    }
+  }
+}
