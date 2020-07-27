@@ -153,14 +153,21 @@ defined('TYPO3_MODE') or die();
     }
 
     /***************
-     * Register image_autoresize configuration hook
+     * Register image_autoresize signal slot
      */
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['image_autoresize']['defaultConfiguration'] = [
-        'file_types' => 'jpg,jpeg,png,gif',
-        'max_width' => '1920',
-        'max_height' => '1280',
-        'max_size' => '10M'
-    ];
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('image_autoresize')) {
+        /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
+        $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            \TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class
+        );
+
+        $signalSlotDispatcher->connect(
+            \Causal\ImageAutoresize\Controller\ConfigurationController::class,
+            'processConfiguration',
+            \AgrosupDijon\BulmaPackage\Slots\ImageAutoresize::class,
+            'postProcessConfiguration'
+        );
+    }
 
     /***************
      * Register Upgrade Wizards
