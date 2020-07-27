@@ -5,12 +5,16 @@
     <f:if condition="{table}">
         <div class="table-responsive">
 
-            <f:variable name="allClasses" value="" />
-            <f:for each="{tableClasses}" as="class">
-                <f:variable name="allClasses">{allClasses} is-{class}</f:variable>
-            </f:for>
+            <f:if condition="{0: ''} == {tableClasses}">
+                <f:then><f:variable name="allClasses" value="" /></f:then>
+                <f:else>
+                    <f:for each="{tableClasses}" as="class">
+                        <f:variable name="allClasses">{allClasses} is-{class}</f:variable>
+                    </f:for>
+                </f:else>
+            </f:if>
 
-            <table class="table{f:if(condition: allClasses, then: ' {allClasses}')}">
+            <table class="table {allClasses}">
                 <f:if condition="{data.table_caption}">
                     <caption>{data.table_caption}</caption>
                 </f:if>

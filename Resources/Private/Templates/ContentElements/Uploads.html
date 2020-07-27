@@ -6,17 +6,19 @@
         <f:then>
             <f:if condition="{files}">
                 <f:variable name="columnConfig">{settings.responsiveimages.contentelements.card_group.{data.cols}}</f:variable>
-                <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
+                <f:for each="{layoutClasses}" as="class">
+                    <f:variable name="allClasses">{allClasses} {class}</f:variable>
+                    <f:if condition="{class} == 'is-gapless'">
+                        <f:variable name="gapless" value="1" />
+                    </f:if>
+                </f:for>
+                <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{f:if(condition: '!{gapless}', then: '{columnConfig.gutters}')}" corrections="{columnConfig.corrections}" />
                 <f:variable name="alignClass">
                     <f:switch expression="{data.table_header_position}">
                         <f:case value="1">has-text-centered</f:case>
                         <f:case value="2">has-text-right</f:case>
                     </f:switch>
                 </f:variable>
-                <f:variable name="allClasses" value="" />
-                <f:for each="{layoutClasses}" as="class">
-                    <f:variable name="allClasses">{allClasses} {class}</f:variable>
-                </f:for>
                 <div class="columns is-multiline is-mobile card-group {allClasses}">
                     <f:for each="{files}" as="file" iteration="iteration">
                         <div class="column {columnConfig.class}">
