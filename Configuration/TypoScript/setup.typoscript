@@ -130,6 +130,8 @@ page {
                 languages = auto
                 as = languageNavigation
             }
+
+            # 50 is used when EXT:news is active
         }
 
         ################
