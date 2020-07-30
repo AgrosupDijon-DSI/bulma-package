@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // If there is a file
                 if (el.files.length > 0) {
                     var fileName;
-                    if (el.previousElementSibling.className == 'file-name') {
+                    if (el.previousElementSibling && el.previousElementSibling.className == 'file-name') {
                         // Retrieve previous sibling ".file-name" element
                         fileName = el.previousElementSibling;
                     } else {
