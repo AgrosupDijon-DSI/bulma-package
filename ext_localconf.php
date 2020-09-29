@@ -90,6 +90,12 @@ defined('TYPO3_MODE') or die();
         'settings-bulmapackage-viadeo' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/viadeo.svg',
         'settings-bulmapackage-linkedin' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/linkedin-in.svg',
         'settings-bulmapackage-tumblr' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/tumblr.svg',
+        'settings-bulmapackage-discord' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/discord.svg',
+        'settings-bulmapackage-snapchat-ghost' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/snapchat-ghost.svg',
+        'settings-bulmapackage-book-open' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/book-open.svg',
+        'settings-bulmapackage-user-graduate' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user-graduate.svg',
+        'settings-bulmapackage-user' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user.svg',
+        'settings-bulmapackage-lock' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/lock.svg',
         'content-bulmapackage-color' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/palette.svg'
     ];
     foreach ($icons as $identifier => $source) {

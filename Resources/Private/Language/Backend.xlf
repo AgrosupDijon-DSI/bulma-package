@@ -610,6 +610,24 @@
             <trans-unit id="tx_bulmapackage_settings_link_item.icon">
                 <source>Icon</source>
             </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon_custom">
+                <source>Custom icon</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.book">
+                <source>Book</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.user">
+                <source>Student</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.student">
+                <source>User</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock">
+                <source>Lock</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.standalone">
+                <source>Standalone</source>
+            </trans-unit>
             <trans-unit id="bulma-website">
                 <source>Bulma website</source>
             </trans-unit>

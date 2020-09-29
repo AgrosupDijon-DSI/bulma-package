@@ -752,6 +752,30 @@
                 <source>Icon</source>
                 <target>Icône</target>
             </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon_custom">
+                <source>Custom icon</source>
+                <target>Icône personnalisée</target>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.book">
+                <source>Book</source>
+                <target>Livre</target>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.user">
+                <source>Student</source>
+                <target>Étudiant</target>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.student">
+                <source>User</source>
+                <target>Utilisateur</target>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock">
+                <source>Lock</source>
+                <target>Cadenas</target>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.standalone">
+                <source>Standalone</source>
+                <target>Autonome</target>
+            </trans-unit>
             <trans-unit id="bulma-website">
                 <source>Bulma website</source>
                 <target>Site Bulma</target>

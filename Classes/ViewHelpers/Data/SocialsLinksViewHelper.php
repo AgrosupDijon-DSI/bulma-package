@@ -42,7 +42,8 @@ class SocialsLinksViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ) {
+    )
+    {
         $linksByType = self::buildLinksByType($arguments['links']);
         $renderingContext->getVariableProvider()->add($arguments['as'], $linksByType);
     }
@@ -55,19 +56,27 @@ class SocialsLinksViewHelper extends AbstractViewHelper
      */
     protected static function buildLinksByType(array $links)
     {
-        $linksByType = [];
-        foreach ($links as $link){
+        $reorganizedLinks = [];
+        foreach ($links as $link) {
             if(self::isUrl($link['data']['link']) === true){
-                $type = str_replace(' ', '', $link['data']['icon']);
-                $linksByType[$type]['icon'] = $link['data']['icon'];
-                $linksByType[$type]['data'][] = [
+                if($link['data']['standalone']){
+                    $type = $link['data']['uid'];
+                } elseif(!empty($link['iconFile']) && $link['data']['icon_custom']) {
+                    $type = $link['iconFile'][0]->getIdentifier();
+                } else {
+                    $type = str_replace(' ', '', $link['data']['icon']);
+                }
+                $reorganizedLinks[$type]['icon'] = $link['data']['icon'];
+                $reorganizedLinks[$type]['iconFile'] = $link['data']['icon_custom'] ? $link['iconFile'][0] : '';
+                $reorganizedLinks[$type]['data'][] = [
                     'url' => $link['data']['link'],
                     'label' => $link['data']['label'],
                     'force_label' => $link['data']['force_label']
                 ];
             }
         }
-        return $linksByType;
+
+        return $reorganizedLinks;
     }
 
     /**

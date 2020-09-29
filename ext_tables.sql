@@ -101,7 +101,10 @@ CREATE TABLE tx_bulmapackage_settings_link_item
     label                    varchar(255)        DEFAULT ''  NOT NULL,
     link                     varchar(1024)       DEFAULT ''  NOT NULL,
     icon                     varchar(255)        DEFAULT ''  NOT NULL,
+    icon_file                int(11) unsigned    DEFAULT '0',
     force_label              tinyint(4) unsigned DEFAULT '0' NOT NULL,
+    standalone               tinyint(4) unsigned DEFAULT '0' NOT NULL,
+    icon_custom              tinyint(4) unsigned DEFAULT '0' NOT NULL,
 
     tstamp                   int(11) unsigned    DEFAULT '0' NOT NULL,
     crdate                   int(11) unsigned    DEFAULT '0' NOT NULL,

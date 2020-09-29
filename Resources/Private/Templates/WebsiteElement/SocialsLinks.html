@@ -9,7 +9,7 @@
                     <div class="dropdown">
                         <div class="dropdown-trigger">
                             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span><i class="{type.icon}"></i></span>
+                                <f:render section="icon" arguments="{type: type}" />
                                 <span class="icon is-small">
                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
                                 </span>
@@ -28,7 +28,7 @@
                 </f:then>
                 <f:else>
                     <f:link.typolink parameter="{type.data.0.url}" class="button" title="{type.data.0.label}">
-                        <span class="icon"><i class="{type.icon}"></i></span>
+                        <f:render section="icon" arguments="{type: type}" />
                         <f:if condition="{type.data.0.force_label}"><span>{type.data.0.label}</span></f:if>
                     </f:link.typolink>
                 </f:else>
@@ -36,4 +36,17 @@
         </f:for>
     </div>
 </f:if>
+
+<f:section name="icon">
+    <span class="icon">
+        <f:if condition="{type.iconFile}">
+            <f:then>
+                <asd:inlineSvg image="{type.iconFile}" />
+            </f:then>
+            <f:else>
+                <i class="{type.icon}"></i>
+            </f:else>
+        </f:if>
+    </span>
+</f:section>
 </html>

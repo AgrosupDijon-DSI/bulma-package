@@ -21,8 +21,15 @@ lib.bulmaPackage.socialsLinks {
             10 {
                 table = tx_bulmapackage_settings_link_item
                 pidInList.field = pid
-                selectFields = link, label, icon, force_label
+                selectFields = link, label, icon, force_label, standalone, icon_custom
                 orderBy = sorting
+                dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                        references.fieldName = icon_file
+                        as = iconFile
+                    }
+                }
                 as = socialsLinks
             }
         }

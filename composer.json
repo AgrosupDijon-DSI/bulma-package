@@ -32,7 +32,9 @@
     "typo3/cms-rte-ckeditor": "^9.5 || ^10.4",
     "typo3/cms-seo": "^9.5 || ^10.4",
     "scssphp/scssphp": "^1.0.8",
-    "ext-dom": "*"
+    "ext-dom": "*",
+    "ext-libxml": "*",
+    "ext-simplexml": "*"
   },
   "suggest": {
     "georgringer/news": "^7.3 || ^8.0"

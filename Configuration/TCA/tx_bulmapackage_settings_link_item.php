@@ -39,6 +39,12 @@ return [
             'fab fa-viadeo' => 'settings-bulmapackage-viadeo',
             'fab fa-linkedin-in' => 'settings-bulmapackage-linkedin',
             'fab fa-tumblr' => 'settings-bulmapackage-tumblr',
+            'fas fa-book-open' => 'settings-bulmapackage-book-open',
+            'fas fa-user-graduate' => 'settings-bulmapackage-user-graduate',
+            'fas fa-user' => 'settings-bulmapackage-user',
+            'fas fa-lock' => 'settings-bulmapackage-lock',
+            'fab fa-discord' => 'settings-bulmapackage-discord',
+            'fab fa-snapchat-ghost' => 'settings-bulmapackage-snapchat-ghost',
         ],
     ],
     'types' => [
@@ -53,7 +59,8 @@ return [
             'showitem' => '
                 label, force_label,--linebreak--,
                 link,--linebreak--,
-                icon
+                icon_custom,--linebreak--,
+                icon, icon_file, standalone
             '
         ],
     ],
@@ -170,11 +177,16 @@ return [
         ],
         'icon' => [
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon',
+            'displayCond' => 'FIELD:icon_custom:REQ:false',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['Default', 'fas fa-link', 'settings-bulmapackage-link'],
+                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'fas fa-link', 'settings-bulmapackage-link'],
+                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.book','fas fa-book-open', 'settings-bulmapackage-book-open'],
+                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.student','fas fa-user-graduate', 'settings-bulmapackage-user-graduate'],
+                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user','fas fa-user', 'settings-bulmapackage-user'],
+                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.lock','fas fa-lock', 'settings-bulmapackage-lock'],
                     ['Facebook', 'fab fa-facebook-f', 'settings-bulmapackage-facebook'],
                     ['Twitter', 'fab fa-twitter', 'settings-bulmapackage-twitter'],
                     ['Youtube', 'fab fa-youtube', 'settings-bulmapackage-youtube'],
@@ -183,6 +195,8 @@ return [
                     ['Viadeo', 'fab fa-viadeo', 'settings-bulmapackage-viadeo'],
                     ['LinkedIn', 'fab fa-linkedin-in', 'settings-bulmapackage-linkedin'],
                     ['Tumblr','fab fa-tumblr', 'settings-bulmapackage-tumblr'],
+                    ['Discord','fab fa-discord', 'settings-bulmapackage-discord'],
+                    ['Snapchat','fab fa-snapchat-ghost', 'settings-bulmapackage-snapchat-ghost'],
                 ],
                 'fieldWizard' => [
                     'selectIcons' => [
@@ -190,6 +204,88 @@ return [
                     ],
                 ],
             ],
-        ]
+        ],
+        'icon_file' => [
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_file',
+            'displayCond' => 'FIELD:icon_custom:REQ:true',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'icon_file',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                    title,
+                                    alternative,
+                                    crop,
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                        ],
+                    ],
+                    'minitems' => 0,
+                    'maxitems' => 1,
+                ],
+                'svg'
+            ),
+            'l10n_mode' => 'exclude',
+        ],
+        'icon_custom' => [
+            'exclude' => true,
+            'onChange' => 'reload',
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon_custom',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                    ]
+                ],
+            ],
+        ],
+        'standalone' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.standalone',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                    ]
+                ],
+            ],
+        ],
     ],
 ];

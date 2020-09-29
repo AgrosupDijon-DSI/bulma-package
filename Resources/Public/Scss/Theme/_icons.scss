@@ -1,4 +1,12 @@
 .icon{
+  &:not(.is-small){
+    i{
+      font-size: 1.3rem;
+    }
+    .button & svg{
+      height: 1.3rem;
+    }
+  }
   &.is-medium{
     i{
       font-size: 2em;
