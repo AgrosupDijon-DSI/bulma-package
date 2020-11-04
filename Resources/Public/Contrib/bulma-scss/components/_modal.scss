@@ -28,6 +28,8 @@ $modal-card-foot-border-top: 1px solid $border !default;
 $modal-card-body-background-color: $scheme-main !default;
 $modal-card-body-padding: 20px !default;
 
+$modal-breakpoint: $tablet !default;
+
 .modal {
   @extend %overlay;
 
@@ -60,7 +62,7 @@ $modal-card-body-padding: 20px !default;
   width: 100%;
 
   // Responsiveness
-  @include tablet {
+  @include from($modal-breakpoint) {
     margin: 0 auto;
     max-height: calc(100vh - #{$modal-content-spacing-tablet});
     width: $modal-content-width;
@@ -73,7 +75,9 @@ $modal-card-body-padding: 20px !default;
   background: none;
   height: $modal-close-dimensions;
   position: fixed;
-  right: $modal-close-right;
+
+  @include ltr-position($modal-close-right);
+
   top: $modal-close-top;
   width: $modal-close-dimensions;
 }
@@ -118,7 +122,7 @@ $modal-card-body-padding: 20px !default;
 
   .button {
     &:not(:last-child) {
-      margin-right: 0.5em;
+      @include ltr-property("margin", 0.5em);
     }
   }
 }

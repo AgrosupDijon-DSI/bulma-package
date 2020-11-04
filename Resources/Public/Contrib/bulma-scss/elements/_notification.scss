@@ -2,14 +2,27 @@ $notification-background-color: $background !default;
 $notification-code-background-color: $scheme-main !default;
 $notification-radius: $radius !default;
 $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
+$notification-padding-ltr: 1.25rem 2.5rem 1.25rem 1.5rem !default;
+$notification-padding-rtl: 1.25rem 1.5rem 1.25rem 2.5rem !default;
+
+$notification-colors: $colors !default;
 
 .notification {
   @extend %block;
 
   background-color: $notification-background-color;
   border-radius: $notification-radius;
-  padding: $notification-padding;
   position: relative;
+
+  @include ltr {
+    padding: $notification-padding-ltr;
+  }
+
+
+  @include rtl {
+    padding: $notification-padding-rtl;
+  }
+
 
   a:not(.button):not(.dropdown-item) {
     color: currentColor;
@@ -30,8 +43,9 @@ $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
   }
 
   & > .delete {
+    @include ltr-position(0.5rem);
+
     position: absolute;
-    right: 0.5rem;
     top: 0.5rem;
   }
 
@@ -42,7 +56,7 @@ $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
   }
 
   // Colors
-  @each $name, $pair in $colors {
+  @each $name, $pair in $notification-colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
 
