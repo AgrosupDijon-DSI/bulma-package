@@ -31,6 +31,12 @@
             <trans-unit id="ratio.2_3">
                 <source>2:3</source>
             </trans-unit>
+            <trans-unit id="ratio.1_2">
+                <source>1:2</source>
+            </trans-unit>
+            <trans-unit id="ratio.4_5">
+                <source>4:5</source>
+            </trans-unit>
             <trans-unit id="ratio.free">
                 <source>Free</source>
             </trans-unit>

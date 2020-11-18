@@ -53,6 +53,12 @@ $maxCols: 10;
         &.image.is-6by1{
           padding-top: (16.6666 / $i) + '%';
         }
+        &.image.is-1by2{
+          padding-top: (200 / $i) + '%';
+        }
+        &.image.is-4by5{
+          padding-top: (125 / $i) + '%';
+        }
       }
     }
   }
@@ -86,6 +92,12 @@ $maxCols: 10;
         &.image.is-6by1-tablet{
           padding-top: (16.6666 / $i) + '%';
         }
+        &.image.is-1by2-tablet{
+          padding-top: (200 / $i) + '%';
+        }
+        &.image.is-4by5-tablet{
+          padding-top: (125 / $i) + '%';
+        }
       }
     }
   }
@@ -118,6 +130,12 @@ $maxCols: 10;
         }
         &.image.is-6by1-mobile{
           padding-top: (16.6666 / $i) + '%';
+        }
+        &.image.is-1by2-mobile{
+          padding-top: (200 / $i) + '%';
+        }
+        &.image.is-4by5-mobile{
+          padding-top: (125 / $i) + '%';
         }
       }
     }

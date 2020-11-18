@@ -185,6 +185,14 @@
                                         <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1</numIndex>
                                         <numIndex index="1">is-6by1</numIndex>
                                     </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2</numIndex>
+                                        <numIndex index="1">is-1by2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
+                                        <numIndex index="1">is-4by5</numIndex>
+                                    </numIndex>
                                 </items>
                             </config>
                         </TCEforms>
@@ -293,6 +301,14 @@
                                         <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1</numIndex>
                                         <numIndex index="1">is-6by1</numIndex>
                                     </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2</numIndex>
+                                        <numIndex index="1">is-1by2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
+                                        <numIndex index="1">is-4by5</numIndex>
+                                    </numIndex>
                                 </items>
                             </config>
                         </TCEforms>
@@ -400,6 +416,14 @@
                                     <numIndex index="7" type="array">
                                         <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1</numIndex>
                                         <numIndex index="1">is-6by1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2</numIndex>
+                                        <numIndex index="1">is-1by2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
+                                        <numIndex index="1">is-4by5</numIndex>
                                     </numIndex>
                                 </items>
                             </config>

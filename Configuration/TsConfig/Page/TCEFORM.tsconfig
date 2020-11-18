@@ -287,6 +287,8 @@ TCEFORM {
                         5 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
                         6 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
                         7 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
+                        8 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
+                        9 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
                     }
 
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:iframe.ratio
