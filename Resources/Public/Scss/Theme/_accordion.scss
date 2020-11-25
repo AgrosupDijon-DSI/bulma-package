@@ -65,7 +65,12 @@ $accordion-header-padding: $card-header-padding !default;
 }
 
 .accordion-body {
-  .frame:last-of-type {
-    padding-bottom: 0;
+  .frame{
+    &:first-of-type{
+      margin-top: 0;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+    }
   }
 }
