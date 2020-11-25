@@ -3,60 +3,69 @@
 $collapse-transition-speed: .2s !default;
 $collapse-transition-style: ease !default;
 $message-body-padding: 1.25em 1.5em !default;
+$accordion-content-padding: $card-content-padding !default;
+$accordion-header-padding: $card-header-padding !default;
 
-.is-collapsible{
+.is-collapsible {
   height: 0;
   overflow-y: hidden;
   transition: height $collapse-transition-speed $collapse-transition-style;
 
-  &.is-active{
+  &.is-active {
     transition: height $collapse-transition-speed $collapse-transition-style;
   }
-  &.message-body{
+
+  &.message-body {
     padding: 0 !important;
-    .message-body-content{
+
+    .message-body-content {
       padding: $message-body-padding
     }
   }
 }
 
-.accordion{
-  .card{
-    &:not(:last-of-type){
+.accordion {
+  .card {
+    &:not(:last-of-type) {
       margin-bottom: 0.5rem;
     }
   }
+
+  .card-content {
+    padding: $accordion-content-padding;
+  }
+
+  .card-header-title {
+    padding: $accordion-header-padding;
+  }
 }
 
-.card-header{
-  &:hover{
+.card-header {
+  &:hover {
     cursor: pointer;
-    a{
+
+    a {
       color: $link-active;
     }
   }
-  i{
+
+  i {
     transition: transform $collapse-transition-speed $collapse-transition-style;
   }
-  &.is-active{
-    a{
+
+  &.is-active {
+    a {
       color: $link-active;
     }
-    i{
+
+    i {
       transform: rotate(-180deg);
     }
   }
 }
 
-.accordion-body{
-  .frame{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    &:first-of-type{
-      margin-top: 0;
-    }
-    &:last-of-type{
-      margin-bottom: 0;
-    }
+.accordion-body {
+  .frame:last-of-type {
+    padding-bottom: 0;
   }
 }
