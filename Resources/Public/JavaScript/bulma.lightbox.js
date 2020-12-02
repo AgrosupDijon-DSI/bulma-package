@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
         el.addEventListener('click', (e) => {
             e.preventDefault();
             var gid = el.getAttribute('rel');
-            var pid = Array.prototype.slice.call(document.querySelectorAll('a.lightbox'), 0).indexOf(el);
+            var pid = Array.prototype.slice.call(document.querySelectorAll('a[rel="' + gid + '"]'), 0).indexOf(el);
             openPhotoSwipe(pid, gid);
         });
     });
