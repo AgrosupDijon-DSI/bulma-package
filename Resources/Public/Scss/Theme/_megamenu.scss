@@ -9,10 +9,14 @@
 
 @include from($navbar-breakpoint) {
   .navbar-item.is-mega {
+    display: block;
+    & > .navbar-link{
+      min-height: $navbar-height;
+    }
+
     .navbar-dropdown {
       right: 0;
-      margin-left: -0.75rem;
-      margin-right: -0.75rem;
+      top: initial;
 
       padding-bottom: 1rem;
       padding-top: 1rem;
