@@ -14,13 +14,12 @@
       margin-left: -0.75rem;
       margin-right: -0.75rem;
 
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+
       .navbar-item {
         white-space: normal;
       }
-    }
-
-    .columns {
-      padding: 3rem 0;
     }
 
     .column {
@@ -37,7 +36,7 @@
 
 @include until($navbar-breakpoint) {
   .navbar-dropdown {
-    .container.is-fluid {
+    .container {
       padding: 0;
     }
 
