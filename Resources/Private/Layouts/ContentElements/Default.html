@@ -14,7 +14,12 @@
                 <div class="container">
                     <div class="frame-inner">
                         <f:render section="Header" optional="true">
-                            <f:render partial="Header/All" arguments="{_all}"/>
+                            <f:comment>
+                                Do not render header section for EXT:news plugin, so we can manage it properly if in list or detail
+                            </f:comment>
+                            <f:if condition="{data.list_type} != 'news_pi1'">
+                                <f:render partial="Header/All" arguments="{_all}"/>
+                            </f:if>
                         </f:render>
                         <f:render section="Main" optional="true"/>
                         <f:render section="Footer" optional="true">
