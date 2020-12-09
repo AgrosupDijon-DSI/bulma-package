@@ -6,10 +6,15 @@
             is-active
         </f:if>
     </f:variable>
+    <f:variable name="target">
+        <f:if condition="{item_1.target}">
+            target="{item_1.target}"
+        </f:if>
+    </f:variable>
     <f:if condition="{item_1.children}">
         <f:then>
             <div class="navbar-item has-dropdown is-hoverable is-mega">
-                <a href="{item_1.link}" class="navbar-link{classActive}">{item_1.title}</a>
+                <a href="{item_1.link}" class="navbar-link{classActive}" {target}>{item_1.title}</a>
                 <div class="navbar-dropdown">
                     <div class="container">
                         <div class="columns is-multiline">
@@ -24,7 +29,7 @@
             </div>
         </f:then>
         <f:else>
-            <a href="{item_1.link}" class="navbar-item{classActive}">{item_1.title}</a>
+            <a href="{item_1.link}" class="navbar-item{classActive}" {target}>{item_1.title}</a>
         </f:else>
     </f:if>
 </f:for>
@@ -35,7 +40,12 @@
             is-active
         </f:if>
     </f:variable>
-    <a href="{item.link}" class="navbar-item{classActive}">{item.title}</a>
+    <f:variable name="target">
+        <f:if condition="{item.target}">
+            target="{item.target}"
+        </f:if>
+    </f:variable>
+    <a href="{item.link}" class="navbar-item{classActive}" {target}>{item.title}</a>
     <f:if condition="{item.children}">
         <ul>
             <f:for each="{item.children}" as="subitem">
