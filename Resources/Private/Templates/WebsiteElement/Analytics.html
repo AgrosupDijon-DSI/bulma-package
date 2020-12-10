@@ -3,7 +3,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={data.code_analytics}"></script>
     <script>
-        var gaProperty = '{data.code_analytics}';
+        var gaProperty = '<f:format.raw>{data.code_analytics}</f:format.raw>';
         var disableStr = 'ga-disable-' + gaProperty;
         if (document.cookie.indexOf(disableStr + '=true') > -1) {
             window[disableStr] = true;
