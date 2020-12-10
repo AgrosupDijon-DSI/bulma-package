@@ -5,9 +5,16 @@ header{
 
   #navbarMainMenu{
     flex-shrink: 1;
-    position: relative;
     .navbar-start, .navbar-end{
       flex-wrap: wrap;
+    }
+  }
+}
+
+@include from($navbar-breakpoint) {
+  header{
+    #navbarMainMenu{
+      position: relative;
     }
   }
 }
