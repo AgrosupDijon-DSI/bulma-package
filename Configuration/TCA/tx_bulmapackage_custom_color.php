@@ -38,8 +38,7 @@ return [
                 var_success,
                 var_info,
                 var_warning,
-                var_danger,
-                var_text_dark
+                var_danger
             '
         ],
     ],

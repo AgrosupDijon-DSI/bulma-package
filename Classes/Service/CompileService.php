@@ -113,7 +113,8 @@ class CompileService
         }
 
         // Check "special" key
-        if($layoutOverride['text_dark'] == '1'){
+        // If text_dark = 1 in the layout, and layout with a matching key exists, merge both layouts.
+        if($layoutOverride['text_dark'] == '1' && isset($layouts['text_dark'])){
             $layoutOverride = array_merge($layoutOverride, $layouts['text_dark']);
             unset($layoutOverride['text_dark']);
         }
