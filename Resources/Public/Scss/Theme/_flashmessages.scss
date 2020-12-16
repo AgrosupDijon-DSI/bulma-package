@@ -1,0 +1,36 @@
+
+.alert{
+  @extend .message;
+}
+.alert-success{
+  @extend .is-success;
+}
+.alert-warning{
+  @extend .is-warning;
+}
+.alert-danger{
+  @extend .is-danger;
+}
+.alert-info{
+  @extend .is-info;
+}
+.alert-title{
+  @extend .message-header;
+}
+.alert-message{
+  @extend .message-body;
+}
+
+.frame-type-felogin_login .frame-inner{
+  .typo3-messages{
+    list-style: none;
+    margin-left: 0;
+    margin-top: 0;
+
+    h4{
+      font-size: $size-normal;
+      margin-bottom: 0;
+    }
+  }
+
+}

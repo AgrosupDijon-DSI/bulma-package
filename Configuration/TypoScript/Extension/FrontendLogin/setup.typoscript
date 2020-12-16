@@ -8,11 +8,4 @@ plugin.tx_felogin_login {
             2 = {$plugin.bulma_package.view.templateRootPath}FrontendLogin/
         }
     }
-
-    settings{
-        email_fromName = Bleh
-        email {
-            templateName = {$styles.content.loginform.email.templateName}
-        }
-    }
 }
