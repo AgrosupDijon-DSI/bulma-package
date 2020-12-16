@@ -12,6 +12,7 @@
     display: block;
     & > .navbar-link{
       min-height: $navbar-height;
+      height: 100%;
     }
 
     .navbar-dropdown {
