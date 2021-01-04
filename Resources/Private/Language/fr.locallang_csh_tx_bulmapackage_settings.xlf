@@ -3,9 +3,9 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
     <header/>
     <body>
-      <trans-unit id="code_analytics.description">
+      <trans-unit id="code_analytics.description" approved="yes">
         <source>Only the tracking code, eg: UA-12345678-9</source>
-        <target state="translated">Uniquement le code de suivi, ex : UA-12345678-9</target>
+        <target state="final">Uniquement le code de suivi, ex : UA-12345678-9</target>
       </trans-unit>
     </body>
   </file>
