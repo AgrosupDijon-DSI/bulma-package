@@ -180,9 +180,4 @@ defined('TYPO3_MODE') or die();
      */
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['cardImageToMediaUpdate'] = \AgrosupDijon\BulmaPackage\Updates\CardImageToMediaUpdate::class;
 
-    /***************
-     * Override translations
-     */
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['fr']['EXT:felogin/Resources/Private/Language/locallang.xlf'][] = 'EXT:bulma_package/Resources/Private/Language/Overrides/fr.felogin.locallang.xlf';
-
 })();
