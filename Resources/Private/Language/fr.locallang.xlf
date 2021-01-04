@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
+    <header/>
+    <body>
+      <trans-unit id="linktop">
+        <source>To top</source>
+        <target state="translated">Haut de page</target>
+      </trans-unit>
+      <trans-unit id="skiptomaincontent">
+        <source>Skip to main content</source>
+        <target state="translated">Aller au contenu principal</target>
+      </trans-unit>
+      <trans-unit id="skipnavigation">
+        <source>Skip navigation block</source>
+        <target state="translated">Sauter le bloc de navigation</target>
+      </trans-unit>
+      <trans-unit id="lightbox-link-label">
+        <source>See more</source>
+        <target state="translated">Voir plus</target>
+      </trans-unit>
+      <trans-unit id="form.selectfile">
+        <source>Choose a file</source>
+        <target state="translated">Sélectionner un fichier</target>
+      </trans-unit>
+      <trans-unit id="form.selectimage">
+        <source>Choose an image</source>
+        <target state="translated">Sélectionner une image</target>
+      </trans-unit>
+      <trans-unit id="footer-title-contact">
+        <source>Contact</source>
+        <target state="needs-translation">Contact</target>
+      </trans-unit>
+      <trans-unit id="footer-title-menu">
+        <source>Links</source>
+        <target state="translated">Liens</target>
+      </trans-unit>
+      <trans-unit id="footer-title-social">
+        <source>Follow us</source>
+        <target state="translated">Nous suivre</target>
+      </trans-unit>
+      <trans-unit id="address.phone">
+        <source>Tel: </source>
+        <target state="translated">Tél. : </target>
+      </trans-unit>
+      <trans-unit id="address.fax">
+        <source>Fax: </source>
+        <target state="translated">Fax : </target>
+      </trans-unit>
+      <trans-unit id="scrolltop">
+        <source>Scroll to top</source>
+        <target state="translated">Défiler vers le haut de la page</target>
+      </trans-unit>
+      <trans-unit id="news_list_see_all">
+        <source>See all news</source>
+        <target state="translated">Voir toutes les actualités</target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_cat">
+        <source>Filtered by category: </source>
+        <target state="translated">Filtrer par catégorie : </target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_tag">
+        <source>Filtered by tag: </source>
+        <target state="translated">Filtrer par tag : </target>
+      </trans-unit>
+      <trans-unit id="news_remove_filter">
+        <source>Remove filter</source>
+        <target state="translated">Supprimer le filtre</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.header">
+        <source>Cookies used on the website!</source>
+        <target state="translated">Cookies utilisés sur le site !</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.message">
+        <source>This website uses cookies to ensure you get the best experience on our website.</source>
+        <target state="translated">Ce site utilise des cookies pour vous garantir une meilleure expérience de navigation.</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.dismiss">
+        <source>Got it!</source>
+        <target state="translated">C'est compris !</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.allow">
+        <source>Allow cookies</source>
+        <target state="translated">Autoriser les cookies</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.deny">
+        <source>Decline</source>
+        <target state="translated">Refuser</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.link">
+        <source>Learn more</source>
+        <target state="translated">En savoir plus</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.policy">
+        <source>Cookie settings</source>
+        <target state="translated">Paramétrage des cookies</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
