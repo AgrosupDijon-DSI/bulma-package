@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="ja">
+    <header/>
+    <body>
+      <trans-unit id="pages.exclude_slug_for_subpages">
+        <source>Exclude slug for subpages</source>
+        <target state="needs-translation">Exclude slug for subpages</target>
+      </trans-unit>
+      <trans-unit id="ratio.16_9">
+        <source>16:9</source>
+        <target state="needs-translation">16:9</target>
+      </trans-unit>
+      <trans-unit id="ratio.3_2">
+        <source>3:2</source>
+        <target state="needs-translation">3:2</target>
+      </trans-unit>
+      <trans-unit id="ratio.3_1">
+        <source>3:1</source>
+        <target state="needs-translation">3:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_1">
+        <source>4:1</source>
+        <target state="needs-translation">4:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.6_1">
+        <source>6:1</source>
+        <target state="needs-translation">6:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_3">
+        <source>4:3</source>
+        <target state="needs-translation">4:3</target>
+      </trans-unit>
+      <trans-unit id="ratio.1_1">
+        <source>1:1</source>
+        <target state="needs-translation">1:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.2_3">
+        <source>2:3</source>
+        <target state="needs-translation">2:3</target>
+      </trans-unit>
+      <trans-unit id="ratio.1_2">
+        <source>1:2</source>
+        <target state="needs-translation">1:2</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_5">
+        <source>4:5</source>
+        <target state="needs-translation">4:5</target>
+      </trans-unit>
+      <trans-unit id="ratio.free">
+        <source>Free</source>
+        <target state="needs-translation">Free</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.125">
+        <source>Beside Text, Centered Right</source>
+        <target state="needs-translation">Beside Text, Centered Right</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.126">
+        <source>Beside Text, Centered Left</source>
+        <target state="needs-translation">Beside Text, Centered Left</target>
+      </trans-unit>
+      <trans-unit id="field.readmore_label">
+        <source>Read More Label</source>
+        <target state="needs-translation">Read More Label</target>
+      </trans-unit>
+      <trans-unit id="field.ignore_nav_hide">
+        <source>Display "menu excluded" pages</source>
+        <target state="needs-translation">Display "menu excluded" pages</target>
+      </trans-unit>
+      <trans-unit id="field.gallery_size">
+        <source>Size</source>
+        <target state="needs-translation">Size</target>
+      </trans-unit>
+      <trans-unit id="field.tx_bulmapackage_accordion_item_active">
+        <source>Unfolded Element</source>
+        <target state="needs-translation">Unfolded Element</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class">
+        <source>Styles</source>
+        <target state="needs-translation">Styles</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.boxed">
+        <source>Boxed</source>
+        <target state="needs-translation">Boxed</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.toggle">
+        <source>Toggle</source>
+        <target state="needs-translation">Toggle</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.toggle-rounded">
+        <source>Toggle rounded</source>
+        <target state="needs-translation">Toggle rounded</target>
+      </trans-unit>
+      <trans-unit id="field.alignement">
+        <source>Alignment</source>
+        <target state="needs-translation">Alignment</target>
+      </trans-unit>
+      <trans-unit id="field.icon-alignement">
+        <source>Icon alignment</source>
+        <target state="needs-translation">Icon alignment</target>
+      </trans-unit>
+      <trans-unit id="option.left">
+        <source>Left</source>
+        <target state="needs-translation">Left</target>
+      </trans-unit>
+      <trans-unit id="option.center">
+        <source>Center</source>
+        <target state="needs-translation">Center</target>
+      </trans-unit>
+      <trans-unit id="option.right">
+        <source>Right</source>
+        <target state="needs-translation">Right</target>
+      </trans-unit>
+      <trans-unit id="option.top">
+        <source>Top</source>
+        <target state="needs-translation">Top</target>
+      </trans-unit>
+      <trans-unit id="option.bottom">
+        <source>Bottom</source>
+        <target state="needs-translation">Bottom</target>
+      </trans-unit>
+      <trans-unit id="option.default">
+        <source>Default</source>
+        <target state="needs-translation">Default</target>
+      </trans-unit>
+      <trans-unit id="option.none">
+        <source>None</source>
+        <target state="needs-translation">None</target>
+      </trans-unit>
+      <trans-unit id="option.medium">
+        <source>Medium</source>
+        <target state="needs-translation">Medium</target>
+      </trans-unit>
+      <trans-unit id="option.large">
+        <source>Large</source>
+        <target state="needs-translation">Large</target>
+      </trans-unit>
+      <trans-unit id="option.xl">
+        <source>XL</source>
+        <target state="needs-translation">XL</target>
+      </trans-unit>
+      <trans-unit id="option.xxl">
+        <source>XXL</source>
+        <target state="needs-translation">XXL</target>
+      </trans-unit>
+      <trans-unit id="option.primary">
+        <source>Primary</source>
+        <target state="needs-translation">Primary</target>
+      </trans-unit>
+      <trans-unit id="option.success">
+        <source>Success</source>
+        <target state="needs-translation">Success</target>
+      </trans-unit>
+      <trans-unit id="option.info">
+        <source>Info</source>
+        <target state="needs-translation">Info</target>
+      </trans-unit>
+      <trans-unit id="option.warning">
+        <source>Warning</source>
+        <target state="needs-translation">Warning</target>
+      </trans-unit>
+      <trans-unit id="option.danger">
+        <source>Danger</source>
+        <target state="needs-translation">Danger</target>
+      </trans-unit>
+      <trans-unit id="option.light">
+        <source>Light</source>
+        <target state="needs-translation">Light</target>
+      </trans-unit>
+      <trans-unit id="option.dark">
+        <source>Dark</source>
+        <target state="needs-translation">Dark</target>
+      </trans-unit>
+      <trans-unit id="option.has-background-transparent-light">
+        <source>Light transparent background</source>
+        <target state="needs-translation">Light transparent background</target>
+      </trans-unit>
+      <trans-unit id="option.has-background-transparent-dark">
+        <source>Dark transparent background</source>
+        <target state="needs-translation">Dark transparent background</target>
+      </trans-unit>
+      <trans-unit id="option.mobile">
+        <source>Mobile</source>
+        <target state="needs-translation">Mobile</target>
+      </trans-unit>
+      <trans-unit id="option.tablet">
+        <source>Tablet</source>
+        <target state="needs-translation">Tablet</target>
+      </trans-unit>
+      <trans-unit id="option.desktop">
+        <source>Desktop</source>
+        <target state="needs-translation">Desktop</target>
+      </trans-unit>
+      <trans-unit id="option.widescreen">
+        <source>Widescreen</source>
+        <target state="needs-translation">Widescreen</target>
+      </trans-unit>
+      <trans-unit id="option.text-center">
+        <source>Centered text</source>
+        <target state="needs-translation">Centered text</target>
+      </trans-unit>
+      <trans-unit id="option.text-right">
+        <source>Right aligned text</source>
+        <target state="needs-translation">Right aligned text</target>
+      </trans-unit>
+      <trans-unit id="menu.card_list">
+        <source>Cards</source>
+        <target state="needs-translation">Cards</target>
+      </trans-unit>
+      <trans-unit id="menu.card_dir.description">
+        <source>Insert menu to display subpages as cards</source>
+        <target state="needs-translation">Insert menu to display subpages as cards</target>
+      </trans-unit>
+      <trans-unit id="menu.card_list.description">
+        <source>Insert menu to display selected pages as cards</source>
+        <target state="needs-translation">Insert menu to display selected pages as cards</target>
+      </trans-unit>
+      <trans-unit id="menu.card_dir">
+        <source>Cards of subpages</source>
+        <target state="needs-translation">Cards of subpages</target>
+      </trans-unit>
+      <trans-unit id="menu.card.align">
+        <source>Alignment (Header)</source>
+        <target state="needs-translation">Alignment (Header)</target>
+      </trans-unit>
+      <trans-unit id="menu.card.columns">
+        <source>Columns</source>
+        <target state="needs-translation">Columns</target>
+      </trans-unit>
+      <trans-unit id="field.style">
+        <source>Style</source>
+        <target state="needs-translation">Style</target>
+      </trans-unit>
+      <trans-unit id="menu.card.style.no-border">
+        <source>No border</source>
+        <target state="needs-translation">No border</target>
+      </trans-unit>
+      <trans-unit id="option.is-centered">
+        <source>Centered</source>
+        <target state="needs-translation">Centered</target>
+      </trans-unit>
+      <trans-unit id="option.is-gapless">
+        <source>Gapless</source>
+        <target state="needs-translation">Gapless</target>
+      </trans-unit>
+      <trans-unit id="menu.card.options">
+        <source>Options</source>
+        <target state="needs-translation">Options</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_dir">
+        <source>Thumbnails of subpages</source>
+        <target state="needs-translation">Thumbnails of subpages</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_dir.description">
+        <source>Insert menu to display subpages as thumbnail</source>
+        <target state="needs-translation">Insert menu to display subpages as thumbnail</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_list">
+        <source>Thumbnails</source>
+        <target state="needs-translation">Thumbnails</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_list.description">
+        <source>Insert menu to display selected pages as thumbnail</source>
+        <target state="needs-translation">Insert menu to display selected pages as thumbnail</target>
+      </trans-unit>
+      <trans-unit id="settings">
+        <source>Settings</source>
+        <target state="needs-translation">Settings</target>
+      </trans-unit>
+      <trans-unit id="advanced">
+        <source>Advanced</source>
+        <target state="needs-translation">Advanced</target>
+      </trans-unit>
+      <trans-unit id="pages.thumbnail">
+        <source>Thumbnail</source>
+        <target state="needs-translation">Thumbnail</target>
+      </trans-unit>
+      <trans-unit id="content_element.iframe">
+        <source>Iframe</source>
+        <target state="needs-translation">Iframe</target>
+      </trans-unit>
+      <trans-unit id="content_element.iframe.description">
+        <source>This element will make your iframe responsive.</source>
+        <target state="needs-translation">This element will make your iframe responsive.</target>
+      </trans-unit>
+      <trans-unit id="field.iframe_bodytext">
+        <source>Code Iframe</source>
+        <target state="needs-translation">Code Iframe</target>
+      </trans-unit>
+      <trans-unit id="iframe.ratio">
+        <source>Ratio</source>
+        <target state="needs-translation">Ratio</target>
+      </trans-unit>
+      <trans-unit id="content_element.carousel">
+        <source>Carousel</source>
+        <target state="needs-translation">Carousel</target>
+      </trans-unit>
+      <trans-unit id="content_element.carousel.description">
+        <source>Insert Carousel element with different contents</source>
+        <target state="needs-translation">Insert Carousel element with different contents</target>
+      </trans-unit>
+      <trans-unit id="content_element.accordion">
+        <source>Accordion</source>
+        <target state="needs-translation">Accordion</target>
+      </trans-unit>
+      <trans-unit id="content_element.accordion.description">
+        <source>Insert several Accordion element(s)</source>
+        <target state="needs-translation">Insert several Accordion element(s)</target>
+      </trans-unit>
+      <trans-unit id="carousel.options">
+        <source>Carousel Options</source>
+        <target state="needs-translation">Carousel Options</target>
+      </trans-unit>
+      <trans-unit id="carousel.ratio">
+        <source>Cell ratio</source>
+        <target state="needs-translation">Cell ratio</target>
+      </trans-unit>
+      <trans-unit id="carousel.cells">
+        <source>Cells displayed on carousel viewport</source>
+        <target state="needs-translation">Cells displayed on carousel viewport</target>
+      </trans-unit>
+      <trans-unit id="carousel.autoPlay">
+        <source>Interval in ms (0 to deactivate autoplay)</source>
+        <target state="needs-translation">Interval in ms (0 to deactivate autoplay)</target>
+      </trans-unit>
+      <trans-unit id="carousel.wrapAround">
+        <source>wrapAround</source>
+        <target state="needs-translation">wrapAround</target>
+      </trans-unit>
+      <trans-unit id="carousel.wrapAround.description">
+        <source>At the end of cells, wrap-around to the other end for infinite scrolling</source>
+        <target state="needs-translation">At the end of cells, wrap-around to the other end for infinite scrolling</target>
+      </trans-unit>
+      <trans-unit id="carousel.cellAlign">
+        <source>Cells alignment within the carousel element</source>
+        <target state="needs-translation">Cells alignment within the carousel element</target>
+      </trans-unit>
+      <trans-unit id="carousel.pageDots">
+        <source>pageDots</source>
+        <target state="needs-translation">pageDots</target>
+      </trans-unit>
+      <trans-unit id="carousel.pageDots.description">
+        <source>Enables page dots</source>
+        <target state="needs-translation">Enables page dots</target>
+      </trans-unit>
+      <trans-unit id="carousel.prevNextButtons">
+        <source>prevNextButtons</source>
+        <target state="needs-translation">prevNextButtons</target>
+      </trans-unit>
+      <trans-unit id="carousel.prevNextButtons.description">
+        <source>Enables previous &amp; next buttons</source>
+        <target state="needs-translation">Enables previous &amp; next buttons</target>
+      </trans-unit>
+      <trans-unit id="carousel.fade">
+        <source>fade</source>
+        <target state="needs-translation">fade</target>
+      </trans-unit>
+      <trans-unit id="carousel.fade.description">
+        <source>Fades between transitioning slides instead of moving</source>
+        <target state="needs-translation">Fades between transitioning slides instead of moving</target>
+      </trans-unit>
+      <trans-unit id="carousel.groupCells">
+        <source>Groups cells together in slides. Value must be either a number, "false" to deactivate, or "true" to group cells that fit in carousel viewport</source>
+        <target state="needs-translation">Groups cells together in slides. Value must be either a number, "false" to deactivate, or "true" to group cells that fit in carousel viewport</target>
+      </trans-unit>
+      <trans-unit id="carousel_item">
+        <source>Carousel Item</source>
+        <target state="needs-translation">Carousel Item</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.add">
+        <source>Create new carousel item</source>
+        <target state="needs-translation">Create new carousel item</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.tt_content">
+        <source>Carousel</source>
+        <target state="needs-translation">Carousel</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.link">
+        <source>Link</source>
+        <target state="needs-translation">Link</target>
+      </trans-unit>
+      <trans-unit id="palette.text">
+        <source>Text</source>
+        <target state="needs-translation">Text</target>
+      </trans-unit>
+      <trans-unit id="palette.call_to_action">
+        <source>Call to action</source>
+        <target state="needs-translation">Call to action</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.header">
+        <source>Header</source>
+        <target state="needs-translation">Header</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.subheader">
+        <source>Subheader</source>
+        <target state="needs-translation">Subheader</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.text_color">
+        <source>Text color</source>
+        <target state="needs-translation">Text color</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.button_class">
+        <source>Button type</source>
+        <target state="needs-translation">Button type</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.button_text">
+        <source>Label</source>
+        <target state="needs-translation">Label</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.background_color">
+        <source>Background color</source>
+        <target state="needs-translation">Background color</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.image">
+        <source>Image</source>
+        <target state="needs-translation">Image</target>
+      </trans-unit>
+      <trans-unit id="accordion_item">
+        <source>Accordion Item</source>
+        <target state="needs-translation">Accordion Item</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.add">
+        <source>Create new accordion</source>
+        <target state="needs-translation">Create new accordion</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.record">
+        <source>Content Elements</source>
+        <target state="needs-translation">Content Elements</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.record.add">
+        <source>Create new content</source>
+        <target state="needs-translation">Create new content</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.title">
+        <source>Accordion title</source>
+        <target state="needs-translation">Accordion title</target>
+      </trans-unit>
+      <trans-unit id="content_element.tab">
+        <source>Tab</source>
+        <target state="needs-translation">Tab</target>
+      </trans-unit>
+      <trans-unit id="content_element.tab.description">
+        <source>Insert several Tab element(s)</source>
+        <target state="needs-translation">Insert several Tab element(s)</target>
+      </trans-unit>
+      <trans-unit id="tab_item">
+        <source>Tab Item</source>
+        <target state="needs-translation">Tab Item</target>
+      </trans-unit>
+      <trans-unit id="tab_item.add">
+        <source>Create new tab item</source>
+        <target state="needs-translation">Create new tab item</target>
+      </trans-unit>
+      <trans-unit id="tab_item.record">
+        <source>Content Elements</source>
+        <target state="needs-translation">Content Elements</target>
+      </trans-unit>
+      <trans-unit id="tab_item.record.add">
+        <source>Create new content</source>
+        <target state="needs-translation">Create new content</target>
+      </trans-unit>
+      <trans-unit id="tab_item.title">
+        <source>Tab title</source>
+        <target state="needs-translation">Tab title</target>
+      </trans-unit>
+      <trans-unit id="content_element.card_group">
+        <source>Card Group</source>
+        <target state="needs-translation">Card Group</target>
+      </trans-unit>
+      <trans-unit id="content_element.card_group.description">
+        <source>Insert a element with several content cards</source>
+        <target state="needs-translation">Insert a element with several content cards</target>
+      </trans-unit>
+      <trans-unit id="card_group_item">
+        <source>Card</source>
+        <target state="needs-translation">Card</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.add">
+        <source>Create new card</source>
+        <target state="needs-translation">Create new card</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.header">
+        <source>Header</source>
+        <target state="needs-translation">Header</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.subheader">
+        <source>Subheader</source>
+        <target state="needs-translation">Subheader</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.media">
+        <source>Media</source>
+        <target state="needs-translation">Media</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.bodytext">
+        <source>Text</source>
+        <target state="needs-translation">Text</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.link">
+        <source>Link</source>
+        <target state="needs-translation">Link</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.link_title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.tt_content">
+        <source>Card Group</source>
+        <target state="needs-translation">Card Group</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item">
+        <source>Icon Group Item</source>
+        <target state="needs-translation">Icon Group Item</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.tt_content">
+        <source>Icon Group</source>
+        <target state="needs-translation">Icon Group</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.header">
+        <source>Header</source>
+        <target state="needs-translation">Header</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.subheader">
+        <source>Subheader</source>
+        <target state="needs-translation">Subheader</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.link">
+        <source>Link</source>
+        <target state="needs-translation">Link</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_set">
+        <source>Icon Set</source>
+        <target state="needs-translation">Icon Set</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon">
+        <source>Icon</source>
+        <target state="needs-translation">Icon</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_file">
+        <source>Icon File</source>
+        <target state="needs-translation">Icon File</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_size">
+        <source>Icon Size</source>
+        <target state="needs-translation">Icon Size</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_color">
+        <source>Icon Color</source>
+        <target state="needs-translation">Icon Color</target>
+      </trans-unit>
+      <trans-unit id="content_element.video">
+        <source>Video</source>
+        <target state="needs-translation">Video</target>
+      </trans-unit>
+      <trans-unit id="content_element.message">
+        <source>Message</source>
+        <target state="needs-translation">Message</target>
+      </trans-unit>
+      <trans-unit id="content_element.message.description">
+        <source>Insert Message element with simple text.</source>
+        <target state="needs-translation">Insert Message element with simple text.</target>
+      </trans-unit>
+      <trans-unit id="content_element.video.description">
+        <source>Any number of youtube and vimeo videos in columns and rows with a caption.</source>
+        <target state="needs-translation">Any number of youtube and vimeo videos in columns and rows with a caption.</target>
+      </trans-unit>
+      <trans-unit id="content_element.icon_group">
+        <source>Icon Group</source>
+        <target state="needs-translation">Icon Group</target>
+      </trans-unit>
+      <trans-unit id="content_element.icon_group.description">
+        <source>Insert a element with several icons.</source>
+        <target state="needs-translation">Insert a element with several icons.</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class">
+        <source>Background Color</source>
+        <target state="needs-translation">Background Color</target>
+      </trans-unit>
+      <trans-unit id="field.message_class">
+        <source>Message Class</source>
+        <target state="needs-translation">Message Class</target>
+      </trans-unit>
+      <trans-unit id="field.file_folder">
+        <source>File Folder</source>
+        <target state="needs-translation">File Folder</target>
+      </trans-unit>
+      <trans-unit id="tablelayout.fullwidth">
+        <source>Full width</source>
+        <target state="needs-translation">Full width</target>
+      </trans-unit>
+      <trans-unit id="tablelayout.hoverable">
+        <source>Hoverable</source>
+        <target state="needs-translation">Hoverable</target>
+      </trans-unit>
+      <trans-unit id="tablelayout.narrow">
+        <source>Narrow</source>
+        <target state="needs-translation">Narrow</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.none">
+        <source>None</source>
+        <target state="needs-translation">None</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.primary">
+        <source>Primary</source>
+        <target state="needs-translation">Primary</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.info">
+        <source>Info</source>
+        <target state="needs-translation">Info</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.success">
+        <source>Success</source>
+        <target state="needs-translation">Success</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.warning">
+        <source>Warning</source>
+        <target state="needs-translation">Warning</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.danger">
+        <source>Danger</source>
+        <target state="needs-translation">Danger</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.light">
+        <source>Light</source>
+        <target state="needs-translation">Light</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.dark">
+        <source>Dark</source>
+        <target state="needs-translation">Dark</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.1_column">
+        <source>Bulma</source>
+        <target state="needs-translation">Bulma</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.column.content">
+        <source>Content</source>
+        <target state="needs-translation">Content</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings">
+        <source>Website Settings</source>
+        <target state="needs-translation">Website Settings</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color">
+        <source>Custom color</source>
+        <target state="needs-translation">Custom color</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.layout_category">
+        <source>Custom</source>
+        <target state="needs-translation">Custom</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.label">
+        <source>Label</source>
+        <target state="needs-translation">Label</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_primary">
+        <source>Primary</source>
+        <target state="needs-translation">Primary</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_link">
+        <source>Links</source>
+        <target state="needs-translation">Links</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_success">
+        <source>Success</source>
+        <target state="needs-translation">Success</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_info">
+        <source>Info</source>
+        <target state="needs-translation">Info</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_warning">
+        <source>Warning</source>
+        <target state="needs-translation">Warning</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_danger">
+        <source>Danger</source>
+        <target state="needs-translation">Danger</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_text_dark">
+        <source>Text dark</source>
+        <target state="needs-translation">Text dark</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.warning">
+        <source>You tried to create a new "Website Settings" but one was already present.</source>
+        <target state="needs-translation">You tried to create a new "Website Settings" but one was already present.</target>
+      </trans-unit>
+      <trans-unit id="palette.bulmapackage_address">
+        <source>Address</source>
+        <target state="needs-translation">Address</target>
+      </trans-unit>
+      <trans-unit id="palette.tablayout">
+        <source>Tab Layout</source>
+        <target state="needs-translation">Tab Layout</target>
+      </trans-unit>
+      <trans-unit id="palette.cardlayout">
+        <source>Card Layout</source>
+        <target state="needs-translation">Card Layout</target>
+      </trans-unit>
+      <trans-unit id="palette.icongrouplayout">
+        <source>Icon group Layout</source>
+        <target state="needs-translation">Icon group Layout</target>
+      </trans-unit>
+      <trans-unit id="palette.iframelayout">
+        <source>Iframe Layout</source>
+        <target state="needs-translation">Iframe Layout</target>
+      </trans-unit>
+      <trans-unit id="palette.icon">
+        <source>Icon</source>
+        <target state="needs-translation">Icon</target>
+      </trans-unit>
+      <trans-unit id="palette.thumbnaillayout">
+        <source>Thumbnail Layout</source>
+        <target state="needs-translation">Thumbnail Layout</target>
+      </trans-unit>
+      <trans-unit id="tabs.bulmapackage_social">
+        <source>Socials Networks</source>
+        <target state="needs-translation">Socials Networks</target>
+      </trans-unit>
+      <trans-unit id="tabs.bulmapackage_menu">
+        <source>Menu</source>
+        <target state="needs-translation">Menu</target>
+      </trans-unit>
+      <trans-unit id="tabs.colors">
+        <source>Colors</source>
+        <target state="needs-translation">Colors</target>
+      </trans-unit>
+      <trans-unit id="field.header">
+        <source>Header</source>
+        <target state="needs-translation">Header</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.menu_layout">
+        <source>Type</source>
+        <target state="needs-translation">Type</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.menu_layout.megamenu">
+        <source>Mega menu</source>
+        <target state="needs-translation">Mega menu</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.title_seo">
+        <source>Seo title</source>
+        <target state="needs-translation">Seo title</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.logo_main">
+        <source>Main logo</source>
+        <target state="needs-translation">Main logo</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.logo_partner">
+        <source>Partner logo</source>
+        <target state="needs-translation">Partner logo</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.logos_partners">
+        <source>Partners logos</source>
+        <target state="needs-translation">Partners logos</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.favicon">
+        <source>Favicon</source>
+        <target state="needs-translation">Favicon</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.code_analytics">
+        <source>Tracking code</source>
+        <target state="needs-translation">Tracking code</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.address_title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.address">
+        <source>Address</source>
+        <target state="needs-translation">Address</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.zip">
+        <source>Zip</source>
+        <target state="needs-translation">Zip</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.city">
+        <source>City</source>
+        <target state="needs-translation">City</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.country">
+        <source>Country</source>
+        <target state="needs-translation">Country</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.phone">
+        <source>Phone</source>
+        <target state="needs-translation">Phone</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.fax">
+        <source>Fax</source>
+        <target state="needs-translation">Fax</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.email">
+        <source>Email</source>
+        <target state="needs-translation">Email</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.tx_bulmapackage_settings_link_item">
+        <source>Links</source>
+        <target state="needs-translation">Links</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.tx_bulmapackage_settings_link_item.add">
+        <source>Create new link</source>
+        <target state="needs-translation">Create new link</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item">
+        <source>Link</source>
+        <target state="needs-translation">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.label">
+        <source>Label</source>
+        <target state="needs-translation">Label</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.link">
+        <source>Link</source>
+        <target state="needs-translation">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.force_label">
+        <source>Always show label</source>
+        <target state="needs-translation">Always show label</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon">
+        <source>Icon</source>
+        <target state="needs-translation">Icon</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon_custom">
+        <source>Custom icon</source>
+        <target state="needs-translation">Custom icon</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.book">
+        <source>Book</source>
+        <target state="needs-translation">Book</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.user">
+        <source>Student</source>
+        <target state="needs-translation">Student</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.student">
+        <source>User</source>
+        <target state="needs-translation">User</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock">
+        <source>Lock</source>
+        <target state="needs-translation">Lock</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.standalone">
+        <source>Standalone</source>
+        <target state="needs-translation">Standalone</target>
+      </trans-unit>
+      <trans-unit id="bulma-website">
+        <source>Bulma website</source>
+        <target state="needs-translation">Bulma website</target>
+      </trans-unit>
+      <trans-unit id="content_layout.vcentered">
+        <source>Vertical alignment</source>
+        <target state="needs-translation">Vertical alignment</target>
+      </trans-unit>
+      <trans-unit id="content_layout.cards">
+        <source>Cards</source>
+        <target state="needs-translation">Cards</target>
+      </trans-unit>
+      <trans-unit id="content_frame.fullwidth">
+        <source>Full width</source>
+        <target state="needs-translation">Full width</target>
+      </trans-unit>
+      <trans-unit id="content_frame.hero">
+        <source>Hero</source>
+        <target state="needs-translation">Hero</target>
+      </trans-unit>
+      <trans-unit id="tt_content.colPos.nestedContentColPos">
+        <source>Nested content</source>
+        <target state="needs-translation">Nested content</target>
+      </trans-unit>
+      <trans-unit id="content_group.media">
+        <source>Media</source>
+        <target state="needs-translation">Media</target>
+      </trans-unit>
+      <trans-unit id="news.templateLayouts.4cols">
+        <source>4 Columns</source>
+        <target state="needs-translation">4 Columns</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
