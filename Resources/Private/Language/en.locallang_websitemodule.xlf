@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="en">
+    <header/>
+    <body>
+      <trans-unit id="overview.title">
+        <source>Website Management</source>
+        <target state="needs-translation">Website Management</target>
+      </trans-unit>
+      <trans-unit id="overview.noRootPages.title">
+        <source>No root pages found!</source>
+        <target state="needs-translation">No root pages found!</target>
+      </trans-unit>
+      <trans-unit id="overview.noRootPages.message">
+        <source>Please set at least one page as "Root Page" through page properties.</source>
+        <target state="needs-translation">Please set at least one page as "Root Page" through page properties.</target>
+      </trans-unit>
+      <trans-unit id="overview.website">
+        <source>Website</source>
+        <target state="needs-translation">Website</target>
+      </trans-unit>
+      <trans-unit id="overview.configuration">
+        <source>Configuration</source>
+        <target state="needs-translation">Configuration</target>
+      </trans-unit>
+      <trans-unit id="overview.configuration.create">
+        <source>Create new configuration</source>
+        <target state="needs-translation">Create new configuration</target>
+      </trans-unit>
+      <trans-unit id="overview.configuration.edit">
+        <source>Edit configuration</source>
+        <target state="needs-translation">Edit configuration</target>
+      </trans-unit>
+      <trans-unit id="overview.configuration.translate">
+        <source>Translate configuration</source>
+        <target state="needs-translation">Translate configuration</target>
+      </trans-unit>
+      <trans-unit id="customColors.title">
+        <source>Colors Management</source>
+        <target state="needs-translation">Colors Management</target>
+      </trans-unit>
+      <trans-unit id="customColors.noColor.message">
+        <source>No color yet!</source>
+        <target state="needs-translation">No color yet!</target>
+      </trans-unit>
+      <trans-unit id="customColors.color.create">
+        <source>Create new color</source>
+        <target state="needs-translation">Create new color</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
