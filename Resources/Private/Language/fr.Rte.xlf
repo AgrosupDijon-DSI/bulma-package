@@ -7,101 +7,101 @@
         <source>Box</source>
         <target state="needs-translation">Box</target>
       </trans-unit>
-      <trans-unit id="style.table.bordered">
+      <trans-unit id="style.table.bordered" approved="yes">
         <source>Table Bordered</source>
-        <target state="translated">Tableau avec bordure</target>
+        <target state="final">Tableau avec bordure</target>
       </trans-unit>
       <trans-unit id="style.notification">
         <source>Notification</source>
         <target state="needs-translation">Notification</target>
       </trans-unit>
-      <trans-unit id="style.notification.primary">
+      <trans-unit id="style.notification.primary" approved="yes">
         <source>Notification Primary</source>
-        <target state="translated">Notification Principale</target>
+        <target state="final">Notification Principale</target>
       </trans-unit>
-      <trans-unit id="style.notification.success">
+      <trans-unit id="style.notification.success" approved="yes">
         <source>Notification Success</source>
-        <target state="translated">Notification Succès</target>
+        <target state="final">Notification Succès</target>
       </trans-unit>
       <trans-unit id="style.notification.info">
         <source>Notification Info</source>
         <target state="needs-translation">Notification Info</target>
       </trans-unit>
-      <trans-unit id="style.notification.warning">
+      <trans-unit id="style.notification.warning" approved="yes">
         <source>Notification Warning</source>
-        <target state="translated">Notification Avertissement</target>
+        <target state="final">Notification Avertissement</target>
       </trans-unit>
       <trans-unit id="style.notification.danger">
         <source>Notification Danger</source>
         <target state="needs-translation">Notification Danger</target>
       </trans-unit>
-      <trans-unit id="style.notification.light">
+      <trans-unit id="style.notification.light" approved="yes">
         <source>Notification Light</source>
-        <target state="translated">Notification Claire</target>
+        <target state="final">Notification Claire</target>
       </trans-unit>
-      <trans-unit id="style.notification.dark">
+      <trans-unit id="style.notification.dark" approved="yes">
         <source>Notification Dark</source>
-        <target state="translated">Notification Sombre</target>
+        <target state="final">Notification Sombre</target>
       </trans-unit>
-      <trans-unit id="style.button">
+      <trans-unit id="style.button" approved="yes">
         <source>Button</source>
-        <target state="translated">Bouton</target>
+        <target state="final">Bouton</target>
       </trans-unit>
-      <trans-unit id="style.button.primary">
+      <trans-unit id="style.button.primary" approved="yes">
         <source>Button Primary</source>
-        <target state="translated">Bouton Principal</target>
+        <target state="final">Bouton Principal</target>
       </trans-unit>
-      <trans-unit id="style.button.success">
+      <trans-unit id="style.button.success" approved="yes">
         <source>Button Success</source>
-        <target state="translated">Bouton Succès</target>
+        <target state="final">Bouton Succès</target>
       </trans-unit>
-      <trans-unit id="style.button.info">
+      <trans-unit id="style.button.info" approved="yes">
         <source>Button Info</source>
-        <target state="translated">Bouton Info</target>
+        <target state="final">Bouton Info</target>
       </trans-unit>
-      <trans-unit id="style.button.warning">
+      <trans-unit id="style.button.warning" approved="yes">
         <source>Button Warning</source>
-        <target state="translated">Bouton Avertissement</target>
+        <target state="final">Bouton Avertissement</target>
       </trans-unit>
-      <trans-unit id="style.button.danger">
+      <trans-unit id="style.button.danger" approved="yes">
         <source>Button Danger</source>
-        <target state="translated">Bouton Danger</target>
+        <target state="final">Bouton Danger</target>
       </trans-unit>
-      <trans-unit id="style.button.light">
+      <trans-unit id="style.button.light" approved="yes">
         <source>Button Light</source>
-        <target state="translated">Bouton Clair</target>
+        <target state="final">Bouton Clair</target>
       </trans-unit>
-      <trans-unit id="style.button.dark">
+      <trans-unit id="style.button.dark" approved="yes">
         <source>Button Dark</source>
-        <target state="translated">Bouton Foncé</target>
+        <target state="final">Bouton Foncé</target>
       </trans-unit>
-      <trans-unit id="style.primary">
+      <trans-unit id="style.primary" approved="yes">
         <source>Primary</source>
-        <target state="translated">Principal</target>
+        <target state="final">Principal</target>
       </trans-unit>
-      <trans-unit id="style.success">
+      <trans-unit id="style.success" approved="yes">
         <source>Success</source>
-        <target state="translated">Succès</target>
+        <target state="final">Succès</target>
       </trans-unit>
       <trans-unit id="style.info">
         <source>Info</source>
         <target state="needs-translation">Info</target>
       </trans-unit>
-      <trans-unit id="style.warning">
+      <trans-unit id="style.warning" approved="yes">
         <source>Warning</source>
-        <target state="translated">Avertissement</target>
+        <target state="final">Avertissement</target>
       </trans-unit>
       <trans-unit id="style.danger">
         <source>Danger</source>
         <target state="needs-translation">Danger</target>
       </trans-unit>
-      <trans-unit id="style.light">
+      <trans-unit id="style.light" approved="yes">
         <source>Light</source>
-        <target state="translated">Clair</target>
+        <target state="final">Clair</target>
       </trans-unit>
-      <trans-unit id="style.dark">
+      <trans-unit id="style.dark" approved="yes">
         <source>Dark</source>
-        <target state="translated">Sombre</target>
+        <target state="final">Sombre</target>
       </trans-unit>
     </body>
   </file>
