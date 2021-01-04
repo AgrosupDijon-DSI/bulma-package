@@ -3,49 +3,49 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
     <header/>
     <body>
-      <trans-unit id="overview.title">
+      <trans-unit id="overview.title" approved="yes">
         <source>Website Management</source>
-        <target state="translated">Configuration du site</target>
+        <target state="final">Configuration du site</target>
       </trans-unit>
-      <trans-unit id="overview.noRootPages.title">
+      <trans-unit id="overview.noRootPages.title" approved="yes">
         <source>No root pages found!</source>
-        <target state="translated">Aucune page "racine" trouvée !</target>
+        <target state="final">Aucune page "racine" trouvée !</target>
       </trans-unit>
-      <trans-unit id="overview.noRootPages.message">
+      <trans-unit id="overview.noRootPages.message" approved="yes">
         <source>Please set at least one page as "Root Page" through page properties.</source>
-        <target state="translated">Au moins une page doit être définie en tant que "Page racine" dans les propriétés de la page.</target>
+        <target state="final">Au moins une page doit être définie en tant que "Page racine" dans les propriétés de la page.</target>
       </trans-unit>
-      <trans-unit id="overview.website">
+      <trans-unit id="overview.website" approved="yes">
         <source>Website</source>
-        <target state="translated">Site</target>
+        <target state="final">Site</target>
       </trans-unit>
       <trans-unit id="overview.configuration">
         <source>Configuration</source>
         <target state="needs-translation">Configuration</target>
       </trans-unit>
-      <trans-unit id="overview.configuration.create">
+      <trans-unit id="overview.configuration.create" approved="yes">
         <source>Create new configuration</source>
-        <target state="translated">Créer une nouvelle configuration</target>
+        <target state="final">Créer une nouvelle configuration</target>
       </trans-unit>
-      <trans-unit id="overview.configuration.edit">
+      <trans-unit id="overview.configuration.edit" approved="yes">
         <source>Edit configuration</source>
-        <target state="translated">Modifier la configuration</target>
+        <target state="final">Modifier la configuration</target>
       </trans-unit>
-      <trans-unit id="overview.configuration.translate">
+      <trans-unit id="overview.configuration.translate" approved="yes">
         <source>Translate configuration</source>
-        <target state="translated">Traduire la configuration</target>
+        <target state="final">Traduire la configuration</target>
       </trans-unit>
-      <trans-unit id="customColors.title">
+      <trans-unit id="customColors.title" approved="yes">
         <source>Colors Management</source>
-        <target state="translated">Gestion des couleurs</target>
+        <target state="final">Gestion des couleurs</target>
       </trans-unit>
-      <trans-unit id="customColors.noColor.message">
+      <trans-unit id="customColors.noColor.message" approved="yes">
         <source>No color yet!</source>
-        <target state="translated">Aucune couleur à lister pour l'instant !</target>
+        <target state="final">Aucune couleur à lister pour l'instant !</target>
       </trans-unit>
-      <trans-unit id="customColors.color.create">
+      <trans-unit id="customColors.color.create" approved="yes">
         <source>Create new color</source>
-        <target state="translated">Créer une nouvelle couleur</target>
+        <target state="final">Créer une nouvelle couleur</target>
       </trans-unit>
     </body>
   </file>
