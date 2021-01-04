@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" target-language="he" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package">
+    <header/>
+    <body>
+      <trans-unit id="linktop">
+        <source>To top</source>
+        <target state="needs-translation">To top</target>
+      </trans-unit>
+      <trans-unit id="skiptomaincontent">
+        <source>Skip to main content</source>
+        <target state="needs-translation">Skip to main content</target>
+      </trans-unit>
+      <trans-unit id="skipnavigation">
+        <source>Skip navigation block</source>
+        <target state="needs-translation">Skip navigation block</target>
+      </trans-unit>
+      <trans-unit id="lightbox-link-label">
+        <source>See more</source>
+        <target state="needs-translation">See more</target>
+      </trans-unit>
+      <trans-unit id="form.selectfile">
+        <source>Choose a file</source>
+        <target state="needs-translation">Choose a file</target>
+      </trans-unit>
+      <trans-unit id="form.selectimage">
+        <source>Choose an image</source>
+        <target state="needs-translation">Choose an image</target>
+      </trans-unit>
+      <trans-unit id="footer-title-contact">
+        <source>Contact</source>
+        <target state="needs-translation">Contact</target>
+      </trans-unit>
+      <trans-unit id="footer-title-menu">
+        <source>Links</source>
+        <target state="needs-translation">Links</target>
+      </trans-unit>
+      <trans-unit id="footer-title-social">
+        <source>Follow us</source>
+        <target state="needs-translation">Follow us</target>
+      </trans-unit>
+      <trans-unit id="address.phone">
+        <source>Tel: </source>
+        <target state="needs-translation">Tel: </target>
+      </trans-unit>
+      <trans-unit id="address.fax">
+        <source>Fax: </source>
+        <target state="needs-translation">Fax: </target>
+      </trans-unit>
+      <trans-unit id="scrolltop">
+        <source>Scroll to top</source>
+        <target state="needs-translation">Scroll to top</target>
+      </trans-unit>
+      <trans-unit id="news_list_see_all">
+        <source>See all news</source>
+        <target state="needs-translation">See all news</target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_cat">
+        <source>Filtered by category: </source>
+        <target state="needs-translation">Filtered by category: </target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_tag">
+        <source>Filtered by tag: </source>
+        <target state="needs-translation">Filtered by tag: </target>
+      </trans-unit>
+      <trans-unit id="news_remove_filter">
+        <source>Remove filter</source>
+        <target state="needs-translation">Remove filter</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.header">
+        <source>Cookies used on the website!</source>
+        <target state="needs-translation">Cookies used on the website!</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.message">
+        <source>This website uses cookies to ensure you get the best experience on our website.</source>
+        <target state="needs-translation">This website uses cookies to ensure you get the best experience on our website.</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.dismiss">
+        <source>Got it!</source>
+        <target state="needs-translation">Got it!</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.allow">
+        <source>Allow cookies</source>
+        <target state="needs-translation">Allow cookies</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.deny">
+        <source>Decline</source>
+        <target state="needs-translation">Decline</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.link">
+        <source>Learn more</source>
+        <target state="needs-translation">Learn more</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.policy">
+        <source>Cookie settings</source>
+        <target state="needs-translation">Cookie settings</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
