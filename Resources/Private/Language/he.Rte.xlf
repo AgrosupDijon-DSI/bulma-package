@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="he">
+    <header/>
+    <body>
+      <trans-unit id="style.box">
+        <source>Box</source>
+        <target state="needs-translation">Box</target>
+      </trans-unit>
+      <trans-unit id="style.table.bordered">
+        <source>Table Bordered</source>
+        <target state="needs-translation">Table Bordered</target>
+      </trans-unit>
+      <trans-unit id="style.notification">
+        <source>Notification</source>
+        <target state="needs-translation">Notification</target>
+      </trans-unit>
+      <trans-unit id="style.notification.primary">
+        <source>Notification Primary</source>
+        <target state="needs-translation">Notification Primary</target>
+      </trans-unit>
+      <trans-unit id="style.notification.success">
+        <source>Notification Success</source>
+        <target state="needs-translation">Notification Success</target>
+      </trans-unit>
+      <trans-unit id="style.notification.info">
+        <source>Notification Info</source>
+        <target state="needs-translation">Notification Info</target>
+      </trans-unit>
+      <trans-unit id="style.notification.warning">
+        <source>Notification Warning</source>
+        <target state="needs-translation">Notification Warning</target>
+      </trans-unit>
+      <trans-unit id="style.notification.danger">
+        <source>Notification Danger</source>
+        <target state="needs-translation">Notification Danger</target>
+      </trans-unit>
+      <trans-unit id="style.notification.light">
+        <source>Notification Light</source>
+        <target state="needs-translation">Notification Light</target>
+      </trans-unit>
+      <trans-unit id="style.notification.dark">
+        <source>Notification Dark</source>
+        <target state="needs-translation">Notification Dark</target>
+      </trans-unit>
+      <trans-unit id="style.button">
+        <source>Button</source>
+        <target state="needs-translation">Button</target>
+      </trans-unit>
+      <trans-unit id="style.button.primary">
+        <source>Button Primary</source>
+        <target state="needs-translation">Button Primary</target>
+      </trans-unit>
+      <trans-unit id="style.button.success">
+        <source>Button Success</source>
+        <target state="needs-translation">Button Success</target>
+      </trans-unit>
+      <trans-unit id="style.button.info">
+        <source>Button Info</source>
+        <target state="needs-translation">Button Info</target>
+      </trans-unit>
+      <trans-unit id="style.button.warning">
+        <source>Button Warning</source>
+        <target state="needs-translation">Button Warning</target>
+      </trans-unit>
+      <trans-unit id="style.button.danger">
+        <source>Button Danger</source>
+        <target state="needs-translation">Button Danger</target>
+      </trans-unit>
+      <trans-unit id="style.button.light">
+        <source>Button Light</source>
+        <target state="needs-translation">Button Light</target>
+      </trans-unit>
+      <trans-unit id="style.button.dark">
+        <source>Button Dark</source>
+        <target state="needs-translation">Button Dark</target>
+      </trans-unit>
+      <trans-unit id="style.primary">
+        <source>Primary</source>
+        <target state="needs-translation">Primary</target>
+      </trans-unit>
+      <trans-unit id="style.success">
+        <source>Success</source>
+        <target state="needs-translation">Success</target>
+      </trans-unit>
+      <trans-unit id="style.info">
+        <source>Info</source>
+        <target state="needs-translation">Info</target>
+      </trans-unit>
+      <trans-unit id="style.warning">
+        <source>Warning</source>
+        <target state="needs-translation">Warning</target>
+      </trans-unit>
+      <trans-unit id="style.danger">
+        <source>Danger</source>
+        <target state="needs-translation">Danger</target>
+      </trans-unit>
+      <trans-unit id="style.light">
+        <source>Light</source>
+        <target state="needs-translation">Light</target>
+      </trans-unit>
+      <trans-unit id="style.dark">
+        <source>Dark</source>
+        <target state="needs-translation">Dark</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
