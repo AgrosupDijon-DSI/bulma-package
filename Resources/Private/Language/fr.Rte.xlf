@@ -3,31 +3,82 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
     <header/>
     <body>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </body>
+      <trans-unit id="style.table.bordered" approved="yes">
+        <source>Table Bordered</source>
+        <target state="final">Tableau avec bordure</target>
+      </trans-unit>
+      <trans-unit id="style.notification.primary" approved="yes">
+        <source>Notification Primary</source>
+        <target state="final">Notification Principale</target>
+      </trans-unit>
+      <trans-unit id="style.notification.success" approved="yes">
+        <source>Notification Success</source>
+        <target state="final">Notification Succès</target>
+      </trans-unit>
+      <trans-unit id="style.notification.warning" approved="yes">
+        <source>Notification Warning</source>
+        <target state="final">Notification Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.notification.light" approved="yes">
+        <source>Notification Light</source>
+        <target state="final">Notification Claire</target>
+      </trans-unit>
+      <trans-unit id="style.notification.dark" approved="yes">
+        <source>Notification Dark</source>
+        <target state="final">Notification Sombre</target>
+      </trans-unit>
+      <trans-unit id="style.button" approved="yes">
+        <source>Button</source>
+        <target state="final">Bouton</target>
+      </trans-unit>
+      <trans-unit id="style.button.primary" approved="yes">
+        <source>Button Primary</source>
+        <target state="final">Bouton Principal</target>
+      </trans-unit>
+      <trans-unit id="style.button.success" approved="yes">
+        <source>Button Success</source>
+        <target state="final">Bouton Succès</target>
+      </trans-unit>
+      <trans-unit id="style.button.info" approved="yes">
+        <source>Button Info</source>
+        <target state="final">Bouton Info</target>
+      </trans-unit>
+      <trans-unit id="style.button.warning" approved="yes">
+        <source>Button Warning</source>
+        <target state="final">Bouton Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.button.danger" approved="yes">
+        <source>Button Danger</source>
+        <target state="final">Bouton Danger</target>
+      </trans-unit>
+      <trans-unit id="style.button.light" approved="yes">
+        <source>Button Light</source>
+        <target state="final">Bouton Clair</target>
+      </trans-unit>
+      <trans-unit id="style.button.dark" approved="yes">
+        <source>Button Dark</source>
+        <target state="final">Bouton Foncé</target>
+      </trans-unit>
+      <trans-unit id="style.primary" approved="yes">
+        <source>Primary</source>
+        <target state="final">Principal</target>
+      </trans-unit>
+      <trans-unit id="style.success" approved="yes">
+        <source>Success</source>
+        <target state="final">Succès</target>
+      </trans-unit>
+      <trans-unit id="style.warning" approved="yes">
+        <source>Warning</source>
+        <target state="final">Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.light" approved="yes">
+        <source>Light</source>
+        <target state="final">Clair</target>
+      </trans-unit>
+      <trans-unit id="style.dark" approved="yes">
+        <source>Dark</source>
+        <target state="final">Sombre</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
