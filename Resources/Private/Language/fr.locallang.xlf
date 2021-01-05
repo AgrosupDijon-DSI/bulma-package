@@ -3,30 +3,94 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
     <header/>
     <body>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-        </body>
+      <trans-unit id="linktop" approved="yes">
+        <source>To top</source>
+        <target state="final">Haut de page</target>
+      </trans-unit>
+      <trans-unit id="skiptomaincontent" approved="yes">
+        <source>Skip to main content</source>
+        <target state="final">Aller au contenu principal</target>
+      </trans-unit>
+      <trans-unit id="skipnavigation" approved="yes">
+        <source>Skip navigation block</source>
+        <target state="final">Sauter le bloc de navigation</target>
+      </trans-unit>
+      <trans-unit id="lightbox-link-label" approved="yes">
+        <source>See more</source>
+        <target state="final">Voir plus</target>
+      </trans-unit>
+      <trans-unit id="form.selectfile" approved="yes">
+        <source>Choose a file</source>
+        <target state="final">Sélectionner un fichier</target>
+      </trans-unit>
+      <trans-unit id="form.selectimage" approved="yes">
+        <source>Choose an image</source>
+        <target state="final">Sélectionner une image</target>
+      </trans-unit>
+      <trans-unit id="footer-title-menu" approved="yes">
+        <source>Links</source>
+        <target state="final">Liens</target>
+      </trans-unit>
+      <trans-unit id="footer-title-social" approved="yes">
+        <source>Follow us</source>
+        <target state="final">Nous suivre</target>
+      </trans-unit>
+      <trans-unit id="address.phone" approved="yes">
+        <source>Tel: </source>
+        <target state="final">Tél. : </target>
+      </trans-unit>
+      <trans-unit id="address.fax" approved="yes">
+        <source>Fax: </source>
+        <target state="final">Fax : </target>
+      </trans-unit>
+      <trans-unit id="scrolltop" approved="yes">
+        <source>Scroll to top</source>
+        <target state="final">Défiler vers le haut de la page</target>
+      </trans-unit>
+      <trans-unit id="news_list_see_all" approved="yes">
+        <source>See all news</source>
+        <target state="final">Voir toutes les actualités</target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_cat" approved="yes">
+        <source>Filtered by category: </source>
+        <target state="final">Filtrer par catégorie : </target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_tag" approved="yes">
+        <source>Filtered by tag: </source>
+        <target state="final">Filtrer par tag : </target>
+      </trans-unit>
+      <trans-unit id="news_remove_filter" approved="yes">
+        <source>Remove filter</source>
+        <target state="final">Supprimer le filtre</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.header" approved="yes">
+        <source>Cookies used on the website!</source>
+        <target state="final">Cookies utilisés sur le site !</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.message" approved="yes">
+        <source>This website uses cookies to ensure you get the best experience on our website.</source>
+        <target state="final">Ce site utilise des cookies pour vous garantir une meilleure expérience de navigation.</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.dismiss" approved="yes">
+        <source>Got it!</source>
+        <target state="final">C'est compris !</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.allow" approved="yes">
+        <source>Allow cookies</source>
+        <target state="final">Autoriser les cookies</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.deny" approved="yes">
+        <source>Decline</source>
+        <target state="final">Refuser</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.link" approved="yes">
+        <source>Learn more</source>
+        <target state="final">En savoir plus</target>
+      </trans-unit>
+      <trans-unit id="cookieconsent.common.policy" approved="yes">
+        <source>Cookie settings</source>
+        <target state="final">Paramétrage des cookies</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
