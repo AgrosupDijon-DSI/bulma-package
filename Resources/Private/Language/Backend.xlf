@@ -183,6 +183,9 @@
             <trans-unit id="option.is-gapless">
                 <source>Gapless</source>
             </trans-unit>
+            <trans-unit id="option.is-vcentered">
+                <source>Vertical alignment</source>
+            </trans-unit>
             <trans-unit id="menu.card.options">
                 <source>Options</source>
             </trans-unit>
@@ -641,9 +644,6 @@
             </trans-unit>
             <trans-unit id="bulma-website">
                 <source>Bulma website</source>
-            </trans-unit>
-            <trans-unit id="content_layout.vcentered">
-                <source>Vertical alignment</source>
             </trans-unit>
             <trans-unit id="content_layout.cards">
                 <source>Cards</source>

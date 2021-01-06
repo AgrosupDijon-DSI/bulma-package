@@ -12,16 +12,6 @@ img{
   opacity: .65;
 }
 
-.frame-layout-1{
-  &.frame-type-image,
-  &.frame-type-video,
-  .textmedia-gallery {
-    .columns{
-      @extend .is-vcentered;
-    }
-  }
-}
-
 //
 // Scrolltop
 //
