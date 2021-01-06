@@ -65,6 +65,7 @@ TCEFORM {
             addItems {
                 fullwidth = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_frame.fullwidth
                 hero = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_frame.hero
+                desktop = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_frame.desktop
             }
             types.shortcut.disabled = 1
         }
