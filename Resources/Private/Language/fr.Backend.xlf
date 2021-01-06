@@ -167,6 +167,10 @@
         <source>Gapless</source>
         <target state="final">Sans marge</target>
       </trans-unit>
+      <trans-unit id="option.is-vcentered">
+        <source>Vertical alignment</source>
+        <target state="translated">Alignement vertical</target>
+      </trans-unit>
       <trans-unit id="menu.thumbnail_dir" approved="yes">
         <source>Thumbnails of subpages</source>
         <target state="final">Vignettes de sous-pages</target>
