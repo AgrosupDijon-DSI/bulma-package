@@ -671,10 +671,6 @@
         <source>Bulma website</source>
         <target state="final">Site Bulma</target>
       </trans-unit>
-      <trans-unit id="content_layout.vcentered" approved="yes">
-        <source>Vertical alignment</source>
-        <target state="final">Alignement vertical</target>
-      </trans-unit>
       <trans-unit id="content_frame.fullwidth" approved="yes">
         <source>Full width</source>
         <target state="final">Pleine largeur</target>
