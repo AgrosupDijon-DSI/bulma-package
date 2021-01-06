@@ -432,6 +432,12 @@
             <trans-unit id="field.background_color_class">
                 <source>Background Color</source>
             </trans-unit>
+            <trans-unit id="field.background_frame">
+                <source>Background frame</source>
+            </trans-unit>
+            <trans-unit id="field.background_frame.limited">
+                <source>Limited</source>
+            </trans-unit>
             <trans-unit id="field.message_class">
                 <source>Message Class</source>
             </trans-unit>
@@ -647,6 +653,9 @@
             </trans-unit>
             <trans-unit id="content_frame.hero">
                 <source>Hero</source>
+            </trans-unit>
+            <trans-unit id="content_frame.desktop">
+                <source>Desktop</source>
             </trans-unit>
             <trans-unit id="tt_content.colPos.nestedContentColPos">
                 <source>Nested content</source>

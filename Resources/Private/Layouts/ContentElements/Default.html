@@ -4,15 +4,17 @@
     <f:variable name="frameClass">frame-{data.frame_class}</f:variable>
     <f:variable name="typeClass">frame-type-{data.CType}</f:variable>
     <f:variable name="layoutClass">frame-layout-{data.layout}</f:variable>
-    <f:variable name="backgroundClass">{f:if(condition: "{data.background_color_class} != none", then: "has-background-{data.background_color_class}")}</f:variable>
+    <f:variable name="backgroundClass">{f:if(condition: "{data.background_color_class} != none && {data.background_frame} == ''", then: "has-background-{data.background_color_class}")}</f:variable>
+    <f:variable name="backgroundLimited">{f:if(condition: "{data.background_color_class} != none && {data.background_frame} == 'limited'", then: "is-background-limited")}</f:variable>
+    <f:variable name="backgroundClassLimited">{f:if(condition: "{data.background_color_class} != none && {data.background_frame} == 'limited'", then: "has-background-{data.background_color_class}")}</f:variable>
     <f:variable name="spaceBeforeClass">{f:if(condition: data.space_before_class, then: "frame-space-before-{data.space_before_class}")}</f:variable>
     <f:variable name="spaceAfterClass">{f:if(condition: data.space_after_class, then: "frame-space-after-{data.space_after_class}")}</f:variable>
 
-    <div id="c{data.uid}" class="frame {frameClass} {typeClass} {layoutClass} {backgroundClass} {spaceBeforeClass} {spaceAfterClass}">
+    <div id="c{data.uid}" class="frame {frameClass} {typeClass} {layoutClass} {backgroundClass} {backgroundLimited} {spaceBeforeClass} {spaceAfterClass}">
         <f:if condition="{data.frame_class} != hero">
             <f:then>
                 <div class="container">
-                    <div class="frame-inner">
+                    <div class="frame-inner {backgroundClassLimited}">
                         <f:render section="Header" optional="true">
                             <f:comment>
                                 Do not render header section for EXT:news plugin, so we can manage it properly if in list or detail

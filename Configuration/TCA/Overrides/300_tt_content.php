@@ -29,6 +29,18 @@ $additionalColumns = [
         ],
         'l10n_mode' => 'exclude',
     ],
+    'background_frame' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_frame',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', ''],
+                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_frame.limited', 'limited'],
+            ]
+        ],
+    ],
     'gallery_size' => [
         'exclude' => true,
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.gallery_size',
@@ -86,7 +98,7 @@ $additionalColumns = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'tt_content',
     'frames',
-    '--linebreak--,background_color_class'
+    '--linebreak--,background_color_class,background_frame'
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(

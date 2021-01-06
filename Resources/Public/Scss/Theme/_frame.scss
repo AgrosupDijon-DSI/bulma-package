@@ -10,53 +10,32 @@ $frame-spacing: $block-spacing !default;
 
 .frame {
   position: relative;
-  padding: $frame-spacing 0;
-
-  &:first-child {
-    padding-top: 0;
-    margin-top: $frame-spacing;
-
-    &[class*="has-background-"] {
-      margin-top: 0rem;
-      padding-top: $frame-spacing;
-
-      &.frame-space-before-no-space {
-        padding-top: 0;
-      }
-    }
+  &:not(.is-background-limited){
+    padding: $frame-spacing 0;
   }
 
-  &.frame-space-before-no-space {
+  &:first-child{
+    &:not(.frame-space-before-no-space):not([class*="has-background-"]):not(.is-background-limited) {
+      padding-top: 0;
+      margin-top: $frame-spacing;
+    }
+  }
+}
+
+[class*="has-background-"].frame-inner{
+  padding: $frame-spacing;
+}
+
+.frame-space-before-no-space{
+  &.frame, [class*="has-background-"].frame-inner{
     padding-top: 0;
     margin-top: 0;
   }
+}
 
-  &.frame-space-after-no-space {
+.frame-space-after-no-space{
+  &.frame, [class*="has-background-"].frame-inner{
     padding-bottom: 0;
-  }
-
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
-
-    &.has-background-#{$name} {
-      color: $color-invert;
-
-      &.frame-type-header {
-        .title, .subtitle {
-          color: $color-invert;
-        }
-      }
-
-      .subtitle,
-      th {
-        color: $color-invert;
-      }
-
-      [class="notification"] {
-        color: $text;
-      }
-    }
   }
 }
 
@@ -74,5 +53,24 @@ $frame-spacing: $block-spacing !default;
   // Login
   .frame-type-felogin_login & {
     @extend .content;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.has-background-#{$name}, .has-background-#{$name} &{
+      color: $color-invert;
+
+      .title,
+      .subtitle,
+      th {
+        color: $color-invert;
+      }
+
+      [class="notification"] {
+        color: $text;
+      }
+    }
   }
 }
