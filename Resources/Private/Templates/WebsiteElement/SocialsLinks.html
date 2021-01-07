@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{socialsLinks}">
-    <asd:data.socialsLinks as="groupedLinks" links="{socialsLinks}"></asd:data.socialsLinks>
+    <asd:socialsLinks as="groupedLinks" links="{socialsLinks}"></asd:socialsLinks>
     <div class="buttons">
         <f:for each="{groupedLinks}" as="type">
             <f:if condition="{f:count(subject: type.data)} > 1">
