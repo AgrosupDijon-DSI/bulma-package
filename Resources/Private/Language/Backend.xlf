@@ -648,6 +648,9 @@
             <trans-unit id="content_layout.cards">
                 <source>Cards</source>
             </trans-unit>
+            <trans-unit id="content_layout.tile_1">
+                <source>Tile 1</source>
+            </trans-unit>
             <trans-unit id="content_frame.fullwidth">
                 <source>Full width</source>
             </trans-unit>

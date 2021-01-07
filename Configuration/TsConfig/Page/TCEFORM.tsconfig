@@ -38,6 +38,10 @@ TCEFORM {
             removeItems = 1,2,3
             disableNoMatchingValueElement = 1
             types {
+                image {
+                    addItems.4 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_layout.tile_1
+                    addItems.4.icon = EXT:bulma_package/Resources/Public/Icons/tile-1.svg
+                }
                 uploads {
                     removeItems = 1,2
                     altLabels {

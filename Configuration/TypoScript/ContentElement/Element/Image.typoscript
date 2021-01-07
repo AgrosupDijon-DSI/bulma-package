@@ -9,7 +9,15 @@ tt_content.image {
     ################
     ### TEMPLATE ###
     ################
-    templateName = Image
+    templateName = TEXT
+    templateName.stdWrap.cObject = CASE
+    templateName.stdWrap.cObject {
+        key.field = layout
+        4 = TEXT
+        4.value = Tile1
+        default = TEXT
+        default.value = Image
+    }
 
     ##########################
     ### DATA PREPROCESSING ###
