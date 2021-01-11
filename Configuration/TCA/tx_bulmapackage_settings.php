@@ -227,7 +227,7 @@ return [
                             ]
                         ]
                     ],
-                    'maxitems' => 5
+                    'maxitems' => 12
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),

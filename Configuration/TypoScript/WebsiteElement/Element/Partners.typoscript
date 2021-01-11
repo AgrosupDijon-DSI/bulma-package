@@ -32,14 +32,7 @@ lib.bulmaPackage.partners {
         ### SETTINGS ###
         ################
         settings {
-            lightbox {
-                cssClass = {$plugin.bulma_package_websiteelements.lightbox.cssClass}
-                prefix = {$plugin.bulma_package_websiteelements.lightbox.prefix}
-                image {
-                    maxHeight = {$plugin.bulma_package_websiteelements.lightbox.image.maxHeight}
-                    maxWidth = {$plugin.bulma_package_websiteelements.lightbox.image.maxWidth}
-                }
-            }
+            image.maxWidth = {$plugin.bulma_package_websiteelements.partners.maxWidth}
         }
     }
 }
