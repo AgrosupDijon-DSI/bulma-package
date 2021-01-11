@@ -1,12 +1,12 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:spaceless>
     <f:if condition="{favicon.0}">
-        <f:for each="{appleSizes as array}" as="size">
+        <f:for each="{settings.appleSizes as array}" as="size">
             <f:if condition="{size}">
                 <link rel="apple-touch-icon" sizes="{size}x{size}" href="{f:uri.image(image: '{favicon.0}', width: '{size}c', height: '{size}c')}">
             </f:if>
         </f:for>
-        <f:for each="{iconSizes as array}" as="size">
+        <f:for each="{settings.iconSizes as array}" as="size">
             <f:if condition="{size}">
                 <link rel="icon" sizes="{size}x{size}" type="{favicon.0.originalFile.properties.mime_type}" href="{f:uri.image(image: '{favicon.0}', width: '{size}c', height: '{size}c')}">
             </f:if>
