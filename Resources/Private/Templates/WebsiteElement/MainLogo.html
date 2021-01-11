@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{logoMain}">
     <f:link.page pageUid="{rootPage}" class="navbar-item">
-        <f:image class="image" image="{logoMain.0}" maxWidth="215" maxHeight="60" />
+        <f:image class="image" image="{logoMain.0}" maxWidth="{settings.maxWidth}" maxHeight="{settings.maxHeight}" />
     </f:link.page>
 </f:if>
 </html>

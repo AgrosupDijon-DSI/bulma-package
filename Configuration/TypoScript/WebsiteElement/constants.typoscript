@@ -2,8 +2,9 @@
 ### CATEGORIES ###
 ##################
 # customsubcategory=100_websiteelement=Templates
-# customsubcategory=130_websiteelement=Lightbox
-# customsubcategory=130_websiteelement=Favicon
+# customsubcategory=110_websiteelement=Partners
+# customsubcategory=120_websiteelement=Favicon
+# customsubcategory=130_websiteelement=Logo
 
 ########################
 ### WEBSITE ELEMENTS ###
@@ -14,12 +15,19 @@ plugin.bulma_package_websiteelements {
         templateRootPath = EXT:bulma_package/Resources/Private/Templates/WebsiteElement/
     }
     partners{
+        # cat=bulma package: content elements/110_websiteelement/001_maxwidth; type=string; label=Max width
         maxWidth = 165
     }
     favicon {
-        # cat=bulma package: content elements/140_websiteelement/001_applesizes; type=string; label=Apple Sizes
+        # cat=bulma package: content elements/120_websiteelement/001_applesizes; type=string; label=Apple Sizes
         appleSizes = 57,60,72,76,114,120,144,152,180
-        # cat=bulma package: content elements/140_websiteelement/002_iconsizes; type=string; label=Icon Sizes
+        # cat=bulma package: content elements/120_websiteelement/002_iconsizes; type=string; label=Icon Sizes
         iconSizes = 32,192,96,16
+    }
+    logo{
+        # cat=bulma package: content elements/130_websiteelement/001_maxwidth; type=string; label=Max width
+        maxWidth = 215
+        # cat=bulma package: content elements/130_websiteelement/001_maxheight; type=string; label=Max height
+        maxHeight = 60
     }
 }
