@@ -22,7 +22,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'title_seo,logo_main,logo_partner,logos_partners,code_analytics,address_title,address,zip,city,country,phone,fax,email',
+        'searchFields' => 'title_seo,logo_main,logos_partners,code_analytics,address_title,address,zip,city,country,phone,fax,email',
         'typeicon_classes' => [
             'default' => 'actions-system-extension-configure',
         ]
@@ -162,36 +162,6 @@ return [
                             \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                     crop,
-                                    --palette--;;filePalette
-                                '
-                            ]
-                        ]
-                    ],
-                    'maxitems' => 1
-                ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
-        ],
-        'logo_partner' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.logo_partner',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'logo_partner',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    link,--linebreak--,crop,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    link,--linebreak--,crop,
                                     --palette--;;filePalette
                                 '
                             ]

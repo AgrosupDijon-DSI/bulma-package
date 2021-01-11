@@ -567,9 +567,6 @@
             <trans-unit id="tx_bulmapackage_settings.logo_main">
                 <source>Main logo</source>
             </trans-unit>
-            <trans-unit id="tx_bulmapackage_settings.logo_partner">
-                <source>Partner logo</source>
-            </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.logos_partners">
                 <source>Partners logos</source>
             </trans-unit>
