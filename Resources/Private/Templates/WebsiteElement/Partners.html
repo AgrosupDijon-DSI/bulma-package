@@ -4,7 +4,7 @@
         <div class="container">
             <div class="partners">
                 <f:for each="{files}" as="file" iteration="fileIteration">
-                    <div class="partner">
+                    <figure class="partner">
                         <f:if condition="{file.properties.title}">
                             <h4 class="heading">
                                 <f:format.nl2br>{file.properties.title}</f:format.nl2br>
@@ -13,16 +13,20 @@
                         <f:if condition="{file.properties.link}">
                             <f:then>
                                 <f:link.typolink parameter="{file.properties.link}" title="{file.properties.title}">
-                                    <img src="{f:uri.image(image: file, maxWidth: settings.image.maxWidth)}" title="{file.properties.title}"
-                                         alt="{file.properties.alternative}">
+                                    <picture>
+                                        <img src="{f:uri.image(image: file, maxWidth: settings.image.maxWidth)}" title="{file.properties.title}"
+                                             alt="{file.properties.alternative}">
+                                    </picture>
                                 </f:link.typolink>
                             </f:then>
                             <f:else>
-                                <img src="{f:uri.image(image: file, maxWidth: settings.image.maxWidth)}" title="{file.properties.title}"
-                                     alt="{file.properties.alternative}">
+                                <picture>
+                                    <img src="{f:uri.image(image: file, maxWidth: settings.image.maxWidth)}" title="{file.properties.title}"
+                                         alt="{file.properties.alternative}">
+                                </picture>
                             </f:else>
                         </f:if>
-                    </div>
+                    </figure>
                 </f:for>
             </div>
         </div>

@@ -8,28 +8,6 @@
 .partner{
   text-align: center;
   margin: 0.25rem 1rem;
-
-  a{
-    position: relative;
-    display: inline-block;
-    &:after{
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: $primary;
-      opacity: 0;
-      transition: opacity 0.25s ease-in-out;
-    }
-
-    &:hover{
-      &:after{
-        opacity: 0.4;
-      }
-    }
-  }
 }
 
 @include from($tablet){
