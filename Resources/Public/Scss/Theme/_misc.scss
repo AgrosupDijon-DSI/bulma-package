@@ -59,3 +59,29 @@ img{
     transform: translate(-50%, -50%);
   }
 }
+
+a{
+  figure &{
+    display: inline-block;
+    position: relative;
+  }
+  figure &, .card-image &{
+    picture:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $primary;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    &:hover{
+      picture:after{
+        opacity: 0.4;
+      }
+    }
+  }
+}
