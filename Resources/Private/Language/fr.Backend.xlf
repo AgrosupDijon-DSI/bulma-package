@@ -163,9 +163,9 @@
         <source>Gapless</source>
         <target state="final">Sans marge</target>
       </trans-unit>
-      <trans-unit id="option.is-vcentered">
+      <trans-unit id="option.is-vcentered" approved="yes">
         <source>Vertical alignment</source>
-        <target state="translated">Alignement vertical</target>
+        <target state="final">Alignement vertical</target>
       </trans-unit>
       <trans-unit id="menu.thumbnail_dir" approved="yes">
         <source>Thumbnails of subpages</source>
@@ -682,6 +682,10 @@
       <trans-unit id="content_frame.fullwidth" approved="yes">
         <source>Full width</source>
         <target state="final">Pleine largeur</target>
+      </trans-unit>
+      <trans-unit id="content_frame.desktop" approved="yes">
+        <source>Reduced</source>
+        <target state="final">Réduit</target>
       </trans-unit>
       <trans-unit id="tt_content.colPos.nestedContentColPos" approved="yes">
         <source>Nested content</source>
