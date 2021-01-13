@@ -652,7 +652,7 @@
                 <source>Hero</source>
             </trans-unit>
             <trans-unit id="content_frame.desktop">
-                <source>Desktop</source>
+                <source>Reduced</source>
             </trans-unit>
             <trans-unit id="tt_content.colPos.nestedContentColPos">
                 <source>Nested content</source>
