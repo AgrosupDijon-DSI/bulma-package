@@ -119,10 +119,6 @@
         <source>Tablet</source>
         <target state="final">Tablette</target>
       </trans-unit>
-      <trans-unit id="option.desktop" approved="yes">
-        <source>Desktop</source>
-        <target state="final">Écran d'ordinateur</target>
-      </trans-unit>
       <trans-unit id="option.widescreen" approved="yes">
         <source>Widescreen</source>
         <target state="final">Écran large</target>
@@ -450,6 +446,14 @@
       <trans-unit id="field.background_color_class" approved="yes">
         <source>Background Color</source>
         <target state="final">Couleur de fond</target>
+      </trans-unit>
+      <trans-unit id="field.background_frame" approved="yes">
+        <source>Background frame</source>
+        <target state="final">Type de fond</target>
+      </trans-unit>
+      <trans-unit id="field.background_frame.limited" approved="yes">
+        <source>Limited</source>
+        <target state="final">Limité</target>
       </trans-unit>
       <trans-unit id="field.message_class" approved="yes">
         <source>Message Class</source>
