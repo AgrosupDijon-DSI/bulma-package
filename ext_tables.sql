@@ -8,7 +8,6 @@ CREATE TABLE tx_bulmapackage_settings
 
     title_seo                          varchar(255)        DEFAULT ''  NOT NULL,
     logo_main                          int(11) unsigned    DEFAULT '0' NOT NULL,
-    logo_partner                       int(11) unsigned    DEFAULT '0' NOT NULL,
     logos_partners                     int(11) unsigned    DEFAULT '0' NOT NULL,
     favicon                            int(11) unsigned    DEFAULT '0' NOT NULL,
     code_analytics                     varchar(30)         DEFAULT ''  NOT NULL,

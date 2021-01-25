@@ -147,7 +147,6 @@ lib.contentElement {
             variants {
                 default {
                     breakpoint = 1408
-#                    width = 1344
                     width = 1920
 #                    sizes {
 #                        1\.5x {
@@ -160,7 +159,6 @@ lib.contentElement {
                 }
                 widescreen {
                     breakpoint = 1216
-#                    width = 1152
                     width = 1407
 #                    sizes {
 #                        1\.5x {
@@ -173,7 +171,6 @@ lib.contentElement {
                 }
                 desktop {
                     breakpoint = 1024
-#                    width = 960
                     width = 1215
 #                    sizes {
 #                        1\.5x {
@@ -186,7 +183,6 @@ lib.contentElement {
                 }
                 tablet {
                     breakpoint = 769
-#                    width = 959
                     width = 1023
 #                    sizes {
 #                        1\.5x {
@@ -199,7 +195,6 @@ lib.contentElement {
                 }
                 mobile {
                     breakpoint = 577
-#                    width = 736
                     width = 768
 #                    sizes {
 #                        1\.5x {
@@ -212,16 +207,15 @@ lib.contentElement {
                 }
                 mobile-small {
                     breakpoint = unset
-#                    width = 544 d'où ça sort ????
                     width = 576
-                    #                    sizes {
-                    #                        1\.5x {
-                    #                            multiplier = 1.5
-                    #                        }
-                    #                        2x {
-                    #                            multiplier = 2
-                    #                        }
-                    #                    }
+#                    sizes {
+#                        1\.5x {
+#                            multiplier = 1.5
+#                        }
+#                        2x {
+#                            multiplier = 2
+#                        }
+#                    }
                 }
             }
         }

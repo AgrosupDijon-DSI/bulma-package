@@ -16,12 +16,12 @@ lib.bulmaPackage.favicon{
         ################
         templateName = Favicon
 
-        variables{
-            appleSizes = TEXT
-            appleSizes.value = {$plugin.bulma_package_websiteelements.favicon.appleSizes}
-
-            iconSizes = TEXT
-            iconSizes.value = {$plugin.bulma_package_websiteelements.favicon.iconSizes}
+        ################
+        ### SETTINGS ###
+        ################
+        settings {
+            appleSizes = {$plugin.bulma_package_websiteelements.favicon.appleSizes}
+            iconSizes = {$plugin.bulma_package_websiteelements.favicon.iconSizes}
         }
 
         ##########################

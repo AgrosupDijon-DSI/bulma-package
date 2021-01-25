@@ -16,6 +16,14 @@ lib.bulmaPackage.logo{
         ################
         templateName = MainLogo
 
+        ################
+        ### SETTINGS ###
+        ################
+        settings {
+            maxWidth = {$plugin.bulma_package_websiteelements.logo.maxWidth}
+            maxHeight = {$plugin.bulma_package_websiteelements.logo.maxHeight}
+        }
+
         ##########################
         ### DATA PREPROCESSING ###
         ##########################
