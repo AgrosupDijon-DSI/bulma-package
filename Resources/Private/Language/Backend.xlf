@@ -186,6 +186,9 @@
             <trans-unit id="option.is-vcentered">
                 <source>Vertical alignment</source>
             </trans-unit>
+            <trans-unit id="option.is-spaced">
+                <source>Spaced</source>
+            </trans-unit>
             <trans-unit id="menu.card.options">
                 <source>Options</source>
             </trans-unit>

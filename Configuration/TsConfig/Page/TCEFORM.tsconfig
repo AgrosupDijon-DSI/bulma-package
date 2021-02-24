@@ -169,6 +169,7 @@ TCEFORM {
                         is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
                         is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
                         is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+                        is-justify-content-space-between = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-spaced
                     }
 
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
