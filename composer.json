@@ -45,8 +45,8 @@
     }
   },
   "extra": {
-		"typo3/cms": {
-			"extension-key": "bulma_package"
-		}
-	},
+    "typo3/cms": {
+      "extension-key": "bulma_package"
+    }
+  }
 }
