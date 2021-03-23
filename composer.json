@@ -43,5 +43,10 @@
     "psr-4": {
       "AgrosupDijon\\BulmaPackage\\": "Classes"
     }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "bulma_package"
+    }
   }
 }
