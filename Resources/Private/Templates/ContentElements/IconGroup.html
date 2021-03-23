@@ -29,7 +29,7 @@
         <div class="columns is-multiline is-mobile icon-group {iconAlignClass} {allClasses}">
             <f:for each="{records}" as="item" iteration="iteration">
                 <div class="column {columnConfig.class}">
-                    <f:render section="LinkWrap" arguments="{link: item.data.link, linkTitle: item.data.header}" contentAs="content">
+                    <f:render section="LinkWrap" arguments="{link: item.data.link}" contentAs="content">
                         <f:if condition="{item.data.icon_set} == '' && {item.iconFile.0}">
                             <f:then>
                                 <span class="icon {item.data.icon_size}">
@@ -67,7 +67,7 @@
 
     <f:if condition="{link}">
         <f:then>
-            <f:link.typolink class="icon-group-item" parameter="{link}" title="{linkTitle -> asd:format.trim()}">
+            <f:link.typolink class="icon-group-item" parameter="{link}">
                 {content -> f:format.raw()}
             </f:link.typolink>
         </f:then>
