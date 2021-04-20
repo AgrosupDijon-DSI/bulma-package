@@ -19,7 +19,6 @@ plugin.tx_news {
 
 	settings {
 		displayDummyIfNoMedia = false
-		header.defaultHeaderType = {$plugin.bulma_package_contentelements.header.defaultHeaderType}
 		list {
 			media {
 				dummyImage = EXT:news/Resources/Public/Images/dummy-preview-image.png
@@ -48,6 +47,8 @@ plugin.tx_news {
 				previewType = 2
 			}
 		}
+		header < lib.contentElement.settings.header
+		subheader < lib.contentElement.settings.subheader
 		gallery < lib.contentElement.settings.gallery
 		lightbox < lib.contentElement.settings.lightbox
 		uploads < lib.contentElement.settings.uploads
