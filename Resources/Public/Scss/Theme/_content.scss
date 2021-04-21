@@ -40,13 +40,6 @@
     &:last-child{
       margin-bottom: 0;
     }
-    @each $name, $pair in $colors {
-      $color-invert: nth($pair, 2);
-
-      .has-background-#{$name} &{
-        color: $color-invert;
-      }
-    }
   }
 
   blockquote{

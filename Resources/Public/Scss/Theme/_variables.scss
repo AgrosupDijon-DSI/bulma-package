@@ -1,4 +1,17 @@
 
+// Content
+$content-heading-color: currentColor !default;
+$content-table-cell-heading-color: currentColor !default;
+$content-table-head-cell-color: $content-table-cell-heading-color !default;
+
+// Title
+$title-color: currentColor !default;
+$subtitle-color: currentColor !default;
+
+// Table
+$table-cell-heading-color: currentColor !default;
+$table-head-cell-color: $table-cell-heading-color !default;
+
 // Navbar
 $navbar-item-img-max-height: 6em !default;
 $navbar-z: 30 !default;

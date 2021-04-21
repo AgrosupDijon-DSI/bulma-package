@@ -1,0 +1,11 @@
+@each $name, $pair in $colors {
+  $color-invert: nth($pair, 2);
+
+  .has-background-#{$name}{
+    color: $color-invert;
+
+    [class="notification"] {
+      color: $text;
+    }
+  }
+}
