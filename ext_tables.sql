@@ -146,6 +146,7 @@ CREATE TABLE tt_content
     message_class                         varchar(60)      DEFAULT 'default' NOT NULL,
     gallery_size                          varchar(10)      DEFAULT ''        NOT NULL,
     ignore_nav_hide                       tinyint(4)       DEFAULT '0'       NOT NULL,
+    max_items                             varchar(255)     DEFAULT ''        NOT NULL,
 
     tx_bulmapackage_card_group_item       int(11) unsigned DEFAULT '0',
 

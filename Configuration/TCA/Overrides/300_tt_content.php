@@ -91,6 +91,15 @@ $additionalColumns = [
                 'allowLanguageSynchronization' => true
             ],
         ]
+    ],
+    'max_items' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.max_items',
+        'config' => [
+            'type' => 'input',
+            'eval' => 'num',
+            'size' => 5
+        ]
     ]
 ];
 
@@ -99,6 +108,11 @@ $additionalColumns = [
     'tt_content',
     'frames',
     '--linebreak--,background_color_class,background_frame'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    'tt_content',
+    'menu_dir_settings',
+    'ignore_nav_hide,max_items'
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
