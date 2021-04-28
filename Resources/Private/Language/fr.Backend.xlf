@@ -27,6 +27,10 @@
         <source>Display "menu excluded" pages</source>
         <target state="final">Afficher les pages hors menu</target>
       </trans-unit>
+      <trans-unit id="field.max_items" approved="yes">
+        <source>Max pages displayed</source>
+        <target state="final">Nombre maximum d'éléments affichés</target>
+      </trans-unit>
       <trans-unit id="field.gallery_size" approved="yes">
         <source>Size</source>
         <target state="final">Taille</target>
