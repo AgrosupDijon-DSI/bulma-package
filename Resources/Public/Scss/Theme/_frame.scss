@@ -54,23 +54,4 @@ $frame-spacing: $block-spacing !default;
   .frame-type-felogin_login & {
     @extend .content;
   }
-
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
-
-    &.has-background-#{$name}, .has-background-#{$name} &{
-      color: $color-invert;
-
-      .title,
-      .subtitle,
-      th {
-        color: $color-invert;
-      }
-
-      [class="notification"] {
-        color: $text;
-      }
-    }
-  }
 }

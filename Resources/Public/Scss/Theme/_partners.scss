@@ -12,6 +12,6 @@
 
 @include from($tablet){
   .partner{
-    width: 12rem;
+    min-width: 12rem;
   }
 }

@@ -41,7 +41,7 @@ $divider-content-background-color: #fff !default;
     $color-invert: nth($pair, 2);
 
     .has-background-#{$name} &{
-      background: $color;
+      background: $color !important;
       color: $color-invert;
     }
   }

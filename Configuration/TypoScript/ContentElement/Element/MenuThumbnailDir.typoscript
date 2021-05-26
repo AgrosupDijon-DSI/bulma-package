@@ -19,6 +19,7 @@ tt_content.menu_thumbnail_dir {
         10 {
             special = directory
             special.value.field = pages
+            maxItems.field = max_items
             dataProcessing {
                 10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
                 10 {

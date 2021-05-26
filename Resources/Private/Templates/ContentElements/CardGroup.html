@@ -55,10 +55,7 @@
                         <f:variable name="linkTitle">{item.data.link_title -> asd:format.trim()}</f:variable>
                         <f:if condition="{item.data.link} && {linkTitle}">
                             <footer class="card-footer">
-                                <a class="card-footer-item" title="{linkTitle}"
-                                   href="{f:uri.typolink(parameter: item.data.link)}">
-                                    {linkTitle}
-                                </a>
+                                <f:link.typolink class="card-footer-item" parameter="{item.data.link}">{linkTitle}</f:link.typolink>
                             </footer>
                         </f:if>
                     </div>
@@ -72,8 +69,7 @@
 <f:section name="LinkWrap">
     <f:if condition="{link}">
         <f:then>
-            <a href="{f:uri.typolink(parameter: link)}" {f:if(condition: linkTitle, then: ' title="{linkTitle ->
-            asd:format.trim()}"')}>{content -> f:format.raw()}</a>
+            <f:link.typolink parameter="{link}">{content -> f:format.raw()}</f:link.typolink>
         </f:then>
         <f:else>
             {content -> f:format.raw()}

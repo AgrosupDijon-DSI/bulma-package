@@ -51,6 +51,9 @@
             <trans-unit id="field.ignore_nav_hide">
                 <source>Display "menu excluded" pages</source>
             </trans-unit>
+            <trans-unit id="field.max_items">
+                <source>Max pages displayed</source>
+            </trans-unit>
             <trans-unit id="field.gallery_size">
                 <source>Size</source>
             </trans-unit>
