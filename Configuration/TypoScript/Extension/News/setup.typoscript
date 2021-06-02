@@ -20,6 +20,8 @@ plugin.tx_news {
 	settings {
 		displayDummyIfNoMedia = false
 		list {
+			titleClasses = {$plugin.tx_news.settings.list.titleClasses}
+			subtitleClasses = {$plugin.tx_news.settings.list.subtitleClasses}
 			media {
 				dummyImage = EXT:news/Resources/Public/Images/dummy-preview-image.png
 			}

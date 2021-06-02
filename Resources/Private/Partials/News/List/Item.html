@@ -40,13 +40,13 @@
 		</f:if>
 
 		<div class="card-content">
-			<h3 class="title" itemprop="headline">
+			<h3 class="{settings.list.titleClasses}" itemprop="headline">
 				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 					{newsItem.title}
 				</n:link>
 			</h3>
 
-			<div class="subtitle">
+			<div class="{settings.list.subtitleClasses}">
 				<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem,showIcons:settings.list.showIcons,linkCategories:settings.list.linkCategories,linkTags:settings.list.linkTags,pageData:pageData}" />
 			</div>
 
