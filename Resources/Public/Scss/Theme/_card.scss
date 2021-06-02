@@ -1,4 +1,7 @@
 $card-subtitle-color: $subtitle-color !default;
+$card-border-color: transparent !default;
+$card-border-style: none !default;
+$card-border-width: 0 !default;
 
 .card-equal-height{
   display: flex;
@@ -14,6 +17,7 @@ $card-subtitle-color: $subtitle-color !default;
 }
 
 .card{
+  border: $card-border-width $card-border-style $card-border-color;
   .no-border &{
     border: none;
     box-shadow: none;
@@ -24,9 +28,7 @@ $card-subtitle-color: $subtitle-color !default;
     }
   }
 
-  [class*="has-background-"] &{
-    .subtitle {
-      color: $card-subtitle-color;
-    }
+  .subtitle {
+    color: $card-subtitle-color;
   }
 }
