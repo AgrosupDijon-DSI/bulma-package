@@ -32,14 +32,14 @@
                         </f:if>
                         <div class="card-content">
                             <f:if condition="{page.title}">
-                                <p class="title {alignClass}">
+                                <p class="{settings.menucard.title.classes} {alignClass}">
                                     <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}" data-toggle="tooltip">
                                         <f:format.crop maxCharacters="{settings.menucard.title.crop}">{page.title}</f:format.crop>
                                     </a>
                                 </p>
                             </f:if>
                             <f:if condition="{page.data.subtitle}">
-                                <p class="subtitle {alignClass}">
+                                <p class="{settings.menucard.subtitle.classes} {alignClass}">
                                     <f:format.crop maxCharacters="{settings.menucard.subtitle.crop}">{page.data.subtitle}</f:format.crop>
                                 </p>
                             </f:if>

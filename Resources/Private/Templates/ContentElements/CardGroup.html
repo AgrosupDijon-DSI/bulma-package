@@ -34,7 +34,7 @@
                         <f:if condition="{item.data.header} || {item.data.subheader} || {item.data.bodytext}">
                             <div class="card-content">
                                 <f:if condition="{item.data.header}">
-                                    <h3 class="title {alignClass}">
+                                    <h3 class="{settings.cardgroup.title.classes} {alignClass}">
                                         <f:render section="LinkWrap"
                                                   arguments="{link: item.data.link, linkTitle: item.data.header}"
                                                   contentAs="content">
@@ -43,7 +43,7 @@
                                     </h3>
                                 </f:if>
                                 <f:if condition="{item.data.subheader}">
-                                    <h4 class="subtitle {alignClass}">{item.data.subheader}</h4>
+                                    <h4 class="{settings.cardgroup.subtitle.classes} {alignClass}">{item.data.subheader}</h4>
                                 </f:if>
                                 <f:if condition="{item.data.bodytext}">
                                     <div class="content">

@@ -219,12 +219,22 @@ lib.contentElement {
                 }
             }
         }
+        cardgroup {
+            title{
+                classes = {$plugin.bulma_package_contentelements.card_group.title.classes}
+            }
+            subtitle{
+                classes = {$plugin.bulma_package_contentelements.card_group.subtitle.classes}
+            }
+        }
         menucard {
             title {
                 crop = {$plugin.bulma_package_contentelements.menu_card.title.crop}
+                classes = {$plugin.bulma_package_contentelements.menu_card.title.classes}
             }
             subtitle {
                 crop = {$plugin.bulma_package_contentelements.menu_card.subtitle.crop}
+                classes = {$plugin.bulma_package_contentelements.menu_card.subtitle.classes}
             }
             abstract {
                 crop = {$plugin.bulma_package_contentelements.menu_card.abstract.crop}
@@ -242,6 +252,12 @@ lib.contentElement {
             preview {
                 height = {$plugin.bulma_package_contentelements.uploads.preview.height}
                 width = {$plugin.bulma_package_contentelements.uploads.preview.width}
+            }
+            title {
+                classes = {$plugin.bulma_package_contentelements.uploads.title.classes}
+            }
+            subtitle {
+                classes = {$plugin.bulma_package_contentelements.uploads.subtitle.classes}
             }
         }
     }

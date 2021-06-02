@@ -58,13 +58,13 @@
                                     </div>
                                 </f:if>
                                 <div class="card-content">
-                                    <h3 class="title {alignClass}">
+                                    <h3 class="{settings.uploads.title.classes} {alignClass}">
                                         <a href="{file.publicUrl}"{f:if(condition: file.properties.title, then: ' title="{file.properties.title}"')}{f:if(condition: data.target, then: ' target="{data.target}"')}>
                                             {f:if(condition: file.properties.title, then: file.properties.title, else: file.properties.name)}
                                         </a>
                                     </h3>
                                     <f:if condition="{data.filelink_size}">
-                                        <h4 class="subtitle {alignClass}"><f:format.bytes value="{file.properties.size}" /></h4>
+                                        <h4 class="{settings.uploads.subtitle.classes} {alignClass}"><f:format.bytes value="{file.properties.size}" /></h4>
                                     </f:if>
                                     <f:if condition="{data.uploads_description}">
                                         <div class="content">

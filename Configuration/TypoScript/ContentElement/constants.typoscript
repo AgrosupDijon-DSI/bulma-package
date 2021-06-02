@@ -4,6 +4,11 @@
 # customsubcategory=100_contentelement=Templates
 # customsubcategory=110_contentelement=Header
 # customsubcategory=120_contentelement=Subheader
+# customsubcategory=130_contentelement=Lightbox
+# customsubcategory=150_contentelement=Thumbnail Menu
+# customsubcategory=160_contentelement=Card Menu
+# customsubcategory=170_contentelement=Uploads
+# customsubcategory=180_contentelement=Card
 
 ########################
 ### CONTENT ELEMENTS ###
@@ -53,10 +58,16 @@ plugin.bulma_package_contentelements {
         title {
             # cat=bulma package: content elements/160_contentelement/004_title_crop; type=string; label=Crop Title
             crop = 100
+
+            # cat=bulma package: content elements/160_contentelement/007_title_classes; type=string; label=Title Css classes
+            classes = title
         }
         subtitle {
             # cat=bulma package: content elements/160_contentelement/005_subtitle_crop; type=string; label=Crop Subtitle
             crop = 100
+
+            # cat=bulma package: content elements/160_contentelement/008_subtitle_classes; type=string; label=Subtitle Css classes
+            classes = subtitle
         }
         abstract {
             # cat=bulma package: content elements/160_contentelement/006_abstract_crop; type=string; label=Crop Abstract
@@ -69,6 +80,24 @@ plugin.bulma_package_contentelements {
             height = 100c
             # cat=bulma package: content elements/170_contentelement/002_preview_width; type=string; label=Preview Width
             width = 100c
+        }
+        title {
+            # cat=bulma package: content elements/170_contentelement/003_title_classes; type=string; label=Title Css classes
+            classes = title
+        }
+        subtitle {
+            # cat=bulma package: content elements/170_contentelement/004_subtitle_classes; type=string; label=Subtitle Css classes
+            classes = subtitle
+        }
+    }
+    card_group {
+        title {
+            # cat=bulma package: content elements/180_contentelement/001_title_classes; type=string; label=Title Css classes
+            classes = title
+        }
+        subtitle {
+            # cat=bulma package: content elements/180_contentelement/002_subtitle_classes; type=string; label=Subtitle Css classes
+            classes = subtitle
         }
     }
 }
