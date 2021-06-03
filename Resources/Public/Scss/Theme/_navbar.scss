@@ -1,3 +1,5 @@
+$navbar-item-weight: $weight-semibold !default;
+
 .navbar-item {
   &:empty {
     padding: 0;
@@ -10,7 +12,7 @@
 
 .navbar-start, .navbar-end {
   & > a, & > .navbar-item > a {
-    font-weight: $weight-semibold;
+    font-weight: $navbar-item-weight;
   }
 }
 
@@ -120,8 +122,11 @@
           &:hover,
           &.is-active {
             background-color: bulmaDarken($color, 5%);
-            @if variable-exists(navbar-with-backgroud-item-hover-background-color) {
-              background-color: $navbar-with-backgroud-item-hover-background-color;
+            @if variable-exists(navbar-with-background-item-hover-background-color) {
+              background-color: $navbar-with-background-item-hover-background-color;
+            }
+            @if variable-exists(navbar-with-background-item-hover-color) {
+              color: $navbar-with-background-item-hover-color;
             }
           }
         }
@@ -129,6 +134,9 @@
         .navbar-link {
           &::after {
             border-color: currentColor;
+            @if variable-exists(navbar-with-background-dropdown-arrow) {
+              border-color: $navbar-with-background-dropdown-arrow;
+            }
           }
         }
       }
@@ -142,31 +150,23 @@
         }
         &:not(.nested) > .navbar-link{
           background-color: bulmaDarken($color, 5%);
-          @if variable-exists(navbar-with-backgroud-item-hover-background-color) {
-            background-color: $navbar-with-backgroud-item-hover-background-color;
+          @if variable-exists(navbar-with-background-item-hover-background-color) {
+            background-color: $navbar-with-background-item-hover-background-color;
           }
           color: $color-invert;
+          @if variable-exists(navbar-with-background-item-hover-color) {
+            color: $navbar-with-background-item-hover-color;
+          }
         }
 
         .nested{
           .navbar-link{
-            //&:hover{
-            //  background-color: $navbar-dropdown-item-hover-background-color;
-            //  color: $navbar-dropdown-item-hover-color;
-            //}
-
             &:hover,
             &:focus,
             &.is-active{
               background-color: $navbar-dropdown-item-hover-background-color;
               color: $navbar-dropdown-item-hover-color;
             }
-
-            //&:focus,
-            //&.is-active {
-            //  background-color: bulmaDarken($color, 5%);
-            //  color: $color-invert;
-            //}
           }
         }
       }
