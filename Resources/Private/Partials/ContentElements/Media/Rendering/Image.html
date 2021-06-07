@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<picture>
+<picture class="{pictureClasses}">
     <f:for each="{variants}" key="name" as="variant">
         <f:variable name="breakpoint">{variant.breakpoint as integer}</f:variable>
         <f:variable name="width">{variant.width as integer}</f:variable>
