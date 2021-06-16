@@ -34,6 +34,24 @@
             <trans-unit id="style.notification.dark">
                 <source>Notification Dark</source>
             </trans-unit>
+            <trans-unit id="style.size.1">
+                <source>Size 1</source>
+            </trans-unit>
+            <trans-unit id="style.size.2">
+                <source>Size 2</source>
+            </trans-unit>
+            <trans-unit id="style.size.3">
+                <source>Size 3</source>
+            </trans-unit>
+            <trans-unit id="style.size.4">
+                <source>Size 4</source>
+            </trans-unit>
+            <trans-unit id="style.size.5">
+                <source>Size 5</source>
+            </trans-unit>
+            <trans-unit id="style.size.6">
+                <source>Size 6</source>
+            </trans-unit>
             <trans-unit id="style.button">
                 <source>Button</source>
             </trans-unit>

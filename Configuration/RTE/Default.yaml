@@ -24,7 +24,12 @@ editor:
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.warning", element: "p", attributes: { 'class': 'is-warning notification' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.danger", element: "p", attributes: { 'class': 'is-danger notification' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.light", element: "p", attributes: { 'class': 'is-light notification' } }
-            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.dark", element: "p", attributes: { 'class': 'is-dark notification' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.1", element: "p", attributes: { 'class': 'is-size-1' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.2", element: "p", attributes: { 'class': 'is-size-2' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.3", element: "p", attributes: { 'class': 'is-size-3' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.4", element: "p", attributes: { 'class': 'is-size-4' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.5", element: "p", attributes: { 'class': 'is-size-5' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.6", element: "p", attributes: { 'class': 'is-size-6' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button", element: "a", attributes: { 'class': 'button' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.primary", element: "a", attributes: { 'class': 'button is-primary' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.success", element: "a", attributes: { 'class': 'button is-success' } }
