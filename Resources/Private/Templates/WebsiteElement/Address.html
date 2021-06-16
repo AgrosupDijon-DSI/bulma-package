@@ -21,7 +21,7 @@
                 <div id="phone">{f:translate(key: 'address.phone', extensionName: 'bulma_package')}<a href="tel:{data.phone}">{data.phone}</a></div>
             </f:if>
             <f:if condition="{data.fax}">
-                <div id="fax">{f:translate(key: 'address.fax', extensionName: 'bulma_package')}<a href="tel:{data.fax}">{data.fax}</a></div>
+                <div id="fax">{f:translate(key: 'address.fax', extensionName: 'bulma_package')}<a href="fax:{data.fax}">{data.fax}</a></div>
             </f:if>
             <f:if condition="{data.email}">
                 <div id="email">{f:link.email(email: '{data.email}')}</div>
