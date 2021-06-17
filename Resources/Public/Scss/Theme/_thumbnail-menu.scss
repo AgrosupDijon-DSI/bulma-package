@@ -8,6 +8,8 @@
 $thumbnail-menu-background: $primary !default;
 $thumbnail-menu-background-opacity: 0.85 !default;
 $thumbnail-menu-background-opacity-hover: 0.5 !default;
+$thumbnail-menu-picture-filter: grayscale(1) !default;
+$thumbnail-menu-picture-filter-hover: none !default;
 $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
 
 //
@@ -100,7 +102,7 @@ $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
         picture,
         img {
           transition: filter 0.25s ease-in-out;
-          filter: grayscale(1);
+          filter: $thumbnail-menu-picture-filter;
         }
       }
 
@@ -113,7 +115,7 @@ $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
 
           picture,
           img {
-            filter: none;
+            filter: $thumbnail-menu-picture-filter-hover;
           }
         }
       }
