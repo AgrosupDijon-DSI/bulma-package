@@ -11,6 +11,10 @@ $thumbnail-menu-background-opacity-hover: 0.5 !default;
 $thumbnail-menu-picture-filter: grayscale(1) !default;
 $thumbnail-menu-picture-filter-hover: none !default;
 $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
+$thumbnail-menu-radius: 0 !default;
+$thumbnail-menu-caption-flex-alignment: center !default;
+$thumbnail-menu-caption-flex-justify: center !default;
+$thumbnail-menu-caption-title-weight: $weight-bold !default;
 
 //
 // Component
@@ -20,6 +24,7 @@ $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
   overflow: hidden;
   position: relative;
   height: 100%;
+  border-radius: $thumbnail-menu-radius;
 }
 
 .thumbnail-menu-link,
@@ -48,8 +53,8 @@ $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
     .thumbnail-menu-caption {
       position: absolute;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: $thumbnail-menu-caption-flex-alignment;
+      justify-content: $thumbnail-menu-caption-flex-justify;
       top: 0;
       left: 0;
       height: 100%;
@@ -82,7 +87,7 @@ $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
     .thumbnail-menu-caption-title {
       font-size: 1.25em;
       margin-bottom: 0.25em;
-      font-weight: $weight-bold;
+      font-weight: $thumbnail-menu-caption-title-weight;
     }
 
     .thumbnail-menu-caption-subtitle {
