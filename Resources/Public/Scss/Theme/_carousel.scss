@@ -1,6 +1,41 @@
-$fontsizeByCols: (1: 100%, 2: 80%, 3: 70%, 4: 50%, 5: 50%, 6: 50%, 7: 50%, 8: 50%, 9: 50%, 10: 50%);
-$maxCols: 10;
+//
+// Carousel
+//
 
+//
+// Variables
+//
+$fontsizeByCols: (1: 100%, 2: 80%, 3: 70%, 4: 50%, 5: 50%, 6: 50%, 7: 50%, 8: 50%, 9: 50%, 10: 50%) !default;
+$maxCols: 10 !default;
+$carousel-content-flex-alignment: center !default;
+$carousel-content-flex-justify: center !default;
+$carousel-content-padding: 0 !default;
+$carousel-content-text-alignment: center !default;
+$carousel-content-max-width: 80% !default;
+$carousel-content-background-dark: transparentize($black, 40%) !default;
+$carousel-content-background-dark-color: $light !default;
+$carousel-content-background-light: transparentize($light, 40%) !default;
+$carousel-content-text-light-color: $light !default;
+$carousel-content-text-dark-color: $dark !default;
+$carousel-control-primary: $dark !default;
+$carousel-control-secondary: $white !default;
+$carousel-control-radius: 50% !default;
+$flickity-control-radius: $carousel-control-radius !default;
+$flickity-button-background: transparentize($carousel-control-secondary, 25%) !default;
+$flickity-button-background-hover: $carousel-control-secondary !default;
+$flickity-button-color: $carousel-control-primary !default;
+$flickity-page-dots-background: $carousel-control-primary !default;
+$flickity-page-dots-color: $carousel-control-secondary !default;
+$flickity-page-dots-border-size: 2px !default;
+$flickity-page-dots-border: $flickity-page-dots-border-size solid $flickity-page-dots-color !default;
+$flickity-page-dots-radius: $carousel-control-radius !default;
+$flickity-page-dots-bottom: 0.8rem !default;
+$flickity-page-dots-padding: 0 !default;
+
+
+//
+// Component
+//
 .carousel{
   &.is-fade{
     background-color: $black;
@@ -170,44 +205,45 @@ $maxCols: 10;
     right: 0;
     bottom: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: $carousel-content-flex-alignment;
+    justify-content: $carousel-content-flex-justify;
+    padding: $carousel-content-padding;
     @include tablet {
       &.has-background-transparent-dark .content{
-        background-color: rgba(10, 10, 10, 0.6);
+        background-color: $carousel-content-background-dark;
         h1, h2{
-          color: $light;
+          color: $carousel-content-background-dark-color;
         }
       }
       &.has-background-transparent-light .content{
-        background-color: rgba(248, 249, 250, 0.6);
+        background-color: $carousel-content-background-light;
       }
     }
     @include mobile {
       &.has-background-transparent-dark{
-        background-color: rgba(10, 10, 10, 0.6);
+        background-color: $carousel-content-background-dark;
         h1, h2{
-          color: $light;
+          color: $carousel-content-background-dark-color;
         }
       }
       &.has-background-transparent-light{
-        background-color: rgba(248, 249, 250, 0.6);
+        background-color: $carousel-content-background-light;
       }
     }
     &.has-text-light{
       h1, h2{
-        color: $light;
+        color: $carousel-content-text-light-color;
       }
     }
     &.has-text-dark{
       h1, h2{
-        color: $dark;
+        color: $carousel-content-text-dark-color;;
       }
     }
     .content{
       padding: 2em 4em;
-      text-align: center;
-      max-width: 80%;
+      text-align: $carousel-content-text-alignment;
+      max-width: $carousel-content-max-width;
       @include mobile {
         padding: 1em;
         max-width: none;
@@ -219,9 +255,10 @@ $maxCols: 10;
 }
 
 .flickity-page-dots {
-  bottom: 0.8rem;
+  bottom: $flickity-page-dots-bottom;
   .dot{
     margin: 0;
+    padding: $flickity-page-dots-padding;
     border: 12px solid transparent;
     border-bottom-width: 8px;
     border-top-width: 8px;
@@ -231,17 +268,26 @@ $maxCols: 10;
     width: 15px;
     height: 15px;
     &:after{
-      border: 2px solid #fff;
-      background-color: $dark;
+      border: $flickity-page-dots-border;
+      background-color: $flickity-page-dots-background;
       content: " ";
       display: block;
       height: 100%;
       width: 100%;
-      border-radius: 50%;
+      border-radius: $flickity-page-dots-radius;
     }
     &:hover{
       opacity: 1;
     }
+  }
+}
+
+.flickity-button{
+  color: $flickity-button-color;
+  background-color: $flickity-button-background;
+  border-radius: $flickity-control-radius;
+  &:hover{
+    background-color: $flickity-button-background-hover;
   }
 }
 
