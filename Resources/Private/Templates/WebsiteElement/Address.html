@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{data.address_title} || {data.address} || {data.zip} || {data.city} || {data.country} || {data.phone} || {data.fax} || {data.email}">
     <div class="column">
         <p class="title is-3">{f:translate(key: 'footer-title-contact', extensionName: 'bulma_package')}</p>
@@ -18,10 +18,10 @@
                 <div id="country">{data.country}</div>
             </f:if>
             <f:if condition="{data.phone}">
-                <div id="phone">{f:translate(key: 'address.phone', extensionName: 'bulma_package')}<a href="tel:{data.phone}">{data.phone}</a></div>
+                <div id="phone">{f:translate(key: 'address.phone', extensionName: 'bulma_package')}<a href="tel:{data.phone -> asd:format.phone()}">{data.phone}</a></div>
             </f:if>
             <f:if condition="{data.fax}">
-                <div id="fax">{f:translate(key: 'address.fax', extensionName: 'bulma_package')}<a href="fax:{data.fax}">{data.fax}</a></div>
+                <div id="fax">{f:translate(key: 'address.fax', extensionName: 'bulma_package')}<a href="fax:{data.fax -> asd:format.phone()}">{data.fax}</a></div>
             </f:if>
             <f:if condition="{data.email}">
                 <div id="email">{f:link.email(email: '{data.email}')}</div>
