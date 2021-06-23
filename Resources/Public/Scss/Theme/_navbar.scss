@@ -1,4 +1,5 @@
 $navbar-item-weight: $weight-semibold !default;
+$navbar-item-size: $body-font-size !default;
 
 .navbar-item {
   &:empty {
@@ -13,6 +14,7 @@ $navbar-item-weight: $weight-semibold !default;
 .navbar-start, .navbar-end {
   & > a, & > .navbar-item > a {
     font-weight: $navbar-item-weight;
+    font-size: $navbar-item-size;
   }
 }
 
