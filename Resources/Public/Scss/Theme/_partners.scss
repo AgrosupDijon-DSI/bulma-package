@@ -1,17 +1,33 @@
+//
+// Partners
+//
+
+//
+// Variables
+//
+$partner-min-width: 12rem !default;
+$partner-flex-alignment: center !default;
+$partner-flex-justify: center !default;
+$partner-margin: 0.25rem 1rem !default;
+$partner-text-align: center !default;
+
+//
+// Component
+//
 .partners{
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: $partner-flex-alignment;
+  justify-content: $partner-flex-justify;
 }
 
 .partner{
-  text-align: center;
-  margin: 0.25rem 1rem;
+  text-align: $partner-text-align;
+  margin: $partner-margin
 }
 
 @include from($tablet){
   .partner{
-    min-width: 12rem;
+    min-width: $partner-min-width;
   }
 }
