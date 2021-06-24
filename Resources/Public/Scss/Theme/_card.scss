@@ -2,6 +2,9 @@ $card-subtitle-color: $subtitle-color !default;
 $card-border-color: transparent !default;
 $card-border-style: none !default;
 $card-border-width: 0 !default;
+$card-image-padding: 0 !default;
+$card-image-link-position: initial !default;
+$card-image-link-display: initial !default;
 
 .card-equal-height{
   display: flex;
@@ -9,6 +12,14 @@ $card-border-width: 0 !default;
   height: 100%;
   & .card-footer {
     margin-top: auto;
+  }
+}
+
+.card-image {
+  padding: $card-image-padding;
+  a{
+    position: $card-image-link-position;
+    display: $card-image-link-display;
   }
 }
 
