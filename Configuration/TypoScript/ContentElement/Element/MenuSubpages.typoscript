@@ -19,12 +19,6 @@ tt_content.menu_subpages {
         10 {
             special = directory
             special.value.field = pages
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = media
-                }
-            }
         }
         11 < .10
         11 {

@@ -24,12 +24,6 @@ tt_content.menu_categorized_pages {
                 sorting = title
                 order = asc
             }
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = media
-                }
-            }
         }
         11 < .10
         11 {

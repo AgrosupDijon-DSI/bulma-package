@@ -22,12 +22,6 @@ tt_content.menu_related_pages {
                 value.field = pages
                 excludeNoSearchPages = 1
             }
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = media
-                }
-            }
         }
         90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         90 {

@@ -23,12 +23,6 @@ tt_content.menu_recently_updated {
                 maxAge = 3600*24*7
                 excludeNoSearchPages = 1
             }
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = media
-                }
-            }
         }
         90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         90 {

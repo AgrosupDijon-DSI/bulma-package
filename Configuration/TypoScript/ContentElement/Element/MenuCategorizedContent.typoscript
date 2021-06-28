@@ -27,12 +27,6 @@ tt_content.menu_categorized_content {
             where.data = field:category_field
             where.wrap = tablenames='tt_content' and fieldname='|'
             as = content
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = image
-                }
-            }
         }
         90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         90 {

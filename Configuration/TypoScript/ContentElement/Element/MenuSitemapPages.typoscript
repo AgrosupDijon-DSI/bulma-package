@@ -20,12 +20,6 @@ tt_content.menu_sitemap_pages {
             special = directory
             special.value.field = pages
             levels = 7
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = media
-                }
-            }
         }
         11 < .10
         11 {
