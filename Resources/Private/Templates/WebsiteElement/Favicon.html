@@ -8,7 +8,7 @@
         </f:for>
         <f:for each="{settings.iconSizes as array}" as="size">
             <f:if condition="{size}">
-                <link rel="icon" sizes="{size}x{size}" type="{favicon.0.originalFile.properties.mime_type}" href="{f:uri.image(image: '{favicon.0}', width: '{size}c', height: '{size}c')}">
+                <link rel="icon" sizes="{size}x{size}" type="{favicon.0.mimeType}" href="{f:uri.image(image: '{favicon.0}', width: '{size}c', height: '{size}c')}">
             </f:if>
         </f:for>
     </f:if>

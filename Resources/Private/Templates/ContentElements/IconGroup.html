@@ -42,7 +42,7 @@
                         <f:if condition="{item.data.icon_set} == '' && {item.iconFile.0}">
                             <f:then>
                                 <span class="icon {item.data.icon_size}">
-                                    <f:if condition="{item.iconFile.0.originalFile.properties.mime_type} == 'image/svg+xml'">
+                                    <f:if condition="{item.iconFile.0.mimeType} == 'image/svg+xml'">
                                         <f:then>
                                             <asd:inlineSvg image="{item.iconFile.0}"/>
                                         </f:then>
