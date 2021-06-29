@@ -1,6 +1,6 @@
-######################################
-#### CTYPE: BOOTSTRAP PACKAGE TAB ####
-######################################
+###################################
+#### CTYPE: BULMA PACKAGE TABS ####
+###################################
 
 tt_content.tab >
 tt_content.tab =< lib.contentElement

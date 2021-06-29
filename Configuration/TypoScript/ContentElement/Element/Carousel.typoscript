@@ -1,6 +1,6 @@
-###########################################
-#### CTYPE: BOOTSTRAP PACKAGE CAROUSEL ####
-###########################################
+#########################
+#### CTYPE: CAROUSEL ####
+#########################
 
 tt_content.carousel >
 tt_content.carousel =< lib.contentElement

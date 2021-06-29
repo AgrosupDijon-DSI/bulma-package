@@ -1,6 +1,6 @@
-########################################
-#### CTYPE: BOOTSTRAP PACKAGE PANEL ####
-########################################
+######################################
+#### CTYPE: BULMA PACKAGE MESSAGE ####
+######################################
 
 tt_content.message >
 tt_content.message =< lib.contentElement
