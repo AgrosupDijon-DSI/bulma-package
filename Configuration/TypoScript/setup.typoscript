@@ -140,6 +140,7 @@ page {
         settings {
             loginPid = {$page.navigation.loginPid}
             searchPid = {$page.navigation.searchPid}
+            megaMenuColumnClasses = {$plugin.bulma_package_websiteelements.megaMenu.columnClasses}
         }
 
         #################

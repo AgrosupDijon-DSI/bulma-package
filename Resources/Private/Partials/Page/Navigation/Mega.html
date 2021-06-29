@@ -19,7 +19,7 @@
                     <div class="container">
                         <div class="columns is-multiline">
                             <f:for each="{item_1.children}" as="item_2">
-                                <div class="column is-3-desktop is-12">
+                                <div class="column {settings.megaMenuColumnClasses}">
                                     <f:render section="sublevel" arguments="{item: item_2, currentUid: data.uid}"/>
                                 </div>
                             </f:for>

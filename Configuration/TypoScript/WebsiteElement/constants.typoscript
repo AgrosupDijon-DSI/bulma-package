@@ -5,6 +5,7 @@
 # customsubcategory=110_websiteelement=Partners
 # customsubcategory=120_websiteelement=Favicon
 # customsubcategory=130_websiteelement=Logo
+# customsubcategory=140_websiteelement=Mega menu
 
 ########################
 ### WEBSITE ELEMENTS ###
@@ -29,5 +30,9 @@ plugin.bulma_package_websiteelements {
         maxWidth = 215
         # cat=bulma package: website elements/130_websiteelement/001_maxheight; type=string; label=Max height
         maxHeight = 60
+    }
+    megaMenu{
+        # cat=bulma package: website elements/140_websiteelement/001_columnclasses; type=string; label=Column css classes
+        columnClasses = is-3-desktop is-12
     }
 }
