@@ -195,11 +195,4 @@ config{
     index_metatags = 1
 
     spamProtectEmailAddresses = ascii
-
-    pageTitleProviders {
-        bulma {
-            provider = AgrosupDijon\BulmaPackage\PageTitle\BulmaTitlePageTitleProvider
-            before = record, seo
-        }
-    }
 }

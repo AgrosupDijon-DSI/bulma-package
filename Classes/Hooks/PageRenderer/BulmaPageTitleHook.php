@@ -1,5 +1,4 @@
 <?php
-declare(strict_types = 1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -8,22 +7,31 @@ declare(strict_types = 1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace AgrosupDijon\BulmaPackage\PageTitle;
+namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\PageTitle\AbstractPageTitleProvider;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class BulmaTitlePageTitleProvider extends AbstractPageTitleProvider
+/**
+ * BulmaPageTitleHook
+ *
+ * Override the page title by adding value from field tx_bulmapackage_settings:title_seo
+ * (Similar behaviour as using websiteTitle in Site Configuration, but we can give permissions to "non admin" users)
+ * Can't be done with the PageTitle API, else it will be used in indexed_search
+ *
+ */
+class BulmaPageTitleHook
 {
 
-    private $titles = [
-        'seo_title',
-        'title'
-    ];
-
-    public function __construct()
+    /**
+     * @param $params
+     */
+    public function execute(&$params)
     {
+        if (TYPO3_MODE !== 'FE') {
+            return;
+        }
+
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_settings');
 
         foreach ($GLOBALS['TSFE']->rootLine as $page) {
@@ -37,7 +45,7 @@ class BulmaTitlePageTitleProvider extends AbstractPageTitleProvider
                 ->andWhere(
                     $queryBuilder->expr()->eq('sys_language_uid', $GLOBALS['TSFE']->page['sys_language_uid'])
                 )
-                ->execute()->fetch();
+                ->execute()->fetchAssociative();
 
             if (isset($bulmaSettings['title_seo']) && !empty($bulmaSettings['title_seo'])) {
 
@@ -54,18 +62,10 @@ class BulmaTitlePageTitleProvider extends AbstractPageTitleProvider
                     $pageTitleSeparator = ': ';
                 }
 
-                $pageTitle = '';
-                foreach ($this->titles as $title){
-                    if(isset($GLOBALS['TSFE']->page[$title]) && !empty($GLOBALS['TSFE']->page[$title])){
-                        $pageTitle = $GLOBALS['TSFE']->page[$title];
-                        break;
-                    }
-                }
-
                 if((bool)($GLOBALS['TSFE']->config['config']['pageTitleFirst'] ?? false)){
-                    $this->title = $pageTitle . $pageTitleSeparator . $bulmaSettings['title_seo'];
+                    $params['title'] = $params['title'] . $pageTitleSeparator . $bulmaSettings['title_seo'];
                 } else {
-                    $this->title = $bulmaSettings['title_seo'] . $pageTitleSeparator . $pageTitle;
+                    $params['title'] = $bulmaSettings['title_seo'] . $pageTitleSeparator . $params['title'];
                 }
 
                 break;
