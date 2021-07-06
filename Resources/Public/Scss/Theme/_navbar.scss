@@ -1,5 +1,8 @@
 $navbar-item-weight: $weight-semibold !default;
 $navbar-item-size: $body-font-size !default;
+$navbar-dropdown-box-shadow: 0 8px 8px bulmaRgba($scheme-invert, 0.1) !default;
+$navbar-dropdown-border-bottom: 0 !default;
+$navbar-dropdown-border-top-color: $primary !default;
 
 .navbar-item {
   &:empty {
@@ -190,7 +193,9 @@ $navbar-item-size: $body-font-size !default;
   }
 
   .navbar-dropdown {
-    border-top-color: $primary;
+    border-top-color: $navbar-dropdown-border-top-color;
+    box-shadow: $navbar-dropdown-box-shadow;
+    border-bottom: $navbar-dropdown-border-bottom;
     .navbar-item {
       & > .navbar-link{
         padding: 0.375rem 1rem;
