@@ -1,8 +1,10 @@
+$address-spacing-top-phone-email: 2rem !default;
+
 address{
   font-style: normal;
   #phone, #email{
     &:not(:first-child){
-      margin-top: 2rem;
+      margin-top: $address-spacing-top-phone-email;
     }
   }
   #phone + #email{
