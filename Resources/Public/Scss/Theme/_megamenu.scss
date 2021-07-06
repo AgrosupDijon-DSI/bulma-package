@@ -1,3 +1,5 @@
+$mega-menu-dropdown-padding: 1rem 0 !default;
+
 .navbar-item.is-mega {
   position: static;
 
@@ -19,8 +21,7 @@
       right: 0;
       top: initial;
 
-      padding-bottom: 1rem;
-      padding-top: 1rem;
+      padding: $mega-menu-dropdown-padding;
 
       .navbar-item {
         white-space: normal;
