@@ -10,6 +10,8 @@ $maxCols: 10 !default;
 $carousel-content-flex-alignment: center !default;
 $carousel-content-flex-justify: center !default;
 $carousel-content-padding: 0 !default;
+$carousel-content-padding-desktop: $carousel-content-padding !default;
+$carousel-content-padding-tablet: $carousel-content-padding !default;
 $carousel-content-padding-mobile: $carousel-content-padding !default;
 $carousel-content-text-alignment: center !default;
 $carousel-content-text-padding: 2em 4em !default;
@@ -219,8 +221,12 @@ $flickity-page-dots-padding: 0 !default;
     display: flex;
     align-items: $carousel-content-flex-alignment;
     justify-content: $carousel-content-flex-justify;
+    padding: $carousel-content-padding;
+    @include desktop{
+      padding: $carousel-content-padding-desktop;
+    }
     @include tablet {
-      padding: $carousel-content-padding;
+      padding: $carousel-content-padding-tablet;
       &.has-background-transparent-dark .content{
         background-color: $carousel-content-background-dark;
         h1, h2{
