@@ -10,8 +10,11 @@ $maxCols: 10 !default;
 $carousel-content-flex-alignment: center !default;
 $carousel-content-flex-justify: center !default;
 $carousel-content-padding: 0 !default;
+$carousel-content-padding-mobile: $carousel-content-padding !default;
 $carousel-content-text-alignment: center !default;
+$carousel-content-text-padding: 2em 4em !default;
 $carousel-content-max-width: 80% !default;
+$carousel-content-max-width-tablet: $carousel-content-max-width !default;
 $carousel-content-background-dark: transparentize($black, 40%) !default;
 $carousel-content-background-dark-color: $light !default;
 $carousel-content-background-light: transparentize($light, 40%) !default;
@@ -26,6 +29,12 @@ $flickity-button-background-hover: $carousel-control-secondary !default;
 $flickity-button-color: $carousel-control-primary !default;
 $flickity-page-dots-background: $carousel-control-primary !default;
 $flickity-page-dots-color: $carousel-control-secondary !default;
+$carousel-title-font-size: 1.75em !default;
+$carousel-title-font-weight: $title-weight !default;
+$carousel-subtitle-font-size: 1.375em !default;
+$carousel-subtitle-font-weight: $subtitle-weight !default;
+$carousel-button-font-size: 1.375em !default;
+$carousel-button-font-weight: $weight-normal !default;
 $flickity-page-dots-border-size: 2px !default;
 $flickity-page-dots-border: $flickity-page-dots-border-size solid $flickity-page-dots-color !default;
 $flickity-page-dots-radius: $carousel-control-radius !default;
@@ -50,13 +59,16 @@ $flickity-page-dots-padding: 0 !default;
     margin-bottom: 1em;
   }
   .title.is-2{
-    font-size: 1.75em;
+    font-size: $carousel-title-font-size;
+    font-weight: $carousel-title-font-weight;
   }
   .subtitle.is-4{
-    font-size: 1.375em;
+    font-size: $carousel-subtitle-font-size;
+    font-weight: $carousel-subtitle-font-weight;
   }
   .button.is-large {
-    font-size: 1.375em;
+    font-size: $carousel-button-font-size;
+    font-weight: $carousel-button-font-weight;
   }
 
   @include desktop{
@@ -207,8 +219,8 @@ $flickity-page-dots-padding: 0 !default;
     display: flex;
     align-items: $carousel-content-flex-alignment;
     justify-content: $carousel-content-flex-justify;
-    padding: $carousel-content-padding;
     @include tablet {
+      padding: $carousel-content-padding;
       &.has-background-transparent-dark .content{
         background-color: $carousel-content-background-dark;
         h1, h2{
@@ -220,6 +232,7 @@ $flickity-page-dots-padding: 0 !default;
       }
     }
     @include mobile {
+      padding: $carousel-content-padding-mobile;
       &.has-background-transparent-dark{
         background-color: $carousel-content-background-dark;
         h1, h2{
@@ -241,9 +254,12 @@ $flickity-page-dots-padding: 0 !default;
       }
     }
     .content{
-      padding: 2em 4em;
+      padding: $carousel-content-text-padding;
       text-align: $carousel-content-text-alignment;
       max-width: $carousel-content-max-width;
+      @include tablet-only {
+        max-width: $carousel-content-max-width-tablet;
+      }
       @include mobile {
         padding: 1em;
         max-width: none;
