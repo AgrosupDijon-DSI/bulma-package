@@ -30,6 +30,16 @@ tt_content.menu_section {
                 }
             }
             includeNotInMenu = 1
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+                10 {
+                    table = tt_content
+                    pidInList.field = uid
+                    as = content
+                    where = sectionIndex = 1 AND CType != "menu_section"
+                    orderBy = sorting
+                }
+            }
         }
         90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         90 {
