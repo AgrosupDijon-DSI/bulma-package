@@ -1,3 +1,5 @@
+$tabs-content-padding: 1.5rem 0 0 0 !default;
+
 .tabs {
   &:not(:last-child) {
     margin-bottom: 0;
@@ -5,6 +7,7 @@
 }
 
 .tabs-content {
+  padding: $tabs-content-padding;
   & > ul > li {
     display: none;
 
@@ -13,8 +16,12 @@
     }
   }
 
-  .frame {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  .frame{
+    &:first-of-type{
+      margin-top: 0 !important;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+    }
   }
 }
