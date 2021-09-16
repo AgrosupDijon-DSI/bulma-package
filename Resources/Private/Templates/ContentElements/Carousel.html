@@ -21,29 +21,45 @@
             <f:for each="{records}" as="item" iteration="iteration">
                 <f:variable name="itemStyleColor"><f:if condition="{item.data.background_color}">background-color: {item.data.background_color};</f:if></f:variable>
                 <div class="carousel-item image has-{data.pi_flexform.cells} has-{data.pi_flexform.cells_tablet}-tablet has-{data.pi_flexform.cells_mobile}-mobile {data.pi_flexform.ratio} {data.pi_flexform.ratio_tablet}-tablet {data.pi_flexform.ratio_mobile}-mobile" style="{itemStyleColor}">
-                    <div class="has-ratio">
-                        <f:if condition="{item.data.header} || {item.data.subheader} || ({item.data.link} && {item.data.button_text})">
-                            <div class="carousel-content {f:if(condition: item.data.text_color, then: '{item.data.text_color}')}">
-                                <div class="content">
-                                    <f:if condition="{item.data.header}">
-                                        <h1 class="title is-2 is-spaced">{item.data.header}</h1>
-                                    </f:if>
-                                    <f:if condition="{item.data.subheader}">
-                                        <h2 class="subtitle is-4">{item.data.subheader}</h2>
-                                    </f:if>
-                                    <f:if condition="{item.data.link} && {item.data.button_text}">
-                                        <f:link.typolink parameter="{item.data.link}" class="button is-large {item.data.button_class}">{item.data.button_text}</f:link.typolink>
-                                    </f:if>
+                    <f:variable name="buttonLink" value="{f:if(condition: '{item.data.link} && {item.data.button_text}', then: 1, else: 0)}"/>
+                    <f:render section="LinkWrap"
+                              arguments="{link: item.image.0.properties.link, buttonLink: buttonLink}"
+                              contentAs="content">
+                        <div class="has-ratio">
+                            <f:if condition="{item.data.header} || {item.data.subheader} || {buttonLink})">
+                                <div class="carousel-content {f:if(condition: item.data.text_color, then: '{item.data.text_color}')}">
+                                    <div class="content">
+                                        <f:if condition="{item.data.header}">
+                                            <h1 class="title is-2 is-spaced">{item.data.header}</h1>
+                                        </f:if>
+                                        <f:if condition="{item.data.subheader}">
+                                            <h2 class="subtitle is-4">{item.data.subheader}</h2>
+                                        </f:if>
+                                        <f:if condition="{item.data.link} && {item.data.button_text}">
+                                            <f:link.typolink parameter="{item.data.link}" class="button is-large {item.data.button_class}">{item.data.button_text}</f:link.typolink>
+                                        </f:if>
+                                    </div>
                                 </div>
-                            </div>
-                        </f:if>
-                        <f:if condition="{item.image.0}">
-                            <f:render partial="Media/Type/Image" arguments="{file: item.image.0, data: item.data, settings: settings, variants: variants}" />
-                        </f:if>
-                    </div>
+                            </f:if>
+                            <f:if condition="{item.image.0}">
+                                <f:render partial="Media/Rendering/Image" arguments="{file: item.image.0, data: item.data, settings: settings, variants: variants, pictureClasses: pictureClasses, imgClasses: imgClasses}" />
+                            </f:if>
+                        </div>
+                    </f:render>
                 </div>
             </f:for>
         </div>
+    </f:if>
+</f:section>
+
+<f:section name="LinkWrap">
+    <f:if condition="{link} && {buttonLink} == 0">
+        <f:then>
+            <f:link.typolink parameter="{link}">{content -> f:format.raw()}</f:link.typolink>
+        </f:then>
+        <f:else>
+            {content -> f:format.raw()}
+        </f:else>
     </f:if>
 </f:section>
 </html>
