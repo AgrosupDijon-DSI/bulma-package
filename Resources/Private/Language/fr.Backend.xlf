@@ -543,10 +543,6 @@
         <source>Text dark</source>
         <target state="final">Texte sombre</target>
       </trans-unit>
-      <trans-unit id="tx_bulmapackage_settings.warning" approved="yes">
-        <source>You tried to create a new "Website Settings" but one was already present.</source>
-        <target state="final">Vous essayez de créer une nouvelle configuration alors qu'il en existe déjà une.</target>
-      </trans-unit>
       <trans-unit id="palette.bulmapackage_address" approved="yes">
         <source>Address</source>
         <target state="final">Adresse</target>
