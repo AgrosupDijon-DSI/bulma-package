@@ -19,7 +19,7 @@ use TYPO3\CMS\Core\Utility\HttpUtility;
 
 class DataHandlerHook
 {
-    public function processDatamap_postProcessFieldArray($status, $table, $id, $fieldArray, DataHandler $dataHandler)
+    public function processDatamap_postProcessFieldArray(&$status, $table, $id, $fieldArray, DataHandler $dataHandler)
     {
         if($table == 'tx_bulmapackage_settings' && $status == 'new'){
 
@@ -37,7 +37,7 @@ class DataHandlerHook
                 ->execute()->fetchColumn(0);
 
             if($countBulmaSettings > 0){
-                unset($dataHandler->datamap['tx_bulmapackage_settings'][$id]);
+                $status = false;
 
                 $message = GeneralUtility::makeInstance(FlashMessage::class,
                     $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.warning'),
@@ -47,7 +47,7 @@ class DataHandlerHook
                 );
 
                 $flashMessageService = GeneralUtility::makeInstance(FlashMessageService::class);
-                $messageQueue = $flashMessageService->getMessageQueueByIdentifier();
+                $messageQueue = $flashMessageService->getMessageQueueByIdentifier('extbase.flashmessages.tx_bulmapackage_system_bulmapackagewebsitesettings');
                 $messageQueue->addMessage($message);
 
                 $returnUrl = GeneralUtility::sanitizeLocalUrl(GeneralUtility::_GP('returnUrl'));

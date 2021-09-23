@@ -526,7 +526,7 @@
                 <source>Text dark</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.warning">
-                <source>You tried to create a new "Website Settings" but one was already present.</source>
+                <source>A configuration already exists for this website.</source>
             </trans-unit>
             <trans-unit id="palette.bulmapackage_address">
                 <source>Address</source>
