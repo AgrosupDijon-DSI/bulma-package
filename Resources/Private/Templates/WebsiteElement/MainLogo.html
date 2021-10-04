@@ -1,7 +1,14 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{logoMain}">
     <f:link.page pageUid="{rootPage}" class="navbar-item">
-        <f:image class="image" image="{logoMain.0}" maxWidth="{settings.maxWidth}" maxHeight="{settings.maxHeight}" />
+        <f:if condition="{logoMain.0.mimeType} == 'image/svg+xml'">
+            <f:then>
+                <asd:inlineSvg class="image" image="{logoMain.0}" width="{settings.maxWidth}" height="{settings.maxHeight}" />
+            </f:then>
+            <f:else>
+                <f:image class="image" image="{logoMain.0}" maxWidth="{settings.maxWidth}" maxHeight="{settings.maxHeight}" />
+            </f:else>
+        </f:if>
     </f:link.page>
 </f:if>
 </html>

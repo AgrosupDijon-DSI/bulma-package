@@ -42,15 +42,8 @@
                         <f:if condition="{item.data.icon_set} == '' && {item.iconFile.0}">
                             <f:then>
                                 <span class="icon {item.data.icon_size}">
-                                    <f:if condition="{item.iconFile.0.mimeType} == 'image/svg+xml'">
-                                        <f:then>
-                                            <asd:inlineSvg image="{item.iconFile.0}"/>
-                                        </f:then>
-                                        <f:else>
-                                            <f:render partial="Media/Rendering/Image"
-                                                      arguments="{file: item.iconFile.0, data: data, settings: settings, variants: variants}"/>
-                                        </f:else>
-                                    </f:if>
+                                    <f:render partial="Media/Rendering/Image"
+                                              arguments="{file: item.iconFile.0, data: data, settings: settings, variants: variants}"/>
                                 </span>
                             </f:then>
                             <f:else if="{item.data.icon}">
