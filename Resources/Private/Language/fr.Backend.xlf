@@ -660,11 +660,11 @@
         <target state="final">Livre</target>
       </trans-unit>
       <trans-unit id="tx_bulmapackage_settings_link_item.icon.user" approved="yes">
-        <source>Student</source>
+        <source>User</source>
         <target state="final">Utilisateur</target>
       </trans-unit>
       <trans-unit id="tx_bulmapackage_settings_link_item.icon.student" approved="yes">
-        <source>User</source>
+        <source>Student</source>
         <target state="final">Étudiant</target>
       </trans-unit>
       <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock" approved="yes">
