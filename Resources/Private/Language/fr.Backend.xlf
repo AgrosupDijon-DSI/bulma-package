@@ -661,11 +661,11 @@
       </trans-unit>
       <trans-unit id="tx_bulmapackage_settings_link_item.icon.user" approved="yes">
         <source>Student</source>
-        <target state="final">Étudiant</target>
+        <target state="final">Utilisateur</target>
       </trans-unit>
       <trans-unit id="tx_bulmapackage_settings_link_item.icon.student" approved="yes">
         <source>User</source>
-        <target state="final">Utilisateur</target>
+        <target state="final">Étudiant</target>
       </trans-unit>
       <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock" approved="yes">
         <source>Lock</source>
