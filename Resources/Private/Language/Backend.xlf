@@ -634,10 +634,10 @@
                 <source>Book</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings_link_item.icon.user">
-                <source>Student</source>
+                <source>User</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings_link_item.icon.student">
-                <source>User</source>
+                <source>Student</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock">
                 <source>Lock</source>
