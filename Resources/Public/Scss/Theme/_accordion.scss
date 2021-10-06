@@ -5,6 +5,8 @@ $collapse-transition-style: ease !default;
 $message-body-padding: 1.25em 1.5em !default;
 $accordion-content-padding: $card-content-padding !default;
 $accordion-header-padding: $card-header-padding !default;
+$accordion-header-hover-color: $link-active !default;
+$accordion-header-active-color: $link-active !default;
 
 .is-collapsible {
   height: 0;
@@ -45,7 +47,7 @@ $accordion-header-padding: $card-header-padding !default;
     cursor: pointer;
 
     a {
-      color: $link-active;
+      color: $accordion-header-hover-color;
     }
   }
 
@@ -55,7 +57,7 @@ $accordion-header-padding: $card-header-padding !default;
 
   &.is-active {
     a {
-      color: $link-active;
+      color: $accordion-header-active-color;
     }
 
     i {
