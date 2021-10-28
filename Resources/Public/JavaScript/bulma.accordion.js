@@ -18,19 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
         accordionElement.on('before:expand', (e) => {
             sleep(200).then(() => {
                 if(!isInViewport(accordionElement.element.previousSibling)){
-                    scroll.animateScroll(accordionElement.element.previousSibling, 0, {speed: 300, updateURL: false, header: '#'+ accordionElement.element.previousSibling.id});
+                    scroll.animateScroll(accordionElement.element.previousSibling, 0, {speed: 300, updateURL: false});
                 }
             });
         });
-    });
 
-    var currentAnchor = (document.URL.split('#').length > 1) ? document.URL.split('#')[1] : null;
-    if(currentAnchor){
-        bulmaCollapsibleInstances.forEach(accordionElement => {
+        var currentAnchor = (document.URL.split('#').length > 1) ? document.URL.split('#')[1] : null;
+        if(currentAnchor){
             if(accordionElement.element.id == currentAnchor){
                 accordionElement.expand();
             }
-        });
-    }
+        }
+    });
 
 });
