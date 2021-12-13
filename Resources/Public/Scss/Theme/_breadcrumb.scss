@@ -1,7 +1,13 @@
 $breadcrumb-font-size: $size-normal !default;
 $breadcrumb-font-weight: $weight-normal !default;
+$breadcrumb-white-space: nowrap !default;
+$breadcrumb-item-alignement: center !default;
 
 .breadcrumb {
   font-size: $breadcrumb-font-size;
   font-weight: $breadcrumb-font-weight;
+  white-space: $breadcrumb-white-space;
+  li {
+    align-items: $breadcrumb-item-alignement;
+  }
 }
