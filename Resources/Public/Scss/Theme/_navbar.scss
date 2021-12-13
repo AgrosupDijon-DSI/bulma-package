@@ -43,21 +43,29 @@ $navbar-dropdown-border-top-color: $primary !default;
     box-shadow: none;
     padding: 0;
     border-bottom: $navbar-dropdown-border-bottom;
+    right: 100%;
+    transition: 0.5s ease-in-out transform;
+
+    &.is-active {
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+    }
+
+    html[dir="rtl"] &{
+      right: initial;
+      left: 100%;
+
+      &.is-active {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+      }
+    }
 
     .navbar-start, .navbar-end {
       & > .navbar-item {
         border-bottom: $navbar-dropdown-border-top;
         border-color: $primary;
       }
-    }
-
-    transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transition: 0.5s ease-in-out transform;
-
-    &.is-active {
-      transform: translateX(0);
-      -webkit-transform: translateX(0);
     }
 
     .navbar-link:not(.is-arrowless):after {
