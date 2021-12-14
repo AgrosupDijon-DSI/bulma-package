@@ -27,6 +27,7 @@
   }
   .content{
     flex-grow: 1;
+    word-break: break-word;
   }
   &-top{
     .icon-group-item{
@@ -71,5 +72,10 @@
   }
   .icon{
     flex-shrink: 0;
+  }
+  &-right, &-left{
+    .is-xxl{
+      max-width: 50%;
+    }
   }
 }
