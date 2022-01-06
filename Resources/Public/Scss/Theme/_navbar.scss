@@ -242,6 +242,23 @@ $navbar-dropdown-border-top-color: $primary !default;
       box-shadow: 0 4px 10px rgba(10, 10, 10, 0.1);
       border-top: 0;
       border-left: 2px solid $primary;
+      &.is-right{
+        border-right: 2px solid $primary;
+        border-left: 0;
+        border-radius: 6px 0 0 6px;
+        margin-right: 100%;
+      }
+    }
+  }
+
+  .navbar-item.has-dropdown-up{
+    .nested{
+      .navbar-dropdown{
+        bottom: auto;
+      }
+    }
+    .navbar-dropdown{
+      border-bottom: 0;
     }
   }
 }
