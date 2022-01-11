@@ -3,37 +3,42 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="de">
     <header/>
     <body>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </body>
+      <trans-unit id="style.box">
+        <source>Box</source>
+        <target state="translated">Box</target>
+      </trans-unit>
+      <trans-unit id="style.notification">
+        <source>Notification</source>
+        <target state="translated">Benachrichtigung</target>
+      </trans-unit>
+      <trans-unit id="style.size.1">
+        <source>Size 1</source>
+        <target state="translated">Größe 1</target>
+      </trans-unit>
+      <trans-unit id="style.size.2">
+        <source>Size 2</source>
+        <target state="translated">Größe 2</target>
+      </trans-unit>
+      <trans-unit id="style.size.3">
+        <source>Size 3</source>
+        <target state="translated">Größe 3</target>
+      </trans-unit>
+      <trans-unit id="style.size.4">
+        <source>Size 4</source>
+        <target state="translated">Größe 4</target>
+      </trans-unit>
+      <trans-unit id="style.size.5">
+        <source>Size 5</source>
+        <target state="translated">Größe 5</target>
+      </trans-unit>
+      <trans-unit id="style.size.6">
+        <source>Size 6</source>
+        <target state="translated">Größe 6</target>
+      </trans-unit>
+      <trans-unit id="style.button">
+        <source>Button</source>
+        <target state="translated">Button</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
