@@ -7,9 +7,29 @@
         <source>Box</source>
         <target state="translated">Box</target>
       </trans-unit>
+      <trans-unit id="style.table.bordered">
+        <source>Table Bordered</source>
+        <target state="translated">Tabellenumrandung</target>
+      </trans-unit>
       <trans-unit id="style.notification">
         <source>Notification</source>
         <target state="translated">Benachrichtigung</target>
+      </trans-unit>
+      <trans-unit id="style.notification.primary">
+        <source>Notification Primary</source>
+        <target state="translated">Benachrichtigungen Primärfarbe</target>
+      </trans-unit>
+      <trans-unit id="style.notification.success">
+        <source>Notification Success</source>
+        <target state="translated">Benachrichtigungen Erfolgsmeldung</target>
+      </trans-unit>
+      <trans-unit id="style.notification.info">
+        <source>Notification Info</source>
+        <target state="translated">Benachrichtigungen Information</target>
+      </trans-unit>
+      <trans-unit id="style.notification.warning">
+        <source>Notification Warning</source>
+        <target state="translated">Benachrichtigungen Warnung</target>
       </trans-unit>
       <trans-unit id="style.size.1">
         <source>Size 1</source>
