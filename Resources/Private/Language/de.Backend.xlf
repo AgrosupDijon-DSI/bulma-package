@@ -3,228 +3,494 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="de">
     <header/>
     <body>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </body>
+      <trans-unit id="ratio.16_9">
+        <source>16:9</source>
+        <target state="translated">16:9</target>
+      </trans-unit>
+      <trans-unit id="ratio.3_2">
+        <source>3:2</source>
+        <target state="translated">3:2</target>
+      </trans-unit>
+      <trans-unit id="ratio.3_1">
+        <source>3:1</source>
+        <target state="translated">3:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_1">
+        <source>4:1</source>
+        <target state="translated">4:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.6_1">
+        <source>6:1</source>
+        <target state="translated">6:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_3">
+        <source>4:3</source>
+        <target state="translated">4:3</target>
+      </trans-unit>
+      <trans-unit id="ratio.1_1">
+        <source>1:1</source>
+        <target state="translated">1:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.2_3">
+        <source>2:3</source>
+        <target state="translated">2:3</target>
+      </trans-unit>
+      <trans-unit id="ratio.1_2">
+        <source>1:2</source>
+        <target state="translated">1:2</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_5">
+        <source>4:5</source>
+        <target state="translated">4:5</target>
+      </trans-unit>
+      <trans-unit id="ratio.free">
+        <source>Free</source>
+        <target state="translated">Frei</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.125">
+        <source>Beside Text, Centered Right</source>
+        <target state="translated">Neben Text, mittig links</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.126">
+        <source>Beside Text, Centered Left</source>
+        <target state="translated">Neben Text, mittig links</target>
+      </trans-unit>
+      <trans-unit id="field.ignore_nav_hide">
+        <source>Display "menu excluded" pages</source>
+        <target state="translated">Zeige "Menü ausgenommene" Seiten</target>
+      </trans-unit>
+      <trans-unit id="field.max_items">
+        <source>Max pages displayed</source>
+        <target state="translated">Maximale Anzahl anzuzeigender Seiten</target>
+      </trans-unit>
+      <trans-unit id="field.gallery_size">
+        <source>Size</source>
+        <target state="translated">Größe</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class">
+        <source>Styles</source>
+        <target state="translated">Styles</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.boxed">
+        <source>Boxed</source>
+        <target state="translated">Verpackt</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.toggle">
+        <source>Toggle</source>
+        <target state="translated">Umschalten</target>
+      </trans-unit>
+      <trans-unit id="field.alignement">
+        <source>Alignment</source>
+        <target state="translated">Ausrichtung</target>
+      </trans-unit>
+      <trans-unit id="field.icon-alignement">
+        <source>Icon alignment</source>
+        <target state="translated">Symbolausrichtung</target>
+      </trans-unit>
+      <trans-unit id="option.left">
+        <source>Left</source>
+        <target state="translated">Links</target>
+      </trans-unit>
+      <trans-unit id="option.center">
+        <source>Center</source>
+        <target state="translated">Zentriert</target>
+      </trans-unit>
+      <trans-unit id="option.right">
+        <source>Right</source>
+        <target state="translated">Rechts</target>
+      </trans-unit>
+      <trans-unit id="option.top">
+        <source>Top</source>
+        <target state="translated">Oben</target>
+      </trans-unit>
+      <trans-unit id="option.bottom">
+        <source>Bottom</source>
+        <target state="translated">Unten</target>
+      </trans-unit>
+      <trans-unit id="option.default">
+        <source>Default</source>
+        <target state="translated">Standard</target>
+      </trans-unit>
+      <trans-unit id="option.none">
+        <source>None</source>
+        <target state="translated">Keine</target>
+      </trans-unit>
+      <trans-unit id="option.medium">
+        <source>Medium</source>
+        <target state="translated">Mittel</target>
+      </trans-unit>
+      <trans-unit id="option.large">
+        <source>Large</source>
+        <target state="translated">Groß</target>
+      </trans-unit>
+      <trans-unit id="option.xl">
+        <source>XL</source>
+        <target state="translated">XL</target>
+      </trans-unit>
+      <trans-unit id="option.xxl">
+        <source>XXL</source>
+        <target state="translated">XXL</target>
+      </trans-unit>
+      <trans-unit id="option.primary">
+        <source>Primary</source>
+        <target state="translated">Primär</target>
+      </trans-unit>
+      <trans-unit id="option.success">
+        <source>Success</source>
+        <target state="translated">Erfolg</target>
+      </trans-unit>
+      <trans-unit id="option.info">
+        <source>Info</source>
+        <target state="translated">Information</target>
+      </trans-unit>
+      <trans-unit id="option.warning">
+        <source>Warning</source>
+        <target state="translated">Warnung</target>
+      </trans-unit>
+      <trans-unit id="option.danger">
+        <source>Danger</source>
+        <target state="translated">Achtung</target>
+      </trans-unit>
+      <trans-unit id="option.light">
+        <source>Light</source>
+        <target state="translated">Hell</target>
+      </trans-unit>
+      <trans-unit id="option.dark">
+        <source>Dark</source>
+        <target state="translated">Dunkel</target>
+      </trans-unit>
+      <trans-unit id="option.mobile">
+        <source>Mobile</source>
+        <target state="translated">Mobil</target>
+      </trans-unit>
+      <trans-unit id="option.tablet">
+        <source>Tablet</source>
+        <target state="translated">Tablet</target>
+      </trans-unit>
+      <trans-unit id="option.desktop">
+        <source>Desktop</source>
+        <target state="translated">Desktop</target>
+      </trans-unit>
+      <trans-unit id="option.widescreen">
+        <source>Widescreen</source>
+        <target state="translated">Widescreen</target>
+      </trans-unit>
+      <trans-unit id="option.text-center">
+        <source>Centered text</source>
+        <target state="translated">Zentrierter Text</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.add">
+        <source>Create new carousel item</source>
+        <target state="translated">Neues Karussell-Item erstellen</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.tt_content">
+        <source>Carousel</source>
+        <target state="translated">Karussell</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.link">
+        <source>Link</source>
+        <target state="translated">Link</target>
+      </trans-unit>
+      <trans-unit id="palette.text">
+        <source>Text</source>
+        <target state="translated">Text</target>
+      </trans-unit>
+      <trans-unit id="palette.call_to_action">
+        <source>Call to action</source>
+        <target state="translated">Call to action</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.header">
+        <source>Header</source>
+        <target state="translated">Überschrift</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.subheader">
+        <source>Subheader</source>
+        <target state="translated">Untertitel</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.text_color">
+        <source>Text color</source>
+        <target state="translated">Textfarbe</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.button_class">
+        <source>Button type</source>
+        <target state="translated">Schaltflächentyp</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.button_text">
+        <source>Label</source>
+        <target state="translated">Beschriftung</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.background_color">
+        <source>Background color</source>
+        <target state="translated">Hintergrundfarbe</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.image">
+        <source>Image</source>
+        <target state="translated">Bild</target>
+      </trans-unit>
+      <trans-unit id="accordion_item">
+        <source>Accordion Item</source>
+        <target state="translated">Akkordeon-Element</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.add">
+        <source>Create new accordion</source>
+        <target state="translated">Neues Akkordeon erstellen</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.record">
+        <source>Content Elements</source>
+        <target state="translated">Inhaltselemente</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.record.add">
+        <source>Create new content</source>
+        <target state="translated">Ein neuen Inhalt erstellen</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.title">
+        <source>Accordion title</source>
+        <target state="translated">Akkordeon-Titel</target>
+      </trans-unit>
+      <trans-unit id="content_element.tab">
+        <source>Tab</source>
+        <target state="translated">Reiter</target>
+      </trans-unit>
+      <trans-unit id="content_element.tab.description">
+        <source>Insert several Tab element(s)</source>
+        <target state="translated">Mehrere Tab-Elemente(n) einfügen</target>
+      </trans-unit>
+      <trans-unit id="tab_item">
+        <source>Tab Item</source>
+        <target state="translated">Reiter-Element</target>
+      </trans-unit>
+      <trans-unit id="tab_item.add">
+        <source>Create new tab item</source>
+        <target state="translated">Neues Reiter-Element erstellen</target>
+      </trans-unit>
+      <trans-unit id="tab_item.record">
+        <source>Content Elements</source>
+        <target state="translated">Inhaltselemente</target>
+      </trans-unit>
+      <trans-unit id="tab_item.record.add">
+        <source>Create new content</source>
+        <target state="translated">Ein neuen Inhalt erstellen</target>
+      </trans-unit>
+      <trans-unit id="tab_item.title">
+        <source>Tab title</source>
+        <target state="translated">Reiter-Titel</target>
+      </trans-unit>
+      <trans-unit id="content_element.card_group">
+        <source>Card Group</source>
+        <target state="translated">Kartengruppe</target>
+      </trans-unit>
+      <trans-unit id="content_element.card_group.description">
+        <source>Insert a element with several content cards</source>
+        <target state="translated">Ein Element mit mehreren Inhaltskarten einfügen</target>
+      </trans-unit>
+      <trans-unit id="card_group_item">
+        <source>Card</source>
+        <target state="translated">Karte</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.add">
+        <source>Create new card</source>
+        <target state="translated">Eine Karte erstellen</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.header">
+        <source>Header</source>
+        <target state="translated">Überschrift</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.subheader">
+        <source>Subheader</source>
+        <target state="translated">Untertitel</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.media">
+        <source>Media</source>
+        <target state="translated">Medien</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.bodytext">
+        <source>Text</source>
+        <target state="translated">Text</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.link">
+        <source>Link</source>
+        <target state="translated">Link</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.link_title">
+        <source>Title</source>
+        <target state="translated">Titel</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.tt_content">
+        <source>Card Group</source>
+        <target state="translated">Kartengruppe</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item">
+        <source>Icon Group Item</source>
+        <target state="translated">Symbol-Gruppen-Element</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.tt_content">
+        <source>Icon Group</source>
+        <target state="translated">Icon-Gruppe</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.header">
+        <source>Header</source>
+        <target state="translated">Überschrift</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.subheader">
+        <source>Subheader</source>
+        <target state="translated">Untertitel</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.link">
+        <source>Link</source>
+        <target state="translated">Link</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_set">
+        <source>Icon Set</source>
+        <target state="translated">Icon-Sammlung</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon">
+        <source>Icon</source>
+        <target state="translated">Icon</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_file">
+        <source>Icon File</source>
+        <target state="translated">Icon-Datei</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_size">
+        <source>Icon Size</source>
+        <target state="translated">Icon-Größe</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_color">
+        <source>Icon Color</source>
+        <target state="translated">Icon-Farbe</target>
+      </trans-unit>
+      <trans-unit id="content_element.video">
+        <source>Video</source>
+        <target state="translated">Video</target>
+      </trans-unit>
+      <trans-unit id="content_element.message">
+        <source>Message</source>
+        <target state="translated">Nachricht</target>
+      </trans-unit>
+      <trans-unit id="content_element.message.description">
+        <source>Insert Message element with simple text.</source>
+        <target state="translated">Nachrichtenelement mit einfachem Text einfügen.</target>
+      </trans-unit>
+      <trans-unit id="content_element.video.description">
+        <source>Any number of youtube and vimeo videos in columns and rows with a caption.</source>
+        <target state="translated">Beliebige Anzahl von YouTube- und vimeo-Videos in Spalten und Zeilen mit einer Überschrift.</target>
+      </trans-unit>
+      <trans-unit id="content_element.icon_group">
+        <source>Icon Group</source>
+        <target state="translated">Icon-Gruppe</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.address">
+        <source>Address</source>
+        <target state="translated">Adresse</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.zip">
+        <source>Zip</source>
+        <target state="translated">PLZ</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.city">
+        <source>City</source>
+        <target state="translated">Stadt</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.country">
+        <source>Country</source>
+        <target state="translated">Land</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.phone">
+        <source>Phone</source>
+        <target state="translated">Telefon</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.fax">
+        <source>Fax</source>
+        <target state="translated">Fax</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.email">
+        <source>Email</source>
+        <target state="translated">E-Mail</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.tx_bulmapackage_settings_link_item">
+        <source>Links</source>
+        <target state="translated">Links</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.tx_bulmapackage_settings_link_item.add">
+        <source>Create new link</source>
+        <target state="translated">Neuen Link erstellen</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item">
+        <source>Link</source>
+        <target state="translated">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.label">
+        <source>Label</source>
+        <target state="translated">Beschriftung</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.link">
+        <source>Link</source>
+        <target state="translated">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.force_label">
+        <source>Always show label</source>
+        <target state="translated">Beschriftung immer anzeigen</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon">
+        <source>Icon</source>
+        <target state="translated">Icon</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon_custom">
+        <source>Custom icon</source>
+        <target state="translated">Eigenes Icon</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.book">
+        <source>Book</source>
+        <target state="translated">Buch</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.user">
+        <source>User</source>
+        <target state="translated">Benutzer</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.student">
+        <source>Student</source>
+        <target state="translated">Student</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock">
+        <source>Lock</source>
+        <target state="translated">Sperren</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.standalone">
+        <source>Standalone</source>
+        <target state="translated">Eigenständig</target>
+      </trans-unit>
+      <trans-unit id="bulma-website">
+        <source>Bulma website</source>
+        <target state="translated">Bulma Webseite</target>
+      </trans-unit>
+      <trans-unit id="content_layout.cards">
+        <source>Cards</source>
+        <target state="translated">Karten (Cards)</target>
+      </trans-unit>
+      <trans-unit id="content_frame.fullwidth">
+        <source>Full width</source>
+        <target state="translated">Volle Breite</target>
+      </trans-unit>
+      <trans-unit id="content_frame.hero">
+        <source>Hero</source>
+        <target state="translated">Hero</target>
+      </trans-unit>
+      <trans-unit id="content_frame.desktop">
+        <source>Reduced</source>
+        <target state="translated">Reduziert</target>
+      </trans-unit>
+      <trans-unit id="tt_content.colPos.nestedContentColPos">
+        <source>Nested content</source>
+        <target state="translated">Verschachtelter Inhalt</target>
+      </trans-unit>
+      <trans-unit id="content_group.media">
+        <source>Media</source>
+        <target state="translated">Medien</target>
+      </trans-unit>
+      <trans-unit id="news.templateLayouts.4cols">
+        <source>4 Columns</source>
+        <target state="translated">4 Spalten</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
