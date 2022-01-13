@@ -17,7 +17,7 @@
       </trans-unit>
       <trans-unit id="style.notification.primary">
         <source>Notification Primary</source>
-        <target state="translated">Benachrichtigungen Primärfarbe</target>
+        <target state="translated">Benachrichtigungen – Primärfarbe</target>
       </trans-unit>
       <trans-unit id="style.notification.success">
         <source>Notification Success</source>
@@ -25,11 +25,23 @@
       </trans-unit>
       <trans-unit id="style.notification.info">
         <source>Notification Info</source>
-        <target state="translated">Benachrichtigungen Information</target>
+        <target state="translated">Benachrichtigungen – Information</target>
       </trans-unit>
       <trans-unit id="style.notification.warning">
         <source>Notification Warning</source>
-        <target state="translated">Benachrichtigungen Warnung</target>
+        <target state="translated">Benachrichtigungen – Warnung</target>
+      </trans-unit>
+      <trans-unit id="style.notification.danger">
+        <source>Notification Danger</source>
+        <target state="translated">Benachrichtigungen – Achtung</target>
+      </trans-unit>
+      <trans-unit id="style.notification.light">
+        <source>Notification Light</source>
+        <target state="translated">Benachrichtungen – Heller Hintergrund</target>
+      </trans-unit>
+      <trans-unit id="style.notification.dark">
+        <source>Notification Dark</source>
+        <target state="translated">Benachrichtungen – Dunkler Hintergrund</target>
       </trans-unit>
       <trans-unit id="style.size.1">
         <source>Size 1</source>
@@ -58,6 +70,62 @@
       <trans-unit id="style.button">
         <source>Button</source>
         <target state="translated">Button</target>
+      </trans-unit>
+      <trans-unit id="style.button.primary">
+        <source>Button Primary</source>
+        <target state="translated">Button – Primärfarbe</target>
+      </trans-unit>
+      <trans-unit id="style.button.success">
+        <source>Button Success</source>
+        <target state="translated">Button – Erfolgreich</target>
+      </trans-unit>
+      <trans-unit id="style.button.info">
+        <source>Button Info</source>
+        <target state="translated">Button – Information</target>
+      </trans-unit>
+      <trans-unit id="style.button.warning">
+        <source>Button Warning</source>
+        <target state="translated">Button – Warnung</target>
+      </trans-unit>
+      <trans-unit id="style.button.danger">
+        <source>Button Danger</source>
+        <target state="translated">Button – Achtung</target>
+      </trans-unit>
+      <trans-unit id="style.button.light">
+        <source>Button Light</source>
+        <target state="translated">Button – Heller Hintergrund</target>
+      </trans-unit>
+      <trans-unit id="style.button.dark">
+        <source>Button Dark</source>
+        <target state="translated">Button – Dunkler Hintergrund</target>
+      </trans-unit>
+      <trans-unit id="style.primary">
+        <source>Primary</source>
+        <target state="translated">Primärfarbe</target>
+      </trans-unit>
+      <trans-unit id="style.success">
+        <source>Success</source>
+        <target state="translated">Erfolgreich</target>
+      </trans-unit>
+      <trans-unit id="style.info">
+        <source>Info</source>
+        <target state="translated">Information</target>
+      </trans-unit>
+      <trans-unit id="style.warning">
+        <source>Warning</source>
+        <target state="translated">Warnung</target>
+      </trans-unit>
+      <trans-unit id="style.danger">
+        <source>Danger</source>
+        <target state="translated">Achtung</target>
+      </trans-unit>
+      <trans-unit id="style.light">
+        <source>Light</source>
+        <target state="translated">Hell</target>
+      </trans-unit>
+      <trans-unit id="style.dark">
+        <source>Dark</source>
+        <target state="translated">Dunkel</target>
       </trans-unit>
     </body>
   </file>
