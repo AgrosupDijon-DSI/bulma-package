@@ -51,6 +51,7 @@ tt_content.tab {
                 markers.CType16.value = menu_subpages
                 markers.CType17.value = menu_thumbnail_dir
                 markers.CType18.value = menu_thumbnail_list
+                markers.CType19.value = iframe
                 markers.uid.field = uid
                 as = records
             }

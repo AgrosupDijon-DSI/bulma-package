@@ -36,6 +36,7 @@ class TcaCTypeItem implements FormDataProviderInterface
             15 => 'menu_subpages',
             16 => 'menu_thumbnail_dir',
             17 => 'menu_thumbnail_list',
+            18 => 'iframe',
         ],
         'tx_bulmapackage_accordion_item_parent' => [
             0 => 'header',
@@ -56,6 +57,7 @@ class TcaCTypeItem implements FormDataProviderInterface
             15 => 'menu_thumbnail_dir',
             16 => 'menu_thumbnail_list',
             17 => 'video',
+            18 => 'iframe',
         ],
     ];
 

@@ -51,6 +51,7 @@ tt_content.accordion {
                 markers.CType16.value = menu_thumbnail_dir
                 markers.CType17.value = menu_thumbnail_list
                 markers.CType18.value = video
+                markers.CType19.value = iframe
                 markers.uid.field = uid
                 as = records
             }
