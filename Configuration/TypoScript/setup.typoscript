@@ -194,5 +194,5 @@ config{
     index_externals = 1
     index_metatags = 1
 
-    spamProtectEmailAddresses = ascii
+    spamProtectEmailAddresses = -5
 }
