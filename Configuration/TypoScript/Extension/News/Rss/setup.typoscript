@@ -1,0 +1,35 @@
+pageNewsRSS = PAGE
+pageNewsRSS {
+    # Override the typeNum if you have more than one feed
+    typeNum = {$plugin.tx_news.rss.channel.typeNum}
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = none
+        admPanel = 0
+        debug = 0
+        disablePrefixComment = 1
+        metaCharset = utf-8
+        additionalHeaders.10.header = Content-Type:application/rss+xml;charset=utf-8
+        absRefPrefix = {$plugin.tx_news.rss.channel.link}
+        linkVars >
+    }
+    10 < tt_content.list.20.news_pi1
+    10 {
+        switchableControllerActions {
+            News {
+                1 = list
+            }
+        }
+        settings < plugin.tx_news.settings
+        settings {
+            categories = {$plugin.bulma_package_news_rss.settings.categories}
+            categoryConjunction = {$plugin.bulma_package_news_rss.settings.categoryConjunction}
+            limit = {$plugin.bulma_package_news_rss.settings.limit}
+            detailPid = {$plugin.bulma_package_news_rss.settings.detailPid}
+            startingpoint = {$plugin.bulma_package_news_rss.settings.startingpoint}
+            format = {$plugin.bulma_package_news_rss.settings.format}
+            # Override the typeNum if you have more than one feed, must be the same as above!
+            #list.rss.channel.typeNum = {$plugin.tx_news.rss.channel.typeNum}
+        }
+    }
+}

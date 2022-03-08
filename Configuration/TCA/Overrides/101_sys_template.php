@@ -34,3 +34,9 @@ defined('TYPO3_MODE') or die();
     'Configuration/TypoScript/Extension/News',
     'Bulma Package: News Styles Bulma'
 );
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+    'bulma_package',
+    'Configuration/TypoScript/Extension/News/Rss',
+    'Bulma Package: Rss for News'
+);
