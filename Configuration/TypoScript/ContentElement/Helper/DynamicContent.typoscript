@@ -64,7 +64,7 @@ lib.dynamicContent {
                 field = slide
                 if {
                     isInList.field = slide
-                    value = -1, 0, 1, 2
+                    value = -1,0,1,2
                 }
             }
             ifEmpty = 0

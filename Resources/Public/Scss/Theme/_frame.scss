@@ -20,6 +20,10 @@ $frame-spacing: $block-spacing !default;
       margin-top: $frame-spacing;
     }
   }
+
+  .after-breadcrumb > .columns > .column > &:first-child{
+    margin-top: 0;
+  }
 }
 
 [class*="has-background-"].frame-inner{
@@ -53,5 +57,28 @@ $frame-spacing: $block-spacing !default;
   // Login
   .frame-type-felogin_login & {
     @extend .content;
+  }
+}
+
+@include touch{
+  #content{
+    & > .container > .columns{
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+
+      & > .column {
+        margin: 0;
+        padding: 0 !important;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }

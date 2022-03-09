@@ -98,6 +98,15 @@ page {
                 as = mainNavigation
             }
 
+            15 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            15 {
+                entryLevel = 1
+                levels = 4
+                expandAll = 1
+                includeSpacer = 1
+                as = subNavigation
+            }
+
             20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             20 {
                 special = directory
