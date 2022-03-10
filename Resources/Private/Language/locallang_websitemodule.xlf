@@ -37,6 +37,15 @@
             <trans-unit id="customColors.color.create">
                 <source>Create new color</source>
             </trans-unit>
+            <trans-unit id="metaTags.title">
+                <source>Meta tags Management</source>
+            </trans-unit>
+            <trans-unit id="metaTags.noMeta.message">
+                <source>No meta tag yet!</source>
+            </trans-unit>
+            <trans-unit id="metaTags.meta.create">
+                <source>Create new meta tag</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

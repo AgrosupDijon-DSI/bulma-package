@@ -35,7 +35,7 @@ defined('TYPO3_MODE') or die();
         'WebsiteSettings',
         'top',
         [
-            $controller => 'overview, customColors'
+            $controller => 'overview, customColors, metaTags'
         ],
         [
             'access' => 'user,group',

@@ -25,6 +25,9 @@
             <trans-unit id="feature.disableCustomColorsAction">
                 <source>Disable access to custom colors management inside Bulma Website Module</source>
             </trans-unit>
+            <trans-unit id="feature.disableMetaTagsAction">
+                <source>Disable access to meta tags management inside Bulma Website Module</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

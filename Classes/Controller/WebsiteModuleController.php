@@ -64,7 +64,8 @@ class WebsiteModuleController extends ActionController
             'pages' => $pages,
             'languages' => $languages,
             'returnUrl' => $returnUrl,
-            'disableCustomColorsAction' => $bulmaPackageConfiguration['disableCustomColorsAction']
+            'disableCustomColorsAction' => $bulmaPackageConfiguration['disableCustomColorsAction'],
+            'disableMetaTagsAction' => $bulmaPackageConfiguration['disableMetaTagsAction']
         ]);
     }
 
@@ -81,6 +82,21 @@ class WebsiteModuleController extends ActionController
             ->execute()->fetchAll();
 
         $this->view->assign('customColors', $customColors);
+    }
+
+    /**
+     * Display tx_bulmapackage_meta_tags
+     */
+    protected function metaTagsAction(): void
+    {
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
+        $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
+        $metaTags = $queryBuilder
+            ->select('*')
+            ->from('tx_bulmapackage_meta_tags')
+            ->execute()->fetchAllAssociative();
+
+        $this->view->assign('metaTags', $metaTags);
     }
 
 
