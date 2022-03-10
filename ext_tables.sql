@@ -19,6 +19,8 @@ CREATE TABLE tx_bulmapackage_settings
     phone                              varchar(30)         DEFAULT ''  NOT NULL,
     fax                                varchar(30)         DEFAULT ''  NOT NULL,
     email                              varchar(255)        DEFAULT ''  NOT NULL,
+    latitude                           varchar(255)        DEFAULT ''  NOT NULL,
+    longitude                          varchar(255)        DEFAULT ''  NOT NULL,
     tx_bulmapackage_settings_link_item int(11) unsigned    DEFAULT '0',
     menu_layout                        varchar(30)         DEFAULT ''  NOT NULL,
 

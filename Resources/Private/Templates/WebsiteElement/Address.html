@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{data.address_title} || {data.address} || {data.zip} || {data.city} || {data.country} || {data.phone} || {data.fax} || {data.email}">
+<f:if condition="{data.address_title} || {data.address} || {data.zip} || {data.city} || {data.country} || {data.phone} || {data.fax} || {data.email} || ({data.latitude} && {data.longitude})">
     <div class="column">
         <p class="title is-3">{f:translate(key: 'footer-title-contact', extensionName: 'bulma_package')}</p>
         <address>
@@ -25,6 +25,9 @@
             </f:if>
             <f:if condition="{data.email}">
                 <div id="email">{f:link.email(email: '{data.email}')}</div>
+            </f:if>
+            <f:if condition="{data.latitude} && {data.longitude}">
+                <div id="geo">{f:translate(key: 'address.geo', extensionName: 'bulma_package')}<a href="geo:{data.latitude},{data.longitude}">{data.latitude},{data.longitude}</a></div>
             </f:if>
         </address>
     </div>

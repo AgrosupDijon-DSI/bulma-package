@@ -68,7 +68,10 @@ return [
                 phone,
                 fax,
                 --linebreak--,
-                email
+                email,
+                --linebreak--,
+                latitude,
+                longitude
             ',
         ],
         'language' => [
@@ -322,6 +325,26 @@ return [
                 'eval' => 'trim',
                 'max' => 255,
                 'softref' => 'email'
+            ]
+        ],
+        'latitude' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.latitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
+                'max' => 30
+            ]
+        ],
+        'longitude' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.longitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
+                'max' => 30
             ]
         ],
         'tx_bulmapackage_settings_link_item' => [

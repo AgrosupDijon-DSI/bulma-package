@@ -37,6 +37,9 @@
             <trans-unit id="address.fax">
                 <source>Fax: </source>
             </trans-unit>
+            <trans-unit id="address.geo">
+                <source>Geographic coordinates: </source>
+            </trans-unit>
             <trans-unit id="scrolltop">
                 <source>Scroll to top</source>
             </trans-unit>
