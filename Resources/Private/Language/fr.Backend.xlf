@@ -695,6 +695,18 @@
         <source>4 Columns</source>
         <target state="final">4 Colonnes</target>
       </trans-unit>
+      <trans-unit id="tx_bulmapackage_meta_tags" approved="yes">
+        <source>Meta Tag</source>
+        <target state="final">Balise Meta</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_meta_tags.name" approved="yes">
+        <source>Name</source>
+        <target state="final">Attribut name</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_meta_tags.content" approved="yes">
+        <source>Content</source>
+        <target state="final">Attribut content</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
