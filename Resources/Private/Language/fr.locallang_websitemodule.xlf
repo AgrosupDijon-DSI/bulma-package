@@ -43,6 +43,18 @@
         <source>Create new color</source>
         <target state="final">Créer une nouvelle couleur</target>
       </trans-unit>
+      <trans-unit id="metaTags.title" approved="yes">
+        <source>Meta tags Management</source>
+        <target state="final">Gestion des balises Meta</target>
+      </trans-unit>
+      <trans-unit id="metaTags.noMeta.message" approved="yes">
+        <source>No meta tag yet!</source>
+        <target state="final">Aucune balise Meta à lister pour l'instant !</target>
+      </trans-unit>
+      <trans-unit id="metaTags.meta.create" approved="yes">
+        <source>Create new meta tag</source>
+        <target state="final">Créer une nouvelle balise Meta</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
