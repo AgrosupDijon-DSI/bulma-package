@@ -43,9 +43,9 @@
         <source>Fax: </source>
         <target state="final">Fax : </target>
       </trans-unit>
-      <trans-unit id="address.geo">
+      <trans-unit id="address.geo" approved="yes">
         <source>Geographic coordinates: </source>
-        <target state="translated">Coordonnées géographiques : </target>
+        <target state="final">Coordonnées géographiques : </target>
       </trans-unit>
       <trans-unit id="scrolltop" approved="yes">
         <source>Scroll to top</source>
