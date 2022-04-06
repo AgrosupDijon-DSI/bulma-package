@@ -164,6 +164,9 @@ page {
             breadcrumbExtendedValue = COA
             breadcrumbExtendedValue {
             }
+
+            layoutTheme = TEXT
+            layoutTheme.value = Default
         }
     }
 
