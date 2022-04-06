@@ -185,5 +185,6 @@ defined('TYPO3_MODE') or die();
      * Register Upgrade Wizards
      */
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['cardImageToMediaUpdate'] = \AgrosupDijon\BulmaPackage\Updates\CardImageToMediaUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['backgroundFrameUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BackgroundFrameUpdate::class;
 
 })();

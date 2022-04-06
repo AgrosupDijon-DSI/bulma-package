@@ -444,8 +444,8 @@
             <trans-unit id="field.background_frame">
                 <source>Background frame</source>
             </trans-unit>
-            <trans-unit id="field.background_frame.limited">
-                <source>Limited</source>
+            <trans-unit id="field.background_frame.expanded">
+                <source>Expanded</source>
             </trans-unit>
             <trans-unit id="field.message_class">
                 <source>Message Class</source>
