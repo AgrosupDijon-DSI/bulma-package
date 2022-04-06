@@ -487,10 +487,34 @@
                 <source>Dark</source>
             </trans-unit>
             <trans-unit id="backend_layout.1_column">
-                <source>Bulma</source>
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.sidebar_left">
+                <source>Sidebar Left</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.sidebar_left_w_navigation">
+                <source>Sidebar Left with navigation</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.sidebar_right">
+                <source>Sidebar Right</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.sidebar_right_w_navigation">
+                <source>Sidebar Right with navigation</source>
             </trans-unit>
             <trans-unit id="backend_layout.column.content">
                 <source>Content</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.before_content">
+                <source>Before content</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.after_content">
+                <source>After content</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.sidebar">
+                <source>Sidebar</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.sidebar_w_navigation">
+                <source>Sidebar (with navigation)</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings">
                 <source>Website Settings</source>

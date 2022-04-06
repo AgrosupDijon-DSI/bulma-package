@@ -5,7 +5,7 @@ mod {
     web_layout {
         BackendLayouts {
             sidebar_left_w_navigation {
-                title = [TRANSLATE] Sidebar Left with navigation
+                title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.sidebar_left_w_navigation
                 config {
                     backend_layout {
                         colCount = 4
@@ -14,7 +14,7 @@ mod {
                             1{
                                 columns {
                                     1 {
-                                        name = [TRANSLATE] Before content
+                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.before_content
                                         colPos = 3
                                         colspan = 4
                                     }
@@ -23,7 +23,7 @@ mod {
                             2 {
                                 columns {
                                     1 {
-                                        name = [TRANSLATE] Sidebar with navigation
+                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.sidebar_w_navigation
                                         colPos = 2
                                     }
                                     2 {
@@ -36,7 +36,7 @@ mod {
                             3 {
                                 columns {
                                     1 {
-                                        name = [TRANSLATE] After content
+                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.after_content
                                         colPos = 9
                                         colspan = 4
                                     }
