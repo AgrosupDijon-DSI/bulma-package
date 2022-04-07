@@ -78,14 +78,33 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
      */
     public function executeUpdate(): bool
     {
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content');
-        $connection->update('tt_content', [
-                'background_frame' => 'expanded'
-            ],
-            [
-                'background_frame' => ''
-            ]
-        );
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder->getRestrictions()->removeAll();
+        $queryBuilder->update('tt_content')
+            ->where(
+                $queryBuilder->expr()->eq('background_frame',
+                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
+            )
+            ->andWhere(
+                $queryBuilder->expr()->neq('background_color_class',
+                    $queryBuilder->createNamedParameter("none", Connection::PARAM_STR))
+            )
+            ->set('background_frame', 'expanded')
+            ->execute();
+
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder->getRestrictions()->removeAll();
+        $queryBuilder->update('tt_content')
+            ->where(
+                $queryBuilder->expr()->eq('background_frame',
+                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
+            )
+            ->andWhere(
+                $queryBuilder->expr()->eq('background_color_class',
+                    $queryBuilder->createNamedParameter("none", Connection::PARAM_STR))
+            )
+            ->set('background_frame', 'limited')
+            ->execute();
 
         return true;
     }
