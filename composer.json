@@ -37,7 +37,7 @@
     "ext-simplexml": "*"
   },
   "suggest": {
-    "georgringer/news": "^7.3 || ^8.0"
+    "georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS"
   },
   "autoload": {
     "psr-4": {
