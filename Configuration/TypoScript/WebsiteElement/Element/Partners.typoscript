@@ -32,7 +32,8 @@ lib.bulmaPackage.partners {
         ### SETTINGS ###
         ################
         settings {
-            image.maxWidth = {$plugin.bulma_package_websiteelements.partners.maxWidth}
+            maxWidth = {$plugin.bulma_package_websiteelements.partners.maxWidth}
+            maxHeight = {$plugin.bulma_package_websiteelements.partners.maxHeight}
         }
     }
 }
