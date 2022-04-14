@@ -12,7 +12,7 @@ defined('TYPO3') or die();
 /***************
  * Add Content Element
  */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['message'])) {
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['message'] ?? false)) {
     $GLOBALS['TCA']['tt_content']['types']['message'] = [];
 }
 

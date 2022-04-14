@@ -12,7 +12,7 @@ defined('TYPO3') or die();
 /***************
  * Enable Content Element
  */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['menu_card_dir'])) {
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['menu_card_dir'] ?? false)) {
     $GLOBALS['TCA']['tt_content']['types']['menu_card_dir'] = [];
 }
 
