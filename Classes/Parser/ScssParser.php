@@ -26,7 +26,7 @@ class ScssParser extends AbstractParser
      */
     public function __construct()
     {
-        if (!class_exists('ScssPhp\ScssPhp\Version', false)) {
+        if (!class_exists('ScssPhp\ScssPhp\Version')) {
             require_once ExtensionManagementUtility::extPath('bulma_package') . '/Contrib/scssphp/scss.inc.php';
         }
     }
