@@ -123,7 +123,7 @@ class SlugModifier
         $slug = $helper->sanitize($slug);
         // No valid data found
         if ($slug === '' || $slug === '/') {
-            $slug = 'default-' . GeneralUtility::shortMD5(json_encode($this->recordData));
+            $slug = 'default-' . substr(md5(json_encode($this->recordData)), 0, 10);
         }
         if ($this->prependSlashInSlug && ($slug[0] ?? '') !== '/') {
             $slug = '/' . $slug;
