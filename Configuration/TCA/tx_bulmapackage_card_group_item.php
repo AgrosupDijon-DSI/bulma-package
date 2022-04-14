@@ -36,18 +36,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                --palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.header;header,
-                media,
-                bodytext,
-                --palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.link;link,
-                icon_file,
-                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-                --palette--;;hiddenLanguagePalette,
-            '
+            'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.header;header,media,bodytext,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.link;link,icon_file,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette'
         ],
     ],
     'palettes' => [

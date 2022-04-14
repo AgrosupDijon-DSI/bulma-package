@@ -29,23 +29,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '
-                --palette--;;bulmapackage_sitetitle,
-                --div--;Logos,
-                logo_main,
-                logos_partners,
-                favicon,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,
-                menu_layout,
-                --div--;Google Analytics,
-                code_analytics,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,
-                --palette--;;bulmapackage_address,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_social,
-                tx_bulmapackage_settings_link_item,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-                    --palette--;;language,
-            '
+            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,menu_layout,--div--;Google Analytics,code_analytics,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_social,tx_bulmapackage_settings_link_item,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language'
         ],
     ],
     'palettes' => [

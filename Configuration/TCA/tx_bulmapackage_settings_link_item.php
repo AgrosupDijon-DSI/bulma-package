@@ -49,10 +49,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '
-                --palette--;;link,
-                --palette--;;hiddenLanguagePalette,
-            '
+            'showitem' => '--palette--;;link,--palette--;;hiddenLanguagePalette'
         ],
     ],
     'palettes' => [

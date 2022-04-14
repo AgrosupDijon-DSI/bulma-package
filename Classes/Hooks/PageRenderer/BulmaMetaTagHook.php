@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
+use Doctrine\DBAL\Driver\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -21,7 +22,7 @@ class BulmaMetaTagHook
 
     /**
      * @return void
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     public function execute()
     {

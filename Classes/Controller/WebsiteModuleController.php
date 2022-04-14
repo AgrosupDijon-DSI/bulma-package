@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\Controller;
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\BackendWorkspaceRestriction;
@@ -55,8 +56,8 @@ class WebsiteModuleController extends ActionController
 
         $returnUrl = rawurlencode(GeneralUtility::getIndpEnv('REQUEST_URI'));
 
-        $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-            \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+        $extensionConfiguration = GeneralUtility::makeInstance(
+            ExtensionConfiguration::class
         );
         $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
 

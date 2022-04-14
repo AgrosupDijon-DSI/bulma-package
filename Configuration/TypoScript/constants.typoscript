@@ -26,16 +26,16 @@ page {
         # cat=bulma package: meta data/110/130; type=string; label=compatible
         compatible = IE=edge
     }
-    navigation{
-        quickLinks{
+    navigation {
+        quickLinks {
             # cat=bulma package: navigation/120/100; type=int+; label=quickLinks entry point
             entryPoint = 0
         }
         # cat=bulma package: navigation/120/110; type=string; label=login page uid
-        loginPid =
+        loginPid = 
         loginPid := getEnv(BULMA_LOGIN_PAGE_UID)
         # cat=bulma package: navigation/120/120; type=string; label=search page uid
-        searchPid =
+        searchPid = 
         searchPid := getEnv(BULMA_SEARCH_PAGE_UID)
     }
 }
@@ -43,7 +43,7 @@ page {
 #####################
 ### BULMA PACKAGE ###
 #####################
-plugin.bulma_package{
+plugin.bulma_package {
     settings {
         # cat=bulma package: css parser/190/100; type=boolean; label=Override Parser Variables: If enabled the variables defined in your Scss files will be overridden with the ones defined as Page Layouts.
         overrideParserVariables = 1
@@ -63,7 +63,7 @@ plugin.bulma_package{
 ####################
 #### COMPONENTS ####
 ####################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/CookieConsent/constants.typoscript">
+@import 'EXT:bulma_package/Configuration/TypoScript/CookieConsent/constants.typoscript'
 
 #############################################################
 #### EXTENSIONS                                          ####
