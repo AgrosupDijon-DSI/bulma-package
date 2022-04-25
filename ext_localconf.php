@@ -170,23 +170,6 @@ defined('TYPO3') or die();
     }
 
     /***************
-     * Register image_autoresize signal slot
-     */
-    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('image_autoresize')) {
-        /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
-        $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-            \TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class
-        );
-
-        $signalSlotDispatcher->connect(
-            \Causal\ImageAutoresize\Controller\ConfigurationController::class,
-            'processConfiguration',
-            \AgrosupDijon\BulmaPackage\Slots\ImageAutoresize::class,
-            'postProcessConfiguration'
-        );
-    }
-
-    /***************
      * Register Upgrade Wizards
      */
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['cardImageToMediaUpdate'] = \AgrosupDijon\BulmaPackage\Updates\CardImageToMediaUpdate::class;
