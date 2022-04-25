@@ -64,7 +64,7 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
                 $queryBuilder->expr()->gt('image', 0)
             )
             ->execute()
-            ->fetchColumn(0);
+            ->fetchOne();
         return (bool)$elementCount;
     }
 

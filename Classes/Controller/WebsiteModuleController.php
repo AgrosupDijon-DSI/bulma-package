@@ -80,7 +80,7 @@ class WebsiteModuleController extends ActionController
         $customColors = $queryBuilder
             ->select('*')
             ->from('tx_bulmapackage_custom_color')
-            ->execute()->fetchAll();
+            ->execute()->fetchAllAssociative();
 
         $this->view->assign('customColors', $customColors);
     }
