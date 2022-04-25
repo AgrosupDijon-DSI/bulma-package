@@ -14,6 +14,7 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Doctrine\DBAL\Driver\Exception;
 
 /**
  * This service handles the parsing of scss files for the frontend.
@@ -65,11 +66,15 @@ class CompileService
         ];
 
         // Parser
-        if (!empty($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])) {
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
+            && is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
+        ) {
             foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'] as $className) {
-                /** @var ParserInterface $parser */
                 $parser = GeneralUtility::makeInstance($className);
-                if ($parser->supports($settings['file']['info']['extension'])) {
+                if ($parser instanceof ParserInterface
+                    && isset($settings['file']['info']['extension'])
+                    && $parser->supports($settings['file']['info']['extension'])
+                ) {
                     if ($configuration['overrideParserVariables']) {
                         $settings['variables'] = $this->getVariablesFromPageLayout();
                     }
@@ -114,7 +119,7 @@ class CompileService
 
         // Check "special" key
         // If text_dark = 1 in the layout, and layout with a matching key exists, merge both layouts.
-        if($layoutOverride['text_dark'] == '1' && isset($layouts['text_dark'])){
+        if(isset($layoutOverride['text_dark']) && $layoutOverride['text_dark'] == '1' && isset($layouts['text_dark'])){
             $layoutOverride = array_merge($layoutOverride, $layouts['text_dark']);
             unset($layoutOverride['text_dark']);
         }
@@ -126,6 +131,11 @@ class CompileService
         return $variables;
     }
 
+    /**
+     * @param $layoutUid
+     * @return array
+     * @throws Exception
+     */
     protected function getLayoutFromDatabase($layoutUid)
     {
         $layout = [];
@@ -136,7 +146,7 @@ class CompileService
                 'tx_bulmapackage_custom_color',
                 ['uid' => $layoutUid]
             )
-            ->fetch();
+            ->fetchAssociative();
         if (!empty($result)) {
             $prefix = 'var_';
             // Get rid of fields that aren't variables

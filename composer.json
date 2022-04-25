@@ -33,7 +33,6 @@
     "typo3/cms-seo": "^11.5",
     "scssphp/scssphp": "^1.0.8",
     "ext-dom": "*",
-    "ext-libxml": "*",
     "ext-simplexml": "*"
   },
   "suggest": {
