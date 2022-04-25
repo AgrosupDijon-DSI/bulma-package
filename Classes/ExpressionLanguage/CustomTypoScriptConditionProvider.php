@@ -23,8 +23,5 @@ class CustomTypoScriptConditionProvider extends AbstractProvider
         $this->expressionLanguageVariables = [
             'extension' => GeneralUtility::makeInstance(ExtensionWrapper::class),
         ];
-        $this->expressionLanguageProviders = [
-            CustomConditionFunctionsProvider::class
-        ];
     }
 }
