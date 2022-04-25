@@ -1,0 +1,45 @@
+<f:if condition="{pagination.allPageNumbers -> f:count()} > 1">
+    <nav class="pagination" role="navigation" aria-label="pagination">
+        <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
+            <f:then>
+                <a class="pagination-previous" href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.previous')}">
+                    {f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}
+                </a>
+            </f:then>
+            <f:else>
+                <span class="pagination-previous" disabled>{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span>
+            </f:else>
+        </f:if>
+        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+            <f:then>
+                <a class="pagination-next" href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.next')}">
+                    {f:translate(key:'widget.pagination.next', extensionName: 'fluid')}
+                </a>
+            </f:then>
+            <f:else>
+                <span class="pagination-next" disabled>{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span>
+            </f:else>
+        </f:if>
+        <ul class="pagination-list">
+            <f:if condition="{pagination.hasLessPages}">
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+            </f:if>
+            <f:for each="{pagination.allPageNumbers}" as="page">
+                <f:if condition="{page} == {paginator.currentPageNumber}">
+                    <f:then>
+                        <li><span class="pagination-link is-current">{page}</span></li>
+                    </f:then>
+                    <f:else>
+                        <li>
+                            <a class="pagination-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}">{page}</a>
+                        </li>
+                    </f:else>
+                </f:if>
+
+            </f:for>
+            <f:if condition="{pagination.hasMorePages}">
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+            </f:if>
+        </ul>
+    </nav>
+</f:if>
