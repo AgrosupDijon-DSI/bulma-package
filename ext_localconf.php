@@ -33,6 +33,11 @@ defined('TYPO3') or die();
     $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
 
     /***************
+     * UserTS
+     */
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('options.saveDocNew.tx_bulmapackage_settings = 0');
+
+    /***************
      * PageTS
      */
     // Add Content Elements
@@ -122,9 +127,6 @@ defined('TYPO3') or die();
 
     // Hook to override colpos check for unused tt_content elements
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used']['bulma_package'] = AgrosupDijon\BulmaPackage\Hooks\Backend\PageLayoutViewHook::class . '->contentIsUsed';
-
-    // Hook to make sure there is only one "tx_bulmapackage_settings" record by pid
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['bulma_package'] = AgrosupDijon\BulmaPackage\Hooks\DataHandling\DataHandlerHook::class;
 
     /***************
      * Register "asd" as global fluid namespace
