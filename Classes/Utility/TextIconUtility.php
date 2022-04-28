@@ -18,11 +18,13 @@ class TextIconUtility
 {
     /**
      * @param array $parameters
+     * @return void
      */
     public function addIconItems(array $parameters)
     {
-        $directory = $parameters['row']['icon_set'][0];
+        $directory = $parameters['row']['icon_set'][0] ?? '';
         if ($directory !== '') {
+            /** @var array $icons */
             $icons = $this->getIcons($directory);
             if ($icons) {
                 $parameters['items'] = array_merge($parameters['items'], $icons);
@@ -52,6 +54,7 @@ class TextIconUtility
         );
         ksort($files);
         foreach ($files as $key => $fileinfo) {
+            /** @var \SplFileInfo $fileinfo */
             if ($fileinfo->isFile() && in_array($fileinfo->getExtension(), ['svg', 'png', 'gif'])) {
                 $icons[] = [
                     $fileinfo->getBasename('.' . $fileinfo->getExtension()),

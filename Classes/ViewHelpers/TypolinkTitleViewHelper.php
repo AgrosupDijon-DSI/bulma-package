@@ -54,8 +54,6 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
         }else{
             return LocalizationUtility::translate('lightbox-link-label', 'bulma_package');
         }
-
-        return null;
     }
 
     /**
@@ -63,7 +61,7 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
      *
      * @param string $parameter Example: 19 _blank - "testtitle \"with whitespace\"" &X=y
      *
-     * @return string The final TypoLink string
+     * @return array Associative array of TypoLink parts with the keys url, target, class, title, additionalParams
      */
     protected static function createTypolinkParameterArrayFromArgument($parameter)
     {

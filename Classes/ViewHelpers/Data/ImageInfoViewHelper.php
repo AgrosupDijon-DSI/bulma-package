@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers\Data;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use TYPO3\CMS\Core\Page\AssetCollector;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
@@ -36,7 +37,7 @@ class ImageInfoViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments.
      *
-     * @throws \TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+     * @throws Exception
      */
     public function initializeArguments()
     {

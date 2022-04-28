@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Utility;
 
+use Doctrine\DBAL\Driver\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -19,6 +20,8 @@ class PageLayoutUtility
 {
     /**
      * @param array $parameters
+     * @return void
+     * @throws Exception
      */
     public function addLayoutItems(array $parameters)
     {
@@ -28,7 +31,7 @@ class PageLayoutUtility
                 ['uid', 'label'],
                 'tx_bulmapackage_custom_color'
             )
-            ->fetchAll();
+            ->fetchAllAssociative();
 
         if (!empty($resultRows)) {
             $parameters['items'][] = ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.layout_category', '--div--'];

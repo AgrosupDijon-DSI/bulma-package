@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -33,13 +33,13 @@ class CompileService
 
     /**
      * @param string $file
-     * @return bool|string
+     * @return string|null
      * @throws \Exception
      */
-    public function getCompiledFile($file)
+    public function getCompiledFile(string $file): ?string
     {
         $absoluteFile = GeneralUtility::getFileAbsFileName($file);
-        $configuration = ($GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_bulmapackage.']['settings.'] ?: []);
+        $configuration = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_bulmapackage.']['settings.'] ?? [];
 
         // Ensure cache directory exists
         if (!file_exists($this->tempDirectory)) {
@@ -70,6 +70,7 @@ class CompileService
             && is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
         ) {
             foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'] as $className) {
+                /** @var class-string $className */
                 $parser = GeneralUtility::makeInstance($className);
                 if ($parser instanceof ParserInterface
                     && isset($settings['file']['info']['extension'])
@@ -88,18 +89,24 @@ class CompileService
             }
         }
 
-        return false;
+        return null;
     }
 
     /**
      * Clear all caches for the compiler.
+     *
+     * @return void
      */
-    protected function clearCompilerCaches()
+    protected function clearCompilerCaches(): void
     {
         GeneralUtility::rmdir(Environment::getPublicPath() . '/' . $this->tempDirectory, true);
     }
 
-    protected function getVariablesFromPageLayout()
+    /**
+     * @return array
+     * @throws Exception
+     */
+    protected function getVariablesFromPageLayout(): array
     {
         $variables = $layoutOverride = [];
         $layoutUid = $this->getCurrentPageLayout();
@@ -113,7 +120,7 @@ class CompileService
                 $layoutOverride = $layouts[$layoutUid];
             } elseif ($layoutUid >= 100) {
                 // Fetch overrides from database
-                $layoutOverride = $this->getLayoutFromDatabase($layoutUid / 100);
+                $layoutOverride = $this->getLayoutFromDatabase((int)($layoutUid / 100));
             }
         }
 
@@ -132,11 +139,11 @@ class CompileService
     }
 
     /**
-     * @param $layoutUid
+     * @param int $layoutUid
      * @return array
      * @throws Exception
      */
-    protected function getLayoutFromDatabase($layoutUid)
+    protected function getLayoutFromDatabase(int $layoutUid): array
     {
         $layout = [];
         $result = GeneralUtility::makeInstance(ConnectionPool::class)
@@ -161,7 +168,11 @@ class CompileService
         return $layout;
     }
 
-    protected function getLayoutsFromConstants($constants)
+    /**
+     * @param array $constants
+     * @return array
+     */
+    protected function getLayoutsFromConstants(array $constants): array
     {
         $prefix = 'plugin.bulma_package.layout.';
         $layouts = [];
@@ -176,6 +187,9 @@ class CompileService
         return $layouts;
     }
 
+    /**
+     * @return int
+     */
     protected function getCurrentPageLayout()
     {
         $rootLine = $this->getRootLine($GLOBALS['TSFE']->id);
@@ -193,7 +207,7 @@ class CompileService
      * @param int $pageId
      * @return array
      */
-    protected function getRootLine($pageId)
+    protected function getRootLine(int $pageId): array
     {
         return BackendUtility::BEgetRootLine($pageId, '', true, ['layout']);
     }
@@ -201,7 +215,7 @@ class CompileService
     /**
      * @return array
      */
-    protected function getConstants()
+    protected function getConstants(): array
     {
         if ($GLOBALS['TSFE']->tmpl->flatSetup === null
             || !is_array($GLOBALS['TSFE']->tmpl->flatSetup)

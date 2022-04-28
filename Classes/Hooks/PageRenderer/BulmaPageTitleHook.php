@@ -9,7 +9,11 @@
 
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
+use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Driver\Exception;
+use Doctrine\DBAL\ForwardCompatibility\Result;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -24,11 +28,14 @@ class BulmaPageTitleHook
 {
 
     /**
-     * @param $params
+     * @param array $params
+     * @return void
+     * @throws DBALException
+     * @throws Exception
      */
-    public function execute(&$params)
+    public function execute(array &$params): void
     {
-        if (TYPO3_MODE !== 'FE') {
+        if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend() === false) {
             return;
         }
 
@@ -36,7 +43,8 @@ class BulmaPageTitleHook
 
         foreach ($GLOBALS['TSFE']->rootLine as $page) {
 
-            $bulmaSettings = $queryBuilder
+            /** @var Result $result */
+            $result = $queryBuilder
                 ->select('title_seo')
                 ->from('tx_bulmapackage_settings')
                 ->where(
@@ -45,15 +53,18 @@ class BulmaPageTitleHook
                 ->andWhere(
                     $queryBuilder->expr()->eq('sys_language_uid', $GLOBALS['TSFE']->page['sys_language_uid'])
                 )
-                ->execute()->fetchAssociative();
+                ->execute();
 
-            if (isset($bulmaSettings['title_seo']) && !empty($bulmaSettings['title_seo'])) {
+            $bulmaSettingsTitleSeo = $result->fetchOne();
+
+            if ($bulmaSettingsTitleSeo !== false) {
 
                 // see generatePageTitle() & printTitle() in TYPO3\CMS\Frontend\Controller\TyposcriptFrontendController
                 if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator']) && $GLOBALS['TSFE']->config['config']['pageTitleSeparator'] !== '') {
                     $pageTitleSeparator = $GLOBALS['TSFE']->config['config']['pageTitleSeparator'];
 
                     if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator.']) && is_array($GLOBALS['TSFE']->config['config']['pageTitleSeparator.'])) {
+                        /** @var object $GLOBALS['TSFE'] */
                         $pageTitleSeparator = $GLOBALS['TSFE']->cObj->stdWrap($pageTitleSeparator, $GLOBALS['TSFE']->config['config']['pageTitleSeparator.']);
                     } else {
                         $pageTitleSeparator .= ' ';
@@ -63,9 +74,9 @@ class BulmaPageTitleHook
                 }
 
                 if((bool)($GLOBALS['TSFE']->config['config']['pageTitleFirst'] ?? false)){
-                    $params['title'] = $params['title'] . $pageTitleSeparator . $bulmaSettings['title_seo'];
+                    $params['title'] = $params['title'] . $pageTitleSeparator . $bulmaSettingsTitleSeo;
                 } else {
-                    $params['title'] = $bulmaSettings['title_seo'] . $pageTitleSeparator . $params['title'];
+                    $params['title'] = $bulmaSettingsTitleSeo . $pageTitleSeparator . $params['title'];
                 }
 
                 break;

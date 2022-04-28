@@ -92,7 +92,7 @@ $GLOBALS['TCA']['tt_content']['types']['textmedia']['columnsOverrides']['assets'
 /***************
  * Card Group
  */
-$GLOBALS['TCA']['tx_bulmapackage_card_group_item']['types']['1']['columnsOverrides']['image']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants']['default'] = $defaultCropSettings;
+$GLOBALS['TCA']['tx_bulmapackage_card_group_item']['types']['1']['columnsOverrides']['media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants']['default'] = $defaultCropSettings;
 
 /***************
  * Icon Group

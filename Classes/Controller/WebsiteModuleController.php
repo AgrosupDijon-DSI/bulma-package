@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\Controller;
 
+use Doctrine\DBAL\ForwardCompatibility\Result;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -54,7 +55,9 @@ class WebsiteModuleController extends ActionController
 
         $this->getBulmaPackageSettings($pages);
 
-        $returnUrl = rawurlencode(GeneralUtility::getIndpEnv('REQUEST_URI'));
+        /** @var string $requestUri */
+        $requestUri = GeneralUtility::getIndpEnv('REQUEST_URI');
+        $returnUrl = rawurlencode($requestUri);
 
         $extensionConfiguration = GeneralUtility::makeInstance(
             ExtensionConfiguration::class
@@ -77,12 +80,13 @@ class WebsiteModuleController extends ActionController
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_custom_color');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
-        $customColors = $queryBuilder
+        /** @var Result $result */
+        $result = $queryBuilder
             ->select('*')
             ->from('tx_bulmapackage_custom_color')
-            ->execute()->fetchAllAssociative();
+            ->execute();
 
-        $this->view->assign('customColors', $customColors);
+        $this->view->assign('customColors', $result->fetchAllAssociative());
     }
 
     /**
@@ -92,28 +96,30 @@ class WebsiteModuleController extends ActionController
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
-        $metaTags = $queryBuilder
+        /** @var Result $result */
+        $result = $queryBuilder
             ->select('*')
             ->from('tx_bulmapackage_meta_tags')
-            ->execute()->fetchAllAssociative();
+            ->execute();
 
-        $this->view->assign('metaTags', $metaTags);
+        $this->view->assign('metaTags', $result->fetchAllAssociative());
     }
 
 
     /**
      * Returns a list of tx_bulmapackage_settings entries
      */
-    protected function getBulmaPackageSettings(&$pages): void
+    protected function getBulmaPackageSettings(array &$pages): void
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_settings');
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(BackendWorkspaceRestriction::class, 0, false));
-        $statement = $queryBuilder
+        /** @var Result $result */
+        $result = $queryBuilder
             ->select('uid', 'pid', 'sys_language_uid')
             ->from('tx_bulmapackage_settings')
             ->execute();
 
-        while($row = $statement->fetch()){
+        while($row = $result->fetchAssociative()){
             $pages[$row['pid']]['bulmaSettings'][$row['sys_language_uid']] = $row;
         }
     }
@@ -129,7 +135,8 @@ class WebsiteModuleController extends ActionController
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(BackendWorkspaceRestriction::class, 0, false));
-        $statement = $queryBuilder
+        /** @var Result $result */
+        $result = $queryBuilder
             ->select('*')
             ->from('pages')
             ->where(
@@ -143,7 +150,7 @@ class WebsiteModuleController extends ActionController
             ->execute();
 
         $pages = [];
-        while ($row = $statement->fetch()) {
+        while ($row = $result->fetchAssociative()) {
             $row['rootline'] = BackendUtility::BEgetRootLine((int)$row['uid']);
             array_pop($row['rootline']);
             $row['rootline'] = array_reverse($row['rootline']);

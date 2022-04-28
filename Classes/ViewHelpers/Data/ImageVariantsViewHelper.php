@@ -38,13 +38,16 @@ class ImageVariantsViewHelper extends AbstractViewHelper
      * @param array $arguments
      * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
-     * @return mixed
+     * @return void
      */
     public static function renderStatic(
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
     ) {
+        if($arguments['gutters'] === ''){
+            $arguments['gutters'] = null;
+        }
         $variants = ImageVariantsUtility::getImageVariants($arguments['variants'], $arguments['multiplier'], $arguments['gutters'], $arguments['corrections']);
         $renderingContext->getVariableProvider()->add($arguments['as'], $variants);
     }

@@ -86,7 +86,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'tt_content',
-                'foreign_table_where' => 'AND tt_content.pid=###CURRENT_PID### AND tt_content.CType="card_group"',
+                'foreign_table_where' => 'AND tt_content.pid=###CURRENT_PID### AND tt_content.{#CType}="card_group"',
                 'maxitems' => 1,
                 'default' => 0,
             ],
@@ -135,7 +135,7 @@ return [
             'l10n_display' => 'defaultAsReadonly'
         ],
         'sys_language_uid' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => ['type' => 'language']
         ],
@@ -242,7 +242,7 @@ return [
                 'type' => 'text',
                 'cols' => 80,
                 'rows' => 15,
-                'softref' => 'typolink_tag,images,email[subst],url',
+                'softref' => 'typolink_tag,email[subst],url',
                 'enableRichtext' => true
             ],
         ],

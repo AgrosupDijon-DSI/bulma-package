@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
+use Doctrine\DBAL\ForwardCompatibility\Result;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
@@ -58,14 +59,14 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
         }
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_card_group_item');
         $queryBuilder->getRestrictions()->removeAll();
-        $elementCount = $queryBuilder->count('uid')
+        /** @var Result $result */
+        $result = $queryBuilder->count('uid')
             ->from('tx_bulmapackage_card_group_item')
             ->where(
                 $queryBuilder->expr()->gt('image', 0)
             )
-            ->execute()
-            ->fetchOne();
-        return (bool)$elementCount;
+            ->execute();
+        return (bool)$result->fetchOne();
     }
 
     /**
@@ -88,13 +89,14 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tx_bulmapackage_card_group_item');
         $queryBuilder = $connection->createQueryBuilder();
         $queryBuilder->getRestrictions()->removeAll();
+        /** @var Result $statement */
         $statement = $queryBuilder->select('uid', 'image')
             ->from('tx_bulmapackage_card_group_item')
             ->where(
                 $queryBuilder->expr()->gt('image', 0)
             )
             ->execute();
-        while ($record = $statement->fetch()) {
+        while ($record = $statement->fetchAssociative()) {
             $queryBuilder = $connection->createQueryBuilder();
             $queryBuilder->update('tx_bulmapackage_card_group_item')
                 ->where(

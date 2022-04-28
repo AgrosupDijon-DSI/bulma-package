@@ -79,7 +79,6 @@ $additionalColumns = [
                 'showSynchronizationLink' => true,
                 'showAllLocalizationLink' => true,
                 'showPossibleLocalizationRecords' => true,
-                'showRemovedLocalizationRecords' => false,
                 'expandSingle' => true,
                 'enabledControls' => [
                     'localize' => true,
