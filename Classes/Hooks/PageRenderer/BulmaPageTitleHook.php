@@ -56,8 +56,7 @@ class BulmaPageTitleHook
                 ->execute();
 
             $bulmaSettingsTitleSeo = $result->fetchOne();
-
-            if ($bulmaSettingsTitleSeo !== false) {
+            if (!empty($bulmaSettingsTitleSeo)) {
 
                 // see generatePageTitle() & printTitle() in TYPO3\CMS\Frontend\Controller\TyposcriptFrontendController
                 if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator']) && $GLOBALS['TSFE']->config['config']['pageTitleSeparator'] !== '') {
