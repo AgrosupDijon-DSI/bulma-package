@@ -455,10 +455,6 @@
         <source>Background frame</source>
         <target state="final">Type de fond</target>
       </trans-unit>
-      <trans-unit id="field.background_frame.limited" approved="yes">
-        <source>Limited</source>
-        <target state="final">Limité</target>
-      </trans-unit>
       <trans-unit id="field.message_class" approved="yes">
         <source>Message Class</source>
         <target state="final">Type du message</target>
