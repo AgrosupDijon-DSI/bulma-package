@@ -3,7 +3,7 @@ TYPO3:
         Form:
             persistenceManager:
                 allowedExtensionPaths:
-                    110: EXT:bulma_package/Resources/Private/Forms/
+                    110: 'EXT:bulma_package/Resources/Private/Forms/'
             prototypes:
                 standard:
                     formElementsDefinition:
@@ -42,18 +42,16 @@ TYPO3:
                         Form:
                             renderingOptions:
                                 translation:
-                                    translationFile:
+                                    translationFiles:
                                         110: 'EXT:bulma_package/Resources/Private/Language/locallang.xlf'
-#                                layoutRootPaths:
-#                                    20: 'EXT:bulma_package/Resources/Private/Layouts/Form/'
                                 templateRootPaths:
                                     20: 'EXT:bulma_package/Resources/Private/Templates/Form/'
                                 partialRootPaths:
                                     20: 'EXT:bulma_package/Resources/Private/Partials/Form/'
                         Checkbox:
                             properties:
-                                elementClassAttribute: 'is-checkradio'
-                                containerClassAttribute: 'control'
+                                elementClassAttribute: is-checkradio
+                                containerClassAttribute: control
                         GridRow:
                             properties:
                                 elementClassAttribute: 'columns is-mobile is-multiline'
@@ -70,54 +68,51 @@ TYPO3:
                                             classPattern: 'is-{@numbersOfColumnsToUse}-fullhd'
                         Textarea:
                             properties:
-                                containerClassAttribute: 'control'
-                                elementClassAttribute: 'textarea'
+                                containerClassAttribute: control
+                                elementClassAttribute: textarea
                         MultiCheckbox:
                             properties:
-                                containerClassAttribute: 'control'
-                                elementClassAttribute: 'is-checkradio'
+                                containerClassAttribute: control
+                                elementClassAttribute: is-checkradio
                         MultiSelect:
                             properties:
-                                containerClassAttribute: 'control'
-                                elementClassAttribute: 'select'
+                                containerClassAttribute: control
+                                elementClassAttribute: select
                         RadioButton:
                             properties:
                                 containerClassAttribute: control
-                                elementClassAttribute: 'is-checkradio'
+                                elementClassAttribute: is-checkradio
                         SingleSelect:
                             properties:
                                 containerClassAttribute: control
-                                elementClassAttribute: 'select'
+                                elementClassAttribute: select
                         AdvancedPassword:
                             properties:
-                                containerClassAttribute: 'control'
-                                elementClassAttribute: 'input'
+                                containerClassAttribute: control
+                                elementClassAttribute: input
                                 confirmationLabel: ''
-                                # Optional description (hint) for the first password input element
                                 passwordDescription: ''
-                                confirmationClassAttribute: 'input'
+                                confirmationClassAttribute: input
                         FileUpload:
                             properties:
                                 containerClassAttribute: control
-                                elementClassAttribute: 'file-input'
+                                elementClassAttribute: file-input
                         ImageUpload:
                             properties:
                                 containerClassAttribute: control
-                                elementClassAttribute: 'file-input'
-
+                                elementClassAttribute: file-input
                     finishersDefinition:
                         Confirmation:
                             options:
                                 templateRootPaths:
                                     20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Confirmation/'
-
             mixins:
                 formElementMixins:
                     TextMixin:
                         properties:
-                            elementClassAttribute: 'input'
+                            elementClassAttribute: input
                     FormElementMixin:
                         properties:
-                            containerClassAttribute: 'control'
+                            containerClassAttribute: control
                             elementClassAttribute: ''
-                            elementErrorClassAttribute: 'is-danger'
+                            elementErrorClassAttribute: is-danger

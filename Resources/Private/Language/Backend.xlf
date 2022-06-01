@@ -630,6 +630,12 @@
             <trans-unit id="tx_bulmapackage_settings.email">
                 <source>Email</source>
             </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.latitude">
+                <source>Latitude</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.longitude">
+                <source>Longitude</source>
+            </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.tx_bulmapackage_settings_link_item">
                 <source>Links</source>
             </trans-unit>
@@ -692,6 +698,15 @@
             </trans-unit>
             <trans-unit id="news.templateLayouts.4cols">
                 <source>4 Columns</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_meta_tags">
+                <source>Meta Tag</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_meta_tags.name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_meta_tags.content">
+                <source>Content</source>
             </trans-unit>
         </body>
     </file>

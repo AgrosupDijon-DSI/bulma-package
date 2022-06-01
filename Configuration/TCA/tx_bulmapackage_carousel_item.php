@@ -35,19 +35,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                image,
-                --palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.text;header,
-                --palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.call_to_action;call_to_action,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.colors,
-                text_color,
-                background_color,
-                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-                --palette--;;hiddenLanguagePalette,
-            '
+            'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,image,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.text;header,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.call_to_action;call_to_action,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.colors,text_color,background_color,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette'
         ],
     ],
     'palettes' => [

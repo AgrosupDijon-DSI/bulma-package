@@ -12,6 +12,7 @@ namespace AgrosupDijon\BulmaPackage\Parser;
 use ScssPhp\ScssPhp\Compiler;
 use ScssPhp\ScssPhp\Formatter\Crunched;
 use ScssPhp\ScssPhp\Version;
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -74,6 +75,11 @@ class ScssParser extends AbstractParser
     protected function parseFile($file, $settings)
     {
         $scss = new Compiler();
+
+        // Add TYPO3 Extension path to Compiler Import Paths
+        // So we can use something like @import "bulma_package/Resources/Public/Scss/Theme/theme";
+        // In other extensions if needed
+        $scss->addImportPath(Environment::getExtensionsPath());
         $scss->setFormatter(Crunched::class);
         $scss->setVariables($settings['variables']);
         $css = $scss->compile('@import "' . $file . '"');

@@ -11,6 +11,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/Form/setup.typoscript" condition="extension.isLoaded('form')">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/setup.typoscript" condition="extension.isLoaded('felogin')">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript" condition="extension.isLoaded('indexed_search')">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript" condition="extension.isLoaded('seo')">
 
 ###################
 #### FRAMEWORK ####
@@ -69,7 +70,6 @@ page {
             }
             ifEmpty = Default
         }
-
         templateRootPaths {
             0 = EXT:bulma_package/Resources/Private/Templates/Page/
             1 = {$page.fluidtemplate.templateRootPath}
@@ -82,7 +82,6 @@ page {
             0 = EXT:bulma_package/Resources/Private/Layouts/Page/
             1 = {$page.fluidtemplate.layoutRootPath}
         }
-
         ##########################
         ### DATA PREPROCESSING ###
         ##########################
@@ -97,7 +96,6 @@ page {
                 levels = 4
                 as = mainNavigation
             }
-
             15 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             15 {
                 entryLevel = 1
@@ -106,14 +104,12 @@ page {
                 includeSpacer = 1
                 as = subNavigation
             }
-
             20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             20 {
                 special = directory
                 special.value = {$page.navigation.quickLinks.entryPoint}
                 as = quickLinksNavigation
             }
-
             30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             30 {
                 special = rootline
@@ -133,16 +129,13 @@ page {
                     }
                 }
             }
-
             40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
             40 {
                 languages = auto
                 as = languageNavigation
             }
-
             # 50 is used when EXT:news is active
         }
-
         ################
         ### SETTINGS ###
         ################
@@ -151,7 +144,6 @@ page {
             searchPid = {$page.navigation.searchPid}
             megaMenuColumnClasses = {$plugin.bulma_package_websiteelements.megaMenu.columnClasses}
         }
-
         #################
         ### VARIABLES ###
         #################
@@ -169,7 +161,6 @@ page {
             layoutTheme.value = Default
         }
     }
-
     meta {
         viewport = {$page.meta.viewport}
         robots = {$page.meta.robots}
@@ -188,12 +179,12 @@ page {
 ####################
 #### COMPONENTS ####
 ####################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/CookieConsent/setup.typoscript">
+@import 'EXT:bulma_package/Configuration/TypoScript/CookieConsent/setup.typoscript'
 
 ################
 #### CONFIG ####
 ################
-config{
+config {
     pageTitleFirst = 1
     pageTitleSeparator = -
     pageTitleSeparator.noTrimWrap = | | |

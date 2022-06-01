@@ -8,7 +8,7 @@ lib.bulmaPackage.address {
     ##############
     ### FIELDS ###
     ##############
-    select.selectFields = address_title, address, zip, city, country, phone, fax, email
+    select.selectFields = address_title, address, zip, city, country, phone, fax, email, latitude, longitude
 
     renderObj {
         ################

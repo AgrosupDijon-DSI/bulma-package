@@ -13,9 +13,9 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.7-10.4.99',
-            'rte_ckeditor' => '9.5.0-10.4.99',
-            'seo' => '9.5.0-10.4.99'
+            'typo3' => '10.4.0-10.4.99',
+            'rte_ckeditor' => '10.4.0-10.4.99',
+            'seo' => '10.4.0-10.4.99'
         ],
         'conflicts' => [
             'css_styled_content' => '*',
@@ -26,7 +26,7 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'suggests' => [
             'image_autoresize' => '*',
-            'news' => '7.3.1-8.99.99'
+            'news' => '8.0.0-8.99.99'
         ]
     ],
     'autoload' => [
@@ -35,8 +35,6 @@ $EM_CONF[$_EXTKEY] = [
         ],
     ],
     'state' => 'stable',
-    'uploadfolder' => false,
-    'createDirs' => '',
     'clearCacheOnLoad' => true,
     'author' => 'Sébastien Convers',
     'author_email' => 'sebastien.convers@agrosupdijon.fr',

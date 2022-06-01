@@ -13,17 +13,11 @@
                         <f:if condition="{file.properties.link}">
                             <f:then>
                                 <f:link.typolink parameter="{file.properties.link}" title="{file.properties.title}">
-                                    <picture>
-                                        <img src="{f:uri.image(image: file, maxWidth: settings.image.maxWidth)}" title="{file.properties.title}"
-                                             alt="{file.properties.alternative}">
-                                    </picture>
+                                    <f:render section="logo" arguments="{file: file}" />
                                 </f:link.typolink>
                             </f:then>
                             <f:else>
-                                <picture>
-                                    <img src="{f:uri.image(image: file, maxWidth: settings.image.maxWidth)}" title="{file.properties.title}"
-                                         alt="{file.properties.alternative}">
-                                </picture>
+                                <f:render section="logo" arguments="{file: file}" />
                             </f:else>
                         </f:if>
                     </figure>
@@ -32,4 +26,10 @@
         </div>
     </section>
 </f:if>
+
+<f:section name="logo">
+    <picture>
+        <f:image image="{file}" maxWidth="{settings.maxWidth}" maxHeight="{settings.maxHeight}" title="{file.properties.title}" alt="{file.properties.alternative}" />
+    </picture>
+</f:section>
 </html>

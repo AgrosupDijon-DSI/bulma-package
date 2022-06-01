@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
+use TYPO3\CMS\Core\Page\PageRenderer;
 use AgrosupDijon\BulmaPackage\Service\CompileService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -24,7 +25,7 @@ class PreProcessHook
 
     /**
      * @param array $params
-     * @param \TYPO3\CMS\Core\Page\PageRenderer $pagerenderer
+     * @param PageRenderer $pagerenderer
      * @throws \Exception
      */
     public function execute(&$params, &$pagerenderer)

@@ -6,6 +6,9 @@
         <f:if condition="!{disableCustomColorsAction}">
             <be:moduleLayout.menuItem label="{f:translate(key:'LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title')}" uri="{f:uri.action(controller: 'WebsiteModule', action: 'customColors')}"/>
         </f:if>
+        <f:if condition="!{disableMetaTagsAction}">
+            <be:moduleLayout.menuItem label="{f:translate(key:'LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title')}" uri="{f:uri.action(controller: 'WebsiteModule', action: 'metaTags')}"/>
+        </f:if>
     </be:moduleLayout.menu>
 
     <f:render section="Buttons" />

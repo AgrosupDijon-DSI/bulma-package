@@ -35,17 +35,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.icon,
-                    --palette--;;icon,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.text,
-                    bodytext,
-                    link,
-                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-                --palette--;;hiddenLanguagePalette,
-            '
+            'showitem' => '--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.icon,--palette--;;icon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.text,bodytext,link,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette'
         ],
     ],
     'palettes' => [

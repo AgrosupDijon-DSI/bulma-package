@@ -18,24 +18,13 @@ defined('TYPO3_MODE') or die();
         ]
     ];
 
-    $typo3Branch = class_exists(\TYPO3\CMS\Core\Information\Typo3Version::class)
-        ? (new \TYPO3\CMS\Core\Information\Typo3Version())->getBranch()
-        : TYPO3_branch;
-    if (version_compare($typo3Branch, '10.4', '<')) {
-        $extensionName = 'AgrosupDijon.BulmaPackage';
-        $controller = 'WebsiteModule';
-    } else {
-        $extensionName = 'BulmaPackage';
-        $controller = \AgrosupDijon\BulmaPackage\Controller\WebsiteModuleController::class;
-    }
-
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-        $extensionName,
+        'BulmaPackage',
         'system',
         'WebsiteSettings',
         'top',
         [
-            $controller => 'overview, customColors'
+            \AgrosupDijon\BulmaPackage\Controller\WebsiteModuleController::class => 'overview, customColors, metaTags'
         ],
         [
             'access' => 'user,group',

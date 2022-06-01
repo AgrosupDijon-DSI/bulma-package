@@ -29,23 +29,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '
-                --palette--;;bulmapackage_sitetitle,
-                --div--;Logos,
-                logo_main,
-                logos_partners,
-                favicon,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,
-                menu_layout,
-                --div--;Google Analytics,
-                code_analytics,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,
-                --palette--;;bulmapackage_address,
-                --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_social,
-                tx_bulmapackage_settings_link_item,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-                    --palette--;;language,
-            '
+            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,menu_layout,--div--;Google Analytics,code_analytics,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_social,tx_bulmapackage_settings_link_item,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language'
         ],
     ],
     'palettes' => [
@@ -68,7 +52,10 @@ return [
                 phone,
                 fax,
                 --linebreak--,
-                email
+                email,
+                --linebreak--,
+                latitude,
+                longitude
             ',
         ],
         'language' => [
@@ -322,6 +309,26 @@ return [
                 'eval' => 'trim',
                 'max' => 255,
                 'softref' => 'email'
+            ]
+        ],
+        'latitude' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.latitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
+                'max' => 30
+            ]
+        ],
+        'longitude' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.longitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
+                'max' => 30
             ]
         ],
         'tx_bulmapackage_settings_link_item' => [

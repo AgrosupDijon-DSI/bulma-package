@@ -49,9 +49,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '
-                --palette--;;link,
-            '
+            'showitem' => '--palette--;;link,--palette--;;hiddenLanguagePalette'
         ],
     ],
     'palettes' => [
@@ -62,6 +60,11 @@ return [
                 icon_custom,--linebreak--,
                 icon, icon_file, standalone
             '
+        ],
+        // hidden but needs to be included all the time, so sys_language_uid is set correctly
+        'hiddenLanguagePalette' => [
+            'showitem' => 'sys_language_uid, l10n_parent',
+            'isHiddenPalette' => true,
         ],
     ],
     'columns' => [
@@ -98,16 +101,14 @@ return [
                 'foreign_table' => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1
+                    0 => [
+                        0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                        1 => -1,
+                        2 => 'flags-multiple',
                     ],
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                        0
-                    ]
                 ],
-                'allowNonIdValues' => true,
+                'special' => 'languages',
+                'default' => 0,
             ]
         ],
         'l10n_parent' => [
@@ -117,10 +118,10 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    [
-                        '',
-                        0
-                    ]
+                    0 => [
+                        0 => '',
+                        1 => 0,
+                    ],
                 ],
                 'foreign_table' => 'tx_bulmapackage_settings_link_item',
                 'foreign_table_where' => 'AND tx_bulmapackage_settings_link_item.pid=###CURRENT_PID### AND tx_bulmapackage_settings_link_item.sys_language_uid IN (-1,0)',

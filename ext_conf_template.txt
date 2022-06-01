@@ -27,3 +27,6 @@ disableScssProcessing = 0
 
 # cat=Features; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:feature.disableCustomColorsAction
 disableCustomColorsAction = 0
+
+# cat=Features; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:feature.disableMetaTagsAction
+disableMetaTagsAction = 0

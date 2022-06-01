@@ -18,6 +18,8 @@ plugin.bulma_package_websiteelements {
     partners{
         # cat=bulma package: website elements/110_websiteelement/001_maxwidth; type=string; label=Max width
         maxWidth = 165
+        # cat=bulma package: website elements/110_websiteelement/002_maxheight; type=string; label=Max height
+        maxHeight = 165
     }
     favicon {
         # cat=bulma package: website elements/120_websiteelement/001_applesizes; type=string; label=Apple Sizes
@@ -28,7 +30,7 @@ plugin.bulma_package_websiteelements {
     logo{
         # cat=bulma package: website elements/130_websiteelement/001_maxwidth; type=string; label=Max width
         maxWidth = 215
-        # cat=bulma package: website elements/130_websiteelement/001_maxheight; type=string; label=Max height
+        # cat=bulma package: website elements/130_websiteelement/002_maxheight; type=string; label=Max height
         maxHeight = 60
     }
     megaMenu{
