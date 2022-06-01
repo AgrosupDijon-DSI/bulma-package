@@ -455,6 +455,10 @@
         <source>Background frame</source>
         <target state="final">Type de fond</target>
       </trans-unit>
+      <trans-unit id="field.background_frame.expanded" approved="yes">
+        <source>Expanded</source>
+        <target state="final">Étendu</target>
+      </trans-unit>
       <trans-unit id="field.message_class" approved="yes">
         <source>Message Class</source>
         <target state="final">Type du message</target>
@@ -498,6 +502,10 @@
       <trans-unit id="field.background_color_class.dark" approved="yes">
         <source>Dark</source>
         <target state="final">Sombre</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.1_column" approved="yes">
+        <source>Default</source>
+        <target state="final">Défaut</target>
       </trans-unit>
       <trans-unit id="backend_layout.column.content" approved="yes">
         <source>Content</source>
