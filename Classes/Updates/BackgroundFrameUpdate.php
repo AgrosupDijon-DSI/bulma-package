@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
+use Doctrine\DBAL\Driver\Exception;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -55,7 +56,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
      * Checks if an update is needed
      *
      * @return bool
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     public function updateNecessary(): bool
     {
@@ -74,7 +75,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
 
     /**
      * @return bool
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     public function executeUpdate(): bool
     {
@@ -111,7 +112,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
 
     /**
      * @return array|\mixed[][]
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     private function getContentsWithEmptyBackgroundFrame()
     {
