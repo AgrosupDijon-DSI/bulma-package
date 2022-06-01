@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{subNavigation}">
+    <nav role="navigation" class="is-hidden-touch">
+        <ul class="menu-list">
+            <f:for each="{subNavigation}" as="item_1">
+                <f:variable name="classActive">
+                    <f:if condition="{item_1.current} || ({item_1.data.doktype} == 4 && {item_1.data.shortcut} == {currentUid})">
+                        is-active
+                    </f:if>
+                </f:variable>
+                <f:variable name="target">
+                    <f:if condition="{item_1.target}">
+                        target="{item_1.target}"
+                    </f:if>
+                </f:variable>
+                <p class="menu-label">
+                    <a href="{item_1.link}" class="{classActive}" {target}>{item_1.title}</a>
+                </p>
+                <f:if condition="{item_1.children}">
+                    <f:for each="{item_1.children}" as="subitem">
+                        <f:render section="sublevel" arguments="{item: subitem, currentUid: data.uid}"/>
+                    </f:for>
+                </f:if>
+            </f:for>
+        </ul>
+    </nav>
+</f:if>
+
+<f:section name="sublevel">
+    <f:variable name="classActive">
+        <f:if condition="{item.current} || ({item.data.doktype} == 4 && {item.data.shortcut} == {currentUid})">
+            is-active
+        </f:if>
+    </f:variable>
+    <f:variable name="target">
+        <f:if condition="{item.target}">
+            target="{item.target}"
+        </f:if>
+    </f:variable>
+    <li>
+        <a href="{item.link}" class="{classActive}" {target}>{item.title}</a>
+        <f:if condition="{item.children}">
+            <ul>
+                <f:for each="{item.children}" as="subitem">
+                    <li><f:render section="sublevel" arguments="{item: subitem, currentUid: data.uid}"/></li>
+                </f:for>
+            </ul>
+        </f:if>
+    </li>
+</f:section>
+</html>

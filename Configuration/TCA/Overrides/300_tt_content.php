@@ -36,8 +36,8 @@ $additionalColumns = [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', ''],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_frame.limited', 'limited'],
+                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'limited'],
+                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_frame.expanded', 'expanded'],
             ]
         ],
     ],
