@@ -67,7 +67,7 @@ class SocialsLinksViewHelper extends AbstractViewHelper
                     $type = str_replace(' ', '', $link['data']['icon']);
                 }
                 $reorganizedLinks[$type]['icon'] = $link['data']['icon'];
-                $reorganizedLinks[$type]['iconFile'] = $link['data']['icon_custom'] ? $link['iconFile'][0] : '';
+                $reorganizedLinks[$type]['iconFile'] = $link['data']['icon_custom'] && !empty($link['iconFile']) ? $link['iconFile'][0] : '';
                 $reorganizedLinks[$type]['data'][] = [
                     'url' => $link['data']['link'],
                     'label' => $link['data']['label'],

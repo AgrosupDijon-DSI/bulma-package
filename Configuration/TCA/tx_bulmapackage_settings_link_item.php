@@ -238,7 +238,7 @@ return [
                             ],
                         ],
                     ],
-                    'minitems' => 0,
+                    'minitems' => 1,
                     'maxitems' => 1,
                 ],
                 'svg'
