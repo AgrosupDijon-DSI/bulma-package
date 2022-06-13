@@ -69,6 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 caption = el.nextSibling.innerText;
             }
 
+            var link = el.parentNode.querySelector('a.button.is-hidden');
+            if(link){
+                caption = '<div>' + caption + '</div>' + link.outerHTML;
+            }
+
             var title = el.title;
 
             if (!title && caption) {

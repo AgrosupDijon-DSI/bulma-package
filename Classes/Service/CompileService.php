@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -14,6 +14,7 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Doctrine\DBAL\Driver\Exception;
 
 /**
  * This service handles the parsing of scss files for the frontend.
@@ -32,13 +33,13 @@ class CompileService
 
     /**
      * @param string $file
-     * @return bool|string
+     * @return string|null
      * @throws \Exception
      */
-    public function getCompiledFile($file)
+    public function getCompiledFile(string $file): ?string
     {
         $absoluteFile = GeneralUtility::getFileAbsFileName($file);
-        $configuration = ($GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_bulmapackage.']['settings.'] ?: []);
+        $configuration = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_bulmapackage.']['settings.'] ?? [];
 
         // Ensure cache directory exists
         if (!file_exists($this->tempDirectory)) {
@@ -65,11 +66,16 @@ class CompileService
         ];
 
         // Parser
-        if (!empty($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])) {
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
+            && is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
+        ) {
             foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'] as $className) {
-                /** @var ParserInterface $parser */
+                /** @var class-string $className */
                 $parser = GeneralUtility::makeInstance($className);
-                if ($parser->supports($settings['file']['info']['extension'])) {
+                if ($parser instanceof ParserInterface
+                    && isset($settings['file']['info']['extension'])
+                    && $parser->supports($settings['file']['info']['extension'])
+                ) {
                     if ($configuration['overrideParserVariables']) {
                         $settings['variables'] = $this->getVariablesFromPageLayout();
                     }
@@ -83,18 +89,24 @@ class CompileService
             }
         }
 
-        return false;
+        return null;
     }
 
     /**
      * Clear all caches for the compiler.
+     *
+     * @return void
      */
-    protected function clearCompilerCaches()
+    protected function clearCompilerCaches(): void
     {
         GeneralUtility::rmdir(Environment::getPublicPath() . '/' . $this->tempDirectory, true);
     }
 
-    protected function getVariablesFromPageLayout()
+    /**
+     * @return array
+     * @throws Exception
+     */
+    protected function getVariablesFromPageLayout(): array
     {
         $variables = $layoutOverride = [];
         $layoutUid = $this->getCurrentPageLayout();
@@ -108,13 +120,13 @@ class CompileService
                 $layoutOverride = $layouts[$layoutUid];
             } elseif ($layoutUid >= 100) {
                 // Fetch overrides from database
-                $layoutOverride = $this->getLayoutFromDatabase($layoutUid / 100);
+                $layoutOverride = $this->getLayoutFromDatabase((int)($layoutUid / 100));
             }
         }
 
         // Check "special" key
         // If text_dark = 1 in the layout, and layout with a matching key exists, merge both layouts.
-        if($layoutOverride['text_dark'] == '1' && isset($layouts['text_dark'])){
+        if(isset($layoutOverride['text_dark']) && $layoutOverride['text_dark'] == '1' && isset($layouts['text_dark'])){
             $layoutOverride = array_merge($layoutOverride, $layouts['text_dark']);
             unset($layoutOverride['text_dark']);
         }
@@ -126,7 +138,12 @@ class CompileService
         return $variables;
     }
 
-    protected function getLayoutFromDatabase($layoutUid)
+    /**
+     * @param int $layoutUid
+     * @return array
+     * @throws Exception
+     */
+    protected function getLayoutFromDatabase(int $layoutUid): array
     {
         $layout = [];
         $result = GeneralUtility::makeInstance(ConnectionPool::class)
@@ -136,7 +153,7 @@ class CompileService
                 'tx_bulmapackage_custom_color',
                 ['uid' => $layoutUid]
             )
-            ->fetch();
+            ->fetchAssociative();
         if (!empty($result)) {
             $prefix = 'var_';
             // Get rid of fields that aren't variables
@@ -151,7 +168,11 @@ class CompileService
         return $layout;
     }
 
-    protected function getLayoutsFromConstants($constants)
+    /**
+     * @param array $constants
+     * @return array
+     */
+    protected function getLayoutsFromConstants(array $constants): array
     {
         $prefix = 'plugin.bulma_package.layout.';
         $layouts = [];
@@ -166,6 +187,9 @@ class CompileService
         return $layouts;
     }
 
+    /**
+     * @return int
+     */
     protected function getCurrentPageLayout()
     {
         $rootLine = $this->getRootLine($GLOBALS['TSFE']->id);
@@ -183,7 +207,7 @@ class CompileService
      * @param int $pageId
      * @return array
      */
-    protected function getRootLine($pageId)
+    protected function getRootLine(int $pageId): array
     {
         return BackendUtility::BEgetRootLine($pageId, '', true, ['layout']);
     }
@@ -191,7 +215,7 @@ class CompileService
     /**
      * @return array
      */
-    protected function getConstants()
+    protected function getConstants(): array
     {
         if ($GLOBALS['TSFE']->tmpl->flatSetup === null
             || !is_array($GLOBALS['TSFE']->tmpl->flatSetup)

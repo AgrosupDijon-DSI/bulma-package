@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
+use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use AgrosupDijon\BulmaPackage\Service\CompileService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -26,11 +27,12 @@ class PreProcessHook
     /**
      * @param array $params
      * @param PageRenderer $pagerenderer
+     * @return void
      * @throws \Exception
      */
-    public function execute(&$params, &$pagerenderer)
+    public function execute(array &$params, PageRenderer &$pagerenderer): void
     {
-        if (TYPO3_MODE !== 'FE') {
+        if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend() === false) {
             return;
         }
         foreach (['cssLibs', 'cssFiles'] as $key) {
@@ -38,7 +40,7 @@ class PreProcessHook
             if (is_array($params[$key])) {
                 foreach ($params[$key] as $file => $settings) {
                     $compiledFile = $this->getCompileService()->getCompiledFile($file);
-                    if ($compiledFile !== false) {
+                    if (!is_null($compiledFile)) {
                         $settings['file'] = $compiledFile;
                         $files[$compiledFile] = $settings;
                     } else {

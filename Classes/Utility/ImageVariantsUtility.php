@@ -54,20 +54,26 @@ class ImageVariantsUtility
     ];
 
     /**
-     * @param array $variants
-     * @param array $multiplier
-     * @param array $gutters
-     * @param array $corrections
+     * @param array|null $variants
+     * @param array|null $multiplier
+     * @param array|null $gutters
+     * @param array|null $corrections
      * @return array
      */
-    public static function getImageVariants($variants = [], $multiplier = [], $gutters = [], $corrections = []): array
+    public static function getImageVariants(?array $variants = null, ?array $multiplier = null, ?array $gutters = null, ?array $corrections = null): array
     {
+        $variants = $variants !== null ? $variants : [];
         $variants = self::processVariants($variants);
         $variants = self::processResolutions($variants);
-        $variants = self::addGutters($variants, $gutters);
-        $variants = self::processMultiplier($variants, $multiplier);
-        $variants = self::removeGutters($variants, $gutters);
-        $variants = self::processCorrections($variants, $corrections);
+        if ($gutters !== null) {
+            $variants = self::removeGutters($variants, $gutters);
+        }
+        if ($multiplier !== null) {
+            $variants = self::processMultiplier($variants, $multiplier);
+        }
+        if ($corrections !== null) {
+            $variants = self::processCorrections($variants, $corrections);
+        }
         return $variants;
     }
 
@@ -91,10 +97,13 @@ class ImageVariantsUtility
      * @param array $sizes
      * @return array
      */
-    protected static function processSizes($sizes): array
+    protected static function processSizes(array $sizes): array
     {
         $resultSizes = [];
         $workingSizes = [];
+        if(!isset($sizes['1x'])){
+            $sizes['1x'] = ['multiplier' => 1];
+        }
         foreach ($sizes as $key => $settings) {
             if (!array_key_exists('multiplier', $settings) ||
                 !is_numeric($settings['multiplier']) ||
@@ -106,9 +115,6 @@ class ImageVariantsUtility
             $workingSizes[substr($key, 0, -1) . ''] = [
                 'multiplier' => 1 * $settings['multiplier'],
             ];
-        }
-        if (!array_key_exists(1, $workingSizes)) {
-            $workingSizes[(float) 1 . ''] = ['multiplier' => 1];
         }
         ksort($workingSizes);
         foreach ($workingSizes as $workingKey => $workingSettings) {
@@ -154,24 +160,8 @@ class ImageVariantsUtility
      * @param array $gutters
      * @return array
      */
-    protected static function addGutters($variants, $gutters): array
+    protected static function removeGutters(array $variants, array $gutters): array
     {
-        $gutters = is_array($gutters) ? $gutters : [];
-        foreach ($gutters as $variant => $value) {
-            if (is_numeric($value) && $value > 0 && isset($variants[$variant]['width'])) {
-                $variants[$variant]['width'] = (int) ceil($variants[$variant]['width'] + $value);
-            }
-        }
-        return $variants;
-    }
-    /**
-     * @param array $variants
-     * @param array $gutters
-     * @return array
-     */
-    protected static function removeGutters($variants, $gutters): array
-    {
-        $gutters = is_array($gutters) ? $gutters : [];
         foreach ($gutters as $variant => $value) {
             if (is_numeric($value) && $value > 0 && isset($variants[$variant]['width'])) {
                 $variants[$variant]['width'] = (int) ceil($variants[$variant]['width'] - $value);
@@ -184,9 +174,8 @@ class ImageVariantsUtility
      * @param array $multiplier
      * @return array
      */
-    protected static function processMultiplier($variants, $multiplier): array
+    protected static function processMultiplier(array $variants, array $multiplier): array
     {
-        $multiplier = is_array($multiplier) ? $multiplier : [];
         foreach ($multiplier as $variant => $value) {
             if (is_numeric($value) && $value > 0 && isset($variants[$variant]['width'])) {
                 $variants[$variant]['width'] = (int) ceil($variants[$variant]['width'] * $value);
@@ -199,9 +188,8 @@ class ImageVariantsUtility
      * @param array $corrections
      * @return array
      */
-    protected static function processCorrections($variants, $corrections): array
+    protected static function processCorrections(array $variants, array $corrections): array
     {
-        $corrections = is_array($corrections) ? $corrections : [];
         foreach ($corrections as $variant => $value) {
             if (is_numeric($value) && $value > 0 && isset($variants[$variant]['width'])) {
                 $variants[$variant]['width'] -= $value;

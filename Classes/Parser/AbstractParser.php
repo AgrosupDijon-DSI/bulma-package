@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -23,7 +23,7 @@ abstract class AbstractParser implements ParserInterface
      * @param string $extension
      * @return bool
      */
-    public function supports($extension)
+    public function supports(string $extension): bool
     {
         return false;
     }
@@ -33,7 +33,7 @@ abstract class AbstractParser implements ParserInterface
      * @param array $settings
      * @return string
      */
-    public function compile($file, $settings)
+    public function compile(string $file, array $settings): string
     {
         return $file;
     }
@@ -43,7 +43,7 @@ abstract class AbstractParser implements ParserInterface
      * @param array $settings
      * @return bool
      */
-    protected function isCached($file, $settings)
+    protected function isCached(string $file, array $settings): bool
     {
         $cacheIdentifier = $this->getCacheIdentifier($file, $settings);
         $cacheFile = $this->getCacheFile($cacheIdentifier, $settings['cache']['tempDirectory']);
@@ -58,21 +58,24 @@ abstract class AbstractParser implements ParserInterface
      * @param array $settings
      * @return bool
      */
-    protected function needsCompile($cacheFile, $cacheFileMeta, $settings)
+    protected function needsCompile(string $cacheFile, string $cacheFileMeta, array $settings): bool
     {
         $needCompilation = false;
         $fileModificationTime = filemtime($cacheFile);
-        $metadata = unserialize(file_get_contents($cacheFileMeta), ['allowed_classes' => false]);
+        $metadata = unserialize((string) file_get_contents($cacheFileMeta), ['allowed_classes' => false]);
 
-        foreach ($metadata['files'] as $file => $cacheTime) {
-            $currentTime = filemtime($file);
-            if ($currentTime !== $cacheTime || $currentTime > $fileModificationTime) {
+        foreach ($metadata['files'] as $file) {
+            if (filemtime($file) > $fileModificationTime) {
                 $needCompilation = true;
                 break;
             }
         }
 
         if (!$needCompilation && $settings['variables'] !== $metadata['variables']) {
+            $needCompilation = true;
+        }
+
+        if (!$needCompilation && $settings['options']['sourceMap'] !== $metadata['sourceMap']) {
             $needCompilation = true;
         }
 
@@ -84,7 +87,7 @@ abstract class AbstractParser implements ParserInterface
      * @param string $tempDirectory
      * @return string
      */
-    protected function getCacheFile($cacheIdentifier, $tempDirectory)
+    protected function getCacheFile(string $cacheIdentifier, string $tempDirectory): string
     {
         return $tempDirectory . $cacheIdentifier . '.css';
     }
@@ -93,7 +96,7 @@ abstract class AbstractParser implements ParserInterface
      * @param string $filename
      * @return string
      */
-    protected function getCacheFileMeta($filename)
+    protected function getCacheFileMeta(string $filename)
     {
         return $filename . '.meta';
     }
@@ -103,7 +106,7 @@ abstract class AbstractParser implements ParserInterface
      * @param array $settings
      * @return string
      */
-    protected function getCacheIdentifier($file, $settings)
+    protected function getCacheIdentifier(string $file, array $settings): string
     {
         $filehash = md5($file);
         $hash = hash('sha256', $filehash . serialize($settings));
@@ -115,7 +118,7 @@ abstract class AbstractParser implements ParserInterface
     /**
      * @return string
      */
-    protected function getPathSite()
+    protected function getPathSite(): string
     {
         return Environment::getPublicPath() . '/';
     }
@@ -124,7 +127,7 @@ abstract class AbstractParser implements ParserInterface
      * Clear all page caches
      * @throws NoSuchCacheGroupException
      */
-    protected function clearPageCaches()
+    protected function clearPageCaches(): void
     {
         GeneralUtility::makeInstance(CacheManager::class)->flushCachesInGroup('pages');
     }

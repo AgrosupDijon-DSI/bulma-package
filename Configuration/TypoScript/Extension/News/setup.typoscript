@@ -18,7 +18,7 @@ plugin.tx_news {
 	}
 
 	settings {
-		displayDummyIfNoMedia = false
+		displayDummyIfNoMedia = 0
 		list {
 			titleClasses = {$plugin.tx_news.settings.list.titleClasses}
 			subtitleClasses = {$plugin.tx_news.settings.list.subtitleClasses}
@@ -26,7 +26,7 @@ plugin.tx_news {
 				dummyImage = EXT:news/Resources/Public/Images/dummy-preview-image.png
 			}
 			paginate{
-				insertAbove = false
+				insertAbove = 0
 				additionalClasses = {$plugin.tx_news.settings.list.paginate.additionalClasses}
 			}
 			showIcons = {$plugin.tx_news.settings.list.showIcons}

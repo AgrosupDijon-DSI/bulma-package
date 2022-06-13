@@ -123,7 +123,7 @@ class SlugModifier
         $slug = $helper->sanitize($slug);
         // No valid data found
         if ($slug === '' || $slug === '/') {
-            $slug = 'default-' . GeneralUtility::shortMD5(json_encode($this->recordData));
+            $slug = 'default-' . substr(md5((string)json_encode($this->recordData)), 0, 10);
         }
         if ($this->prependSlashInSlug && ($slug[0] ?? '') !== '/') {
             $slug = '/' . $slug;
@@ -138,13 +138,14 @@ class SlugModifier
      * Take over hook values to our own class.
      *
      * @param array $configuration
-     * @param $tableName
-     * @param $fieldName
-     * @param $pid
-     * @param $workspaceId
-     * @param $record
+     * @param string $tableName
+     * @param string $fieldName
+     * @param int $pid
+     * @param int $workspaceId
+     * @param array $record
+     * @return void
      */
-    protected function resolveHookParameters(array $configuration, $tableName, $fieldName, $pid, $workspaceId, $record)
+    protected function resolveHookParameters(array $configuration, string $tableName, string $fieldName, int $pid, int $workspaceId, array $record): void
     {
         $this->configuration = $configuration;
         $this->tableName = $tableName;

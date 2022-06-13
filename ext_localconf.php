@@ -7,7 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 (function () {
     // https://usetypo3.com/application-context.html)
@@ -31,6 +31,11 @@ defined('TYPO3_MODE') or die();
         \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
     );
     $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
+
+    /***************
+     * UserTS
+     */
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('options.saveDocNew.tx_bulmapackage_settings = 0');
 
     /***************
      * PageTS
@@ -123,9 +128,6 @@ defined('TYPO3_MODE') or die();
     // Hook to override colpos check for unused tt_content elements
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used']['bulma_package'] = AgrosupDijon\BulmaPackage\Hooks\Backend\PageLayoutViewHook::class . '->contentIsUsed';
 
-    // Hook to make sure there is only one "tx_bulmapackage_settings" record by pid
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['bulma_package'] = AgrosupDijon\BulmaPackage\Hooks\DataHandling\DataHandlerHook::class;
-
     /***************
      * Register "asd" as global fluid namespace
      */
@@ -167,23 +169,6 @@ defined('TYPO3_MODE') or die();
      */
     if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig">');
-    }
-
-    /***************
-     * Register image_autoresize signal slot
-     */
-    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('image_autoresize')) {
-        /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
-        $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-            \TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class
-        );
-
-        $signalSlotDispatcher->connect(
-            \Causal\ImageAutoresize\Controller\ConfigurationController::class,
-            'processConfiguration',
-            \AgrosupDijon\BulmaPackage\Slots\ImageAutoresize::class,
-            'postProcessConfiguration'
-        );
     }
 
     /***************

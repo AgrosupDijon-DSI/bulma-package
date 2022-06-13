@@ -7,12 +7,12 @@
  * LICENSE file that was distributed with this source code.
  */
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 /***************
  * Add Content Element
  */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['accordion'])) {
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['accordion'] ?? false)) {
     $GLOBALS['TCA']['tt_content']['types']['accordion'] = [];
 }
 
@@ -78,7 +78,6 @@ $additionalColumns = [
                 'showSynchronizationLink' => true,
                 'showAllLocalizationLink' => true,
                 'showPossibleLocalizationRecords' => true,
-                'showRemovedLocalizationRecords' => false,
                 'expandSingle' => true,
                 'enabledControls' => [
                     'localize' => true,

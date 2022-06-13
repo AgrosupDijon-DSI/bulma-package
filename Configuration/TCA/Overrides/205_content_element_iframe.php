@@ -7,12 +7,12 @@
  * LICENSE file that was distributed with this source code.
  */
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 /***************
  * Add Content Element
  */
-if (!is_array($GLOBALS['TCA']['tt_content']['types']['iframe'])) {
+if (!is_array($GLOBALS['TCA']['tt_content']['types']['iframe'] ?? false)) {
     $GLOBALS['TCA']['tt_content']['types']['iframe'] = [];
 }
 

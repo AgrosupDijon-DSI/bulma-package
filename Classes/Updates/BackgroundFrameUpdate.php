@@ -9,6 +9,8 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
+use Doctrine\DBAL\Driver\Exception;
+use Doctrine\DBAL\ForwardCompatibility\Result;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -55,7 +57,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
      * Checks if an update is needed
      *
      * @return bool
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     public function updateNecessary(): bool
     {
@@ -74,7 +76,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
 
     /**
      * @return bool
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
     public function executeUpdate(): bool
     {
@@ -110,21 +112,24 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
     }
 
     /**
-     * @return array|\mixed[][]
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @return array
+     * @throws Exception
      */
     private function getContentsWithEmptyBackgroundFrame()
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
-        return $queryBuilder->select('uid')
+        
+        /** @var Result $result */
+        $result = $queryBuilder->select('uid')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('background_frame',
                     $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
             )
-            ->execute()
-            ->fetchAllAssociative();
+            ->execute();
+
+        return $result->fetchAllAssociative();
     }
 
     /**

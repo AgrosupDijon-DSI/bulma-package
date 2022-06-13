@@ -43,7 +43,7 @@ class ConstantsProcessor implements DataProcessorInterface
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
     {
         // The key to process
-        $key = $cObj->stdWrapValue('key', $processorConfiguration);
+        $key = (string) $cObj->stdWrapValue('key', $processorConfiguration);
         if (empty($key)) {
             $key = 'page';
         }
@@ -71,7 +71,7 @@ class ConstantsProcessor implements DataProcessorInterface
      * @param string $key
      * @return string
      */
-    protected function getFlatConstants($key)
+    protected function getFlatConstants($key): string
     {
         $flatvariables = '';
         $prefix = $key . '.';
