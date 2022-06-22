@@ -29,7 +29,8 @@ page {
     navigation {
         quickLinks {
             # cat=bulma package: navigation/120/100; type=int+; label=quickLinks entry point
-            entryPoint = 0
+            entryPoint = -1
+            entryPoint := getEnv(BULMA_QUICKLINKS_ENTRYPOINT)
         }
         # cat=bulma package: navigation/120/110; type=string; label=login page uid
         loginPid = 
