@@ -32,6 +32,8 @@ plugin.bulma_package_websiteelements {
         maxWidth = 215
         # cat=bulma package: website elements/130_websiteelement/002_maxheight; type=string; label=Max height
         maxHeight = 60
+        # cat=bulma package: website elements/130_websiteelement/003_linkclasses; type=string; label=Css classes for the link wrapping the logo
+        linkClasses = navbar-item
     }
     megaMenu{
         # cat=bulma package: website elements/140_websiteelement/001_columnclasses; type=string; label=Column css classes

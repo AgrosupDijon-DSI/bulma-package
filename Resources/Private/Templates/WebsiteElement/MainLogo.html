@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{logoMain}">
-    <f:link.page pageUid="{rootPage}" class="navbar-item">
+    <f:link.page pageUid="{rootPage}" class="{settings.linkClasses}">
         <f:if condition="{logoMain.0.mimeType} == 'image/svg+xml'">
             <f:then>
                 <asd:inlineSvg class="image" image="{logoMain.0}" width="{settings.maxWidth}" height="{settings.maxHeight}" />
