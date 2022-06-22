@@ -6,7 +6,7 @@
             <f:if condition="{quickLinksNavigation}">
                 <div class="column">
                     <p class="title is-3">{f:translate(key: 'footer-title-menu', extensionName: 'bulma_package')}</p>
-                    <f:render partial="Navigation/QuickLinks" arguments="{_all}" />
+                    <f:render partial="Navigation/QuickLinks" arguments="{quickLinks: quickLinksNavigation}" />
                 </div>
             </f:if>
             <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.bulmaPackage.socialsLinks') -> asd:format.trim()}">

@@ -1,8 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:if condition="{quickLinksNavigation}">
+<f:if condition="{quickLinks}">
     <ul>
-        <f:for each="{quickLinksNavigation}" as="item">
+        <f:for each="{quickLinks}" as="item">
             <f:variable name="classActive">
                 <f:if condition="{item.active} || ({item.data.doktype} == 4 && {item.data.shortcut} == {data.uid})">
                     is-active
