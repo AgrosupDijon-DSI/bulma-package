@@ -1,14 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // SmoothScroll initialization
-    var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 300,
-        updateURL: false
-    });
-
     // Loose focus on html after scroll to avoid firefox outline
-    var logScrollEvent = function (event) {
-        if(event.detail.anchor.tagName == "HTML"){
+    const logScrollEvent = function (event) {
+        if(event.detail.anchor.tagName === "HTML"){
             event.detail.anchor.blur();
         }
     };
@@ -17,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scrollStop', logScrollEvent, false);
 
     // Get all "scroll-top" elements
-    var scrollTopElements = document.querySelectorAll('.scroll-top');
+    const scrollTopElements = document.querySelectorAll('.scroll-top');
 
     // Check if there are any "scroll-top" elements
     if (scrollTopElements.length > 0) {

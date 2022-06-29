@@ -30,14 +30,12 @@ page {
         tabs = EXT:bulma_package/Resources/Public/Contrib/BulmaJS/tabs.js
         collapsible = EXT:bulma_package/Resources/Public/Contrib/CreativeBulma/bulma-collapsible.min.js
 
-        smooth-scroll = EXT:bulma_package/Resources/Public/Contrib/smooth-scroll/smooth-scroll.min.js
-
         bulma_accordion = EXT:bulma_package/Resources/Public/JavaScript/bulma.accordion.js
         bulma_burger = EXT:bulma_package/Resources/Public/JavaScript/bulma.burger.js
         bulma_lightbox = EXT:bulma_package/Resources/Public/JavaScript/bulma.lightbox.js
         bulma_flickity = EXT:bulma_package/Resources/Public/JavaScript/bulma.flickity.js
         bulma_form = EXT:bulma_package/Resources/Public/JavaScript/bulma.form.js
-        bulma_smoothscroll = EXT:bulma_package/Resources/Public/JavaScript/bulma.smoothscroll.js
+        bulma_scrolltop = EXT:bulma_package/Resources/Public/JavaScript/bulma.scrolltop.js
         bulma_dropdown = EXT:bulma_package/Resources/Public/JavaScript/bulma.dropdown.js
     }
 }
