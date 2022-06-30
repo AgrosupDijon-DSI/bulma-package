@@ -198,4 +198,10 @@ config {
     index_metatags = 1
 
     spamProtectEmailAddresses = -5
+
+    // Compression and Concatenation of CSS and JS Files
+    compressJs = {$config.compressJs}
+    compressCss = {$config.compressCss}
+    concatenateJs = {$config.concatenateJs}
+    concatenateCss = {$config.concatenateCss}
 }

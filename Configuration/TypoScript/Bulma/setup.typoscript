@@ -13,12 +13,11 @@ page {
 #        rte = EXT:bulma_package/Resources/Public/Scss/Rte/rte.scss
     }
     includeCSSLibs{
-        fontawesome = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free-5.11.2-web/css/fontawesome.min.css
-        fontawesome-solid = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free-5.11.2-web/css/solid.min.css
-        fontawesome-regular = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free-5.11.2-web/css/regular.min.css
-        fontawesome-brand = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free-5.11.2-web/css/brands.min.css
-        ionicons = https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css
-        ionicons.external = 1
+        fontawesome = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/fontawesome.min.css
+        fontawesome-solid = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/solid.min.css
+        fontawesome-regular = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/regular.min.css
+        fontawesome-brand = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/brands.min.css
+        ionicons = EXT:bulma_package/Resources/Public/Contrib/ionicons/css/ionicons.min.css
     }
     includeJSFooterlibs {
         photoswipe_core = EXT:bulma_package/Resources/Public/Contrib/photoswipe/photoswipe.min.js
@@ -27,16 +26,16 @@ page {
         flickity = EXT:bulma_package/Resources/Public/Contrib/flickity/flickity.pkgd.min.js
         flickity_fade = EXT:bulma_package/Resources/Public/Contrib/flickity/flickity-fade.js
 
-        tabs = EXT:bulma_package/Resources/Public/Contrib/BulmaJS/tabs.js
-        collapsible = EXT:bulma_package/Resources/Public/Contrib/CreativeBulma/bulma-collapsible.min.js
+        tabs = EXT:bulma_package/Resources/Public/Contrib/bulmajs/tabs.js
+        collapsible = EXT:bulma_package/Resources/Public/Contrib/bulma-collapsible/bulma-collapsible.min.js
 
-        bulma_accordion = EXT:bulma_package/Resources/Public/JavaScript/bulma.accordion.js
-        bulma_burger = EXT:bulma_package/Resources/Public/JavaScript/bulma.burger.js
-        bulma_lightbox = EXT:bulma_package/Resources/Public/JavaScript/bulma.lightbox.js
-        bulma_flickity = EXT:bulma_package/Resources/Public/JavaScript/bulma.flickity.js
-        bulma_form = EXT:bulma_package/Resources/Public/JavaScript/bulma.form.js
-        bulma_scrolltop = EXT:bulma_package/Resources/Public/JavaScript/bulma.scrolltop.js
-        bulma_dropdown = EXT:bulma_package/Resources/Public/JavaScript/bulma.dropdown.js
+        bulma_accordion = EXT:bulma_package/Resources/Public/Build/bulma.accordion.min.js
+        bulma_burger = EXT:bulma_package/Resources/Public/Build/bulma.burger.min.js
+        bulma_lightbox = EXT:bulma_package/Resources/Public/Build/bulma.lightbox.min.js
+        bulma_flickity = EXT:bulma_package/Resources/Public/Build/bulma.flickity.min.js
+        bulma_form = EXT:bulma_package/Resources/Public/Build/bulma.form.min.js
+        bulma_scrolltop = EXT:bulma_package/Resources/Public/Build/bulma.scrolltop.min.js
+        bulma_dropdown = EXT:bulma_package/Resources/Public/Build/bulma.dropdown.min.js
     }
 }
 

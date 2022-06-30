@@ -41,6 +41,20 @@ page {
     }
 }
 
+##############
+### CONFIG ###
+##############
+config {
+    # cat=bulma package: config/150/110; type=boolean; label=Compress JavaScript
+    compressJs = 1
+    # cat=bulma package: config/150/120; type=boolean; label=Compress CSS
+    compressCss = 1
+    # cat=bulma package: config/150/130; type=boolean; label=Concatenate JavaScript
+    concatenateJs = 1
+    # cat=bulma package: config/150/140; type=boolean; label=Concatenate CSS
+    concatenateCss = 1
+}
+
 #####################
 ### BULMA PACKAGE ###
 #####################

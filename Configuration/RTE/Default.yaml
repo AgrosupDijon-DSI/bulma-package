@@ -7,7 +7,7 @@ editor:
     config:
         bodyClass: "content section"
         contentsCss:
-            - "EXT:bulma_package/Resources/Public/Css/RTE/rte.min.css"
+            - "EXT:bulma_package/Resources/Public/Build/rte.min.css"
 
         coreStyles_strike: { element: 'span', attributes: {'class': 'text-striked'}, overrides: 'strike' }
         coreStyles_bold: { element: 'span', attributes: {'class': 'has-text-weight-bold'}, overrides: 'b' }
