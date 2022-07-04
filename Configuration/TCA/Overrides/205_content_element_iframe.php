@@ -76,5 +76,5 @@ $GLOBALS['TCA']['tt_content']['types']['iframe'] = array_replace_recursive(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'tt_content',
     'iframelayout',
-    'table_header_position'
+    'table_header_position, gallery_size, table_class'
 );

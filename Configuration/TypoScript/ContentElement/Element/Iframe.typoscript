@@ -11,4 +11,15 @@ tt_content.iframe {
     ################
     templateName = Iframe
 
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+        10 {
+            delimiter = ,
+            fieldName = table_class
+            as = layoutClasses
+        }
+    }
 }

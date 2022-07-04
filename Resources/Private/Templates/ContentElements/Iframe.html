@@ -20,8 +20,23 @@
     <f:variable name="iframe"><asd:firstIframe>{data.bodytext}</asd:firstIframe></f:variable>
 
     <f:if condition="{iframe}">
-        <div class="iframe-wrapper {ratio}">{iframe -> f:format.raw()}</div>
+        <f:if condition="{data.gallery_size}">
+            <f:then>
+                <f:for each="{layoutClasses}" as="class">
+                    <f:variable name="allClasses">{allClasses} {class}</f:variable>
+                </f:for>
+                <div class="{allClasses} media-gallery-{data.gallery_size}">
+                    <f:render section="IframeWrapper" arguments="{ratio: ratio, iframe: iframe}" />
+                </div>
+            </f:then>
+            <f:else>
+                <f:render section="IframeWrapper" arguments="{ratio: ratio, iframe: iframe}" />
+            </f:else>
+        </f:if>
     </f:if>
+</f:section>
 
+<f:section name="IframeWrapper">
+    <div class="iframe-wrapper {ratio}">{iframe -> f:format.raw()}</div>
 </f:section>
 </html>
