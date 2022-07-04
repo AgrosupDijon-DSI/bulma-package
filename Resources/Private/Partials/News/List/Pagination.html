@@ -7,7 +7,7 @@
                 </a>
             </f:then>
             <f:else>
-                <span class="pagination-previous" disabled>{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span>
+                <span class="pagination-previous is-disabled">{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span>
             </f:else>
         </f:if>
         <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
@@ -17,7 +17,7 @@
                 </a>
             </f:then>
             <f:else>
-                <span class="pagination-next" disabled>{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span>
+                <span class="pagination-next is-disabled">{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span>
             </f:else>
         </f:if>
         <ul class="pagination-list">

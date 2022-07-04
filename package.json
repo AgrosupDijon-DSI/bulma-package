@@ -10,7 +10,7 @@
     "@creativebulma/bulma-collapsible": "1.0.3",
     "@fortawesome/fontawesome-free": "5.11.2",
     "@vizuaalog/bulmajs": "0.12.2",
-    "bulma-scss": "0.9.1",
+    "bulma-scss": "0.9.4",
     "cookieconsent": "3.1.1",
     "core-js": "^3.23.3",
     "flickity": "2.2.1",
