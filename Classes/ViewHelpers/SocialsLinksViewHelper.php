@@ -73,6 +73,7 @@ class SocialsLinksViewHelper extends AbstractViewHelper
                     'label' => $link['data']['label'],
                     'force_label' => $link['data']['force_label']
                 ];
+                $reorganizedLinks[$type]['uniqueId'] = uniqid();
             }
         }
 
