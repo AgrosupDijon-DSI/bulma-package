@@ -4,7 +4,7 @@
         <ul class="menu-list">
             <f:for each="{subNavigation}" as="item_1">
                 <f:variable name="classActive">
-                    <f:if condition="{item_1.current} || ({item_1.data.doktype} == 4 && {item_1.data.shortcut} == {currentUid})">
+                    <f:if condition="{item_1.current}">
                         is-active
                     </f:if>
                 </f:variable>
@@ -28,7 +28,7 @@
 
 <f:section name="sublevel">
     <f:variable name="classActive">
-        <f:if condition="{item.current} || ({item.data.doktype} == 4 && {item.data.shortcut} == {currentUid})">
+        <f:if condition="{item.current}">
             is-active
         </f:if>
     </f:variable>
