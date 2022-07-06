@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:for each="{mainNavigation}" as="item_1">
     <f:variable name="classActive">
-        <f:if condition="{item_1.active}">
+        <f:if condition="{item_1.active} && {item_1.data.shortcut} != {rootPage} || {item_1.current}">
             is-active
         </f:if>
     </f:variable>
@@ -29,7 +29,7 @@
 
 <f:section name="sublevel">
     <f:variable name="classActive">
-        <f:if condition="{item.active}">
+        <f:if condition="{item.active} && {item_1.data.shortcut} != {rootPage} || {item_1.current}">
             is-active
         </f:if>
     </f:variable>

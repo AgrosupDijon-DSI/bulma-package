@@ -2,7 +2,7 @@
 
 <f:for each="{mainNavigation}" as="item_1">
     <f:variable name="classActive">
-        <f:if condition="{item_1.active}">
+        <f:if condition="{item_1.active} && {item_1.data.shortcut} != {rootPage} || {item_1.current}">
             is-active
         </f:if>
     </f:variable>
