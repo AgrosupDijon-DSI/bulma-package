@@ -28,6 +28,7 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments.
      *
+     * @return void
      * @throws Exception
      */
     public function initializeArguments()
