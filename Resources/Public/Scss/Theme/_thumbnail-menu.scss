@@ -96,13 +96,9 @@ $thumbnail-menu-caption-title-weight: $weight-bold !default;
     }
 
     .thumbnail-menu-link {
-      .thumbnail-menu-caption {
-        transition: opacity 0.25s ease-in-out;
-      }
-
       .thumbnail-menu-image {
         &:after {
-          transition: opacity 0.25s ease-in-out;
+          transition: background-color 0.25s ease-in-out;
         }
 
         picture,
@@ -116,7 +112,7 @@ $thumbnail-menu-caption-title-weight: $weight-bold !default;
       &:focus {
         .thumbnail-menu-image {
           &:after {
-            opacity: $thumbnail-menu-background-opacity-hover;
+            background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity-hover);
           }
 
           picture,
