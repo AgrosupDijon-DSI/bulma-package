@@ -8,13 +8,28 @@
 $thumbnail-menu-background: $primary !default;
 $thumbnail-menu-background-opacity: 0.85 !default;
 $thumbnail-menu-background-opacity-hover: 0.5 !default;
+$thumbnail-menu-border: none !default;
 $thumbnail-menu-picture-filter: grayscale(1) !default;
 $thumbnail-menu-picture-filter-hover: none !default;
 $thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
+$thumbnail-menu-caption-title-size: 1.25em !default;
+$thumbnail-menu-caption-subtitle-size: $body-font-size !default;
+$thumbnail-menu-caption-title-transform: none !default;
+$thumbnail-menu-caption-subtitle-transform: none !default;
 $thumbnail-menu-radius: 0 !default;
 $thumbnail-menu-caption-flex-alignment: center !default;
 $thumbnail-menu-caption-flex-justify: center !default;
+$thumbnail-menu-caption-inner-alignement: center !default;
+$thumbnail-menu-caption-inner-padding: 1.5em !default;
+$thumbnail-menu-caption-inner-max-width: 100% !default;
 $thumbnail-menu-caption-title-weight: $weight-bold !default;
+$thumbnail-menu-caption-subtitle-weight: $weight-normal !default;
+$thumbnail-menu-caption-title-color: $thumbnail-menu-color !default;
+$thumbnail-menu-caption-subtitle-color: $thumbnail-menu-color !default;
+$thumbnail-menu-caption-title-color-hover: $thumbnail-menu-caption-title-color !default;
+$thumbnail-menu-caption-subtitle-color-hover: $thumbnail-menu-caption-subtitle-color !default;
+$thumbnail-menu-caption-title-color-focus: $thumbnail-menu-caption-title-color-hover !default;
+$thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-color-hover !default;
 
 //
 // Component
@@ -25,12 +40,7 @@ $thumbnail-menu-caption-title-weight: $weight-bold !default;
   position: relative;
   height: 100%;
   border-radius: $thumbnail-menu-radius;
-}
-
-.thumbnail-menu-link,
-.thumbnail-menu-link:hover,
-.thumbnail-menu-link:focus {
-  color: $thumbnail-menu-color;
+  border: $thumbnail-menu-border;
 }
 
 .thumbnail-menu-image {
@@ -73,8 +83,9 @@ $thumbnail-menu-caption-title-weight: $weight-bold !default;
     }
 
     .thumbnail-menu-caption-inner {
-      padding: 1.5em;
-      text-align: center;
+      padding: $thumbnail-menu-caption-inner-padding;
+      text-align: $thumbnail-menu-caption-inner-alignement;
+      max-width: $thumbnail-menu-caption-inner-max-width;
 
       > *:first-child {
         margin-top: 0;
@@ -86,13 +97,17 @@ $thumbnail-menu-caption-title-weight: $weight-bold !default;
     }
 
     .thumbnail-menu-caption-title {
-      font-size: 1.25em;
+      font-size: $thumbnail-menu-caption-title-size;
+      text-transform: $thumbnail-menu-caption-title-transform;
       margin-bottom: 0.25em;
       font-weight: $thumbnail-menu-caption-title-weight;
     }
 
     .thumbnail-menu-caption-subtitle {
       line-height: 1.2em;
+      font-size: $thumbnail-menu-caption-subtitle-size;
+      text-transform: $thumbnail-menu-caption-subtitle-transform;
+      font-weight: $thumbnail-menu-caption-subtitle-weight;
     }
 
     .thumbnail-menu-link {
@@ -108,8 +123,24 @@ $thumbnail-menu-caption-title-weight: $weight-bold !default;
         }
       }
 
+      .thumbnail-menu-caption-title {
+        color: $thumbnail-menu-caption-title-color;
+      }
+
+      .thumbnail-menu-caption-subtitle {
+        color: $thumbnail-menu-caption-subtitle-color;
+      }
+
       &:hover,
       &:focus {
+        .thumbnail-menu-caption-title {
+          color: $thumbnail-menu-caption-title-color-hover;
+        }
+
+        .thumbnail-menu-caption-subtitle {
+          color: $thumbnail-menu-caption-subtitle-color-hover;
+        }
+
         .thumbnail-menu-image {
           &:after {
             background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity-hover);
@@ -121,7 +152,16 @@ $thumbnail-menu-caption-title-weight: $weight-bold !default;
           }
         }
       }
+
+      &:focus{
+        .thumbnail-menu-caption-title {
+          color: $thumbnail-menu-caption-title-color-focus;
+        }
+
+        .thumbnail-menu-caption-subtitle {
+          color: $thumbnail-menu-caption-subtitle-color-focus;
+        }
+      }
     }
   }
 }
-
