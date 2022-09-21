@@ -1,34 +1,74 @@
+$icon-dimensions-xl: 6.25rem !default;
+$icon-dimensions-xxl: 12.5rem !default;
+$icon-font-size: 1.3rem !default;
+$icon-font-size-small: $icon-dimensions-small !default;
+$icon-font-size-medium: $icon-dimensions-medium !default;
+$icon-font-size-large: $icon-dimensions-large !default;
+$icon-font-size-xl: $icon-dimensions-xl !default;
+$icon-font-size-xxl: $icon-dimensions-xxl !default;
+
 .icon{
-  &:not(.is-small){
-    i{
-      font-size: 1.3rem;
+  flex-shrink: 0;
+  & > svg{
+    max-height: 100%;
+  }
+  & > picture{
+    height: 100%;
+    display: flex;
+    img{
+      max-height: 100%;
     }
-    .button & svg{
-      height: 1.3rem;
+  }
+  .button &{
+    svg{
+      height: $icon-font-size;
+    }
+  }
+  i{
+    font-size: $icon-font-size;
+  }
+  &.is-small{
+    i{
+      font-size: $icon-font-size-small;
+    }
+    .button & {
+      svg {
+        height: $icon-font-size-small;
+      }
     }
   }
   &.is-medium{
     i{
-      font-size: 2em;
+      font-size: $icon-font-size-medium;
+    }
+    .button & {
+      svg {
+        height: $icon-font-size-medium;
+      }
     }
   }
   &.is-large{
     i{
-      font-size: 3em;
+      font-size: $icon-font-size-large;
+    }
+    .button & {
+      svg {
+        height: $icon-font-size-large;
+      }
     }
   }
   &.is-xl{
-    width: 6.25rem;
-    height: 6.25rem;
+    width: $icon-dimensions-xl;
+    height: $icon-dimensions-xl;
     i{
-      font-size: 6.25rem;
+      font-size: $icon-font-size-xl;
     }
   }
   &.is-xxl{
-    width: 12.5rem;
-    height: 12.5rem;
+    width: $icon-dimensions-xxl;
+    height: $icon-dimensions-xxl;
     i{
-      font-size: 12.5rem;
+      font-size: $icon-font-size-xxl;
     }
   }
 }

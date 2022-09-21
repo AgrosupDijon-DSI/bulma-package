@@ -70,19 +70,6 @@
       }
     }
   }
-  .icon{
-    flex-shrink: 0;
-    & > svg{
-      max-height: 100%;
-    }
-    & > picture{
-      height: 100%;
-      display: flex;
-      img{
-        max-height: 100%;
-      }
-    }
-  }
   &-right, &-left{
     .is-xxl{
       max-width: 50%;
