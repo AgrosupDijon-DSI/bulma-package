@@ -46,3 +46,12 @@
     color: findColorInvert($content-blockquote-background-color);
   }
 }
+
+.buttons{
+  &.has-text-centered{
+    @extend .is-centered;
+  }
+  &.has-text-right{
+    @extend .is-right;
+  }
+}

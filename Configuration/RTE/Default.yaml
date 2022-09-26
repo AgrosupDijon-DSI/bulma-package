@@ -45,6 +45,7 @@ editor:
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.danger", element: "span", attributes: { 'class': 'has-text-danger' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.light", element: "span", attributes: { 'class': 'has-text-light' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.dark", element: "span", attributes: { 'class': 'has-text-dark' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.buttons", element: "p", attributes: { 'class': 'buttons' } }
 
         toolbarGroups:
             - { name: styles, groups: [ format, styles ] }

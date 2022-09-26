@@ -29,3 +29,12 @@
 .text-striked {
   text-decoration: line-through;
 }
+
+.buttons{
+  &.has-text-centered{
+    @extend .is-centered;
+  }
+  &.has-text-right{
+    @extend .is-right;
+  }
+}

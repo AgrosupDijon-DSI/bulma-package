@@ -52,6 +52,9 @@
             <trans-unit id="style.size.6">
                 <source>Size 6</source>
             </trans-unit>
+            <trans-unit id="style.buttons">
+                <source>List of buttons</source>
+            </trans-unit>
             <trans-unit id="style.button">
                 <source>Button</source>
             </trans-unit>
