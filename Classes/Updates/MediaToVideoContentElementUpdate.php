@@ -11,6 +11,7 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 
 use Doctrine\DBAL\Driver\Exception;
 use Doctrine\DBAL\ForwardCompatibility\Result;
+use Symfony\Component\DomCrawler\Crawler;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -18,17 +19,16 @@ use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
- * Create search page and indexed_search plugin
+ * Migrate the list_type 'media' to 'video'
  */
-class BackgroundFrameUpdate implements UpgradeWizardInterface
+class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
 {
-
     /**
      * @return string Unique identifier of this updater
      */
     public function getIdentifier(): string
     {
-        return 'backgroundFrameUpdate';
+        return 'mediaToVideoContentElementUpdate';
     }
 
     /**
@@ -36,7 +36,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
      */
     public function getTitle(): string
     {
-        return 'Migrate Background Frame';
+        return 'Change content element "Media" to "Video"';
     }
 
     /**
@@ -44,18 +44,17 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
      */
     public function getDescription(): string
     {
-        return 'Replace old default value (empty) by "expanded" to keep the same frontend visual, as default value is now "limited"';
+        return 'Migrate the bootstrap_package "Media" content element to bulma_package "Video"';
     }
 
     /**
      * Checks if an update is needed
      *
-     * @return bool
-     * @throws Exception
+     * @return bool Whether an update is needed (TRUE) or not (FALSE)
      */
     public function updateNecessary(): bool
     {
-        return !empty($this->getContentsWithEmptyBackgroundFrame());
+        return !empty($this->getMediaContentElement());
     }
 
     /**
@@ -69,37 +68,19 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
     }
 
     /**
+     * Performs the database update
+     *
      * @return bool
-     * @throws Exception
      */
     public function executeUpdate(): bool
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
-        $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->update('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
+                $queryBuilder->expr()->eq('CType',
+                    $queryBuilder->createNamedParameter("media", Connection::PARAM_STR))
             )
-            ->andWhere(
-                $queryBuilder->expr()->neq('background_color_class',
-                    $queryBuilder->createNamedParameter("none", Connection::PARAM_STR))
-            )
-            ->set('background_frame', 'expanded')
-            ->execute();
-
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
-        $queryBuilder->getRestrictions()->removeAll();
-        $queryBuilder->update('tt_content')
-            ->where(
-                $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
-            )
-            ->andWhere(
-                $queryBuilder->expr()->eq('background_color_class',
-                    $queryBuilder->createNamedParameter("none", Connection::PARAM_STR))
-            )
-            ->set('background_frame', 'limited')
+            ->set('CType', 'video')
             ->execute();
 
         return true;
@@ -109,17 +90,17 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
      * @return array
      * @throws Exception
      */
-    private function getContentsWithEmptyBackgroundFrame()
+    private function getMediaContentElement()
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
-        
+
         /** @var Result $result */
         $result = $queryBuilder->select('uid')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
+                $queryBuilder->expr()->eq('CType',
+                    $queryBuilder->createNamedParameter("media", Connection::PARAM_STR))
             )
             ->execute();
 

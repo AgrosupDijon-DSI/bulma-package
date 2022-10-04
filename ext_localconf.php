@@ -176,5 +176,7 @@ defined('TYPO3') or die();
      */
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['cardImageToMediaUpdate'] = \AgrosupDijon\BulmaPackage\Updates\CardImageToMediaUpdate::class;
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['backgroundFrameUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BackgroundFrameUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['mediaToVideoContentElementUpdate'] = \AgrosupDijon\BulmaPackage\Updates\MediaToVideoContentElementUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['bootstrapToBulmaRteUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaRteUpdate::class;
 
 })();

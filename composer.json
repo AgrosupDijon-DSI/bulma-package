@@ -33,7 +33,9 @@
     "typo3/cms-seo": "^11.5",
     "scssphp/scssphp": "^1.0.8",
     "ext-dom": "*",
-    "ext-simplexml": "*"
+    "ext-simplexml": "*",
+    "symfony/dom-crawler": "^6.1",
+    "symfony/css-selector": "^6.1"
   },
   "suggest": {
     "georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS"
