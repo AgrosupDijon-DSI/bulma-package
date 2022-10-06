@@ -14,7 +14,7 @@ $frame-spacing: $block-spacing !default;
     padding: $frame-spacing 0;
   }
 
-  &:first-child{
+  &:first-of-type{
     &:not(.frame-space-before-no-space):not([class*="has-background-"]):not(.is-background-limited) {
       padding-top: 0;
       margin-top: $frame-spacing;
