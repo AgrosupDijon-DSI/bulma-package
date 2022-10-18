@@ -45,10 +45,14 @@ $navbar-dropdown-border-top-color: $primary !default;
     border-bottom: $navbar-dropdown-border-bottom;
     right: 100%;
     transition: 0.5s ease-in-out transform;
+    max-height: 100vh;
+    overflow: auto;
 
     &.is-active {
       transform: translateX(100%);
       -webkit-transform: translateX(100%);
+      max-height: none;
+      overflow: initial;
     }
 
     html[dir="rtl"] &{
