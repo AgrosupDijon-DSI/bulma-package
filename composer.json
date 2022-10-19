@@ -61,7 +61,8 @@
   "archive": {
     "exclude": [
       ".gitignore",
-      ".crowdin.yaml"
+      ".crowdin.yaml",
+      "node_modules"
     ]
   }
 }
