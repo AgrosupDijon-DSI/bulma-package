@@ -1,0 +1,11 @@
+{
+  "config": {
+    "classmap-authoritative": true,
+    "prepend-autoloader": false
+  },
+  "require": {
+    "scssphp/scssphp": "^1.0.8",
+    "symfony/dom-crawler": "^5.4",
+    "symfony/css-selector": "^5.4"
+  }
+}

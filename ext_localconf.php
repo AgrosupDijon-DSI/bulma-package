@@ -41,27 +41,27 @@ defined('TYPO3') or die();
      * PageTS
      */
     // Add Content Elements
-    if (!(bool) $bulmaPackageConfiguration['disablePageTsContentElements']) {
+    if (!(bool)$bulmaPackageConfiguration['disablePageTsContentElements']) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
     }
 
     // BackendLayouts
-    if (!(bool) $bulmaPackageConfiguration['disablePageTsBackendLayouts']) {
+    if (!(bool)$bulmaPackageConfiguration['disablePageTsBackendLayouts']) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig"');
     }
 
     // TCEFORM
-    if (!(bool) $bulmaPackageConfiguration['disablePageTsTCEFORM']) {
+    if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEFORM']) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
     }
 
     // TCEMAIN
-    if (!(bool) $bulmaPackageConfiguration['disablePageTsTCEMAIN']) {
+    if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEMAIN']) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig">');
     }
 
     // RTE
-    if (!(bool) $bulmaPackageConfiguration['disablePageTsRTE']) {
+    if (!(bool)$bulmaPackageConfiguration['disablePageTsRTE']) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig">');
     }
 
@@ -147,7 +147,7 @@ defined('TYPO3') or die();
     /***************
      * Register css processing hooks
      */
-    if (!(bool) $bulmaPackageConfiguration['disableScssProcessing']) {
+    if (!(bool)$bulmaPackageConfiguration['disableScssProcessing']) {
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][\AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook::class]
             = \AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook::class . '->execute';
     }
@@ -178,5 +178,12 @@ defined('TYPO3') or die();
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['backgroundFrameUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BackgroundFrameUpdate::class;
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['mediaToVideoContentElementUpdate'] = \AgrosupDijon\BulmaPackage\Updates\MediaToVideoContentElementUpdate::class;
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['bootstrapToBulmaRteUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaRteUpdate::class;
+
+    /***************
+     * Require autoload for dependencies when not using composer
+     */
+    if (!\TYPO3\CMS\Core\Core\Environment::isComposerMode()) {
+        require \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bulma_package') . '/Resources/Private/Contrib/Php/vendor/autoload.php';
+    }
 
 })();

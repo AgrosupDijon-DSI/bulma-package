@@ -23,16 +23,6 @@ use TYPO3\CMS\Core\Utility\PathUtility;
 class ScssParser extends AbstractParser
 {
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        if (!class_exists('ScssPhp\ScssPhp\Version')) {
-            require_once ExtensionManagementUtility::extPath('bulma_package') . '/Contrib/scssphp/scss.inc.php';
-        }
-    }
-
-    /**
      * @param string $extension
      * @return bool
      */

@@ -1,2 +1,3 @@
 node_modules
 Resources/Public/Build/*.json
+Resources/Private/Contrib/Php/vendor

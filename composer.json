@@ -21,7 +21,7 @@
   ],
   "license": "GPL-2.0-or-later",
   "require": {
-    "php": ">=8.0.0",
+    "php": "^7.4 || ^8.0",
     "typo3/cms-backend": "^11.5",
     "typo3/cms-core": "^11.5",
     "typo3/cms-extbase": "^11.5",
@@ -34,8 +34,8 @@
     "scssphp/scssphp": "^1.0.8",
     "ext-dom": "*",
     "ext-simplexml": "*",
-    "symfony/dom-crawler": "^6.1",
-    "symfony/css-selector": "^6.1"
+    "symfony/dom-crawler": "^5.4 || ^6.0 || ^6.1",
+    "symfony/css-selector": "^5.4 || ^6.0 || ^6.1"
   },
   "suggest": {
     "georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS"
@@ -49,5 +49,19 @@
     "typo3/cms": {
       "extension-key": "bulma_package"
     }
+  },
+  "scripts": {
+    "pre-archive-cmd": [
+      "@dependencies-for-ter"
+    ],
+    "dependencies-for-ter": [
+      "@composer install -d Resources/Private/Contrib/Php"
+    ]
+  },
+  "archive": {
+    "exclude": [
+      ".gitignore",
+      ".crowdin.yaml"
+    ]
   }
 }
