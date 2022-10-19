@@ -45,7 +45,7 @@ class BulmaPageTitleHook
                 ->andWhere(
                     $queryBuilder->expr()->eq('sys_language_uid', $GLOBALS['TSFE']->page['sys_language_uid'])
                 )
-                ->execute()->fetchAssociative();
+                ->execute()->fetch();
 
             if (isset($bulmaSettings['title_seo']) && !empty($bulmaSettings['title_seo'])) {
 

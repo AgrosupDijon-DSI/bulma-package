@@ -35,7 +35,7 @@ class BulmaMetaTagHook
         $metaTags = $queryBuilder->select('*')
             ->from('tx_bulmapackage_meta_tags')
             ->execute()
-            ->fetchAllAssociative();
+            ->fetchAll();
 
         foreach ($metaTags as $meta){
             $manager = $metaTagManagerRegistry->getManagerForProperty($meta['name']);

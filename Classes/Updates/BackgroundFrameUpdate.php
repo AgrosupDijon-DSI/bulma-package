@@ -124,7 +124,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface, ChattyInterface
                     $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
             )
             ->execute()
-            ->fetchAllAssociative();
+            ->fetchAll();
     }
 
     /**

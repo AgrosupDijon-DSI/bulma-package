@@ -95,7 +95,7 @@ class WebsiteModuleController extends ActionController
         $metaTags = $queryBuilder
             ->select('*')
             ->from('tx_bulmapackage_meta_tags')
-            ->execute()->fetchAllAssociative();
+            ->execute()->fetchAll();
 
         $this->view->assign('metaTags', $metaTags);
     }
