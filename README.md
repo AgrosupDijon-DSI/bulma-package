@@ -20,11 +20,13 @@ https://bulma-package.cnerta-web.fr/
 
 ## Minimal Dependencies
 
-* TYPO3 CMS 9.5 or 10.4
+* TYPO3 CMS 11.5 (for TYPO3 10.4, use version 1.x.y)
+* PHP >= 7.4
 
 ## Quick install guide
 
-* composer require agrosup-dijon/bulma-package
+* With composer: `composer require agrosup-dijon/bulma-package`
+* Without composer: install the extension via Extension manager or TER only (if you use github version, you won't have the dependencies and it won't work)
 * Make sure you have a root page
 * Make sure you have a "site" in Site Configuration module
 * Create a new Template on the root page
