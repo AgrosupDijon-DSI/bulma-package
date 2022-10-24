@@ -105,6 +105,11 @@ $GLOBALS['TCA']['tx_bulmapackage_icon_group_item']['types']['1']['columnsOverrid
 $GLOBALS['TCA']['tx_bulmapackage_carousel_item']['types']['1']['columnsOverrides']['image']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants']['default'] = $defaultCropSettings;
 
 /***************
+ * News
+ */
+$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants']['default'] = $defaultCropSettings;
+
+/***************
  * Pages
  */
 foreach ([1, 3, 4] as $type) {
