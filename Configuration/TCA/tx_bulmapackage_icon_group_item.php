@@ -63,7 +63,8 @@ return [
         'visibility' => [
             'showitem' => '
                 hidden;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item
-            '
+            ',
+            'isHiddenPalette' => true,
         ],
         // hidden but needs to be included all the time, so sys_language_uid is set correctly
         'hiddenLanguagePalette' => [
