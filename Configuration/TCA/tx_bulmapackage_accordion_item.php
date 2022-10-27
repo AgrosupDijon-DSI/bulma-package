@@ -109,7 +109,7 @@ return [
             ],
         ],
         'hidden' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
@@ -125,7 +125,7 @@ return [
             ],
         ],
         'starttime' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'behaviour' => [
@@ -140,7 +140,7 @@ return [
             ],
         ],
         'endtime' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'behaviour' => [
@@ -207,14 +207,14 @@ return [
                 'type' => 'inline',
                 'foreign_field' => 'tx_bulmapackage_accordion_item_parent',
             ],
-            'exclude' => '1',
+            'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:accordion_item.record',
         ],
         'title' => [
             'config' => [
                 'type' => 'input',
             ],
-            'exclude' => '1',
+            'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:accordion_item.title',
         ],
     ],
