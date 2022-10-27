@@ -8,7 +8,7 @@ lib.bulmaPackage.menuLayout{
     ##############
     ### FIELDS ###
     ##############
-    select.selectFields = menu_layout
+    select.selectFields = menu_layout, sys_language_uid, l10n_parent
 
     renderObj = TEXT
     renderObj.value.field = menu_layout

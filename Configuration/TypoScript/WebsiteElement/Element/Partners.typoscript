@@ -8,7 +8,7 @@ lib.bulmaPackage.partners {
     ##############
     ### FIELDS ###
     ##############
-    select.selectFields = logos_partners
+    select.selectFields = logos_partners, sys_language_uid, l10n_parent
 
     renderObj {
         ################

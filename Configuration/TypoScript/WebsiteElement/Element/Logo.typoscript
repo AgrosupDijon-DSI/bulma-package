@@ -8,7 +8,7 @@ lib.bulmaPackage.logo{
     #############################
     ### CONTENT OBJECT FIELDS ###
     #############################
-    select.selectFields = logo_main
+    select.selectFields = logo_main, sys_language_uid, l10n_parent
 
     renderObj {
         ################

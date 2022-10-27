@@ -8,7 +8,7 @@ lib.bulmaPackage.socialsLinks {
     ##############
     ### FIELDS ###
     ##############
-    select.selectFields = uid
+    select.selectFields = uid, sys_language_uid, l10n_parent
 
     renderObj {
         ################
@@ -21,7 +21,7 @@ lib.bulmaPackage.socialsLinks {
             10 {
                 table = tx_bulmapackage_settings_link_item
                 pidInList.field = pid
-                selectFields = link, label, icon, force_label, standalone, icon_custom
+                selectFields = link, label, icon, force_label, standalone, icon_custom, sys_language_uid, l10n_parent
                 orderBy = sorting
                 dataProcessing {
                     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
