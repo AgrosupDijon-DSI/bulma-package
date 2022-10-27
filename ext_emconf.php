@@ -39,5 +39,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Sébastien Convers',
     'author_email' => 'sebastien.convers@agrosupdijon.fr',
     'author_company' => 'AgroSup Dijon',
-    'version' => '2.0.0',
+    'version' => '2.0.1',
 ];
