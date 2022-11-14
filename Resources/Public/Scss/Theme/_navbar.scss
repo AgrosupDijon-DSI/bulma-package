@@ -15,9 +15,6 @@ $navbar-dropdown-border-top-color: $primary !default;
 }
 
 .navbar-start, .navbar-end {
-  & > .navbar-item{
-    min-height: $navbar-height;
-  }
   & > a, & > .navbar-item > a {
     font-weight: $navbar-item-weight;
     font-size: $navbar-item-size;
@@ -101,6 +98,12 @@ $navbar-dropdown-border-top-color: $primary !default;
 }
 
 @include from($navbar-breakpoint) {
+  .navbar-start, .navbar-end {
+    & > .navbar-item{
+      min-height: $navbar-height;
+    }
+  }
+
   // Separated from next block to fix edge not displaying .navbar-dropdown on hover
   .navbar-item {
     &.is-hoverable:focus-within {
