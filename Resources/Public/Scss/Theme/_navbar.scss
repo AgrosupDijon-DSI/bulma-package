@@ -15,6 +15,9 @@ $navbar-dropdown-border-top-color: $primary !default;
 }
 
 .navbar-start, .navbar-end {
+  & > .navbar-item{
+    min-height: $navbar-height;
+  }
   & > a, & > .navbar-item > a {
     font-weight: $navbar-item-weight;
     font-size: $navbar-item-size;
