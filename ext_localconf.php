@@ -178,6 +178,8 @@ defined('TYPO3') or die();
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['backgroundFrameUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BackgroundFrameUpdate::class;
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['mediaToVideoContentElementUpdate'] = \AgrosupDijon\BulmaPackage\Updates\MediaToVideoContentElementUpdate::class;
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['bootstrapToBulmaRteUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaRteUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaAccordionUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaAccordionUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaTabUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaTabUpdate::class;
 
     /***************
      * Require autoload for dependencies when not using composer
