@@ -10,8 +10,9 @@ plugin.tx_news {
 			0 = EXT:news/Resources/Private/Partials/
 			# To be able to use our owns content elements partials within EXT:news
 			1 = EXT:bulma_package/Resources/Private/Partials/ContentElements/
-			2 = EXT:bulma_package/Resources/Private/Partials/News/
-			3 = {$plugin.tx_news.view.bulma.partialRootPath}
+			2 = {$plugin.bulma_package_contentelements.view.partialRootPath}
+			3 = EXT:bulma_package/Resources/Private/Partials/News/
+			4 = {$plugin.tx_news.view.bulma.partialRootPath}
 		}
 
 		widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:bulma_package/Resources/Private/Templates/News/
