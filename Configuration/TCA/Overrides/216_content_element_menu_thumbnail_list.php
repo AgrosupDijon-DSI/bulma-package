@@ -47,6 +47,7 @@ $GLOBALS['TCA']['tt_content']['types']['menu_thumbnail_list'] = array_replace_re
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
                 pages;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:pages.ALT.menu_formlabel,
+                image;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.default_thumbnail,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.thumbnaillayout;thumbnaillayout,
@@ -72,3 +73,5 @@ $GLOBALS['TCA']['tt_content']['types']['menu_thumbnail_list'] = array_replace_re
     'thumbnaillayout',
     'cols,table_class'
 );
+
+$GLOBALS['TCA']['tt_content']['types']['menu_thumbnail_list']['columnsOverrides']['image']['config']['maxitems'] = 1;

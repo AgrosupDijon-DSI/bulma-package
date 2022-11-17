@@ -18,7 +18,12 @@
                     <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}" class="thumbnail-menu-link" data-toggle="tooltip">
                         <div class="thumbnail-menu-image">
                             <f:if condition="{page.files.0}">
-                                <f:render partial="Media/Rendering/Image" arguments="{file: page.files.0, data: page.data, settings: settings, variants: variants}" />
+                                <f:then>
+                                    <f:render partial="Media/Rendering/Image" arguments="{file: page.files.0, data: page.data, settings: settings, variants: variants}" />
+                                </f:then>
+                                <f:else if="{defaultThumbnail.0}">
+                                    <f:render partial="Media/Rendering/Image" arguments="{file: defaultThumbnail.0, settings: settings, variants: variants}" />
+                                </f:else>
                             </f:if>
                         </div>
                         <div class="thumbnail-menu-caption">

@@ -40,6 +40,11 @@ tt_content.menu_thumbnail_dir {
             fieldName = table_class
             as = layoutClasses
         }
+        30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        30 {
+            references.fieldName = image
+            as = defaultThumbnail
+        }
         90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         90 {
             if {
