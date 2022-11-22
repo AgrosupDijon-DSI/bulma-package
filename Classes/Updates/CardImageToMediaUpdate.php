@@ -53,7 +53,7 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
     {
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tx_bulmapackage_card_group_item');
         $tableColumns = $connection->getSchemaManager()->listTableColumns('tx_bulmapackage_card_group_item');
-        // Only proceed if section_frame field still exists
+        // Only proceed if image field still exists
         if (!isset($tableColumns['image'])) {
             return false;
         }

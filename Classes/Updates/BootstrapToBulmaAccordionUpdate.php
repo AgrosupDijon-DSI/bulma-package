@@ -63,6 +63,13 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
      */
     public function updateNecessary(): bool
     {
+        $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content');
+        $tableColumns = $connection->getSchemaManager()->listTableColumns('tt_content');
+        // Only proceed if tx_bootstrappackage_accordion_item field still exists
+        if (!isset($tableColumns['tx_bootstrappackage_accordion_item'])) {
+            return false;
+        }
+
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
 
         /** @var Result $result */
