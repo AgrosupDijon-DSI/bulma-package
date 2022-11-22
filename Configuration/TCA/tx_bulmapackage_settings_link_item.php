@@ -1,12 +1,13 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\File;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
-
 return [
     'ctrl' => [
         'label' => 'label',
@@ -195,7 +196,7 @@ return [
         'icon_file' => [
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_file',
             'displayCond' => 'FIELD:icon_custom:REQ:true',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'icon_file',
                 [
                     'appearance' => [
@@ -203,17 +204,17 @@ return [
                     ],
                     'overrideChildTca' => [
                         'types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                            File::FILETYPE_UNKNOWN => [
                                 'showitem' => '
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            File::FILETYPE_TEXT => [
                                 'showitem' => '
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                     title,
                                     alternative,
@@ -221,17 +222,17 @@ return [
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            File::FILETYPE_AUDIO => [
                                 'showitem' => '
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            File::FILETYPE_VIDEO => [
                                 'showitem' => '
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            File::FILETYPE_APPLICATION => [
                                 'showitem' => '
                                     --palette--;;filePalette
                                 '

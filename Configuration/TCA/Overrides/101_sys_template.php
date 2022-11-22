@@ -1,5 +1,6 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -13,7 +14,7 @@ defined('TYPO3') or die();
  * TypoScript: Full Package
  * This includes the full setup including all configurations
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+ExtensionManagementUtility::addStaticFile(
     'bulma_package',
     'Configuration/TypoScript',
     'Bulma Package: Full Package'
@@ -23,19 +24,19 @@ defined('TYPO3') or die();
  * TypoScript: Website Module Override
  * This allow to override the Website Module View
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+ExtensionManagementUtility::addStaticFile(
     'bulma_package',
     'Configuration/TypoScript/WebsiteModule',
     'Bulma Package: Override Website Module View'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+ExtensionManagementUtility::addStaticFile(
     'bulma_package',
     'Configuration/TypoScript/Extension/News',
     'Bulma Package: News Styles Bulma'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+ExtensionManagementUtility::addStaticFile(
     'bulma_package',
     'Configuration/TypoScript/Extension/News/Rss',
     'Bulma Package: Rss for News'

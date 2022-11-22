@@ -1,5 +1,8 @@
 <?php
 
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use AgrosupDijon\BulmaPackage\Controller\WebsiteModuleController;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -18,13 +21,13 @@ defined('TYPO3') or die();
         ]
     ];
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+    ExtensionUtility::registerModule(
         'BulmaPackage',
         'system',
         'WebsiteSettings',
         'top',
         [
-            \AgrosupDijon\BulmaPackage\Controller\WebsiteModuleController::class => 'overview, customColors, metaTags'
+            WebsiteModuleController::class => 'overview, customColors, metaTags'
         ],
         [
             'access' => 'user,group',
@@ -35,13 +38,13 @@ defined('TYPO3') or die();
         ]
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_bulmapackage_settings', 'EXT:bulma_package/Resources/Private/Language/locallang_csh_tx_bulmapackage_settings.xlf');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_settings');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_tab_item');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_accordion_item');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_card_group_item');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_carousel_item');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_icon_group_item');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_settings_link_item');
+    ExtensionManagementUtility::addLLrefForTCAdescr('tx_bulmapackage_settings', 'EXT:bulma_package/Resources/Private/Language/locallang_csh_tx_bulmapackage_settings.xlf');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_settings');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_tab_item');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_accordion_item');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_card_group_item');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_carousel_item');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_icon_group_item');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_settings_link_item');
 
 })();

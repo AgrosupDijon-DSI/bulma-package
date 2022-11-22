@@ -1,5 +1,6 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -12,13 +13,13 @@ defined('TYPO3') or die();
 /***************
  * Add additional fields
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+ExtensionManagementUtility::addToAllTCAtypes(
     'tt_content',
     'file_folder, filelink_sorting',
     'textpic',
     'after:image'
 );
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+ExtensionManagementUtility::addFieldsToPalette(
     'tt_content',
     'gallerySettings',
     'gallery_size,table_class',

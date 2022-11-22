@@ -1,5 +1,28 @@
 <?php
 
+use TYPO3\CMS\Core\Core\Environment;
+use TYPO3\CMS\Core\Cache\Backend\NullBackend;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+use AgrosupDijon\BulmaPackage\Form\FormDataProvider\TcaColPosItem;
+use TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowDefaultValues;
+use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
+use AgrosupDijon\BulmaPackage\Form\FormDataProvider\TcaCTypeItem;
+use AgrosupDijon\BulmaPackage\Hooks\Backend\PageLayoutViewHook;
+use AgrosupDijon\BulmaPackage\Parser\ScssParser;
+use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook;
+use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook;
+use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaMetaTagHook;
+use AgrosupDijon\BulmaPackage\Updates\CardImageToMediaUpdate;
+use AgrosupDijon\BulmaPackage\Updates\BackgroundFrameUpdate;
+use AgrosupDijon\BulmaPackage\Updates\MediaToVideoContentElementUpdate;
+use AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaRteUpdate;
+use AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaAccordionUpdate;
+use AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaTabUpdate;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -11,10 +34,10 @@ defined('TYPO3') or die();
 
 (function () {
     // https://usetypo3.com/application-context.html)
-    if (\TYPO3\CMS\Core\Core\Environment::getContext()->isDevelopment()) {
+    if (Environment::getContext()->isDevelopment()) {
         // No cache in development
         foreach ($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'] as $cacheName => $cacheConfiguration) {
-            $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = \TYPO3\CMS\Core\Cache\Backend\NullBackend::class;
+            $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = NullBackend::class;
         }
     }
 
@@ -27,50 +50,48 @@ defined('TYPO3') or die();
     /***************
      * Make the extension configuration accessible
      */
-    $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-        \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
-    );
+    $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class);
     $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
 
     /***************
      * UserTS
      */
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('options.saveDocNew.tx_bulmapackage_settings = 0');
+    ExtensionManagementUtility::addUserTSConfig('options.saveDocNew.tx_bulmapackage_settings = 0');
 
     /***************
      * PageTS
      */
     // Add Content Elements
     if (!(bool)$bulmaPackageConfiguration['disablePageTsContentElements']) {
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
     }
 
     // BackendLayouts
     if (!(bool)$bulmaPackageConfiguration['disablePageTsBackendLayouts']) {
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig"');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig"');
     }
 
     // TCEFORM
     if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEFORM']) {
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
     }
 
     // TCEMAIN
     if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEMAIN']) {
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig">');
     }
 
     // RTE
     if (!(bool)$bulmaPackageConfiguration['disablePageTsRTE']) {
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig">');
     }
 
     // MOD
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/Mod.tsconfig"');
+    ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/Mod.tsconfig"');
 
 
     // Register icons for usage in backend
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+    $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
     $icons = [
         'content-bulmapackage-beside-text-img-centered-left' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/beside-text-img-centered-left.svg',
         'content-bulmapackage-beside-text-img-centered-right' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/beside-text-img-centered-right.svg',
@@ -106,27 +127,27 @@ defined('TYPO3') or die();
     foreach ($icons as $identifier => $source) {
         $iconRegistry->registerIcon(
             $identifier,
-            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+            SvgIconProvider::class,
             ['source' => $source]
         );
     }
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][\AgrosupDijon\BulmaPackage\Form\FormDataProvider\TcaColPosItem::class] = [
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaColPosItem::class] = [
         'depends' => [
-            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowDefaultValues::class,
+            DatabaseRowDefaultValues::class,
         ],
         'before' => [
-            \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems::class,
+            TcaSelectItems::class,
         ],
     ];
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][\AgrosupDijon\BulmaPackage\Form\FormDataProvider\TcaCTypeItem::class] = [
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaCTypeItem::class] = [
         'depends' => [
-            \TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems::class,
+            TcaSelectItems::class,
         ],
     ];
 
     // Hook to override colpos check for unused tt_content elements
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used']['bulma_package'] = AgrosupDijon\BulmaPackage\Hooks\Backend\PageLayoutViewHook::class . '->contentIsUsed';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used']['bulma_package'] = PageLayoutViewHook::class . '->contentIsUsed';
 
     /***************
      * Register "asd" as global fluid namespace
@@ -141,51 +162,47 @@ defined('TYPO3') or die();
     /***************
      * Register css processing parser
      */
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'][\AgrosupDijon\BulmaPackage\Parser\ScssParser::class] =
-        \AgrosupDijon\BulmaPackage\Parser\ScssParser::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'][ScssParser::class] = ScssParser::class;
 
     /***************
      * Register css processing hooks
      */
     if (!(bool)$bulmaPackageConfiguration['disableScssProcessing']) {
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][\AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook::class]
-            = \AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook::class . '->execute';
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][PreProcessHook::class] = PreProcessHook::class . '->execute';
     }
 
     /***************
      * Register title processing hooks
      */
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-postProcess'][\AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook::class]
-        = \AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook::class . '->execute';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-postProcess'][BulmaPageTitleHook::class] = BulmaPageTitleHook::class . '->execute';
 
     /***************
      * Register Meta tags hooks
      */
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-postProcess'][\AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaMetaTagHook::class]
-        = \AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaMetaTagHook::class . '->execute';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-postProcess'][BulmaMetaTagHook::class] = BulmaMetaTagHook::class . '->execute';
 
     /***************
      * Register news extra templateLayouts
      */
-    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')) {
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig">');
+    if (ExtensionManagementUtility::isLoaded('news')) {
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig">');
     }
 
     /***************
      * Register Upgrade Wizards
      */
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['cardImageToMediaUpdate'] = \AgrosupDijon\BulmaPackage\Updates\CardImageToMediaUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['backgroundFrameUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BackgroundFrameUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['mediaToVideoContentElementUpdate'] = \AgrosupDijon\BulmaPackage\Updates\MediaToVideoContentElementUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['bootstrapToBulmaRteUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaRteUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaAccordionUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaAccordionUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaTabUpdate'] = \AgrosupDijon\BulmaPackage\Updates\BootstrapToBulmaTabUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['cardImageToMediaUpdate'] = CardImageToMediaUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['backgroundFrameUpdate'] = BackgroundFrameUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['mediaToVideoContentElementUpdate'] = MediaToVideoContentElementUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['bootstrapToBulmaRteUpdate'] = BootstrapToBulmaRteUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaAccordionUpdate'] = BootstrapToBulmaAccordionUpdate::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaTabUpdate'] = BootstrapToBulmaTabUpdate::class;
 
     /***************
      * Require autoload for dependencies when not using composer
      */
-    if (!\TYPO3\CMS\Core\Core\Environment::isComposerMode()) {
-        require \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bulma_package') . '/Resources/Private/Contrib/Php/vendor/autoload.php';
+    if (!Environment::isComposerMode()) {
+        require ExtensionManagementUtility::extPath('bulma_package') . '/Resources/Private/Contrib/Php/vendor/autoload.php';
     }
 
 })();

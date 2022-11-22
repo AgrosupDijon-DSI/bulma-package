@@ -1,5 +1,9 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\File;
+use AgrosupDijon\BulmaPackage\Hooks\SlugModifier;
+use AgrosupDijon\BulmaPackage\Utility\PageLayoutUtility;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -21,7 +25,7 @@ $additionalColumns = [
     'thumbnail' => [
         'exclude' => true,
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.thumbnail',
-        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+        'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
             'thumbnail',
             [
                 'appearance' => [
@@ -29,17 +33,17 @@ $additionalColumns = [
                 ],
                 'overrideChildTca' => [
                     'types' => [
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                        File::FILETYPE_UNKNOWN => [
                             'showitem' => '
                                     --palette--;;filePalette
                                 '
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                        File::FILETYPE_TEXT => [
                             'showitem' => '
                                     --palette--;;filePalette
                                 '
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                        File::FILETYPE_IMAGE => [
                             'showitem' => '
                                     title,
                                     alternative,
@@ -47,17 +51,17 @@ $additionalColumns = [
                                     --palette--;;filePalette
                                 '
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                        File::FILETYPE_AUDIO => [
                             'showitem' => '
                                     --palette--;;filePalette
                                 '
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                        File::FILETYPE_VIDEO => [
                             'showitem' => '
                                     --palette--;;filePalette
                                 '
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                        File::FILETYPE_APPLICATION => [
                             'showitem' => '
                                     --palette--;;filePalette
                                 '
@@ -90,12 +94,12 @@ $additionalColumns = [
     ]
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $additionalColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', 'thumbnail', '1,3,4', 'after:backend_layout_next_level');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'title', 'exclude_slug_for_subpages', 'after:slug');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'titleonly', 'exclude_slug_for_subpages', 'after:slug');
+ExtensionManagementUtility::addTCAcolumns('pages', $additionalColumns);
+ExtensionManagementUtility::addToAllTCAtypes('pages', 'thumbnail', '1,3,4', 'after:backend_layout_next_level');
+ExtensionManagementUtility::addFieldsToPalette('pages', 'title', 'exclude_slug_for_subpages', 'after:slug');
+ExtensionManagementUtility::addFieldsToPalette('pages', 'titleonly', 'exclude_slug_for_subpages', 'after:slug');
 
 // Hook for "exclude_slug_for_subpages"
-$GLOBALS['TCA']['pages']['columns']['slug']['config']['generatorOptions']['postModifiers'][] = \AgrosupDijon\BulmaPackage\Hooks\SlugModifier::class . '->modifyGeneratedSlugForPage';
+$GLOBALS['TCA']['pages']['columns']['slug']['config']['generatorOptions']['postModifiers'][] = SlugModifier::class . '->modifyGeneratedSlugForPage';
 
-$GLOBALS['TCA']['pages']['columns']['layout']['config']['itemsProcFunc'] = \AgrosupDijon\BulmaPackage\Utility\PageLayoutUtility::class . '->addLayoutItems';
+$GLOBALS['TCA']['pages']['columns']['layout']['config']['itemsProcFunc'] = PageLayoutUtility::class . '->addLayoutItems';

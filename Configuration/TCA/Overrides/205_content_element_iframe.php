@@ -1,5 +1,6 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -19,7 +20,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['iframe'] ?? false)) {
 /***************
  * Add content element to selector list
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
@@ -73,7 +74,7 @@ $GLOBALS['TCA']['tt_content']['types']['iframe'] = array_replace_recursive(
     ]
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+ExtensionManagementUtility::addFieldsToPalette(
     'tt_content',
     'iframelayout',
     'table_header_position, gallery_size, table_class'

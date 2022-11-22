@@ -1,12 +1,13 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\File;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
-
 return [
     'ctrl' => [
         'label' => 'header',
@@ -183,7 +184,7 @@ return [
         'media' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.media',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'media',
                 [
                     'appearance' => [
@@ -191,38 +192,38 @@ return [
                     ],
                     'overrideChildTca' => [
                         'types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                            File::FILETYPE_UNKNOWN => [
                                 'showitem' => '
                                     --palette--;;imageoverlayPaletteWithoutLink,
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            File::FILETYPE_TEXT => [
                                 'showitem' => '
                                     --palette--;;imageoverlayPaletteWithoutLink,
                                     --palette--;;filePalette
                                 '
                             ],
                             // imageoverlayPalette without link
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                     --palette--;;imageoverlayPaletteWithoutLink,
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            File::FILETYPE_AUDIO => [
                                 'showitem' => '
                                     --palette--;;audioOverlayPalette,
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            File::FILETYPE_VIDEO => [
                                 'showitem' => '
                                     --palette--;;videoOverlayPaletteWithoutLink,
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            File::FILETYPE_APPLICATION => [
                                 'showitem' => '
                                     --palette--;;imageoverlayPaletteWithoutLink,
                                     --palette--;;filePalette

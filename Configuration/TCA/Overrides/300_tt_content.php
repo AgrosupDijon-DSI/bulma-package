@@ -1,5 +1,6 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -103,19 +104,19 @@ $additionalColumns = [
     ]
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);
+ExtensionManagementUtility::addFieldsToPalette(
     'tt_content',
     'frames',
     '--linebreak--,background_color_class,background_frame'
 );
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+ExtensionManagementUtility::addFieldsToPalette(
     'tt_content',
     'menu_dir_settings',
     'ignore_nav_hide,max_items'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'imageorient',
     [
@@ -126,7 +127,7 @@ $additionalColumns = [
     (string) 125,
     'after'
 );
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'imageorient',
     [
@@ -145,9 +146,9 @@ $menuTypes = [
     'menu_section_pages',
     'menu_sitemap_pages'
 ];
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'ignore_nav_hide', implode(',', $menuTypes), 'after:pages');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'ignore_nav_hide', 'menu_sitemap', 'after:subheader');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'ignore_nav_hide', 'menu_categorized_pages', 'after:category_field');
+ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'ignore_nav_hide', implode(',', $menuTypes), 'after:pages');
+ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'ignore_nav_hide', 'menu_sitemap', 'after:subheader');
+ExtensionManagementUtility::addToAllTCAtypes('tt_content', 'ignore_nav_hide', 'menu_categorized_pages', 'after:category_field');
 
 // Override imagecols default value
 $GLOBALS['TCA']['tt_content']['columns']['imagecols']['config']['default'] = 1;

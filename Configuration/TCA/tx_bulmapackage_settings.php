@@ -1,12 +1,13 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\File;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
-
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings',
@@ -122,7 +123,7 @@ return [
         'logo_main' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.logo_main',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'logo_main',
                 [
                     'appearance' => [
@@ -136,7 +137,7 @@ return [
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                     crop,
                                     --palette--;;filePalette
@@ -152,7 +153,7 @@ return [
         'logos_partners' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.logos_partners',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'logos_partners',
                 [
                     'appearance' => [
@@ -166,7 +167,7 @@ return [
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                     --palette--;;imageoverlayPalette,
                                     --palette--;;filePalette
@@ -182,7 +183,7 @@ return [
         'favicon' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.favicon',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
                 'favicon',
                 [
                     'appearance' => [
@@ -196,7 +197,7 @@ return [
                                     --palette--;;filePalette
                                 '
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                     crop,
                                     --palette--;;filePalette
