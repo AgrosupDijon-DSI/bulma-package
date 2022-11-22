@@ -20,7 +20,6 @@ class FirstIframeViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
-
     /**
      * @var boolean
      */
@@ -30,6 +29,16 @@ class FirstIframeViewHelper extends AbstractViewHelper
      * @var boolean
      */
     protected $escapeOutput = false;
+
+    /**
+     * @return void
+     */
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('serviceName', 'string', 'Name of service, for usage with Consent Manager');
+    }
+
 
     /**
      * @param array $arguments
@@ -52,6 +61,17 @@ class FirstIframeViewHelper extends AbstractViewHelper
 
         // Render only 1st iframe found
         if ($iframe instanceof \DOMElement) {
+            $iframe->removeAttribute('width');
+            $iframe->removeAttribute('height');
+
+            if(!empty($arguments['serviceName'])){
+                if($iframe->hasAttribute('src')){
+                    $iframe->setAttribute('data-src', $iframe->getAttribute('src'));
+                    $iframe->removeAttribute('src');
+                }
+                $iframe->setAttribute('data-name', $arguments['serviceName']);
+            }
+
             return $iframe->C14N();
         } else {
             return false;
