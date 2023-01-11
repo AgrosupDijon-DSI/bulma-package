@@ -74,9 +74,9 @@ lib.contentElement.settings.responsiveimages.contentelements {
                 mobile = 0.5
             }
             gutters {
-                default = 24
-                widescreen = 24
-                desktop = 24
+                default = 72
+                widescreen = 72
+                desktop = 48
                 tablet = 24
                 mobile = 24
             }
@@ -111,9 +111,9 @@ lib.contentElement.settings.responsiveimages.contentelements {
                 mobile = 0.5
             }
             gutters {
-                default = 24
-                widescreen = 24
-                desktop = 24
+                default = 48
+                widescreen = 48
+                desktop = 48
                 tablet = 24
                 mobile = 24
             }
@@ -128,9 +128,9 @@ lib.contentElement.settings.responsiveimages.contentelements {
                 mobile = 0.5
             }
             gutters {
-                default = 24
-                widescreen = 24
-                desktop = 24
+                default = 72
+                widescreen = 72
+                desktop = 48
                 tablet = 24
                 mobile = 24
             }

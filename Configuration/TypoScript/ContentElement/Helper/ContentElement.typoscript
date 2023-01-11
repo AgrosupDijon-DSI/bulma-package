@@ -83,10 +83,10 @@ lib.contentElement {
                         mobile = 0.5
                     }
                     gutters {
-                        default = 24
-                        widescreen = 24
-                        desktop = 24
-                        tablet = 24
+                        default = 48
+                        widescreen = 48
+                        desktop = 48
+                        tablet = 48
                         mobile = 24
                     }
                 }
@@ -100,10 +100,10 @@ lib.contentElement {
                         mobile = 0.5
                     }
                     gutters {
-                        default = 24
-                        widescreen = 24
-                        desktop = 24
-                        tablet = 24
+                        default = 72
+                        widescreen = 72
+                        desktop = 72
+                        tablet = 72
                         mobile = 24
                     }
                 }
@@ -113,14 +113,14 @@ lib.contentElement {
                         default = 0.2
                         widescreen = 0.2
                         desktop = 0.2
-                        tablet = 0.3333
+                        tablet = 0.25
                         mobile = 0.5
                     }
                     gutters {
-                        default = 24
-                        large = 24
-                        desktop = 24
-                        tablet = 24
+                        default = 96
+                        widescreen = 96
+                        desktop = 96
+                        tablet = 76
                         mobile = 24
                     }
                 }
@@ -130,14 +130,14 @@ lib.contentElement {
                         default = 0.1666
                         widescreen = 0.1666
                         desktop = 0.1666
-                        tablet = 0.3333
+                        tablet = 0.25
                         mobile = 0.5
                     }
                     gutters {
-                        default = 24
-                        widescreen = 24
-                        desktop = 24
-                        tablet = 24
+                        default = 120
+                        widescreen = 120
+                        desktop = 120
+                        tablet = 76
                         mobile = 24
                     }
                 }
