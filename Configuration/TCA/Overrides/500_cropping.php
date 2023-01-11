@@ -55,6 +55,10 @@ $defaultCropSettings = [
             'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5',
             'value' => 4 / 5
         ],
+        '9:16' => [
+            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16',
+            'value' => 9 / 16
+        ],
         'NaN' => [
             'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.free',
             'value' => 0.0

@@ -193,6 +193,10 @@
                                         <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
                                         <numIndex index="1">is-4by5</numIndex>
                                     </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16</numIndex>
+                                        <numIndex index="1">is-9by16</numIndex>
+                                    </numIndex>
                                 </items>
                             </config>
                         </TCEforms>
@@ -309,6 +313,10 @@
                                         <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
                                         <numIndex index="1">is-4by5</numIndex>
                                     </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16</numIndex>
+                                        <numIndex index="1">is-9by16</numIndex>
+                                    </numIndex>
                                 </items>
                             </config>
                         </TCEforms>
@@ -424,6 +432,10 @@
                                     <numIndex index="9" type="array">
                                         <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
                                         <numIndex index="1">is-4by5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16</numIndex>
+                                        <numIndex index="1">is-9by16</numIndex>
                                     </numIndex>
                                 </items>
                             </config>
