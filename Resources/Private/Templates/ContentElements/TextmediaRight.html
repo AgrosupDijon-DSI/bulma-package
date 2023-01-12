@@ -9,7 +9,7 @@
     <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{imageConfig.multiplier}" gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}" />
 
     <div class="textmedia textmedia-right columns is-multiline is-mobile {f:if(condition: '{data.imageorient} == 125', then:' is-vcentered')}">
-        <div class="textmedia-item textmedia-gallery column is-12-mobile-small {f:if(condition: '{data.CType} == textpic', then:'is-narrow')} {f:if(condition: '{data.gallery_size}', then:'textmedia-gallery-{data.gallery_size}')}">
+        <div class="textmedia-item textmedia-gallery column is-12-mobile-small {f:if(condition: '{data.CType} == textpic', then:'is-narrow-desktop is-narrow-touch')} {f:if(condition: '{data.gallery_size}', then:'textmedia-gallery-{data.gallery_size}')}">
             <f:render partial="Media/Gallery" arguments="{_all}" />
         </div>
         <div class="textmedia-item content column is-12-mobile-small">
