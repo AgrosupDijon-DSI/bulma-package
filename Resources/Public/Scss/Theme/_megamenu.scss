@@ -1,4 +1,6 @@
 $mega-menu-dropdown-padding: 1rem 0 !default;
+$mega-menu-dropdown-item-text-decoration-hover: $navbar-dropdown-item-text-decoration-hover !default;
+$mega-menu-dropdown-item-text-decoration-active: $navbar-dropdown-item-text-decoration-active !default;
 
 .navbar-item.is-mega {
   position: static;
@@ -25,6 +27,12 @@ $mega-menu-dropdown-padding: 1rem 0 !default;
 
       .navbar-item {
         white-space: normal;
+        &:hover{
+          text-decoration: $mega-menu-dropdown-item-text-decoration-hover;
+        }
+        &.is-active:not(:focus):not(:hover) {
+          text-decoration: $mega-menu-dropdown-item-text-decoration-active;
+        }
       }
     }
 
