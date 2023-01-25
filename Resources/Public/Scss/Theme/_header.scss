@@ -1,6 +1,12 @@
+$header-navbar-menu-position: relative !default;
+$header-navbar-container-position: relative !default;
+
 header{
   .navbar{
     @extend .has-shadow;
+    & > .container {
+      position: $header-navbar-container-position;
+    }
   }
 
   #navbarMainMenu{
@@ -14,7 +20,7 @@ header{
 @include from($navbar-breakpoint) {
   header{
     #navbarMainMenu{
-      position: relative;
+      position: $header-navbar-menu-position;
     }
   }
 }
