@@ -157,10 +157,18 @@ $GLOBALS['TCA']['tt_content']['columns']['imagecols']['config']['default'] = 1;
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [
     ['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
     ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', 'no-space'],
+    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'large'],
+    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'xl'],
+    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_large', 'negative-large'],
+    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_extra_large', 'negative-xl'],
 ];
 $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items'] = [
     ['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
     ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', 'no-space'],
+    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'large'],
+    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'xl'],
+    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_large', 'negative-large'],
+    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_extra_large', 'negative-xl'],
 ];
 
 // Override table_class

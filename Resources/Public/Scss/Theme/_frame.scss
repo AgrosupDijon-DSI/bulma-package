@@ -1,4 +1,8 @@
 $frame-spacing: $block-spacing !default;
+$frame-spacing-large: $frame-spacing * 2 !default;
+$frame-spacing-xl: $frame-spacing * 4 !default;
+$frame-spacing-negative-large: $frame-spacing-large !default;
+$frame-spacing-negative-xl: $frame-spacing-xl !default;
 
 .breadcrumb {
   margin: $frame-spacing 0;
@@ -10,37 +14,96 @@ $frame-spacing: $block-spacing !default;
 
 .frame {
   position: relative;
-  &:not(.is-background-limited){
+
+  &:not(.is-background-limited) {
     padding: $frame-spacing 0;
   }
 
-  &:first-of-type{
+  &:first-of-type {
     &:not(.frame-space-before-no-space):not([class*="has-background-"]):not(.is-background-limited) {
       padding-top: 0;
       margin-top: $frame-spacing;
     }
   }
 
-  .after-breadcrumb > .columns > .column > &:first-child{
+  .after-breadcrumb > .columns > .column > &:first-child {
     margin-top: 0;
   }
 }
 
-[class*="has-background-"].frame-inner{
+[class*="has-background-"].frame-inner {
   padding: $frame-spacing;
 }
 
-.frame-space-before-no-space{
-  &.frame, [class*="has-background-"].frame-inner{
+.frame-space-before-no-space {
+  &.frame, [class*="has-background-"].frame-inner {
     padding-top: 0;
     margin-top: 0;
   }
 }
 
-.frame-space-after-no-space{
-  &.frame, [class*="has-background-"].frame-inner{
+.frame-space-after-no-space {
+  &.frame, [class*="has-background-"].frame-inner {
     padding-bottom: 0;
   }
+}
+
+.frame-space-before-large {
+  &:not([class*="has-background-"]){
+    padding-top: $frame-spacing-large;
+  }
+  &[class*="has-background-"]{
+    margin-top: $frame-spacing-large;
+  }
+}
+
+.frame-space-after-large {
+  &:not([class*="has-background-"]){
+    padding-bottom: $frame-spacing-large;
+  }
+  &[class*="has-background-"]{
+    margin-bottom: $frame-spacing-large;
+  }
+}
+
+.frame-space-before-xl {
+  &:not([class*="has-background-"]){
+    padding-top: $frame-spacing-xl;
+  }
+  &[class*="has-background-"]{
+    margin-top: $frame-spacing-xl;
+  }
+}
+
+.frame-space-after-xl {
+  &:not([class*="has-background-"]){
+    padding-bottom: $frame-spacing-xl;
+  }
+  &[class*="has-background-"]{
+    margin-bottom: $frame-spacing-xl;
+  }
+}
+
+.frame-space-before-negative-large {
+  margin-top: -$frame-spacing-negative-large;
+  padding-top: 0;
+}
+
+.frame-space-after-negative-large {
+  padding-bottom: 0;
+  margin-bottom: -$frame-spacing-negative-large;
+  position: relative;
+  z-index: 1;
+}
+
+.frame-space-before-negative-xl {
+  margin-top: -$frame-spacing-negative-xl;
+}
+
+.frame-space-after-negative-xl {
+  margin-bottom: -$frame-spacing-negative-xl;
+  position: relative;
+  z-index: 1;
 }
 
 #main:not(.column) > .frame-fullwidth {
@@ -60,9 +123,9 @@ $frame-spacing: $block-spacing !default;
   }
 }
 
-@include touch{
-  #content{
-    & > .container > .columns{
+@include touch {
+  #content {
+    & > .container > .columns {
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;

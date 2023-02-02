@@ -714,6 +714,12 @@
             <trans-unit id="field.default_thumbnail">
                 <source>Default thumbnail</source>
             </trans-unit>
+            <trans-unit id="space_class_negative_large">
+                <source>Negative Large</source>
+            </trans-unit>
+            <trans-unit id="space_class_negative_extra_large">
+                <source>Negative Extra Large</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
