@@ -16,6 +16,13 @@ lib.bulmaPackage.socialsLinks {
         ################
         templateName = SocialsLinks
 
+        ################
+        ### SETTINGS ###
+        ################
+        settings {
+            linkClasses = {$plugin.bulma_package_websiteelements.socialsLinks.linkClasses}
+        }
+
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
             10 {

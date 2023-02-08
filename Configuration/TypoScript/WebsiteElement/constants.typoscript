@@ -6,6 +6,7 @@
 # customsubcategory=120_websiteelement=Favicon
 # customsubcategory=130_websiteelement=Logo
 # customsubcategory=140_websiteelement=Mega menu
+# customsubcategory=150_websiteelement=Socials Links
 
 ########################
 ### WEBSITE ELEMENTS ###
@@ -38,5 +39,9 @@ plugin.bulma_package_websiteelements {
     megaMenu{
         # cat=bulma package: website elements/140_websiteelement/001_columnclasses; type=string; label=Column css classes
         columnClasses = is-3-desktop is-12
+    }
+    socialsLinks{
+        # cat=bulma package: website elements/150_websiteelement/001_linkclasses; type=string; label=Css classes for links
+        linkClasses = button
     }
 }

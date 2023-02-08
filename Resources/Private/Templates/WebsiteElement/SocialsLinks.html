@@ -8,7 +8,7 @@
                 <f:then>
                     <div class="dropdown">
                         <div class="dropdown-trigger">
-                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-{type.uniqueId}">
+                            <button class="{settings.linkClasses}" aria-haspopup="true" aria-controls="dropdown-menu-{type.uniqueId}">
                                 <f:render section="icon" arguments="{type: type}" />
                                 <span class="icon is-small">
                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -27,7 +27,7 @@
                     </div>
                 </f:then>
                 <f:else>
-                    <f:link.typolink parameter="{type.data.0.url}" class="button" title="{type.data.0.label}">
+                    <f:link.typolink parameter="{type.data.0.url}" class="{settings.linkClasses}" title="{type.data.0.label}">
                         <f:render section="icon" arguments="{type: type}" />
                         <f:if condition="{type.data.0.force_label}"><span>{type.data.0.label}</span></f:if>
                     </f:link.typolink>
