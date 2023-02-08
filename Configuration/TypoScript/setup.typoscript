@@ -143,6 +143,12 @@ page {
             loginPid = {$page.navigation.loginPid}
             searchPid = {$page.navigation.searchPid}
             megaMenuColumnClasses = {$plugin.bulma_package_websiteelements.megaMenu.columnClasses}
+            searchFormClasses = {$page.searchForm.classes}
+            searchFormFieldWrapperClasses = {$page.searchForm.fieldWrapperClasses}
+            searchFormInputWrapperClasses = {$page.searchForm.inputWrapperClasses}
+            searchFormInputClasses = {$page.searchForm.inputClasses}
+            searchFormButtonClasses = {$page.searchForm.buttonClasses}
+            searchFormButtonIconClasses = {$page.searchForm.buttonIconClasses}
         }
         #################
         ### VARIABLES ###

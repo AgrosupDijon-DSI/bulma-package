@@ -39,6 +39,20 @@ page {
         searchPid = 
         searchPid := getEnv(BULMA_SEARCH_PAGE_UID)
     }
+    searchForm{
+        # cat=bulma package: search form/130/100; type=string; label=Classes for form
+        classes =
+        # cat=bulma package: search form/130/110; type=string; label=Classes for form
+        fieldWrapperClasses = field has-addons
+        # cat=bulma package: search form/130/120; type=string; label=Classes for input wrapper
+        inputWrapperClasses = control
+        # cat=bulma package: search form/130/130; type=string; label=Classes for input
+        inputClasses = input is-small
+        # cat=bulma package: search form/130/140; type=string; label=Classes for button
+        buttonClasses = button is-primary is-small
+        # cat=bulma package: search form/130/150; type=string; label=Classes for button icon
+        buttonIconClasses = icon is-small
+    }
 }
 
 ##############
