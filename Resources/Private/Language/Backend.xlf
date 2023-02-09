@@ -192,6 +192,12 @@
             <trans-unit id="option.is-vcentered">
                 <source>Vertical alignment</source>
             </trans-unit>
+            <trans-unit id="option.has-items-center">
+                <source>Centered items</source>
+            </trans-unit>
+            <trans-unit id="option.has-items-end">
+                <source>Flex-end items</source>
+            </trans-unit>
             <trans-unit id="option.is-spaced">
                 <source>Spaced</source>
             </trans-unit>

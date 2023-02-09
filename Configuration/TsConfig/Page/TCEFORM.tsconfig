@@ -136,6 +136,8 @@ TCEFORM {
                         is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
                         is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
                         is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+                        has-items-center = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.has-items-center
+                        has-items-end = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.has-items-end
                     }
 
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style

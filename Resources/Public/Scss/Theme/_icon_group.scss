@@ -75,4 +75,14 @@
       max-width: 50%;
     }
   }
+  &.has-items-center{
+    .icon-group-item{
+      align-items: center;
+    }
+  }
+  &.has-items-end{
+    .icon-group-item{
+      align-items: flex-end;
+    }
+  }
 }
