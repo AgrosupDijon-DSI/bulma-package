@@ -45,6 +45,12 @@ editor:
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.danger", element: "span", attributes: { 'class': 'has-text-danger' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.light", element: "span", attributes: { 'class': 'has-text-light' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.dark", element: "span", attributes: { 'class': 'has-text-dark' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.1", element: "span", attributes: { 'class': 'is-size-1' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.2", element: "span", attributes: { 'class': 'is-size-2' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.3", element: "span", attributes: { 'class': 'is-size-3' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.4", element: "span", attributes: { 'class': 'is-size-4' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.5", element: "span", attributes: { 'class': 'is-size-5' } }
+            - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.6", element: "span", attributes: { 'class': 'is-size-6' } }
             - { name: "LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.buttons", element: "p", attributes: { 'class': 'buttons' } }
 
         toolbarGroups:
