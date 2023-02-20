@@ -9,7 +9,9 @@ $navbar-dropdown-item-color: $navbar-item-color !default;
 $navbar-dropdown-item-text-decoration-hover: none !default;
 $navbar-dropdown-item-text-decoration-active: none !default;
 //$navbar-with-background-item-hover-background-color;
+//$navbar-with-background-item-active-background-color
 //$navbar-with-background-item-hover-color;
+//$navbar-with-background-item-active-color;
 //$navbar-with-background-dropdown-arrow;
 
 .navbar-item {
@@ -190,11 +192,11 @@ $navbar-dropdown-item-text-decoration-active: none !default;
 
 .navbar-menu{
   .navbar-item, .navbar-link{
-    &:hover{
-      text-decoration: $navbar-item-text-decoration-hover;
-    }
     &.is-active{
       text-decoration: $navbar-item-text-decoration-active;
+    }
+    &:hover{
+      text-decoration: $navbar-item-text-decoration-hover;
     }
     &.has-dropdown{
       .navbar-item{
@@ -254,9 +256,16 @@ $navbar-dropdown-item-text-decoration-active: none !default;
       .navbar-start, .navbar-end {
         & > a.navbar-item,
         .navbar-link {
-          &:focus,
-          &:hover,
           &.is-active {
+            @if variable-exists(navbar-with-background-item-active-background-color) {
+              background-color: $navbar-with-background-item-active-background-color;
+            }
+            @if variable-exists(navbar-with-background-item-active-color) {
+              color: $navbar-with-background-item-active-color;
+            }
+          }
+          &:focus,
+          &:hover {
             @if variable-exists(navbar-with-background-item-hover-background-color) {
               background-color: $navbar-with-background-item-hover-background-color;
             }
@@ -264,8 +273,9 @@ $navbar-dropdown-item-text-decoration-active: none !default;
               color: $navbar-with-background-item-hover-color;
             }
           }
-          @if variable-exists(navbar-with-background-dropdown-arrow) {
-            &:after{
+          &:after{
+            border-color: currentColor;
+            @if variable-exists(navbar-with-background-dropdown-arrow) {
               border-color: $navbar-with-background-dropdown-arrow;
             }
           }
@@ -276,6 +286,7 @@ $navbar-dropdown-item-text-decoration-active: none !default;
           }
           @if variable-exists(navbar-with-background-item-hover-color) {
             color: $navbar-with-background-item-hover-color;
+            text-decoration: $navbar-dropdown-item-text-decoration-hover;
           }
         }
         .navbar-item.nested{
