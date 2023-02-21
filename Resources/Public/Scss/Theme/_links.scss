@@ -1,0 +1,12 @@
+a.icon-mail{
+  position: relative;
+  padding-left: 1.25em;
+  &:before{
+    content: "\f0e0";
+    font-family: "Font Awesome\ 5 Free";
+    font-weight:400;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

@@ -38,3 +38,14 @@
     @extend .is-right;
   }
 }
+
+a.icon-mail{
+  position: relative;
+  padding-left: 1em;
+  &:before{
+    content: "\2709";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

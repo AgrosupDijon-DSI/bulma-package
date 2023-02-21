@@ -81,3 +81,14 @@ editor:
         removeButtons:
             - Anchor
             - JustifyBlock
+
+classesAnchor:
+    mail:
+        class: 'icon-mail'
+        type: 'mail'
+
+buttons:
+    link:
+        properties:
+            class:
+                allowedClasses: 'icon-mail'
