@@ -100,6 +100,9 @@
             <trans-unit id="style.dark">
                 <source>Dark</source>
             </trans-unit>
+            <trans-unit id="style.highlighted">
+                <source>Highlighted</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
