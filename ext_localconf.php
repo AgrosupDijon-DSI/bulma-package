@@ -63,7 +63,7 @@ defined('TYPO3') or die();
      */
     // Add Content Elements
     if (!(bool)$bulmaPackageConfiguration['disablePageTsContentElements']) {
-        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig"');
     }
 
     // BackendLayouts
@@ -73,17 +73,17 @@ defined('TYPO3') or die();
 
     // TCEFORM
     if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEFORM']) {
-        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig"');
     }
 
     // TCEMAIN
     if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEMAIN']) {
-        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig"');
     }
 
     // RTE
     if (!(bool)$bulmaPackageConfiguration['disablePageTsRTE']) {
-        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig"');
     }
 
     // MOD
@@ -185,7 +185,7 @@ defined('TYPO3') or die();
      * Register news extra templateLayouts
      */
     if (ExtensionManagementUtility::isLoaded('news')) {
-        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig">');
+        ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig"');
     }
 
     /***************
