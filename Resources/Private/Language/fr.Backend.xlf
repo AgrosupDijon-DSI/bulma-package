@@ -507,17 +507,9 @@
         <source>Default</source>
         <target state="final">Défaut</target>
       </trans-unit>
-      <trans-unit id="backend_layout.sidebar_left" approved="yes">
-        <source>Sidebar Left</source>
-        <target state="final">Barre latérale gauche</target>
-      </trans-unit>
       <trans-unit id="backend_layout.sidebar_left_w_navigation" approved="yes">
         <source>Sidebar Left with navigation</source>
         <target state="final">Barre latérale gauche avec navigation</target>
-      </trans-unit>
-      <trans-unit id="backend_layout.sidebar_right" approved="yes">
-        <source>Sidebar Right</source>
-        <target state="final">Barre latérale droite</target>
       </trans-unit>
       <trans-unit id="backend_layout.sidebar_right_w_navigation" approved="yes">
         <source>Sidebar Right with navigation</source>
@@ -534,10 +526,6 @@
       <trans-unit id="backend_layout.column.after_content" approved="yes">
         <source>After content</source>
         <target state="final">Post-contenu</target>
-      </trans-unit>
-      <trans-unit id="backend_layout.column.sidebar" approved="yes">
-        <source>Sidebar</source>
-        <target state="final">Barre latérale</target>
       </trans-unit>
       <trans-unit id="backend_layout.column.sidebar_w_navigation" approved="yes">
         <source>Sidebar (with navigation)</source>
