@@ -8,18 +8,27 @@
 
     <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
 
-    <section id="content">
-        <div class="container{f:if(condition: breadcrumb, then: ' after-breadcrumb')}">
-            <div class="columns is-multiline is-variable is-5-desktop is-8-widescreen">
-                <main id="main" class="column is-three-quarters-desktop is-full-tablet">
-                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
-                </main>
-                <aside class="column is-one-quarter-desktop is-full-tablet">
-                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}"/>
-                </aside>
-            </div>
-        </div>
-    </section>
+    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.dynamicContent', data: '{pageUid: \'{data.uid}\', colPos: \'2\'}')}">
+        <f:then>
+            <section id="content">
+                <div class="container{f:if(condition: breadcrumb, then: ' after-breadcrumb')}">
+                    <div class="columns is-multiline is-variable is-5-desktop is-8-widescreen">
+                        <main id="main" class="column is-three-quarters-desktop is-full-tablet">
+                            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+                        </main>
+                        <aside class="column is-one-quarter-desktop is-full-tablet">
+                            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}"/>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </f:then>
+        <f:else>
+            <main id="main">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+            </main>
+        </f:else>
+    </f:if>
 
     <section id="outro">
         <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '9'}"/>
