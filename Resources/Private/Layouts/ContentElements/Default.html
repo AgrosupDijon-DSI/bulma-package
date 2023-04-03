@@ -10,8 +10,9 @@
     <f:variable name="backgroundClassLimited">{f:if(condition: "{data.background_color_class} && {data.background_color_class} != none && {data.background_frame} == 'limited'", then: "has-background-{data.background_color_class}")}</f:variable>
     <f:variable name="spaceBeforeClass">{f:if(condition: data.space_before_class, then: "frame-space-before-{data.space_before_class}")}</f:variable>
     <f:variable name="spaceAfterClass">{f:if(condition: data.space_after_class, then: "frame-space-after-{data.space_after_class}")}</f:variable>
+    <f:variable name="pluginTypeClass">{f:if(condition: "{data.CType} == 'list'", then: "frame-plugin-{data.list_type}")}</f:variable>
 
-    <div id="c{data.uid}" class="frame {frameClass} {typeClass} {layoutClass} {backgroundClass} {backgroundLimited} {spaceBeforeClass} {spaceAfterClass}">
+    <div id="c{data.uid}" class="frame {frameClass} {typeClass} {layoutClass} {backgroundClass} {backgroundLimited} {spaceBeforeClass} {spaceAfterClass} {pluginTypeClass}">
         <f:if condition="{data.frame_class} != hero">
             <f:then>
                 <div class="container {containerDesktop}">
