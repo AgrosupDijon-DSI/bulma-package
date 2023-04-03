@@ -27,6 +27,10 @@
         <source>Notification Dark</source>
         <target state="final">Notification Sombre</target>
       </trans-unit>
+      <trans-unit id="style.buttons" approved="yes">
+        <source>List of buttons</source>
+        <target state="final">Liste de boutons</target>
+      </trans-unit>
       <trans-unit id="style.button" approved="yes">
         <source>Button</source>
         <target state="final">Bouton</target>
@@ -78,6 +82,10 @@
       <trans-unit id="style.dark" approved="yes">
         <source>Dark</source>
         <target state="final">Sombre</target>
+      </trans-unit>
+      <trans-unit id="style.highlighted" approved="yes">
+        <source>Highlighted</source>
+        <target state="final">Surlignage</target>
       </trans-unit>
     </body>
   </file>
