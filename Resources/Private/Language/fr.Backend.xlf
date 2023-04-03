@@ -171,6 +171,14 @@
         <source>Vertical alignment</source>
         <target state="final">Alignement vertical</target>
       </trans-unit>
+      <trans-unit id="option.has-items-center" approved="yes">
+        <source>Centered items</source>
+        <target state="final">Éléments centrés</target>
+      </trans-unit>
+      <trans-unit id="option.has-items-end">
+        <source>Flex-end items</source>
+        <target state="translated">Éléments "Flex-end"</target>
+      </trans-unit>
       <trans-unit id="menu.thumbnail_dir" approved="yes">
         <source>Thumbnails of subpages</source>
         <target state="final">Vignettes de sous-pages</target>
@@ -507,9 +515,17 @@
         <source>Default</source>
         <target state="final">Défaut</target>
       </trans-unit>
+      <trans-unit id="backend_layout.sidebar_left" approved="yes">
+        <source>Sidebar Left (optional)</source>
+        <target state="final">Barre latérale gauche (optionnelle)</target>
+      </trans-unit>
       <trans-unit id="backend_layout.sidebar_left_w_navigation" approved="yes">
         <source>Sidebar Left with navigation</source>
         <target state="final">Barre latérale gauche avec navigation</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.sidebar_right" approved="yes">
+        <source>Sidebar Right (optional)</source>
+        <target state="final">Barre latérale droite (optionnelle)</target>
       </trans-unit>
       <trans-unit id="backend_layout.sidebar_right_w_navigation" approved="yes">
         <source>Sidebar Right with navigation</source>
@@ -526,6 +542,10 @@
       <trans-unit id="backend_layout.column.after_content" approved="yes">
         <source>After content</source>
         <target state="final">Post-contenu</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.column.sidebar" approved="yes">
+        <source>Sidebar (optional)</source>
+        <target state="final">Barre latérale (optionnelle)</target>
       </trans-unit>
       <trans-unit id="backend_layout.column.sidebar_w_navigation" approved="yes">
         <source>Sidebar (with navigation)</source>
