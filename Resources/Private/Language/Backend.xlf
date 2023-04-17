@@ -708,6 +708,12 @@
             <trans-unit id="news.templateLayouts.4cols">
                 <source>4 Columns</source>
             </trans-unit>
+            <trans-unit id="news.templateLayouts.2cols">
+                <source>2 Columns</source>
+            </trans-unit>
+            <trans-unit id="news.templateLayouts.1cols">
+                <source>1 Column</source>
+            </trans-unit>
             <trans-unit id="tx_bulmapackage_meta_tags">
                 <source>Meta Tag</source>
             </trans-unit>

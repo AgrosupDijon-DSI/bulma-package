@@ -58,6 +58,26 @@ plugin.tx_news {
 		responsiveimages{
 			variants < lib.contentElement.settings.responsiveimages.variants
 			list{
+				1 {
+					class = is-12
+				}
+				2 {
+					class = is-6-desktop is-6-tablet is-6-mobile is-12-mobile-small
+					multiplier {
+						default = 0.5
+						widescreen = 0.5
+						desktop = 0.5
+						tablet = 0.5
+						mobile = 0.5
+					}
+					gutters {
+						default = 24
+						widescreen = 24
+						desktop = 24
+						tablet = 24
+						mobile = 24
+					}
+				}
 				3 {
 					class = is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
 					multiplier {

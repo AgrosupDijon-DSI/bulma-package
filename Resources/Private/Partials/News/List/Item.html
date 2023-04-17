@@ -11,6 +11,12 @@
 <f:if condition="{settings.templateLayout} == 1">
 	<f:variable name="newsCols">4</f:variable>
 </f:if>
+<f:if condition="{settings.templateLayout} == 2">
+	<f:variable name="newsCols">2</f:variable>
+</f:if>
+<f:if condition="{settings.templateLayout} == 3">
+	<f:variable name="newsCols">1</f:variable>
+</f:if>
 <f:variable name="columnConfig">{settings.responsiveimages.list.{newsCols}}</f:variable>
 <asd:data.imageVariants as="variants" variants="{settings.responsiveimages.variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
 <div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} column {columnConfig.class}" itemscope="itemscope" itemtype="http://schema.org/Article">
