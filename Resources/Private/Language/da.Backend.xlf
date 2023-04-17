@@ -7,6 +7,70 @@
         <source>Exclude slug for subpages</source>
         <target state="translated">Udeluk URL segment for undersider</target>
       </trans-unit>
+      <trans-unit id="ratio.16_9">
+        <source>16:9</source>
+        <target state="translated">16:9</target>
+      </trans-unit>
+      <trans-unit id="ratio.3_2">
+        <source>3:2</source>
+        <target state="translated">3:2</target>
+      </trans-unit>
+      <trans-unit id="ratio.3_1">
+        <source>3:1</source>
+        <target state="translated">3:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_1">
+        <source>4:1</source>
+        <target state="translated">4:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.6_1">
+        <source>6:1</source>
+        <target state="translated">6:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_3">
+        <source>4:3</source>
+        <target state="translated">4:3</target>
+      </trans-unit>
+      <trans-unit id="ratio.1_1">
+        <source>1:1</source>
+        <target state="translated">1:1</target>
+      </trans-unit>
+      <trans-unit id="ratio.2_3">
+        <source>2:3</source>
+        <target state="translated">2:3</target>
+      </trans-unit>
+      <trans-unit id="ratio.1_2">
+        <source>1:2</source>
+        <target state="translated">1:2</target>
+      </trans-unit>
+      <trans-unit id="ratio.4_5">
+        <source>4:5</source>
+        <target state="translated">4:5</target>
+      </trans-unit>
+      <trans-unit id="ratio.9_16">
+        <source>9:16</source>
+        <target state="translated">9/16</target>
+      </trans-unit>
+      <trans-unit id="ratio.free">
+        <source>Free</source>
+        <target state="translated">Fri</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.125">
+        <source>Beside Text, Centered Right</source>
+        <target state="translated">Ved siden af tekst, højre-centreret</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.126">
+        <source>Beside Text, Centered Left</source>
+        <target state="translated">Ved siden af tekst, venstre-centreret</target>
+      </trans-unit>
+      <trans-unit id="field.readmore_label">
+        <source>Read More Label</source>
+        <target state="translated">Læs mere etiket</target>
+      </trans-unit>
+      <trans-unit id="field.ignore_nav_hide">
+        <source>Display "menu excluded" pages</source>
+        <target state="translated">Vis "menu ekskluderet" sider</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
