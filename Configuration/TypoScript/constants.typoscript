@@ -53,6 +53,36 @@ page {
         # cat=bulma package: search form/130/150; type=string; label=Classes for button icon
         buttonIconClasses = icon is-small
     }
+    layouts{
+        sidebar_right{
+            columns{
+                wrapperClasses = columns is-multiline is-variable is-5-desktop is-8-widescreen
+                mainClasses = column is-three-quarters-desktop is-full-tablet
+                asideClasses = column is-one-quarter-desktop is-full-tablet
+            }
+        }
+        sidebar_left{
+            columns{
+                wrapperClasses = columns is-multiline is-flex-direction-row-reverse is-variable is-5-desktop is-8-widescreen
+                mainClasses = column is-three-quarters-desktop is-full-tablet
+                asideClasses = column is-one-quarter-desktop is-full-tablet
+            }
+        }
+        sidebar_left_w_navigation{
+            columns{
+                wrapperClasses = columns is-multiline is-flex-direction-row-reverse is-variable is-5-desktop is-8-widescreen
+                mainClasses = column is-three-quarters-desktop is-full-tablet
+                asideClasses = column is-one-quarter-desktop is-full-tablet
+            }
+        }
+        sidebar_right_w_navigation{
+            columns{
+                wrapperClasses = columns is-multiline is-variable is-5-desktop is-8-widescreen
+                mainClasses = column is-three-quarters-desktop is-full-tablet
+                asideClasses = column is-one-quarter-desktop is-full-tablet
+            }
+        }
+    }
 }
 
 ##############

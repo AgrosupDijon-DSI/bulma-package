@@ -149,6 +149,36 @@ page {
             searchFormInputClasses = {$page.searchForm.inputClasses}
             searchFormButtonClasses = {$page.searchForm.buttonClasses}
             searchFormButtonIconClasses = {$page.searchForm.buttonIconClasses}
+            layouts{
+                sidebar_right{
+                    columns{
+                        wrapperClasses = {$page.layouts.sidebar_right.columns.wrapperClasses}
+                        mainClasses = {$page.layouts.sidebar_right.columns.mainClasses}
+                        asideClasses = {$page.layouts.sidebar_right.columns.asideClasses}
+                    }
+                }
+                sidebar_left{
+                    columns{
+                        wrapperClasses = {$page.layouts.sidebar_left.columns.wrapperClasses}
+                        mainClasses = {$page.layouts.sidebar_left.columns.mainClasses}
+                        asideClasses = {$page.layouts.sidebar_left.columns.asideClasses}
+                    }
+                }
+                sidebar_left_w_navigation{
+                    columns{
+                        wrapperClasses = {$page.layouts.sidebar_left_w_navigation.columns.wrapperClasses}
+                        mainClasses = {$page.layouts.sidebar_left_w_navigation.columns.mainClasses}
+                        asideClasses = {$page.layouts.sidebar_left_w_navigation.columns.asideClasses}
+                    }
+                }
+                sidebar_right_w_navigation{
+                    columns{
+                        wrapperClasses = {$page.layouts.sidebar_right_w_navigation.columns.wrapperClasses}
+                        mainClasses = {$page.layouts.sidebar_right_w_navigation.columns.mainClasses}
+                        asideClasses = {$page.layouts.sidebar_right_w_navigation.columns.asideClasses}
+                    }
+                }
+            }
         }
         #################
         ### VARIABLES ###
