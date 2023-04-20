@@ -85,7 +85,7 @@ $navbar-height-touch: $navbar-height !default;
     .navbar-start, .navbar-end {
       & > .navbar-item {
         border-bottom: $navbar-dropdown-border-top;
-        border-color: $primary;
+        border-color: $navbar-dropdown-border-top-color;
       }
     }
 
