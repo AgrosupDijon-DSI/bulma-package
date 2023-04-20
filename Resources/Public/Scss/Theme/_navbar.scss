@@ -8,6 +8,7 @@ $navbar-dropdown-border-top-color: $primary !default;
 $navbar-dropdown-item-color: $navbar-item-color !default;
 $navbar-dropdown-item-text-decoration-hover: none !default;
 $navbar-dropdown-item-text-decoration-active: none !default;
+$navbar-height-touch: $navbar-height !default;
 //$navbar-with-background-item-hover-background-color;
 //$navbar-with-background-item-active-background-color
 //$navbar-with-background-item-hover-color;
@@ -44,6 +45,12 @@ $navbar-dropdown-item-text-decoration-active: none !default;
 }
 
 @include until($navbar-breakpoint) {
+  .navbar{
+    min-height: $navbar-height-touch;
+    & > .container {
+      min-height: $navbar-height-touch;
+    }
+  }
   .navbar-menu {
     display: block;
     position: absolute;
