@@ -198,7 +198,7 @@ $navbar-height-touch: $navbar-height !default;
 }
 
 .navbar-menu{
-  .navbar-item, .navbar-link{
+  a.navbar-item, .navbar-link{
     &.is-active{
       text-decoration: $navbar-item-text-decoration-active;
     }
