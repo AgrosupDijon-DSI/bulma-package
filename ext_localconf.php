@@ -122,6 +122,7 @@ defined('TYPO3') or die();
         'settings-bulmapackage-user-graduate' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user-graduate.svg',
         'settings-bulmapackage-user' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user.svg',
         'settings-bulmapackage-lock' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/lock.svg',
+        'settings-bulmapackage-user-lock' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user-lock.svg',
         'content-bulmapackage-color' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/palette.svg'
     ];
     foreach ($icons as $identifier => $source) {

@@ -681,6 +681,9 @@
             <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock">
                 <source>Lock</source>
             </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings_link_item.icon.user-lock">
+                <source>User Lock</source>
+            </trans-unit>
             <trans-unit id="tx_bulmapackage_settings_link_item.standalone">
                 <source>Standalone</source>
             </trans-unit>
