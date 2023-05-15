@@ -6,3 +6,9 @@ services:
 
   AgrosupDijon\BulmaPackage\:
     resource: '../Classes/*'
+
+  AgrosupDijon\BulmaPackage\EventListeners\NestedContentElementsUsedEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'bulma-package-nested-content-used'
+        event: TYPO3\CMS\Backend\View\Event\IsContentUsedOnPageLayoutEvent

@@ -147,9 +147,6 @@ defined('TYPO3') or die();
         ],
     ];
 
-    // Hook to override colpos check for unused tt_content elements
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used']['bulma_package'] = PageLayoutViewHook::class . '->contentIsUsed';
-
     /***************
      * Register "asd" as global fluid namespace
      */
