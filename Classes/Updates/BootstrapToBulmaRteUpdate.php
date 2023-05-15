@@ -9,7 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
-use Doctrine\DBAL\ForwardCompatibility\Result;
+use Doctrine\DBAL\Exception;
 use Symfony\Component\DomCrawler\Crawler;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -85,13 +85,13 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
      * Checks if an update is needed
      *
      * @return bool Whether an update is needed (TRUE) or not (FALSE)
+     * @throws Exception
      */
     public function updateNecessary(): bool
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
-        /** @var Result $result */
         $result = $queryBuilder->select('uid', 'bodytext')
             ->from('tt_content')
             ->where(
@@ -99,12 +99,12 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
             )
             ->executeQuery();
 
-        foreach ($result as $item) {
+        foreach ($result->fetchAllAssociative() as $item) {
             $crawler = new Crawler($item['bodytext']);
 
             foreach ($this->classes as $tag => $replacements) {
                 foreach ($replacements as $classBefore => $classAfter) {
-                    if ($crawler->filter("${tag}.${classBefore}")->count() > 0) {
+                    if ($crawler->filter("{$tag}.{$classBefore}")->count() > 0) {
                         return true;
                     }
                 }
@@ -128,13 +128,13 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
      * Performs the database update
      *
      * @return bool
+     * @throws Exception
      */
     public function executeUpdate(): bool
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
-        /** @var Result $result */
         $result = $queryBuilder->select('uid', 'bodytext')
             ->from('tt_content')
             ->where(
@@ -142,13 +142,13 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
             )
             ->executeQuery();
 
-        foreach ($result as $item) {
+        foreach ($result->fetchAllAssociative() as $item) {
             $crawler = new Crawler($item['bodytext']);
             $needUpdate = false;
             foreach ($this->classes as $tag => $replacements) {
                 foreach ($replacements as $classBefore => $classAfter) {
                     $crawler
-                        ->filter("${tag}.${classBefore}")
+                        ->filter("{$tag}.{$classBefore}")
                         ->each(function (Crawler $node) use ($classBefore, $classAfter, &$needUpdate) {
                             /** @var \DOMElement $domElement */
                             $domElement = $node->getNode(0);

@@ -25,54 +25,49 @@ $additionalColumns = [
     'thumbnail' => [
         'exclude' => true,
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.thumbnail',
-        'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-            'thumbnail',
-            [
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                ],
-                'overrideChildTca' => [
-                    'types' => [
-                        File::FILETYPE_UNKNOWN => [
-                            'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                        ],
-                        File::FILETYPE_TEXT => [
-                            'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                        ],
-                        File::FILETYPE_IMAGE => [
-                            'showitem' => '
-                                    title,
-                                    alternative,
-                                    crop,
-                                    --palette--;;filePalette
-                                '
-                        ],
-                        File::FILETYPE_AUDIO => [
-                            'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                        ],
-                        File::FILETYPE_VIDEO => [
-                            'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                        ],
-                        File::FILETYPE_APPLICATION => [
-                            'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                        ],
+        'config' => [
+            'type' => 'file',
+            'maxitems' => 1,
+            'allowed' => 'common-image-types',
+            'appearance' => [
+                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+            ],
+            'overrideChildTca' => [
+                'types' => [
+                    File::FILETYPE_UNKNOWN => [
+                        'showitem' => '
+                            --palette--;;filePalette
+                        ',
+                    ],
+                    File::FILETYPE_TEXT => [
+                        'showitem' => '
+                            --palette--;;filePalette
+                        ',
+                    ],
+                    File::FILETYPE_IMAGE => [
+                        'showitem' => '
+                            --palette--;;basicImageoverlayPalette,
+                            --palette--;;filePalette
+                        ',
+                    ],
+                    File::FILETYPE_AUDIO => [
+                        'showitem' => '
+                            --palette--;;filePalette
+                        ',
+                    ],
+                    File::FILETYPE_VIDEO => [
+                        'showitem' => '
+                            --palette--;;filePalette
+                        ',
+                    ],
+                    File::FILETYPE_APPLICATION => [
+                        'showitem' => '
+                            --palette--;;filePalette
+                        ',
                     ],
                 ],
-                'minitems' => 0,
-                'maxitems' => 1,
             ],
-            $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-        ),
+        ],
         'l10n_mode' => 'exclude',
     ],
     'exclude_slug_for_subpages' => [

@@ -10,44 +10,70 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\Controller;
 
-use Doctrine\DBAL\ForwardCompatibility\Result;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Backend\Attribute\Controller;
+use Doctrine\DBAL\Exception;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
+use TYPO3\CMS\Backend\Template\Components\ButtonBar;
+use TYPO3\CMS\Backend\Template\ModuleTemplate;
+use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\Restriction\BackendWorkspaceRestriction;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
+use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
+use TYPO3\CMS\Core\Imaging\Icon;
+use TYPO3\CMS\Core\Imaging\IconFactory;
+use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3Fluid\Fluid\View\ViewInterface;
 
 /**
  *
  */
 class WebsiteModuleController extends ActionController
 {
-
-    /**
-     * @var SiteFinder
-     */
-    protected $siteFinder;
+    protected ModuleTemplate $moduleTemplate;
 
     /**
      * Default constructor
      */
-    public function __construct()
+    public function __construct(
+        protected readonly SiteFinder $siteFinder,
+        protected readonly ModuleTemplateFactory $moduleTemplateFactory,
+        protected UriBuilder $backendUriBuilder,
+        protected IconFactory $iconFactory,
+        protected PageRenderer $pageRenderer
+    ) {
+    }
+
+    public function initializeAction(): void
     {
-        $this->siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
+        $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
+//        $this->moduleTemplate->setTitle($this->getLanguageService()->sL('LLL:EXT:cnerta_jobs/Resources/Private/Language/locallang_be.xlf:wizards.newContentElement.cnertajobs_cnertajobs.title'));
+        $this->moduleTemplate->setTitle('BLEH');
+    }
+
+    public function initializeView(ViewInterface $view): void
+    {
+        // Load JS modules
+        $this->pageRenderer->loadJavaScriptModule('TYPO3/CMS/Backend/ContextMenu');
     }
 
     /**
      * Display administration interface
+     * @throws Exception
      */
-    protected function overviewAction(): void
+    protected function overviewAction(): ResponseInterface
     {
-        $allSites = $this->siteFinder->getAllSites();
+        $allSites = $this->siteFinder->getAllSites(false);
+
         $languages = [];
         foreach ($allSites as $identifier => $site) {
-            foreach ($site->getAllLanguages() as $language){
+            foreach ($site->getAllLanguages() as $language) {
                 $languages[$language->getLanguageId()] = $language;
             }
         }
@@ -55,71 +81,164 @@ class WebsiteModuleController extends ActionController
 
         $this->getBulmaPackageSettings($pages);
 
-        /** @var string $requestUri */
-        $requestUri = GeneralUtility::getIndpEnv('REQUEST_URI');
-        $returnUrl = rawurlencode($requestUri);
+        $this->moduleTemplate->assignMultiple([
+            'pages' => $pages,
+            'languages' => $languages
+        ]);
+
+        $this->addMainMenu('overview');
+        $this->configureCommonDocHeader('overview', $this->getLanguageService()->sL('LLL:EXT:backend/Resources/Private/Language/locallang_siteconfiguration_module.xlf:mlang_labels_tablabel'));
+
+
+        return $this->moduleTemplate->renderResponse();
+    }
+
+    public function addMainMenu(string $currentAction): void
+    {
+        $this->uriBuilder->setRequest($this->request);
+        $menu = $this->moduleTemplate->getDocHeaderComponent()->getMenuRegistry()->makeMenu();
+        $menu->setIdentifier('BulmaPackageWebsiteModuleMenu');
+        $menu->addMenuItem(
+            $menu->makeMenuItem()
+                ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.title'))
+                ->setHref($this->uriBuilder->uriFor('overview'))
+                ->setActive($currentAction === 'overview')
+        );
 
         $extensionConfiguration = GeneralUtility::makeInstance(
             ExtensionConfiguration::class
         );
-        $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
 
-        $this->view->assignMultiple([
-            'pages' => $pages,
-            'languages' => $languages,
-            'returnUrl' => $returnUrl,
-            'disableCustomColorsAction' => $bulmaPackageConfiguration['disableCustomColorsAction'],
-            'disableMetaTagsAction' => $bulmaPackageConfiguration['disableMetaTagsAction']
-        ]);
+        try {
+            $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
+        } catch (\Exception $e) {
+            $bulmaPackageConfiguration = [
+                'disableCustomColorsAction' => false,
+                'disableMetaTagsAction' => false
+            ];
+        }
+
+        if(!$bulmaPackageConfiguration['disableCustomColorsAction']){
+            $menu->addMenuItem(
+                $menu->makeMenuItem()
+                    ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title'))
+                    ->setHref($this->uriBuilder->uriFor('customColors'))
+                    ->setActive($currentAction === 'customColors')
+            );
+        }
+
+        if(!$bulmaPackageConfiguration['disableMetaTagsAction']){
+            $menu->addMenuItem(
+                $menu->makeMenuItem()
+                    ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title'))
+                    ->setHref($this->uriBuilder->uriFor('metaTags'))
+                    ->setActive($currentAction === 'metaTags')
+            );
+        }
+
+        $this->moduleTemplate->getDocHeaderComponent()->getMenuRegistry()->addMenu($menu);
+    }
+
+    protected function configureCommonDocHeader(string $currentAction, string $shortcutDisplayName): void
+    {
+        $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
+        $reloadButton = $buttonBar->makeLinkButton()
+            ->setHref((string)$this->request->getAttribute('normalizedParams')?->getRequestUri())
+            ->setTitle($this->getLanguageService()->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.reload'))
+            ->setIcon($this->iconFactory->getIcon('actions-refresh', Icon::SIZE_SMALL));
+        $buttonBar->addButton($reloadButton, ButtonBar::BUTTON_POSITION_RIGHT);
+        $shortcutButton = $buttonBar->makeShortcutButton()
+            ->setRouteIdentifier('system_WebsiteSettings')
+            ->setArguments(['action' => $currentAction])
+            ->setDisplayName($shortcutDisplayName);
+        $buttonBar->addButton($shortcutButton, ButtonBar::BUTTON_POSITION_RIGHT);
     }
 
     /**
      * Display tx_bulmapackage_custom_color
+     * @throws Exception
      */
-    protected function customColorsAction(): void
+    protected function customColorsAction(): ResponseInterface
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_custom_color');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
-        /** @var Result $result */
         $result = $queryBuilder
             ->select('*')
             ->from('tx_bulmapackage_custom_color')
-            ->execute();
+            ->executeQuery();
 
-        $this->view->assign('customColors', $result->fetchAllAssociative());
+        $this->moduleTemplate->assign('customColors', $result->fetchAllAssociative());
+
+        $this->addMainMenu('customColors');
+        $this->configureCommonDocHeader('customColors', $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title'));
+        $this->configureCustomColorsDocHeader();
+
+        return $this->moduleTemplate->renderResponse();
+    }
+
+    protected function configureCustomColorsDocHeader(): void
+    {
+        $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
+        $addCustomColorButton = $buttonBar->makeLinkButton()
+            ->setIcon($this->iconFactory->getIcon('actions-plus', Icon::SIZE_SMALL))
+            ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.color.create'))
+            ->setShowLabelText(true)
+            ->setHref((string)$this->backendUriBuilder->buildUriFromRoute('record_edit', [
+                'edit' => ['tx_bulmapackage_custom_color' => [0 => 'new']],
+                'returnUrl' => $this->request->getAttribute('normalizedParams')?->getRequestUri(),
+            ]));
+        $buttonBar->addButton($addCustomColorButton);
     }
 
     /**
      * Display tx_bulmapackage_meta_tags
+     * @throws Exception
      */
-    protected function metaTagsAction(): void
+    protected function metaTagsAction(): ResponseInterface
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
-        /** @var Result $result */
         $result = $queryBuilder
             ->select('*')
             ->from('tx_bulmapackage_meta_tags')
-            ->execute();
+            ->executeQuery();
 
-        $this->view->assign('metaTags', $result->fetchAllAssociative());
+        $this->moduleTemplate->assign('metaTags', $result->fetchAllAssociative());
+
+        $this->addMainMenu('metaTags');
+        $this->configureCommonDocHeader('metaTags', $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title'));
+        $this->configureMetaTagsDocHeader();
+
+        return $this->moduleTemplate->renderResponse();
     }
 
+    protected function configureMetaTagsDocHeader(): void
+    {
+        $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
+        $addMetaTagsButton = $buttonBar->makeLinkButton()
+            ->setIcon($this->iconFactory->getIcon('actions-plus', Icon::SIZE_SMALL))
+            ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.meta.create'))
+            ->setShowLabelText(true)
+            ->setHref((string)$this->backendUriBuilder->buildUriFromRoute('record_edit', [
+                'edit' => ['tx_bulmapackage_meta_tags' => [0 => 'new']],
+                'returnUrl' => $this->request->getAttribute('normalizedParams')?->getRequestUri(),
+            ]));
+        $buttonBar->addButton($addMetaTagsButton);
+    }
 
     /**
      * Returns a list of tx_bulmapackage_settings entries
+     * @throws Exception
      */
     protected function getBulmaPackageSettings(array &$pages): void
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_settings');
-        $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(BackendWorkspaceRestriction::class, 0, false));
-        /** @var Result $result */
         $result = $queryBuilder
             ->select('uid', 'pid', 'sys_language_uid')
             ->from('tx_bulmapackage_settings')
-            ->execute();
+            ->executeQuery();
 
-        while($row = $result->fetchAssociative()){
+        while ($row = $result->fetchAssociative()) {
             $pages[$row['pid']]['bulmaSettings'][$row['sys_language_uid']] = $row;
         }
     }
@@ -129,28 +248,29 @@ class WebsiteModuleController extends ActionController
      *
      * @param array $languages
      * @return array
+     * @throws Exception
      */
     protected function getAllSitePages(array $languages): array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
-        $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(BackendWorkspaceRestriction::class, 0, false));
-        /** @var Result $result */
-        $result = $queryBuilder
+        $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(WorkspaceRestriction::class, 0));
+        $statement = $queryBuilder
             ->select('*')
             ->from('pages')
             ->where(
                 $queryBuilder->expr()->eq('is_siteroot', 1)
             )
             ->orWhere(
-                $queryBuilder->expr()->eq('module', $queryBuilder->createNamedParameter('tx_bulmapackage_settings', \PDO::PARAM_STR))
+                $queryBuilder->expr()->eq('module',
+                    $queryBuilder->createNamedParameter('tx_bulmapackage_settings'))
             )
             ->orderBy('pid')
             ->addOrderBy('sorting')
-            ->execute();
+            ->executeQuery();
 
         $pages = [];
-        while ($row = $result->fetchAssociative()) {
+        while ($row = $statement->fetchAssociative()) {
             $row['rootline'] = BackendUtility::BEgetRootLine((int)$row['uid']);
             array_pop($row['rootline']);
             $row['rootline'] = array_reverse($row['rootline']);
@@ -158,15 +278,20 @@ class WebsiteModuleController extends ActionController
             foreach ($row['rootline'] as &$record) {
                 $record['margin'] = $i++ * 20;
             }
-            if($row['sys_language_uid'] == 0){
+            if ($row['sys_language_uid'] == 0) {
                 $row['bulmaSettings'][0] = false;
                 $pages[(int)$row['uid']] = $row;
-            } elseif(isset($languages[$row['sys_language_uid']])){
+            } elseif (isset($languages[$row['sys_language_uid']])) {
                 $pages[(int)$row['l10n_parent']]['bulmaSettings'][$row['sys_language_uid']] = false;
             }
         }
 
         return $pages;
+    }
+
+    protected function getLanguageService(): LanguageService
+    {
+        return $GLOBALS['LANG'];
     }
 
 }

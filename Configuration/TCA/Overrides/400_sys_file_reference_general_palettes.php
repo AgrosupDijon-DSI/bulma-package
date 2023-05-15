@@ -9,6 +9,19 @@
 
 defined('TYPO3') or die();
 
+$GLOBALS['TCA']['sys_file_reference']['palettes']['basicImageoverlayPalette'] = [
+    'showitem' => '
+        title,alternative,--linebreak--,
+        crop
+    '
+];
+
+$GLOBALS['TCA']['sys_file_reference']['palettes']['basicImageoverlayPaletteWithoutCrop'] = [
+    'showitem' => '
+        title,alternative
+    '
+];
+
 $GLOBALS['TCA']['sys_file_reference']['palettes']['imageoverlayPaletteWithoutLink'] = [
     'showitem' => '
         title,alternative,--linebreak--,

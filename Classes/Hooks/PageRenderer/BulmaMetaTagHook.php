@@ -9,9 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
-use Doctrine\DBAL\DBALException;
-use Doctrine\DBAL\Driver\Exception;
-use Doctrine\DBAL\ForwardCompatibility\Result;
+use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
@@ -26,7 +24,6 @@ class BulmaMetaTagHook
     /**
      * @return void
      * @throws Exception
-     * @throws DBALException
      */
     public function execute(): void
     {
@@ -36,10 +33,9 @@ class BulmaMetaTagHook
 
         $metaTagManagerRegistry = GeneralUtility::makeInstance(MetaTagManagerRegistry::class);
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
-        /** @var Result $result */
         $result = $queryBuilder->select('*')
             ->from('tx_bulmapackage_meta_tags')
-            ->execute();
+            ->executeQuery();
 
         foreach ($result->fetchAllAssociative()  as $meta){
             $manager = $metaTagManagerRegistry->getManagerForProperty($meta['name']);

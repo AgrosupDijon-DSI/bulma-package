@@ -62,8 +62,7 @@ $additionalColumns = [
         'exclude' => true,
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.file_folder',
         'config' => [
-            'type' => 'group',
-            'internal_type' => 'folder',
+            'type' => 'folder',
         ]
     ],
     'readmore_label' => [

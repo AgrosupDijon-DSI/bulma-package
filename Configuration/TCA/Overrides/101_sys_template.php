@@ -20,16 +20,6 @@ ExtensionManagementUtility::addStaticFile(
     'Bulma Package: Full Package'
 );
 
-/***************
- * TypoScript: Website Module Override
- * This allow to override the Website Module View
- */
-ExtensionManagementUtility::addStaticFile(
-    'bulma_package',
-    'Configuration/TypoScript/WebsiteModule',
-    'Bulma Package: Override Website Module View'
-);
-
 ExtensionManagementUtility::addStaticFile(
     'bulma_package',
     'Configuration/TypoScript/Extension/News',

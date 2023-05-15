@@ -14,7 +14,6 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item',
         'delete' => 'deleted',
         'versioningWS' => true,
@@ -33,6 +32,9 @@ return [
         'typeicon_classes' => [
             'default' => 'content-bulmapackage-icon-group-item'
         ],
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ]
     ],
     'types' => [
         '1' => [
@@ -217,54 +219,50 @@ return [
         'icon_file' => [
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_file',
             'displayCond' => 'FIELD:icon_set:REQ:false',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'icon_file',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            File::FILETYPE_UNKNOWN => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_TEXT => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    title,
-                                    alternative,
-                                    crop,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_AUDIO => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_APPLICATION => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
+            'config' => [
+                'type' => 'file',
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                ],
+                'overrideChildTca' => [
+                    'types' => [
+                        File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;basicImageoverlayPalette,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
                         ],
                     ],
-                    'minitems' => 1,
-                    'maxitems' => 1,
                 ],
-                'gif,png,svg'
-            ),
+                'minitems' => 1,
+                'maxitems' => 1,
+                'allowed' => ['gif','png','svg'],
+            ],
             'l10n_mode' => 'exclude',
         ],
         'icon_size' => [

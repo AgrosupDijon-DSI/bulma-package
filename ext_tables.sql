@@ -176,7 +176,7 @@ CREATE TABLE tt_content
 (
     header_position                       varchar(10)      DEFAULT ''        NOT NULL,
     background_color_class                varchar(255)     DEFAULT ''        NOT NULL,
-    background_frame                      varchar(255)     DEFAULT ''        NOT NULL,
+    background_frame                      varchar(255)     DEFAULT 'limited' NOT NULL,
     file_folder                           text,
     readmore_label                        varchar(255)     DEFAULT ''        NOT NULL,
     message_class                         varchar(60)      DEFAULT 'default' NOT NULL,

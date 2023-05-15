@@ -15,7 +15,6 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item',
         'delete' => 'deleted',
         'versioningWS' => true,
@@ -34,6 +33,9 @@ return [
         'typeicon_classes' => [
             'default' => 'content-bulmapackage-card-group-item'
         ],
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ]
     ],
     'types' => [
         '1' => [
@@ -184,58 +186,55 @@ return [
         'media' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.media',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'media',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            File::FILETYPE_UNKNOWN => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPaletteWithoutLink,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_TEXT => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPaletteWithoutLink,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            // imageoverlayPalette without link
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPaletteWithoutLink,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_AUDIO => [
-                                'showitem' => '
-                                    --palette--;;audioOverlayPalette,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                    --palette--;;videoOverlayPaletteWithoutLink,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_APPLICATION => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPaletteWithoutLink,
-                                    --palette--;;filePalette
-                                '
-                            ],
+            'config' => [
+                'type' => 'file',
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
+                ],
+                'overrideChildTca' => [
+                    'types' => [
+                        File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPaletteWithoutLink,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPaletteWithoutLink,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        // imageoverlayPalette without link
+                        File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPaletteWithoutLink,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                --palette--;;audioOverlayPalette,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                --palette--;;videoOverlayPaletteWithoutLink,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPaletteWithoutLink,
+                                --palette--;;filePalette
+                            '
                         ],
                     ],
-                    'minitems' => 0,
-                    'maxitems' => 1,
                 ],
-                'gif,jpg,jpeg,bmp,png,pdf,svg,youtube,vimeo'
-            ),
+                'maxitems' => 1,
+                'allowed' => ['gif','jpg','jpeg','bmp','png','pdf','svg','youtube','vimeo']
+            ]
         ],
         'bodytext' => [
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.bodytext',

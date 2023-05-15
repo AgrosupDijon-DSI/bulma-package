@@ -9,9 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
-use Doctrine\DBAL\Driver\Exception;
-use Doctrine\DBAL\ForwardCompatibility\Result;
-use TYPO3\CMS\Core\Database\Connection;
+use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
@@ -70,7 +68,6 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
 
     /**
      * @return bool
-     * @throws Exception
      */
     public function executeUpdate(): bool
     {
@@ -79,49 +76,48 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
         $queryBuilder->update('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
+                    $queryBuilder->createNamedParameter(""))
             )
             ->andWhere(
                 $queryBuilder->expr()->neq('background_color_class',
-                    $queryBuilder->createNamedParameter("none", Connection::PARAM_STR))
+                    $queryBuilder->createNamedParameter("none"))
             )
             ->set('background_frame', 'expanded')
-            ->execute();
+            ->executeStatement();
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->update('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
+                    $queryBuilder->createNamedParameter(""))
             )
             ->andWhere(
                 $queryBuilder->expr()->eq('background_color_class',
-                    $queryBuilder->createNamedParameter("none", Connection::PARAM_STR))
+                    $queryBuilder->createNamedParameter("none"))
             )
             ->set('background_frame', 'limited')
-            ->execute();
+            ->executeStatement();
 
         return true;
     }
 
     /**
-     * @return array
+     * @return array[]
      * @throws Exception
      */
-    private function getContentsWithEmptyBackgroundFrame()
+    private function getContentsWithEmptyBackgroundFrame(): array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
-        
-        /** @var Result $result */
+
         $result = $queryBuilder->select('uid')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter("", Connection::PARAM_STR))
+                    $queryBuilder->createNamedParameter(""))
             )
-            ->execute();
+            ->executeQuery();
 
         return $result->fetchAllAssociative();
     }

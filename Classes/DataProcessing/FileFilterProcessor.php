@@ -72,9 +72,9 @@ class FileFilterProcessor implements DataProcessorInterface
     {
         $confVars = $GLOBALS['TYPO3_CONF_VARS'];
         $predefinedLists = [
-            'image' => isset($confVars['GFX']['imagefile_ext']) ? $confVars['GFX']['imagefile_ext'] : 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
-            'media' => isset($confVars['SYS']['mediafile_ext']) ? $confVars['SYS']['mediafile_ext'] : 'gif,jpg,jpeg,bmp,png,pdf,svg,ai,mp3,wav,mp4,ogg,flac,opus,webm,youtube,vimeo',
-            'text' => isset($confVars['SYS']['textfile_ext']) ? $confVars['SYS']['textfile_ext'] : 'txt,ts,typoscript,html,htm,css,tmpl,js,sql,xml,csv,xlf,yaml,yml',
+            'image' => $confVars['GFX']['imagefile_ext'] ?? 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+            'media' => $confVars['SYS']['mediafile_ext'] ?? 'gif,jpg,jpeg,bmp,png,pdf,svg,ai,mp3,wav,mp4,ogg,flac,opus,webm,youtube,vimeo',
+            'text' => $confVars['SYS']['textfile_ext'] ?? 'txt,ts,typoscript,html,htm,css,tmpl,js,sql,xml,csv,xlf,yaml,yml',
         ];
         $predefinedList = (string) $cObj->stdWrapValue('predefinedList', $processorConfiguration, 'image');
         $allowedFileExtensions = array_key_exists($predefinedList, $predefinedLists) ? $predefinedLists[$predefinedList] : '';

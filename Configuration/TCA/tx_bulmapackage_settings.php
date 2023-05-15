@@ -14,7 +14,6 @@ return [
         'label' => 'title_seo',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -26,6 +25,9 @@ return [
         'searchFields' => 'title_seo,logo_main,logos_partners,code_analytics,address_title,address,zip,city,country,phone,fax,email',
         'typeicon_classes' => [
             'default' => 'actions-system-extension-configure',
+        ],
+        'security' => [
+            'ignorePageTypeRestriction' => true,
         ]
     ],
     'types' => [
@@ -123,92 +125,86 @@ return [
         'logo_main' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.logo_main',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'logo_main',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    crop,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    crop,
-                                    --palette--;;filePalette
-                                '
-                            ]
-                        ]
-                    ],
-                    'maxitems' => 1
+            'config' => [
+                'type' => 'file',
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                 ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+                'overrideChildTca' => [
+                    'types' => [
+                        File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
+                                crop,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                crop,
+                                --palette--;;filePalette
+                            '
+                        ]
+                    ]
+                ],
+                'maxitems' => 1,
+                'allowed' => 'common-image-types',
+            ],
         ],
         'logos_partners' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.logos_partners',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'logos_partners',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPalette,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPalette,
-                                    --palette--;;filePalette
-                                '
-                            ]
-                        ]
-                    ],
-                    'maxitems' => 12
+            'config' => [
+                'type' => 'file',
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                 ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+                'overrideChildTca' => [
+                    'types' => [
+                        File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette
+                            '
+                        ]
+                    ]
+                ],
+                'maxitems' => 12,
+                'allowed' => 'common-image-types',
+            ]
         ],
         'favicon' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.favicon',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'favicon',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    crop,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    crop,
-                                    --palette--;;filePalette
-                                '
-                            ]
-                        ]
-                    ],
-                    'maxitems' => 1
+            'config' => [
+                'type' => 'file',
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
                 ],
-            "gif,jpg,jpeg,png,ico"
-            ),
+                'overrideChildTca' => [
+                    'types' => [
+                        File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
+                                crop,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                crop,
+                                --palette--;;filePalette
+                            '
+                        ]
+                    ]
+                ],
+                'maxitems' => 1,
+                'allowed' => ['gif','jpg','jpeg','png','ico'],
+            ]
         ],
         'code_analytics' => [
             'exclude' => true,

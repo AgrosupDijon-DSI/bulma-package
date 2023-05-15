@@ -9,12 +9,12 @@
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
+use TYPO3\CMS\Core\LinkHandling\TypoLinkCodecService;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\Service\TypoLinkCodecService;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 

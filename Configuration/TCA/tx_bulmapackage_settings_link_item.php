@@ -14,7 +14,6 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item',
         'delete' => 'deleted',
         'versioningWS' => true,
@@ -48,6 +47,9 @@ return [
             'fab fa-discord' => 'settings-bulmapackage-discord',
             'fab fa-snapchat-ghost' => 'settings-bulmapackage-snapchat-ghost',
         ],
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ]
     ],
     'types' => [
         '1' => [
@@ -127,7 +129,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim,required'
+                'eval' => 'trim',
+                'required' => true
             ],
         ],
         'link' => [
@@ -198,54 +201,50 @@ return [
         'icon_file' => [
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_file',
             'displayCond' => 'FIELD:icon_custom:REQ:true',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'icon_file',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            File::FILETYPE_UNKNOWN => [
-                                'showitem' => '
+            'config' => [
+                'type' => 'file',
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                ],
+                'overrideChildTca' => [
+                    'types' => [
+                        File::FILETYPE_UNKNOWN => [
+                            'showitem' => '
                                     --palette--;;filePalette
                                 '
-                            ],
-                            File::FILETYPE_TEXT => [
-                                'showitem' => '
+                        ],
+                        File::FILETYPE_TEXT => [
+                            'showitem' => '
                                     --palette--;;filePalette
                                 '
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    title,
-                                    alternative,
-                                    crop,
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_AUDIO => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
-                            File::FILETYPE_APPLICATION => [
-                                'showitem' => '
-                                    --palette--;;filePalette
-                                '
-                            ],
+                        ],
+                        File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;basicImageoverlayPaletteWithoutCrop,
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
+                        ],
+                        File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                --palette--;;filePalette
+                            '
                         ],
                     ],
-                    'minitems' => 1,
-                    'maxitems' => 1,
                 ],
-                'svg'
-            ),
+                'minitems' => 1,
+                'maxitems' => 1,
+                'allowed' => ['svg'],
+            ],
             'l10n_mode' => 'exclude',
         ],
         'icon_custom' => [

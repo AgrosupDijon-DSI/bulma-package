@@ -20,31 +20,4 @@ defined('TYPO3') or die();
             'css' => 'EXT:bulma_package/Resources/Public/Css/Skin/'
         ]
     ];
-
-    ExtensionUtility::registerModule(
-        'BulmaPackage',
-        'system',
-        'WebsiteSettings',
-        'top',
-        [
-            WebsiteModuleController::class => 'overview, customColors, metaTags'
-        ],
-        [
-            'access' => 'user,group',
-            'icon' => 'EXT:bulma_package/Resources/Public/Icons/module-dashboard.svg',
-            'labels' => 'LLL:EXT:bulma_package/Resources/Private/Language/locallang_mod.xlf',
-            'navigationComponentId' => '',
-            'inheritNavigationComponentFromMainModule' => false
-        ]
-    );
-
-    ExtensionManagementUtility::addLLrefForTCAdescr('tx_bulmapackage_settings', 'EXT:bulma_package/Resources/Private/Language/locallang_csh_tx_bulmapackage_settings.xlf');
-    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_settings');
-    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_tab_item');
-    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_accordion_item');
-    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_card_group_item');
-    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_carousel_item');
-    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_icon_group_item');
-    ExtensionManagementUtility::allowTableOnStandardPages('tx_bulmapackage_settings_link_item');
-
 })();
