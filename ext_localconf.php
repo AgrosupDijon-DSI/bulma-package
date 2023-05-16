@@ -7,11 +7,8 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
-use AgrosupDijon\BulmaPackage\Form\FormDataProvider\TcaColPosItem;
-use TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseRowDefaultValues;
 use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
 use AgrosupDijon\BulmaPackage\Form\FormDataProvider\TcaCTypeItem;
-use AgrosupDijon\BulmaPackage\Hooks\Backend\PageLayoutViewHook;
 use AgrosupDijon\BulmaPackage\Parser\ScssParser;
 use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook;
 use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook;
@@ -34,12 +31,12 @@ defined('TYPO3') or die();
 
 (function () {
     // https://usetypo3.com/application-context.html)
-    if (Environment::getContext()->isDevelopment()) {
-        // No cache in development
-        foreach ($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'] as $cacheName => $cacheConfiguration) {
-            $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = NullBackend::class;
-        }
-    }
+//    if (Environment::getContext()->isDevelopment()) {
+//        // No cache in development
+//        foreach ($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'] as $cacheName => $cacheConfiguration) {
+//            $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = NullBackend::class;
+//        }
+//    }
 
     /***************
      * Define TypoScript as content rendering template
@@ -133,14 +130,7 @@ defined('TYPO3') or die();
         );
     }
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaColPosItem::class] = [
-        'depends' => [
-            DatabaseRowDefaultValues::class,
-        ],
-        'before' => [
-            TcaSelectItems::class,
-        ],
-    ];
+    // CType filter for content in accordions/tabs
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaCTypeItem::class] = [
         'depends' => [
             TcaSelectItems::class,

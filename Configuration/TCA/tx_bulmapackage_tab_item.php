@@ -210,6 +210,9 @@ return [
                 ],
                 'type' => 'inline',
                 'foreign_field' => 'tx_bulmapackage_tab_item_parent',
+                'foreign_match_fields' => [
+                    'tx_mask_content_role' => 'record'
+                ]
             ],
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tab_item.record',

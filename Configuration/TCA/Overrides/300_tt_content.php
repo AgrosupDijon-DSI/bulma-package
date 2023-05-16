@@ -1,6 +1,8 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use AgrosupDijon\BulmaPackage\ItemsProcFuncs\ColPosList;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -176,3 +178,10 @@ $GLOBALS['TCA']['tt_content']['columns']['table_class']['config']['items'][0] = 
     'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablelayout.fullwidth',
     'fullwidth'
 ];
+
+// if there is already a itemsProcFunc in the tt_content colPos tca, save it to another key for later usage
+if (!empty($GLOBALS['TCA']['tt_content']['columns']['colPos']['config']['itemsProcFunc'])) {
+    $GLOBALS['TCA']['tt_content']['columns']['colPos']['config']['bulma_package_itemsProcFunc'] = $GLOBALS['TCA']['tt_content']['columns']['colPos']['config']['itemsProcFunc'];
+}
+// and set bulma_package itemsProcFuncs
+$GLOBALS['TCA']['tt_content']['columns']['colPos']['config']['itemsProcFunc'] = ColPosList::class . '->itemsProcFunc';

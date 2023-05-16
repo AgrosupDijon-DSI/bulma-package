@@ -197,7 +197,7 @@ return [
                     'columns' => [
                         'colPos' => [
                             'config' => [
-                                'default' => '999',
+                                'default' => 999,
                             ],
                         ],
                         'CType' => [
@@ -209,6 +209,9 @@ return [
                 ],
                 'type' => 'inline',
                 'foreign_field' => 'tx_bulmapackage_accordion_item_parent',
+                'foreign_match_fields' => [
+                    'tx_mask_content_role' => 'record'
+                ]
             ],
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:accordion_item.record',
