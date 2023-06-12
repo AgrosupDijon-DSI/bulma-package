@@ -79,6 +79,9 @@
             <trans-unit id="style.button.dark">
                 <source>Button Dark</source>
             </trans-unit>
+            <trans-unit id="style.link.mail">
+                <source>Icon Mail</source>
+            </trans-unit>
             <trans-unit id="style.primary">
                 <source>Primary</source>
             </trans-unit>

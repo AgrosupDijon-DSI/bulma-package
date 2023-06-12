@@ -1,5 +1,6 @@
-.cke_combopanel__styles {
-    width: 312px !important;
+.ck-dropdown{
+    --ck-style-panel-button-width:302px;
+    --ck-style-panel-button-height:auto;
 }
 
 div[id$=tx_bulmapackage_icon_group_item] .icon-list .item img{

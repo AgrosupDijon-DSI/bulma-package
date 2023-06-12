@@ -11,6 +11,13 @@
 }
 
 .content{
+
+  figure.table{
+    text-align: inherit;
+    margin: 0;
+    @extend .table-container;
+  }
+
   dl{
     dt{
       font-weight: $weight-bold;

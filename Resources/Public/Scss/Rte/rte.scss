@@ -1,4 +1,5 @@
 // Use to generate rte.css
+@import "../Theme/variables";
 @import "../../Contrib/bulma-scss/utilities/all";
 @import "../../Contrib/bulma-scss/base/all";
 @import "../../Contrib/bulma-scss/elements/content";
@@ -6,37 +7,20 @@
 @import "../../Contrib/bulma-scss/elements/box";
 @import "../../Contrib/bulma-scss/elements/notification";
 @import "../../Contrib/bulma-scss/elements/table";
+@import "../../Contrib/bulma-scss/elements/title";
 @import "../../Contrib/bulma-scss/helpers/color";
 @import "../../Contrib/bulma-scss/helpers/typography";
+@import "../Theme/content";
+
+body{
+  padding: 1rem;
+  font-size: 16px;
+  @extend .content;
+}
 
 // Make button selectable again
 .button{
-  -webkit-touch-callout: auto;
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
   user-select: auto;
-}
-
-.section {
-  padding: 1rem;
-}
-
-.text-underline {
-  text-decoration: underline;
-}
-
-.text-striked {
-  text-decoration: line-through;
-}
-
-.buttons{
-  &.has-text-centered{
-    @extend .is-centered;
-  }
-  &.has-text-right{
-    @extend .is-right;
-  }
 }
 
 a.icon-mail{
@@ -48,4 +32,16 @@ a.icon-mail{
     left: 0;
     top: 0;
   }
+}
+
+// Remove overflow to keep controls on table
+.content{
+  figure.table{
+    overflow: initial;
+    overflow-y: initial;
+  }
+}
+
+blockquote{
+  font-style: inherit;
 }
