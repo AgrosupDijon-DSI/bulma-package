@@ -86,50 +86,6 @@ defined('TYPO3') or die();
     // MOD
     ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/Mod.tsconfig"');
 
-
-    // Register icons for usage in backend
-    $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
-    $icons = [
-        'content-bulmapackage-beside-text-img-centered-left' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/beside-text-img-centered-left.svg',
-        'content-bulmapackage-beside-text-img-centered-right' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/beside-text-img-centered-right.svg',
-        'content-bulmapackage-menu-card' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/menu-card.svg',
-        'content-bulmapackage-tab' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/tab.svg',
-        'content-bulmapackage-tab-item' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/tab-item.svg',
-        'content-bulmapackage-accordion' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/accordion.svg',
-        'content-bulmapackage-accordion-item' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/accordion-item.svg',
-        'content-bulmapackage-card-group' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/card-group.svg',
-        'content-bulmapackage-card-group-item' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/card-group-item.svg',
-        'content-bulmapackage-carousel' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/carousel-item.svg',
-        'content-bulmapackage-carousel-item' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/carousel-item.svg',
-        'content-bulmapackage-icon-group' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/icon-group.svg',
-        'content-bulmapackage-icon-group-item' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/icon-group-item.svg',
-        'content-bulmapackage-iframe' => 'EXT:bulma_package/Resources/Public/Icons/ContentElements/iframe.svg',
-        'settings-bulmapackage-link' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/link.svg',
-        'settings-bulmapackage-facebook' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/facebook-f.svg',
-        'settings-bulmapackage-twitter' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/twitter.svg',
-        'settings-bulmapackage-youtube' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/youtube.svg',
-        'settings-bulmapackage-instagram' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/instagram.svg',
-        'settings-bulmapackage-vimeo' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/vimeo-v.svg',
-        'settings-bulmapackage-viadeo' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/viadeo.svg',
-        'settings-bulmapackage-linkedin' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/linkedin-in.svg',
-        'settings-bulmapackage-tumblr' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/tumblr.svg',
-        'settings-bulmapackage-discord' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/discord.svg',
-        'settings-bulmapackage-snapchat-ghost' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/snapchat-ghost.svg',
-        'settings-bulmapackage-book-open' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/book-open.svg',
-        'settings-bulmapackage-user-graduate' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user-graduate.svg',
-        'settings-bulmapackage-user' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user.svg',
-        'settings-bulmapackage-lock' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/lock.svg',
-        'settings-bulmapackage-user-lock' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/user-lock.svg',
-        'content-bulmapackage-color' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/palette.svg'
-    ];
-    foreach ($icons as $identifier => $source) {
-        $iconRegistry->registerIcon(
-            $identifier,
-            SvgIconProvider::class,
-            ['source' => $source]
-        );
-    }
-
     // CType filter for content in accordions/tabs
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaCTypeItem::class] = [
         'depends' => [
