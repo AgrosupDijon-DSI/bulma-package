@@ -1,19 +1,19 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <div class="news-additional-informations">
     <f:if condition="{newsItem.author}">
-        <div>
+        <div class="icon-text">
             <f:render section="icon" arguments="{icon: 'fas fa-pen', showIcon:showIcons}"/>
             <span itemprop="author"><f:translate key="author" arguments="{0:newsItem.author}"/></span>
         </div>
     </f:if>
 
-    <div>
+    <div class="icon-text">
         <f:render section="icon" arguments="{icon: 'fas fa-calendar-alt', showIcon:showIcons}"/>
         <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"><f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date></time>
     </div>
 
     <f:if condition="{newsItem.categories}">
-        <div>
+        <div class="icon-text">
             <f:render section="icon" arguments="{icon: 'fas fa-tag', showIcon:showIcons}"/>
             <span class="news-list-category"><f:spaceless>
 				<f:for each="{newsItem.categories}" as="category" iteration="i">
@@ -29,7 +29,7 @@
     </f:if>
 
     <f:if condition="{newsItem.tags}">
-        <div>
+        <div class="icon-text">
             <f:render section="icon" arguments="{icon: 'fas fa-hashtag', showIcon:showIcons}"/>
             <span itemprop="keywords"><f:spaceless>
 				<f:for each="{newsItem.tags}" as="tag" iteration="i">
@@ -47,7 +47,7 @@
 
 <f:section name="icon">
     <f:if condition="{showIcon}">
-		<span class="icon">
+		<span class="icon is-small">
 			<i class="{icon}"></i>
 		</span>
     </f:if>

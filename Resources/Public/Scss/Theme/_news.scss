@@ -1,6 +1,9 @@
 .news{
   .news-additional-informations{
     font-size: $small-font-size;
+    .icon-text{
+      align-items: center;
+    }
   }
 
   .news-gallery, .news-related{
