@@ -136,11 +136,7 @@ defined('TYPO3') or die();
      * Register Upgrade Wizards
      */
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['cardImageToMediaUpdate'] = CardImageToMediaUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['backgroundFrameUpdate'] = BackgroundFrameUpdate::class;
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['mediaToVideoContentElementUpdate'] = MediaToVideoContentElementUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['bootstrapToBulmaRteUpdate'] = BootstrapToBulmaRteUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaAccordionUpdate'] = BootstrapToBulmaAccordionUpdate::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['BootstrapToBulmaTabUpdate'] = BootstrapToBulmaTabUpdate::class;
 
     /***************
      * Require autoload for dependencies when not using composer

@@ -13,22 +13,16 @@ use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Migrate the field 'image' for all cards elements to 'media'
  */
+#[UpgradeWizard('cardImageToMediaUpdate')]
 class CardImageToMediaUpdate implements UpgradeWizardInterface
 {
-    /**
-     * @return string Unique identifier of this updater
-     */
-    public function getIdentifier(): string
-    {
-        return 'cardImageToMediaUpdate';
-    }
-
     /**
      * @return string Title of this updater
      */

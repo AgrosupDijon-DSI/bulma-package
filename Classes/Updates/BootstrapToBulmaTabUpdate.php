@@ -13,6 +13,7 @@ use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\RepeatableInterface;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
@@ -20,6 +21,7 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 /**
  * Migrate Accordions Content Element from Bootstrap to Bulma
  */
+#[UpgradeWizard('BootstrapToBulmaTabUpdate')]
 class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInterface
 {
     /**
@@ -31,14 +33,6 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
         'right' => 25,
         'bottom' => 8,
     ];
-
-    /**
-     * @return string Unique identifier of this updater
-     */
-    public function getIdentifier(): string
-    {
-        return 'BootstrapToBulmaTabUpdate';
-    }
 
     /**
      * @return string Title of this updater

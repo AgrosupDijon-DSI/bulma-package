@@ -13,6 +13,7 @@ use Doctrine\DBAL\Exception;
 use Symfony\Component\DomCrawler\Crawler;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\RepeatableInterface;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
@@ -20,6 +21,7 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 /**
  * Migrate the RTE classes from Bootstrap to Bulma
  */
+#[UpgradeWizard('bootstrapToBulmaRteUpdate')]
 class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInterface
 {
     /**
@@ -56,14 +58,6 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
             'text-right' => 'has-text-right',
         ]
     ];
-
-    /**
-     * @return string Unique identifier of this updater
-     */
-    public function getIdentifier(): string
-    {
-        return 'bootstrapToBulmaRteUpdate';
-    }
 
     /**
      * @return string Title of this updater

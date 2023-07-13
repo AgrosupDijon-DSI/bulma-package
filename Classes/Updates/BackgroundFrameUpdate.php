@@ -14,21 +14,14 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 
 /**
  * Create search page and indexed_search plugin
  */
+#[UpgradeWizard('backgroundFrameUpdate')]
 class BackgroundFrameUpdate implements UpgradeWizardInterface
 {
-
-    /**
-     * @return string Unique identifier of this updater
-     */
-    public function getIdentifier(): string
-    {
-        return 'backgroundFrameUpdate';
-    }
-
     /**
      * @return string Title of this updater
      */

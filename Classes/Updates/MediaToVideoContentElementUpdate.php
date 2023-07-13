@@ -12,22 +12,16 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Migrate the list_type 'media' to 'video'
  */
+#[UpgradeWizard('mediaToVideoContentElementUpdate')]
 class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
 {
-    /**
-     * @return string Unique identifier of this updater
-     */
-    public function getIdentifier(): string
-    {
-        return 'mediaToVideoContentElementUpdate';
-    }
-
     /**
      * @return string Title of this updater
      */
