@@ -19,9 +19,9 @@
                     <div class="frame-inner {backgroundClassLimited}">
                         <f:render section="Header" optional="true">
                             <f:comment>
-                                Do not render header section for EXT:news plugin, so we can manage it properly if in list or detail
+                                Do not render header section for specific list_type, so it can be managed directly by the plugin
                             </f:comment>
-                            <f:if condition="{data.list_type} != 'news_pi1'">
+                            <f:if condition="!{settings.skip_header_rendering.{data.list_type}}">
                                 <f:render partial="Header/All" arguments="{_all}"/>
                             </f:if>
                         </f:render>

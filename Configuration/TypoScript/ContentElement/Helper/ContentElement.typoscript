@@ -260,5 +260,8 @@ lib.contentElement {
                 classes = {$plugin.bulma_package_contentelements.uploads.subtitle.classes}
             }
         }
+        skip_header_rendering{
+            news_pi1 = 1
+        }
     }
 }
