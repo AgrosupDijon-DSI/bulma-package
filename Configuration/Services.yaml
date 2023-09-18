@@ -11,4 +11,8 @@ services:
     tags:
       - name: event.listener
         identifier: 'bulma-package-nested-content-used'
-        event: TYPO3\CMS\Backend\View\Event\IsContentUsedOnPageLayoutEvent
+
+  AgrosupDijon\BulmaPackage\EventListeners\ImageAutoResizeProcessDefaultConfigurationEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'bulma-package-imageAutoResize-processDefaultConfiguration'

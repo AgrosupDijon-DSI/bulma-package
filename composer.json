@@ -37,7 +37,8 @@
     "symfony/css-selector": "^6.3"
   },
   "suggest": {
-    "georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS"
+    "georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS",
+    "image_autoresize": "Let TYPO3 automatically resize down huge images/pictures on-the-fly during upload (or using a scheduler task for batch processing)"
   },
   "autoload": {
     "psr-4": {
