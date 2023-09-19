@@ -3,23 +3,23 @@
 #
 CREATE TABLE tx_bulmapackage_settings
 (
-    title_seo                          varchar(255)        DEFAULT ''  NOT NULL,
-    logo_main                          int(11) unsigned    DEFAULT '0' NOT NULL,
-    logos_partners                     int(11) unsigned    DEFAULT '0' NOT NULL,
-    favicon                            int(11) unsigned    DEFAULT '0' NOT NULL,
-    code_analytics                     varchar(30)         DEFAULT ''  NOT NULL,
-    address_title                      varchar(255)        DEFAULT ''  NOT NULL,
+    title_seo                          varchar(255)     DEFAULT ''  NOT NULL,
+    logo_main                          int(11) unsigned DEFAULT '0' NOT NULL,
+    logos_partners                     int(11) unsigned DEFAULT '0' NOT NULL,
+    favicon                            int(11) unsigned DEFAULT '0' NOT NULL,
+    code_analytics                     varchar(30)      DEFAULT ''  NOT NULL,
+    address_title                      varchar(255)     DEFAULT ''  NOT NULL,
     address                            tinytext,
-    zip                                varchar(20)         DEFAULT ''  NOT NULL,
-    city                               varchar(255)        DEFAULT ''  NOT NULL,
-    country                            varchar(128)        DEFAULT ''  NOT NULL,
-    phone                              varchar(30)         DEFAULT ''  NOT NULL,
-    fax                                varchar(30)         DEFAULT ''  NOT NULL,
-    email                              varchar(255)        DEFAULT ''  NOT NULL,
-    latitude                           varchar(255)        DEFAULT ''  NOT NULL,
-    longitude                          varchar(255)        DEFAULT ''  NOT NULL,
-    tx_bulmapackage_settings_link_item int(11) unsigned    DEFAULT '0',
-    menu_layout                        varchar(30)         DEFAULT ''  NOT NULL
+    zip                                varchar(20)      DEFAULT ''  NOT NULL,
+    city                               varchar(255)     DEFAULT ''  NOT NULL,
+    country                            varchar(128)     DEFAULT ''  NOT NULL,
+    phone                              varchar(30)      DEFAULT ''  NOT NULL,
+    fax                                varchar(30)      DEFAULT ''  NOT NULL,
+    email                              varchar(255)     DEFAULT ''  NOT NULL,
+    latitude                           varchar(255)     DEFAULT ''  NOT NULL,
+    longitude                          varchar(255)     DEFAULT ''  NOT NULL,
+    tx_bulmapackage_settings_link_item int(11) unsigned DEFAULT '0',
+    menu_layout                        varchar(30)      DEFAULT ''  NOT NULL
 );
 
 #
@@ -42,8 +42,8 @@ CREATE TABLE tx_bulmapackage_custom_color
 #
 CREATE TABLE tx_bulmapackage_meta_tags
 (
-    name          varchar(255)      DEFAULT ''  NOT NULL,
-    content       varchar(255)      DEFAULT ''  NOT NULL
+    name    varchar(255) DEFAULT '' NOT NULL,
+    content varchar(255) DEFAULT '' NOT NULL
 );
 
 #
@@ -87,7 +87,9 @@ CREATE TABLE tt_content
     tx_bulmapackage_accordion_item        int(11) unsigned DEFAULT '0'       NOT NULL,
     tx_bulmapackage_accordion_item_active int(11) unsigned DEFAULT '0'       NOT NULL,
 
-    tx_bulmapackage_carousel_item         int(11) unsigned DEFAULT '0'
+    tx_bulmapackage_carousel_item         int(11) unsigned DEFAULT '0',
+
+    tx_mask_content_role                  varchar(255)     DEFAULT ''        NOT NULL
 );
 
 #
@@ -104,9 +106,9 @@ CREATE TABLE pages
 #
 CREATE TABLE tx_bulmapackage_accordion_item
 (
-    tt_content       int(11)             DEFAULT '0' NOT NULL,
-    record           int(11) unsigned    DEFAULT '0' NOT NULL,
-    title            tinytext
+    tt_content int(11)          DEFAULT '0' NOT NULL,
+    record     int(11) unsigned DEFAULT '0' NOT NULL,
+    title      tinytext
 );
 
 #
@@ -114,9 +116,9 @@ CREATE TABLE tx_bulmapackage_accordion_item
 #
 CREATE TABLE tx_bulmapackage_tab_item
 (
-    tt_content       int(11)             DEFAULT '0' NOT NULL,
-    record           int(11) unsigned    DEFAULT '0' NOT NULL,
-    title            varchar(255)        DEFAULT ''  NOT NULL
+    tt_content int(11)          DEFAULT '0' NOT NULL,
+    record     int(11) unsigned DEFAULT '0' NOT NULL,
+    title      varchar(255)     DEFAULT ''  NOT NULL
 );
 
 
@@ -125,13 +127,13 @@ CREATE TABLE tx_bulmapackage_tab_item
 #
 CREATE TABLE tx_bulmapackage_card_group_item
 (
-    tt_content       int(11) unsigned  DEFAULT '0',
-    header           varchar(255)      DEFAULT ''  NOT NULL,
-    subheader        varchar(255)      DEFAULT ''  NOT NULL,
-    media            int(11)           DEFAULT '0' NOT NULL,
-    bodytext         text,
-    link             varchar(1024)     DEFAULT ''  NOT NULL,
-    link_title       varchar(255)      DEFAULT ''  NOT NULL
+    tt_content int(11) unsigned DEFAULT '0',
+    header     varchar(255)     DEFAULT ''  NOT NULL,
+    subheader  varchar(255)     DEFAULT ''  NOT NULL,
+    media      int(11)          DEFAULT '0' NOT NULL,
+    bodytext   text,
+    link       varchar(1024)    DEFAULT ''  NOT NULL,
+    link_title varchar(255)     DEFAULT ''  NOT NULL
 );
 
 #
@@ -139,16 +141,16 @@ CREATE TABLE tx_bulmapackage_card_group_item
 #
 CREATE TABLE tx_bulmapackage_carousel_item
 (
-    tt_content       int(11) unsigned  DEFAULT '0',
-    item_type        varchar(255)      DEFAULT ''  NOT NULL,
-    header           varchar(255)      DEFAULT ''  NOT NULL,
-    text_color       varchar(255)      DEFAULT ''  NOT NULL,
-    subheader        varchar(255)      DEFAULT ''  NOT NULL,
-    button_text      varchar(255)      DEFAULT ''  NOT NULL,
-    button_class     varchar(255)      DEFAULT ''  NOT NULL,
-    link             varchar(1024)     DEFAULT ''  NOT NULL,
-    background_color varchar(255)      DEFAULT ''  NOT NULL,
-    image            int(11) unsigned  DEFAULT '0'
+    tt_content       int(11) unsigned DEFAULT '0',
+    item_type        varchar(255)     DEFAULT '' NOT NULL,
+    header           varchar(255)     DEFAULT '' NOT NULL,
+    text_color       varchar(255)     DEFAULT '' NOT NULL,
+    subheader        varchar(255)     DEFAULT '' NOT NULL,
+    button_text      varchar(255)     DEFAULT '' NOT NULL,
+    button_class     varchar(255)     DEFAULT '' NOT NULL,
+    link             varchar(1024)    DEFAULT '' NOT NULL,
+    background_color varchar(255)     DEFAULT '' NOT NULL,
+    image            int(11) unsigned DEFAULT '0'
 );
 
 #
@@ -156,12 +158,12 @@ CREATE TABLE tx_bulmapackage_carousel_item
 #
 CREATE TABLE tx_bulmapackage_icon_group_item
 (
-    tt_content       int(11) unsigned  DEFAULT '0',
-    bodytext         mediumtext,
-    link             varchar(1024)     DEFAULT ''  NOT NULL,
-    icon             varchar(255)      DEFAULT ''  NOT NULL,
-    icon_set         varchar(255)      DEFAULT ''  NOT NULL,
-    icon_file        int(11) unsigned  DEFAULT '0',
-    icon_size        varchar(255)      DEFAULT ''  NOT NULL,
-    icon_color       varchar(255)      DEFAULT ''  NOT NULL
+    tt_content int(11) unsigned DEFAULT '0',
+    bodytext   mediumtext,
+    link       varchar(1024)    DEFAULT '' NOT NULL,
+    icon       varchar(255)     DEFAULT '' NOT NULL,
+    icon_set   varchar(255)     DEFAULT '' NOT NULL,
+    icon_file  int(11) unsigned DEFAULT '0',
+    icon_size  varchar(255)     DEFAULT '' NOT NULL,
+    icon_color varchar(255)     DEFAULT '' NOT NULL
 );
