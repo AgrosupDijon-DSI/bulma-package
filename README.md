@@ -47,6 +47,7 @@ https://bulma-package.cnerta-web.fr/
 
 ## Development
 
-* ddev yarn --cwd \<path_bulma> \<command>
-* ddev -d \<path_bulma> composer archive --format=zip --file=bulma_package_x.y.z
-* ddev composer update --dry-run -d <path_bulma>/Resources/Private/Contrib/Php
+* Yarn usage: ddev yarn --cwd \<path_bulma> \<command>
+* Archive for TER: ddev -d \<path_bulma> composer archive --format=zip --file=bulma_package_x.y.z
+* Update dependencies for non composer project: ddev composer update --dry-run -d <path_bulma>/Resources/Private/Contrib/Php
+* Update js dependencies: npm install -g npm-check-updates / ncu / ncu -u
