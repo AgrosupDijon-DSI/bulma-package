@@ -6,7 +6,7 @@ return [
     'system_WebsiteSettings' => [
         'parent' => 'system',
         'position' => ['before' => '*'],
-        'access' => 'user,group',
+        'access' => 'user',
         'path' => '/module/system/WebsiteSettings',
         'labels' => 'LLL:EXT:bulma_package/Resources/Private/Language/locallang_mod.xlf',
         'iconIdentifier' => 'module-dashboard',
