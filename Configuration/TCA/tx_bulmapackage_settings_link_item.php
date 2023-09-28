@@ -89,11 +89,7 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0'
-                    ]
-                ]
+                'default' => 0,
             ]
         ],
         'sys_language_uid' => [
@@ -108,9 +104,9 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    0 => [
-                        0 => '',
-                        1 => 0,
+                    [
+                        'label' => '',
+                        'value' => 0,
                     ],
                 ],
                 'foreign_table' => 'tx_bulmapackage_settings_link_item',
@@ -136,20 +132,12 @@ return [
         'link' => [
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.link',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
+                'type' => 'link',
                 'size' => 50,
-                'max' => 1024,
-                'eval' => 'trim',
-                'fieldControl' => [
-                    'linkPopup' => [
-                        'options' => [
-                            'blindLinkOptions' => 'folder',
-                            'blindLinkFields' => 'class, params, title'
-                        ],
-                    ],
+                'allowedTypes' => ['page', 'file', 'email', 'url', 'telephone'],
+                'appearance' => [
+                    'allowedOptions' => ['target', 'body', 'cc', 'bcc', 'subject'],
                 ],
-                'softref' => 'typolink'
             ],
             'l10n_mode' => 'exclude',
         ],
@@ -159,12 +147,6 @@ return [
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ]
-                ],
             ],
         ],
         'icon' => [
@@ -174,22 +156,22 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'fas fa-link', 'settings-bulmapackage-link'],
-                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.book','fas fa-book-open', 'settings-bulmapackage-book-open'],
-                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.student','fas fa-user-graduate', 'settings-bulmapackage-user-graduate'],
-                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user','fas fa-user', 'settings-bulmapackage-user'],
-                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user-lock','fas fa-user-lock', 'settings-bulmapackage-user-lock'],
-                    ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.lock','fas fa-lock', 'settings-bulmapackage-lock'],
-                    ['Facebook', 'fab fa-facebook-f', 'settings-bulmapackage-facebook'],
-                    ['Twitter', 'fab fa-twitter', 'settings-bulmapackage-twitter'],
-                    ['Youtube', 'fab fa-youtube', 'settings-bulmapackage-youtube'],
-                    ['Instagram', 'fab fa-instagram', 'settings-bulmapackage-instagram'],
-                    ['Vimeo', 'fab fa-vimeo-v', 'settings-bulmapackage-vimeo'],
-                    ['Viadeo', 'fab fa-viadeo', 'settings-bulmapackage-viadeo'],
-                    ['LinkedIn', 'fab fa-linkedin-in', 'settings-bulmapackage-linkedin'],
-                    ['Tumblr','fab fa-tumblr', 'settings-bulmapackage-tumblr'],
-                    ['Discord','fab fa-discord', 'settings-bulmapackage-discord'],
-                    ['Snapchat','fab fa-snapchat-ghost', 'settings-bulmapackage-snapchat-ghost'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'value' => 'fas fa-link', 'icon' => 'settings-bulmapackage-link'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.book', 'value' => 'fas fa-book-open', 'icon' => 'settings-bulmapackage-book-open'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.student', 'value' => 'fas fa-user-graduate', 'icon' => 'settings-bulmapackage-user-graduate'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user', 'value' => 'fas fa-user','icon' =>  'settings-bulmapackage-user'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user-lock', 'value' => 'fas fa-user-lock', 'icon' => 'settings-bulmapackage-user-lock'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.lock', 'value' => 'fas fa-lock', 'icon' => 'settings-bulmapackage-lock'],
+                    ['label' => 'Facebook', 'value' => 'fab fa-facebook-f', 'icon' => 'settings-bulmapackage-facebook'],
+                    ['label' => 'Twitter', 'value' => 'fab fa-twitter', 'icon' => 'settings-bulmapackage-twitter'],
+                    ['label' => 'Youtube', 'value' => 'fab fa-youtube', 'icon' => 'settings-bulmapackage-youtube'],
+                    ['label' => 'Instagram', 'value' => 'fab fa-instagram', 'icon' => 'settings-bulmapackage-instagram'],
+                    ['label' => 'Vimeo', 'value' => 'fab fa-vimeo-v', 'icon' => 'settings-bulmapackage-vimeo'],
+                    ['label' => 'Viadeo', 'value' => 'fab fa-viadeo', 'icon' => 'settings-bulmapackage-viadeo'],
+                    ['label' => 'LinkedIn', 'value' => 'fab fa-linkedin-in', 'icon' => 'settings-bulmapackage-linkedin'],
+                    ['label' => 'Tumblr', 'value' => 'fab fa-tumblr', 'icon' => 'settings-bulmapackage-tumblr'],
+                    ['label' => 'Discord', 'value' => 'fab fa-discord', 'icon' => 'settings-bulmapackage-discord'],
+                    ['label' => 'Snapchat', 'value' => 'fab fa-snapchat-ghost', 'icon' => 'settings-bulmapackage-snapchat-ghost'],
                 ],
                 'fieldWizard' => [
                     'selectIcons' => [
@@ -254,12 +236,6 @@ return [
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ]
-                ],
             ],
         ],
         'standalone' => [
@@ -268,12 +244,6 @@ return [
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ]
-                ],
             ],
         ],
     ],

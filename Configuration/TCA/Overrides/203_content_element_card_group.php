@@ -24,9 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.card_group',
-        'card_group',
-        'content-bulmapackage-card-group'
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.card_group',
+        'value' => 'card_group',
+        'icon' => 'content-bulmapackage-card-group'
     ],
     'audio',
     'after'

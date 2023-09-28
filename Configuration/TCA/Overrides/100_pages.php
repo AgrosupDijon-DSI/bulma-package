@@ -15,9 +15,9 @@ defined('TYPO3') or die();
 
 // Adds new "module" type
 $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-    0 => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:bulma-website',
-    1 => 'tx_bulmapackage_settings',
-    2 => 'mimetypes-x-content-page-language-overlay'
+    'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:bulma-website',
+    'value' => 'tx_bulmapackage_settings',
+    'icon' => 'mimetypes-x-content-page-language-overlay'
 ];
 $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-tx_bulmapackage_settings'] = 'mimetypes-x-content-page-language-overlay';
 
@@ -76,15 +76,6 @@ $additionalColumns = [
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
-            'items' => [
-                [
-                    0 => '',
-                    1 => '',
-                ]
-            ],
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ]
         ]
     ]
 ];

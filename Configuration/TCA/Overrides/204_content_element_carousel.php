@@ -24,9 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel',
-        'carousel',
-        'content-bulmapackage-carousel'
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel',
+        'value' => 'carousel',
+        'icon' => 'content-bulmapackage-carousel'
     ],
     'card_group',
     'after'

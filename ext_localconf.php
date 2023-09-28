@@ -22,12 +22,12 @@ use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaMetaTagHook;
 defined('TYPO3') or die();
 
 // https://usetypo3.com/application-context.html)
-if (Environment::getContext()->isDevelopment()) {
-    // No cache in development
-    foreach ($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'] as $cacheName => $cacheConfiguration) {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = NullBackend::class;
-    }
-}
+//if (Environment::getContext()->isDevelopment()) {
+//    // No cache in development
+//    foreach ($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'] as $cacheName => $cacheConfiguration) {
+//        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = NullBackend::class;
+//    }
+//}
 
 /***************
  * Define TypoScript as content rendering template

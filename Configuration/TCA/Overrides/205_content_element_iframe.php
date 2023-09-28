@@ -24,9 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.iframe',
-        'iframe',
-        'content-bulmapackage-iframe'
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.iframe',
+        'value' => 'iframe',
+        'icon' => 'content-bulmapackage-iframe'
     ],
     'html',
     'after'

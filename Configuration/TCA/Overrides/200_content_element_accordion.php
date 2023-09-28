@@ -24,9 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion',
-        'accordion',
-        'content-bulmapackage-accordion'
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion',
+        'value' => 'accordion',
+        'icon' => 'content-bulmapackage-accordion'
     ],
     'html',
     'after'
@@ -95,7 +95,7 @@ $additionalColumns = [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['-', 0]
+                ['label' => '-', 'value' => 0]
             ],
             'foreign_table' => 'tx_bulmapackage_accordion_item',
             'foreign_table_where' => 'AND tx_bulmapackage_accordion_item.tt_content = ###THIS_UID###',
