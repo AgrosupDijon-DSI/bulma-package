@@ -129,3 +129,8 @@ if (ExtensionManagementUtility::isLoaded('news')) {
 if (!Environment::isComposerMode()) {
     require ExtensionManagementUtility::extPath('bulma_package') . '/Resources/Private/Contrib/Php/vendor/autoload.php';
 }
+
+/***************
+ * Register new backend stylesheet to override rte_ckeditor css
+ */
+$GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['bulma_package'] = 'EXT:bulma_package/Resources/Public/Css/Skin/';
