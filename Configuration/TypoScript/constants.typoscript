@@ -128,7 +128,15 @@ plugin.bulma_package {
 #### EXTENSIONS                                          ####
 #### Manual inclusion to keep control over loading order ####
 #############################################################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/Form/constants.typoscript" condition="extension.isLoaded('form')">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/constants.typoscript" condition="extension.isLoaded('felogin')">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/constants.typoscript" condition="extension.isLoaded('indexed_search')">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bulma_package/Configuration/TypoScript/Extension/Seo/constants.typoscript" condition="extension.isLoaded('seo')">
+[extension.isLoaded('form')]
+    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/constants.typoscript'
+[end]
+[extension.isLoaded('felogin')]
+    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/constants.typoscript'
+[end]
+[extension.isLoaded('indexed_search')]
+    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/constants.typoscript'
+[end]
+[extension.isLoaded('seo')]
+    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/constants.typoscript'
+[end]
