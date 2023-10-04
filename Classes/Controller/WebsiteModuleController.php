@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace AgrosupDijon\BulmaPackage\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Backend\Attribute\Controller;
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Template\Components\ButtonBar;
@@ -25,11 +24,9 @@ use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
 use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Localization\LanguageService;
-use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3Fluid\Fluid\View\ViewInterface;
 
 /**
  *
@@ -45,22 +42,14 @@ class WebsiteModuleController extends ActionController
         protected readonly SiteFinder $siteFinder,
         protected readonly ModuleTemplateFactory $moduleTemplateFactory,
         protected UriBuilder $backendUriBuilder,
-        protected IconFactory $iconFactory,
-        protected PageRenderer $pageRenderer
+        protected IconFactory $iconFactory
     ) {
     }
 
     public function initializeAction(): void
     {
         $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
-//        $this->moduleTemplate->setTitle($this->getLanguageService()->sL('LLL:EXT:cnerta_jobs/Resources/Private/Language/locallang_be.xlf:wizards.newContentElement.cnertajobs_cnertajobs.title'));
-        $this->moduleTemplate->setTitle('BLEH');
-    }
-
-    public function initializeView(ViewInterface $view): void
-    {
-        // Load JS modules
-        $this->pageRenderer->loadJavaScriptModule('TYPO3/CMS/Backend/ContextMenu');
+        $this->moduleTemplate->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_mod.xlf:mlang_labels_tablabel'));
     }
 
     /**
