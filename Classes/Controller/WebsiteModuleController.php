@@ -137,7 +137,7 @@ class WebsiteModuleController extends ActionController
             ->setIcon($this->iconFactory->getIcon('actions-refresh', Icon::SIZE_SMALL));
         $buttonBar->addButton($reloadButton, ButtonBar::BUTTON_POSITION_RIGHT);
         $shortcutButton = $buttonBar->makeShortcutButton()
-            ->setRouteIdentifier('system_WebsiteSettings')
+            ->setRouteIdentifier('system_BulmaPackageWebsitesettings')
             ->setArguments(['action' => $currentAction])
             ->setDisplayName($shortcutDisplayName);
         $buttonBar->addButton($shortcutButton, ButtonBar::BUTTON_POSITION_RIGHT);
