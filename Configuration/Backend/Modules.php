@@ -3,7 +3,7 @@
 use AgrosupDijon\BulmaPackage\Controller\WebsiteModuleController;
 
 return [
-    'system_WebsiteSettings' => [
+    'system_BulmaPackageWebsitesettings' => [
         'parent' => 'system',
         'position' => ['before' => '*'],
         'access' => 'user',
