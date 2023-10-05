@@ -1,9 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <f:flashMessages/>
-<f:if condition="{cookieWarning}">
-    <f:render partial="CookieWarning" />
-</f:if>
 
 <f:if condition="{messageKey}">
     <h3>
@@ -13,39 +10,35 @@
         <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_message'}"/>
     </p>
 </f:if>
-<f:if condition="{onSubmit}">
-    <f:then>
-        <f:form target="_top" fieldNamePrefix="" action="login" onsubmit="{onSubmit}">
-            <f:render section="content" arguments="{_all}"/>
-        </f:form>
-    </f:then>
-    <f:else>
-        <f:form target="_top" fieldNamePrefix="" action="login">
-            <f:render section="content" arguments="{_all}"/>
-        </f:form>
-    </f:else>
+
+<f:form target="_top" fieldNamePrefix="" action="login" requestToken="{requestToken}" additionalAttributes="{spellcheck: 'false'}">
+    <f:render section="content" arguments="{_all}"/>
+</f:form>
+
+<f:if condition="{settings.showForgotPassword}">
+    <f:link.action action="recovery" controller="PasswordRecovery">
+        <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_header'}"/>
+    </f:link.action>
 </f:if>
 
 <f:section name="content">
     <div class="field">
-        <label class="label" for="user"><f:translate key="username"/></label>
+        <label class="label" for="tx-felogin-input-username"><f:translate key="username"/></label>
         <div class="control">
-            <f:form.textfield name="user" id="user" class="input"/>
+            <f:form.textfield name="user" required="true" additionalAttributes="{autocomplete: 'username'}" id="tx-felogin-input-username" class="input"/>
         </div>
     </div>
     <div class="field">
-        <label class="label" for="pass">
-            <f:translate key="password"/>
-        </label>
+        <label class="label" for="tx-felogin-input-password"><f:translate key="password"/></label>
         <div class="control">
-            <f:form.password name="pass" data="{rsa-encryption: ''}" class="input" id="pass"/>
+            <f:form.password name="pass" additionalAttributes="{required: 'required', autocomplete: 'current-password'}" id="tx-felogin-input-password" class="input"/>
         </div>
     </div>
 
     <f:if condition="{permaloginStatus} > -1">
         <div class="field">
             <div class="control">
-                <label class="checkbox">
+                <label class="checkbox" for="permalogin">
                     <f:if condition="{permaloginStatus} == 1">
                         <f:then>
                             <f:form.hidden name="permalogin" value="0" additionalAttributes="{disabled: 'disabled'}"/>
@@ -68,15 +61,8 @@
         </div>
     </div>
 
-    <f:if condition="{settings.showForgotPassword}">
-        <f:link.action action="recovery" controller="PasswordRecovery">
-            <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_header'}"/>
-        </f:link.action>
-    </f:if>
-
     <div class="felogin-hidden">
         <f:form.hidden name="logintype" value="login"/>
-        <f:form.hidden name="pid" value="{storagePid}"/>
         <f:if condition="{redirectURL}!=''">
             <f:form.hidden name="redirect_url" value="{redirectURL}" />
         </f:if>
@@ -89,8 +75,6 @@
         <f:if condition="{noRedirect}!=''">
             <f:form.hidden name="noredirect" value="1" />
         </f:if>
-
-        {extraHidden}
     </div>
 </f:section>
 </html>
