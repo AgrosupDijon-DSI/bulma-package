@@ -13,13 +13,8 @@ pageNewsRSS {
         absRefPrefix = {$plugin.tx_news.rss.channel.link}
         linkVars >
     }
-    10 < tt_content.list.20.news_pi1
+    10 < tt_content.news_pi1.20
     10 {
-        switchableControllerActions {
-            News {
-                1 = list
-            }
-        }
         settings < plugin.tx_news.settings
         settings {
             categories = {$plugin.bulma_package_news_rss.settings.categories}
