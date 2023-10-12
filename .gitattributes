@@ -4,3 +4,4 @@
 /package.json export-ignore
 /yarn.lock export-ignore
 /webpack.config.js export-ignore
+/.ddev export-ignore
