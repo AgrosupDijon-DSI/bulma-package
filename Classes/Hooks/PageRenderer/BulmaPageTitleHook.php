@@ -9,9 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
-use Doctrine\DBAL\DBALException;
-use Doctrine\DBAL\Driver\Exception;
-use Doctrine\DBAL\ForwardCompatibility\Result;
+use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -30,7 +28,6 @@ class BulmaPageTitleHook
     /**
      * @param array $params
      * @return void
-     * @throws DBALException
      * @throws Exception
      */
     public function execute(array &$params): void
@@ -43,7 +40,6 @@ class BulmaPageTitleHook
 
         foreach ($GLOBALS['TSFE']->rootLine as $page) {
 
-            /** @var Result $result */
             $result = $queryBuilder
                 ->select('title_seo')
                 ->from('tx_bulmapackage_settings')
@@ -53,7 +49,7 @@ class BulmaPageTitleHook
                 ->andWhere(
                     $queryBuilder->expr()->eq('sys_language_uid', $GLOBALS['TSFE']->page['sys_language_uid'])
                 )
-                ->execute();
+                ->executeQuery();
 
             $bulmaSettingsTitleSeo = $result->fetchOne();
             if (!empty($bulmaSettingsTitleSeo)) {

@@ -9,9 +9,8 @@
 
 namespace AgrosupDijon\BulmaPackage\DataProcessing;
 
-use TYPO3\CMS\Core\TypoScript\Parser\TypoScriptParser;
-use TYPO3\CMS\Core\TypoScript\TypoScriptService;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Http\ServerRequest;
+use TYPO3\CMS\Core\TypoScript\FrontendTypoScript;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -48,43 +47,64 @@ class ConstantsProcessor implements DataProcessorInterface
             $key = 'page';
         }
 
-        // Collect variables
-        $flatConstants = $this->getFlatConstants($key);
-        $typoScriptParser = GeneralUtility::makeInstance(TypoScriptParser::class);
-        $typoScriptParser->parse($flatConstants);
-        $typoScriptArray = $typoScriptParser->setup;
-        $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
-        $constants = $typoScriptService->convertTypoScriptArrayToPlainArray($typoScriptArray);
+        $settings = $this->getSettings($key);
 
         // Set the target variable
         $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration);
         if (!empty($targetVariableName)) {
-            $processedData[$targetVariableName] = $constants;
+            $processedData[$targetVariableName] = $settings;
         } else {
-            $processedData['constants'] = $constants;
+            $processedData['constants'] = $settings;
         }
 
         return $processedData;
     }
 
-    /**
-     * @param string $key
-     * @return string
-     */
-    protected function getFlatConstants($key): string
+    protected function getSettings(string $key): array
     {
-        $flatvariables = '';
+        $settings = $flatSettings = [];
         $prefix = $key . '.';
-        if ($GLOBALS['TSFE']->tmpl->flatSetup === null
-            || !is_array($GLOBALS['TSFE']->tmpl->flatSetup)
-            || count($GLOBALS['TSFE']->tmpl->flatSetup) === 0) {
-            $GLOBALS['TSFE']->tmpl->generateConfig();
+
+        /** @var FrontendTypoScript $frontendTyposcript */
+        $frontendTyposcript = $this->getRequest()->getAttribute('frontend.typoscript');
+
+        if($frontendTyposcript->hasSetup()){
+            $flatSettings = array_filter($frontendTyposcript->getFlatSettings(), function ($key) use ($prefix) {
+                return str_starts_with($key, $prefix);
+            }, ARRAY_FILTER_USE_KEY);
         }
-        foreach ($GLOBALS['TSFE']->tmpl->flatSetup as $constant => $value) {
-            if (strpos($constant, $prefix) === 0) {
-                $flatvariables .= substr($constant, strlen($prefix)) . ' = ' . $value . PHP_EOL;
+
+        foreach ($flatSettings as $key => $value){
+            $this->array_set($settings, substr($key, strlen($prefix)), $value);
+        }
+
+        return $settings;
+    }
+
+    protected function array_set(array &$array, string $key, mixed $value): array
+    {
+        $keys = explode('.', $key);
+
+        while (count($keys) > 1) {
+            $key = array_shift($keys);
+
+            // If the key doesn't exist at this depth, we will just create an empty array
+            // to hold the next value, allowing us to create the arrays to hold final
+            // values at the correct depth. Then we'll keep digging into the array.
+            if (! isset($array[$key]) || ! is_array($array[$key])) {
+                $array[$key] = [];
             }
+
+            $array = &$array[$key];
         }
-        return $flatvariables;
+
+        $array[array_shift($keys)] = $value;
+
+        return $array;
+    }
+
+    protected function getRequest(): ServerRequest
+    {
+        return $GLOBALS['TYPO3_REQUEST'];
     }
 }

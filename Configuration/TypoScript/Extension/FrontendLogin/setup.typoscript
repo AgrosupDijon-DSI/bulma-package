@@ -7,5 +7,9 @@ plugin.tx_felogin_login {
             1 = EXT:bulma_package/Resources/Private/Templates/FrontendLogin/
             2 = {$plugin.bulma_package.view.templateRootPath}FrontendLogin/
         }
+        partialRootPaths {
+            1 = EXT:bulma_package/Resources/Private/Partials/FrontendLogin/
+            2 = {$plugin.bulma_package.view.partialRootPath}FrontendLogin/
+        }
     }
 }

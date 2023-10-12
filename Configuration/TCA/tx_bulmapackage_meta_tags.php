@@ -10,10 +10,9 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_meta_tags',
-        'label' => 'label',
+        'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'delete' => 'deleted',
         'enablecolumns' => [
@@ -51,11 +50,7 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled'
-                    ]
-                ],
+                'default' => 0,
             ],
         ],
         'name' => [

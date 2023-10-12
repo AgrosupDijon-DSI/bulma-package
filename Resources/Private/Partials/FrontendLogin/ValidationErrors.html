@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" data-namespace-typo3-fluid="true">
+<f:form.validationResults>
+    <f:if condition="{validationResults.flattenedErrors}">
+        <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+            <div class="notification is-error">
+                <f:if condition="{propertyPath}">
+                    <h4 class="title">{propertyPath}</h4>
+                </f:if>
+                <ul class="is-unstyled">
+                    <f:for each="{errors}" as="error">
+                        <li>{error.code}: {error}</li>
+                    </f:for>
+                </ul>
+            </div>
+        </f:for>
+    </f:if>
+</f:form.validationResults>
+</html>

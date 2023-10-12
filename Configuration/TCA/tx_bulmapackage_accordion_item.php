@@ -14,7 +14,6 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -31,6 +30,9 @@ return [
             'default' => 'content-bulmapackage-accordion-item',
         ],
         'hideTable' => true,
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ]
     ],
     'types' => [
         '1'=> [
@@ -86,9 +88,9 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    0 => [
-                        0 => '',
-                        1 => 0,
+                    [
+                        'label' => '',
+                        'value' => 0,
                     ],
                 ],
                 'foreign_table' => 'tx_bulmapackage_accordion_item',
@@ -115,13 +117,11 @@ return [
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-                'default' => 0,
                 'items' => [
                     [
-                        0 => '',
-                        1 => '',
-                        'invertStateDisplay' => true
-                    ]
+                        'label' => '',
+                        'invertStateDisplay' => true,
+                    ],
                 ],
             ],
         ],
@@ -129,40 +129,33 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
-                'renderType' => 'inputDateTime',
-                'type' => 'input',
-                'size' => 13,
-                'eval' => 'datetime',
-                'checkbox' => 0,
-                'default' => 0,
+                'type' => 'datetime',
+                'default' => 0
             ],
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly'
         ],
         'endtime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true,
-                ],
-                'renderType' => 'inputDateTime',
-                'type' => 'input',
-                'size' => 13,
-                'eval' => 'datetime',
-                'checkbox' => 0,
+                'type' => 'datetime',
                 'default' => 0,
+                'range' => [
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
+                ],
             ],
+            'l10n_mode' => 'exclude',
+            'l10n_display' => 'defaultAsReadonly'
         ],
         'tt_content' => [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    0 => [
-                        0 => '',
-                        1 => 0,
+                    [
+                        'label' => '',
+                        'value' => 0,
                     ],
                 ],
                 'foreign_table' => 'tt_content',
@@ -195,7 +188,7 @@ return [
                     'columns' => [
                         'colPos' => [
                             'config' => [
-                                'default' => '999',
+                                'default' => 999,
                             ],
                         ],
                         'CType' => [
@@ -207,6 +200,9 @@ return [
                 ],
                 'type' => 'inline',
                 'foreign_field' => 'tx_bulmapackage_accordion_item_parent',
+                'foreign_match_fields' => [
+                    'tx_mask_content_role' => 'record'
+                ]
             ],
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:accordion_item.record',

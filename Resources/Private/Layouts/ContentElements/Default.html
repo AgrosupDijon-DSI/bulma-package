@@ -19,9 +19,9 @@
                     <div class="frame-inner {backgroundClassLimited}">
                         <f:render section="Header" optional="true">
                             <f:comment>
-                                Do not render header section for specific list_type, so it can be managed directly by the plugin
+                                Do not render header section for specific list_type or CType, so it can be managed directly by the plugin
                             </f:comment>
-                            <f:if condition="!{settings.skip_header_rendering.{data.list_type}}">
+                            <f:if condition="!{settings.skip_header_rendering.{data.list_type}} && !{settings.skip_header_rendering.{data.CType}}">
                                 <f:render partial="Header/All" arguments="{_all}"/>
                             </f:if>
                         </f:render>

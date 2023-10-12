@@ -4,17 +4,9 @@
         xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
         data-namespace-typo3-fluid="true">
 
-<f:layout name="Backend/WebsiteModule"/>
+<f:layout name="Module"/>
 
-<f:section name="Buttons">
-    <be:moduleLayout.button.linkButton
-            icon="actions-add"
-            title="{f:translate(key: 'LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.color.create')}"
-            link="{be:uri.newRecord(table: 'tx_bulmapackage_custom_color')}"
-    />
-</f:section>
-
-<f:section name="content">
+<f:section name="Content">
     <h1><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title" /></h1>
     <f:if condition="{customColors}">
         <f:then>

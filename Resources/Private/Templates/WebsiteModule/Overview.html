@@ -4,11 +4,8 @@
 	xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
 	data-namespace-typo3-fluid="true">
 
-<f:layout name="Backend/WebsiteModule"/>
-
-<f:section name="Buttons" />
-
-<f:section name="content">
+<f:layout name="Module"/>
+<f:section name="Content">
 	<h1><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.title" /></h1>
 	<f:flashMessages />
 	<f:if condition="{pages}">
@@ -56,7 +53,7 @@
 												</f:then>
 												<f:else if="{page.bulmaSettings.0}">
 													<f:variable name="justLocalized">tx_bulmapackage_settings%3A{page.bulmaSettings.0.uid}%3A{language}</f:variable>
-													<a class="btn btn-default" href="{be:moduleLink(route: 'tce_db', query: 'cmd[tx_bulmapackage_settings][{page.bulmaSettings.0.uid}][localize]={language}&redirect={returnUrl}&justLocalized={justLocalized -> f:format.urlencode()}')}">
+													<a class="btn btn-default" href="{be:moduleLink(route: 'tce_db', query: 'cmd[tx_bulmapackage_settings][{page.bulmaSettings.0.uid}][localize]={language}&redirect={f:be.uri(route: \'system_BulmaPackageWebsitesettings\')}&justLocalized={justLocalized -> f:format.urlencode()}')}">
 														<core:icon identifier="{languages.{language}.flagIdentifier}" /> <f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.configuration.translate" />
 													</a>
 												</f:else>

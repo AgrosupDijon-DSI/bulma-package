@@ -24,9 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.icon_group',
-        'icon_group',
-        'content-bulmapackage-icon-group'
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.icon_group',
+        'value' => 'icon_group',
+        'icon' => 'content-bulmapackage-icon-group'
     ],
     'external_media',
     'after'

@@ -24,9 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.tab',
-        'tab',
-        'content-bulmapackage-tab'
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.tab',
+        'value' => 'tab',
+        'icon' => 'content-bulmapackage-tab'
     ],
     'html',
     'after'

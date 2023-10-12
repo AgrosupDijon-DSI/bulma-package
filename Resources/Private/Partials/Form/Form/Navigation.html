@@ -4,7 +4,7 @@
 		<div class="field is-grouped" role="group">
 			<f:if condition="{form.previousPage}">
 				<p class="control previous">
-					<f:form.hidden property="__currentPage" value="{form.previousPage.index}" />
+					<f:form.hidden property="__currentPage" value="{form.previousPage.index}" respectSubmittedDataValue="false"/>
 					<f:form.button type="button" onclick="document.forms['{form.formDefinition.identifier}'].submit();" class="button is-light" formnovalidate="formnovalidate">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}</f:form.button>
 				</p>
 			</f:if>

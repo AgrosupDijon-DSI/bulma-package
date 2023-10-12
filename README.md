@@ -44,3 +44,10 @@ https://bulma-package.cnerta-web.fr/
 * Create a new color, give it a title and use color picker to define primary color.
 * Save
 * Custom color will be available in Page properties, Appearance tab, Frontend layout list.
+
+## Development
+
+* Yarn usage: ddev yarn --cwd \<path_bulma> \<command>
+* Archive for TER: ddev -d \<path_bulma> composer archive --format=zip --file=bulma_package_x.y.z
+* Update dependencies for non composer project: ddev composer update --dry-run -d <path_bulma>/Resources/Private/Contrib/Php
+* Update js dependencies: npm install -g npm-check-updates / ncu / ncu -u

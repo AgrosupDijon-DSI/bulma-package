@@ -24,10 +24,9 @@ class TrimViewHelper extends AbstractViewHelper
      * @param array $arguments
      * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
-     *
-     * @return string the formatted amount
+     * @return string
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
     {
         return trim($renderChildrenClosure());
     }

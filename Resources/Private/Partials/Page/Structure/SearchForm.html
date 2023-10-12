@@ -1,30 +1,38 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{settings.searchPid}">
-<f:form class="{settings.searchFormClasses}" extensionName="indexedsearch" pluginName="pi2" controller="Search" action="search" method="post" pageUid="{settings.searchPid}">
-    <div class="tx-indexedsearch-hidden-fields">
-        <f:form.hidden name="search[_sections]" value="0"/>
-        <f:form.hidden name="search[_freeIndexUid]" value="_"/>
-        <f:form.hidden name="search[pointer]" value="0"/>
-        <f:form.hidden name="search[searchType]" value="{settings.searchParams.searchType}"/>
-        <f:form.hidden name="search[defaultOperand]" value="{settings.searchParams.defaultOperand}"/>
-        <f:form.hidden name="search[group]" value="{settings.searchParams.group}" />
-        <f:form.hidden name="search[mediaType]" value="{settings.searchParams.mediaType}"/>
-        <f:form.hidden name="search[sortOrder]" value="{settings.searchParams.sortOrder}"/>
-        <f:form.hidden name="search[languageUid]" value="{settings.searchParams.languageUid}"/>
-        <f:form.hidden name="search[numberOfResults]" value="10"/>
-    </div>
-    <div class="{settings.searchFormFieldWrapperClasses}">
-        <div class="{settings.searchFormInputWrapperClasses}">
-            <f:form.textfield placeholder="{f:translate(extensionName: 'indexed_search', key: 'form.submit')}" name="search[sword]" value="{sword}" class="{settings.searchFormInputClasses}" />
+    <form method="post" class="{settings.searchFormClasses}"
+          action="{f:uri.page(pageUid:'{settings.searchPid}',additionalParams:'{tx_indexedsearch_pi2: {action:\'search\',controller:\'Search\'}}')}">
+        <div class="tx-indexedsearch-hidden-fields">
+            <input type="hidden" name="tx_indexedsearch_pi2[search][_sections]" value="0"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][_freeIndexUid]" value="_"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][pointer]" value="0"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][searchType]"
+                   value="{settings.searchParams.searchType}"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][defaultOperand]"
+                   value="{settings.searchParams.defaultOperand}"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][group]" value="{settings.searchParams.group}"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][mediaType]"
+                   value="{settings.searchParams.mediaType}"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][sortOrder]"
+                   value="{settings.searchParams.sortOrder}"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][languageUid]"
+                   value="{settings.searchParams.languageUid}"/>
+            <input type="hidden" name="tx_indexedsearch_pi2[search][numberOfResults]" value="10"/>
         </div>
-        <div class="control">
-            <button class="{settings.searchFormButtonClasses}">
-               <span class="{settings.searchFormButtonIconClasses}">
-                    <i class="fas fa-search"></i>
-               </span>
-            </button>
+        <div class="{settings.searchFormFieldWrapperClasses}">
+            <div class="{settings.searchFormInputWrapperClasses}">
+                <input type="text" placeholder="{f:translate(extensionName: 'indexed_search', key: 'form.submit')}"
+                       name="tx_indexedsearch_pi2[search][sword]" value="{sword}"
+                       class="{settings.searchFormInputClasses}"/>
+            </div>
+            <div class="control">
+                <button class="{settings.searchFormButtonClasses}">
+                    <span class="{settings.searchFormButtonIconClasses}">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </button>
+            </div>
         </div>
-    </div>
-</f:form>
+    </form>
 </f:if>
 </html>

@@ -24,9 +24,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message',
-        'message',
-        'content-panel'
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message',
+        'value' => 'message',
+        'icon' => 'content-panel'
     ],
     'tab',
     'after'
@@ -81,14 +81,14 @@ $additionalColumns = [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', ''],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.primary', 'is-primary'],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.success', 'is-success'],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.info', 'is-info'],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.warning', 'is-warning'],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.danger', 'is-danger'],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.light', 'is-light'],
-                ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'is-dark']
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'value' => ''],
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.primary', 'value' => 'is-primary'],
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.success', 'value' => 'is-success'],
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.info', 'value' => 'is-info'],
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.warning', 'value' => 'is-warning'],
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.danger', 'value' => 'is-danger'],
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.light', 'value' => 'is-light'],
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'value' => 'is-dark']
             ],
         ],
     ]

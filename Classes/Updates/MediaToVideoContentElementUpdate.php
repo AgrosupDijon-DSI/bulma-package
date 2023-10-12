@@ -9,28 +9,19 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
-use Doctrine\DBAL\Driver\Exception;
-use Doctrine\DBAL\ForwardCompatibility\Result;
-use Symfony\Component\DomCrawler\Crawler;
-use TYPO3\CMS\Core\Database\Connection;
+use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Migrate the list_type 'media' to 'video'
  */
+#[UpgradeWizard('mediaToVideoContentElementUpdate')]
 class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
 {
-    /**
-     * @return string Unique identifier of this updater
-     */
-    public function getIdentifier(): string
-    {
-        return 'mediaToVideoContentElementUpdate';
-    }
-
     /**
      * @return string Title of this updater
      */
@@ -51,6 +42,7 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
      * Checks if an update is needed
      *
      * @return bool Whether an update is needed (TRUE) or not (FALSE)
+     * @throws Exception
      */
     public function updateNecessary(): bool
     {
@@ -78,10 +70,10 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
         $queryBuilder->update('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('CType',
-                    $queryBuilder->createNamedParameter("media", Connection::PARAM_STR))
+                    $queryBuilder->createNamedParameter("media"))
             )
             ->set('CType', 'video')
-            ->execute();
+            ->executeStatement();
 
         return true;
     }
@@ -95,14 +87,13 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
-        /** @var Result $result */
         $result = $queryBuilder->select('uid')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('CType',
-                    $queryBuilder->createNamedParameter("media", Connection::PARAM_STR))
+                    $queryBuilder->createNamedParameter("media"))
             )
-            ->execute();
+            ->executeQuery();
 
         return $result->fetchAllAssociative();
     }

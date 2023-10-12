@@ -9,25 +9,20 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
-use Doctrine\DBAL\ForwardCompatibility\Result;
+use Doctrine\DBAL\Exception;
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Migrate the field 'image' for all cards elements to 'media'
  */
+#[UpgradeWizard('cardImageToMediaUpdate')]
 class CardImageToMediaUpdate implements UpgradeWizardInterface
 {
-    /**
-     * @return string Unique identifier of this updater
-     */
-    public function getIdentifier(): string
-    {
-        return 'cardImageToMediaUpdate';
-    }
-
     /**
      * @return string Title of this updater
      */
@@ -48,24 +43,24 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
      * Checks if an update is needed
      *
      * @return bool Whether an update is needed (TRUE) or not (FALSE)
+     * @throws Exception
      */
     public function updateNecessary(): bool
     {
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tx_bulmapackage_card_group_item');
-        $tableColumns = $connection->getSchemaManager()->listTableColumns('tx_bulmapackage_card_group_item');
+        $tableColumns = $connection->createSchemaManager()->listTableColumns('tx_bulmapackage_card_group_item');
         // Only proceed if image field still exists
         if (!isset($tableColumns['image'])) {
             return false;
         }
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_card_group_item');
         $queryBuilder->getRestrictions()->removeAll();
-        /** @var Result $result */
         $result = $queryBuilder->count('uid')
             ->from('tx_bulmapackage_card_group_item')
             ->where(
                 $queryBuilder->expr()->gt('image', 0)
             )
-            ->execute();
+            ->executeQuery();
         return (bool)$result->fetchOne();
     }
 
@@ -83,54 +78,54 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
      * Performs the database update
      *
      * @return bool
+     * @throws Exception
      */
     public function executeUpdate(): bool
     {
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tx_bulmapackage_card_group_item');
         $queryBuilder = $connection->createQueryBuilder();
         $queryBuilder->getRestrictions()->removeAll();
-        /** @var Result $statement */
         $statement = $queryBuilder->select('uid', 'image')
             ->from('tx_bulmapackage_card_group_item')
             ->where(
                 $queryBuilder->expr()->gt('image', 0)
             )
-            ->execute();
+            ->executeQuery();
         while ($record = $statement->fetchAssociative()) {
             $queryBuilder = $connection->createQueryBuilder();
             $queryBuilder->update('tx_bulmapackage_card_group_item')
                 ->where(
                     $queryBuilder->expr()->eq(
                         'uid',
-                        $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                        $queryBuilder->createNamedParameter($record['uid'], Connection::PARAM_INT)
                     )
                 )
                 ->set('image', 0, false)
                 ->set('media', $record['image']);
-            $queryBuilder->execute();
+            $queryBuilder->executeStatement();
 
             $queryBuilder = $connection->createQueryBuilder();
             $queryBuilder->update('sys_file_reference')
                 ->where(
                     $queryBuilder->expr()->like(
                         'tablenames',
-                        $queryBuilder->createNamedParameter('tx_bulmapackage_card_group_item', \PDO::PARAM_STR)
+                        $queryBuilder->createNamedParameter('tx_bulmapackage_card_group_item')
                     )
                 )
                 ->andWhere(
                     $queryBuilder->expr()->like(
                         'fieldname',
-                        $queryBuilder->createNamedParameter('image', \PDO::PARAM_STR)
+                        $queryBuilder->createNamedParameter('image')
                     )
                 )
                 ->andWhere(
                     $queryBuilder->expr()->eq(
                         'uid_foreign',
-                        $queryBuilder->createNamedParameter($record['uid'], \PDO::PARAM_INT)
+                        $queryBuilder->createNamedParameter($record['uid'], Connection::PARAM_INT)
                     )
                 )
                 ->set('fieldname', 'media', true);
-            $queryBuilder->execute();
+            $queryBuilder->executeStatement();
         }
         return true;
     }

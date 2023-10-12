@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  AgrosupDijon\BulmaPackage\:
+    resource: '../Classes/*'
+
+  AgrosupDijon\BulmaPackage\EventListeners\NestedContentElementsUsedEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'bulma-package-nested-content-used'
+
+  AgrosupDijon\BulmaPackage\EventListeners\ImageAutoResizeProcessDefaultConfigurationEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'bulma-package-imageAutoResize-processDefaultConfiguration'

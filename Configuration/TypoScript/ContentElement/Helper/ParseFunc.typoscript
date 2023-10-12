@@ -44,7 +44,7 @@ lib.parseFunc {
     allowTags := addToList(ins, kbd, label, li, link, meta, nav, ol, p, pre, q)
     allowTags := addToList(samp, sdfield, section, small, span, strike, strong)
     allowTags := addToList(style, sub, sup, table, thead, tbody, tfoot, td, th)
-    allowTags := addToList(tr, title, tt, u, ul, var)
+    allowTags := addToList(tr, title, tt, u, ul, var, s)
     denyTags = *
     sword = <span class="text-highlight">|</span>
     constants = 1
@@ -64,7 +64,7 @@ lib.parseFunc {
 lib.parseFunc_RTE < lib.parseFunc
 lib.parseFunc_RTE {
     externalBlocks := addToList(article, address, aside, blockquote, div, dd, dl, footer)
-    externalBlocks := addToList(header, nav, ol, section, table, ul, pre)
+    externalBlocks := addToList(header, nav, ol, section, table, ul, pre, figure)
     externalBlocks {
         ol {
             stripNL = 1
@@ -87,9 +87,9 @@ lib.parseFunc_RTE {
         }
         table {
             stripNL = 1
-            stdWrap {
-                 wrap = <div class="table-container">|</div>
-            }
+#            stdWrap {
+#                 wrap = <div class="table-container">|</div>
+#            }
             HTMLtableCells = 1
             HTMLtableCells {
                 default.stdWrap {
@@ -122,6 +122,7 @@ lib.parseFunc_RTE {
         section < .div
         dl < .div
         dd < .div
+        figure < .div
     }
     nonTypoTagStdWrap {
         encapsLines {

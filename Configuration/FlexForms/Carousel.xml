@@ -6,493 +6,514 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
                 <type>array</type>
                 <el>
                     <autoPlay>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.autoPlay
-                            </label>
-                            <config>
-                                <type>input</type>
-                                <size>8</size>
-                                <default>3000</default>
-                                <eval>required,int</eval>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.autoPlay</label>
+                        <config>
+                            <type>number</type>
+                            <size>8</size>
+                            <default>3000</default>
+                            <required>1</required>
+                        </config>
                     </autoPlay>
                     <wrapAround>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.wrapAround
-                            </label>
-                            <config>
-                                <type>check</type>
-                                <default>1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.wrapAround.description
-                                        </numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.wrapAround</label>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.wrapAround.description
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                </numIndex>
+                            </items>
+                        </config>
                     </wrapAround>
                     <cellAlign>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cellAlign
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <default>left</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-                                        </numIndex>
-                                        <numIndex index="1">left</numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cellAlign</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>left</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
                                     </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-                                        </numIndex>
-                                        <numIndex index="1">center</numIndex>
+                                    <numIndex index="value">left</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
                                     </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
-                                        </numIndex>
-                                        <numIndex index="1">right</numIndex>
+                                    <numIndex index="value">center</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                    <numIndex index="value">right</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </cellAlign>
                     <pageDots>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.pageDots
-                            </label>
-                            <config>
-                                <type>check</type>
-                                <default>1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.pageDots.description
-                                        </numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.pageDots</label>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.pageDots.description
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                </numIndex>
+                            </items>
+                        </config>
                     </pageDots>
                     <prevNextButtons>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.prevNextButtons
-                            </label>
-                            <config>
-                                <type>check</type>
-                                <default>1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.prevNextButtons.description
-                                        </numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.prevNextButtons</label>
+                        <config>
+                            <type>check</type>
+                            <default>1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.prevNextButtons.description
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                </numIndex>
+                            </items>
+                        </config>
                     </prevNextButtons>
                     <fade>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.fade</label>
-                            <config>
-                                <type>check</type>
-                                <default>0</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.fade.description
-                                        </numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.fade</label>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.fade.description
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                </numIndex>
+                            </items>
+                        </config>
                     </fade>
                     <groupCells>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.groupCells
-                            </label>
-                            <config>
-                                <type>input</type>
-                                <size>5</size>
-                                <default>false</default>
-                                <eval>required,alphanum</eval>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.groupCells
+                        </label>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <default>false</default>
+                            <eval>alphanum</eval>
+                            <required>1</required>
+                        </config>
                     </groupCells>
                 </el>
             </ROOT>
         </sDEF>
         <desktop>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>Desktop</sheetTitle>
-                </TCEforms>
+                <sheetTitle>Desktop</sheetTitle>
                 <type>array</type>
                 <el>
                     <ratio>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.ratio
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <default>is-3by1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1</numIndex>
-                                        <numIndex index="1">is-3by1</numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.ratio</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>is-3by1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1
                                     </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2</numIndex>
-                                        <numIndex index="1">is-3by2</numIndex>
+                                    <numIndex index="value">is-3by1</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2
                                     </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9</numIndex>
-                                        <numIndex index="1">is-16by9</numIndex>
+                                    <numIndex index="value">is-3by2</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9
                                     </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3</numIndex>
-                                        <numIndex index="1">is-4by3</numIndex>
+                                    <numIndex index="value">is-16by9</numIndex>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3
                                     </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1</numIndex>
-                                        <numIndex index="1">is-1by1</numIndex>
+                                    <numIndex index="value">is-4by3</numIndex>
+                                </numIndex>
+                                <numIndex index="4" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
                                     </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3</numIndex>
-                                        <numIndex index="1">is-2by3</numIndex>
+                                    <numIndex index="value">is-1by1</numIndex>
+                                </numIndex>
+                                <numIndex index="5" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
                                     </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1</numIndex>
-                                        <numIndex index="1">is-4by1</numIndex>
+                                    <numIndex index="value">is-2by3</numIndex>
+                                </numIndex>
+                                <numIndex index="6" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1
                                     </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1</numIndex>
-                                        <numIndex index="1">is-6by1</numIndex>
+                                    <numIndex index="value">is-4by1</numIndex>
+                                </numIndex>
+                                <numIndex index="7" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
                                     </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2</numIndex>
-                                        <numIndex index="1">is-1by2</numIndex>
+                                    <numIndex index="value">is-6by1</numIndex>
+                                </numIndex>
+                                <numIndex index="8" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
                                     </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
-                                        <numIndex index="1">is-4by5</numIndex>
+                                    <numIndex index="value">is-1by2</numIndex>
+                                </numIndex>
+                                <numIndex index="9" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
                                     </numIndex>
-                                    <numIndex index="10" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16</numIndex>
-                                        <numIndex index="1">is-9by16</numIndex>
+                                    <numIndex index="value">is-4by5</numIndex>
+                                </numIndex>
+                                <numIndex index="10" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                    <numIndex index="value">is-9by16</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </ratio>
                     <cells>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cells
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <default>1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">1</numIndex>
-                                        <numIndex index="1">1</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">2</numIndex>
-                                        <numIndex index="1">2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">3</numIndex>
-                                        <numIndex index="1">3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">4</numIndex>
-                                        <numIndex index="1">4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">5</numIndex>
-                                        <numIndex index="1">5</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">6</numIndex>
-                                        <numIndex index="1">6</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">7</numIndex>
-                                        <numIndex index="1">7</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">8</numIndex>
-                                        <numIndex index="1">8</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">9</numIndex>
-                                        <numIndex index="1">9</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">10</numIndex>
-                                        <numIndex index="1">10</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cells</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">1</numIndex>
+                                    <numIndex index="value">1</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="label">2</numIndex>
+                                    <numIndex index="value">2</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="label">3</numIndex>
+                                    <numIndex index="value">3</numIndex>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                    <numIndex index="label">4</numIndex>
+                                    <numIndex index="value">4</numIndex>
+                                </numIndex>
+                                <numIndex index="4" type="array">
+                                    <numIndex index="label">5</numIndex>
+                                    <numIndex index="value">5</numIndex>
+                                </numIndex>
+                                <numIndex index="5" type="array">
+                                    <numIndex index="label">6</numIndex>
+                                    <numIndex index="value">6</numIndex>
+                                </numIndex>
+                                <numIndex index="6" type="array">
+                                    <numIndex index="label">7</numIndex>
+                                    <numIndex index="value">7</numIndex>
+                                </numIndex>
+                                <numIndex index="7" type="array">
+                                    <numIndex index="label">8</numIndex>
+                                    <numIndex index="value">8</numIndex>
+                                </numIndex>
+                                <numIndex index="8" type="array">
+                                    <numIndex index="label">9</numIndex>
+                                    <numIndex index="value">9</numIndex>
+                                </numIndex>
+                                <numIndex index="9" type="array">
+                                    <numIndex index="label">10</numIndex>
+                                    <numIndex index="value">10</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </cells>
                 </el>
             </ROOT>
         </desktop>
         <tablet>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>Tablet</sheetTitle>
-                </TCEforms>
+                <sheetTitle>Tablet</sheetTitle>
                 <type>array</type>
                 <el>
                     <ratio_tablet>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.ratio
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <default>is-3by1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1</numIndex>
-                                        <numIndex index="1">is-3by1</numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.ratio</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>is-3by1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1
                                     </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2</numIndex>
-                                        <numIndex index="1">is-3by2</numIndex>
+                                    <numIndex index="value">is-3by1</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2
                                     </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9</numIndex>
-                                        <numIndex index="1">is-16by9</numIndex>
+                                    <numIndex index="value">is-3by2</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9
                                     </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3</numIndex>
-                                        <numIndex index="1">is-4by3</numIndex>
+                                    <numIndex index="value">is-16by9</numIndex>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3
                                     </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1</numIndex>
-                                        <numIndex index="1">is-1by1</numIndex>
+                                    <numIndex index="value">is-4by3</numIndex>
+                                </numIndex>
+                                <numIndex index="4" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
                                     </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3</numIndex>
-                                        <numIndex index="1">is-2by3</numIndex>
+                                    <numIndex index="value">is-1by1</numIndex>
+                                </numIndex>
+                                <numIndex index="5" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
                                     </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1</numIndex>
-                                        <numIndex index="1">is-4by1</numIndex>
+                                    <numIndex index="value">is-2by3</numIndex>
+                                </numIndex>
+                                <numIndex index="6" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1
                                     </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1</numIndex>
-                                        <numIndex index="1">is-6by1</numIndex>
+                                    <numIndex index="value">is-4by1</numIndex>
+                                </numIndex>
+                                <numIndex index="7" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
                                     </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2</numIndex>
-                                        <numIndex index="1">is-1by2</numIndex>
+                                    <numIndex index="value">is-6by1</numIndex>
+                                </numIndex>
+                                <numIndex index="8" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
                                     </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
-                                        <numIndex index="1">is-4by5</numIndex>
+                                    <numIndex index="value">is-1by2</numIndex>
+                                </numIndex>
+                                <numIndex index="9" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
                                     </numIndex>
-                                    <numIndex index="10" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16</numIndex>
-                                        <numIndex index="1">is-9by16</numIndex>
+                                    <numIndex index="value">is-4by5</numIndex>
+                                </numIndex>
+                                <numIndex index="10" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                    <numIndex index="value">is-9by16</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </ratio_tablet>
                     <cells_tablet>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cells
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <default>1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">1</numIndex>
-                                        <numIndex index="1">1</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">2</numIndex>
-                                        <numIndex index="1">2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">3</numIndex>
-                                        <numIndex index="1">3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">4</numIndex>
-                                        <numIndex index="1">4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">5</numIndex>
-                                        <numIndex index="1">5</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">6</numIndex>
-                                        <numIndex index="1">6</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">7</numIndex>
-                                        <numIndex index="1">7</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">8</numIndex>
-                                        <numIndex index="1">8</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">9</numIndex>
-                                        <numIndex index="1">9</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">10</numIndex>
-                                        <numIndex index="1">10</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cells</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">1</numIndex>
+                                    <numIndex index="value">1</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="label">2</numIndex>
+                                    <numIndex index="value">2</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="label">3</numIndex>
+                                    <numIndex index="value">3</numIndex>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                    <numIndex index="label">4</numIndex>
+                                    <numIndex index="value">4</numIndex>
+                                </numIndex>
+                                <numIndex index="4" type="array">
+                                    <numIndex index="label">5</numIndex>
+                                    <numIndex index="value">5</numIndex>
+                                </numIndex>
+                                <numIndex index="5" type="array">
+                                    <numIndex index="label">6</numIndex>
+                                    <numIndex index="value">6</numIndex>
+                                </numIndex>
+                                <numIndex index="6" type="array">
+                                    <numIndex index="label">7</numIndex>
+                                    <numIndex index="value">7</numIndex>
+                                </numIndex>
+                                <numIndex index="7" type="array">
+                                    <numIndex index="label">8</numIndex>
+                                    <numIndex index="value">8</numIndex>
+                                </numIndex>
+                                <numIndex index="8" type="array">
+                                    <numIndex index="label">9</numIndex>
+                                    <numIndex index="value">9</numIndex>
+                                </numIndex>
+                                <numIndex index="9" type="array">
+                                    <numIndex index="label">10</numIndex>
+                                    <numIndex index="value">10</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </cells_tablet>
                 </el>
             </ROOT>
         </tablet>
         <mobile>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>Mobile</sheetTitle>
-                </TCEforms>
+                <sheetTitle>Mobile</sheetTitle>
                 <type>array</type>
                 <el>
                     <ratio_mobile>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.ratio
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <default>is-2by3</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1</numIndex>
-                                        <numIndex index="1">is-3by1</numIndex>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.ratio</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>is-2by3</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1
                                     </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2</numIndex>
-                                        <numIndex index="1">is-3by2</numIndex>
+                                    <numIndex index="value">is-3by1</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2
                                     </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9</numIndex>
-                                        <numIndex index="1">is-16by9</numIndex>
+                                    <numIndex index="value">is-3by2</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9
                                     </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3</numIndex>
-                                        <numIndex index="1">is-4by3</numIndex>
+                                    <numIndex index="value">is-16by9</numIndex>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3
                                     </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1</numIndex>
-                                        <numIndex index="1">is-1by1</numIndex>
+                                    <numIndex index="value">is-4by3</numIndex>
+                                </numIndex>
+                                <numIndex index="4" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
                                     </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3</numIndex>
-                                        <numIndex index="1">is-2by3</numIndex>
+                                    <numIndex index="value">is-1by1</numIndex>
+                                </numIndex>
+                                <numIndex index="5" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
                                     </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1</numIndex>
-                                        <numIndex index="1">is-4by1</numIndex>
+                                    <numIndex index="value">is-2by3</numIndex>
+                                </numIndex>
+                                <numIndex index="6" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1
                                     </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1</numIndex>
-                                        <numIndex index="1">is-6by1</numIndex>
+                                    <numIndex index="value">is-4by1</numIndex>
+                                </numIndex>
+                                <numIndex index="7" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
                                     </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2</numIndex>
-                                        <numIndex index="1">is-1by2</numIndex>
+                                    <numIndex index="value">is-6by1</numIndex>
+                                </numIndex>
+                                <numIndex index="8" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
                                     </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5</numIndex>
-                                        <numIndex index="1">is-4by5</numIndex>
+                                    <numIndex index="value">is-1by2</numIndex>
+                                </numIndex>
+                                <numIndex index="9" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
                                     </numIndex>
-                                    <numIndex index="10" type="array">
-                                        <numIndex index="0">LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16</numIndex>
-                                        <numIndex index="1">is-9by16</numIndex>
+                                    <numIndex index="value">is-4by5</numIndex>
+                                </numIndex>
+                                <numIndex index="10" type="array">
+                                    <numIndex index="label">
+                                        LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16
                                     </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                                    <numIndex index="value">is-9by16</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </ratio_mobile>
                     <cells_mobile>
-                        <TCEforms>
-                            <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cells
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <default>1</default>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">1</numIndex>
-                                        <numIndex index="1">1</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">2</numIndex>
-                                        <numIndex index="1">2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">3</numIndex>
-                                        <numIndex index="1">3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">4</numIndex>
-                                        <numIndex index="1">4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">5</numIndex>
-                                        <numIndex index="1">5</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">6</numIndex>
-                                        <numIndex index="1">6</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">7</numIndex>
-                                        <numIndex index="1">7</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">8</numIndex>
-                                        <numIndex index="1">8</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">9</numIndex>
-                                        <numIndex index="1">9</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">10</numIndex>
-                                        <numIndex index="1">10</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.cells</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <default>1</default>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="label">1</numIndex>
+                                    <numIndex index="value">1</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="label">2</numIndex>
+                                    <numIndex index="value">2</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="label">3</numIndex>
+                                    <numIndex index="value">3</numIndex>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                    <numIndex index="label">4</numIndex>
+                                    <numIndex index="value">4</numIndex>
+                                </numIndex>
+                                <numIndex index="4" type="array">
+                                    <numIndex index="label">5</numIndex>
+                                    <numIndex index="value">5</numIndex>
+                                </numIndex>
+                                <numIndex index="5" type="array">
+                                    <numIndex index="label">6</numIndex>
+                                    <numIndex index="value">6</numIndex>
+                                </numIndex>
+                                <numIndex index="6" type="array">
+                                    <numIndex index="label">7</numIndex>
+                                    <numIndex index="value">7</numIndex>
+                                </numIndex>
+                                <numIndex index="7" type="array">
+                                    <numIndex index="label">8</numIndex>
+                                    <numIndex index="value">8</numIndex>
+                                </numIndex>
+                                <numIndex index="8" type="array">
+                                    <numIndex index="label">9</numIndex>
+                                    <numIndex index="value">9</numIndex>
+                                </numIndex>
+                                <numIndex index="9" type="array">
+                                    <numIndex index="label">10</numIndex>
+                                    <numIndex index="value">10</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </cells_mobile>
                 </el>
             </ROOT>
