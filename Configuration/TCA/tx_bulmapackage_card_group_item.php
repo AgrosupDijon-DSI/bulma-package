@@ -101,9 +101,11 @@ return [
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-                [
-                    'label' => '',
-                    'invertStateDisplay' => true,
+                'items' => [
+                    [
+                        'label' => '',
+                        'invertStateDisplay' => true,
+                    ],
                 ],
             ],
         ],
