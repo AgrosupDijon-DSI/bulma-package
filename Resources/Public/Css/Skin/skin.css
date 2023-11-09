@@ -13,3 +13,22 @@ div[id$=tx_bulmapackage_settings_link_item] .icon-list .item .icon-size-small{
     height: 32px;
     line-height: 32px;
 }
+
+div[id$="tx_bulmapackage_icon_group_item_records"] .form-wizard-icon-list,
+div[id$="tx_bulmapackage_settings_link_item_records"] .form-wizard-icon-list{
+    background: #fff;
+}
+
+div[id$="tx_bulmapackage_icon_group_item_records"] .form-wizard-icon-list-item a.active,
+div[id$="tx_bulmapackage_settings_link_item_records"] .form-wizard-icon-list-item a.active{
+    background-color: #e9f2fa;
+}
+
+div[id$="tx_bulmapackage_icon_group_item_records"] .form-wizard-icon-list-item a:hover,
+div[id$="tx_bulmapackage_settings_link_item_records"] .form-wizard-icon-list-item a:hover{
+    background-color: #e9f2fa;
+}
+
+
+
+
