@@ -38,6 +38,9 @@ class BulmaPageTitleHook
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_settings');
 
+        $bulmaSettingsTitleSeo = '';
+        $settingsPid = 0;
+
         foreach ($GLOBALS['TSFE']->rootLine as $page) {
 
             $result = $queryBuilder
@@ -53,28 +56,33 @@ class BulmaPageTitleHook
 
             $bulmaSettingsTitleSeo = $result->fetchOne();
             if (!empty($bulmaSettingsTitleSeo)) {
-
-                // see generatePageTitle() & printTitle() in TYPO3\CMS\Frontend\Controller\TyposcriptFrontendController
-                if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator']) && $GLOBALS['TSFE']->config['config']['pageTitleSeparator'] !== '') {
-                    $pageTitleSeparator = $GLOBALS['TSFE']->config['config']['pageTitleSeparator'];
-
-                    if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator.']) && is_array($GLOBALS['TSFE']->config['config']['pageTitleSeparator.'])) {
-                        /** @var object $GLOBALS['TSFE'] */
-                        $pageTitleSeparator = $GLOBALS['TSFE']->cObj->stdWrap($pageTitleSeparator, $GLOBALS['TSFE']->config['config']['pageTitleSeparator.']);
-                    } else {
-                        $pageTitleSeparator .= ' ';
-                    }
-                } else{
-                    $pageTitleSeparator = ': ';
-                }
-
-                if((bool)($GLOBALS['TSFE']->config['config']['pageTitleFirst'] ?? false)){
-                    $params['title'] = $params['title'] . $pageTitleSeparator . $bulmaSettingsTitleSeo;
-                } else {
-                    $params['title'] = $bulmaSettingsTitleSeo . $pageTitleSeparator . $params['title'];
-                }
-
+                $settingsPid = $page['uid'];
                 break;
+            }
+        }
+
+        if (!empty($bulmaSettingsTitleSeo)) {
+            // see generatePageTitle() & printTitle() in TYPO3\CMS\Frontend\Controller\TyposcriptFrontendController
+            if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator']) && $GLOBALS['TSFE']->config['config']['pageTitleSeparator'] !== '') {
+                $pageTitleSeparator = $GLOBALS['TSFE']->config['config']['pageTitleSeparator'];
+
+                if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator.']) && is_array($GLOBALS['TSFE']->config['config']['pageTitleSeparator.'])) {
+                    /** @var object $GLOBALS['TSFE'] */
+                    $pageTitleSeparator = $GLOBALS['TSFE']->cObj->stdWrap($pageTitleSeparator,
+                        $GLOBALS['TSFE']->config['config']['pageTitleSeparator.']);
+                } else {
+                    $pageTitleSeparator .= ' ';
+                }
+            } else {
+                $pageTitleSeparator = ': ';
+            }
+
+            // If pageTitleFirst is false, or if we are on a page where a tx_bulmapackage_settings record exists,
+            // current page is considered as homepage, and $bulmaSettingsTitleSeo comes first for SEO considerations
+            if ((bool)($GLOBALS['TSFE']->config['config']['pageTitleFirst'] ?? false) && $settingsPid !== $GLOBALS['TSFE']->id) {
+                $params['title'] = $params['title'] . $pageTitleSeparator . $bulmaSettingsTitleSeo;
+            } else {
+                $params['title'] = $bulmaSettingsTitleSeo . $pageTitleSeparator . $params['title'];
             }
         }
     }

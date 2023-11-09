@@ -134,3 +134,8 @@ if (!Environment::isComposerMode()) {
  * Register new backend stylesheet to override rte_ckeditor css
  */
 $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['bulma_package'] = 'EXT:bulma_package/Resources/Public/Css/Skin/';
+
+/***************
+ * Register page field "module" in RootLineFields 
+ */
+$GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] = 'module';
