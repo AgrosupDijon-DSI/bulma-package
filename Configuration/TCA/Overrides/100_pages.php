@@ -77,11 +77,20 @@ $additionalColumns = [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
         ]
+    ],
+    'hide_breadcrumb' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.hide_breadcrumb',
+        'config' => [
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+        ]
     ]
 ];
 
 ExtensionManagementUtility::addTCAcolumns('pages', $additionalColumns);
 ExtensionManagementUtility::addToAllTCAtypes('pages', 'thumbnail', '1,3,4', 'after:backend_layout_next_level');
+ExtensionManagementUtility::addToAllTCAtypes('pages', 'hide_breadcrumb', '1,3,4', 'after:thumbnail');
 ExtensionManagementUtility::addFieldsToPalette('pages', 'title', 'exclude_slug_for_subpages', 'after:slug');
 ExtensionManagementUtility::addFieldsToPalette('pages', 'titleonly', 'exclude_slug_for_subpages', 'after:slug');
 
