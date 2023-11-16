@@ -7,6 +7,10 @@
         <source>Exclude slug for subpages</source>
         <target state="final">Exclure le segment d'url pour les sous-pages</target>
       </trans-unit>
+      <trans-unit id="pages.hide_breadcrumb" approved="yes">
+        <source>Hide breadcrumb</source>
+        <target state="final">Masquer le fil d'Ariane</target>
+      </trans-unit>
       <trans-unit id="ratio.free" approved="yes">
         <source>Free</source>
         <target state="final">Libre</target>
