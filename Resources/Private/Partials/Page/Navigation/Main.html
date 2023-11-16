@@ -3,6 +3,9 @@
     <f:case value="megamenu">
         <f:render partial="Navigation/Mega" arguments="{_all}" />
     </f:case>
+    <f:case value="megamenu_clickable">
+        <f:render partial="Navigation/MegaClickable" arguments="{_all}" />
+    </f:case>
     <f:defaultCase>
         <f:render partial="Navigation/Dropdown" arguments="{_all}" />
     </f:defaultCase>

@@ -353,6 +353,10 @@ return [
                     [
                         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.menu_layout.megamenu',
                         'value' => 'megamenu'
+                    ],
+                    [
+                        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.menu_layout.megamenu_clickable',
+                        'value' => 'megamenu_clickable'
                     ]
                 ]
             ]

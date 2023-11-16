@@ -601,7 +601,10 @@
                 <source>Type</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.menu_layout.megamenu">
-                <source>Mega menu</source>
+                <source>Mega menu (Survol)</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.menu_layout.megamenu_clickable">
+                <source>Mega menu (Click)</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.title_seo">
                 <source>Seo title</source>

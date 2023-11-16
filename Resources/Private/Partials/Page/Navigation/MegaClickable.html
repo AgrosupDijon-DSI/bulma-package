@@ -1,0 +1,57 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:for each="{mainNavigation}" as="item_1">
+    <f:variable name="classActive">
+        <f:if condition="{item_1.active} && {item_1.data.shortcut} != {rootPage} || {item_1.current}">
+            is-active
+        </f:if>
+    </f:variable>
+    <f:variable name="target">
+        <f:if condition="{item_1.target}">
+            target="{item_1.target}"
+        </f:if>
+    </f:variable>
+    <f:if condition="{item_1.children}">
+        <f:then>
+            <div class="navbar-item has-dropdown is-mega dropdown">
+                <a class="dropdown-trigger navbar-link{classActive}">{item_1.title}</a>
+                <div class="navbar-dropdown">
+                    <div class="container">
+                        <div class="columns is-multiline">
+                            <f:for each="{item_1.children}" as="item_2">
+                                <div class="column {settings.megaMenuColumnClasses}">
+                                    <f:render section="sublevel" arguments="{item: item_2, currentUid: data.uid}"/>
+                                </div>
+                            </f:for>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+            <a href="{item_1.link}" class="navbar-item{classActive}" {target}>{item_1.title}</a>
+        </f:else>
+    </f:if>
+</f:for>
+
+<f:section name="sublevel">
+    <f:variable name="classActive">
+        <f:if condition="{item.current}">
+            is-active
+        </f:if>
+    </f:variable>
+    <f:variable name="target">
+        <f:if condition="{item.target}">
+            target="{item.target}"
+        </f:if>
+    </f:variable>
+    <a href="{item.link}" class="navbar-item{classActive}" {target}>{item.title}</a>
+    <f:if condition="{item.children}">
+        <ul>
+            <f:for each="{item.children}" as="subitem">
+                <li><f:render section="sublevel" arguments="{item: subitem, currentUid: data.uid}"/></li>
+            </f:for>
+        </ul>
+    </f:if>
+</f:section>
+</html>
