@@ -609,6 +609,15 @@
             <trans-unit id="tx_bulmapackage_settings.title_seo">
                 <source>Seo title</source>
             </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.title_seo.description">
+                <source>Will be added to every page title, and used as name in WebSite Stuctured Data (see https://developers.google.com/search/docs/appearance/site-names#add-structured-data)</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.alternate_title_seo">
+                <source>Alternate Seo title</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.alternate_title_seo.description">
+                <source>For usage in WebSite Stuctured Data, see https://developers.google.com/search/docs/appearance/site-names#alternative</source>
+            </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.logo_main">
                 <source>Main logo</source>
             </trans-unit>

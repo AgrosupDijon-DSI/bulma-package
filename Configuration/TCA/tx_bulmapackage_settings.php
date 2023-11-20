@@ -38,7 +38,7 @@ return [
     'palettes' => [
         'bulmapackage_sitetitle' => [
             'showitem' => '
-                title_seo
+                title_seo, --linebreak--, alternate_title_seo
             ',
         ],
         'bulmapackage_address' => [
@@ -115,11 +115,25 @@ return [
         'title_seo' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.title_seo',
+            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.title_seo.description',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'max' => 255
+                'max' => 255,
+                'eval' => 'trim'
             ]
+        ],
+        'alternate_title_seo' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.alternate_title_seo',
+            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.alternate_title_seo.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+                'eval' => 'trim',
+            ],
+            'displayCond' => 'FIELD:title_seo:REQ:true',
         ],
         'logo_main' => [
             'exclude' => true,

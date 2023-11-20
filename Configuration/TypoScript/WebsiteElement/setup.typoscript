@@ -15,3 +15,4 @@
 @import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Address.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/MenuLayout.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Favicon.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/WebSiteStructuredData'
