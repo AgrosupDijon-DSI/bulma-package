@@ -567,6 +567,9 @@
             <trans-unit id="palette.bulmapackage_address">
                 <source>Address</source>
             </trans-unit>
+            <trans-unit id="palette.google_settings">
+                <source>Google Settings</source>
+            </trans-unit>
             <trans-unit id="palette.tablayout">
                 <source>Tab Layout</source>
             </trans-unit>
@@ -610,13 +613,25 @@
                 <source>Seo title</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.title_seo.description">
-                <source>Will be added to every page title, and used as name in WebSite Stuctured Data (see https://developers.google.com/search/docs/appearance/site-names#add-structured-data)</source>
+                <source>Will be added to every page title</source>
             </trans-unit>
-            <trans-unit id="tx_bulmapackage_settings.alternate_title_seo">
-                <source>Alternate Seo title</source>
+            <trans-unit id="palette.bulmapackage_wsd.title">
+                <source>Provide a site name to Google Search</source>
             </trans-unit>
-            <trans-unit id="tx_bulmapackage_settings.alternate_title_seo.description">
-                <source>For usage in WebSite Stuctured Data, see https://developers.google.com/search/docs/appearance/site-names#alternative</source>
+            <trans-unit id="palette.bulmapackage_wsd.description">
+                <source>See https://developers.google.com/search/docs/appearance/site-names for recommendations</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.wsd_name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.wsd_name.description">
+                <source>Ex: Burnt Toast (see https://developers.google.com/search/docs/appearance/site-names#choosing-site-name)</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.wsd_alternate_name">
+                <source>Alternate name</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.wsd_alternate_name.description">
+                <source>Ex: BT, B-T, Burn Toast Shop, example.com</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.logo_main">
                 <source>Main logo</source>

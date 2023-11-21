@@ -1,10 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{data.title_seo}">
+<f:if condition="{data.wsd_name}">
 <f:asset.script priority="true" identifier="webSiteStructuredData" type="application/ld+json">
 {
     "@context" : "https://schema.org",
     "@type" : "WebSite",
-    "name" : "<f:format.raw>{data.title_seo}</f:format.raw>",<f:if condition="{data.alternate_title_seo}">
+    "name" : "<f:format.raw>{data.wsd_name}</f:format.raw>",<f:if condition="{data.wsd_alternate_name}">
     "alternateName" : {alternateName -> f:format.json()},</f:if>
     "url" : "<f:uri.page pageUid="{rootPageUid}" absolute="1" />"
 }

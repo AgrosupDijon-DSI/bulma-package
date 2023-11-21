@@ -8,7 +8,7 @@ lib.bulmaPackage.webSiteStructuredData{
     #############################
     ### CONTENT OBJECT FIELDS ###
     #############################
-    select.selectFields = title_seo, alternate_title_seo, sys_language_uid, l10n_parent
+    select.selectFields = wsd_name, wsd_alternate_name, sys_language_uid, l10n_parent
 
     renderObj {
         ################
@@ -23,7 +23,7 @@ lib.bulmaPackage.webSiteStructuredData{
 
         dataProcessing.10 = split
         dataProcessing.10 {
-            fieldName = alternate_title_seo
+            fieldName = wsd_alternate_name
             as = alternateName
             delimiter = ,
             removeEmptyEntries = true

@@ -22,7 +22,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'title_seo,logo_main,logos_partners,code_analytics,address_title,address,zip,city,country,phone,fax,email',
+        'searchFields' => 'title_seo,wsd_name,wsd_alternate_name,logo_main,logos_partners,code_analytics,address_title,address,zip,city,country,phone,fax,email',
         'typeicon_classes' => [
             'default' => 'actions-system-extension-configure',
         ],
@@ -32,13 +32,20 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,menu_layout,--div--;Google Analytics,code_analytics,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_social,tx_bulmapackage_settings_link_item,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language'
+            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,menu_layout,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.google_settings,code_analytics,--palette--;;bulmapackage_wsd,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_social,tx_bulmapackage_settings_link_item,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language'
         ],
     ],
     'palettes' => [
         'bulmapackage_sitetitle' => [
             'showitem' => '
-                title_seo, --linebreak--, alternate_title_seo
+                title_seo
+            ',
+        ],
+        'bulmapackage_wsd' => [
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_wsd.title',
+            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_wsd.description',
+            'showitem' => '
+                wsd_name, --linebreak--, wsd_alternate_name
             ',
         ],
         'bulmapackage_address' => [
@@ -123,17 +130,28 @@ return [
                 'eval' => 'trim'
             ]
         ],
-        'alternate_title_seo' => [
+        'wsd_name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.alternate_title_seo',
-            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.alternate_title_seo.description',
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_name',
+            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_name.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+                'eval' => 'trim'
+            ]
+        ],
+        'wsd_alternate_name' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_alternate_name',
+            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_alternate_name.description',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
                 'max' => 255,
                 'eval' => 'trim',
             ],
-            'displayCond' => 'FIELD:title_seo:REQ:true',
+            'displayCond' => 'FIELD:wsd_name:REQ:true',
         ],
         'logo_main' => [
             'exclude' => true,
