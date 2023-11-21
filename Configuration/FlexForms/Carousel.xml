@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3DataStructure>
     <meta>
         <langDisable>1</langDisable>
@@ -25,9 +24,9 @@
                             <default>1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.wrapAround.description
-                                    </numIndex>
+                                    </label>
                                 </numIndex>
                             </items>
                         </config>
@@ -40,22 +39,22 @@
                             <default>left</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-                                    </numIndex>
-                                    <numIndex index="value">left</numIndex>
+                                    </label>
+                                    <value>left</value>
                                 </numIndex>
                                 <numIndex index="1" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-                                    </numIndex>
-                                    <numIndex index="value">center</numIndex>
+                                    </label>
+                                    <value>center</value>
                                 </numIndex>
                                 <numIndex index="2" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
-                                    </numIndex>
-                                    <numIndex index="value">right</numIndex>
+                                    </label>
+                                    <value>right</value>
                                 </numIndex>
                             </items>
                         </config>
@@ -67,9 +66,9 @@
                             <default>1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.pageDots.description
-                                    </numIndex>
+                                    </label>
                                 </numIndex>
                             </items>
                         </config>
@@ -81,9 +80,9 @@
                             <default>1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.prevNextButtons.description
-                                    </numIndex>
+                                    </label>
                                 </numIndex>
                             </items>
                         </config>
@@ -95,9 +94,9 @@
                             <default>0</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.fade.description
-                                    </numIndex>
+                                    </label>
                                 </numIndex>
                             </items>
                         </config>
@@ -129,70 +128,70 @@
                             <default>is-3by1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1
-                                    </numIndex>
-                                    <numIndex index="value">is-3by1</numIndex>
+                                    </label>
+                                    <value>is-3by1</value>
                                 </numIndex>
                                 <numIndex index="1" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2
-                                    </numIndex>
-                                    <numIndex index="value">is-3by2</numIndex>
+                                    </label>
+                                    <value>is-3by2</value>
                                 </numIndex>
                                 <numIndex index="2" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9
-                                    </numIndex>
-                                    <numIndex index="value">is-16by9</numIndex>
+                                    </label>
+                                    <value>is-16by9</value>
                                 </numIndex>
                                 <numIndex index="3" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3
-                                    </numIndex>
-                                    <numIndex index="value">is-4by3</numIndex>
+                                    </label>
+                                    <value>is-4by3</value>
                                 </numIndex>
                                 <numIndex index="4" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
-                                    </numIndex>
-                                    <numIndex index="value">is-1by1</numIndex>
+                                    </label>
+                                    <value>is-1by1</value>
                                 </numIndex>
                                 <numIndex index="5" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
-                                    </numIndex>
-                                    <numIndex index="value">is-2by3</numIndex>
+                                    </label>
+                                    <value>is-2by3</value>
                                 </numIndex>
                                 <numIndex index="6" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1
-                                    </numIndex>
-                                    <numIndex index="value">is-4by1</numIndex>
+                                    </label>
+                                    <value>is-4by1</value>
                                 </numIndex>
                                 <numIndex index="7" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
-                                    </numIndex>
-                                    <numIndex index="value">is-6by1</numIndex>
+                                    </label>
+                                    <value>is-6by1</value>
                                 </numIndex>
                                 <numIndex index="8" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
-                                    </numIndex>
-                                    <numIndex index="value">is-1by2</numIndex>
+                                    </label>
+                                    <value>is-1by2</value>
                                 </numIndex>
                                 <numIndex index="9" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
-                                    </numIndex>
-                                    <numIndex index="value">is-4by5</numIndex>
+                                    </label>
+                                    <value>is-4by5</value>
                                 </numIndex>
                                 <numIndex index="10" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16
-                                    </numIndex>
-                                    <numIndex index="value">is-9by16</numIndex>
+                                    </label>
+                                    <value>is-9by16</value>
                                 </numIndex>
                             </items>
                         </config>
@@ -205,44 +204,44 @@
                             <default>1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">1</numIndex>
-                                    <numIndex index="value">1</numIndex>
+                                    <label>1</label>
+                                    <value>1</value>
                                 </numIndex>
                                 <numIndex index="1" type="array">
-                                    <numIndex index="label">2</numIndex>
-                                    <numIndex index="value">2</numIndex>
+                                    <label>2</label>
+                                    <value>2</value>
                                 </numIndex>
                                 <numIndex index="2" type="array">
-                                    <numIndex index="label">3</numIndex>
-                                    <numIndex index="value">3</numIndex>
+                                    <label>3</label>
+                                    <value>3</value>
                                 </numIndex>
                                 <numIndex index="3" type="array">
-                                    <numIndex index="label">4</numIndex>
-                                    <numIndex index="value">4</numIndex>
+                                    <label>4</label>
+                                    <value>4</value>
                                 </numIndex>
                                 <numIndex index="4" type="array">
-                                    <numIndex index="label">5</numIndex>
-                                    <numIndex index="value">5</numIndex>
+                                    <label>5</label>
+                                    <value>5</value>
                                 </numIndex>
                                 <numIndex index="5" type="array">
-                                    <numIndex index="label">6</numIndex>
-                                    <numIndex index="value">6</numIndex>
+                                    <label>6</label>
+                                    <value>6</value>
                                 </numIndex>
                                 <numIndex index="6" type="array">
-                                    <numIndex index="label">7</numIndex>
-                                    <numIndex index="value">7</numIndex>
+                                    <label>7</label>
+                                    <value>7</value>
                                 </numIndex>
                                 <numIndex index="7" type="array">
-                                    <numIndex index="label">8</numIndex>
-                                    <numIndex index="value">8</numIndex>
+                                    <label>8</label>
+                                    <value>8</value>
                                 </numIndex>
                                 <numIndex index="8" type="array">
-                                    <numIndex index="label">9</numIndex>
-                                    <numIndex index="value">9</numIndex>
+                                    <label>9</label>
+                                    <value>9</value>
                                 </numIndex>
                                 <numIndex index="9" type="array">
-                                    <numIndex index="label">10</numIndex>
-                                    <numIndex index="value">10</numIndex>
+                                    <label>10</label>
+                                    <value>10</value>
                                 </numIndex>
                             </items>
                         </config>
@@ -263,70 +262,70 @@
                             <default>is-3by1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1
-                                    </numIndex>
-                                    <numIndex index="value">is-3by1</numIndex>
+                                    </label>
+                                    <value>is-3by1</value>
                                 </numIndex>
                                 <numIndex index="1" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2
-                                    </numIndex>
-                                    <numIndex index="value">is-3by2</numIndex>
+                                    </label>
+                                    <value>is-3by2</value>
                                 </numIndex>
                                 <numIndex index="2" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9
-                                    </numIndex>
-                                    <numIndex index="value">is-16by9</numIndex>
+                                    </label>
+                                    <value>is-16by9</value>
                                 </numIndex>
                                 <numIndex index="3" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3
-                                    </numIndex>
-                                    <numIndex index="value">is-4by3</numIndex>
+                                    </label>
+                                    <value>is-4by3</value>
                                 </numIndex>
                                 <numIndex index="4" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
-                                    </numIndex>
-                                    <numIndex index="value">is-1by1</numIndex>
+                                    </label>
+                                    <value>is-1by1</value>
                                 </numIndex>
                                 <numIndex index="5" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
-                                    </numIndex>
-                                    <numIndex index="value">is-2by3</numIndex>
+                                    </label>
+                                    <value>is-2by3</value>
                                 </numIndex>
                                 <numIndex index="6" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1
-                                    </numIndex>
-                                    <numIndex index="value">is-4by1</numIndex>
+                                    </label>
+                                    <value>is-4by1</value>
                                 </numIndex>
                                 <numIndex index="7" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
-                                    </numIndex>
-                                    <numIndex index="value">is-6by1</numIndex>
+                                    </label>
+                                    <value>is-6by1</value>
                                 </numIndex>
                                 <numIndex index="8" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
-                                    </numIndex>
-                                    <numIndex index="value">is-1by2</numIndex>
+                                    </label>
+                                    <value>is-1by2</value>
                                 </numIndex>
                                 <numIndex index="9" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
-                                    </numIndex>
-                                    <numIndex index="value">is-4by5</numIndex>
+                                    </label>
+                                    <value>is-4by5</value>
                                 </numIndex>
                                 <numIndex index="10" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16
-                                    </numIndex>
-                                    <numIndex index="value">is-9by16</numIndex>
+                                    </label>
+                                    <value>is-9by16</value>
                                 </numIndex>
                             </items>
                         </config>
@@ -339,44 +338,44 @@
                             <default>1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">1</numIndex>
-                                    <numIndex index="value">1</numIndex>
+                                    <label>1</label>
+                                    <value>1</value>
                                 </numIndex>
                                 <numIndex index="1" type="array">
-                                    <numIndex index="label">2</numIndex>
-                                    <numIndex index="value">2</numIndex>
+                                    <label>2</label>
+                                    <value>2</value>
                                 </numIndex>
                                 <numIndex index="2" type="array">
-                                    <numIndex index="label">3</numIndex>
-                                    <numIndex index="value">3</numIndex>
+                                    <label>3</label>
+                                    <value>3</value>
                                 </numIndex>
                                 <numIndex index="3" type="array">
-                                    <numIndex index="label">4</numIndex>
-                                    <numIndex index="value">4</numIndex>
+                                    <label>4</label>
+                                    <value>4</value>
                                 </numIndex>
                                 <numIndex index="4" type="array">
-                                    <numIndex index="label">5</numIndex>
-                                    <numIndex index="value">5</numIndex>
+                                    <label>5</label>
+                                    <value>5</value>
                                 </numIndex>
                                 <numIndex index="5" type="array">
-                                    <numIndex index="label">6</numIndex>
-                                    <numIndex index="value">6</numIndex>
+                                    <label>6</label>
+                                    <value>6</value>
                                 </numIndex>
                                 <numIndex index="6" type="array">
-                                    <numIndex index="label">7</numIndex>
-                                    <numIndex index="value">7</numIndex>
+                                    <label>7</label>
+                                    <value>7</value>
                                 </numIndex>
                                 <numIndex index="7" type="array">
-                                    <numIndex index="label">8</numIndex>
-                                    <numIndex index="value">8</numIndex>
+                                    <label>8</label>
+                                    <value>8</value>
                                 </numIndex>
                                 <numIndex index="8" type="array">
-                                    <numIndex index="label">9</numIndex>
-                                    <numIndex index="value">9</numIndex>
+                                    <label>9</label>
+                                    <value>9</value>
                                 </numIndex>
                                 <numIndex index="9" type="array">
-                                    <numIndex index="label">10</numIndex>
-                                    <numIndex index="value">10</numIndex>
+                                    <label>10</label>
+                                    <value>10</value>
                                 </numIndex>
                             </items>
                         </config>
@@ -397,70 +396,70 @@
                             <default>is-2by3</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1
-                                    </numIndex>
-                                    <numIndex index="value">is-3by1</numIndex>
+                                    </label>
+                                    <value>is-3by1</value>
                                 </numIndex>
                                 <numIndex index="1" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2
-                                    </numIndex>
-                                    <numIndex index="value">is-3by2</numIndex>
+                                    </label>
+                                    <value>is-3by2</value>
                                 </numIndex>
                                 <numIndex index="2" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9
-                                    </numIndex>
-                                    <numIndex index="value">is-16by9</numIndex>
+                                    </label>
+                                    <value>is-16by9</value>
                                 </numIndex>
                                 <numIndex index="3" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3
-                                    </numIndex>
-                                    <numIndex index="value">is-4by3</numIndex>
+                                    </label>
+                                    <value>is-4by3</value>
                                 </numIndex>
                                 <numIndex index="4" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
-                                    </numIndex>
-                                    <numIndex index="value">is-1by1</numIndex>
+                                    </label>
+                                    <value>is-1by1</value>
                                 </numIndex>
                                 <numIndex index="5" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
-                                    </numIndex>
-                                    <numIndex index="value">is-2by3</numIndex>
+                                    </label>
+                                    <value>is-2by3</value>
                                 </numIndex>
                                 <numIndex index="6" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1
-                                    </numIndex>
-                                    <numIndex index="value">is-4by1</numIndex>
+                                    </label>
+                                    <value>is-4by1</value>
                                 </numIndex>
                                 <numIndex index="7" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
-                                    </numIndex>
-                                    <numIndex index="value">is-6by1</numIndex>
+                                    </label>
+                                    <value>is-6by1</value>
                                 </numIndex>
                                 <numIndex index="8" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
-                                    </numIndex>
-                                    <numIndex index="value">is-1by2</numIndex>
+                                    </label>
+                                    <value>is-1by2</value>
                                 </numIndex>
                                 <numIndex index="9" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
-                                    </numIndex>
-                                    <numIndex index="value">is-4by5</numIndex>
+                                    </label>
+                                    <value>is-4by5</value>
                                 </numIndex>
                                 <numIndex index="10" type="array">
-                                    <numIndex index="label">
+                                    <label>
                                         LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16
-                                    </numIndex>
-                                    <numIndex index="value">is-9by16</numIndex>
+                                    </label>
+                                    <value>is-9by16</value>
                                 </numIndex>
                             </items>
                         </config>
@@ -473,44 +472,44 @@
                             <default>1</default>
                             <items type="array">
                                 <numIndex index="0" type="array">
-                                    <numIndex index="label">1</numIndex>
-                                    <numIndex index="value">1</numIndex>
+                                    <label>1</label>
+                                    <value>1</value>
                                 </numIndex>
                                 <numIndex index="1" type="array">
-                                    <numIndex index="label">2</numIndex>
-                                    <numIndex index="value">2</numIndex>
+                                    <label>2</label>
+                                    <value>2</value>
                                 </numIndex>
                                 <numIndex index="2" type="array">
-                                    <numIndex index="label">3</numIndex>
-                                    <numIndex index="value">3</numIndex>
+                                    <label>3</label>
+                                    <value>3</value>
                                 </numIndex>
                                 <numIndex index="3" type="array">
-                                    <numIndex index="label">4</numIndex>
-                                    <numIndex index="value">4</numIndex>
+                                    <label>4</label>
+                                    <value>4</value>
                                 </numIndex>
                                 <numIndex index="4" type="array">
-                                    <numIndex index="label">5</numIndex>
-                                    <numIndex index="value">5</numIndex>
+                                    <label>5</label>
+                                    <value>5</value>
                                 </numIndex>
                                 <numIndex index="5" type="array">
-                                    <numIndex index="label">6</numIndex>
-                                    <numIndex index="value">6</numIndex>
+                                    <label>6</label>
+                                    <value>6</value>
                                 </numIndex>
                                 <numIndex index="6" type="array">
-                                    <numIndex index="label">7</numIndex>
-                                    <numIndex index="value">7</numIndex>
+                                    <label>7</label>
+                                    <value>7</value>
                                 </numIndex>
                                 <numIndex index="7" type="array">
-                                    <numIndex index="label">8</numIndex>
-                                    <numIndex index="value">8</numIndex>
+                                    <label>8</label>
+                                    <value>8</value>
                                 </numIndex>
                                 <numIndex index="8" type="array">
-                                    <numIndex index="label">9</numIndex>
-                                    <numIndex index="value">9</numIndex>
+                                    <label>9</label>
+                                    <value>9</value>
                                 </numIndex>
                                 <numIndex index="9" type="array">
-                                    <numIndex index="label">10</numIndex>
-                                    <numIndex index="value">10</numIndex>
+                                    <label>10</label>
+                                    <value>10</value>
                                 </numIndex>
                             </items>
                         </config>
