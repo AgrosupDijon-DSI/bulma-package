@@ -9,7 +9,7 @@
     <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
 
     <section id="content">
-        <div class="container{f:if(condition: breadcrumb, then: ' after-breadcrumb')}">
+        <div class="container{f:if(condition: '{breadcrumb} && !{data.hide_breadcrumb}', then: ' after-breadcrumb')}">
             <div class="{settings.layouts.{current}.columns.wrapperClasses}">
                 <main id="main" class="{settings.layouts.{current}.columns.mainClasses}">
                     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
