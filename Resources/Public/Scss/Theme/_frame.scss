@@ -20,7 +20,7 @@ $frame-spacing-negative-xl: $frame-spacing-xl !default;
   }
 
   &:first-of-type {
-    &:not(.frame-space-before-no-space):not([class*="has-background-"]):not(.is-background-limited) {
+    &:not([class*="frame-space-before-"]):not([class*="has-background-"]):not(.is-background-limited) {
       padding-top: 0;
       margin-top: $frame-spacing;
     }
