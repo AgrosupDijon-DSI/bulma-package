@@ -6,6 +6,7 @@
 
     <main id="main">
         <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+        <f:render partial="Structure/SocialMediaButtons" arguments="{showSocialMediaButtons: data.social_media_buttons, wrapInContainer: 1}" />
     </main>
 
 </f:section>

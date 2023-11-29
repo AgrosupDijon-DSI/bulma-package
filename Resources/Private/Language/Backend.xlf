@@ -9,6 +9,9 @@
             <trans-unit id="pages.hide_breadcrumb">
                 <source>Hide breadcrumb</source>
             </trans-unit>
+            <trans-unit id="pages.social_media_buttons">
+                <source>Show social media buttons</source>
+            </trans-unit>
             <trans-unit id="ratio.16_9">
                 <source>16:9</source>
             </trans-unit>

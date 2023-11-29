@@ -1,0 +1,13 @@
+@import "../../Contrib/bulma-scss/utilities/functions";
+
+$social-button-colors: (
+        "facebook": (#3b5998, findColorInvert(#3b5998)),
+        "twitter": (#55acee, findColorInvert(#55acee)),
+        "linkedin": (#0960b6, findColorInvert(#0960b6))
+) !default;
+
+// Careful, if you define your own $custom-colors, you will have merge it with $social-button-colors
+// to avoid getting rid of $social-button-colors
+// eg: $custom-colors: mergeColorMaps(("custom1": ($custom1, $custom1-invert),"custom2": ($custom2, $custom2-invert)), $social-button-colors);
+// If you have better implementation, please get in touch ;)
+$custom-colors: $social-button-colors !default;
