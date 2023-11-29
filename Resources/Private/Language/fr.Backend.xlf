@@ -243,6 +243,14 @@
         <source>Cells displayed on carousel viewport</source>
         <target state="final">Nombre de cellules pour le carrousel</target>
       </trans-unit>
+      <trans-unit id="carousel.wrapAround" approved="yes">
+        <source>wrapAround</source>
+        <target state="final">Défilement infini</target>
+      </trans-unit>
+      <trans-unit id="carousel.wrapAround.description" approved="yes">
+        <source>At the end of cells, wrap-around to the other end for infinite scrolling</source>
+        <target state="final">À la fin des cellules, on rejoint l'autre extrémité pour un défilement infini</target>
+      </trans-unit>
       <trans-unit id="carousel.cellAlign" approved="yes">
         <source>Cells alignment within the carousel element</source>
         <target state="final">Alignement des cellules à l'intérieur du carrousel</target>
@@ -266,6 +274,10 @@
       <trans-unit id="carousel.fade" approved="yes">
         <source>fade</source>
         <target state="final">fondu</target>
+      </trans-unit>
+      <trans-unit id="carousel.fade.description" approved="yes">
+        <source>Fades between transitioning slides instead of moving</source>
+        <target state="final">La transition entre les cellules se fait avec un fondu au lieu d'un déplacement</target>
       </trans-unit>
       <trans-unit id="carousel_item" approved="yes">
         <source>Carousel Item</source>
@@ -595,6 +607,10 @@
         <source>Address</source>
         <target state="final">Adresse</target>
       </trans-unit>
+      <trans-unit id="palette.google_settings" approved="yes">
+        <source>Google Settings</source>
+        <target state="final">Paramètres Google</target>
+      </trans-unit>
       <trans-unit id="palette.tablayout" approved="yes">
         <source>Tab Layout</source>
         <target state="final">Disposition des onglets</target>
@@ -630,6 +646,26 @@
       <trans-unit id="tx_bulmapackage_settings.title_seo" approved="yes">
         <source>Seo title</source>
         <target state="final">Titre SEO</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.title_seo.description" approved="yes">
+        <source>Will be added to every page title</source>
+        <target state="final">Ce titre sera ajouté à chaque titre de page</target>
+      </trans-unit>
+      <trans-unit id="palette.bulmapackage_wsd.description" approved="yes">
+        <source>See https://developers.google.com/search/docs/appearance/site-names for recommendations</source>
+        <target state="final">Voir https://developers.google.com/search/docs/appearance/site-names pour des recommandations</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.wsd_name" approved="yes">
+        <source>Name</source>
+        <target state="final">Nom</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.wsd_name.description" approved="yes">
+        <source>Ex: Burnt Toast (see https://developers.google.com/search/docs/appearance/site-names#choosing-site-name)</source>
+        <target state="final">Ex : Pain Grillé (voir https://developers.google.com/search/docs/appearance/site-names#choosing-site-name)</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.wsd_alternate_name" approved="yes">
+        <source>Alternate name</source>
+        <target state="final">Nom alternatif</target>
       </trans-unit>
       <trans-unit id="tx_bulmapackage_settings.logo_main" approved="yes">
         <source>Main logo</source>
