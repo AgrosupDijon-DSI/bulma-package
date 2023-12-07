@@ -1,122 +1,122 @@
 imports:
-    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
-    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
-    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
 
 editor:
-    config:
-        contentsCss:
-            - 'EXT:bulma_package/Resources/Public/Build/rte.min.css'
-
-        heading:
-            options:
-                - { model: 'paragraph', title: 'Paragraph' }
-                - { model: 'heading2', view: 'h2', title: 'Heading 2' }
-                - { model: 'heading3', view: 'h3', title: 'Heading 3' }
-                - { model: 'heading4', view: 'h4', title: 'Heading 4' }
-                - { model: 'heading5', view: 'h5', title: 'Heading 5' }
-
-        style:
-            definitions:
-                ## Block level styles
-                # Box
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.box', element: 'p', classes: ['box'] }
-                # Notifications
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification', element: 'p', classes: ['notification'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.primary', element: 'p', classes: ['notification', 'is-primary'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.success', element: 'p', classes: ['notification', 'is-success'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.info', element: 'p', classes: ['notification', 'is-info'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.warning', element: 'p', classes: ['notification', 'is-warning'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.danger', element: 'p', classes: ['notification', 'is-danger'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.light', element: 'p', classes: ['notification', 'is-light'] }
-                # Sizes
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.1', element: 'p', classes: ['is-size-1'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.2', element: 'p', classes: ['is-size-2'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.3', element: 'p', classes: ['is-size-3'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.4', element: 'p', classes: ['is-size-4'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.5', element: 'p', classes: ['is-size-5'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.6', element: 'p', classes: ['is-size-6'] }
-                # Button container
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.buttons', element: 'p', classes: ['buttons'] }
-                # Table
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.table.bordered', element: 'table', classes: ['table', 'is-bordered'] }
-
-                ## Inline styles
-                # Buttons
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button', element: 'a', classes: ['button'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.primary', element: 'a', classes: ['button', 'is-primary'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.success', element: 'a', classes: ['button', 'is-success'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.info', element: 'a', classes: ['button', 'is-info'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.warning', element: 'a', classes: ['button', 'is-warning'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.danger', element: 'a', classes: ['button', 'is-danger'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.light', element: 'a', classes: ['button', 'is-light'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.dark', element: 'a', classes: ['button', 'is-dark'] }
-#                # Link classes
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.link.mail', element: 'a', classes: ['icon-mail'] }
-                # Text colors
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.primary', element: 'span', classes: ['has-text-primary'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.success', element: 'span', classes: ['has-text-success'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.info', element: 'span', classes: ['has-text-info'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.warning', element: 'span', classes: ['has-text-warning'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.danger', element: 'span', classes: ['has-text-danger'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.light', element: 'span', classes: ['has-text-light'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.dark', element: 'span', classes: ['has-text-dark'] }
-                # Sizes
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.1', element: 'span', classes: ['is-size-1'] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.2', element: 'span', classes: [ 'is-size-2' ] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.3', element: 'span', classes: [ 'is-size-3' ] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.4', element: 'span', classes: [ 'is-size-4' ] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.5', element: 'span', classes: [ 'is-size-5' ] }
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.6', element: 'span', classes: [ 'is-size-6' ] }
-                # Highlightment
-                - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.highlighted', element: 'span', classes: [ 'has-background-primary-light' ] }
-
-        toolbar:
-            items:
-                - style
-                - heading
-                - - '|'
-                - clipboard
-                - removeFormat
-                - undo
-                - redo
-                # grouping separator
-                - '|'
-                - insertTable
-                - tableColumn
-                - tableRow
-                - mergeTableCells
-                - '|'
-                - link
-                # line break
-                - '-'
-                - bold
-                - italic
-                - underline
-                - strikethrough
-                - '|'
-                - subscript
-                - superscript
-                - softhyphen
-                - '|'
-                - bulletedList
-                - numberedList
-                - '|'
-                - blockQuote
-                - horizontalLine
-                - '|'
-                - indent
-                - outdent
-                - alignment:left
-                - alignment:center
-                - alignment:right
-                - '|'
-                - specialCharacters
-                - '|'
-                - sourceEditing
-
-        alignment:
-            options:
-                - { name: 'left', className: 'has-text-left' }
-                - { name: 'center', className: 'has-text-centered' }
-                - { name: 'right', className: 'has-text-right' }
+  config:
+    contentsCss:
+      - 'EXT:bulma_package/Resources/Public/Build/rte.min.css'
+    
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
+        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
+        - { model: 'heading3', view: 'h3', title: 'Heading 3' }
+        - { model: 'heading4', view: 'h4', title: 'Heading 4' }
+        - { model: 'heading5', view: 'h5', title: 'Heading 5' }
+    
+    style:
+      definitions:
+        ## Block level styles
+        # Box
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.box', element: 'p', classes: [ 'box' ] }
+        # Notifications
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification', element: 'p', classes: [ 'notification' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.primary', element: 'p', classes: [ 'notification', 'is-primary' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.success', element: 'p', classes: [ 'notification', 'is-success' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.info', element: 'p', classes: [ 'notification', 'is-info' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.warning', element: 'p', classes: [ 'notification', 'is-warning' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.danger', element: 'p', classes: [ 'notification', 'is-danger' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.notification.light', element: 'p', classes: [ 'notification', 'is-light' ] }
+        # Sizes
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.bloc-size.1', element: 'p', classes: [ 'is-size-1' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.bloc-size.2', element: 'p', classes: [ 'is-size-2' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.bloc-size.3', element: 'p', classes: [ 'is-size-3' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.bloc-size.4', element: 'p', classes: [ 'is-size-4' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.bloc-size.5', element: 'p', classes: [ 'is-size-5' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.bloc-size.6', element: 'p', classes: [ 'is-size-6' ] }
+        # Button container
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.buttons', element: 'p', classes: [ 'buttons' ] }
+        # Table
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.table.bordered', element: 'table', classes: [ 'table', 'is-bordered' ] }
+        
+        ## Inline styles
+        # Buttons
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button', element: 'a', classes: [ 'button' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.primary', element: 'a', classes: [ 'button', 'is-primary' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.success', element: 'a', classes: [ 'button', 'is-success' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.info', element: 'a', classes: [ 'button', 'is-info' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.warning', element: 'a', classes: [ 'button', 'is-warning' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.danger', element: 'a', classes: [ 'button', 'is-danger' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.light', element: 'a', classes: [ 'button', 'is-light' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.dark', element: 'a', classes: [ 'button', 'is-dark' ] }
+        # Link classes
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.link.mail', element: 'a', classes: [ 'icon-mail' ] }
+        # Text colors
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.primary', element: 'span', classes: [ 'has-text-primary' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.success', element: 'span', classes: [ 'has-text-success' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.info', element: 'span', classes: [ 'has-text-info' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.warning', element: 'span', classes: [ 'has-text-warning' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.danger', element: 'span', classes: [ 'has-text-danger' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.light', element: 'span', classes: [ 'has-text-light' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.dark', element: 'span', classes: [ 'has-text-dark' ] }
+        # Sizes
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.1', element: 'span', classes: [ 'is-size-1' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.2', element: 'span', classes: [ 'is-size-2' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.3', element: 'span', classes: [ 'is-size-3' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.4', element: 'span', classes: [ 'is-size-4' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.5', element: 'span', classes: [ 'is-size-5' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.size.6', element: 'span', classes: [ 'is-size-6' ] }
+        # Highlightment
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.highlighted', element: 'span', classes: [ 'has-background-primary-light' ] }
+    
+    toolbar:
+      items:
+        - style
+        - heading
+        - '|'
+        - clipboard
+        - removeFormat
+        - undo
+        - redo
+        # grouping separator
+        - '|'
+        - insertTable
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - '|'
+        - link
+        # line break
+        - '-'
+        - bold
+        - italic
+        - underline
+        - strikethrough
+        - '|'
+        - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
+        - '|'
+        - blockQuote
+        - horizontalLine
+        - '|'
+        - indent
+        - outdent
+        - alignment:left
+        - alignment:center
+        - alignment:right
+        - '|'
+        - specialCharacters
+        - '|'
+        - sourceEditing
+    
+    alignment:
+      options:
+        - { name: 'left', className: 'has-text-left' }
+        - { name: 'center', className: 'has-text-centered' }
+        - { name: 'right', className: 'has-text-right' }

@@ -52,6 +52,24 @@
             <trans-unit id="style.size.6">
                 <source>Size 6</source>
             </trans-unit>
+            <trans-unit id="style.bloc-size.1">
+                <source>Bloc size 1</source>
+            </trans-unit>
+            <trans-unit id="style.bloc-size.2">
+                <source>Bloc size 2</source>
+            </trans-unit>
+            <trans-unit id="style.bloc-size.3">
+                <source>Bloc size 3</source>
+            </trans-unit>
+            <trans-unit id="style.bloc-size.4">
+                <source>Bloc size 4</source>
+            </trans-unit>
+            <trans-unit id="style.bloc-size.5">
+                <source>Bloc size 5</source>
+            </trans-unit>
+            <trans-unit id="style.bloc-size.6">
+                <source>Bloc size 6</source>
+            </trans-unit>
             <trans-unit id="style.buttons">
                 <source>List of buttons</source>
             </trans-unit>
