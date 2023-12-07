@@ -11,6 +11,10 @@
         <source>Hide breadcrumb</source>
         <target state="final">Masquer le fil d'Ariane</target>
       </trans-unit>
+      <trans-unit id="pages.social_media_buttons" approved="yes">
+        <source>Show social media buttons</source>
+        <target state="final">Afficher les boutons de partage</target>
+      </trans-unit>
       <trans-unit id="ratio.free" approved="yes">
         <source>Free</source>
         <target state="final">Libre</target>
