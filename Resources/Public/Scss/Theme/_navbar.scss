@@ -169,6 +169,7 @@ $navbar-height-touch: $navbar-height !default;
     }
 
     .navbar-dropdown {
+      bottom: initial;
       top: -10px;
       margin-left: 100%;
       border-bottom-left-radius: 0;
