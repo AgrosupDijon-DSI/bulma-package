@@ -106,6 +106,14 @@ TYPO3:
                             options:
                                 templateRootPaths:
                                     20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Confirmation/'
+                        EmailToReceiver:
+                            options:
+                                templateRootPaths:
+                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Email/'
+                        EmailToSender:
+                            options:
+                                templateRootPaths:
+                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Email/'
             mixins:
                 formElementMixins:
                     TextMixin:
