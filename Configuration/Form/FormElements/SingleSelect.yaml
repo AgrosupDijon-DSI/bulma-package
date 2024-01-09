@@ -1,0 +1,7 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      SingleSelect:
+        properties:
+          containerClassAttribute: control
+          elementErrorClassAttribute: is-danger

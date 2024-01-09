@@ -1,0 +1,8 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      Date:
+        properties:
+          containerClassAttribute: control
+          elementClassAttribute: input
+          elementErrorClassAttribute: is-danger

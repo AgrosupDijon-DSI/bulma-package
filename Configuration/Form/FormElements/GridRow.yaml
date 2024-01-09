@@ -1,0 +1,18 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      GridRow:
+        properties:
+          elementClassAttribute: 'columns is-mobile is-multiline'
+          elementErrorClassAttribute: is-danger
+          gridColumnClassAutoConfiguration:
+            gridSize: 12
+            viewPorts:
+              xs:
+                classPattern: 'column is-{@numbersOfColumnsToUse}-mobile'
+              sm:
+                classPattern: 'is-{@numbersOfColumnsToUse}-tablet'
+              md:
+                classPattern: 'is-{@numbersOfColumnsToUse}-desktop'
+              lg:
+                classPattern: 'is-{@numbersOfColumnsToUse}-fullhd'

@@ -1,0 +1,8 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      Checkbox:
+        properties:
+          elementClassAttribute: is-checkradio
+          containerClassAttribute: control
+          elementErrorClassAttribute: is-danger

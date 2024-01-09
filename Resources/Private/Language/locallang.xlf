@@ -77,6 +77,21 @@
             <trans-unit id="cookieconsent.common.policy">
                 <source>Cookie settings</source>
             </trans-unit>
+            <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.header.label">
+                <source>Clear cache</source>
+            </trans-unit>
+            <trans-unit id="tt_content.finishersDefinition.ClearCache.label">
+                <source>Clear cache</source>
+            </trans-unit>
+            <trans-unit id="tt_content.finishersDefinition.ClearCache.pageUid.label">
+                <source>Page</source>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.pageUid.label">
+                <source>Page</source>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.pageUid.buttonLabel">
+                <source>Page</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

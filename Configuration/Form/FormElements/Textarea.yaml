@@ -1,0 +1,8 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      Textarea:
+        properties:
+          containerClassAttribute: control
+          elementClassAttribute: textarea
+          elementErrorClassAttribute: is-danger

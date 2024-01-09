@@ -1,0 +1,8 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      Email:
+        properties:
+          containerClassAttribute: control
+          elementClassAttribute: input
+          elementErrorClassAttribute: is-danger

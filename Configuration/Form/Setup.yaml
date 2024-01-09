@@ -1,126 +1,38 @@
-TYPO3:
-    CMS:
-        Form:
-            persistenceManager:
-                allowedExtensionPaths:
-                    110: 'EXT:bulma_package/Resources/Private/Forms/'
-            prototypes:
-                standard:
-                    formElementsDefinition:
-                        Text:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        Email:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        Password:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        Telephone:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        Url:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        Number:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        Date:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        DatePicker:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                        Form:
-                            renderingOptions:
-                                translation:
-                                    translationFiles:
-                                        110: 'EXT:bulma_package/Resources/Private/Language/locallang.xlf'
-                                templateRootPaths:
-                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/'
-                                partialRootPaths:
-                                    20: 'EXT:bulma_package/Resources/Private/Partials/Form/'
-                        Checkbox:
-                            properties:
-                                elementClassAttribute: is-checkradio
-                                containerClassAttribute: control
-                        GridRow:
-                            properties:
-                                elementClassAttribute: 'columns is-mobile is-multiline'
-                                gridColumnClassAutoConfiguration:
-                                    gridSize: 12
-                                    viewPorts:
-                                        xs:
-                                            classPattern: 'column is-{@numbersOfColumnsToUse}-mobile'
-                                        sm:
-                                            classPattern: 'is-{@numbersOfColumnsToUse}-tablet'
-                                        md:
-                                            classPattern: 'is-{@numbersOfColumnsToUse}-desktop'
-                                        lg:
-                                            classPattern: 'is-{@numbersOfColumnsToUse}-fullhd'
-                        Textarea:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: textarea
-                        MultiCheckbox:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: is-checkradio
-                        MultiSelect:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: select
-                        RadioButton:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: is-checkradio
-                        SingleSelect:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: select
-                        AdvancedPassword:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: input
-                                confirmationLabel: ''
-                                passwordDescription: ''
-                                confirmationClassAttribute: input
-                        FileUpload:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: file-input
-                        ImageUpload:
-                            properties:
-                                containerClassAttribute: control
-                                elementClassAttribute: file-input
-                    finishersDefinition:
-                        Confirmation:
-                            options:
-                                templateRootPaths:
-                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Confirmation/'
-                        EmailToReceiver:
-                            options:
-                                templateRootPaths:
-                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Email/'
-                        EmailToSender:
-                            options:
-                                templateRootPaths:
-                                    20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Email/'
-            mixins:
-                formElementMixins:
-                    TextMixin:
-                        properties:
-                            elementClassAttribute: input
-                    FormElementMixin:
-                        properties:
-                            containerClassAttribute: control
-                            elementClassAttribute: ''
-                            elementErrorClassAttribute: is-danger
+imports:
+  - { resource: './FormElements/Text.yaml' }
+  - { resource: './FormElements/Email.yaml' }
+  - { resource: './FormElements/Password.yaml' }
+  - { resource: './FormElements/Telephone.yaml' }
+  - { resource: './FormElements/Url.yaml' }
+  - { resource: './FormElements/Number.yaml' }
+  - { resource: './FormElements/Date.yaml' }
+  - { resource: './FormElements/DatePicker.yaml' }
+  - { resource: './FormElements/Form.yaml' }
+  - { resource: './FormElements/Checkbox.yaml' }
+  - { resource: './FormElements/GridRow.yaml' }
+  - { resource: './FormElements/Textarea.yaml' }
+  - { resource: './FormElements/MultiCheckbox.yaml' }
+  - { resource: './FormElements/MultiSelect.yaml' }
+  - { resource: './FormElements/RadioButton.yaml' }
+  - { resource: './FormElements/SingleSelect.yaml' }
+  - { resource: './FormElements/AdvancedPassword.yaml' }
+  - { resource: './FormElements/FileUpload.yaml' }
+  - { resource: './FormElements/ImageUpload.yaml' }
+  - { resource: './FormElements/CountrySelect.yaml' }
+
+  - { resource: './Finishers/Confirmation.yaml' }
+  - { resource: './Finishers/EmailToReceiver.yaml' }
+  - { resource: './Finishers/EmailToSender.yaml' }
+  - { resource: './Finishers/ClearCache.yaml' }
+
+persistenceManager:
+  allowedExtensionPaths:
+    110: 'EXT:bulma_package/Resources/Private/Forms/'
+prototypes:
+  standard:
+    formEditor:
+      translationFiles:
+        110: 'EXT:bulma_package/Resources/Private/Language/locallang.xlf'
+    formEngine:
+      translationFiles:
+        110: 'EXT:bulma_package/Resources/Private/Language/locallang.xlf'

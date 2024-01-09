@@ -1,0 +1,12 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      Form:
+        renderingOptions:
+          translation:
+            translationFiles:
+              110: 'EXT:bulma_package/Resources/Private/Language/locallang.xlf'
+          templateRootPaths:
+            20: 'EXT:bulma_package/Resources/Private/Templates/Form/'
+          partialRootPaths:
+            20: 'EXT:bulma_package/Resources/Private/Partials/Form/'

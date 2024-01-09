@@ -1,0 +1,8 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      MultiCheckbox:
+        properties:
+          containerClassAttribute: control
+          elementClassAttribute: is-checkradio
+          elementErrorClassAttribute: is-danger

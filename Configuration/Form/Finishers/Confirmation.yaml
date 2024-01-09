@@ -1,0 +1,7 @@
+prototypes:
+  standard:
+    finishersDefinition:
+      Confirmation:
+        options:
+          templateRootPaths:
+            20: 'EXT:bulma_package/Resources/Private/Templates/Form/Finishers/Confirmation/'

@@ -1,0 +1,7 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      CountrySelect:
+        properties:
+          containerClassAttribute: control
+          elementErrorClassAttribute: is-danger

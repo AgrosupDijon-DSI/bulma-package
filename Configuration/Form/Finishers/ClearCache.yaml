@@ -1,0 +1,60 @@
+prototypes:
+  standard:
+    finishersDefinition:
+      ClearCache:
+        implementationClassName: 'AgrosupDijon\BulmaPackage\Domain\Finishers\ClearCache'
+        formEditor:
+          iconIdentifier: form-finisher
+          label: formEditor.elements.Form.finisher.ClearCache.editor.header.label
+          predefinedDefaults:
+            options:
+              pageUid: ''
+        FormEngine:
+          label: tt_content.finishersDefinition.ClearCache.label
+          elements:
+            pageUid:
+              label: tt_content.finishersDefinition.ClearCache.pageUid.label
+              config:
+                type: group
+                allowed: pages
+                size: 1
+                minitems: 1
+                maxitems: 1
+                fieldWizard:
+                  recordsOverview:
+                    disabled: 1
+    formElementsDefinition:
+      Form:
+        formEditor:
+          editors:
+            900:
+              # Extend finisher drop down
+              selectOptions:
+                35:
+                  value: 'ClearCache'
+                  label: formEditor.elements.Form.finisher.ClearCache.editor.header.label
+          propertyCollections:
+            finishers:
+              # add finisher fields
+              25:
+                identifier: 'ClearCache'
+                editors:
+                  100:
+                    identifier: header
+                    templateName: Inspector-CollectionElementHeaderEditor
+                    label: formEditor.elements.Form.finisher.ClearCache.editor.header.label
+                  200:
+                    identifier: pageUid
+                    templateName: Inspector-Typo3WinBrowserEditor
+                    label: formEditor.elements.Form.finisher.ClearCache.editor.pageUid.label
+                    buttonLabel: formEditor.elements.Form.finisher.ClearCache.editor.pageUid.buttonLabel
+                    browsableType: pages
+                    iconIdentifier: apps-pagetree-page-default
+                    propertyPath: options.pageUid
+                    propertyValidatorsMode: OR
+                    propertyValidators:
+                      10: IntegerOrEmpty
+                      20: FormElementIdentifierWithinCurlyBracesExclusive
+                  9999:
+                    identifier: removeButton
+                    templateName: Inspector-RemoveElementEditor

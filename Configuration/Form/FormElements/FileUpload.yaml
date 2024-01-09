@@ -1,0 +1,8 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      FileUpload:
+        properties:
+          containerClassAttribute: control
+          elementClassAttribute: file-input
+          elementErrorClassAttribute: is-danger

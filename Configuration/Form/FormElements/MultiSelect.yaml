@@ -1,0 +1,8 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      MultiSelect:
+        properties:
+          containerClassAttribute: control
+          elementClassAttribute: select
+          elementErrorClassAttribute: is-danger
