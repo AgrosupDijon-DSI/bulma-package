@@ -7,6 +7,14 @@
         <source>Exclude slug for subpages</source>
         <target state="translated">Udeluk URL segment for undersider</target>
       </trans-unit>
+      <trans-unit id="pages.hide_breadcrumb">
+        <source>Hide breadcrumb</source>
+        <target state="translated">Skjul brødkrumme</target>
+      </trans-unit>
+      <trans-unit id="pages.social_media_buttons">
+        <source>Show social media buttons</source>
+        <target state="translated">Vis knapper til sociale medier</target>
+      </trans-unit>
       <trans-unit id="ratio.16_9">
         <source>16:9</source>
         <target state="translated">16:9</target>
@@ -70,6 +78,74 @@
       <trans-unit id="field.ignore_nav_hide">
         <source>Display "menu excluded" pages</source>
         <target state="translated">Vis "menu ekskluderet" sider</target>
+      </trans-unit>
+      <trans-unit id="field.max_items">
+        <source>Max pages displayed</source>
+        <target state="translated">Maks. sider der vises</target>
+      </trans-unit>
+      <trans-unit id="field.gallery_size">
+        <source>Size</source>
+        <target state="translated">Størrelse</target>
+      </trans-unit>
+      <trans-unit id="field.tx_bulmapackage_accordion_item_active">
+        <source>Unfolded Element</source>
+        <target state="translated">Udfoldet Element</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class">
+        <source>Styles</source>
+        <target state="translated">Styles</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.boxed">
+        <source>Boxed</source>
+        <target state="translated">Indrammet</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.toggle">
+        <source>Toggle</source>
+        <target state="translated">Skift</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.toggle-rounded">
+        <source>Toggle rounded</source>
+        <target state="translated">Slå afrundet til/fra</target>
+      </trans-unit>
+      <trans-unit id="field.alignement">
+        <source>Alignment</source>
+        <target state="translated">Justering</target>
+      </trans-unit>
+      <trans-unit id="field.icon-alignement">
+        <source>Icon alignment</source>
+        <target state="translated">Ikonjustering</target>
+      </trans-unit>
+      <trans-unit id="option.left">
+        <source>Left</source>
+        <target state="translated">Venstre</target>
+      </trans-unit>
+      <trans-unit id="option.center">
+        <source>Center</source>
+        <target state="translated">Center</target>
+      </trans-unit>
+      <trans-unit id="option.right">
+        <source>Right</source>
+        <target state="translated">Højre</target>
+      </trans-unit>
+      <trans-unit id="option.top">
+        <source>Top</source>
+        <target state="translated">Top</target>
+      </trans-unit>
+      <trans-unit id="option.bottom">
+        <source>Bottom</source>
+        <target state="translated">Bund</target>
+      </trans-unit>
+      <trans-unit id="option.default">
+        <source>Default</source>
+        <target state="translated">Standard</target>
+      </trans-unit>
+      <trans-unit id="option.none">
+        <source>None</source>
+        <target state="translated">Ingen</target>
+      </trans-unit>
+      <trans-unit id="option.medium">
+        <source>Medium</source>
+        <target state="translated">Medium</target>
       </trans-unit>
     </body>
   </file>
