@@ -262,6 +262,15 @@ lib.contentElement {
         }
         skip_header_rendering{
             news_pi1 = 1
+            news_newsliststicky = 1
+            news_newsselectedlist = 1
+            news_newsdetail = 1
+            news_newsdatemenu = 1
+            news_newssearchform = 1
+            news_newssearchresult = 1
+            news_categorylist = 1
+            news_taglist = 1
+            eventnews_newsmonth = 1
         }
     }
 }
