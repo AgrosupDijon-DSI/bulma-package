@@ -63,6 +63,10 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/link.svg',
     ],
+    'settings-bulmapackage-envelope' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/envelope.svg',
+    ],
     'settings-bulmapackage-facebook' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/facebook-f.svg',

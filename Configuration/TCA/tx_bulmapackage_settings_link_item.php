@@ -31,6 +31,7 @@ return [
         'typeicon_classes' => [
             'default' => 'settings-bulmapackage-link',
             'fas fa-link' => 'settings-bulmapackage-link',
+            'fas fa-envelope' => 'settings-bulmapackage-envelope',
             'fab fa-facebook-f' => 'settings-bulmapackage-facebook',
             'fab fa-twitter' => 'settings-bulmapackage-twitter',
             'fab fa-youtube' => 'settings-bulmapackage-youtube',
@@ -157,6 +158,7 @@ return [
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'value' => 'fas fa-link', 'icon' => 'settings-bulmapackage-link'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.envelope', 'value' => 'fas fa-envelope', 'icon' => 'settings-bulmapackage-envelope'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.book', 'value' => 'fas fa-book-open', 'icon' => 'settings-bulmapackage-book-open'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.student', 'value' => 'fas fa-user-graduate', 'icon' => 'settings-bulmapackage-user-graduate'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user', 'value' => 'fas fa-user','icon' =>  'settings-bulmapackage-user'],
