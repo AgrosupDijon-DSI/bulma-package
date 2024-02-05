@@ -67,6 +67,14 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/envelope.svg',
     ],
+    'settings-bulmapackage-map' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/map.svg',
+    ],
+    'settings-bulmapackage-map-marker' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/map-marker-alt.svg',
+    ],
     'settings-bulmapackage-facebook' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/brands/facebook-f.svg',
