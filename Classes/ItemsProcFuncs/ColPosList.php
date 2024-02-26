@@ -31,8 +31,9 @@ class ColPosList
      */
     public function itemsProcFunc(array &$params): void
     {
+        $colPos = $params['row']['colPos'] ?? null;
         // if this tt_content element is inline element of mask
-        if ((int)$params['row']['colPos'] === 999) {
+        if ((int)$colPos === 999) {
             // only allow mask nested element column
             $params['items'] = [
                 [

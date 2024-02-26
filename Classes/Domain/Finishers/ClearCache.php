@@ -26,6 +26,6 @@ class ClearCache extends AbstractFinisher
             $pageUid = $routing->getPageId();
         }
 
-        $this->cacheService->clearPageCache($pageUid);
+        $this->cacheService->clearPageCache((int)$pageUid);
     }
 }

@@ -20,7 +20,7 @@ class ExtensionLoadedViewHelper extends AbstractConditionViewHelper
     /**
      * Initialize additional argument
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('key', 'string', 'Extension key for the extension which must be checked', true);
         parent::initializeArguments();
@@ -32,6 +32,9 @@ class ExtensionLoadedViewHelper extends AbstractConditionViewHelper
      */
     protected static function evaluateCondition($arguments = null): bool
     {
-        return ExtensionManagementUtility::isLoaded($arguments['key']);
+        if(isset($arguments['key'])){
+            return ExtensionManagementUtility::isLoaded($arguments['key']);
+        }
+        return false;
     }
 }
