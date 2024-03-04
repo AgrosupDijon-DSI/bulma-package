@@ -25,8 +25,10 @@ $EM_CONF[$_EXTKEY] = [
             'dyncss' => '*',
         ],
         'suggests' => [
-            'image_autoresize' => '*',
-            'news' => '11.0.0-11.99.99'
+            'image_autoresize' => '',
+            'news' => '11.0.0-11.99.99',
+            'gridelements' => '',
+            'container' => '',
         ]
     ],
     'autoload' => [
