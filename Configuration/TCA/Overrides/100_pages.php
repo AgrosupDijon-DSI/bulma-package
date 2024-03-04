@@ -1,15 +1,17 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Resource\File;
-use AgrosupDijon\BulmaPackage\Hooks\SlugModifier;
-use AgrosupDijon\BulmaPackage\Utility\PageLayoutUtility;
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Resource\File;
+use AgrosupDijon\BulmaPackage\Hooks\SlugModifier;
+use AgrosupDijon\BulmaPackage\Utility\PageLayoutUtility;
+use TYPO3\CMS\Core\Domain\Repository\PageRepository;
 
 defined('TYPO3') or die();
 
@@ -98,10 +100,10 @@ $additionalColumns = [
 
 ExtensionManagementUtility::addTCAcolumns('pages', $additionalColumns);
 ExtensionManagementUtility::addToAllTCAtypes('pages', 'thumbnail', '1,3,4', 'after:backend_layout_next_level');
-ExtensionManagementUtility::addToAllTCAtypes('pages', 'hide_breadcrumb', (string)\TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_DEFAULT, 'after:thumbnail');
+ExtensionManagementUtility::addToAllTCAtypes('pages', 'hide_breadcrumb', (string)PageRepository::DOKTYPE_DEFAULT, 'after:thumbnail');
 if (ExtensionManagementUtility::isLoaded('rx_shariff')) {
     ExtensionManagementUtility::addToAllTCAtypes('pages', 'social_media_buttons',
-        (string)\TYPO3\CMS\Core\Domain\Repository\PageRepository::DOKTYPE_DEFAULT, 'after:twitter_image');
+        (string)PageRepository::DOKTYPE_DEFAULT, 'after:twitter_image');
 }
 ExtensionManagementUtility::addFieldsToPalette('pages', 'title', 'exclude_slug_for_subpages', 'after:slug');
 ExtensionManagementUtility::addFieldsToPalette('pages', 'titleonly', 'exclude_slug_for_subpages', 'after:slug');
