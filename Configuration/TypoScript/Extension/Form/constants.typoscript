@@ -1,3 +1,11 @@
 ########################
 #### FORM FRAMEWORK ####
 ########################
+
+page {
+    formConfiguration{
+        # cat=bulma package: form/140/110; type=boolean; label=addQueryString
+        addQueryString = 0
+        addQueryString := getEnv(BULMA_FORM_ADD_QUERY_STRING)
+    }
+}

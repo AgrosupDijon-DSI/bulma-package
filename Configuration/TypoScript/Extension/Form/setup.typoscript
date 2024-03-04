@@ -2,3 +2,13 @@
 #### FORM FRAMEWORK ####
 ########################
 @import 'EXT:form/Configuration/TypoScript/setup.typoscript'
+
+[{$page.formConfiguration.addQueryString} == true]
+    plugin.tx_form {
+        settings {
+            yamlConfigurations {
+                120 = EXT:bulma_package/Configuration/Form/AddQueryString.yaml
+            }
+        }
+    }
+[end]

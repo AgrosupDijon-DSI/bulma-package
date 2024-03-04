@@ -1,0 +1,6 @@
+prototypes:
+  standard:
+    formElementsDefinition:
+      Form:
+        renderingOptions:
+          addQueryString: true
