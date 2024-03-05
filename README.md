@@ -20,8 +20,8 @@ https://bulma-package.cnerta-web.fr/
 
 ## Minimal Dependencies
 
-* TYPO3 CMS 11.5 (for TYPO3 10.4, use version 1.x.y)
-* PHP >= 7.4
+* TYPO3 CMS 12.4 (for TYPO3 11.5, use version 2.x.y)
+* PHP >= 8.1
 
 ## Quick install guide
 
