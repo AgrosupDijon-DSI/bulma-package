@@ -33,8 +33,8 @@
     "scssphp/scssphp": "^1.0.8",
     "ext-dom": "*",
     "ext-simplexml": "*",
-    "symfony/dom-crawler": "^6.3",
-    "symfony/css-selector": "^6.3"
+    "symfony/dom-crawler": "^6.3 || ^7.0",
+    "symfony/css-selector": "^6.3 || ^7.0"
   },
   "suggest": {
     "georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS",
