@@ -92,6 +92,12 @@
             <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.pageUid.buttonLabel">
                 <source>Page</source>
             </trans-unit>
+            <trans-unit id="tt_content.iframe.invalidHtml">
+                <source>Invalid HTML syntax</source>
+            </trans-unit>
+            <trans-unit id="tt_content.iframe.error">
+                <source>Error:</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

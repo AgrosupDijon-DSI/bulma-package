@@ -9,6 +9,7 @@
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
@@ -54,7 +55,20 @@ class FirstIframeViewHelper extends AbstractViewHelper
         try {
             $dom->loadHTML($renderChildrenClosure());
         } catch (\Exception $e) {
-            return false;
+            $headerLabel = LocalizationUtility::translate('tt_content.iframe.invalidHtml', 'bulma_package');
+            $errorMessage = '';
+
+            /** @var \LibXMLError $error */
+            if ($error = libxml_get_last_error()){
+                $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'bulma_package') . '<strong>'. $error->message .'</strong></div>';
+            }
+            $bulmaMessage = <<<EOD
+<div class="message is-danger">
+    <div class="message-header">$headerLabel</div>
+    $errorMessage
+</div>
+EOD;
+            return $bulmaMessage;
         }
 
         $iframe = $dom->getElementsByTagName('iframe')->item(0);
