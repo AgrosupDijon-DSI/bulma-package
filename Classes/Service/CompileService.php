@@ -77,7 +77,9 @@ class CompileService
                     && $parser->supports($settings['file']['info']['extension'])
                 ) {
                     if ($configuration['overrideParserVariables']) {
-                        $settings['variables'] = $this->getVariablesFromPageLayout();
+                        $defaultOverridedVariables = $this->getVariablesFromConstants('plugin.bulma_package.settings.' . strtolower($settings['file']['info']['extension']) . '.');
+                        $pageLayoutOverridedVariables = $this->getVariablesFromPageLayout();
+                        $settings['variables'] = array_merge($defaultOverridedVariables, $pageLayoutOverridedVariables);
                     }
                     try {
                         return $parser->compile($file, $settings);
@@ -110,14 +112,12 @@ class CompileService
     {
         $variables = $layoutOverride = [];
         $layoutUid = $this->getCurrentPageLayout();
-        $constants = $this->getConstants();
-
-        $layouts = $this->getLayoutsFromConstants($constants);
 
         if (!empty($layoutUid)) {
             // Fetch overrides from typoscript constants
-            if ($layoutUid < 100 && isset($layouts[$layoutUid])) {
-                $layoutOverride = $layouts[$layoutUid];
+            if ($layoutUid < 100) {
+                $layoutOverride = $this->getVariablesFromConstants('plugin.bulma_package.layout.' . $layoutUid . '.');
+                $textDarkVariables = $this->getVariablesFromConstants('plugin.bulma_package.layout.text_ark.');
             } elseif ($layoutUid >= 100) {
                 // Fetch overrides from database
                 $layoutOverride = $this->getLayoutFromDatabase((int)($layoutUid / 100));
@@ -126,8 +126,8 @@ class CompileService
 
         // Check "special" key
         // If text_dark = 1 in the layout, and layout with a matching key exists, merge both layouts.
-        if(isset($layoutOverride['text_dark']) && $layoutOverride['text_dark'] == '1' && isset($layouts['text_dark'])){
-            $layoutOverride = array_merge($layoutOverride, $layouts['text_dark']);
+        if(isset($layoutOverride['text_dark']) && $layoutOverride['text_dark'] == '1' && isset($textDarkVariables)){
+            $layoutOverride = array_merge($layoutOverride, $textDarkVariables);
             unset($layoutOverride['text_dark']);
         }
 
@@ -169,22 +169,21 @@ class CompileService
     }
 
     /**
-     * @param array $constants
+     * @param string $prefix
      * @return array
      */
-    protected function getLayoutsFromConstants(array $constants): array
+    protected function getVariablesFromConstants(string $prefix): array
     {
-        $prefix = 'plugin.bulma_package.layout.';
-        $layouts = [];
+        $constants = $this->getConstants();
+        $variables = [];
+        
         foreach ($constants as $constant => $value) {
             if (strpos($constant, $prefix) === 0) {
-                $key = substr($constant, strlen($prefix));
-                $keyParts = explode('.', $key);
-
-                $layouts[$keyParts[0]][$keyParts[1]] = $value;
+                $variables[substr($constant, strlen($prefix))] = $value;
             }
         }
-        return $layouts;
+        
+        return $variables;
     }
 
     /**

@@ -38,7 +38,7 @@ plugin.bulma_package_websiteelements {
     }
     megaMenu{
         # cat=bulma package: website elements/140_websiteelement/001_columnclasses; type=string; label=Column css classes
-        columnClasses = is-3-desktop is-12
+        columnClasses = is-4-desktop is-6 auto-column
     }
     socialsLinks{
         # cat=bulma package: website elements/150_websiteelement/001_linkclasses; type=string; label=Css classes for links

@@ -1,6 +1,8 @@
 $mega-menu-dropdown-padding: 1rem 0 !default;
 $mega-menu-dropdown-item-text-decoration-hover: $navbar-dropdown-item-text-decoration-hover !default;
 $mega-menu-dropdown-item-text-decoration-active: $navbar-dropdown-item-text-decoration-active !default;
+$mega-menu-dropdown-max-columns: 3 !default;
+$mega-menu-dropdown-tablet-max-columns: 2 !default;
 
 .navbar-item.is-mega {
   position: static;
@@ -8,6 +10,26 @@ $mega-menu-dropdown-item-text-decoration-active: $navbar-dropdown-item-text-deco
   .is-mega-menu-title {
     margin-bottom: 0;
     padding: .375rem 1rem;
+  }
+}
+
+@include from($tablet) {
+  .navbar-item.is-mega {
+    .columns:has(> .auto-column){
+      column-count: $mega-menu-dropdown-tablet-max-columns;
+      @for $i from 1 to $mega-menu-dropdown-tablet-max-columns {
+        &:has(> :nth-child(#{$i}):last-child) {
+          column-count: $i;
+        }
+      }
+      column-gap: 0;
+      display: block;
+
+      .auto-column {
+        break-inside: avoid;
+        width: auto;
+      }
+    }
   }
 }
 
@@ -43,6 +65,15 @@ $mega-menu-dropdown-item-text-decoration-active: $navbar-dropdown-item-text-deco
       ul {
         margin-left: 1rem;
         border-left: 1px solid $primary;
+      }
+    }
+
+    .columns:has(> .auto-column){
+      column-count: $mega-menu-dropdown-max-columns;
+      @for $i from 1 to $mega-menu-dropdown-max-columns {
+        &:has(> :nth-child(#{$i}):last-child){
+          column-count: $i;
+        }
       }
     }
   }
