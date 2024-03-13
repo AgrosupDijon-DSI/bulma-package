@@ -58,7 +58,6 @@ class FirstIframeViewHelper extends AbstractViewHelper
             $headerLabel = LocalizationUtility::translate('tt_content.iframe.invalidHtml', 'bulma_package');
             $errorMessage = '';
 
-            /** @var \LibXMLError $error */
             if ($error = libxml_get_last_error()){
                 $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'bulma_package') . '<strong>'. $error->message .'</strong></div>';
             }

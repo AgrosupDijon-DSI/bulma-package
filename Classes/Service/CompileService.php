@@ -118,7 +118,7 @@ class CompileService
             if ($layoutUid < 100) {
                 $layoutOverride = $this->getVariablesFromConstants('plugin.bulma_package.layout.' . $layoutUid . '.');
                 $textDarkVariables = $this->getVariablesFromConstants('plugin.bulma_package.layout.text_ark.');
-            } elseif ($layoutUid >= 100) {
+            } else {
                 // Fetch overrides from database
                 $layoutOverride = $this->getLayoutFromDatabase((int)($layoutUid / 100));
             }
@@ -189,7 +189,7 @@ class CompileService
     /**
      * @return int
      */
-    protected function getCurrentPageLayout()
+    protected function getCurrentPageLayout(): int
     {
         $rootLine = $this->getRootLine($GLOBALS['TSFE']->id);
         foreach ($rootLine as $rootLinePage) {
