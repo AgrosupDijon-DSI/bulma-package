@@ -11,6 +11,7 @@ namespace AgrosupDijon\BulmaPackage\Parser;
 
 use ScssPhp\ScssPhp\Compiler;
 use ScssPhp\ScssPhp\OutputStyle;
+use ScssPhp\ScssPhp\Type;
 use ScssPhp\ScssPhp\Version;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -119,7 +120,7 @@ class ScssParser extends AbstractParser
                 $relativeFilePath,
                 $absoluteBulmaPackageThemePath,
                 $relativeBulmaPackageThemePath
-            ) : string {
+            ) : array {
                 $marker = $args[0][1];
                 $args[0][1] = '';
                 $result = $scss->compileValue($args[0]);
@@ -133,8 +134,9 @@ class ScssParser extends AbstractParser
                     }
                     $result = str_starts_with($result, '/') ? substr($result, 1) : $result;
                 }
-                return 'url(' . $marker . $result . $marker . ')';
-            }
+                return [Type::T_STRING, '', ['url(', $result, ')']];
+            },
+            ['args']
         );
 
         // Compile file
