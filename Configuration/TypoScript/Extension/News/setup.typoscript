@@ -138,7 +138,7 @@ plugin.tx_news {
 				}
 				detail {
 					cols = 1
-					extraCssClasses = carousel-item image has-1 has-1-tablet has-1-mobile is-3by1 is-3by1-tablet is-2by3-mobile
+					extraCssClasses = carousel-item image has-1 has-1-tablet has-1-mobile is-3by1 is-3by1-tablet is-3by2-mobile
 				}
 			}
 			1{
