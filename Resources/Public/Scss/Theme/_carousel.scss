@@ -232,10 +232,10 @@ $flickity-page-dots-padding: 0 !default;
     align-items: $carousel-content-flex-alignment;
     justify-content: $carousel-content-flex-justify;
     padding: $carousel-content-padding;
-    @include desktop{
+    @include desktop-only{
       padding: $carousel-content-padding-desktop;
     }
-    @include tablet {
+    @include tablet-only {
       padding: $carousel-content-padding-tablet;
       &.has-background-transparent-dark .content{
         background-color: $carousel-content-background-dark;
