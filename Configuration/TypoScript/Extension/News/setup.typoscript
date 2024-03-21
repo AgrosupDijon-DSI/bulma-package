@@ -114,6 +114,49 @@ plugin.tx_news {
 				}
 			}
 		}
+		layouts {
+			default {
+				list {
+					wrapperCssClasses = news-list-view columns is-multiline is-mobile
+					itemPartial = Item
+				}
+				detail {
+					cols = 3
+					extraCssClasses = column
+				}
+			}
+			carousel{
+				list {
+					wrapperCssClasses = news-list-view carousel
+					itemPartial = ItemCarousel
+					data {
+						pagedots = true
+						cellalign = left
+						prevnextbuttons = true
+						wraparound = true
+					}
+				}
+				detail {
+					cols = 1
+					extraCssClasses = carousel-item image has-1 has-1-tablet has-1-mobile is-3by1 is-3by1-tablet is-2by3-mobile
+				}
+			}
+			1{
+				detail {
+					cols = 4
+				}
+			}
+			2{
+				detail {
+					cols = 2
+				}
+			}
+			3{
+				detail {
+					cols = 1
+				}
+			}
+		}
 	}
 }
 
