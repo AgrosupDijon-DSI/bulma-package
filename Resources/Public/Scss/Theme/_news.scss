@@ -1,3 +1,5 @@
+$news-carousel-content-background-dark-color: $carousel-content-background-dark-color !default;
+
 .news{
   .news-additional-informations{
     font-size: $small-font-size;
@@ -15,6 +17,11 @@
     }
   }
   .carousel{
+    .content{
+      *{
+        color: $news-carousel-content-background-dark-color;
+      }
+    }
     .news-additional-informations{
       display: flex;
       .icon-text{
