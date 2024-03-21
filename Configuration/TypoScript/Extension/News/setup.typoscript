@@ -130,6 +130,7 @@ plugin.tx_news {
 					wrapperCssClasses = news-list-view carousel
 					itemPartial = ItemCarousel
 					data {
+						autoplay = 3000
 						pagedots = true
 						cellalign = left
 						prevnextbuttons = true
