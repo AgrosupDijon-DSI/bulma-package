@@ -20,6 +20,10 @@
 					<h3 class="{settings.list.titleClasses}" itemprop="headline">
 						{newsItem.title}
 					</h3>
+					<div class="{settings.layouts.{settings.templateLayout}.list.subtitleClasses -> f:or(alternative:settings.list.subtitleClasses)}">
+						{settings.layouts.{settings.templateLayout}.list.showIcons -> f:or(alternative:settings.list.showIcons) -> f:variable(name: 'showIcons')}
+						<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem,showIcons:showIcons,linkCategories:settings.list.linkCategories,linkTags:settings.list.linkTags,pageData:pageData}" />
+					</div>
 					<!-- teaser -->
 					<n:removeMediaTags>
 						<f:if condition="{newsItem.teaser}">

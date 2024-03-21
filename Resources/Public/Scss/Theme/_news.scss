@@ -14,4 +14,14 @@
       margin-top: 0.25em;
     }
   }
+  .carousel{
+    .news-additional-informations{
+      display: flex;
+      .icon-text{
+        &:not(:last-of-type){
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
 }
