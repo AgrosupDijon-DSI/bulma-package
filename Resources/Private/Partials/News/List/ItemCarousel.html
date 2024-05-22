@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+<f:variable name="newsCols">{settings.layouts.{settings.templateLayout}.detail.cols -> f:or(alternative:settings.layouts.default.detail.cols)}</f:variable>
+<f:variable name="columnConfig">{settings.responsiveimages.list.{newsCols}}</f:variable>
+<asd:data.imageVariants as="variants" variants="{settings.responsiveimages.variants}" multiplier="{columnConfig.multiplier}" gutters="{columnConfig.gutters}" corrections="{columnConfig.corrections}" />
+<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} {settings.layouts.{settings.templateLayout}.detail.extraCssClasses -> f:or(alternative:settings.layouts.default.detail.extraCssClasses)} {columnConfig.class}" itemscope="itemscope" itemtype="http://schema.org/Article">
+	<f:variable name="buttonLink" value="{f:if(condition: '{item.data.link} && {item.data.button_text}', then: 1, else: 0)}"/>
+	<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+		<div class="has-ratio">
+			<div class="carousel-content has-background-transparent-dark">
+				<div class="content">
+					<h3 class="{settings.list.titleClasses}" itemprop="headline">
+						{newsItem.title}
+					</h3>
+					<div class="{settings.layouts.{settings.templateLayout}.list.subtitleClasses -> f:or(alternative:settings.list.subtitleClasses)}">
+						{settings.layouts.{settings.templateLayout}.list.showIcons -> f:or(alternative:settings.list.showIcons) -> f:variable(name: 'showIcons')}
+						<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem,showIcons:showIcons,linkCategories:settings.list.linkCategories,linkTags:settings.list.linkTags,pageData:pageData}" />
+					</div>
+					<!-- teaser -->
+					<n:removeMediaTags>
+						<f:if condition="{newsItem.teaser}">
+							{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+						</f:if>
+					</n:removeMediaTags>
+				</div>
+			</div>
+			<f:if condition="{newsItem.mediaPreviews}">
+				<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+					<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement.originalResource, data: item.data, settings: settings, variants: variants, pictureClasses: pictureClasses, imgClasses: imgClasses}" />
+				</f:alias>
+			</f:if>
+		</div>
+	</n:link>
+</div>
+</html>

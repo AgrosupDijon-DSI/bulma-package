@@ -1,5 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 <f:layout name="General" />
 <!--
@@ -35,16 +36,16 @@
 			<f:if condition="!{settings.hidePagination} && {settings.list.paginate.insertAbove}">
 				<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
 			</f:if>
-			<div class="news-list-view columns is-multiline is-mobile" id="news-container-{contentObjectData.uid}">
+			<asd:div class="{settings.layouts.{settings.templateLayout}.list.wrapperCssClasses -> f:or(alternative:settings.layouts.default.list.wrapperCssClasses)}" id="news-container-{contentObjectData.uid}" data="{settings.layouts.{settings.templateLayout}.list.data}">
 				<f:if condition="{settings.hidePagination}">
 					<f:then>
 						<f:for each="{news}" as="newsItem" iteration="iterator">
-							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,pageData:pageData}" />
+							<f:render partial="List/{settings.layouts.{settings.templateLayout}.list.itemPartial -> f:or(alternative:settings.layouts.default.list.itemPartial)}" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,pageData:pageData}" />
 						</f:for>
 					</f:then>
 					<f:else>
 						<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							<f:render partial="List/{settings.layouts.{settings.templateLayout}.list.itemPartial -> f:or(alternative:settings.layouts.default.list.itemPartial)}" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
 						</f:for>
 					</f:else>
 				</f:if>
@@ -56,7 +57,7 @@
 						</f:link.page>
 					</div>
 				</f:if>
-			</div>
+			</asd:div>
 			<f:if condition="!{settings.hidePagination} && {settings.list.paginate.insertBelow}">
 				<f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
 			</f:if>

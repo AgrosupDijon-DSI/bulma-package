@@ -232,11 +232,7 @@ $flickity-page-dots-padding: 0 !default;
     align-items: $carousel-content-flex-alignment;
     justify-content: $carousel-content-flex-justify;
     padding: $carousel-content-padding;
-    @include desktop{
-      padding: $carousel-content-padding-desktop;
-    }
     @include tablet {
-      padding: $carousel-content-padding-tablet;
       &.has-background-transparent-dark .content{
         background-color: $carousel-content-background-dark;
         h1, h2{
@@ -246,6 +242,12 @@ $flickity-page-dots-padding: 0 !default;
       &.has-background-transparent-light .content{
         background-color: $carousel-content-background-light;
       }
+    }
+    @include desktop-only{
+      padding: $carousel-content-padding-desktop;
+    }
+    @include tablet-only{
+      padding: $carousel-content-padding-tablet;
     }
     @include mobile {
       padding: $carousel-content-padding-mobile;

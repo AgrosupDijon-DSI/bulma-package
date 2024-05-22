@@ -2,4 +2,5 @@ tx_news.templateLayouts {
     1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.4cols
     2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.2cols
     3 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.1cols
+    carousel = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel
 }

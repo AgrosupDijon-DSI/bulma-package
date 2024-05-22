@@ -1,3 +1,5 @@
+$news-carousel-content-background-dark-color: $carousel-content-background-dark-color !default;
+
 .news{
   .news-additional-informations{
     font-size: $small-font-size;
@@ -12,6 +14,21 @@
   .news-related-links{
     p{
       margin-top: 0.25em;
+    }
+  }
+  .carousel{
+    .content{
+      *{
+        color: $news-carousel-content-background-dark-color;
+      }
+    }
+    .news-additional-informations{
+      display: flex;
+      .icon-text{
+        &:not(:last-of-type){
+          padding-right: 1rem;
+        }
+      }
     }
   }
 }
