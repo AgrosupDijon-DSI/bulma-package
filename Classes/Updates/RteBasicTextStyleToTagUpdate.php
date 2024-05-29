@@ -124,9 +124,24 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
                         ->each(function (Crawler $node) use ($classBefore, $tagAfter, &$needUpdate) {
                             /** @var \DOMElement $domElement */
                             $domElement = $node->getNode(0);
+
+                            // Create new DOM element with new tag
                             $newNode = $domElement->ownerDocument->createElement($tagAfter);
-                            $newNode->textContent = $domElement->textContent;
-                            $domElement->replaceWith($newNode);
+
+                            // Build childNodes array upfront
+                            $childNodes = [];
+                            foreach ($domElement->childNodes as $childNode) {
+                                $childNodes[] = $childNode;
+                            }
+
+                            // Inject all child nodes into the new DOM element
+                            foreach ($childNodes as $childNode) {
+                                $newChildNode = $domElement->ownerDocument->importNode($childNode, true);
+                                $newNode->appendChild($newChildNode);
+                            }
+
+                            // Replace old DOM element $domElement with the new one $newNode
+                            $domElement->parentNode->replaceChild($newNode, $domElement);
                             $needUpdate = true;
                         });
                 }
