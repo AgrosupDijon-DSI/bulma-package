@@ -114,14 +114,15 @@ class CompileService
         $layoutUid = $this->getCurrentPageLayout();
 
         if (!empty($layoutUid)) {
-            // Fetch overrides from typoscript constants
             if ($layoutUid < 100) {
+                // Fetch overrides from typoscript constants
                 $layoutOverride = $this->getVariablesFromConstants('plugin.bulma_package.layout.' . $layoutUid . '.');
-                $textDarkVariables = $this->getVariablesFromConstants('plugin.bulma_package.layout.text_ark.');
             } else {
                 // Fetch overrides from database
                 $layoutOverride = $this->getLayoutFromDatabase((int)($layoutUid / 100));
             }
+            // Fetch text_dark variables from typoscript constants
+            $textDarkVariables = $this->getVariablesFromConstants('plugin.bulma_package.layout.text_dark.');
         }
 
         // Check "special" key
