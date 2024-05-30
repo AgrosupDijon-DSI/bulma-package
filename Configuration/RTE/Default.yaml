@@ -5,6 +5,9 @@ imports:
 
 editor:
   config:
+    importModules:
+      - { 'module': '@ckeditor/ckeditor5-table', 'exports': [ 'TableColumnResize' ] }
+
     contentsCss:
       - 'EXT:bulma_package/Resources/Public/Build/rte.min.css'
     
@@ -83,9 +86,6 @@ editor:
         # grouping separator
         - '|'
         - insertTable
-        - tableColumn
-        - tableRow
-        - mergeTableCells
         - '|'
         - link
         # line break
@@ -120,3 +120,14 @@ editor:
         - { name: 'left', className: 'has-text-left' }
         - { name: 'center', className: 'has-text-centered' }
         - { name: 'right', className: 'has-text-right' }
+
+    table:
+      defaultHeadings: { rows: 1 }
+      contentToolbar:
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - tableProperties
+        - tableCellProperties
+        - toggleTableCaption
+      tableCellProperties: { defaultProperties: { verticalAlignment: 'top' } }
