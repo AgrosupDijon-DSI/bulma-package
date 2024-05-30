@@ -71,6 +71,7 @@ $additionalColumns = [
             ],
         ],
         'l10n_mode' => 'exclude',
+        'l10n_display'=>'defaultAsReadonly',
     ],
     'exclude_slug_for_subpages' => [
         'exclude' => true,
