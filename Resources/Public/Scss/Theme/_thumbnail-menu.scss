@@ -22,6 +22,9 @@ $thumbnail-menu-caption-flex-justify: center !default;
 $thumbnail-menu-caption-inner-alignement: center !default;
 $thumbnail-menu-caption-inner-padding: 1.5em !default;
 $thumbnail-menu-caption-inner-max-width: 100% !default;
+$thumbnail-menu-caption-inner-width: auto !default;
+$thumbnail-menu-caption-inner-background-color: transparent !default;
+$thumbnail-menu-caption-inner-background-color-hover: transparent !default;
 $thumbnail-menu-caption-title-weight: $weight-bold !default;
 $thumbnail-menu-caption-subtitle-weight: $weight-normal !default;
 $thumbnail-menu-caption-title-color: $thumbnail-menu-color !default;
@@ -86,6 +89,8 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
       padding: $thumbnail-menu-caption-inner-padding;
       text-align: $thumbnail-menu-caption-inner-alignement;
       max-width: $thumbnail-menu-caption-inner-max-width;
+      width: $thumbnail-menu-caption-inner-width;
+      background-color: $thumbnail-menu-caption-inner-background-color;
 
       > *:first-child {
         margin-top: 0;
@@ -133,6 +138,10 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
 
       &:hover,
       &:focus {
+        .thumbnail-menu-caption-inner {
+          background-color: $thumbnail-menu-caption-inner-background-color-hover;
+        }
+
         .thumbnail-menu-caption-title {
           color: $thumbnail-menu-caption-title-color-hover;
         }
