@@ -11,6 +11,7 @@
 @import "../../Contrib/bulma-scss/helpers/color";
 @import "../../Contrib/bulma-scss/helpers/typography";
 @import "../Theme/content";
+@import "../Theme/links";
 
 body{
   padding: 1rem;
@@ -24,13 +25,33 @@ body{
 }
 
 a.icon-mail{
-  position: relative;
-  padding-left: 1em;
   &:before{
-    content: "\2709";
-    position: absolute;
-    left: 0;
-    top: 0;
+    content: "\1F4E7";
+  }
+}
+
+a.icon-phone{
+  &:before{
+    content: "\1F4DE";
+  }
+}
+
+a.icon-file{
+  padding-left: 1.25em;
+  &:before{
+    content: "\1F4C4";
+  }
+}
+
+a.icon-url{
+  &:before{
+    content: "\1F517";
+  }
+}
+
+a.icon-location{
+  &:before{
+    content: "\1F4CD";
   }
 }
 

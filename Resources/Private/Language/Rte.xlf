@@ -100,6 +100,18 @@
             <trans-unit id="style.link.mail">
                 <source>Icon Mail</source>
             </trans-unit>
+            <trans-unit id="style.link.phone">
+                <source>Icon Phone</source>
+            </trans-unit>
+            <trans-unit id="style.link.file">
+                <source>Icon File</source>
+            </trans-unit>
+            <trans-unit id="style.link.url">
+                <source>Icon Url</source>
+            </trans-unit>
+            <trans-unit id="style.link.localisation">
+                <source>Icon Localisation</source>
+            </trans-unit>
             <trans-unit id="style.primary">
                 <source>Primary</source>
             </trans-unit>

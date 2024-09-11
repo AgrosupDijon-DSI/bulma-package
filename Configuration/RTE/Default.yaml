@@ -56,6 +56,10 @@ editor:
         - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.button.dark', element: 'a', classes: [ 'button', 'is-dark' ] }
         # Link classes
         - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.link.mail', element: 'a', classes: [ 'icon-mail' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.link.phone', element: 'a', classes: [ 'icon-phone' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.link.file', element: 'a', classes: [ 'icon-file' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.link.url', element: 'a', classes: [ 'icon-url' ] }
+        - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.link.location', element: 'a', classes: [ 'icon-location' ] }
         # Text colors
         - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.primary', element: 'span', classes: [ 'has-text-primary' ] }
         - { name: 'LLL:EXT:bulma_package/Resources/Private/Language/Rte.xlf:style.success', element: 'span', classes: [ 'has-text-success' ] }
