@@ -427,7 +427,7 @@ a.pswp__share--download {
 .pswp__caption__subtitle div + a{
     margin-top: 10px;
     &.is-hidden{
-        display: inline-block !important;
+        display: inline-flex !important;
     }
 }
 
