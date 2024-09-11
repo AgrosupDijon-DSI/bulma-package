@@ -20,9 +20,6 @@
 [extension.isLoaded('seo')]
     @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
 [end]
-[extension.isLoaded('rx_shariff')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/RxShariff/setup.typoscript'
-[end]
 
 ###################
 #### FRAMEWORK ####

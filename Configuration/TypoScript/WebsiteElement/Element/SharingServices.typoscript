@@ -1,0 +1,74 @@
+####################################################
+#### WEBSITE ELEMENT: BULMA PACKAGE MENU LAYOUT ####
+####################################################
+
+lib.bulmaPackage.sharingServices =< lib.bulmaPackageSetting
+lib.bulmaPackage.sharingServices{
+
+    ##############
+    ### FIELDS ###
+    ##############
+    select.selectFields = sharing_services, sys_language_uid, l10n_parent
+
+    renderObj {
+        ################
+        ### TEMPLATE ###
+        ################
+        templateName = SocialMediaButtons
+
+        ################
+        ### SETTINGS ###
+        ################
+        settings {
+            wrapperClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperClasses}
+            services{
+                common{
+                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.linkClasses}
+                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.iconClasses}
+                }
+                facebook {
+                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.facebook.linkClasses}
+                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.facebook.iconClasses}
+                }
+                twitter {
+                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.twitter.linkClasses}
+                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.twitter.iconClasses}
+                }
+                linkedin {
+                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.linkedin.linkClasses}
+                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.linkedin.iconClasses}
+                }
+                email {
+                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.email.linkClasses}
+                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.email.iconClasses}
+                }
+                print {
+                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.print.linkClasses}
+                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.print.iconClasses}
+                }
+                copy-url {
+                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.copy-url.linkClasses}
+                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.copy-url.iconClasses}
+                }
+            }
+            defaultServices {
+                0 = facebook
+                1 = twitter
+                2 = linkedin
+            }
+        }
+
+        ##########################
+        ### DATA PREPROCESSING ###
+        ##########################
+        dataProcessing {
+            10 = split
+            10 {
+                delimiter = ,
+                fieldName = sharing_services
+                as = services
+                removeEmptyEntries = 1
+            }
+        }
+    }
+}

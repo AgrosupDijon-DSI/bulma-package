@@ -36,6 +36,9 @@ page {
         bulma_form = EXT:bulma_package/Resources/Public/Build/bulma.form.min.js
         bulma_scrolltop = EXT:bulma_package/Resources/Public/Build/bulma.scrolltop.min.js
         bulma_dropdown = EXT:bulma_package/Resources/Public/Build/bulma.dropdown.min.js
+
+        shareon = EXT:bulma_package/Resources/Public/Build/shareon.min.js
+        shareon.defer = 1
     }
 }
 

@@ -1,20 +1,18 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{showSocialMediaButtons}">
-    <asd:extensionLoaded key="rx_shariff">
-        <f:if condition="{wrapInContainer}">
-            <f:then>
-                <f:variable name="sectionName" value="Container"></f:variable>
-            </f:then>
-            <f:else>
-                <f:variable name="sectionName" value="Default"></f:variable>
-            </f:else>
-        </f:if>
-        <f:render section="section{sectionName}" contentAs="content">
-            <div class="frame">
-                <f:render partial="Structure/Shariff" />
-            </div>
-        </f:render>
-    </asd:extensionLoaded>
+    <f:if condition="{wrapInContainer}">
+        <f:then>
+            <f:variable name="sectionName" value="Container"></f:variable>
+        </f:then>
+        <f:else>
+            <f:variable name="sectionName" value="Default"></f:variable>
+        </f:else>
+    </f:if>
+    <f:render section="section{sectionName}" contentAs="content">
+        <div class="frame">
+            <f:cObject typoscriptObjectPath="lib.bulmaPackage.sharingServices" />
+        </div>
+    </f:render>
 </f:if>
 
 <f:section name="sectionContainer">

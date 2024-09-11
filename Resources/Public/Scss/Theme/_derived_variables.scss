@@ -1,9 +1,12 @@
 @import "../../Contrib/bulma-scss/utilities/functions";
 
 $social-button-colors: (
-        "facebook": (#3b5998, findColorInvert(#3b5998)),
-        "twitter": (#55acee, findColorInvert(#55acee)),
-        "linkedin": (#0960b6, findColorInvert(#0960b6))
+        "facebook": (#1877f2, findColorInvert(#1877f2)),
+        "twitter": (#1da1f2, findColorInvert(#1da1f2)),
+        "linkedin": (#0a66c2, findColorInvert(#0a66c2)),
+        "email": (#7d7d7d, findColorInvert(#7d7d7d)),
+        "print": (#cccccc, findColorInvert(#cccccc)),
+        "copy-url": (#333333, findColorInvert(#333333))
 ) !default;
 
 // Careful, if you define your own $custom-colors, you will have merge it with $social-button-colors

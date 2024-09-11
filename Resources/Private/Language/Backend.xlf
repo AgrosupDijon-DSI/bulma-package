@@ -591,8 +591,11 @@
             <trans-unit id="palette.thumbnaillayout">
                 <source>Thumbnail Layout</source>
             </trans-unit>
-            <trans-unit id="tabs.bulmapackage_social">
-                <source>Socials Networks</source>
+            <trans-unit id="tabs.bulmapackage_links">
+                <source>Networks links</source>
+            </trans-unit>
+            <trans-unit id="tabs.bulmapackage_sharing">
+                <source>Sharing buttons</source>
             </trans-unit>
             <trans-unit id="tabs.bulmapackage_menu">
                 <source>Menu</source>
@@ -776,6 +779,30 @@
             </trans-unit>
             <trans-unit id="space_class_negative_extra_large">
                 <source>Negative Extra Large</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services">
+                <source>Services</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services.description">
+                <source>If no services are selected, the widget will display sharing buttons for Facebook, Twitter and LinkedIn.</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services.facebook">
+                <source>Facebook</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services.twitter">
+                <source>Twitter</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services.linkedin">
+                <source>LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services.print">
+                <source>Print</source>
+            </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.sharing_services.copy-url">
+                <source>Copy url</source>
             </trans-unit>
         </body>
     </file>

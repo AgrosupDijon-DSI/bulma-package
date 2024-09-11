@@ -1,6 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-	  xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
 	  data-namespace-typo3-fluid="true">
 
 <f:layout name="Detail" />
@@ -84,14 +83,7 @@
 			</div>
 
 			<f:if condition="{settings.detail.showSocialShareButtons}">
-				<f:comment>
-					Care about the privacy of your readers?
-					Checkout https://typo3.org/extensions/repository/view/rx_shariff
-					and it will be used automatically!
-				</f:comment>
-				<n:extensionLoaded extensionKey="rx_shariff">
-					<f:render partial="Detail/Shariff" />
-				</n:extensionLoaded>
+				<f:cObject typoscriptObjectPath="lib.bulmaPackage.sharingServices" />
 			</f:if>
 
 			<!-- related things -->

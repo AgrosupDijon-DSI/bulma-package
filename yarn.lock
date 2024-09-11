@@ -4171,6 +4171,11 @@ shallow-clone@^3.0.0:
   dependencies:
     kind-of "^6.0.2"
 
+shareon@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/shareon/-/shareon-2.5.0.tgz#cc7346b872bc176d30614b9d5bef68578b0fb462"
+  integrity sha512-3RaRVy7nyi49IUYXZZkvXcylaQgrtM5ZkG0oRovNJLlf2M2/guYiowzCqtIylhNJCBxT4S+c40qRv0Km6myBSQ==
+
 shebang-command@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"

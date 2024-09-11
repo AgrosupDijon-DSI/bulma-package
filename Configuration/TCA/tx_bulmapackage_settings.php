@@ -32,7 +32,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,menu_layout,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.google_settings,code_analytics,--palette--;;bulmapackage_wsd,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_social,tx_bulmapackage_settings_link_item,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language'
+            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,menu_layout,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.google_settings,code_analytics,--palette--;;bulmapackage_wsd,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_links,tx_bulmapackage_settings_link_item,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_sharing,sharing_services,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language'
         ],
     ],
     'palettes' => [
@@ -393,5 +393,22 @@ return [
                 ]
             ]
         ],
+        'sharing_services' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services',
+            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.description',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectCheckBox',
+                'items' => [
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.facebook', 'value' => 'facebook'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.twitter', 'value' => 'twitter'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.linkedin', 'value' => 'linkedin'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.email', 'value' => 'email'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.print', 'value' => 'print'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.copy-url', 'value' => 'copy-url'],
+                ]
+            ]
+        ]
     ],
 ];

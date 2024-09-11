@@ -21,7 +21,8 @@
     "flickity": "2.2.1",
     "flickity-fade": "1.0.0",
     "ionicons": "4.5.10-0",
-    "photoswipe": "4.1.3"
+    "photoswipe": "4.1.3",
+    "shareon": "^2.5.0"
   },
   "scripts": {
     "dev-server": "encore dev-server",

@@ -98,6 +98,24 @@
             <trans-unit id="tt_content.iframe.error">
                 <source>Error:</source>
             </trans-unit>
+            <trans-unit id="social_media_buttons.shareon.facebook">
+                <source>Share on Facebook</source>
+            </trans-unit>
+            <trans-unit id="social_media_buttons.shareon.twitter">
+                <source>Share on Twitter (X)</source>
+            </trans-unit>
+            <trans-unit id="social_media_buttons.shareon.linkedin">
+                <source>Share on LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="social_media_buttons.shareon.email">
+                <source>Share by email</source>
+            </trans-unit>
+            <trans-unit id="social_media_buttons.shareon.copy-url">
+                <source>Copy url</source>
+            </trans-unit>
+            <trans-unit id="social_media_buttons.shareon.print">
+                <source>Print</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

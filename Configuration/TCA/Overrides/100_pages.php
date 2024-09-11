@@ -102,10 +102,7 @@ $additionalColumns = [
 ExtensionManagementUtility::addTCAcolumns('pages', $additionalColumns);
 ExtensionManagementUtility::addToAllTCAtypes('pages', 'thumbnail', '1,3,4', 'after:backend_layout_next_level');
 ExtensionManagementUtility::addToAllTCAtypes('pages', 'hide_breadcrumb', (string)PageRepository::DOKTYPE_DEFAULT, 'after:thumbnail');
-if (ExtensionManagementUtility::isLoaded('rx_shariff')) {
-    ExtensionManagementUtility::addToAllTCAtypes('pages', 'social_media_buttons',
-        (string)PageRepository::DOKTYPE_DEFAULT, 'after:twitter_image');
-}
+ExtensionManagementUtility::addToAllTCAtypes('pages', 'social_media_buttons', (string)PageRepository::DOKTYPE_DEFAULT, 'after:twitter_image');
 ExtensionManagementUtility::addFieldsToPalette('pages', 'title', 'exclude_slug_for_subpages', 'after:slug');
 ExtensionManagementUtility::addFieldsToPalette('pages', 'titleonly', 'exclude_slug_for_subpages', 'after:slug');
 

@@ -16,3 +16,4 @@
 @import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/MenuLayout.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/Favicon.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/WebSiteStructuredData'
+@import 'EXT:bulma_package/Configuration/TypoScript/WebsiteElement/Element/SharingServices.typoscript'

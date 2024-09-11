@@ -7,6 +7,7 @@
 # customsubcategory=130_websiteelement=Logo
 # customsubcategory=140_websiteelement=Mega menu
 # customsubcategory=150_websiteelement=Socials Links
+# customsubcategory=160_websiteelement=Social Media Buttons
 
 ########################
 ### WEBSITE ELEMENTS ###
@@ -43,5 +44,53 @@ plugin.bulma_package_websiteelements {
     socialsLinks{
         # cat=bulma package: website elements/150_websiteelement/001_linkclasses; type=string; label=Css classes for links
         linkClasses = button
+    }
+    socialMediaButtons{
+        # cat=bulma package: website elements/160_websiteelement/001_wrapperclasses; type=string; label=Css classes for wrapper
+        wrapperClasses = buttons is-justify-content-flex-end
+        services{
+            common{
+                # cat=bulma package: website elements/160_websiteelement/002_services_common_linkclasses; type=string; label=Common Css classes for links
+                linkClasses = button
+                # cat=bulma package: website elements/160_websiteelement/003_services_common_iconclasses; type=string; label=Common Css classes for icons
+                iconClasses =
+            }
+            facebook {
+                # cat=bulma package: website elements/160_websiteelement/004_services_facebook_linkclasses; type=string; label=Specific Css classes for facebook link
+                linkClasses = is-facebook
+                # cat=bulma package: website elements/160_websiteelement/005_services_facebook_linkclasses; type=string; label=Specific Css classes for facebook icon
+                iconClasses = fab fa-facebook-f
+            }
+            twitter {
+                # cat=bulma package: website elements/160_websiteelement/006_services_twitter_linkclasses; type=string; label=Specific Css classes for twitter link
+                linkClasses = is-twitter
+                # cat=bulma package: website elements/160_websiteelement/007_services_twitter_linkclasses; type=string; label=Specific Css classes for twitter icon
+                iconClasses = fab fa-twitter
+            }
+            linkedin {
+                # cat=bulma package: website elements/160_websiteelement/008_services_linkedin_linkclasses; type=string; label=Specific Css classes for linkedin link
+                linkClasses = is-linkedin
+                # cat=bulma package: website elements/160_websiteelement/009_services_linkedin_linkclasses; type=string; label=Specific Css classes for linkedin icon
+                iconClasses = fab fa-linkedin-in
+            }
+            email {
+                # cat=bulma package: website elements/160_websiteelement/010_services_email_linkclasses; type=string; label=Specific Css classes for email link
+                linkClasses = is-email
+                # cat=bulma package: website elements/160_websiteelement/011_services_email_linkclasses; type=string; label=Specific Css classes for email icon
+                iconClasses = fas fa-envelope
+            }
+            print {
+                # cat=bulma package: website elements/160_websiteelement/012_services_print_linkclasses; type=string; label=Specific Css classes for print link
+                linkClasses = is-print
+                # cat=bulma package: website elements/160_websiteelement/013_services_print_linkclasses; type=string; label=Specific Css classes for print icon
+                iconClasses = fas fa-print
+            }
+            copy-url {
+                # cat=bulma package: website elements/160_websiteelement/014_services_copy-url_linkclasses; type=string; label=Specific Css classes for copy-url link
+                linkClasses = is-copy-url
+                # cat=bulma package: website elements/160_websiteelement/015_services_copy-url_linkclasses; type=string; label=Specific Css classes for copy-url icon
+                iconClasses = fas fa-link
+            }
+        }
     }
 }

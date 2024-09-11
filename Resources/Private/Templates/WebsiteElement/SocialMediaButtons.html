@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+    <div class="shareon {settings.wrapperClasses}">
+        <f:for each="{services ? services : settings.defaultServices}" as="service">
+            <a class="{service} {settings.services.common.linkClasses} {settings.services.{service}.linkClasses}" title="{f:translate(key: 'social_media_buttons.shareon.{service}', extensionName: 'bulma_package')}">
+                <span class="icon">
+                    <i class="{settings.services.common.iconClasses} {settings.services.{service}.iconClasses}"></i>
+                </span>
+            </a>
+        </f:for>
+    </div>
+</f:spaceless>
+</html>

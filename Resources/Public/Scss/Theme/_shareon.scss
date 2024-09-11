@@ -1,0 +1,8 @@
+.shareon{
+  .copy-url.done{
+    background-color: $success;
+    .fa-link::before{
+      content: "\f00c";
+    }
+  }
+}
