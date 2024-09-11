@@ -635,10 +635,6 @@
         <source>Thumbnail Layout</source>
         <target state="final">Disposition des vignettes</target>
       </trans-unit>
-      <trans-unit id="tabs.bulmapackage_social" approved="yes">
-        <source>Socials Networks</source>
-        <target state="final">Réseaux sociaux</target>
-      </trans-unit>
       <trans-unit id="tabs.colors" approved="yes">
         <source>Colors</source>
         <target state="final">Couleurs</target>
