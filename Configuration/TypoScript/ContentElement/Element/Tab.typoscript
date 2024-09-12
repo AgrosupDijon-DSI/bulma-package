@@ -30,7 +30,7 @@ tt_content.tab {
                 if.isTrue.field = record
                 table = tt_content
                 pidInList.field = pid
-                where = tx_bulmapackage_tab_item_parent=###uid### AND deleted=0 AND hidden=0 AND colPos=###colPos### AND CType IN (###CType1###, ###CType2###, ###CType3###, ###CType4###, ###CType5###, ###CType6###, ###CType7###, ###CType8###, ###CType9###, ###CType10###, ###CType11###, ###CType12###, ###CType13###, ###CType14###, ###CType15###, ###CType16###, ###CType17###, ###CType18###)
+                where = tx_bulmapackage_tab_item_parent=###uid### AND deleted=0 AND hidden=0 AND colPos=###colPos### AND CType IN (###CType1###, ###CType2###, ###CType3###, ###CType4###, ###CType5###, ###CType6###, ###CType7###, ###CType8###, ###CType9###, ###CType10###, ###CType11###, ###CType12###, ###CType13###, ###CType14###, ###CType15###, ###CType16###, ###CType17###, ###CType18###, ###CType19###, ###CType20###)
                 orderBy = sorting
                 markers.colPos.value = 999
                 markers.CType1.value = header
@@ -52,6 +52,7 @@ tt_content.tab {
                 markers.CType17.value = menu_thumbnail_dir
                 markers.CType18.value = menu_thumbnail_list
                 markers.CType19.value = iframe
+                markers.CType20.value = uploads
                 markers.uid.field = uid
                 as = records
             }
