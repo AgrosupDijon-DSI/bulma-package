@@ -804,6 +804,18 @@
             <trans-unit id="tx_bulmapackage_settings.sharing_services.copy-url">
                 <source>Copy url</source>
             </trans-unit>
+            <trans-unit id="content_element.thumbnail_group">
+                <source>Thumbnail Group</source>
+            </trans-unit>
+            <trans-unit id="content_element.thumbnail_group.description">
+                <source>Insert a element with several thumbnails</source>
+            </trans-unit>
+            <trans-unit id="thumbnail_group_item">
+                <source>Thumbnail</source>
+            </trans-unit>
+            <trans-unit id="thumbnail_group_item.add">
+                <source>Create new thumbnail</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -80,7 +80,7 @@ CREATE TABLE tt_content
     max_items                             varchar(255) DEFAULT ''        NOT NULL,
 
     tx_bulmapackage_card_group_item       int(11) unsigned DEFAULT '0',
-
+    tx_bulmapackage_thumbnail_group_item  int(11) unsigned DEFAULT '0',
     tx_bulmapackage_icon_group_item       int(11) unsigned DEFAULT '0',
 
     tx_bulmapackage_tab_item_parent       int(11) DEFAULT '0' NOT NULL,
@@ -126,7 +126,6 @@ CREATE TABLE tx_bulmapackage_tab_item
     title      varchar(255) DEFAULT '' NOT NULL
 );
 
-
 #
 # Table structure for table 'tx_bulmapackage_card_group_item'
 #
@@ -139,6 +138,18 @@ CREATE TABLE tx_bulmapackage_card_group_item
     bodytext   text,
     link       varchar(1024) DEFAULT '' NOT NULL,
     link_title varchar(255)  DEFAULT '' NOT NULL
+);
+
+#
+# Table structure for table 'tx_bulmapackage_thumbnail_group_item'
+#
+CREATE TABLE tx_bulmapackage_thumbnail_group_item
+(
+    tt_content int(11) unsigned DEFAULT '0',
+    header     varchar(255)  DEFAULT '' NOT NULL,
+    subheader  varchar(255)  DEFAULT '' NOT NULL,
+    media      int(11) DEFAULT '0' NOT NULL,
+    link       varchar(1024) DEFAULT '' NOT NULL,
 );
 
 #

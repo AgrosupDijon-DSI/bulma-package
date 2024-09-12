@@ -143,6 +143,17 @@ TCEFORM {
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
                 }
 
+                thumbnail_group{
+                    removeItems = fullwidth, striped, bordered, hoverable, narrow
+                    addItems {
+                        is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
+                        is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
+                        is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+                    }
+
+                    label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+                }
+
                 menu_thumbnail_dir{
                     removeItems = fullwidth, striped, bordered, hoverable, narrow
                     addItems {

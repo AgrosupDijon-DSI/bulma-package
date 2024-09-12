@@ -44,3 +44,4 @@
 @import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/List.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Carousel.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/IconGroup.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/ThumbnailGroup.typoscript'

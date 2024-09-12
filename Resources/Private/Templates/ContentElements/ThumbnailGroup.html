@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:if condition="{records}">
+        <f:variable name="columnConfig">{settings.responsiveimages.contentelements.thumbnail_group.{data.cols}}</f:variable>
+        <f:for each="{layoutClasses}" as="class">
+            <f:variable name="allClasses">{allClasses} {class}</f:variable>
+            <f:if condition="{class} == 'is-gapless'">
+                <f:variable name="gapless" value="1" />
+            </f:if>
+        </f:for>
+        <asd:data.imageVariants as="variants" variants="{variants}" multiplier="{columnConfig.multiplier}" gutters="{f:if(condition: '!{gapless}', then: '{columnConfig.gutters}')}" corrections="{columnConfig.corrections}" />
+        <div class="columns is-multiline is-mobile thumbnail-menu thumbnail-group {allClasses}">
+            <f:for each="{records}" as="item" iteration="iteration">
+                <div class="thumbnail-menu-item column {columnConfig.class}">
+
+                    <f:render section="LinkWrap"
+                              arguments="{link: item.data.link, linkTitle: item.data.header}"
+                              contentAs="content">
+                        <div class="thumbnail-menu-image">
+                            <f:if condition="{item.media.0}">
+                                <f:then>
+                                    <f:render partial="Media/Rendering/Image" arguments="{file: item.media.0, data: data, settings: settings, variants: variants}" />
+                                </f:then>
+                            </f:if>
+                        </div>
+                        <div class="thumbnail-menu-caption">
+                            <div class="thumbnail-menu-caption-inner">
+                                <h3 class="thumbnail-menu-caption-title">{item.data.header}</h3>
+                                <f:if condition="{item.data.subheader}">
+                                    <p class="thumbnail-menu-caption-subtitle">{item.data.subheader}</p>
+                                </f:if>
+                            </div>
+                        </div>
+                    </f:render>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+
+</f:section>
+
+<f:section name="LinkWrap">
+    <f:if condition="{link}">
+        <f:then>
+            <f:link.typolink class="thumbnail-menu-link" parameter="{link}" additionalAttributes="{data-toggle:'tooltip'}">{content -> f:format.raw()}</f:link.typolink>
+        </f:then>
+        <f:else>
+            <div class="thumbnail-menu-link">{content -> f:format.raw()}</div>
+        </f:else>
+    </f:if>
+</f:section>
+
+</html>

@@ -109,6 +109,11 @@ $GLOBALS['TCA']['tx_bulmapackage_icon_group_item']['types']['1']['columnsOverrid
 $GLOBALS['TCA']['tx_bulmapackage_carousel_item']['types']['1']['columnsOverrides']['image']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants']['default'] = $defaultCropSettings;
 
 /***************
+ * Thumbnail Group
+ */
+$GLOBALS['TCA']['tx_bulmapackage_thumbnail_group_item']['types']['1']['columnsOverrides']['media']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants']['default'] = $defaultCropSettings;
+
+/***************
  * News
  */
 if (is_array($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['fal_media'] ?? false)) {

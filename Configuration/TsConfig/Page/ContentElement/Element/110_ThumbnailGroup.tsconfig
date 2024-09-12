@@ -1,0 +1,16 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems.advanced {
+    elements {
+        thumbnail_group {
+            iconIdentifier = content-menu-thumbnail
+            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.thumbnail_group
+            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.thumbnail_group.description
+            tt_content_defValues {
+                CType = thumbnail_group
+            }
+        }
+    }
+    show := addToList(thumbnail_group)
+}
