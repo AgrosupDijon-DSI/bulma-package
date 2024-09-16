@@ -149,6 +149,7 @@ TCEFORM {
                         is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
                         is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
                         is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+                        inverted-thumbnail = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.inverted
                     }
 
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
@@ -160,6 +161,7 @@ TCEFORM {
                         is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
                         is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
                         is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+                        inverted-thumbnail = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.inverted
                     }
 
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
@@ -171,6 +173,7 @@ TCEFORM {
                         is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
                         is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
                         is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+                        inverted-thumbnail = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.inverted
                     }
 
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style

@@ -165,6 +165,9 @@
             <trans-unit id="option.text-right">
                 <source>Right aligned text</source>
             </trans-unit>
+            <trans-unit id="option.inverted">
+                <source>Inverted</source>
+            </trans-unit>
             <trans-unit id="menu.card_list">
                 <source>Cards</source>
             </trans-unit>

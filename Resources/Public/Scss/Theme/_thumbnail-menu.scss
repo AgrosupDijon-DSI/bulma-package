@@ -172,5 +172,34 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
         }
       }
     }
+
+    .inverted-thumbnail{
+      .thumbnail-menu-image:after {
+        background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity-hover);
+      }
+
+      .thumbnail-menu-link {
+        .thumbnail-menu-image {
+          picture,
+          img {
+            filter: $thumbnail-menu-picture-filter-hover;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          .thumbnail-menu-image {
+            &:after {
+              background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity);
+            }
+
+            picture,
+            img {
+              filter: $thumbnail-menu-picture-filter;
+            }
+          }
+        }
+      }
+    }
   }
 }
