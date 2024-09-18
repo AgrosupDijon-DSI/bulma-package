@@ -92,5 +92,9 @@ plugin.bulma_package_websiteelements {
                 iconClasses = fas fa-link
             }
         }
+        # cat=bulma package: website elements/160_websiteelement/016_wrapperclasses; type=string; label=Css classes for title
+        titleClasses = title is-5 mb-2 mr-3
+        # cat=bulma package: website elements/160_websiteelement/017_wrapperclasses; type=string; label=Default services to be shown if none selected. Eg: facebook,twitter,linkedin
+        defaultServices =
     }
 }

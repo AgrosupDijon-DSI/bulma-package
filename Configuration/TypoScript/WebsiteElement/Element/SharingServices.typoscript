@@ -21,6 +21,7 @@ lib.bulmaPackage.sharingServices{
         ################
         settings {
             wrapperClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperClasses}
+            titleClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.titleClasses}
             services{
                 common{
                     linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.linkClasses}
@@ -51,11 +52,7 @@ lib.bulmaPackage.sharingServices{
                     iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.copy-url.iconClasses}
                 }
             }
-            defaultServices {
-                0 = facebook
-                1 = twitter
-                2 = linkedin
-            }
+            defaultServices = {$plugin.bulma_package_websiteelements.socialMediaButtons.defaultServices}
         }
 
         ##########################

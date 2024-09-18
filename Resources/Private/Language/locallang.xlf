@@ -116,6 +116,9 @@
             <trans-unit id="social_media_buttons.shareon.print">
                 <source>Print</source>
             </trans-unit>
+            <trans-unit id="social_media_buttons.shareon.share">
+                <source>Share</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

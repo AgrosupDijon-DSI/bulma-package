@@ -787,7 +787,7 @@
                 <source>Services</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.sharing_services.description">
-                <source>If no services are selected, the widget will display sharing buttons for Facebook, Twitter and LinkedIn.</source>
+                <source>Display a sharing widget in news records detail</source>
             </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.sharing_services.facebook">
                 <source>Facebook</source>
