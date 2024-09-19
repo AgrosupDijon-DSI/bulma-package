@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+    <f:variable name="defaultServices"><f:if condition="{settings.defaultServices}"><f:split separator=",">{settings.defaultServices}</f:split></f:if></f:variable>
+    <f:variable name="extraClasses"><f:if condition="{extraClasses}">{extraClasses}</f:if></f:variable>
+    <f:if condition="{services ? services : defaultServices}">
+        <div class="shareon {settings.wrapperClasses} {extraClasses ? extraClasses : settings.wrapperExtraClasses}">
+            <f:if condition="!{label} && {label -> asd:data.isNull()} || {label}">
+                <p class="{settings.titleClasses}">
+                    <f:if condition="!{label} && {label -> asd:data.isNull()}">
+                        <f:then><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang.xlf:social_media_buttons.shareon.share" /></f:then>
+                        <f:else>{label}</f:else>
+                    </f:if>
+                </p>
+            </f:if>
+            <f:for each="{services ? services : defaultServices}" as="service">
+                <a class="{service} {settings.services.common.linkClasses} {settings.services.{service}.linkClasses}" title="{f:translate(key: 'social_media_buttons.shareon.{service}', extensionName: 'bulma_package')}">
+                    <span class="icon">
+                        <i class="{settings.services.common.iconClasses} {settings.services.{service}.iconClasses}"></i>
+                    </span>
+                </a>
+            </f:for>
+        </div>
+    </f:if>
+</f:spaceless>
+</html>

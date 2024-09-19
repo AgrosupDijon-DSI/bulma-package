@@ -319,6 +319,16 @@ TCEFORM {
 
                     label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:iframe.ratio
                 }
+
+                sharing_buttons {
+                    removeItems = 2
+                    altLabels {
+                        0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
+                        1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+                    }
+
+                    label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.alignement
+                }
             }
         }
 

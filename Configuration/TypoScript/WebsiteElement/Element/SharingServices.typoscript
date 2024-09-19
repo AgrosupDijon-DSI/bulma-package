@@ -21,6 +21,7 @@ lib.bulmaPackage.sharingServices{
         ################
         settings {
             wrapperClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperClasses}
+            wrapperExtraClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperExtraClasses}
             titleClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.titleClasses}
             services{
                 common{

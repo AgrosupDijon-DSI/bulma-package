@@ -20,6 +20,11 @@ lib.bulmaPackageSetting {
     ################
     renderObj = FLUIDTEMPLATE
     renderObj {
+        partialRootPaths {
+            0 = EXT:bulma_package/Resources/Private/Partials/
+            1 = EXT:bulma_package/Resources/Private/Partials/WebsiteElement/
+            2 = {$plugin.bulma_package_websiteelements.view.partialRootPath}
+        }
         templateRootPaths {
             0 = EXT:bulma_package/Resources/Private/Templates/WebsiteElement/
             1 = {$plugin.bulma_package_websiteelements.view.templateRootPath}

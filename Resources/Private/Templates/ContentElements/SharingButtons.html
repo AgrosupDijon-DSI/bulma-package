@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:switch expression="{data.table_header_position}">
+        <f:case value="0">
+            <f:variable name="extraClasses">is-justify-content-flex-start</f:variable>
+        </f:case>
+        <f:case value="1">
+            <f:variable name="extraClasses">is-justify-content-flex-end</f:variable>
+        </f:case>
+    </f:switch>
+    <f:render partial="SocialMediaButtons" arguments="{settings: settings.sharing_buttons, services: services, label: data.tx_bulmapackage_sharing_services_label, extraClasses:extraClasses}"/>
+</f:section>
+</html>

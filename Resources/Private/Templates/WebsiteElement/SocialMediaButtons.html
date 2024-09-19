@@ -1,22 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:spaceless>
-    <f:variable name="defaultServices"><f:if condition="{settings.defaultServices}"><f:split separator=",">{settings.defaultServices}</f:split></f:if></f:variable>
-    <f:if condition="{services ? services : defaultServices}">
-        <div class="shareon {settings.wrapperClasses}">
-            <p class="{settings.titleClasses}">
-                <f:if condition="{label}">
-                    <f:then>{label}</f:then>
-                    <f:else><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang.xlf:social_media_buttons.shareon.share" /></f:else>
-                </f:if>
-            </p>
-            <f:for each="{services ? services : defaultServices}" as="service">
-                <a class="{service} {settings.services.common.linkClasses} {settings.services.{service}.linkClasses}" title="{f:translate(key: 'social_media_buttons.shareon.{service}', extensionName: 'bulma_package')}">
-                <span class="icon">
-                    <i class="{settings.services.common.iconClasses} {settings.services.{service}.iconClasses}"></i>
-                </span>
-                </a>
-            </f:for>
-        </div>
-    </f:if>
+    <f:render partial="ContentElements/SocialMediaButtons" arguments="{_all}" />
 </f:spaceless>
 </html>

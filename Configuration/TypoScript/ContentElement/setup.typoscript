@@ -45,3 +45,4 @@
 @import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/Carousel.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/IconGroup.typoscript'
 @import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/ThumbnailGroup.typoscript'
+@import 'EXT:bulma_package/Configuration/TypoScript/ContentElement/Element/SharingButtons.typoscript'

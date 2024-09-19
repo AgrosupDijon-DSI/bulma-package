@@ -819,6 +819,18 @@
             <trans-unit id="thumbnail_group_item.add">
                 <source>Create new thumbnail</source>
             </trans-unit>
+            <trans-unit id="content_element.sharing_buttons">
+                <source>Sharing buttons</source>
+            </trans-unit>
+            <trans-unit id="content_element.sharing_buttons.description">
+                <source>Insert buttons allowing to share page in multiple ways.</source>
+            </trans-unit>
+            <trans-unit id="field.tx_bulmapackage_sharing_services_label">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="palette.sharingbuttonslayout">
+                <source>Sharing buttons layout</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

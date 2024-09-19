@@ -69,30 +69,33 @@ CREATE TABLE tx_bulmapackage_settings_link_item
 #
 CREATE TABLE tt_content
 (
-    header_position                       varchar(10)  DEFAULT ''        NOT NULL,
-    background_color_class                varchar(255) DEFAULT ''        NOT NULL,
-    background_frame                      varchar(255) DEFAULT 'limited' NOT NULL,
-    file_folder                           text,
-    readmore_label                        varchar(255) DEFAULT ''        NOT NULL,
-    message_class                         varchar(60)  DEFAULT 'default' NOT NULL,
-    gallery_size                          varchar(10)  DEFAULT ''        NOT NULL,
-    ignore_nav_hide                       tinyint(4) DEFAULT '0' NOT NULL,
-    max_items                             varchar(255) DEFAULT ''        NOT NULL,
+    header_position                        varchar(10)  DEFAULT ''        NOT NULL,
+    background_color_class                 varchar(255) DEFAULT ''        NOT NULL,
+    background_frame                       varchar(255) DEFAULT 'limited' NOT NULL,
+    file_folder                            text,
+    readmore_label                         varchar(255) DEFAULT ''        NOT NULL,
+    message_class                          varchar(60)  DEFAULT 'default' NOT NULL,
+    gallery_size                           varchar(10)  DEFAULT ''        NOT NULL,
+    ignore_nav_hide                        tinyint(4) DEFAULT '0' NOT NULL,
+    max_items                              varchar(255) DEFAULT ''        NOT NULL,
 
-    tx_bulmapackage_card_group_item       int(11) unsigned DEFAULT '0',
-    tx_bulmapackage_thumbnail_group_item  int(11) unsigned DEFAULT '0',
-    tx_bulmapackage_icon_group_item       int(11) unsigned DEFAULT '0',
+    tx_bulmapackage_card_group_item        int(11) unsigned DEFAULT '0',
+    tx_bulmapackage_thumbnail_group_item   int(11) unsigned DEFAULT '0',
+    tx_bulmapackage_icon_group_item        int(11) unsigned DEFAULT '0',
 
-    tx_bulmapackage_tab_item_parent       int(11) DEFAULT '0' NOT NULL,
-    tx_bulmapackage_tab_item              int(11) unsigned DEFAULT '0' NOT NULL,
+    tx_bulmapackage_tab_item_parent        int(11) DEFAULT '0' NOT NULL,
+    tx_bulmapackage_tab_item               int(11) unsigned DEFAULT '0' NOT NULL,
 
-    tx_bulmapackage_accordion_item_parent int(11) DEFAULT '0' NOT NULL,
-    tx_bulmapackage_accordion_item        int(11) unsigned DEFAULT '0' NOT NULL,
-    tx_bulmapackage_accordion_item_active int(11) unsigned DEFAULT '0' NOT NULL,
+    tx_bulmapackage_accordion_item_parent  int(11) DEFAULT '0' NOT NULL,
+    tx_bulmapackage_accordion_item         int(11) unsigned DEFAULT '0' NOT NULL,
+    tx_bulmapackage_accordion_item_active  int(11) unsigned DEFAULT '0' NOT NULL,
 
-    tx_bulmapackage_carousel_item         int(11) unsigned DEFAULT '0',
+    tx_bulmapackage_carousel_item          int(11) unsigned DEFAULT '0',
 
-    tx_mask_content_role                  varchar(255) DEFAULT ''        NOT NULL
+    tx_bulmapackage_sharing_services       text,
+    tx_bulmapackage_sharing_services_label varchar(255) DEFAULT NULL,
+
+    tx_mask_content_role                   varchar(255) DEFAULT ''        NOT NULL
 );
 
 #

@@ -1,0 +1,16 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems.advanced {
+    elements {
+        sharing_buttons {
+            iconIdentifier = actions-share-alt
+            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.sharing_buttons
+            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.sharing_buttons.description
+            tt_content_defValues {
+                CType = sharing_buttons
+            }
+        }
+    }
+    show := addToList(sharing_buttons)
+}
