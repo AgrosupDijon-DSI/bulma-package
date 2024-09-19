@@ -2,19 +2,27 @@
 <f:if condition="{data.code_analytics}">
 <f:asset.script identifier="analytics_load" src="https://www.googletagmanager.com/gtag/js?id={data.code_analytics}" async="true" priority="true" />
 <f:asset.script priority="true" identifier="analytics">
-    var gaProperty = '<f:format.raw>{data.code_analytics}</f:format.raw>';
-    var disableStr = 'ga-disable-' + gaProperty;
-    if (document.cookie.indexOf(disableStr + '=true') > -1) {
-        window[disableStr] = true;
+<f:for each="{trackingCodes}" as="trackingCode" iteration="i">
+    var gaProperty<f:format.raw>{i.cycle}</f:format.raw> = '<f:format.raw>{trackingCode}</f:format.raw>';
+    var disableStr<f:format.raw>{i.cycle}</f:format.raw> = 'ga-disable-' + gaProperty<f:format.raw>{i.cycle}</f:format.raw>;
+</f:for>
+<f:for each="{trackingCodes}" as="trackingCode" iteration="i">
+    if (document.cookie.indexOf(disableStr<f:format.raw>{i.cycle}</f:format.raw> + '=true') > -1) {
+        window[disableStr<f:format.raw>{i.cycle}</f:format.raw>] = true;
     }
+</f:for>
 
     function googleAnalyticsOptOut() {
-        document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-        window[disableStr] = true;
+    <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
+        document.cookie = disableStr<f:format.raw>{i.cycle}</f:format.raw> + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/; SameSite=None; Secure';
+        window[disableStr<f:format.raw>{i.cycle}</f:format.raw>] = true;
+    </f:for>
     }
     function googleAnalyticsOptIn() {
-        document.cookie = disableStr + '=; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/';
-        window[disableStr] = false;
+    <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
+        document.cookie = disableStr<f:format.raw>{i.cycle}</f:format.raw> + '=; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/; SameSite=None; Secure';
+        window[disableStr<f:format.raw>{i.cycle}</f:format.raw>] = false;
+    </f:for>
     }
 
     window.addEventListener('asd.cookie.enable', () => {
@@ -32,10 +40,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', gaProperty, {
+<f:for each="{trackingCodes}" as="trackingCode" iteration="i">
+    gtag('config', gaProperty<f:format.raw>{i.cycle}</f:format.raw>, {
         'cookie_expires': 34000000,
         'anonymize_ip': true
     });
+</f:for>
 </f:asset.script>
 </f:if>
 </html>

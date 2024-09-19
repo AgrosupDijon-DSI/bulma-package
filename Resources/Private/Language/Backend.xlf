@@ -654,6 +654,9 @@
             <trans-unit id="tx_bulmapackage_settings.code_analytics">
                 <source>Tracking code</source>
             </trans-unit>
+            <trans-unit id="tx_bulmapackage_settings.code_analytics.description">
+                <source>Add multiple tracking codes by separating them with a comma. Eg: UA-12345678-9, UA-98765432-1</source>
+            </trans-unit>
             <trans-unit id="tx_bulmapackage_settings.address_title">
                 <source>Title</source>
             </trans-unit>

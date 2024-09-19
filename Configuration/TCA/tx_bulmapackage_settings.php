@@ -240,11 +240,12 @@ return [
         'code_analytics' => [
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.code_analytics',
+            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.code_analytics.description',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 50,
                 'eval' => 'trim',
-                'max' => 20,
+                'max' => 255,
                 'placeholder' => 'UA-12345678-9'
             ],
         ],

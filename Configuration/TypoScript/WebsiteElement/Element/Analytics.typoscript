@@ -15,5 +15,18 @@ lib.bulmaPackage.codeAnalytics{
         ### TEMPLATE ###
         ################
         templateName = Analytics
+
+        ##########################
+        ### DATA PREPROCESSING ###
+        ##########################
+        dataProcessing {
+            10 = split
+            10 {
+                delimiter = ,
+                fieldName = code_analytics
+                as = trackingCodes
+                removeEmptyEntries = 1
+            }
+        }
     }
 }

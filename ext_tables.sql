@@ -9,7 +9,7 @@ CREATE TABLE tx_bulmapackage_settings
     logo_main                          int(11) unsigned DEFAULT '0' NOT NULL,
     logos_partners                     int(11) unsigned DEFAULT '0' NOT NULL,
     favicon                            int(11) unsigned DEFAULT '0' NOT NULL,
-    code_analytics                     varchar(30)  DEFAULT '' NOT NULL,
+    code_analytics                     varchar(255)  DEFAULT '' NOT NULL,
     address_title                      varchar(255) DEFAULT '' NOT NULL,
     address                            tinytext,
     zip                                varchar(20)  DEFAULT '' NOT NULL,
