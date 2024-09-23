@@ -95,6 +95,30 @@
         <source>Cookie settings</source>
         <target state="final">Paramétrage des cookies</target>
       </trans-unit>
+      <trans-unit id="social_media_buttons.shareon.facebook" approved="yes">
+        <source>Share on Facebook</source>
+        <target state="final">Partager sur Facebook</target>
+      </trans-unit>
+      <trans-unit id="social_media_buttons.shareon.twitter" approved="yes">
+        <source>Share on Twitter (X)</source>
+        <target state="final">Partager sur Twitter (X)</target>
+      </trans-unit>
+      <trans-unit id="social_media_buttons.shareon.linkedin" approved="yes">
+        <source>Share on LinkedIn</source>
+        <target state="final">Partager sur LinkedIn</target>
+      </trans-unit>
+      <trans-unit id="social_media_buttons.shareon.email" approved="yes">
+        <source>Share by email</source>
+        <target state="final">Partager par courriel</target>
+      </trans-unit>
+      <trans-unit id="social_media_buttons.shareon.copy-url" approved="yes">
+        <source>Copy url</source>
+        <target state="final">Copier l'adresse de la page</target>
+      </trans-unit>
+      <trans-unit id="social_media_buttons.shareon.print" approved="yes">
+        <source>Print</source>
+        <target state="final">Imprimer</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
