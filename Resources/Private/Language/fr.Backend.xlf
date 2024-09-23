@@ -791,6 +791,18 @@
         <source>Content</source>
         <target state="final">Attribut content</target>
       </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.sharing_services.email" approved="yes">
+        <source>Email</source>
+        <target state="final">Courriel</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.sharing_services.print" approved="yes">
+        <source>Print</source>
+        <target state="final">Imprimer la page</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.sharing_services.copy-url" approved="yes">
+        <source>Copy url</source>
+        <target state="final">Copier l'adresse de la page</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
