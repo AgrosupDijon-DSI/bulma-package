@@ -11,10 +11,6 @@
         <source>Hide breadcrumb</source>
         <target state="translated">Skjul brødkrumme</target>
       </trans-unit>
-      <trans-unit id="pages.social_media_buttons">
-        <source>Show social media buttons</source>
-        <target state="translated">Vis knapper til sociale medier</target>
-      </trans-unit>
       <trans-unit id="ratio.16_9">
         <source>16:9</source>
         <target state="translated">16:9</target>
