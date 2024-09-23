@@ -174,8 +174,3 @@ page.10.dataProcessing{
 	50 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
 	50.menus = breadcrumb
 }
-
-# Avoid double social media buttons in detail view
-[traverse(page, "social_media_buttons") == 1]
-	plugin.tx_news.settings.detail.showSocialShareButtons = 0
-[end]

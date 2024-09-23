@@ -106,7 +106,6 @@ CREATE TABLE pages
     thumbnail                 int(11) unsigned DEFAULT '0',
     exclude_slug_for_subpages tinyint(1) DEFAULT '0' NOT NULL,
     hide_breadcrumb           tinyint(1) DEFAULT '0' NOT NULL,
-    social_media_buttons      tinyint(1) DEFAULT '0' NOT NULL,
 );
 
 #

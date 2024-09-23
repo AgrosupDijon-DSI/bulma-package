@@ -15,7 +15,6 @@
                     <div class="{settings.layouts.{current}.columns.wrapperClasses}">
                         <main id="main" class="{settings.layouts.{current}.columns.mainClasses}">
                             <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
-                            <f:render partial="Structure/SocialMediaButtons" arguments="{showSocialMediaButtons: data.social_media_buttons}" />
                         </main>
                         <aside class="{settings.layouts.{current}.columns.asideClasses}">
                             <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}"/>
@@ -27,7 +26,6 @@
         <f:else>
             <main id="main">
                 <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
-                <f:render partial="Structure/SocialMediaButtons" arguments="{showSocialMediaButtons: data.social_media_buttons, wrapInContainer: 1}" />
             </main>
         </f:else>
     </f:if>
