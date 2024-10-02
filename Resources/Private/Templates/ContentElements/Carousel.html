@@ -26,14 +26,16 @@
                               arguments="{link: item.image.0.properties.link, buttonLink: buttonLink}"
                               contentAs="content">
                         <div class="has-ratio">
-                            <f:if condition="{item.data.header} || {item.data.subheader} || {buttonLink})">
+                            <f:if condition="(({item.data.header} || {item.data.subheader}) && {item.data.header_layout} == 0) || {buttonLink}">
                                 <div class="carousel-content {f:if(condition: item.data.text_color, then: '{item.data.text_color}')}">
                                     <div class="content">
-                                        <f:if condition="{item.data.header}">
-                                            <h1 class="title is-2 is-spaced">{item.data.header}</h1>
-                                        </f:if>
-                                        <f:if condition="{item.data.subheader}">
-                                            <h2 class="subtitle is-4">{item.data.subheader}</h2>
+                                        <f:if condition="{item.data.header_layout} == 0">
+                                            <f:if condition="{item.data.header}">
+                                                <h1 class="title is-2 is-spaced">{item.data.header}</h1>
+                                            </f:if>
+                                            <f:if condition="{item.data.subheader}">
+                                                <h2 class="subtitle is-4">{item.data.subheader}</h2>
+                                            </f:if>
                                         </f:if>
                                         <f:if condition="{item.data.link} && {item.data.button_text}">
                                             <f:link.typolink parameter="{item.data.link}" class="button is-large {item.data.button_class}">{item.data.button_text}</f:link.typolink>

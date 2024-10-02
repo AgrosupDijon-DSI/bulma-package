@@ -55,6 +55,8 @@ return [
             'showitem' => '
                 header,
                 --linebreak--,
+                header_layout,
+                --linebreak--,
                 subheader
             '
         ],
@@ -177,6 +179,25 @@ return [
                 'type' => 'input',
                 'size' => 50,
                 'eval' => 'trim'
+            ],
+        ],
+        'header_layout' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.type',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                        'value' => '0',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6',
+                        'value' => '100',
+                    ],
+                ],
+                'default' => 0,
             ],
         ],
         'text_color' => [

@@ -9,7 +9,7 @@ CREATE TABLE tx_bulmapackage_settings
     logo_main                          int(11) unsigned DEFAULT '0' NOT NULL,
     logos_partners                     int(11) unsigned DEFAULT '0' NOT NULL,
     favicon                            int(11) unsigned DEFAULT '0' NOT NULL,
-    code_analytics                     varchar(255)  DEFAULT '' NOT NULL,
+    code_analytics                     varchar(255) DEFAULT '' NOT NULL,
     address_title                      varchar(255) DEFAULT '' NOT NULL,
     address                            tinytext,
     zip                                varchar(20)  DEFAULT '' NOT NULL,
@@ -160,14 +160,15 @@ CREATE TABLE tx_bulmapackage_thumbnail_group_item
 CREATE TABLE tx_bulmapackage_carousel_item
 (
     tt_content       int(11) unsigned DEFAULT '0',
-    item_type        varchar(255)  DEFAULT '' NOT NULL,
-    header           varchar(255)  DEFAULT '' NOT NULL,
-    text_color       varchar(255)  DEFAULT '' NOT NULL,
-    subheader        varchar(255)  DEFAULT '' NOT NULL,
-    button_text      varchar(255)  DEFAULT '' NOT NULL,
-    button_class     varchar(255)  DEFAULT '' NOT NULL,
-    link             varchar(1024) DEFAULT '' NOT NULL,
-    background_color varchar(255)  DEFAULT '' NOT NULL,
+    item_type        varchar(255)  DEFAULT ''  NOT NULL,
+    header           varchar(255)  DEFAULT ''  NOT NULL,
+    header_layout    varchar(30)   DEFAULT '0' NOT NULL,
+    text_color       varchar(255)  DEFAULT ''  NOT NULL,
+    subheader        varchar(255)  DEFAULT ''  NOT NULL,
+    button_text      varchar(255)  DEFAULT ''  NOT NULL,
+    button_class     varchar(255)  DEFAULT ''  NOT NULL,
+    link             varchar(1024) DEFAULT ''  NOT NULL,
+    background_color varchar(255)  DEFAULT ''  NOT NULL,
     image            int(11) unsigned DEFAULT '0'
 );
 
