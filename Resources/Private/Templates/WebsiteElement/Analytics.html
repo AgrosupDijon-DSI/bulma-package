@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{data.code_analytics}">
-<f:asset.script identifier="analytics_load" src="https://www.googletagmanager.com/gtag/js?id={data.code_analytics}" async="true" priority="true" />
+<f:asset.script identifier="analytics_load" src="https://www.googletagmanager.com/gtag/js?id={trackingCodes -> f:first()}" async="true" priority="true" />
 <f:asset.script priority="true" identifier="analytics">
 <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
     var gaProperty<f:format.raw>{i.cycle}</f:format.raw> = '<f:format.raw>{trackingCode}</f:format.raw>';
