@@ -30,6 +30,7 @@ Encore
     .addEntry('bulma.news.min', './Resources/Public/JavaScript/bulma.news.js')
     .addEntry('bulma.scrolltop.min', './Resources/Public/JavaScript/bulma.scrolltop.js')
     .addEntry('shareon.min', './Resources/Public/JavaScript/shareon.js')
+    .addEntry('simplebar.min', './Resources/Public/JavaScript/simplebar.js')
 
     .addStyleEntry('rte.min', './Resources/Public/Scss/Rte/rte.scss')
 

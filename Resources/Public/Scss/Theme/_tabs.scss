@@ -1,3 +1,13 @@
+@import "EXT:bulma_package/Resources/Public/Build/simplebar.min.css";
+
+.simplebar-scrollbar::before {
+  background-color: $link;
+}
+
+.simplebar-wrapper{
+  padding-bottom: 0.75rem;
+}
+
 $tabs-content-padding: 1.5rem 0 0 0 !default;
 
 .tabs {

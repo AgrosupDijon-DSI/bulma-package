@@ -24,7 +24,7 @@
         <div class="tabs-wrapper">
             <f:variable name="activeTab">{tabs.0.data.uid}</f:variable>
 
-            <div class="tabs {allClasses} {alignClass}" id="tab-{data.uid}">
+            <div class="tabs {allClasses} {alignClass}" id="tab-{data.uid}" data-simplebar data-simplebar-auto-hide="false">
                 <ul role="tablist">
                     <f:for each="{tabs}" as="tab" iteration="iteration">
                         <li{f:if(condition: '{activeTab} == {tab.data.uid}',then: ' class="is-active"')}>

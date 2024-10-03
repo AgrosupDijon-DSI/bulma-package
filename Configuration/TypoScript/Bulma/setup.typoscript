@@ -27,6 +27,7 @@ page {
         flickity_fade = EXT:bulma_package/Resources/Public/Contrib/flickity/flickity-fade.js
 
         tabs = EXT:bulma_package/Resources/Public/Contrib/bulmajs/tabs.js
+        simplebar = EXT:bulma_package/Resources/Public/Build/simplebar.min.js
         collapsible = EXT:bulma_package/Resources/Public/Contrib/bulma-collapsible/bulma-collapsible.min.js
 
         bulma_accordion = EXT:bulma_package/Resources/Public/Build/bulma.accordion.min.js
