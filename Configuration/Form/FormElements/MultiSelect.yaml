@@ -3,6 +3,6 @@ prototypes:
     formElementsDefinition:
       MultiSelect:
         properties:
-          containerClassAttribute: control
-          elementClassAttribute: select
+          containerClassAttribute: control is-expanded
+          elementClassAttribute: select is-multiple is-fullwidth
           elementErrorClassAttribute: is-danger

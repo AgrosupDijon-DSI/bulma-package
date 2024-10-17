@@ -3,5 +3,6 @@ prototypes:
     formElementsDefinition:
       SingleSelect:
         properties:
-          containerClassAttribute: control
+          containerClassAttribute: control is-expanded
+          elementClassAttribute: select is-fullwidth
           elementErrorClassAttribute: is-danger

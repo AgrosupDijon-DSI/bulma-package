@@ -22,6 +22,9 @@
             <trans-unit id="form.selectimage">
                 <source>Choose an image</source>
             </trans-unit>
+            <trans-unit id="form.multiselect.defaultPlaceholder">
+                <source>Choose one or more elements</source>
+            </trans-unit>
             <trans-unit id="footer-title-contact">
                 <source>Contact</source>
             </trans-unit>

@@ -31,6 +31,7 @@ Encore
     .addEntry('bulma.scrolltop.min', './Resources/Public/JavaScript/bulma.scrolltop.js')
     .addEntry('shareon.min', './Resources/Public/JavaScript/shareon.js')
     .addEntry('simplebar.min', './Resources/Public/JavaScript/simplebar.js')
+    .addEntry('slim-select.min', './Resources/Public/JavaScript/slim-select.js')
 
     .addStyleEntry('rte.min', './Resources/Public/Scss/Rte/rte.scss')
 
@@ -64,6 +65,8 @@ Encore
         {from: './node_modules/ionicons/dist/fonts', to: '../Contrib/ionicons/fonts/[path][name].[ext]'},
         {from: './node_modules/ionicons', to: '../Contrib/ionicons/[path][name]', includeSubdirectories: false, pattern: /LICENSE$/},
         {from: './node_modules/ionicons/dist/ionicons/svg', to: '../Icons/Ionicons/[path][name].[ext]', includeSubdirectories: false, pattern: /\.svg$/},
+
+        {from: './node_modules/slim-select/src/slim-select', to: `../Contrib/slim-select/[path][name].[ext]`, pattern: /\.scss$/},
     ])
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

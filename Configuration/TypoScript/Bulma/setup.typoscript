@@ -40,6 +40,8 @@ page {
 
         shareon = EXT:bulma_package/Resources/Public/Build/shareon.min.js
         shareon.defer = 1
+
+        slim-select = EXT:bulma_package/Resources/Public/Build/slim-select.min.js
     }
 }
 

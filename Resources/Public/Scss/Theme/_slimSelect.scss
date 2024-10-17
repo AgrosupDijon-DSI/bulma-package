@@ -1,0 +1,111 @@
+@import "../../Contrib/slim-select/slimselect";
+
+:root {
+  // Colors
+  --ss-primary-color: #{$primary};
+  --ss-border-radius: #{$radius};
+  --ss-main-height: #{$control-height};
+
+  --ss-bg-color: #{$input-background-color};
+  --ss-font-color: #{$input-color};
+  --ss-font-placeholder-color: #{$input-placeholder-color};
+  --ss-disabled-color: #{$input-disabled-color};
+  --ss-border-color: #{$input-border-color};
+  --ss-highlight-color: #fffb8c;
+  --ss-success-color: #00b755;
+  --ss-error-color: #dc3545;
+  --ss-focus-color: #{$input-focus-border-color};
+}
+
+.ss-content {
+  align-items: stretch;
+
+  .ss-list {
+    .ss-option:hover {
+      color: $primary-invert;
+    }
+  }
+}
+
+.ss-main {
+  padding: 0;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+    box-shadow: $input-focus-box-shadow-size $input-focus-box-shadow-color;
+
+    .ss-values {
+      &::after {
+        border-color: $input-hover-color;
+      }
+    }
+  }
+
+  &:hover {
+    border-color: $input-hover-border-color;
+
+    .ss-values {
+      &::after {
+        border-color: $input-hover-color;
+      }
+    }
+  }
+
+  .ss-values {
+    &::after {
+      @extend %arrow;
+
+      border-color: $input-arrow;
+
+      @include ltr-position(1.125em);
+
+      z-index: 4;
+    }
+
+    padding-bottom: $control-padding-vertical;
+    padding-left: $control-padding-horizontal;
+    padding-right: $control-padding-horizontal;
+    padding-top: $control-padding-vertical;
+    @include ltr-property("padding", 2.5em);
+
+    .ss-placeholder {
+      padding: 0;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .ss-value {
+      .ss-value-text {
+        font-size: 1em;
+        padding: 0.5em;
+        display: flex;
+        align-items: center;
+        color: $primary-invert;
+      }
+
+      .ss-value-delete {
+        font-size: 1em;
+        height: 100%;
+        padding: 0.75rem;
+
+        svg {
+          path {
+            stroke: $primary-invert;
+          }
+        }
+      }
+    }
+  }
+
+  .ss-arrow {
+    display: none;
+  }
+}
+
+select[data-id][required] {
+  pointer-events: none;
+  opacity: 0;
+  display: flex !important;
+  position: absolute;
+  height: $control-height !important;
+}
