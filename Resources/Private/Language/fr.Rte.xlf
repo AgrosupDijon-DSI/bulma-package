@@ -3,9 +3,17 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
     <header/>
     <body>
+      <trans-unit id="style.box" approved="yes">
+        <source>Box</source>
+        <target state="final">Box</target>
+      </trans-unit>
       <trans-unit id="style.table.bordered" approved="yes">
         <source>Table Bordered</source>
         <target state="final">Tableau avec bordure</target>
+      </trans-unit>
+      <trans-unit id="style.notification" approved="yes">
+        <source>Notification</source>
+        <target state="final">Notification</target>
       </trans-unit>
       <trans-unit id="style.notification.primary" approved="yes">
         <source>Notification Primary</source>
@@ -15,9 +23,17 @@
         <source>Notification Success</source>
         <target state="final">Notification Succès</target>
       </trans-unit>
+      <trans-unit id="style.notification.info" approved="yes">
+        <source>Notification Info</source>
+        <target state="final">Infos</target>
+      </trans-unit>
       <trans-unit id="style.notification.warning" approved="yes">
         <source>Notification Warning</source>
         <target state="final">Notification Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.notification.danger" approved="yes">
+        <source>Notification Danger</source>
+        <target state="final">Notification Sombre</target>
       </trans-unit>
       <trans-unit id="style.notification.light" approved="yes">
         <source>Notification Light</source>
@@ -26,6 +42,54 @@
       <trans-unit id="style.notification.dark" approved="yes">
         <source>Notification Dark</source>
         <target state="final">Notification Sombre</target>
+      </trans-unit>
+      <trans-unit id="style.size.1" approved="yes">
+        <source>Size 1</source>
+        <target state="final">Taille 1</target>
+      </trans-unit>
+      <trans-unit id="style.size.2" approved="yes">
+        <source>Size 2</source>
+        <target state="final">Taille 2</target>
+      </trans-unit>
+      <trans-unit id="style.size.3" approved="yes">
+        <source>Size 3</source>
+        <target state="final">Taille 3</target>
+      </trans-unit>
+      <trans-unit id="style.size.4" approved="yes">
+        <source>Size 4</source>
+        <target state="final">Taille 4</target>
+      </trans-unit>
+      <trans-unit id="style.size.5" approved="yes">
+        <source>Size 5</source>
+        <target state="final">Taille 5</target>
+      </trans-unit>
+      <trans-unit id="style.size.6" approved="yes">
+        <source>Size 6</source>
+        <target state="final">Taille 6</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.1" approved="yes">
+        <source>Bloc size 1</source>
+        <target state="final">Bloc taille 1</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.2" approved="yes">
+        <source>Bloc size 2</source>
+        <target state="final">Bloc taille 2</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.3" approved="yes">
+        <source>Bloc size 3</source>
+        <target state="final">Bloc taille 3</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.4" approved="yes">
+        <source>Bloc size 4</source>
+        <target state="final">Bloc taille 4</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.5" approved="yes">
+        <source>Bloc size 5</source>
+        <target state="final">Bloc taille 5</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.6" approved="yes">
+        <source>Bloc size 6</source>
+        <target state="final">Bloc taille 6</target>
       </trans-unit>
       <trans-unit id="style.buttons" approved="yes">
         <source>List of buttons</source>
@@ -63,6 +127,26 @@
         <source>Button Dark</source>
         <target state="final">Bouton Foncé</target>
       </trans-unit>
+      <trans-unit id="style.link.mail" approved="yes">
+        <source>Icon Mail</source>
+        <target state="final">Icône Enveloppe</target>
+      </trans-unit>
+      <trans-unit id="style.link.phone" approved="yes">
+        <source>Icon Phone</source>
+        <target state="final">Icône Téléphone</target>
+      </trans-unit>
+      <trans-unit id="style.link.file" approved="yes">
+        <source>Icon File</source>
+        <target state="final">Icône Fichier</target>
+      </trans-unit>
+      <trans-unit id="style.link.url" approved="yes">
+        <source>Icon Url</source>
+        <target state="final">Icône Url</target>
+      </trans-unit>
+      <trans-unit id="style.link.localisation" approved="yes">
+        <source>Icon Localisation</source>
+        <target state="final">Icône Marqueur</target>
+      </trans-unit>
       <trans-unit id="style.primary" approved="yes">
         <source>Primary</source>
         <target state="final">Principal</target>
@@ -71,9 +155,17 @@
         <source>Success</source>
         <target state="final">Succès</target>
       </trans-unit>
+      <trans-unit id="style.info" approved="yes">
+        <source>Info</source>
+        <target state="final">Info</target>
+      </trans-unit>
       <trans-unit id="style.warning" approved="yes">
         <source>Warning</source>
         <target state="final">Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.danger" approved="yes">
+        <source>Danger</source>
+        <target state="final">Danger</target>
       </trans-unit>
       <trans-unit id="style.light" approved="yes">
         <source>Light</source>
