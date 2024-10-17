@@ -27,6 +27,10 @@
         <source>Choose an image</source>
         <target state="final">Sélectionner une image</target>
       </trans-unit>
+      <trans-unit id="footer-title-contact" approved="yes">
+        <source>Contact</source>
+        <target state="final">Contact</target>
+      </trans-unit>
       <trans-unit id="footer-title-menu" approved="yes">
         <source>Links</source>
         <target state="final">Liens</target>
@@ -95,6 +99,34 @@
         <source>Cookie settings</source>
         <target state="final">Paramétrage des cookies</target>
       </trans-unit>
+      <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.header.label" approved="yes">
+        <source>Clear cache</source>
+        <target state="final">Vider le cache</target>
+      </trans-unit>
+      <trans-unit id="tt_content.finishersDefinition.ClearCache.label" approved="yes">
+        <source>Clear cache</source>
+        <target state="final">Vider le cache</target>
+      </trans-unit>
+      <trans-unit id="tt_content.finishersDefinition.ClearCache.pageUid.label" approved="yes">
+        <source>Page</source>
+        <target state="final">Page</target>
+      </trans-unit>
+      <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.pageUid.label" approved="yes">
+        <source>Page</source>
+        <target state="final">Page</target>
+      </trans-unit>
+      <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.pageUid.buttonLabel" approved="yes">
+        <source>Page</source>
+        <target state="final">Page</target>
+      </trans-unit>
+      <trans-unit id="tt_content.iframe.invalidHtml" approved="yes">
+        <source>Invalid HTML syntax</source>
+        <target state="final">Syntaxe HTML invalide</target>
+      </trans-unit>
+      <trans-unit id="tt_content.iframe.error" approved="yes">
+        <source>Error:</source>
+        <target state="final">Erreur :</target>
+      </trans-unit>
       <trans-unit id="social_media_buttons.shareon.facebook" approved="yes">
         <source>Share on Facebook</source>
         <target state="final">Partager sur Facebook</target>
@@ -118,6 +150,10 @@
       <trans-unit id="social_media_buttons.shareon.print" approved="yes">
         <source>Print</source>
         <target state="final">Imprimer</target>
+      </trans-unit>
+      <trans-unit id="social_media_buttons.shareon.share" approved="yes">
+        <source>Share</source>
+        <target state="final">Partager</target>
       </trans-unit>
     </body>
   </file>
