@@ -16,3 +16,6 @@ services:
     tags:
       - name: event.listener
         identifier: 'bulma-package-imageAutoResize-processDefaultConfiguration'
+
+  AgrosupDijon\BulmaPackage\ViewHelpers\WebsiteSettings\MainLogoViewHelper:
+    public: true
