@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -10,14 +11,14 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\Controller;
 
-use Psr\Http\Message\ResponseInterface;
 use Doctrine\DBAL\Exception;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Template\Components\ButtonBar;
 use TYPO3\CMS\Backend\Template\ModuleTemplate;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
@@ -28,9 +29,6 @@ use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-/**
- *
- */
 class WebsiteModuleController extends ActionController
 {
     protected ModuleTemplate $moduleTemplate;
@@ -43,8 +41,7 @@ class WebsiteModuleController extends ActionController
         protected readonly ModuleTemplateFactory $moduleTemplateFactory,
         protected UriBuilder $backendUriBuilder,
         protected IconFactory $iconFactory
-    ) {
-    }
+    ) {}
 
     public function initializeAction(): void
     {
@@ -72,12 +69,11 @@ class WebsiteModuleController extends ActionController
 
         $this->moduleTemplate->assignMultiple([
             'pages' => $pages,
-            'languages' => $languages
+            'languages' => $languages,
         ]);
 
         $this->addMainMenu('overview');
         $this->configureCommonDocHeader('overview', $this->getLanguageService()->sL('LLL:EXT:backend/Resources/Private/Language/locallang_siteconfiguration_module.xlf:mlang_labels_tablabel'));
-
 
         return $this->moduleTemplate->renderResponse();
     }
@@ -103,11 +99,11 @@ class WebsiteModuleController extends ActionController
         } catch (\Exception $e) {
             $bulmaPackageConfiguration = [
                 'disableCustomColorsAction' => false,
-                'disableMetaTagsAction' => false
+                'disableMetaTagsAction' => false,
             ];
         }
 
-        if(!$bulmaPackageConfiguration['disableCustomColorsAction']){
+        if (!$bulmaPackageConfiguration['disableCustomColorsAction']) {
             $menu->addMenuItem(
                 $menu->makeMenuItem()
                     ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title'))
@@ -116,7 +112,7 @@ class WebsiteModuleController extends ActionController
             );
         }
 
-        if(!$bulmaPackageConfiguration['disableMetaTagsAction']){
+        if (!$bulmaPackageConfiguration['disableMetaTagsAction']) {
             $menu->addMenuItem(
                 $menu->makeMenuItem()
                     ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title'))
@@ -251,8 +247,10 @@ class WebsiteModuleController extends ActionController
                 $queryBuilder->expr()->eq('is_siteroot', 1)
             )
             ->orWhere(
-                $queryBuilder->expr()->eq('module',
-                    $queryBuilder->createNamedParameter('tx_bulmapackage_settings'))
+                $queryBuilder->expr()->eq(
+                    'module',
+                    $queryBuilder->createNamedParameter('tx_bulmapackage_settings')
+                )
             )
             ->orderBy('pid')
             ->addOrderBy('sorting')

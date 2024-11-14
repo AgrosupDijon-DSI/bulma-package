@@ -20,14 +20,11 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Override the page title by adding value from field tx_bulmapackage_settings:title_seo
  * (Similar behaviour as using websiteTitle in Site Configuration, but we can give permissions to "non admin" users)
  * Can't be done with the PageTitle API, else it will be used in indexed_search
- *
  */
 class BulmaPageTitleHook
 {
-
     /**
      * @param array $params
-     * @return void
      * @throws Exception
      */
     public function execute(array &$params): void
@@ -68,8 +65,10 @@ class BulmaPageTitleHook
 
                 if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator.']) && is_array($GLOBALS['TSFE']->config['config']['pageTitleSeparator.'])) {
                     /** @var object $GLOBALS['TSFE'] */
-                    $pageTitleSeparator = $GLOBALS['TSFE']->cObj->stdWrap($pageTitleSeparator,
-                        $GLOBALS['TSFE']->config['config']['pageTitleSeparator.']);
+                    $pageTitleSeparator = $GLOBALS['TSFE']->cObj->stdWrap(
+                        $pageTitleSeparator,
+                        $GLOBALS['TSFE']->config['config']['pageTitleSeparator.']
+                    );
                 } else {
                     $pageTitleSeparator .= ' ';
                 }

@@ -32,7 +32,7 @@ class ExtensionLoadedViewHelper extends AbstractConditionViewHelper
      */
     protected static function evaluateCondition($arguments = null): bool
     {
-        if(isset($arguments['key'])){
+        if (isset($arguments['key'])) {
             return ExtensionManagementUtility::isLoaded($arguments['key']);
         }
         return false;

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -9,11 +11,11 @@
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers\Data;
 
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use TYPO3\CMS\Core\Page\AssetCollector;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -36,8 +38,7 @@ class ImageInfoViewHelper extends AbstractViewHelper
 
     /**
      * Initialize arguments.
-     * 
-     * @return void
+     *
      * @throws Exception
      */
     public function initializeArguments()
@@ -65,8 +66,8 @@ class ImageInfoViewHelper extends AbstractViewHelper
         $mediaOnPage = $assetCollector->getMedia();
 
         foreach ($mediaOnPage as $mediaName => $mediaData) {
-            if (strpos($src, $mediaName) !== false) {
-                return (string) $mediaData[self::$supportedProperties[$property]];
+            if (str_contains($src, $mediaName)) {
+                return (string)$mediaData[self::$supportedProperties[$property]];
             }
         }
 

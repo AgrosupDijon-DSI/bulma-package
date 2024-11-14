@@ -42,7 +42,7 @@ class ConstantsProcessor implements DataProcessorInterface
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
     {
         // The key to process
-        $key = (string) $cObj->stdWrapValue('key', $processorConfiguration);
+        $key = (string)$cObj->stdWrapValue('key', $processorConfiguration);
         if (empty($key)) {
             $key = 'page';
         }
@@ -68,13 +68,13 @@ class ConstantsProcessor implements DataProcessorInterface
         /** @var FrontendTypoScript $frontendTyposcript */
         $frontendTyposcript = $this->getRequest()->getAttribute('frontend.typoscript');
 
-        if($frontendTyposcript->hasSetup()){
+        if ($frontendTyposcript->hasSetup()) {
             $flatSettings = array_filter($frontendTyposcript->getFlatSettings(), function ($key) use ($prefix) {
                 return str_starts_with($key, $prefix);
             }, ARRAY_FILTER_USE_KEY);
         }
 
-        foreach ($flatSettings as $key => $value){
+        foreach ($flatSettings as $key => $value) {
             $this->array_set($settings, substr($key, strlen($prefix)), $value);
         }
 

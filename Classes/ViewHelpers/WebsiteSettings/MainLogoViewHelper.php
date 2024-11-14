@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers\WebsiteSettings;
 
-use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Resource\FileRepository;

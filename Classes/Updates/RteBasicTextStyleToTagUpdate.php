@@ -34,7 +34,7 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
             'text-underline' => 'u',
             'is-italic' => 'i',
             'text-striked' => 's',
-        ]
+        ],
     ];
 
     /**
@@ -92,7 +92,7 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 

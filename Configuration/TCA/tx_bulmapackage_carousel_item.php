@@ -1,7 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Resource\File;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -34,22 +34,22 @@ return [
         ],
         'security' => [
             'ignorePageTypeRestriction' => true,
-        ]
+        ],
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,image,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.text;header,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.call_to_action;call_to_action,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.colors,text_color,background_color,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette'
+            'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,image,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.text;header,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.call_to_action;call_to_action,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.colors,text_color,background_color,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette',
         ],
     ],
     'palettes' => [
         '1' => [
-            'showitem' => ''
+            'showitem' => '',
         ],
         'access' => [
             'showitem' => '
                 starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
                 endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel
-            '
+            ',
         ],
         'header' => [
             'showitem' => '
@@ -58,19 +58,19 @@ return [
                 header_layout,
                 --linebreak--,
                 subheader
-            '
+            ',
         ],
         'general' => [
             'showitem' => '
                 tt_content,
-            '
+            ',
         ],
         'call_to_action' => [
             'showitem' => '
                 button_text,
                 link,
                 button_class
-            '
+            ',
         ],
         'visibility' => [
             'showitem' => '
@@ -116,10 +116,10 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
-                'default' => 0
+                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'endtime' => [
             'exclude' => true,
@@ -132,12 +132,12 @@ return [
                 ],
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language']
+            'config' => ['type' => 'language'],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -153,13 +153,13 @@ return [
                 ],
                 'foreign_table' => 'tx_bulmapackage_carousel_item',
                 'foreign_table_where' => 'AND tx_bulmapackage_carousel_item.pid=###CURRENT_PID### AND tx_bulmapackage_carousel_item.sys_language_uid IN (-1,0)',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'l10n_diffsource' => [
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'link' => [
             'exclude' => true,
@@ -168,7 +168,7 @@ return [
                 'type' => 'link',
                 'size' => 50,
                 'appearance' => [
-                    'browserTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel_item.link'
+                    'browserTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel_item.link',
                 ],
             ],
         ],
@@ -178,7 +178,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'header_layout' => [
@@ -211,7 +211,7 @@ return [
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.has-background-transparent-light', 'value' => 'has-background-transparent-light'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'value' => 'has-text-dark'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.light', 'value' => 'has-text-light'],
-                ]
+                ],
             ],
             'l10n_mode' => 'exclude',
         ],
@@ -221,7 +221,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'button_text' => [
@@ -229,8 +229,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 20,
-                'max' => 255
-            ]
+                'max' => 255,
+            ],
         ],
         'button_class' => [
             'exclude' => true,
@@ -246,8 +246,8 @@ return [
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.warning', 'value' => 'is-warning'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.danger', 'value' => 'is-danger'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.light', 'value' => 'is-light'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'value' => 'is-dark']
-                ]
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'value' => 'is-dark'],
+                ],
             ],
             'l10n_mode' => 'exclude',
         ],
@@ -265,40 +265,40 @@ return [
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
                         File::FILETYPE_UNKNOWN => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                         File::FILETYPE_TEXT => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                         File::FILETYPE_IMAGE => [
                             'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                         File::FILETYPE_AUDIO => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                         File::FILETYPE_VIDEO => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                         File::FILETYPE_APPLICATION => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                     ],
                 ],
@@ -306,6 +306,6 @@ return [
                 'allowed' => 'common-image-types',
             ],
             'l10n_mode' => 'exclude',
-        ]
-    ]
+        ],
+    ],
 ];

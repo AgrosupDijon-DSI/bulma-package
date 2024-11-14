@@ -11,8 +11,8 @@ namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -22,9 +22,6 @@ class SocialsLinksViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
-    /**
-     * @return void
-     */
     public function initializeArguments()
     {
         parent::initializeArguments();
@@ -42,8 +39,7 @@ class SocialsLinksViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    )
-    {
+    ) {
         $linksByType = self::buildLinksByType($arguments['links']);
         $renderingContext->getVariableProvider()->add($arguments['as'], $linksByType);
     }
@@ -58,10 +54,10 @@ class SocialsLinksViewHelper extends AbstractViewHelper
     {
         $reorganizedLinks = [];
         foreach ($links as $link) {
-            if(self::isUrl($link['data']['link']) === true){
-                if($link['data']['standalone']){
+            if (self::isUrl($link['data']['link']) === true) {
+                if ($link['data']['standalone']) {
                     $type = $link['data']['uid'];
-                } elseif(!empty($link['iconFile']) && $link['data']['icon_custom']) {
+                } elseif (!empty($link['iconFile']) && $link['data']['icon_custom']) {
                     $type = $link['iconFile'][0]->getIdentifier();
                 } else {
                     $type = str_replace(' ', '', $link['data']['icon']);
@@ -71,7 +67,7 @@ class SocialsLinksViewHelper extends AbstractViewHelper
                 $reorganizedLinks[$type]['data'][] = [
                     'url' => $link['data']['link'],
                     'label' => $link['data']['label'],
-                    'force_label' => $link['data']['force_label']
+                    'force_label' => $link['data']['force_label'],
                 ];
                 $reorganizedLinks[$type]['uniqueId'] = uniqid();
             }
@@ -91,6 +87,6 @@ class SocialsLinksViewHelper extends AbstractViewHelper
         $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
         $url = $contentObject->typoLink_URL(['parameter' => $typolink]);
 
-        return (empty($url) ? false : true);
+        return empty($url) ? false : true;
     }
 }

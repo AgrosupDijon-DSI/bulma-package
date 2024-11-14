@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -21,7 +22,7 @@ class ImageVariantsUtility
     protected static $allowedVariantProperties = [
         'breakpoint',
         'width',
-        'sizes'
+        'sizes',
     ];
 
     /**
@@ -30,27 +31,27 @@ class ImageVariantsUtility
     protected static $defaultVariants = [
         'default' => [
             'breakpoint' => 1408,
-            'width' => 1920
+            'width' => 1920,
         ],
         'widescreen' => [
             'breakpoint' => 1216,
-            'width' => 1407
+            'width' => 1407,
         ],
         'desktop' => [
             'breakpoint' => 1024,
-            'width' => 1215
+            'width' => 1215,
         ],
         'tablet' => [
             'breakpoint' => 769,
-            'width' => 1023
+            'width' => 1023,
         ],
         'mobile' => [
             'breakpoint' => 577,
-            'width' => 768
+            'width' => 768,
         ],
         'mobile-small' => [
-            'width' => 576
-        ]
+            'width' => 576,
+        ],
     ];
 
     /**
@@ -101,7 +102,7 @@ class ImageVariantsUtility
     {
         $resultSizes = [];
         $workingSizes = [];
-        if(!isset($sizes['1x'])){
+        if (!isset($sizes['1x'])) {
             $sizes['1x'] = ['multiplier' => 1];
         }
         foreach ($sizes as $key => $settings) {
@@ -142,8 +143,9 @@ class ImageVariantsUtility
                 }
                 if ($key === 'sizes') {
                     continue;
-                } elseif (is_numeric($value) && $value > 0) {
-                    $variants[$variant][$key] = (int) $value;
+                }
+                if (is_numeric($value) && $value > 0) {
+                    $variants[$variant][$key] = (int)$value;
                 } else {
                     unset($variants[$variant][$key]);
                 }
@@ -164,7 +166,7 @@ class ImageVariantsUtility
     {
         foreach ($gutters as $variant => $value) {
             if (is_numeric($value) && $value > 0 && isset($variants[$variant]['width'])) {
-                $variants[$variant]['width'] = (int) ceil($variants[$variant]['width'] - $value);
+                $variants[$variant]['width'] = (int)ceil($variants[$variant]['width'] - $value);
             }
         }
         return $variants;
@@ -178,7 +180,7 @@ class ImageVariantsUtility
     {
         foreach ($multiplier as $variant => $value) {
             if (is_numeric($value) && $value > 0 && isset($variants[$variant]['width'])) {
-                $variants[$variant]['width'] = (int) ceil($variants[$variant]['width'] * $value);
+                $variants[$variant]['width'] = (int)ceil($variants[$variant]['width'] * $value);
             }
         }
         return $variants;
@@ -208,8 +210,8 @@ class ImageVariantsUtility
             !is_string($key) ||
             substr($key, -1, 1) !== 'x' ||
             !is_numeric(substr($key, 0, -1)) ||
-            (float) substr($key, 0, -1) < 1 ||
-            (float) substr($key, 0, -1) !== round((float) substr($key, 0, -1), 1)
+            (float)substr($key, 0, -1) < 1 ||
+            (float)substr($key, 0, -1) !== round((float)substr($key, 0, -1), 1)
         );
     }
 }

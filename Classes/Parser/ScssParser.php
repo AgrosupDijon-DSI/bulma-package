@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -73,7 +75,7 @@ class ScssParser extends AbstractParser
             $scss->setSourceMap(Compiler::SOURCE_MAP_INLINE);
             $scss->setSourceMapOptions([
                 'sourceMapRootpath' => $settings['cache']['tempDirectoryRelativeToRoot'],
-                'sourceMapBasepath' => '<PATH DOES NOT EXIST BUT SUPRESSES WARNINGS>'
+                'sourceMapBasepath' => '<PATH DOES NOT EXIST BUT SUPRESSES WARNINGS>',
             ]);
         }
         $absoluteFilename = $settings['file']['absolute'];
@@ -92,7 +94,7 @@ class ScssParser extends AbstractParser
             $full = GeneralUtility::getFileAbsFileName(PathUtility::getCanonicalPath($fileName));
             // The API forces us to check the existence of files paths, with or without url.
             // We must only return a string if the file to be imported actually exists.
-            $hasExtension = (bool) preg_match('/[.]s?css$/', $url);
+            $hasExtension = (bool)preg_match('/[.]s?css$/', $url);
             if (
                 is_file($file = $full . '.scss') ||
                 ($hasExtension && is_file($file = $full))
@@ -120,7 +122,7 @@ class ScssParser extends AbstractParser
                 $relativeFilePath,
                 $absoluteBulmaPackageThemePath,
                 $relativeBulmaPackageThemePath
-            ) : array {
+            ): array {
                 $marker = $args[0][1];
                 $args[0][1] = '';
                 $result = $scss->compileValue($args[0]);
@@ -147,7 +149,7 @@ class ScssParser extends AbstractParser
         $relativeTempPath = $settings['cache']['tempDirectoryRelativeToRoot'];
         $search = '%url\s*\(\s*[\\\'"]?(?!(((?:https?:)?\/\/)|(?:data:?:)))([^\\\'")]+)[\\\'"]?\s*\)%';
         $replace = 'url("' . $relativeTempPath . '$3")';
-        $css = (string) preg_replace($search, $replace, $css);
+        $css = (string)preg_replace($search, $replace, $css);
 
         return [
             'css' => $css,
@@ -158,8 +160,8 @@ class ScssParser extends AbstractParser
                 'etag' => md5($css),
                 'files' => $compilationResult->getIncludedFiles(),
                 'variables' => $settings['variables'],
-                'sourceMap' => $settings['options']['sourceMap']
-            ]
+                'sourceMap' => $settings['options']['sourceMap'],
+            ],
         ];
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -9,8 +11,8 @@
 
 namespace AgrosupDijon\BulmaPackage\Parser;
 
-use TYPO3\CMS\Core\Cache\Exception\NoSuchCacheGroupException;
 use TYPO3\CMS\Core\Cache\CacheManager;
+use TYPO3\CMS\Core\Cache\Exception\NoSuchCacheGroupException;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -62,7 +64,7 @@ abstract class AbstractParser implements ParserInterface
     {
         $needCompilation = false;
         $fileModificationTime = filemtime($cacheFile);
-        $metadata = unserialize((string) file_get_contents($cacheFileMeta), ['allowed_classes' => false]);
+        $metadata = unserialize((string)file_get_contents($cacheFileMeta), ['allowed_classes' => false]);
 
         foreach ($metadata['files'] as $file) {
             if (filemtime($file) > $fileModificationTime) {

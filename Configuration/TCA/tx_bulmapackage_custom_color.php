@@ -26,7 +26,7 @@ return [
         'security' => [
             'ignoreWebMountRestriction' => true,
             'ignoreRootLevelRestriction' => true,
-        ]
+        ],
     ],
     'types' => [
         '1' => [
@@ -38,7 +38,7 @@ return [
                 var_info,
                 var_warning,
                 var_danger
-            '
+            ',
         ],
     ],
     'columns' => [
@@ -64,8 +64,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'max' => 255
-            ]
+                'max' => 255,
+            ],
         ],
         'var_primary' => [
             'exclude' => true,
@@ -73,7 +73,7 @@ return [
             'config' => [
                 'type' => 'color',
                 'size' => 10,
-            ]
+            ],
         ],
         'var_link' => [
             'exclude' => true,
@@ -81,7 +81,7 @@ return [
             'config' => [
                 'type' => 'color',
                 'size' => 10,
-            ]
+            ],
         ],
         'var_success' => [
             'exclude' => true,
@@ -89,7 +89,7 @@ return [
             'config' => [
                 'type' => 'color',
                 'size' => 10,
-            ]
+            ],
         ],
         'var_info' => [
             'exclude' => true,
@@ -97,7 +97,7 @@ return [
             'config' => [
                 'type' => 'color',
                 'size' => 10,
-            ]
+            ],
         ],
         'var_warning' => [
             'exclude' => true,
@@ -105,7 +105,7 @@ return [
             'config' => [
                 'type' => 'color',
                 'size' => 10,
-            ]
+            ],
         ],
         'var_danger' => [
             'exclude' => true,
@@ -113,7 +113,7 @@ return [
             'config' => [
                 'type' => 'color',
                 'size' => 10,
-            ]
+            ],
         ],
         'var_text_dark' => [
             'exclude' => true,
@@ -121,7 +121,7 @@ return [
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
-            ]
-        ]
+            ],
+        ],
     ],
 ];

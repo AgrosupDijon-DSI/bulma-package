@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -8,7 +10,6 @@
  */
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers;
-
 
 use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -32,7 +33,6 @@ class InlineSvgViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments.
      *
-     * @return void
      * @throws \TYPO3Fluid\Fluid\Core\ViewHelper\Exception
      */
     public function initializeArguments()
@@ -56,8 +56,7 @@ class InlineSvgViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    )
-    {
+    ) {
         $src = (string)$arguments['src'];
         $image = $arguments['image'];
 
@@ -73,7 +72,7 @@ class InlineSvgViewHelper extends AbstractViewHelper
             }
 
             $svgContent = $image->getContents();
-            $svgContent = trim((string) preg_replace('/<script[\s\S]*?>[\s\S]*?<\/script>/i', '', $svgContent));
+            $svgContent = trim((string)preg_replace('/<script[\s\S]*?>[\s\S]*?<\/script>/i', '', $svgContent));
 
             // Exit if file does not contain content
             if ($svgContent === '') {
@@ -87,12 +86,12 @@ class InlineSvgViewHelper extends AbstractViewHelper
             }
 
             // Override css class
-            $class = trim(htmlspecialchars((string) $arguments['class']));
+            $class = trim(htmlspecialchars((string)$arguments['class']));
             $class = !empty($class) ? $class : null;
             $svgElement = self::setAttribute($svgElement, 'class', $class);
-            $width = intval($arguments['width']) > 0 ? (string) intval($arguments['width']) : null;
+            $width = (int)($arguments['width']) > 0 ? (string)(int)($arguments['width']) : null;
             $svgElement = self::setAttribute($svgElement, 'width', $width);
-            $height = intval($arguments['height']) > 0 ? (string) intval($arguments['height']) : null;
+            $height = (int)($arguments['height']) > 0 ? (string)(int)($arguments['height']) : null;
             $svgElement = self::setAttribute($svgElement, 'height', $height);
 
             // remove xml version tag
@@ -101,7 +100,7 @@ class InlineSvgViewHelper extends AbstractViewHelper
                 return '';
             }
 
-            return (string) $domXml->ownerDocument->saveXML($domXml->ownerDocument->documentElement);
+            return (string)$domXml->ownerDocument->saveXML($domXml->ownerDocument->documentElement);
         } catch (ResourceDoesNotExistException $e) {
             // thrown if file does not exist
             throw new \Exception($e->getMessage(), 1530601100, $e);

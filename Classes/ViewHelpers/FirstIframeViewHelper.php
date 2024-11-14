@@ -10,8 +10,8 @@
 namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -22,24 +22,20 @@ class FirstIframeViewHelper extends AbstractViewHelper
     use CompileWithRenderStatic;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeChildren = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeOutput = false;
 
-    /**
-     * @return void
-     */
     public function initializeArguments()
     {
         parent::initializeArguments();
         $this->registerArgument('serviceName', 'string', 'Name of service, for usage with Consent Manager');
     }
-
 
     /**
      * @param array $arguments
@@ -58,8 +54,8 @@ class FirstIframeViewHelper extends AbstractViewHelper
             $headerLabel = LocalizationUtility::translate('tt_content.iframe.invalidHtml', 'bulma_package');
             $errorMessage = '';
 
-            if ($error = libxml_get_last_error()){
-                $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'bulma_package') . '<strong>'. $error->message .'</strong></div>';
+            if ($error = libxml_get_last_error()) {
+                $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'bulma_package') . '<strong>' . $error->message . '</strong></div>';
             }
             $bulmaMessage = <<<EOD
 <div class="message is-danger">
@@ -77,8 +73,8 @@ EOD;
             $iframe->removeAttribute('width');
             $iframe->removeAttribute('height');
 
-            if(!empty($arguments['serviceName'])){
-                if($iframe->hasAttribute('src')){
+            if (!empty($arguments['serviceName'])) {
+                if ($iframe->hasAttribute('src')) {
                     $iframe->setAttribute('data-src', $iframe->getAttribute('src'));
                     $iframe->removeAttribute('src');
                 }
@@ -86,8 +82,7 @@ EOD;
             }
 
             return $iframe->C14N();
-        } else {
-            return false;
         }
+        return false;
     }
 }

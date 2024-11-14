@@ -10,13 +10,12 @@
 namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
 use TYPO3\CMS\Core\LinkHandling\TypoLinkCodecService;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * TypolinkTitleViewHelper
@@ -28,7 +27,6 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments.
      *
-     * @return void
      * @throws Exception
      */
     public function initializeArguments()
@@ -52,9 +50,9 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
 
         if (!empty($typolinkConfiguration) && !empty($typolinkConfiguration['title'])) {
             return $typolinkConfiguration['title'];
-        }else{
-            return LocalizationUtility::translate('lightbox-link-label', 'bulma_package');
         }
+        return LocalizationUtility::translate('lightbox-link-label', 'bulma_package');
+
     }
 
     /**

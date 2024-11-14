@@ -1,16 +1,16 @@
 <?php
 
-use TYPO3\CMS\Core\Core\Environment;
-use TYPO3\CMS\Core\Cache\Backend\NullBackend;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
 use AgrosupDijon\BulmaPackage\Form\FormDataProvider\TcaCTypeItem;
-use AgrosupDijon\BulmaPackage\Parser\ScssParser;
-use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook;
-use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook;
 use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaMetaTagHook;
+use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook;
+use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook;
+use AgrosupDijon\BulmaPackage\Parser\ScssParser;
+use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
+use TYPO3\CMS\Core\Cache\Backend\NullBackend;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Core\Environment;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.

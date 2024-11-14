@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video',
         'value' => 'video',
-        'icon' => 'mimetypes-x-content-multimedia'
+        'icon' => 'mimetypes-x-content-multimedia',
     ],
     'textmedia',
     'after'
@@ -74,23 +75,23 @@ $GLOBALS['TCA']['tt_content']['types']['video'] = array_replace_recursive(
                     'filter' => [
                         0 => [
                             'parameters' => [
-                                'allowedFileExtensions' => 'youtube, vimeo'
-                            ]
-                        ]
+                                'allowedFileExtensions' => 'youtube, vimeo',
+                            ],
+                        ],
                     ],
                     'overrideChildTca' => [
                         'columns' => [
                             'uid_local' => [
                                 'config' => [
                                     'appearance' => [
-                                        'elementBrowserAllowed' => 'youtube, vimeo'
-                                    ]
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ]
+                                        'elementBrowserAllowed' => 'youtube, vimeo',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ]
 );

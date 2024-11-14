@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -10,11 +12,11 @@
 namespace AgrosupDijon\BulmaPackage\Service;
 
 use AgrosupDijon\BulmaPackage\Parser\ParserInterface;
+use Doctrine\DBAL\Driver\Exception;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use Doctrine\DBAL\Driver\Exception;
 
 /**
  * This service handles the parsing of scss files for the frontend.
@@ -51,7 +53,7 @@ class CompileService
             'file' => [
                 'absolute' => $absoluteFile,
                 'relative' => $file,
-                'info' => pathinfo($absoluteFile)
+                'info' => pathinfo($absoluteFile),
             ],
             'cache' => [
                 'tempDirectory' => $this->tempDirectory,
@@ -60,9 +62,9 @@ class CompileService
             'options' => [
                 'override' => $configuration['overrideParserVariables'] ? true : false,
                 'sourceMap' => $configuration['cssSourceMapping'] ? true : false,
-                'compress' => true
+                'compress' => true,
             ],
-            'variables' => []
+            'variables' => [],
         ];
 
         // Parser
@@ -96,8 +98,6 @@ class CompileService
 
     /**
      * Clear all caches for the compiler.
-     *
-     * @return void
      */
     protected function clearCompilerCaches(): void
     {
@@ -127,12 +127,12 @@ class CompileService
 
         // Check "special" key
         // If text_dark = 1 in the layout, and layout with a matching key exists, merge both layouts.
-        if(isset($layoutOverride['text_dark']) && $layoutOverride['text_dark'] == '1' && isset($textDarkVariables)){
+        if (isset($layoutOverride['text_dark']) && $layoutOverride['text_dark'] == '1' && isset($textDarkVariables)) {
             $layoutOverride = array_merge($layoutOverride, $textDarkVariables);
             unset($layoutOverride['text_dark']);
         }
 
-        foreach ($layoutOverride as $variable => $value){
+        foreach ($layoutOverride as $variable => $value) {
             $variables[$variable] = $value;
         }
 
@@ -158,8 +158,8 @@ class CompileService
         if (!empty($result)) {
             $prefix = 'var_';
             // Get rid of fields that aren't variables
-            foreach ($result as $key => $value){
-                if (strpos($key, $prefix) === 0 && !empty($value)) {
+            foreach ($result as $key => $value) {
+                if (str_starts_with($key, $prefix)   && !empty($value)) {
                     $variableName = substr($key, strlen($prefix));
                     $layout[$variableName] = $value;
                 }
@@ -177,13 +177,13 @@ class CompileService
     {
         $constants = $this->getConstants();
         $variables = [];
-        
+
         foreach ($constants as $constant => $value) {
-            if (strpos($constant, $prefix) === 0) {
+            if (str_starts_with($constant, $prefix)) {
                 $variables[substr($constant, strlen($prefix))] = $value;
             }
         }
-        
+
         return $variables;
     }
 

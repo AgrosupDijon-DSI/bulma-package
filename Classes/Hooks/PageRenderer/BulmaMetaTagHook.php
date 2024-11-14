@@ -20,9 +20,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class BulmaMetaTagHook
 {
-
     /**
-     * @return void
      * @throws Exception
      */
     public function execute(): void
@@ -37,7 +35,7 @@ class BulmaMetaTagHook
             ->from('tx_bulmapackage_meta_tags')
             ->executeQuery();
 
-        foreach ($result->fetchAllAssociative()  as $meta){
+        foreach ($result->fetchAllAssociative() as $meta) {
             $manager = $metaTagManagerRegistry->getManagerForProperty($meta['name']);
             $manager->addProperty($meta['name'], $meta['content']);
         }

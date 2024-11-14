@@ -18,7 +18,6 @@ class TextIconUtility
 {
     /**
      * @param array $parameters
-     * @return void
      */
     public function addIconItems(array $parameters)
     {
@@ -39,7 +38,7 @@ class TextIconUtility
     protected function getIcons($directory)
     {
         $icons = [];
-        if (strpos($directory, 'EXT:') !== 0 || !strpos($directory, 'Resources/Public')) {
+        if (!str_starts_with($directory, 'EXT:') || !strpos($directory, 'Resources/Public')) {
             return false;
         }
         $path = GeneralUtility::getFileAbsFileName($directory);
@@ -59,7 +58,7 @@ class TextIconUtility
                 $icons[] = [
                     $fileinfo->getBasename('.' . $fileinfo->getExtension()),
                     $fileinfo->getBasename('.' . $fileinfo->getExtension()),
-                    $directory . $fileinfo->getFilename()
+                    $directory . $fileinfo->getFilename(),
                 ];
             }
         }

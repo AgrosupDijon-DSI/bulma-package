@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card_list',
         'value' => 'menu_card_list',
-        'icon' => 'content-bulmapackage-menu-card'
+        'icon' => 'content-bulmapackage-menu-card',
     ],
     'menu_subpages',
     'after'
@@ -65,6 +66,6 @@ $GLOBALS['TCA']['tt_content']['types']['menu_card_list'] = array_replace_recursi
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ]
 );

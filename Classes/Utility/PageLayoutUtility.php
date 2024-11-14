@@ -20,7 +20,6 @@ class PageLayoutUtility
 {
     /**
      * @param array $parameters
-     * @return void
      * @throws Exception
      */
     public function addLayoutItems(array $parameters)

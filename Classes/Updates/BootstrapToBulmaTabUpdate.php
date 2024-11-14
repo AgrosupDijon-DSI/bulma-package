@@ -69,7 +69,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
         $result = $queryBuilder->count('uid')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter("tab"))
+                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('tab'))
             )
             ->andWhere(
                 $queryBuilder->expr()->gt('tx_bootstrappackage_tab_item', 0)
@@ -88,7 +88,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 
@@ -104,7 +104,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
         $result = $queryBuilder->select('uid', 'tx_bootstrappackage_tab_item')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter("tab"))
+                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('tab'))
             )
             ->andWhere(
                 $queryBuilder->expr()->gt('tx_bootstrappackage_tab_item', 0)
@@ -114,7 +114,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
             )
             ->executeQuery();
 
-        foreach ($result->fetchAllAssociative() as $tabContent){
+        foreach ($result->fetchAllAssociative() as $tabContent) {
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bootstrappackage_tab_item');
             $result = $queryBuilder->select('*')
                 ->from('tx_bootstrappackage_tab_item')
@@ -123,7 +123,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
                 )
                 ->executeQuery();
 
-            foreach ($result->fetchAllAssociative() as $bootstrapTabItem){
+            foreach ($result->fetchAllAssociative() as $bootstrapTabItem) {
                 $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
                 $connection = $connectionPool->getConnectionForTable('tx_bulmapackage_tab_item');
                 $connection->insert(
@@ -133,7 +133,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
                         'title' => $bootstrapTabItem['header'],
                         'sorting' => $bootstrapTabItem['sorting'],
                         'tt_content' => $bootstrapTabItem['tt_content'],
-                        'record' => 1
+                        'record' => 1,
                     ]
                 );
                 $uidBulmaTabItemUid = (int)$connection->lastInsertId('tx_bulmapackage_tab_item');
@@ -151,7 +151,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
                         'imageorient' => $this->imageOrient[$bootstrapTabItem['mediaorient']],
                         'imagecols' => $bootstrapTabItem['imagecols'],
                         'image_zoom' => $bootstrapTabItem['image_zoom'],
-                        'tx_bulmapackage_tab_item_parent' => $uidBulmaTabItemUid
+                        'tx_bulmapackage_tab_item_parent' => $uidBulmaTabItemUid,
                     ]
                 );
             }
