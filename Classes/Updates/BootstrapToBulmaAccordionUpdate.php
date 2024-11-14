@@ -136,7 +136,7 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
                         'record' => 1,
                     ]
                 );
-                $uidBulmaAccordionItemUid = (int)$connection->lastInsertId('tx_bulmapackage_accordion_item');
+                $uidBulmaAccordionItemUid = (int)$connection->lastInsertId();
 
                 $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
                 $connection = $connectionPool->getConnectionForTable('tt_content');

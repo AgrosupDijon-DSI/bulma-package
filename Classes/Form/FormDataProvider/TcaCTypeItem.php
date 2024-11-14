@@ -59,7 +59,7 @@ class TcaCTypeItem implements FormDataProviderInterface
             16 => 'menu_thumbnail_list',
             17 => 'video',
             18 => 'iframe',
-            18 => 'uploads',
+            19 => 'uploads',
         ],
     ];
 

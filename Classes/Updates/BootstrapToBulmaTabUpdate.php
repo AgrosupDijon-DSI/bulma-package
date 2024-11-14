@@ -136,7 +136,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
                         'record' => 1,
                     ]
                 );
-                $uidBulmaTabItemUid = (int)$connection->lastInsertId('tx_bulmapackage_tab_item');
+                $uidBulmaTabItemUid = (int)$connection->lastInsertId();
 
                 $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
                 $connection = $connectionPool->getConnectionForTable('tt_content');
