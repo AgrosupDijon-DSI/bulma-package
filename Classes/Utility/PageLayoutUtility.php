@@ -22,7 +22,7 @@ class PageLayoutUtility
      * @param array $parameters
      * @throws Exception
      */
-    public function addLayoutItems(array $parameters)
+    public function addLayoutItems(array $parameters): void
     {
         $resultRows = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getConnectionForTable('tx_bulmapackage_custom_color')

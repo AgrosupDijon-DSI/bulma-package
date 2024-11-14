@@ -21,7 +21,7 @@ class ImageVariantsViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('as', 'string', 'Name of variable to create', true);
@@ -40,7 +40,7 @@ class ImageVariantsViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ) {
+    ): void {
         if ($arguments['gutters'] === '') {
             $arguments['gutters'] = null;
         }

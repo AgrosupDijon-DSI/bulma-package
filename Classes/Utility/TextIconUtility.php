@@ -19,7 +19,7 @@ class TextIconUtility
     /**
      * @param array $parameters
      */
-    public function addIconItems(array $parameters)
+    public function addIconItems(array $parameters): void
     {
         $directory = $parameters['row']['icon_set'][0] ?? '';
         if ($directory !== '') {

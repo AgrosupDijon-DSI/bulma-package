@@ -41,7 +41,7 @@ class CompileService
     public function getCompiledFile(string $file): ?string
     {
         $absoluteFile = GeneralUtility::getFileAbsFileName($file);
-        $configuration = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_bulmapackage.']['settings.'] ?? [];
+        $configuration = $GLOBALS['TYPO3_REQUEST']->getAttribute('frontend.typoscript')->getSetupArray()['plugin.']['tx_bulmapackage.']['settings.'] ?? [];
 
         // Ensure cache directory exists
         if (!file_exists($this->tempDirectory)) {

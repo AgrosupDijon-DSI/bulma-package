@@ -25,7 +25,7 @@ class LightboxViewHelper extends AbstractTagBasedViewHelper
      */
     protected $tagName = 'a';
 
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerUniversalTagAttributes();

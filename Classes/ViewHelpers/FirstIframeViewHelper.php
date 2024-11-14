@@ -31,7 +31,7 @@ class FirstIframeViewHelper extends AbstractViewHelper
      */
     protected $escapeOutput = false;
 
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('serviceName', 'string', 'Name of service, for usage with Consent Manager');
@@ -51,11 +51,11 @@ class FirstIframeViewHelper extends AbstractViewHelper
         try {
             $dom->loadHTML($renderChildrenClosure());
         } catch (\Exception $e) {
-            $headerLabel = LocalizationUtility::translate('tt_content.iframe.invalidHtml', 'bulma_package');
+            $headerLabel = LocalizationUtility::translate('tt_content.iframe.invalidHtml', 'BulmaPackage');
             $errorMessage = '';
 
             if ($error = libxml_get_last_error()) {
-                $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'bulma_package') . '<strong>' . $error->message . '</strong></div>';
+                $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'BulmaPackage') . '<strong>' . $error->message . '</strong></div>';
             }
             $bulmaMessage = <<<EOD
 <div class="message is-danger">

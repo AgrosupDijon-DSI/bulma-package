@@ -22,7 +22,7 @@ class SocialsLinksViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('as', 'string', 'Name of variable to create', true);
@@ -39,7 +39,7 @@ class SocialsLinksViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ) {
+    ): void {
         $linksByType = self::buildLinksByType($arguments['links']);
         $renderingContext->getVariableProvider()->add($arguments['as'], $linksByType);
     }

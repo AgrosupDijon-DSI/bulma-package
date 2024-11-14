@@ -20,7 +20,7 @@ class ChunkViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('as', 'string', 'Name of variable to create', true);
@@ -33,7 +33,7 @@ class ChunkViewHelper extends AbstractViewHelper
      * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
      */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): void
     {
         $renderingContext->getVariableProvider()->add($arguments['as'], array_chunk($arguments['data'], $arguments['length']));
     }

@@ -29,7 +29,7 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
      *
      * @throws Exception
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('parameter', 'string', 'stdWrap.typolink style parameter string');
@@ -51,7 +51,7 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
         if (!empty($typolinkConfiguration) && !empty($typolinkConfiguration['title'])) {
             return $typolinkConfiguration['title'];
         }
-        return LocalizationUtility::translate('lightbox-link-label', 'bulma_package');
+        return LocalizationUtility::translate('lightbox-link-label', 'BulmaPackage');
 
     }
 
