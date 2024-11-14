@@ -29,7 +29,7 @@ lib.bulmaPackageSetting {
             0 = EXT:bulma_package/Resources/Private/Templates/WebsiteElement/
             1 = {$plugin.bulma_package_websiteelements.view.templateRootPath}
         }
-        variables{
+        variables {
             rootPage = TEXT
             rootPage.data = leveluid:0
         }

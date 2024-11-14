@@ -9,18 +9,17 @@
 #### Manual inclusion to keep control over loading order ####
 #############################################################
 [extension.isLoaded('form')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/setup.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/setup.typoscript'
+[global]
 [extension.isLoaded('felogin')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/setup.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/setup.typoscript'
+[global]
 [extension.isLoaded('indexed_search')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript'
+[global]
 [extension.isLoaded('seo')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
-[end]
-
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
+[global]
 ###################
 #### FRAMEWORK ####
 ###################
@@ -157,30 +156,30 @@ page {
             searchFormInputClasses = {$page.searchForm.inputClasses}
             searchFormButtonClasses = {$page.searchForm.buttonClasses}
             searchFormButtonIconClasses = {$page.searchForm.buttonIconClasses}
-            layouts{
-                sidebar_right{
-                    columns{
+            layouts {
+                sidebar_right {
+                    columns {
                         wrapperClasses = {$page.layouts.sidebar_right.columns.wrapperClasses}
                         mainClasses = {$page.layouts.sidebar_right.columns.mainClasses}
                         asideClasses = {$page.layouts.sidebar_right.columns.asideClasses}
                     }
                 }
-                sidebar_left{
-                    columns{
+                sidebar_left {
+                    columns {
                         wrapperClasses = {$page.layouts.sidebar_left.columns.wrapperClasses}
                         mainClasses = {$page.layouts.sidebar_left.columns.mainClasses}
                         asideClasses = {$page.layouts.sidebar_left.columns.asideClasses}
                     }
                 }
-                sidebar_left_w_navigation{
-                    columns{
+                sidebar_left_w_navigation {
+                    columns {
                         wrapperClasses = {$page.layouts.sidebar_left_w_navigation.columns.wrapperClasses}
                         mainClasses = {$page.layouts.sidebar_left_w_navigation.columns.mainClasses}
                         asideClasses = {$page.layouts.sidebar_left_w_navigation.columns.asideClasses}
                     }
                 }
-                sidebar_right_w_navigation{
-                    columns{
+                sidebar_right_w_navigation {
+                    columns {
                         wrapperClasses = {$page.layouts.sidebar_right_w_navigation.columns.wrapperClasses}
                         mainClasses = {$page.layouts.sidebar_right_w_navigation.columns.mainClasses}
                         asideClasses = {$page.layouts.sidebar_right_w_navigation.columns.asideClasses}
@@ -200,7 +199,6 @@ page {
             breadcrumbExtendedValue = COA
             breadcrumbExtendedValue {
             }
-
             layoutTheme = TEXT
             layoutTheme.value = Default
         }

@@ -22,7 +22,6 @@ lib.bulmaPackage.socialsLinks {
         settings {
             linkClasses = {$plugin.bulma_package_websiteelements.socialsLinks.linkClasses}
         }
-
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
             10 {

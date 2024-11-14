@@ -14,7 +14,7 @@ tt_content.tab {
     ##########################
     ### DATA PREPROCESSING ###
     ##########################
-    dataProcessing{
+    dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         10 {
             if.isTrue.field = tx_bulmapackage_tab_item

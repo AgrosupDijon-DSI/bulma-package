@@ -31,7 +31,6 @@ tt_content.textmedia {
         default = TEXT
         default.value = TextmediaAbove
     }
-
     ##########################
     ### DATA PREPROCESSING ###
     ##########################
@@ -62,7 +61,6 @@ lib.contentElement.settings.responsiveimages.contentelements {
                 tablet = 0.5
                 mobile = 0.5
             }
-
             gutters {
                 default = 24
                 widescreen = 24
@@ -71,7 +69,6 @@ lib.contentElement.settings.responsiveimages.contentelements {
                 mobile = 24
             }
         }
-
         right {
             multiplier {
                 default = 0.5
@@ -80,7 +77,6 @@ lib.contentElement.settings.responsiveimages.contentelements {
                 tablet = 0.5
                 mobile = 0.5
             }
-
             gutters {
                 default = 24
                 widescreen = 24

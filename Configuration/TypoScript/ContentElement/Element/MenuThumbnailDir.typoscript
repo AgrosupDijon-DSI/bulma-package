@@ -60,7 +60,6 @@ tt_content.menu_thumbnail_dir {
             as = nextContentElement
         }
     }
-
 }
 
 #########################

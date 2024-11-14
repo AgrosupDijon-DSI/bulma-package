@@ -3,7 +3,7 @@
 ####################################################
 
 lib.bulmaPackage.sharingServices =< lib.bulmaPackageSetting
-lib.bulmaPackage.sharingServices{
+lib.bulmaPackage.sharingServices {
 
     ##############
     ### FIELDS ###
@@ -23,8 +23,8 @@ lib.bulmaPackage.sharingServices{
             wrapperClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperClasses}
             wrapperExtraClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperExtraClasses}
             titleClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.titleClasses}
-            services{
-                common{
+            services {
+                common {
                     linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.linkClasses}
                     iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.iconClasses}
                 }
@@ -55,7 +55,6 @@ lib.bulmaPackage.sharingServices{
             }
             defaultServices = {$plugin.bulma_package_websiteelements.socialMediaButtons.defaultServices}
         }
-
         ##########################
         ### DATA PREPROCESSING ###
         ##########################

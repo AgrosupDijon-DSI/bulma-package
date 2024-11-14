@@ -48,7 +48,6 @@ tt_content.menu_card_list {
             as = nextContentElement
         }
     }
-
 }
 
 #########################

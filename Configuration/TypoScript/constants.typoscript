@@ -39,9 +39,9 @@ page {
         searchPid = 
         searchPid := getEnv(BULMA_SEARCH_PAGE_UID)
     }
-    searchForm{
+    searchForm {
         # cat=bulma package: search form/130/100; type=string; label=Classes for form
-        classes =
+        classes = 
         # cat=bulma package: search form/130/110; type=string; label=Classes for form
         fieldWrapperClasses = field has-addons
         # cat=bulma package: search form/130/120; type=string; label=Classes for input wrapper
@@ -53,30 +53,30 @@ page {
         # cat=bulma package: search form/130/150; type=string; label=Classes for button icon
         buttonIconClasses = icon is-small
     }
-    layouts{
-        sidebar_right{
-            columns{
+    layouts {
+        sidebar_right {
+            columns {
                 wrapperClasses = columns is-multiline is-variable is-5-desktop is-8-widescreen
                 mainClasses = column is-three-quarters-desktop is-full-tablet
                 asideClasses = column is-one-quarter-desktop is-full-tablet
             }
         }
-        sidebar_left{
-            columns{
+        sidebar_left {
+            columns {
                 wrapperClasses = columns is-multiline is-flex-direction-row-reverse is-variable is-5-desktop is-8-widescreen
                 mainClasses = column is-three-quarters-desktop is-full-tablet
                 asideClasses = column is-one-quarter-desktop is-full-tablet
             }
         }
-        sidebar_left_w_navigation{
-            columns{
+        sidebar_left_w_navigation {
+            columns {
                 wrapperClasses = columns is-multiline is-flex-direction-row-reverse is-variable is-5-desktop is-8-widescreen
                 mainClasses = column is-three-quarters-desktop is-full-tablet
                 asideClasses = column is-one-quarter-desktop is-full-tablet
             }
         }
-        sidebar_right_w_navigation{
-            columns{
+        sidebar_right_w_navigation {
+            columns {
                 wrapperClasses = columns is-multiline is-variable is-5-desktop is-8-widescreen
                 mainClasses = column is-three-quarters-desktop is-full-tablet
                 asideClasses = column is-one-quarter-desktop is-full-tablet
@@ -109,12 +109,12 @@ plugin.bulma_package {
         # cat=bulma package: css parser/190/110; type=boolean; label=CSS source mapping: Create a CSS source map useful to debug Scss in browser developer tools. Note: CSS compression will be disabled.
         cssSourceMapping = 0
 
-#        scss {
-#            # Here you can override scss variables
-#            # If same variables are overrided by custom colors defined in Website module, they will take priorities
-#            # eg: override $primary
-#            primary = red
-#        }
+        #        scss {
+        #            # Here you can override scss variables
+        #            # If same variables are overrided by custom colors defined in Website module, they will take priorities
+        #            # eg: override $primary
+        #            primary = red
+        #        }
     }
     view {
         # cat=bulma package: templates/200/layoutRootPath; type=string; label=Layout Root Path: Path to layouts
@@ -136,14 +136,14 @@ plugin.bulma_package {
 #### Manual inclusion to keep control over loading order ####
 #############################################################
 [extension.isLoaded('form')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/constants.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/constants.typoscript'
+[global]
 [extension.isLoaded('felogin')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/constants.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/constants.typoscript'
+[global]
 [extension.isLoaded('indexed_search')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/constants.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/constants.typoscript'
+[global]
 [extension.isLoaded('seo')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/constants.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/constants.typoscript'
+[global]

@@ -13,10 +13,9 @@ tt_content.sharing_buttons {
     ################
     templateName = SharingButtons
 
-    settings{
+    settings {
         sharing_buttons < lib.bulmaPackage.sharingServices.renderObj.settings
     }
-
     ##########################
     ### DATA PREPROCESSING ###
     ##########################
@@ -29,5 +28,4 @@ tt_content.sharing_buttons {
             removeEmptyEntries = 1
         }
     }
-
 }

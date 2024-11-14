@@ -87,9 +87,9 @@ lib.parseFunc_RTE {
         }
         table {
             stripNL = 1
-#            stdWrap {
-#                 wrap = <div class="table-container">|</div>
-#            }
+            #            stdWrap {
+            #                 wrap = <div class="table-container">|</div>
+            #            }
             HTMLtableCells = 1
             HTMLtableCells {
                 default.stdWrap {
@@ -97,7 +97,7 @@ lib.parseFunc_RTE {
                     parseFunc {
                         nonTypoTagStdWrap {
                             encapsLines {
-                                nonWrappedTag =
+                                nonWrappedTag = 
                             }
                         }
                     }

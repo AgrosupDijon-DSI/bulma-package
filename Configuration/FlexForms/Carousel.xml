@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <T3DataStructure>
     <meta>
         <langDisable>1</langDisable>
@@ -102,8 +103,7 @@
                         </config>
                     </fade>
                     <groupCells>
-                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.groupCells
-                        </label>
+                        <label>LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.groupCells</label>
                         <config>
                             <type>input</type>
                             <size>5</size>

@@ -18,15 +18,15 @@ plugin.tx_indexedsearch {
             21 = {$plugin.bulma_package.view.layoutRootPath}IndexedSearch/
         }
     }
-    settings{
-        results{
+    settings {
+        results {
             titleCropAfter = 150
             summaryCropAfter = 400
         }
-        blind{
+        blind {
             numberOfResults = 10,20,25,50,100
         }
-        bulma{
+        bulma {
             showPercentage = 1
             showSize = 1
             showCreated = 1

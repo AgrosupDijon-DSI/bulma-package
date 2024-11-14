@@ -31,7 +31,6 @@ tt_content.textpic {
         default = TEXT
         default.value = TextmediaAbove
     }
-
     ##########################
     ### DATA PREPROCESSING ###
     ##########################
@@ -53,5 +52,4 @@ tt_content.textpic {
             as = layoutClasses
         }
     }
-
 }

@@ -5,14 +5,14 @@ page {
     includeCSS {
         # bulma will be included in the themes.scss file
         # for standalone usage just swap comments on the following line
-#        bulma = EXT:bulma_package/Resources/Public/Contrib/bulma-scss/bulma.scss
+        #        bulma = EXT:bulma_package/Resources/Public/Contrib/bulma-scss/bulma.scss
         theme = EXT:bulma_package/Resources/Public/Scss/Theme/theme.scss
 
         # Temporary used to regenerate EXT:bulma_package/Resources/Public/Css/RTE/rte.min.css
         # while waiting for a better solution
-#        rte = EXT:bulma_package/Resources/Public/Scss/Rte/rte.scss
+        #        rte = EXT:bulma_package/Resources/Public/Scss/Rte/rte.scss
     }
-    includeCSSLibs{
+    includeCSSLibs {
         fontawesome = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/fontawesome.min.css
         fontawesome-solid = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/solid.min.css
         fontawesome-regular = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/regular.min.css

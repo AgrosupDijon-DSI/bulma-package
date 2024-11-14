@@ -3,7 +3,7 @@
 #######################################################
 
 lib.bulmaPackage.webSiteStructuredData =< lib.bulmaPackageSetting
-lib.bulmaPackage.webSiteStructuredData{
+lib.bulmaPackage.webSiteStructuredData {
 
     #############################
     ### CONTENT OBJECT FIELDS ###
@@ -16,11 +16,10 @@ lib.bulmaPackage.webSiteStructuredData{
         ################
         templateName = WebSiteStructuredData
 
-        variables{
+        variables {
             rootPageUid = TEXT
             rootPageUid.data = site:rootPageId
         }
-
         dataProcessing.10 = split
         dataProcessing.10 {
             fieldName = wsd_alternate_name

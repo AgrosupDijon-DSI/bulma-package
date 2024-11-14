@@ -35,5 +35,4 @@ tt_content.table {
             as = tableClasses
         }
     }
-
 }

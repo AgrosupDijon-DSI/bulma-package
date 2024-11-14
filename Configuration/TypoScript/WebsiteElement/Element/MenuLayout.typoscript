@@ -3,7 +3,7 @@
 ####################################################
 
 lib.bulmaPackage.menuLayout =< lib.bulmaPackageSetting
-lib.bulmaPackage.menuLayout{
+lib.bulmaPackage.menuLayout {
 
     ##############
     ### FIELDS ###

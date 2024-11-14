@@ -40,7 +40,6 @@ tt_content.card_group {
             as = layoutClasses
         }
     }
-
 }
 
 #########################

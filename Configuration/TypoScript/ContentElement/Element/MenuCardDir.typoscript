@@ -55,7 +55,6 @@ tt_content.menu_card_dir {
             as = nextContentElement
         }
     }
-
 }
 
 #########################

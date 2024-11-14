@@ -3,7 +3,7 @@
 ##################################################
 
 lib.bulmaPackage.logo =< lib.bulmaPackageSetting
-lib.bulmaPackage.logo{
+lib.bulmaPackage.logo {
 
     #############################
     ### CONTENT OBJECT FIELDS ###
@@ -24,7 +24,6 @@ lib.bulmaPackage.logo{
             maxHeight = {$plugin.bulma_package_websiteelements.logo.maxHeight}
             linkClasses = {$plugin.bulma_package_websiteelements.logo.linkClasses}
         }
-
         ##########################
         ### DATA PREPROCESSING ###
         ##########################

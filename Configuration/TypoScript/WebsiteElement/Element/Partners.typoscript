@@ -27,7 +27,6 @@ lib.bulmaPackage.partners {
                 }
             }
         }
-
         ################
         ### SETTINGS ###
         ################

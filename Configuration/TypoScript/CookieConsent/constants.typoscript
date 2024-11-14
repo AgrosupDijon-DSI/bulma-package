@@ -19,7 +19,7 @@ page {
             static = 0
             content {
                 # cat=bulma package: cookie consent/230/05_content_href; type=string; label=Privacy Police: Insert a full Link to the privacy police page or a page uid from your current TYPO3 System.
-                href =
+                href = 
             }
             # cat=bulma package: cookie consent/230/06_revokable; type=boolean; label=Revokable: If set true, revoke button is displayed every time. If false, revoke button is only displayed for advanced compliance options (opt-in and opt-out) and in countries that require revokable consent. The latter can be disabled by regionalLaw.
             revokable = 0
@@ -27,7 +27,7 @@ page {
             location = 0
             law {
                 # cat=bulma package: cookie consent/230/08_law_countryCode; type=string; label=Country Code: Rather than getting the country code from the location services, you can hard code a particular country into the tool.
-                countryCode =
+                countryCode = 
                 # cat=bulma package: cookie consent/230/09_law_regionalLaw; type=boolean; label=Regional Law: If false, then we only enable the popup if the country has the cookie law. We ignore all other country specific rules.
                 regionalLaw = 1
             }

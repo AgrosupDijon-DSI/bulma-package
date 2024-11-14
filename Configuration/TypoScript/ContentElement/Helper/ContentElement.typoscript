@@ -21,7 +21,6 @@ lib.contentElement {
         0 = EXT:bulma_package/Resources/Private/Layouts/ContentElements/
         10 = {$plugin.bulma_package_contentelements.view.layoutRootPath}
     }
-
     ###############
     ### CONTENT ###
     ###############
@@ -31,7 +30,6 @@ lib.contentElement {
         source.current = 1
         dontCheckPid = 1
     }
-
     ################
     ### SETTINGS ###
     ################
@@ -148,82 +146,82 @@ lib.contentElement {
                 default {
                     breakpoint = 1408
                     width = 1920
-#                    sizes {
-#                        1\.5x {
-#                            multiplier = 1.5
-#                        }
-#                        2x {
-#                            multiplier = 2
-#                        }
-#                    }
+                    #                    sizes {
+                    #                        1\.5x {
+                    #                            multiplier = 1.5
+                    #                        }
+                    #                        2x {
+                    #                            multiplier = 2
+                    #                        }
+                    #                    }
                 }
                 widescreen {
                     breakpoint = 1216
                     width = 1407
-#                    sizes {
-#                        1\.5x {
-#                            multiplier = 1.5
-#                        }
-#                        2x {
-#                            multiplier = 2
-#                        }
-#                    }
+                    #                    sizes {
+                    #                        1\.5x {
+                    #                            multiplier = 1.5
+                    #                        }
+                    #                        2x {
+                    #                            multiplier = 2
+                    #                        }
+                    #                    }
                 }
                 desktop {
                     breakpoint = 1024
                     width = 1215
-#                    sizes {
-#                        1\.5x {
-#                            multiplier = 1.5
-#                        }
-#                        2x {
-#                            multiplier = 2
-#                        }
-#                    }
+                    #                    sizes {
+                    #                        1\.5x {
+                    #                            multiplier = 1.5
+                    #                        }
+                    #                        2x {
+                    #                            multiplier = 2
+                    #                        }
+                    #                    }
                 }
                 tablet {
                     breakpoint = 769
                     width = 1023
-#                    sizes {
-#                        1\.5x {
-#                            multiplier = 1.5
-#                        }
-#                        2x {
-#                            multiplier = 2
-#                        }
-#                    }
+                    #                    sizes {
+                    #                        1\.5x {
+                    #                            multiplier = 1.5
+                    #                        }
+                    #                        2x {
+                    #                            multiplier = 2
+                    #                        }
+                    #                    }
                 }
                 mobile {
                     breakpoint = 577
                     width = 768
-#                    sizes {
-#                        1\.5x {
-#                            multiplier = 1.5
-#                        }
-#                        2x {
-#                            multiplier = 2
-#                        }
-#                    }
+                    #                    sizes {
+                    #                        1\.5x {
+                    #                            multiplier = 1.5
+                    #                        }
+                    #                        2x {
+                    #                            multiplier = 2
+                    #                        }
+                    #                    }
                 }
                 mobile-small {
                     breakpoint = unset
                     width = 576
-#                    sizes {
-#                        1\.5x {
-#                            multiplier = 1.5
-#                        }
-#                        2x {
-#                            multiplier = 2
-#                        }
-#                    }
+                    #                    sizes {
+                    #                        1\.5x {
+                    #                            multiplier = 1.5
+                    #                        }
+                    #                        2x {
+                    #                            multiplier = 2
+                    #                        }
+                    #                    }
                 }
             }
         }
         cardgroup {
-            title{
+            title {
                 classes = {$plugin.bulma_package_contentelements.card_group.title.classes}
             }
-            subtitle{
+            subtitle {
                 classes = {$plugin.bulma_package_contentelements.card_group.subtitle.classes}
             }
         }
@@ -260,7 +258,7 @@ lib.contentElement {
                 classes = {$plugin.bulma_package_contentelements.uploads.subtitle.classes}
             }
         }
-        skip_header_rendering{
+        skip_header_rendering {
             news_pi1 = 1
             news_newsliststicky = 1
             news_newsselectedlist = 1

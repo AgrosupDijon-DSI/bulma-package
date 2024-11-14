@@ -11,7 +11,7 @@ mod {
                         colCount = 4
                         rowCount = 3
                         rows {
-                            1{
+                            1 {
                                 columns {
                                     1 {
                                         name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.before_content
@@ -33,7 +33,7 @@ mod {
                                     }
                                 }
                             }
-                            3{
+                            3 {
                                 columns {
                                     1 {
                                         name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.after_content

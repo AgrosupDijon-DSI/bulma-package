@@ -7,18 +7,18 @@ plugin.tx_news {
 	}
 	settings {
 		# cat=plugin.tx_news/file; type=string; label=Path to CSS file
-		cssFile =
+		cssFile = 
 		list {
 			titleClasses = title
 			subtitleClasses = subtitle
-			paginate{
+			paginate {
 				additionalClasses = is-centered
 			}
 			showIcons = true
 			linkCategories = true
 			linkTags = true
 		}
-		detail{
+		detail {
 			showIcons = true
 			linkCategories = true
 			linkTags = true

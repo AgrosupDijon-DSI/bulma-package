@@ -56,5 +56,4 @@ tt_content.menu_section {
             as = nextContentElement
         }
     }
-
 }

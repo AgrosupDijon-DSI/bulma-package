@@ -3,7 +3,7 @@
 #######################################################
 
 lib.bulmaPackage.codeAnalytics =< lib.bulmaPackageSetting
-lib.bulmaPackage.codeAnalytics{
+lib.bulmaPackage.codeAnalytics {
 
     #############################
     ### CONTENT OBJECT FIELDS ###

@@ -3,7 +3,7 @@
 ################################################
 
 lib.bulmaPackage.favicon =< lib.bulmaPackageSetting
-lib.bulmaPackage.favicon{
+lib.bulmaPackage.favicon {
 
     #############################
     ### CONTENT OBJECT FIELDS ###
@@ -23,7 +23,6 @@ lib.bulmaPackage.favicon{
             appleSizes = {$plugin.bulma_package_websiteelements.favicon.appleSizes}
             iconSizes = {$plugin.bulma_package_websiteelements.favicon.iconSizes}
         }
-
         ##########################
         ### DATA PREPROCESSING ###
         ##########################
@@ -39,6 +38,6 @@ lib.bulmaPackage.favicon{
     }
 }
 
-page.headerData{
+page.headerData {
     10 < lib.bulmaPackage.favicon
 }

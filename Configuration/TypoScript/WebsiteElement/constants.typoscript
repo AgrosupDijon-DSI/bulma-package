@@ -19,7 +19,7 @@ plugin.bulma_package_websiteelements {
         # cat=bulma package: website elements/100_websiteelement/003_templateRootPath; type=string; label=Template Root Path: Path to templates
         templateRootPath = EXT:bulma_package/Resources/Private/Templates/WebsiteElement/
     }
-    partners{
+    partners {
         # cat=bulma package: website elements/110_websiteelement/001_maxwidth; type=string; label=Max width
         maxWidth = 165
         # cat=bulma package: website elements/110_websiteelement/002_maxheight; type=string; label=Max height
@@ -31,7 +31,7 @@ plugin.bulma_package_websiteelements {
         # cat=bulma package: website elements/120_websiteelement/002_iconsizes; type=string; label=Icon Sizes
         iconSizes = 32,192,96,16
     }
-    logo{
+    logo {
         # cat=bulma package: website elements/130_websiteelement/001_maxwidth; type=string; label=Max width
         maxWidth = 215
         # cat=bulma package: website elements/130_websiteelement/002_maxheight; type=string; label=Max height
@@ -39,25 +39,25 @@ plugin.bulma_package_websiteelements {
         # cat=bulma package: website elements/130_websiteelement/003_linkclasses; type=string; label=Css classes for the link wrapping the logo
         linkClasses = navbar-item
     }
-    megaMenu{
+    megaMenu {
         # cat=bulma package: website elements/140_websiteelement/001_columnclasses; type=string; label=Column css classes
         columnClasses = is-4-desktop is-6 auto-column
     }
-    socialsLinks{
+    socialsLinks {
         # cat=bulma package: website elements/150_websiteelement/001_linkclasses; type=string; label=Css classes for links
         linkClasses = button
     }
-    socialMediaButtons{
+    socialMediaButtons {
         # cat=bulma package: website elements/160_websiteelement/001_wrapperclasses; type=string; label=Css classes for wrapper
         wrapperClasses = buttons
         # cat=bulma package: website elements/160_websiteelement/002_wrapperExtraClasses; type=string; label=Extra css classes for wrapper
         wrapperExtraClasses = is-justify-content-flex-end
-        services{
-            common{
+        services {
+            common {
                 # cat=bulma package: website elements/160_websiteelement/003_services_common_linkclasses; type=string; label=Common Css classes for links
                 linkClasses = button
                 # cat=bulma package: website elements/160_websiteelement/004_services_common_iconclasses; type=string; label=Common Css classes for icons
-                iconClasses =
+                iconClasses = 
             }
             facebook {
                 # cat=bulma package: website elements/160_websiteelement/005_services_facebook_linkclasses; type=string; label=Specific Css classes for facebook link
@@ -99,6 +99,6 @@ plugin.bulma_package_websiteelements {
         # cat=bulma package: website elements/160_websiteelement/017_wrapperclasses; type=string; label=Css classes for title
         titleClasses = title is-5 mb-2 mr-3
         # cat=bulma package: website elements/160_websiteelement/018_wrapperclasses; type=string; label=Default services to be shown if none selected. Eg: facebook,twitter,linkedin
-        defaultServices =
+        defaultServices = 
     }
 }

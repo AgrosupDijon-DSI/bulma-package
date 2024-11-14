@@ -36,5 +36,4 @@ tt_content.menu_pages {
             as = nextContentElement
         }
     }
-
 }
