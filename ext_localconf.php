@@ -41,34 +41,6 @@ $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'bulmapackage
 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class);
 $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
 
-/***************
- * PageTS
- */
-// Add Content Elements
-if (!(bool)$bulmaPackageConfiguration['disablePageTsContentElements']) {
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig"');
-}
-
-// BackendLayouts
-if (!(bool)$bulmaPackageConfiguration['disablePageTsBackendLayouts']) {
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig"');
-}
-
-// TCEFORM
-if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEFORM']) {
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig"');
-}
-
-// TCEMAIN
-if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEMAIN']) {
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig"');
-}
-
-// RTE
-if (!(bool)$bulmaPackageConfiguration['disablePageTsRTE']) {
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig"');
-}
-
 // CType filter for content in accordions/tabs
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaCTypeItem::class] = [
     'depends' => [

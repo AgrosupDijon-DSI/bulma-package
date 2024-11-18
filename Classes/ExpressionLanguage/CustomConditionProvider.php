@@ -15,14 +15,15 @@ use TYPO3\CMS\Core\ExpressionLanguage\AbstractProvider;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * CustomTypoScriptConditionProvider
+ * CustomConditionProvider
  */
-class CustomTypoScriptConditionProvider extends AbstractProvider
+class CustomConditionProvider extends AbstractProvider
 {
     public function __construct()
     {
         $this->expressionLanguageVariables = [
             'extension' => GeneralUtility::makeInstance(ExtensionWrapper::class),
+            'extensionConfiguration' => GeneralUtility::makeInstance(ExtensionConfigurationWrapper::class),
         ];
     }
 }

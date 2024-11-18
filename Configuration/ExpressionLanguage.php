@@ -1,6 +1,6 @@
 <?php
 
-use AgrosupDijon\BulmaPackage\ExpressionLanguage\CustomTypoScriptConditionProvider;
+use AgrosupDijon\BulmaPackage\ExpressionLanguage\CustomConditionProvider;
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -10,6 +10,6 @@ use AgrosupDijon\BulmaPackage\ExpressionLanguage\CustomTypoScriptConditionProvid
  */
 return [
     'typoscript' => [
-        CustomTypoScriptConditionProvider::class,
+        CustomConditionProvider::class,
     ],
 ];
