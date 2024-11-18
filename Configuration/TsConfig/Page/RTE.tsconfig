@@ -2,7 +2,7 @@
 #### RTE ####
 #############
 RTE {
-    default {
-        preset = bulma
-    }
+  default {
+    preset = bulma
+  }
 }

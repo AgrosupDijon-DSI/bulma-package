@@ -2,61 +2,61 @@
 #### PAGE ####
 ##############
 page {
-    includeCSS {
-        # bulma will be included in the themes.scss file
-        # for standalone usage just swap comments on the following line
-        #        bulma = EXT:bulma_package/Resources/Public/Contrib/bulma-scss/bulma.scss
-        theme = EXT:bulma_package/Resources/Public/Scss/Theme/theme.scss
+  includeCSS {
+    # bulma will be included in the themes.scss file
+    # for standalone usage just swap comments on the following line
+    #        bulma = EXT:bulma_package/Resources/Public/Contrib/bulma-scss/bulma.scss
+    theme = EXT:bulma_package/Resources/Public/Scss/Theme/theme.scss
 
-        # Temporary used to regenerate EXT:bulma_package/Resources/Public/Css/RTE/rte.min.css
-        # while waiting for a better solution
-        #        rte = EXT:bulma_package/Resources/Public/Scss/Rte/rte.scss
-    }
-    includeCSSLibs {
-        fontawesome = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/fontawesome.min.css
-        fontawesome-solid = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/solid.min.css
-        fontawesome-regular = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/regular.min.css
-        fontawesome-brand = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/brands.min.css
-        ionicons = EXT:bulma_package/Resources/Public/Contrib/ionicons/css/ionicons.min.css
-    }
-    includeJSFooterlibs {
-        photoswipe_core = EXT:bulma_package/Resources/Public/Contrib/photoswipe/photoswipe.min.js
-        photoswipe_ui = EXT:bulma_package/Resources/Public/Contrib/photoswipe/photoswipe-ui-default.min.js
+    # Temporary used to regenerate EXT:bulma_package/Resources/Public/Css/RTE/rte.min.css
+    # while waiting for a better solution
+    #        rte = EXT:bulma_package/Resources/Public/Scss/Rte/rte.scss
+  }
+  includeCSSLibs {
+    fontawesome = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/fontawesome.min.css
+    fontawesome-solid = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/solid.min.css
+    fontawesome-regular = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/regular.min.css
+    fontawesome-brand = EXT:bulma_package/Resources/Public/Contrib/fontawesome-free/css/brands.min.css
+    ionicons = EXT:bulma_package/Resources/Public/Contrib/ionicons/css/ionicons.min.css
+  }
+  includeJSFooterlibs {
+    photoswipe_core = EXT:bulma_package/Resources/Public/Contrib/photoswipe/photoswipe.min.js
+    photoswipe_ui = EXT:bulma_package/Resources/Public/Contrib/photoswipe/photoswipe-ui-default.min.js
 
-        flickity = EXT:bulma_package/Resources/Public/Contrib/flickity/flickity.pkgd.min.js
-        flickity_fade = EXT:bulma_package/Resources/Public/Contrib/flickity/flickity-fade.js
+    flickity = EXT:bulma_package/Resources/Public/Contrib/flickity/flickity.pkgd.min.js
+    flickity_fade = EXT:bulma_package/Resources/Public/Contrib/flickity/flickity-fade.js
 
-        tabs = EXT:bulma_package/Resources/Public/Contrib/bulmajs/tabs.js
-        simplebar = EXT:bulma_package/Resources/Public/Build/simplebar.min.js
-        collapsible = EXT:bulma_package/Resources/Public/Contrib/bulma-collapsible/bulma-collapsible.min.js
+    tabs = EXT:bulma_package/Resources/Public/Contrib/bulmajs/tabs.js
+    simplebar = EXT:bulma_package/Resources/Public/Build/simplebar.min.js
+    collapsible = EXT:bulma_package/Resources/Public/Contrib/bulma-collapsible/bulma-collapsible.min.js
 
-        bulma_accordion = EXT:bulma_package/Resources/Public/Build/bulma.accordion.min.js
-        bulma_burger = EXT:bulma_package/Resources/Public/Build/bulma.burger.min.js
-        bulma_lightbox = EXT:bulma_package/Resources/Public/Build/bulma.lightbox.min.js
-        bulma_flickity = EXT:bulma_package/Resources/Public/Build/bulma.flickity.min.js
-        bulma_form = EXT:bulma_package/Resources/Public/Build/bulma.form.min.js
-        bulma_scrolltop = EXT:bulma_package/Resources/Public/Build/bulma.scrolltop.min.js
-        bulma_dropdown = EXT:bulma_package/Resources/Public/Build/bulma.dropdown.min.js
+    bulma_accordion = EXT:bulma_package/Resources/Public/Build/bulma.accordion.min.js
+    bulma_burger = EXT:bulma_package/Resources/Public/Build/bulma.burger.min.js
+    bulma_lightbox = EXT:bulma_package/Resources/Public/Build/bulma.lightbox.min.js
+    bulma_flickity = EXT:bulma_package/Resources/Public/Build/bulma.flickity.min.js
+    bulma_form = EXT:bulma_package/Resources/Public/Build/bulma.form.min.js
+    bulma_scrolltop = EXT:bulma_package/Resources/Public/Build/bulma.scrolltop.min.js
+    bulma_dropdown = EXT:bulma_package/Resources/Public/Build/bulma.dropdown.min.js
 
-        shareon = EXT:bulma_package/Resources/Public/Build/shareon.min.js
-        shareon.defer = 1
+    shareon = EXT:bulma_package/Resources/Public/Build/shareon.min.js
+    shareon.defer = 1
 
-        slim-select = EXT:bulma_package/Resources/Public/Build/slim-select.min.js
-    }
+    slim-select = EXT:bulma_package/Resources/Public/Build/slim-select.min.js
+  }
 }
 
 // Override form configuration
 module.tx_form {
-    settings {
-        yamlConfigurations {
-            110 = EXT:bulma_package/Configuration/Form/Setup.yaml
-        }
+  settings {
+    yamlConfigurations {
+      110 = EXT:bulma_package/Configuration/Form/Setup.yaml
     }
+  }
 }
 plugin.tx_form {
-    settings {
-        yamlConfigurations {
-            110 = EXT:bulma_package/Configuration/Form/Setup.yaml
-        }
+  settings {
+    yamlConfigurations {
+      110 = EXT:bulma_package/Configuration/Form/Setup.yaml
     }
+  }
 }

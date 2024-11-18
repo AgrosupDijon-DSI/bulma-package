@@ -6,32 +6,32 @@
 lib.bulmaPackageSetting = CONTENT
 lib.bulmaPackageSetting {
 
-    ######################
-    ### CONTENT OBJECT ###
-    ######################
-    table = tx_bulmapackage_settings
-    select {
-        pidInList = this
-    }
-    slide = -1
+  ######################
+  ### CONTENT OBJECT ###
+  ######################
+  table = tx_bulmapackage_settings
+  select {
+    pidInList = this
+  }
+  slide = -1
 
-    ################
-    ### TEMPLATE ###
-    ################
-    renderObj = FLUIDTEMPLATE
-    renderObj {
-        partialRootPaths {
-            0 = EXT:bulma_package/Resources/Private/Partials/
-            1 = EXT:bulma_package/Resources/Private/Partials/WebsiteElement/
-            2 = {$plugin.bulma_package_websiteelements.view.partialRootPath}
-        }
-        templateRootPaths {
-            0 = EXT:bulma_package/Resources/Private/Templates/WebsiteElement/
-            1 = {$plugin.bulma_package_websiteelements.view.templateRootPath}
-        }
-        variables {
-            rootPage = TEXT
-            rootPage.data = leveluid:0
-        }
+  ################
+  ### TEMPLATE ###
+  ################
+  renderObj = FLUIDTEMPLATE
+  renderObj {
+    partialRootPaths {
+      0 = EXT:bulma_package/Resources/Private/Partials/
+      1 = EXT:bulma_package/Resources/Private/Partials/WebsiteElement/
+      2 = {$plugin.bulma_package_websiteelements.view.partialRootPath}
     }
+    templateRootPaths {
+      0 = EXT:bulma_package/Resources/Private/Templates/WebsiteElement/
+      1 = {$plugin.bulma_package_websiteelements.view.templateRootPath}
+    }
+    variables {
+      rootPage = TEXT
+      rootPage.data = leveluid:0
+    }
+  }
 }

@@ -2,15 +2,15 @@
 #### NEW CONTENT ELEMENT WIZARD ####
 ####################################
 mod.wizards.newContentElement.wizardItems.media {
-    elements {
-        video {
-            iconIdentifier = mimetypes-x-content-multimedia
-            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video
-            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video.description
-            tt_content_defValues {
-                CType = video
-            }
-        }
+  elements {
+    video {
+      iconIdentifier = mimetypes-x-content-multimedia
+      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video
+      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video.description
+      tt_content_defValues {
+        CType = video
+      }
     }
-    show := addToList(video)
+  }
+  show := addToList(video)
 }

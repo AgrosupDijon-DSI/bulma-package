@@ -5,10 +5,10 @@
 
 [{$page.formConfiguration.addQueryString} == true]
 plugin.tx_form {
-    settings {
-        yamlConfigurations {
-            120 = EXT:bulma_package/Configuration/Form/AddQueryString.yaml
-        }
+  settings {
+    yamlConfigurations {
+      120 = EXT:bulma_package/Configuration/Form/AddQueryString.yaml
     }
+  }
 }
 [global]

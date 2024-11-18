@@ -3,9 +3,9 @@
 ########################
 [{$page.theme.cookieconsent.enable} == 1]
 page {
-    includeJSFooterlibs {
-        contrib_cookieconsent = EXT:bulma_package/Resources/Public/Contrib/cookieconsent/cookieconsent.min.js
-        bulma_cookieconsent = EXT:bulma_package/Resources/Public/Build/bulma.cookieconsent.min.js
-    }
+  includeJSFooterlibs {
+    contrib_cookieconsent = EXT:bulma_package/Resources/Public/Contrib/cookieconsent/cookieconsent.min.js
+    bulma_cookieconsent = EXT:bulma_package/Resources/Public/Build/bulma.cookieconsent.min.js
+  }
 }
 [global]

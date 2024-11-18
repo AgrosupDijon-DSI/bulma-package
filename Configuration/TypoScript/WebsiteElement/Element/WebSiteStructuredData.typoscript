@@ -5,28 +5,28 @@
 lib.bulmaPackage.webSiteStructuredData =< lib.bulmaPackageSetting
 lib.bulmaPackage.webSiteStructuredData {
 
-    #############################
-    ### CONTENT OBJECT FIELDS ###
-    #############################
-    select.selectFields = wsd_name, wsd_alternate_name, sys_language_uid, l10n_parent
+  #############################
+  ### CONTENT OBJECT FIELDS ###
+  #############################
+  select.selectFields = wsd_name, wsd_alternate_name, sys_language_uid, l10n_parent
 
-    renderObj {
-        ################
-        ### TEMPLATE ###
-        ################
-        templateName = WebSiteStructuredData
+  renderObj {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = WebSiteStructuredData
 
-        variables {
-            rootPageUid = TEXT
-            rootPageUid.data = site:rootPageId
-        }
-        dataProcessing.10 = split
-        dataProcessing.10 {
-            fieldName = wsd_alternate_name
-            as = alternateName
-            delimiter = ,
-            removeEmptyEntries = true
-            filterUnique = true
-        }
+    variables {
+      rootPageUid = TEXT
+      rootPageUid.data = site:rootPageId
     }
+    dataProcessing.10 = split
+    dataProcessing.10 {
+      fieldName = wsd_alternate_name
+      as = alternateName
+      delimiter = ,
+      removeEmptyEntries = true
+      filterUnique = true
+    }
+  }
 }

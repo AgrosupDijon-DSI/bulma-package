@@ -5,34 +5,34 @@
 lib.bulmaPackage.partners =< lib.bulmaPackageSetting
 lib.bulmaPackage.partners {
 
-    ##############
-    ### FIELDS ###
-    ##############
-    select.selectFields = logos_partners, sys_language_uid, l10n_parent
+  ##############
+  ### FIELDS ###
+  ##############
+  select.selectFields = logos_partners, sys_language_uid, l10n_parent
 
-    renderObj {
-        ################
-        ### TEMPLATE ###
-        ################
-        templateName = Partners
+  renderObj {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Partners
 
-        ##########################
-        ### DATA PREPROCESSING ###
-        ##########################
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references {
-                    fieldName = logos_partners
-                }
-            }
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references {
+          fieldName = logos_partners
         }
-        ################
-        ### SETTINGS ###
-        ################
-        settings {
-            maxWidth = {$plugin.bulma_package_websiteelements.partners.maxWidth}
-            maxHeight = {$plugin.bulma_package_websiteelements.partners.maxHeight}
-        }
+      }
     }
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+      maxWidth = {$plugin.bulma_package_websiteelements.partners.maxWidth}
+      maxHeight = {$plugin.bulma_package_websiteelements.partners.maxHeight}
+    }
+  }
 }

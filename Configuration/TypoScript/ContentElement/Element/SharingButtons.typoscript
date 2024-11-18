@@ -8,24 +8,24 @@ tt_content.sharing_buttons >
 tt_content.sharing_buttons =< lib.contentElement
 tt_content.sharing_buttons {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = SharingButtons
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = SharingButtons
 
-    settings {
-        sharing_buttons < lib.bulmaPackage.sharingServices.renderObj.settings
+  settings {
+    sharing_buttons < lib.bulmaPackage.sharingServices.renderObj.settings
+  }
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = split
+    10 {
+      as = services
+      delimiter = ,
+      fieldName = tx_bulmapackage_sharing_services
+      removeEmptyEntries = 1
     }
-    ##########################
-    ### DATA PREPROCESSING ###
-    ##########################
-    dataProcessing {
-        10 = split
-        10 {
-            as = services
-            delimiter = ,
-            fieldName = tx_bulmapackage_sharing_services
-            removeEmptyEntries = 1
-        }
-    }
+  }
 }

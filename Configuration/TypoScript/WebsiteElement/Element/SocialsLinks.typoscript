@@ -5,39 +5,39 @@
 lib.bulmaPackage.socialsLinks =< lib.bulmaPackageSetting
 lib.bulmaPackage.socialsLinks {
 
-    ##############
-    ### FIELDS ###
-    ##############
-    select.selectFields = uid, sys_language_uid, l10n_parent
+  ##############
+  ### FIELDS ###
+  ##############
+  select.selectFields = uid, sys_language_uid, l10n_parent
 
-    renderObj {
-        ################
-        ### TEMPLATE ###
-        ################
-        templateName = SocialsLinks
+  renderObj {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = SocialsLinks
 
-        ################
-        ### SETTINGS ###
-        ################
-        settings {
-            linkClasses = {$plugin.bulma_package_websiteelements.socialsLinks.linkClasses}
-        }
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-            10 {
-                table = tx_bulmapackage_settings_link_item
-                pidInList.field = pid
-                selectFields = link, label, icon, force_label, standalone, icon_custom, sys_language_uid, l10n_parent
-                orderBy = sorting
-                dataProcessing {
-                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                    10 {
-                        references.fieldName = icon_file
-                        as = iconFile
-                    }
-                }
-                as = socialsLinks
-            }
-        }
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+      linkClasses = {$plugin.bulma_package_websiteelements.socialsLinks.linkClasses}
     }
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      10 {
+        table = tx_bulmapackage_settings_link_item
+        pidInList.field = pid
+        selectFields = link, label, icon, force_label, standalone, icon_custom, sys_language_uid, l10n_parent
+        orderBy = sorting
+        dataProcessing {
+          10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+          10 {
+            references.fieldName = icon_file
+            as = iconFile
+          }
+        }
+        as = socialsLinks
+      }
+    }
+  }
 }

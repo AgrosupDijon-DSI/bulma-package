@@ -5,270 +5,270 @@
 lib.contentElement = FLUIDTEMPLATE
 lib.contentElement {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = Default
-    templateRootPaths {
-        0 = EXT:bulma_package/Resources/Private/Templates/ContentElements/
-        10 = {$plugin.bulma_package_contentelements.view.templateRootPath}
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = Default
+  templateRootPaths {
+    0 = EXT:bulma_package/Resources/Private/Templates/ContentElements/
+    10 = {$plugin.bulma_package_contentelements.view.templateRootPath}
+  }
+  partialRootPaths {
+    0 = EXT:bulma_package/Resources/Private/Partials/ContentElements/
+    10 = {$plugin.bulma_package_contentelements.view.partialRootPath}
+  }
+  layoutRootPaths {
+    0 = EXT:bulma_package/Resources/Private/Layouts/ContentElements/
+    10 = {$plugin.bulma_package_contentelements.view.layoutRootPath}
+  }
+  ###############
+  ### CONTENT ###
+  ###############
+  content = RECORDS
+  content {
+    tables = tt_content
+    source.current = 1
+    dontCheckPid = 1
+  }
+  ################
+  ### SETTINGS ###
+  ################
+  settings {
+    header {
+      defaultHeaderType = {$plugin.bulma_package_contentelements.header.defaultHeaderType}
+      class = {$plugin.bulma_package_contentelements.header.class}
     }
-    partialRootPaths {
-        0 = EXT:bulma_package/Resources/Private/Partials/ContentElements/
-        10 = {$plugin.bulma_package_contentelements.view.partialRootPath}
+    subheader {
+      class = {$plugin.bulma_package_contentelements.subheader.class}
     }
-    layoutRootPaths {
-        0 = EXT:bulma_package/Resources/Private/Layouts/ContentElements/
-        10 = {$plugin.bulma_package_contentelements.view.layoutRootPath}
+    lightbox {
+      cssClass = {$plugin.bulma_package_contentelements.lightbox.cssClass}
+      prefix = {$plugin.bulma_package_contentelements.lightbox.prefix}
+      image {
+        maxHeight = {$plugin.bulma_package_contentelements.lightbox.image.maxHeight}
+        maxWidth = {$plugin.bulma_package_contentelements.lightbox.image.maxWidth}
+      }
     }
-    ###############
-    ### CONTENT ###
-    ###############
-    content = RECORDS
-    content {
-        tables = tt_content
-        source.current = 1
-        dontCheckPid = 1
+    gallery {
+      columns {
+        1 {
+          class = is-12
+        }
+        2 {
+          class = is-6-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.5
+            widescreen = 0.5
+            desktop = 0.5
+            tablet = 0.5
+            mobile = 0.5
+          }
+          gutters {
+            default = 24
+            widescreen = 24
+            desktop = 24
+            tablet = 24
+            mobile = 24
+          }
+        }
+        3 {
+          class = is-4-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.3333
+            widescreen = 0.3333
+            desktop = 0.3333
+            tablet = 0.3333
+            mobile = 0.5
+          }
+          gutters {
+            default = 48
+            widescreen = 48
+            desktop = 48
+            tablet = 48
+            mobile = 24
+          }
+        }
+        4 {
+          class = is-3-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.25
+            widescreen = 0.25
+            desktop = 0.25
+            tablet = 0.25
+            mobile = 0.5
+          }
+          gutters {
+            default = 72
+            widescreen = 72
+            desktop = 72
+            tablet = 72
+            mobile = 24
+          }
+        }
+        5 {
+          class = is-one-fifth-desktop is-3-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.2
+            widescreen = 0.2
+            desktop = 0.2
+            tablet = 0.25
+            mobile = 0.5
+          }
+          gutters {
+            default = 96
+            widescreen = 96
+            desktop = 96
+            tablet = 76
+            mobile = 24
+          }
+        }
+        6 {
+          class = is-2-desktop is-3-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.1666
+            widescreen = 0.1666
+            desktop = 0.1666
+            tablet = 0.25
+            mobile = 0.5
+          }
+          gutters {
+            default = 120
+            widescreen = 120
+            desktop = 120
+            tablet = 76
+            mobile = 24
+          }
+        }
+      }
     }
-    ################
-    ### SETTINGS ###
-    ################
-    settings {
-        header {
-            defaultHeaderType = {$plugin.bulma_package_contentelements.header.defaultHeaderType}
-            class = {$plugin.bulma_package_contentelements.header.class}
+    responsiveimages {
+      variants {
+        default {
+          breakpoint = 1408
+          width = 1920
+          #                    sizes {
+          #                        1\.5x {
+          #                            multiplier = 1.5
+          #                        }
+          #                        2x {
+          #                            multiplier = 2
+          #                        }
+          #                    }
         }
-        subheader {
-            class = {$plugin.bulma_package_contentelements.subheader.class}
+        widescreen {
+          breakpoint = 1216
+          width = 1407
+          #                    sizes {
+          #                        1\.5x {
+          #                            multiplier = 1.5
+          #                        }
+          #                        2x {
+          #                            multiplier = 2
+          #                        }
+          #                    }
         }
-        lightbox {
-            cssClass = {$plugin.bulma_package_contentelements.lightbox.cssClass}
-            prefix = {$plugin.bulma_package_contentelements.lightbox.prefix}
-            image {
-                maxHeight = {$plugin.bulma_package_contentelements.lightbox.image.maxHeight}
-                maxWidth = {$plugin.bulma_package_contentelements.lightbox.image.maxWidth}
-            }
+        desktop {
+          breakpoint = 1024
+          width = 1215
+          #                    sizes {
+          #                        1\.5x {
+          #                            multiplier = 1.5
+          #                        }
+          #                        2x {
+          #                            multiplier = 2
+          #                        }
+          #                    }
         }
-        gallery {
-            columns {
-                1 {
-                    class = is-12
-                }
-                2 {
-                    class = is-6-tablet is-6-mobile is-12-mobile-small
-                    multiplier {
-                        default = 0.5
-                        widescreen = 0.5
-                        desktop = 0.5
-                        tablet = 0.5
-                        mobile = 0.5
-                    }
-                    gutters {
-                        default = 24
-                        widescreen = 24
-                        desktop = 24
-                        tablet = 24
-                        mobile = 24
-                    }
-                }
-                3 {
-                    class = is-4-tablet is-6-mobile is-12-mobile-small
-                    multiplier {
-                        default = 0.3333
-                        widescreen = 0.3333
-                        desktop = 0.3333
-                        tablet = 0.3333
-                        mobile = 0.5
-                    }
-                    gutters {
-                        default = 48
-                        widescreen = 48
-                        desktop = 48
-                        tablet = 48
-                        mobile = 24
-                    }
-                }
-                4 {
-                    class = is-3-tablet is-6-mobile is-12-mobile-small
-                    multiplier {
-                        default = 0.25
-                        widescreen = 0.25
-                        desktop = 0.25
-                        tablet = 0.25
-                        mobile = 0.5
-                    }
-                    gutters {
-                        default = 72
-                        widescreen = 72
-                        desktop = 72
-                        tablet = 72
-                        mobile = 24
-                    }
-                }
-                5 {
-                    class = is-one-fifth-desktop is-3-tablet is-6-mobile is-12-mobile-small
-                    multiplier {
-                        default = 0.2
-                        widescreen = 0.2
-                        desktop = 0.2
-                        tablet = 0.25
-                        mobile = 0.5
-                    }
-                    gutters {
-                        default = 96
-                        widescreen = 96
-                        desktop = 96
-                        tablet = 76
-                        mobile = 24
-                    }
-                }
-                6 {
-                    class = is-2-desktop is-3-tablet is-6-mobile is-12-mobile-small
-                    multiplier {
-                        default = 0.1666
-                        widescreen = 0.1666
-                        desktop = 0.1666
-                        tablet = 0.25
-                        mobile = 0.5
-                    }
-                    gutters {
-                        default = 120
-                        widescreen = 120
-                        desktop = 120
-                        tablet = 76
-                        mobile = 24
-                    }
-                }
-            }
+        tablet {
+          breakpoint = 769
+          width = 1023
+          #                    sizes {
+          #                        1\.5x {
+          #                            multiplier = 1.5
+          #                        }
+          #                        2x {
+          #                            multiplier = 2
+          #                        }
+          #                    }
         }
-        responsiveimages {
-            variants {
-                default {
-                    breakpoint = 1408
-                    width = 1920
-                    #                    sizes {
-                    #                        1\.5x {
-                    #                            multiplier = 1.5
-                    #                        }
-                    #                        2x {
-                    #                            multiplier = 2
-                    #                        }
-                    #                    }
-                }
-                widescreen {
-                    breakpoint = 1216
-                    width = 1407
-                    #                    sizes {
-                    #                        1\.5x {
-                    #                            multiplier = 1.5
-                    #                        }
-                    #                        2x {
-                    #                            multiplier = 2
-                    #                        }
-                    #                    }
-                }
-                desktop {
-                    breakpoint = 1024
-                    width = 1215
-                    #                    sizes {
-                    #                        1\.5x {
-                    #                            multiplier = 1.5
-                    #                        }
-                    #                        2x {
-                    #                            multiplier = 2
-                    #                        }
-                    #                    }
-                }
-                tablet {
-                    breakpoint = 769
-                    width = 1023
-                    #                    sizes {
-                    #                        1\.5x {
-                    #                            multiplier = 1.5
-                    #                        }
-                    #                        2x {
-                    #                            multiplier = 2
-                    #                        }
-                    #                    }
-                }
-                mobile {
-                    breakpoint = 577
-                    width = 768
-                    #                    sizes {
-                    #                        1\.5x {
-                    #                            multiplier = 1.5
-                    #                        }
-                    #                        2x {
-                    #                            multiplier = 2
-                    #                        }
-                    #                    }
-                }
-                mobile-small {
-                    breakpoint = unset
-                    width = 576
-                    #                    sizes {
-                    #                        1\.5x {
-                    #                            multiplier = 1.5
-                    #                        }
-                    #                        2x {
-                    #                            multiplier = 2
-                    #                        }
-                    #                    }
-                }
-            }
+        mobile {
+          breakpoint = 577
+          width = 768
+          #                    sizes {
+          #                        1\.5x {
+          #                            multiplier = 1.5
+          #                        }
+          #                        2x {
+          #                            multiplier = 2
+          #                        }
+          #                    }
         }
-        cardgroup {
-            title {
-                classes = {$plugin.bulma_package_contentelements.card_group.title.classes}
-            }
-            subtitle {
-                classes = {$plugin.bulma_package_contentelements.card_group.subtitle.classes}
-            }
+        mobile-small {
+          breakpoint = unset
+          width = 576
+          #                    sizes {
+          #                        1\.5x {
+          #                            multiplier = 1.5
+          #                        }
+          #                        2x {
+          #                            multiplier = 2
+          #                        }
+          #                    }
         }
-        menucard {
-            title {
-                crop = {$plugin.bulma_package_contentelements.menu_card.title.crop}
-                classes = {$plugin.bulma_package_contentelements.menu_card.title.classes}
-            }
-            subtitle {
-                crop = {$plugin.bulma_package_contentelements.menu_card.subtitle.crop}
-                classes = {$plugin.bulma_package_contentelements.menu_card.subtitle.classes}
-            }
-            abstract {
-                crop = {$plugin.bulma_package_contentelements.menu_card.abstract.crop}
-            }
-        }
-        menuthumbnail {
-            title {
-                crop = {$plugin.bulma_package_contentelements.menu_thumbnail.title.crop}
-            }
-            subtitle {
-                crop = {$plugin.bulma_package_contentelements.menu_thumbnail.subtitle.crop}
-            }
-        }
-        uploads {
-            preview {
-                height = {$plugin.bulma_package_contentelements.uploads.preview.height}
-                width = {$plugin.bulma_package_contentelements.uploads.preview.width}
-            }
-            title {
-                classes = {$plugin.bulma_package_contentelements.uploads.title.classes}
-            }
-            subtitle {
-                classes = {$plugin.bulma_package_contentelements.uploads.subtitle.classes}
-            }
-        }
-        skip_header_rendering {
-            news_pi1 = 1
-            news_newsliststicky = 1
-            news_newsselectedlist = 1
-            news_newsdetail = 1
-            news_newsdatemenu = 1
-            news_newssearchform = 1
-            news_newssearchresult = 1
-            news_categorylist = 1
-            news_taglist = 1
-            eventnews_newsmonth = 1
-        }
+      }
     }
+    cardgroup {
+      title {
+        classes = {$plugin.bulma_package_contentelements.card_group.title.classes}
+      }
+      subtitle {
+        classes = {$plugin.bulma_package_contentelements.card_group.subtitle.classes}
+      }
+    }
+    menucard {
+      title {
+        crop = {$plugin.bulma_package_contentelements.menu_card.title.crop}
+        classes = {$plugin.bulma_package_contentelements.menu_card.title.classes}
+      }
+      subtitle {
+        crop = {$plugin.bulma_package_contentelements.menu_card.subtitle.crop}
+        classes = {$plugin.bulma_package_contentelements.menu_card.subtitle.classes}
+      }
+      abstract {
+        crop = {$plugin.bulma_package_contentelements.menu_card.abstract.crop}
+      }
+    }
+    menuthumbnail {
+      title {
+        crop = {$plugin.bulma_package_contentelements.menu_thumbnail.title.crop}
+      }
+      subtitle {
+        crop = {$plugin.bulma_package_contentelements.menu_thumbnail.subtitle.crop}
+      }
+    }
+    uploads {
+      preview {
+        height = {$plugin.bulma_package_contentelements.uploads.preview.height}
+        width = {$plugin.bulma_package_contentelements.uploads.preview.width}
+      }
+      title {
+        classes = {$plugin.bulma_package_contentelements.uploads.title.classes}
+      }
+      subtitle {
+        classes = {$plugin.bulma_package_contentelements.uploads.subtitle.classes}
+      }
+    }
+    skip_header_rendering {
+      news_pi1 = 1
+      news_newsliststicky = 1
+      news_newsselectedlist = 1
+      news_newsdetail = 1
+      news_newsdatemenu = 1
+      news_newssearchform = 1
+      news_newssearchresult = 1
+      news_categorylist = 1
+      news_taglist = 1
+      eventnews_newsmonth = 1
+    }
+  }
 }

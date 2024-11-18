@@ -6,56 +6,56 @@ tt_content.accordion >
 tt_content.accordion =< lib.contentElement
 tt_content.accordion {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = Accordion
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = Accordion
 
-    ##########################
-    ### DATA PREPROCESSING ###
-    ##########################
-    dataProcessing {
-        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-        10 {
-            if.isTrue.field = tx_bulmapackage_accordion_item
-            table = tx_bulmapackage_accordion_item
-            pidInList.field = pid
-            where = tt_content=###uid### AND deleted=0 AND hidden=0
-            orderBy = sorting
-            markers.uid.field = uid
-            as = accordions
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      if.isTrue.field = tx_bulmapackage_accordion_item
+      table = tx_bulmapackage_accordion_item
+      pidInList.field = pid
+      where = tt_content=###uid### AND deleted=0 AND hidden=0
+      orderBy = sorting
+      markers.uid.field = uid
+      as = accordions
 
-            dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-            dataProcessing.10 {
-                if.isTrue.field = record
-                table = tt_content
-                pidInList.field = pid
-                where = tx_bulmapackage_accordion_item_parent=###uid### AND deleted=0 AND hidden=0 AND colPos=###colPos### AND CType IN (###CType1###, ###CType2###, ###CType3###, ###CType4###, ###CType5###, ###CType6###, ###CType7###, ###CType8###, ###CType9###, ###CType10###, ###CType11###, ###CType12###, ###CType13###, ###CType14###, ###CType15###, ###CType16###, ###CType17###, ###CType18###, ###CType19###, ###CType20###)
-                orderBy = sorting
-                markers.colPos.value = 999
-                markers.CType1.value = header
-                markers.CType2.value = text
-                markers.CType3.value = textmedia
-                markers.CType4.value = image
-                markers.CType5.value = shortcut
-                markers.CType6.value = html
-                markers.CType7.value = menu_card_dir
-                markers.CType8.value = menu_card_list
-                markers.CType9.value = menu_categorized_pages
-                markers.CType10.value = menu_pages
-                markers.CType11.value = menu_recently_updated
-                markers.CType12.value = menu_section
-                markers.CType13.value = menu_section_pages
-                markers.CType14.value = menu_sitemap_pages
-                markers.CType15.value = menu_subpages
-                markers.CType16.value = menu_thumbnail_dir
-                markers.CType17.value = menu_thumbnail_list
-                markers.CType18.value = video
-                markers.CType19.value = iframe
-                markers.CType20.value = uploads
-                markers.uid.field = uid
-                as = records
-            }
-        }
+      dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      dataProcessing.10 {
+        if.isTrue.field = record
+        table = tt_content
+        pidInList.field = pid
+        where = tx_bulmapackage_accordion_item_parent=###uid### AND deleted=0 AND hidden=0 AND colPos=###colPos### AND CType IN (###CType1###, ###CType2###, ###CType3###, ###CType4###, ###CType5###, ###CType6###, ###CType7###, ###CType8###, ###CType9###, ###CType10###, ###CType11###, ###CType12###, ###CType13###, ###CType14###, ###CType15###, ###CType16###, ###CType17###, ###CType18###, ###CType19###, ###CType20###)
+        orderBy = sorting
+        markers.colPos.value = 999
+        markers.CType1.value = header
+        markers.CType2.value = text
+        markers.CType3.value = textmedia
+        markers.CType4.value = image
+        markers.CType5.value = shortcut
+        markers.CType6.value = html
+        markers.CType7.value = menu_card_dir
+        markers.CType8.value = menu_card_list
+        markers.CType9.value = menu_categorized_pages
+        markers.CType10.value = menu_pages
+        markers.CType11.value = menu_recently_updated
+        markers.CType12.value = menu_section
+        markers.CType13.value = menu_section_pages
+        markers.CType14.value = menu_sitemap_pages
+        markers.CType15.value = menu_subpages
+        markers.CType16.value = menu_thumbnail_dir
+        markers.CType17.value = menu_thumbnail_list
+        markers.CType18.value = video
+        markers.CType19.value = iframe
+        markers.CType20.value = uploads
+        markers.uid.field = uid
+        as = records
+      }
     }
+  }
 }

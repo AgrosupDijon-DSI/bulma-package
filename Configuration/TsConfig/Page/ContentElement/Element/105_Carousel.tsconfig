@@ -2,15 +2,15 @@
 #### NEW CONTENT ELEMENT WIZARD ####
 ####################################
 mod.wizards.newContentElement.wizardItems.advanced {
-    elements {
-        carousel {
-            iconIdentifier = content-bulmapackage-carousel
-            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel
-            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel.description
-            tt_content_defValues {
-                CType = carousel
-            }
-        }
+  elements {
+    carousel {
+      iconIdentifier = content-bulmapackage-carousel
+      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel
+      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel.description
+      tt_content_defValues {
+        CType = carousel
+      }
     }
-    show := addToList(carousel)
+  }
+  show := addToList(carousel)
 }

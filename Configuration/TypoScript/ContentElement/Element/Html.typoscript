@@ -6,9 +6,9 @@ tt_content.html >
 tt_content.html =< lib.contentElement
 tt_content.html {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = Html
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = Html
 
 }

@@ -2,16 +2,16 @@
 #### NEW CONTENT ELEMENT WIZARD ####
 ####################################
 mod.wizards.newContentElement.wizardItems.advanced {
-    elements {
-        shortcut {
-            iconIdentifier = content-special-shortcut
-            title = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_shortcut_title
-            description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_shortcut_description
-            tt_content_defValues {
-                CType = shortcut
-            }
-        }
+  elements {
+    shortcut {
+      iconIdentifier = content-special-shortcut
+      title = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_shortcut_title
+      description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_shortcut_description
+      tt_content_defValues {
+        CType = shortcut
+      }
     }
-    show := addToList(shortcut)
+  }
+  show := addToList(shortcut)
 }
 mod.wizards.newContentElement.wizardItems.special.show := removeFromList(shortcut)

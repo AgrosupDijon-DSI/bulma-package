@@ -2,15 +2,15 @@
 #### NEW CONTENT ELEMENT WIZARD ####
 ####################################
 mod.wizards.newContentElement.wizardItems.advanced {
-    elements {
-        accordion {
-            iconIdentifier = content-bulmapackage-accordion
-            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion
-            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion.description
-            tt_content_defValues {
-                CType = accordion
-            }
-        }
+  elements {
+    accordion {
+      iconIdentifier = content-bulmapackage-accordion
+      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion
+      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion.description
+      tt_content_defValues {
+        CType = accordion
+      }
     }
-    show := addToList(accordion)
+  }
+  show := addToList(accordion)
 }

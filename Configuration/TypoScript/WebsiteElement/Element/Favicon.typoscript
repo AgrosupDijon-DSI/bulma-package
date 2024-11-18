@@ -5,39 +5,39 @@
 lib.bulmaPackage.favicon =< lib.bulmaPackageSetting
 lib.bulmaPackage.favicon {
 
-    #############################
-    ### CONTENT OBJECT FIELDS ###
-    #############################
-    select.selectFields = favicon, sys_language_uid, l10n_parent
+  #############################
+  ### CONTENT OBJECT FIELDS ###
+  #############################
+  select.selectFields = favicon, sys_language_uid, l10n_parent
 
-    renderObj {
-        ################
-        ### TEMPLATE ###
-        ################
-        templateName = Favicon
+  renderObj {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Favicon
 
-        ################
-        ### SETTINGS ###
-        ################
-        settings {
-            appleSizes = {$plugin.bulma_package_websiteelements.favicon.appleSizes}
-            iconSizes = {$plugin.bulma_package_websiteelements.favicon.iconSizes}
-        }
-        ##########################
-        ### DATA PREPROCESSING ###
-        ##########################
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references {
-                    fieldName = favicon
-                }
-                as = favicon
-            }
-        }
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+      appleSizes = {$plugin.bulma_package_websiteelements.favicon.appleSizes}
+      iconSizes = {$plugin.bulma_package_websiteelements.favicon.iconSizes}
     }
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references {
+          fieldName = favicon
+        }
+        as = favicon
+      }
+    }
+  }
 }
 
 page.headerData {
-    10 < lib.bulmaPackage.favicon
+  10 < lib.bulmaPackage.favicon
 }

@@ -6,78 +6,78 @@ tt_content.icon_group >
 tt_content.icon_group =< lib.contentElement
 tt_content.icon_group {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = IconGroup
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = IconGroup
 
-    ##########################
-    ### DATA PREPROCESSING ###
-    ##########################
-    dataProcessing {
-        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_bulmapackage_icon_group_item
+      pidInList.field = pid
+      where {
+        data = field:uid
+        intval = 1
+        wrap = tt_content=|
+      }
+      orderBy = sorting
+      dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
         10 {
-            table = tx_bulmapackage_icon_group_item
-            pidInList.field = pid
-            where {
-                data = field:uid
-                intval = 1
-                wrap = tt_content=|
-            }
-            orderBy = sorting
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = icon_file
-                    as = iconFile
-                }
-            }
+          references.fieldName = icon_file
+          as = iconFile
         }
-        20 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
-        20 {
-            delimiter = ,
-            fieldName = table_class
-            as = layoutClasses
-        }
+      }
     }
+    20 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+    20 {
+      delimiter = ,
+      fieldName = table_class
+      as = layoutClasses
+    }
+  }
 }
 
 #########################
 ### RESPONSIVE IMAGES ###
 #########################
 lib.contentElement.settings.responsiveimages.contentelements {
-    icon_group {
-        left {
-            multiplier {
-                default = 0.5
-                widescreen = 0.5
-                desktop = 0.5
-                tablet = 0.5
-                mobile = 0.5
-            }
-            gutters {
-                default = 24
-                widescreen = 24
-                desktop = 24
-                tablet = 24
-                mobile = 24
-            }
-        }
-        right {
-            multiplier {
-                default = 0.5
-                widescreen = 0.5
-                desktop = 0.5
-                tablet = 0.5
-                mobile = 0.5
-            }
-            gutters {
-                default = 24
-                widescreen = 24
-                desktop = 24
-                tablet = 24
-                mobile = 24
-            }
-        }
+  icon_group {
+    left {
+      multiplier {
+        default = 0.5
+        widescreen = 0.5
+        desktop = 0.5
+        tablet = 0.5
+        mobile = 0.5
+      }
+      gutters {
+        default = 24
+        widescreen = 24
+        desktop = 24
+        tablet = 24
+        mobile = 24
+      }
     }
+    right {
+      multiplier {
+        default = 0.5
+        widescreen = 0.5
+        desktop = 0.5
+        tablet = 0.5
+        mobile = 0.5
+      }
+      gutters {
+        default = 24
+        widescreen = 24
+        desktop = 24
+        tablet = 24
+        mobile = 24
+      }
+    }
+  }
 }

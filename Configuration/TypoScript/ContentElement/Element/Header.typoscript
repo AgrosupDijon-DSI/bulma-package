@@ -6,9 +6,9 @@ tt_content.header >
 tt_content.header =< lib.contentElement
 tt_content.header {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = Header
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = Header
 
 }
