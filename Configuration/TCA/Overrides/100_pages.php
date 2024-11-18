@@ -6,11 +6,10 @@
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
-
 use AgrosupDijon\BulmaPackage\Hooks\SlugModifier;
 use AgrosupDijon\BulmaPackage\Utility\PageLayoutUtility;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') or die();
@@ -36,33 +35,33 @@ $additionalColumns = [
             ],
             'overrideChildTca' => [
                 'types' => [
-                    File::FILETYPE_UNKNOWN => [
+                    FileType::UNKNOWN->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_TEXT => [
+                    FileType::TEXT->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_IMAGE => [
+                    FileType::IMAGE->value => [
                         'showitem' => '
                             --palette--;;basicImageoverlayPalette,
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_AUDIO => [
+                    FileType::AUDIO->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_VIDEO => [
+                    FileType::VIDEO->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_APPLICATION => [
+                    FileType::APPLICATION->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',

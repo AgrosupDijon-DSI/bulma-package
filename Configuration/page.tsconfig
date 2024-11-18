@@ -1,0 +1,8 @@
+
+# MOD
+@import 'EXT:bulma_package/Configuration/TsConfig/Page/Mod/Mod.tsconfig'
+
+# Register EXT:news extra templateLayouts
+[extension.isLoaded('news')]
+@import 'EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig'
+[global]

@@ -1,6 +1,6 @@
 <?php
 
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -196,33 +196,33 @@ return [
                 ],
                 'overrideChildTca' => [
                     'types' => [
-                        File::FILETYPE_UNKNOWN => [
+                        FileType::UNKNOWN->value => [
                             'showitem' => '
                                     --palette--;;filePalette
                                 ',
                         ],
-                        File::FILETYPE_TEXT => [
+                        FileType::TEXT->value => [
                             'showitem' => '
                                     --palette--;;filePalette
                                 ',
                         ],
-                        File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '
                                 --palette--;;basicImageoverlayPaletteWithoutCrop,
                                 --palette--;;filePalette
                             ',
                         ],
-                        File::FILETYPE_AUDIO => [
+                        FileType::AUDIO->value => [
                             'showitem' => '
                                 --palette--;;filePalette
                             ',
                         ],
-                        File::FILETYPE_VIDEO => [
+                        FileType::VIDEO->value => [
                             'showitem' => '
                                 --palette--;;filePalette
                             ',
                         ],
-                        File::FILETYPE_APPLICATION => [
+                        FileType::APPLICATION->value => [
                             'showitem' => '
                                 --palette--;;filePalette
                             ',

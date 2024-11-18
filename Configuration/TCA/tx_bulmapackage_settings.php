@@ -1,6 +1,6 @@
 <?php
 
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -163,13 +163,13 @@ return [
                 ],
                 'overrideChildTca' => [
                     'types' => [
-                        File::FILETYPE_UNKNOWN => [
+                        FileType::UNKNOWN->value => [
                             'showitem' => '
                                 crop,
                                 --palette--;;filePalette
                             ',
                         ],
-                        File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '
                                 crop,
                                 --palette--;;filePalette
@@ -191,13 +191,13 @@ return [
                 ],
                 'overrideChildTca' => [
                     'types' => [
-                        File::FILETYPE_UNKNOWN => [
+                        FileType::UNKNOWN->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette
                             ',
                         ],
-                        File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette
@@ -219,13 +219,13 @@ return [
                 ],
                 'overrideChildTca' => [
                     'types' => [
-                        File::FILETYPE_UNKNOWN => [
+                        FileType::UNKNOWN->value => [
                             'showitem' => '
                                 crop,
                                 --palette--;;filePalette
                             ',
                         ],
-                        File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '
                                 crop,
                                 --palette--;;filePalette

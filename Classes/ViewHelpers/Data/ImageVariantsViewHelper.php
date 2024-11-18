@@ -10,17 +10,13 @@
 namespace AgrosupDijon\BulmaPackage\ViewHelpers\Data;
 
 use AgrosupDijon\BulmaPackage\Utility\ImageVariantsUtility;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * ImageVariantsViewHelper
  */
 class ImageVariantsViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -31,20 +27,12 @@ class ImageVariantsViewHelper extends AbstractViewHelper
         $this->registerArgument('corrections', 'array', 'Corrections to be applied after calculation of image widths', false);
     }
 
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     */
-    public static function renderStatic(
-        array $arguments,
-        \Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ): void {
-        if ($arguments['gutters'] === '') {
-            $arguments['gutters'] = null;
+    public function render(): void
+    {
+        if ($this->arguments['gutters'] === '') {
+            $this->arguments['gutters'] = null;
         }
-        $variants = ImageVariantsUtility::getImageVariants($arguments['variants'], $arguments['multiplier'], $arguments['gutters'], $arguments['corrections']);
-        $renderingContext->getVariableProvider()->add($arguments['as'], $variants);
+        $variants = ImageVariantsUtility::getImageVariants($this->arguments['variants'], $this->arguments['multiplier'], $this->arguments['gutters'], $this->arguments['corrections']);
+        $this->renderingContext->getVariableProvider()->add($this->arguments['as'], $variants);
     }
 }

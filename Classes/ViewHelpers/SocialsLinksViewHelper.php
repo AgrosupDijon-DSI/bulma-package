@@ -11,17 +11,13 @@ namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * SocialsLinksViewHelper
  */
 class SocialsLinksViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     public function initializeArguments(): void
     {
         parent::initializeArguments();
@@ -29,18 +25,10 @@ class SocialsLinksViewHelper extends AbstractViewHelper
         $this->registerArgument('links', 'array', 'Array of "socialsLinks" from Bulma Package settings module', true);
     }
 
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     */
-    public static function renderStatic(
-        array $arguments,
-        \Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ): void {
-        $linksByType = self::buildLinksByType($arguments['links']);
-        $renderingContext->getVariableProvider()->add($arguments['as'], $linksByType);
+    public function render(): void
+    {
+        $linksByType = self::buildLinksByType($this->arguments['links']);
+        $this->renderingContext->getVariableProvider()->add($this->arguments['as'], $linksByType);
     }
 
     /**
@@ -49,7 +37,7 @@ class SocialsLinksViewHelper extends AbstractViewHelper
      * @param array $links
      * @return array
      */
-    protected static function buildLinksByType(array $links)
+    protected static function buildLinksByType(array $links): array
     {
         $reorganizedLinks = [];
         foreach ($links as $link) {

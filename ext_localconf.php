@@ -42,11 +42,6 @@ $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::c
 $bulmaPackageConfiguration = $extensionConfiguration->get('bulma_package');
 
 /***************
- * UserTS
- */
-ExtensionManagementUtility::addUserTSConfig('options.saveDocNew.tx_bulmapackage_settings = 0');
-
-/***************
  * PageTS
  */
 // Add Content Elements
@@ -73,9 +68,6 @@ if (!(bool)$bulmaPackageConfiguration['disablePageTsTCEMAIN']) {
 if (!(bool)$bulmaPackageConfiguration['disablePageTsRTE']) {
     ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig"');
 }
-
-// MOD
-ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Mod/Mod.tsconfig"');
 
 // CType filter for content in accordions/tabs
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['tcaDatabaseRecord'][TcaCTypeItem::class] = [
@@ -115,13 +107,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php'][
  * Register Meta tags hooks
  */
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-postProcess'][BulmaMetaTagHook::class] = BulmaMetaTagHook::class . '->execute';
-
-/***************
- * Register news extra templateLayouts
- */
-if (ExtensionManagementUtility::isLoaded('news')) {
-    ExtensionManagementUtility::addPageTSConfig('@import "EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig"');
-}
 
 /***************
  * Require autoload for dependencies when not using composer

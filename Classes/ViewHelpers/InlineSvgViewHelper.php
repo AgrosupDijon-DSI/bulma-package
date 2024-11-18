@@ -14,17 +14,13 @@ namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * InlineSvgViewHelper
  */
 class InlineSvgViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     /**
      * @var bool
      */
@@ -45,25 +41,13 @@ class InlineSvgViewHelper extends AbstractViewHelper
         $this->registerArgument('height', 'string', 'Height of the svg.', false);
     }
 
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     * @return string
-     * @throws \Exception
-     */
-    public static function renderStatic(
-        array $arguments,
-        \Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ) {
-        $src = (string)$arguments['src'];
-        $image = $arguments['image'];
-
+    public function render(): string
+    {
+        $src = (string)$this->arguments['src'];
+        $image = $this->arguments['image'];
         if (($src === '' && $image === null) || ($src !== '' && $image !== null)) {
             throw new \Exception('You must either specify a string src or a File object.', 1530601100);
         }
-
         try {
             $imageService = self::getImageService();
             $image = $imageService->getImage($src, $image, false);
@@ -86,12 +70,12 @@ class InlineSvgViewHelper extends AbstractViewHelper
             }
 
             // Override css class
-            $class = trim(htmlspecialchars((string)$arguments['class']));
+            $class = trim(htmlspecialchars((string)$this->arguments['class']));
             $class = !empty($class) ? $class : null;
             $svgElement = self::setAttribute($svgElement, 'class', $class);
-            $width = (int)($arguments['width']) > 0 ? (string)(int)($arguments['width']) : null;
+            $width = (int)($this->arguments['width']) > 0 ? (string)(int)($this->arguments['width']) : null;
             $svgElement = self::setAttribute($svgElement, 'width', $width);
-            $height = (int)($arguments['height']) > 0 ? (string)(int)($arguments['height']) : null;
+            $height = (int)($this->arguments['height']) > 0 ? (string)(int)($this->arguments['height']) : null;
             $svgElement = self::setAttribute($svgElement, 'height', $height);
 
             // remove xml version tag

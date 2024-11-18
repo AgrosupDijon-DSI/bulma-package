@@ -12,18 +12,14 @@ namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 use TYPO3\CMS\Core\LinkHandling\TypoLinkCodecService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * TypolinkTitleViewHelper
  */
 class TypolinkTitleViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     /**
      * Initialize arguments.
      *
@@ -35,24 +31,13 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
         $this->registerArgument('parameter', 'string', 'stdWrap.typolink style parameter string');
     }
 
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     * @return mixed
-     */
-    public static function renderStatic(
-        array $arguments,
-        \Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ) {
-        $typolinkConfiguration = self::createTypolinkParameterArrayFromArgument($arguments['parameter']);
-
+    public function render(): string|null
+    {
+        $typolinkConfiguration = self::createTypolinkParameterArrayFromArgument($this->arguments['parameter']);
         if (!empty($typolinkConfiguration) && !empty($typolinkConfiguration['title'])) {
             return $typolinkConfiguration['title'];
         }
         return LocalizationUtility::translate('lightbox-link-label', 'BulmaPackage');
-
     }
 
     /**
@@ -62,7 +47,7 @@ class TypolinkTitleViewHelper extends AbstractViewHelper
      *
      * @return array Associative array of TypoLink parts with the keys url, target, class, title, additionalParams
      */
-    protected static function createTypolinkParameterArrayFromArgument($parameter)
+    protected static function createTypolinkParameterArrayFromArgument(string $parameter): array
     {
         $typoLinkCodec = GeneralUtility::makeInstance(TypoLinkCodecService::class);
 
