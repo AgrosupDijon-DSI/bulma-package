@@ -38,7 +38,7 @@ class PreProcessHook
             $files = [];
             if (is_array($params[$key])) {
                 foreach ($params[$key] as $file => $settings) {
-                    $compiledFile = $this->getCompileService()->getCompiledFile($file);
+                    $compiledFile = $this->getCompileService()->getCompiledFile($GLOBALS['TYPO3_REQUEST'], $file);
                     if (!is_null($compiledFile)) {
                         $settings['file'] = $compiledFile;
                         $files[$compiledFile] = $settings;
@@ -56,7 +56,7 @@ class PreProcessHook
      *
      * @return CompileService
      */
-    protected function getCompileService()
+    protected function getCompileService(): CompileService
     {
         if ($this->compileService === null) {
             $this->compileService = GeneralUtility::makeInstance(CompileService::class);
