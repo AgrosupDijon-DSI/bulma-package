@@ -10,6 +10,7 @@
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
 use Doctrine\DBAL\Exception;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
@@ -25,7 +26,8 @@ class BulmaMetaTagHook
      */
     public function execute(): void
     {
-        if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend() === false) {
+        if (!($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface ||
+            !ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()) {
             return;
         }
 
