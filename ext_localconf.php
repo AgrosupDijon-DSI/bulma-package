@@ -6,7 +6,6 @@ use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook;
 use AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook;
 use AgrosupDijon\BulmaPackage\Parser\ScssParser;
 use TYPO3\CMS\Backend\Form\FormDataProvider\TcaSelectItems;
-use TYPO3\CMS\Core\Cache\Backend\NullBackend;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -20,14 +19,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 defined('TYPO3') or die();
-
-// https://usetypo3.com/application-context.html)
-//if (Environment::getContext()->isDevelopment()) {
-//    // No cache in development
-//    foreach ($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'] as $cacheName => $cacheConfiguration) {
-//        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = NullBackend::class;
-//    }
-//}
 
 /***************
  * Define TypoScript as content rendering template
