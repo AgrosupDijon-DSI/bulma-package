@@ -68,7 +68,7 @@ $GLOBALS['TCA']['tt_content']['types']['iframe'] = array_replace_recursive(
             'bodytext' => [
                 'config' => [
                     'format' => 'html',
-                    'renderType' => 't3editor',
+                    'renderType' => 'codeEditor',
                 ],
             ],
         ],
