@@ -98,9 +98,18 @@ abstract class AbstractParser implements ParserInterface
      * @param string $filename
      * @return string
      */
-    protected function getCacheFileMeta(string $filename)
+    protected function getCacheFileMeta(string $filename): string
     {
         return $filename . '.meta';
+    }
+
+    /**
+     * @param string $filename
+     * @return string
+     */
+    protected function getCacheFileMap(string $filename): string
+    {
+        return $filename . '.map';
     }
 
     /**
