@@ -28,11 +28,8 @@ class LightboxViewHelper extends AbstractTagBasedViewHelper
     public function initializeArguments(): void
     {
         parent::initializeArguments();
-        $this->registerUniversalTagAttributes();
-        $this->registerTagAttribute('rel', 'string', 'Specifies the relationship between the current document and the linked document', false);
 
         $this->registerArgument('caption', 'string', 'Specifies an caption text', false);
-
         $this->registerArgument('image', 'object', 'image', true);
         $this->registerArgument('crop', 'string|bool', 'overrule cropping of image (setting to FALSE disables the cropping set in FileReference)');
         $this->registerArgument('cropVariant', 'string', 'select a cropping variant, in case multiple croppings have been specified or stored in FileReference', false, 'default');
