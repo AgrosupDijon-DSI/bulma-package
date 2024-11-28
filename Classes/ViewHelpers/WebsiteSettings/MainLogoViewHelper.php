@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers\WebsiteSettings;
 
-use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Resource\FileRepository;
@@ -20,6 +19,9 @@ class MainLogoViewHelper extends AbstractViewHelper
         private readonly FileRepository $fileRepository,
     ) {}
 
+    /**
+     * @throws Exception
+     */
     public function render()
     {
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_settings');
@@ -29,9 +31,11 @@ class MainLogoViewHelper extends AbstractViewHelper
             ->executeQuery()
             ->fetchAssociative();
 
-        /** @var FileReference[] $files */
-        $files = $this->fileRepository->findByRelation('tx_bulmapackage_settings', 'logo_main', $result['uid']);
+        if ($result) {
+            $files = $this->fileRepository->findByRelation('tx_bulmapackage_settings', 'logo_main', $result['uid']);
 
-        return $files[0];
+            return $files[0] ?? false;
+        }
+        return false;
     }
 }
