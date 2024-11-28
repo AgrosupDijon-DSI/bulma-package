@@ -203,7 +203,7 @@ class CompileService
         $rootLine = $request->getAttribute('frontend.page.information')->getRootLine();
         foreach ($rootLine as $rootLinePage) {
             if (!empty($rootLinePage['layout'])) {
-                return $rootLinePage['layout'];
+                return (int)$rootLinePage['layout'];
             }
         }
         return 0;
