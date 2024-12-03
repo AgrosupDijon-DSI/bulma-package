@@ -200,7 +200,7 @@ class CompileService
      */
     protected function getCurrentPageLayout(ServerRequestInterface $request): int
     {
-        $rootLine = $request->getAttribute('frontend.page.information')->getRootLine();
+        $rootLine = $request->getAttribute('frontend.page.information')?->getRootLine() ?? [];
         foreach ($rootLine as $rootLinePage) {
             if (!empty($rootLinePage['layout'])) {
                 return (int)$rootLinePage['layout'];
