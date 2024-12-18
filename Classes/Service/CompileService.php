@@ -119,13 +119,13 @@ class CompileService
         if (!empty($layoutUid)) {
             if ($layoutUid < 100) {
                 // Fetch overrides from typoscript constants
-                $layoutOverride = $this->getVariablesFromConstants($request, 'layout.' . $layoutUid . '.');
+                $layoutOverride = $this->getVariablesFromConstants($request, 'layout.' . $layoutUid);
             } else {
                 // Fetch overrides from database
                 $layoutOverride = $this->getLayoutFromDatabase((int)($layoutUid / 100));
             }
             // Fetch text_dark variables from typoscript constants
-            $textDarkVariables = $this->getVariablesFromConstants($request, 'layout.text_dark.');
+            $textDarkVariables = $this->getVariablesFromConstants($request, 'layout.text_dark');
         }
 
         // Check "special" key
