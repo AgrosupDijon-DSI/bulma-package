@@ -14,8 +14,8 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '13.4.0-13.4.99',
-            'rte_ckeditor' => '12.4.0-12.4.99',
-            'seo' => '12.4.0-12.4.99',
+            'rte_ckeditor' => '13.4.0-13.4.99',
+            'seo' => '13.4.0-13.4.99',
         ],
         'conflicts' => [
             'css_styled_content' => '*',
@@ -26,7 +26,7 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'suggests' => [
             'image_autoresize' => '',
-            'news' => '11.0.0-11.99.99',
+            'news' => '12.0.0-12.99.99',
             'gridelements' => '',
             'container' => '',
         ],
@@ -40,5 +40,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Sébastien Convers',
     'author_email' => 'sebastien.convers@agrosupdijon.fr',
     'author_company' => 'AgroSup Dijon',
-    'version' => '3.2.0',
+    'version' => '4.0.0',
 ];
