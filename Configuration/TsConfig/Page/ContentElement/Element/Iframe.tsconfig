@@ -2,15 +2,15 @@
 #### NEW CONTENT ELEMENT WIZARD ####
 ####################################
 mod.wizards.newContentElement.wizardItems.advanced {
-    elements {
-        iframe {
-            iconIdentifier = content-bulmapackage-iframe
-            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.iframe
-            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.iframe.description
-            tt_content_defValues {
-                CType = iframe
-            }
-        }
+  elements {
+    iframe {
+      iconIdentifier = content-bulmapackage-iframe
+      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.iframe
+      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.iframe.description
+      tt_content_defValues {
+        CType = iframe
+      }
     }
-    show := addToList(iframe)
+  }
+  show := addToList(iframe)
 }

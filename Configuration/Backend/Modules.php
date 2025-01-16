@@ -13,9 +13,8 @@ return [
         'extensionName' => 'BulmaPackage',
         'controllerActions' => [
             WebsiteModuleController::class => [
-                'overview', 'customColors', 'metaTags'
+                'overview', 'customColors', 'metaTags',
             ],
         ],
     ],
 ];
-

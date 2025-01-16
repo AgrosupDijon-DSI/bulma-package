@@ -35,7 +35,7 @@ $GLOBALS['TCA']['tt_content']['types']['uploads'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ]
 );
 
@@ -44,9 +44,9 @@ $displayCondLayoutCard = [
         'FIELD:CType:!=:uploads',
         'AND' => [
             'FIELD:CType:=:uploads',
-            'FIELD:layout:=:3'
-        ]
-    ]
+            'FIELD:layout:=:3',
+        ],
+    ],
 ];
 
 $GLOBALS['TCA']['tt_content']['columns']['table_class']['displayCond'] = $displayCondLayoutCard;

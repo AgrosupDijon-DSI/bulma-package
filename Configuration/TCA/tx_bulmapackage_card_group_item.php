@@ -1,7 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -31,44 +31,44 @@ return [
             'endtime' => 'endtime',
         ],
         'typeicon_classes' => [
-            'default' => 'content-bulmapackage-card-group-item'
+            'default' => 'content-bulmapackage-card-group-item',
         ],
         'security' => [
             'ignorePageTypeRestriction' => true,
-        ]
+        ],
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.header;header,media,bodytext,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.link;link,icon_file,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette'
+            'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.header;header,media,bodytext,--palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.link;link,icon_file,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette',
         ],
     ],
     'palettes' => [
         '1' => [
-            'showitem' => ''
+            'showitem' => '',
         ],
         'access' => [
             'showitem' => '
                 starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
                 endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel
-            '
+            ',
         ],
         'header' => [
             'showitem' => '
                 header,
                 --linebreak--,
                 subheader,
-            '
+            ',
         ],
         'link' => [
             'showitem' => '
                 link,
                 link_title
-            '
+            ',
         ],
         'general' => [
             'showitem' => '
                 tt_content
-            '
+            ',
         ],
         'visibility' => [
             'showitem' => '
@@ -114,10 +114,10 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
-                'default' => 0
+                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'endtime' => [
             'exclude' => true,
@@ -130,12 +130,12 @@ return [
                 ],
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language']
+            'config' => ['type' => 'language'],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -151,13 +151,13 @@ return [
                 ],
                 'foreign_table' => 'tx_bulmapackage_card_group_item',
                 'foreign_table_where' => 'AND tx_bulmapackage_card_group_item.pid=###CURRENT_PID### AND tx_bulmapackage_card_group_item.sys_language_uid IN (-1,0)',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'l10n_diffsource' => [
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'header' => [
             'exclude' => true,
@@ -165,7 +165,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'subheader' => [
@@ -174,7 +174,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'media' => [
@@ -183,52 +183,52 @@ return [
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
-                        File::FILETYPE_UNKNOWN => [
+                        FileType::UNKNOWN->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPaletteWithoutLink,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
-                        File::FILETYPE_TEXT => [
+                        FileType::TEXT->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPaletteWithoutLink,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                         // imageoverlayPalette without link
-                        File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPaletteWithoutLink,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
-                        File::FILETYPE_AUDIO => [
+                        FileType::AUDIO->value => [
                             'showitem' => '
                                 --palette--;;audioOverlayPalette,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
-                        File::FILETYPE_VIDEO => [
+                        FileType::VIDEO->value => [
                             'showitem' => '
                                 --palette--;;videoOverlayPaletteWithoutLink,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
-                        File::FILETYPE_APPLICATION => [
+                        FileType::APPLICATION->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPaletteWithoutLink,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                     ],
                 ],
                 'maxitems' => 1,
-                'allowed' => ['gif','jpg','jpeg','bmp','png','pdf','svg','youtube','vimeo']
-            ]
+                'allowed' => ['gif', 'jpg', 'jpeg', 'bmp', 'png', 'pdf', 'svg', 'youtube', 'vimeo'],
+            ],
         ],
         'bodytext' => [
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.bodytext',
@@ -238,7 +238,7 @@ return [
                 'cols' => 80,
                 'rows' => 15,
                 'softref' => 'typolink_tag,email[subst],url',
-                'enableRichtext' => true
+                'enableRichtext' => true,
             ],
         ],
         'link' => [
@@ -248,7 +248,7 @@ return [
                 'type' => 'link',
                 'size' => 50,
                 'appearance' => [
-                    'browserTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.link'
+                    'browserTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:card_group_item.link',
                 ],
             ],
         ],
@@ -258,8 +258,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
-        ]
+        ],
     ],
 ];

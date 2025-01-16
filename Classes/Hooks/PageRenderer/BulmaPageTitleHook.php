@@ -10,9 +10,14 @@
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
 use Doctrine\DBAL\Exception;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\ApplicationType;
+use TYPO3\CMS\Core\Http\ServerRequest;
+use TYPO3\CMS\Core\TypoScript\FrontendTypoScript;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use TYPO3\CMS\Frontend\Page\PageInformation;
 
 /**
  * BulmaPageTitleHook
@@ -20,19 +25,17 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Override the page title by adding value from field tx_bulmapackage_settings:title_seo
  * (Similar behaviour as using websiteTitle in Site Configuration, but we can give permissions to "non admin" users)
  * Can't be done with the PageTitle API, else it will be used in indexed_search
- *
  */
 class BulmaPageTitleHook
 {
-
     /**
      * @param array $params
-     * @return void
      * @throws Exception
      */
     public function execute(array &$params): void
     {
-        if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend() === false) {
+        if (!($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface ||
+            !ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()) {
             return;
         }
 
@@ -41,7 +44,10 @@ class BulmaPageTitleHook
         $bulmaSettingsTitleSeo = '';
         $settingsPid = 0;
 
-        foreach ($GLOBALS['TSFE']->rootLine as $page) {
+        /** @var PageInformation $pageInformation */
+        $pageInformation = $this->getRequest()?->getAttribute('frontend.page.information');
+
+        foreach ($pageInformation->getRootLine() as $page) {
 
             $result = $queryBuilder
                 ->select('title_seo')
@@ -50,7 +56,7 @@ class BulmaPageTitleHook
                     $queryBuilder->expr()->in('pid', $page['uid'])
                 )
                 ->andWhere(
-                    $queryBuilder->expr()->eq('sys_language_uid', $GLOBALS['TSFE']->page['sys_language_uid'])
+                    $queryBuilder->expr()->eq('sys_language_uid', $pageInformation->getPageRecord()['sys_language_uid'])
                 )
                 ->executeQuery();
 
@@ -62,15 +68,15 @@ class BulmaPageTitleHook
         }
 
         if (!empty($bulmaSettingsTitleSeo)) {
-            // see generatePageTitle() & printTitle() in TYPO3\CMS\Frontend\Controller\TyposcriptFrontendController
-            if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator']) && $GLOBALS['TSFE']->config['config']['pageTitleSeparator'] !== '') {
-                $pageTitleSeparator = $GLOBALS['TSFE']->config['config']['pageTitleSeparator'];
+            /** @var FrontendTypoScript $frontendTyposcript */
+            $frontendTyposcript = $this->getRequest()?->getAttribute('frontend.typoscript');
+            $typoScriptConfigArray = $frontendTyposcript->getConfigArray();
 
-                if (isset($GLOBALS['TSFE']->config['config']['pageTitleSeparator.']) && is_array($GLOBALS['TSFE']->config['config']['pageTitleSeparator.'])) {
-                    /** @var object $GLOBALS['TSFE'] */
-                    $pageTitleSeparator = $GLOBALS['TSFE']->cObj->stdWrap($pageTitleSeparator,
-                        $GLOBALS['TSFE']->config['config']['pageTitleSeparator.']);
-                } else {
+            // see generatePageTitle() & printTitle() in TYPO3\CMS\Frontend\Controller\TyposcriptFrontendController
+            if ($typoScriptConfigArray['pageTitleSeparator'] ?? null) {
+                $cObj = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+                $pageTitleSeparator = (string)$cObj->stdWrapValue('pageTitleSeparator', $typoScriptConfigArray);
+                if ($pageTitleSeparator !== '' && $pageTitleSeparator === $typoScriptConfigArray['pageTitleSeparator']) {
                     $pageTitleSeparator .= ' ';
                 }
             } else {
@@ -78,12 +84,17 @@ class BulmaPageTitleHook
             }
 
             // If pageTitleFirst is false, or if we are on a page where a tx_bulmapackage_settings record exists,
-            // current page is considered as homepage, and $bulmaSettingsTitleSeo comes first for SEO considerations
-            if ((bool)($GLOBALS['TSFE']->config['config']['pageTitleFirst'] ?? false) && $settingsPid !== $GLOBALS['TSFE']->id) {
+            // current page is considered as a homepage, so pageTitleFirst is ignored and $bulmaSettingsTitleSeo comes first for SEO considerations
+            if (($typoScriptConfigArray['pageTitleFirst'] ?? false) && $settingsPid !== $pageInformation->getId()) {
                 $params['title'] = $params['title'] . $pageTitleSeparator . $bulmaSettingsTitleSeo;
             } else {
                 $params['title'] = $bulmaSettingsTitleSeo . $pageTitleSeparator . $params['title'];
             }
         }
+    }
+
+    private function getRequest(): ServerRequest|null
+    {
+        return $GLOBALS['TYPO3_REQUEST'];
     }
 }

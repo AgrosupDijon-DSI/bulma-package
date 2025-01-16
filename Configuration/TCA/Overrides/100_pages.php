@@ -6,12 +6,11 @@
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
-
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Resource\File;
 use AgrosupDijon\BulmaPackage\Hooks\SlugModifier;
 use AgrosupDijon\BulmaPackage\Utility\PageLayoutUtility;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;
+use TYPO3\CMS\Core\Resource\FileType;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') or die();
 
@@ -19,7 +18,7 @@ defined('TYPO3') or die();
 $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
     'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:bulma-website',
     'value' => 'tx_bulmapackage_settings',
-    'icon' => 'mimetypes-x-content-page-language-overlay'
+    'icon' => 'mimetypes-x-content-page-language-overlay',
 ];
 $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-tx_bulmapackage_settings'] = 'mimetypes-x-content-page-language-overlay';
 
@@ -32,37 +31,37 @@ $additionalColumns = [
             'maxitems' => 1,
             'allowed' => 'common-image-types',
             'appearance' => [
-                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
             ],
             'overrideChildTca' => [
                 'types' => [
-                    File::FILETYPE_UNKNOWN => [
+                    FileType::UNKNOWN->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_TEXT => [
+                    FileType::TEXT->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_IMAGE => [
+                    FileType::IMAGE->value => [
                         'showitem' => '
                             --palette--;;basicImageoverlayPalette,
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_AUDIO => [
+                    FileType::AUDIO->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_VIDEO => [
+                    FileType::VIDEO->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
                     ],
-                    File::FILETYPE_APPLICATION => [
+                    FileType::APPLICATION->value => [
                         'showitem' => '
                             --palette--;;filePalette
                         ',
@@ -71,7 +70,7 @@ $additionalColumns = [
             ],
         ],
         'l10n_mode' => 'exclude',
-        'l10n_display'=>'defaultAsReadonly',
+        'l10n_display' => 'defaultAsReadonly',
     ],
     'exclude_slug_for_subpages' => [
         'exclude' => true,
@@ -79,7 +78,7 @@ $additionalColumns = [
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
-        ]
+        ],
     ],
     'hide_breadcrumb' => [
         'exclude' => true,
@@ -87,7 +86,7 @@ $additionalColumns = [
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
-        ]
+        ],
     ],
 ];
 

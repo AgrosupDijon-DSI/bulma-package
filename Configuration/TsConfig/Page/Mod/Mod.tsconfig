@@ -1,5 +1,5 @@
 # Forbid to use list module to create new Bulma settings
-mod.web_list{
-    deniedNewTables := addToList(tx_bulmapackage_settings)
-    table.tx_bulmapackage_settings.hideTable = 1
+mod.web_list {
+  deniedNewTables := addToList(tx_bulmapackage_settings)
+  table.tx_bulmapackage_settings.hideTable = 1
 }

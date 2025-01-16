@@ -18,12 +18,6 @@ class DivViewHelper extends AbstractTagBasedViewHelper
 {
     protected $tagName = 'div';
 
-    public function initializeArguments(): void
-    {
-        parent::initializeArguments();
-        $this->registerUniversalTagAttributes();
-    }
-
     public function render(): string
     {
         $this->tag->setContent($this->renderChildren());

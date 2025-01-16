@@ -6,36 +6,35 @@ tt_content.carousel >
 tt_content.carousel =< lib.contentElement
 tt_content.carousel {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = Carousel
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = Carousel
 
-    ##########################
-    ### DATA PREPROCESSING ###
-    ##########################
-    dataProcessing {
-        10 = AgrosupDijon\BulmaPackage\DataProcessing\FlexFormProcessor
-        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-        20 {
-            table = tx_bulmapackage_carousel_item
-            pidInList.field = pid
-            where {
-                data = field:uid
-                intval = 1
-                wrap = tt_content=|
-            }
-            orderBy = sorting
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-                10 {
-                    references.fieldName = image
-                    as = image
-                }
-            }
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = AgrosupDijon\BulmaPackage\DataProcessing\FlexFormProcessor
+    20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    20 {
+      table = tx_bulmapackage_carousel_item
+      pidInList.field = pid
+      where {
+        data = field:uid
+        intval = 1
+        wrap = tt_content=|
+      }
+      orderBy = sorting
+      dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+          references.fieldName = image
+          as = image
         }
+      }
     }
-
+  }
 }
 
 
@@ -43,46 +42,46 @@ tt_content.carousel {
 ### RESPONSIVE IMAGES ###
 #########################
 lib.contentElement.settings.responsiveimages.contentelements {
-    carousel {
-        1 {
-            multiplier {
-                default = 1
-                widescreen = 1
-                desktop = 1
-                tablet = 1
-                mobile = 1
-                mobile-small = 1
-            }
-        }
-        2 {
-            multiplier {
-                default = 0.5
-                widescreen = 0.5
-                desktop = 0.5
-                tablet = 0.5
-                mobile = 0.5
-                mobile-small = 0.5
-            }
-        }
-        3 {
-            multiplier {
-                default = 0.3333
-                widescreen = 0.3333
-                desktop = 0.3333
-                tablet = 0.3333
-                mobile = 0.3333
-                mobile-small = 0.3333
-            }
-        }
-        4 {
-            multiplier {
-                default = 0.25
-                widescreen = 0.25
-                desktop = 0.25
-                tablet = 0.25
-                mobile = 0.25
-                mobile-small = 0.25
-            }
-        }
+  carousel {
+    1 {
+      multiplier {
+        default = 1
+        widescreen = 1
+        desktop = 1
+        tablet = 1
+        mobile = 1
+        mobile-small = 1
+      }
     }
+    2 {
+      multiplier {
+        default = 0.5
+        widescreen = 0.5
+        desktop = 0.5
+        tablet = 0.5
+        mobile = 0.5
+        mobile-small = 0.5
+      }
+    }
+    3 {
+      multiplier {
+        default = 0.3333
+        widescreen = 0.3333
+        desktop = 0.3333
+        tablet = 0.3333
+        mobile = 0.3333
+        mobile-small = 0.3333
+      }
+    }
+    4 {
+      multiplier {
+        default = 0.25
+        widescreen = 0.25
+        desktop = 0.25
+        tablet = 0.25
+        mobile = 0.25
+        mobile-small = 0.25
+      }
+    }
+  }
 }

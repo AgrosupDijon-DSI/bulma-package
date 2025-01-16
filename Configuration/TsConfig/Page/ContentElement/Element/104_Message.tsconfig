@@ -2,15 +2,15 @@
 #### NEW CONTENT ELEMENT WIZARD ####
 ####################################
 mod.wizards.newContentElement.wizardItems.advanced {
-    elements {
-        message {
-            iconIdentifier = content-panel
-            title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message
-            description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message.description
-            tt_content_defValues {
-                CType = message
-            }
-        }
+  elements {
+    message {
+      iconIdentifier = content-panel
+      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message
+      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message.description
+      tt_content_defValues {
+        CType = message
+      }
     }
-    show := addToList(message)
+  }
+  show := addToList(message)
 }

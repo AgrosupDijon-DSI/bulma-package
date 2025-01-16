@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -143,7 +144,6 @@ class SlugModifier
      * @param int $pid
      * @param int $workspaceId
      * @param array $record
-     * @return void
      */
     protected function resolveHookParameters(array $configuration, string $tableName, string $fieldName, int $pid, int $workspaceId, array $record): void
     {

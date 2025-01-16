@@ -6,20 +6,20 @@ tt_content.iframe >
 tt_content.iframe =< lib.contentElement
 tt_content.iframe {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = Iframe
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = Iframe
 
-    ##########################
-    ### DATA PREPROCESSING ###
-    ##########################
-    dataProcessing {
-        10 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
-        10 {
-            delimiter = ,
-            fieldName = table_class
-            as = layoutClasses
-        }
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+    10 {
+      delimiter = ,
+      fieldName = table_class
+      as = layoutClasses
     }
+  }
 }

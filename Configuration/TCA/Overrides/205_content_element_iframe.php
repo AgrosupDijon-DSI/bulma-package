@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.iframe',
         'value' => 'iframe',
-        'icon' => 'content-bulmapackage-iframe'
+        'icon' => 'content-bulmapackage-iframe',
     ],
     'html',
     'after'
@@ -67,7 +68,7 @@ $GLOBALS['TCA']['tt_content']['types']['iframe'] = array_replace_recursive(
             'bodytext' => [
                 'config' => [
                     'format' => 'html',
-                    'renderType' => 't3editor',
+                    'renderType' => 'codeEditor',
                 ],
             ],
         ],

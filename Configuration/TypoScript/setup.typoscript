@@ -9,18 +9,17 @@
 #### Manual inclusion to keep control over loading order ####
 #############################################################
 [extension.isLoaded('form')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/setup.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/setup.typoscript'
+[global]
 [extension.isLoaded('felogin')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/setup.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/setup.typoscript'
+[global]
 [extension.isLoaded('indexed_search')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript'
-[end]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript'
+[global]
 [extension.isLoaded('seo')]
-    @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
-[end]
-
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
+[global]
 ###################
 #### FRAMEWORK ####
 ###################
@@ -36,10 +35,10 @@
 #### BULMA PACKAGE SETTINGS ####
 ################################
 plugin.tx_bulmapackage {
-    settings {
-        overrideParserVariables = {$plugin.bulma_package.settings.overrideParserVariables}
-        cssSourceMapping = {$plugin.bulma_package.settings.cssSourceMapping}
-    }
+  settings {
+    overrideParserVariables = {$plugin.bulma_package.settings.overrideParserVariables}
+    cssSourceMapping = {$plugin.bulma_package.settings.cssSourceMapping}
+  }
 }
 
 ##############
@@ -47,177 +46,176 @@ plugin.tx_bulmapackage {
 ##############
 page = PAGE
 page {
-    typeNum = 0
+  typeNum = 0
 
-    10 = FLUIDTEMPLATE
-    10 {
-        # Template names will be generated automatically by converting the applied
-        # backend_layout, there is no explicit mapping necessary anymore.
-        #
-        # BackendLayout Key
-        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
-        #
-        # Backend Record
-        # uid: 1 -> 1.html
-        #
-        # Database Entry
-        # value: -1 -> None.html
-        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
-        templateName = TEXT
-        templateName {
-            cObject = TEXT
-            cObject {
-                data = pagelayout
-                required = 1
-                case = uppercamelcase
-                split {
-                    token = pagets__
-                    cObjNum = 1
-                    1.current = 1
-                }
-            }
-            ifEmpty = Default
+  10 = FLUIDTEMPLATE
+  10 {
+    # Template names will be generated automatically by converting the applied
+    # backend_layout, there is no explicit mapping necessary anymore.
+    #
+    # BackendLayout Key
+    # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+    #
+    # Backend Record
+    # uid: 1 -> 1.html
+    #
+    # Database Entry
+    # value: -1 -> None.html
+    # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+    templateName = TEXT
+    templateName {
+      cObject = TEXT
+      cObject {
+        data = pagelayout
+        required = 1
+        case = uppercamelcase
+        split {
+          token = pagets__
+          cObjNum = 1
+          1.current = 1
         }
-        templateRootPaths {
-            0 = EXT:bulma_package/Resources/Private/Templates/Page/
-            1 = {$page.fluidtemplate.templateRootPath}
-        }
-        partialRootPaths {
-            0 = EXT:bulma_package/Resources/Private/Partials/Page/
-            1 = {$page.fluidtemplate.partialRootPath}
-        }
-        layoutRootPaths {
-            0 = EXT:bulma_package/Resources/Private/Layouts/Page/
-            1 = {$page.fluidtemplate.layoutRootPath}
-        }
-        ##########################
-        ### DATA PREPROCESSING ###
-        ##########################
-        dataProcessing {
-            1 = AgrosupDijon\BulmaPackage\DataProcessing\ConstantsProcessor
-            1 {
-                as = theme
-                key = page.theme
-            }
-            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-            10 {
-                levels = 4
-                as = mainNavigation
-            }
-            15 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-            15 {
-                entryLevel = 1
-                levels = 4
-                expandAll = 1
-                includeSpacer = 1
-                as = subNavigation
-            }
-            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-            20 {
-                special = directory
-                special.value = {$page.navigation.quickLinks.entryPoint}
-                as = quickLinksNavigation
-            }
-            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-            30 {
-                special = rootline
-                special.range = 0|-1
-                includeNotInMenu = 1
-                excludeUidList = {$page.navigation.quickLinks.entryPoint}
-                as = breadcrumb
-                if {
-                    value = 1
-                    value {
-                        insertData = 1
-                        prioriCalc = 1
-                        stdWrap.wrap = |-1
-                    }
-                    isGreaterThan {
-                        data = level
-                    }
-                }
-            }
-            40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
-            40 {
-                languages = auto
-                as = languageNavigation
-            }
-            # 50 is used when EXT:news is active
-        }
-        ################
-        ### SETTINGS ###
-        ################
-        settings {
-            loginPid = {$page.navigation.loginPid}
-            searchPid = {$page.navigation.searchPid}
-            megaMenuColumnClasses = {$plugin.bulma_package_websiteelements.megaMenu.columnClasses}
-            searchFormClasses = {$page.searchForm.classes}
-            searchFormFieldWrapperClasses = {$page.searchForm.fieldWrapperClasses}
-            searchFormInputWrapperClasses = {$page.searchForm.inputWrapperClasses}
-            searchFormInputClasses = {$page.searchForm.inputClasses}
-            searchFormButtonClasses = {$page.searchForm.buttonClasses}
-            searchFormButtonIconClasses = {$page.searchForm.buttonIconClasses}
-            layouts{
-                sidebar_right{
-                    columns{
-                        wrapperClasses = {$page.layouts.sidebar_right.columns.wrapperClasses}
-                        mainClasses = {$page.layouts.sidebar_right.columns.mainClasses}
-                        asideClasses = {$page.layouts.sidebar_right.columns.asideClasses}
-                    }
-                }
-                sidebar_left{
-                    columns{
-                        wrapperClasses = {$page.layouts.sidebar_left.columns.wrapperClasses}
-                        mainClasses = {$page.layouts.sidebar_left.columns.mainClasses}
-                        asideClasses = {$page.layouts.sidebar_left.columns.asideClasses}
-                    }
-                }
-                sidebar_left_w_navigation{
-                    columns{
-                        wrapperClasses = {$page.layouts.sidebar_left_w_navigation.columns.wrapperClasses}
-                        mainClasses = {$page.layouts.sidebar_left_w_navigation.columns.mainClasses}
-                        asideClasses = {$page.layouts.sidebar_left_w_navigation.columns.asideClasses}
-                    }
-                }
-                sidebar_right_w_navigation{
-                    columns{
-                        wrapperClasses = {$page.layouts.sidebar_right_w_navigation.columns.wrapperClasses}
-                        mainClasses = {$page.layouts.sidebar_right_w_navigation.columns.mainClasses}
-                        asideClasses = {$page.layouts.sidebar_right_w_navigation.columns.asideClasses}
-                    }
-                }
-            }
-        }
-        #################
-        ### VARIABLES ###
-        #################
-        variables {
-            rootPage = TEXT
-            rootPage.data = leveluid:0
-
-            # BreadcrumbExtendedValue should be used to display the title of a
-            # single record. For example the title of a news record.
-            breadcrumbExtendedValue = COA
-            breadcrumbExtendedValue {
-            }
-
-            layoutTheme = TEXT
-            layoutTheme.value = Default
-        }
+      }
+      ifEmpty = Default
     }
-    meta {
-        viewport = {$page.meta.viewport}
-        robots = {$page.meta.robots}
-        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
-
-        author.field = author
-        keywords.field = keywords
-
-        X-UA-Compatible = {$page.meta.compatible}
-        X-UA-Compatible {
-            attribute = http-equiv
-        }
+    templateRootPaths {
+      0 = EXT:bulma_package/Resources/Private/Templates/Page/
+      1 = {$page.fluidtemplate.templateRootPath}
     }
+    partialRootPaths {
+      0 = EXT:bulma_package/Resources/Private/Partials/Page/
+      1 = {$page.fluidtemplate.partialRootPath}
+    }
+    layoutRootPaths {
+      0 = EXT:bulma_package/Resources/Private/Layouts/Page/
+      1 = {$page.fluidtemplate.layoutRootPath}
+    }
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+      1 = AgrosupDijon\BulmaPackage\DataProcessing\ConstantsProcessor
+      1 {
+        as = theme
+        key = page.theme
+      }
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        levels = 4
+        as = mainNavigation
+      }
+      15 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      15 {
+        entryLevel = 1
+        levels = 4
+        expandAll = 1
+        includeSpacer = 1
+        as = subNavigation
+      }
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+        special = directory
+        special.value = {$page.navigation.quickLinks.entryPoint}
+        as = quickLinksNavigation
+      }
+      30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      30 {
+        special = rootline
+        special.range = 0|-1
+        includeNotInMenu = 1
+        excludeUidList = {$page.navigation.quickLinks.entryPoint}
+        as = breadcrumb
+        if {
+          value = 1
+          value {
+            insertData = 1
+            prioriCalc = 1
+            stdWrap.wrap = |-1
+          }
+          isGreaterThan {
+            data = level
+          }
+        }
+      }
+      40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+      40 {
+        languages = auto
+        as = languageNavigation
+      }
+      # 50 is used when EXT:news is active
+    }
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+      loginPid = {$page.navigation.loginPid}
+      searchPid = {$page.navigation.searchPid}
+      megaMenuColumnClasses = {$plugin.bulma_package_websiteelements.megaMenu.columnClasses}
+      searchFormClasses = {$page.searchForm.classes}
+      searchFormFieldWrapperClasses = {$page.searchForm.fieldWrapperClasses}
+      searchFormInputWrapperClasses = {$page.searchForm.inputWrapperClasses}
+      searchFormInputClasses = {$page.searchForm.inputClasses}
+      searchFormButtonClasses = {$page.searchForm.buttonClasses}
+      searchFormButtonIconClasses = {$page.searchForm.buttonIconClasses}
+      layouts {
+        sidebar_right {
+          columns {
+            wrapperClasses = {$page.layouts.sidebar_right.columns.wrapperClasses}
+            mainClasses = {$page.layouts.sidebar_right.columns.mainClasses}
+            asideClasses = {$page.layouts.sidebar_right.columns.asideClasses}
+          }
+        }
+        sidebar_left {
+          columns {
+            wrapperClasses = {$page.layouts.sidebar_left.columns.wrapperClasses}
+            mainClasses = {$page.layouts.sidebar_left.columns.mainClasses}
+            asideClasses = {$page.layouts.sidebar_left.columns.asideClasses}
+          }
+        }
+        sidebar_left_w_navigation {
+          columns {
+            wrapperClasses = {$page.layouts.sidebar_left_w_navigation.columns.wrapperClasses}
+            mainClasses = {$page.layouts.sidebar_left_w_navigation.columns.mainClasses}
+            asideClasses = {$page.layouts.sidebar_left_w_navigation.columns.asideClasses}
+          }
+        }
+        sidebar_right_w_navigation {
+          columns {
+            wrapperClasses = {$page.layouts.sidebar_right_w_navigation.columns.wrapperClasses}
+            mainClasses = {$page.layouts.sidebar_right_w_navigation.columns.mainClasses}
+            asideClasses = {$page.layouts.sidebar_right_w_navigation.columns.asideClasses}
+          }
+        }
+      }
+    }
+    #################
+    ### VARIABLES ###
+    #################
+    variables {
+      rootPage = TEXT
+      rootPage.data = leveluid:0
+
+      # BreadcrumbExtendedValue should be used to display the title of a
+      # single record. For example the title of a news record.
+      breadcrumbExtendedValue = COA
+      breadcrumbExtendedValue {
+      }
+      layoutTheme = TEXT
+      layoutTheme.value = Default
+    }
+  }
+  meta {
+    viewport = {$page.meta.viewport}
+    robots = {$page.meta.robots}
+    apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+
+    author.field = author
+    keywords.field = keywords
+
+    X-UA-Compatible = {$page.meta.compatible}
+    X-UA-Compatible {
+      attribute = http-equiv
+    }
+  }
 }
 
 ####################
@@ -229,23 +227,23 @@ page {
 #### CONFIG ####
 ################
 config {
-    pageTitleFirst = 1
-    pageTitleSeparator = -
-    pageTitleSeparator.noTrimWrap = | | |
+  pageTitleFirst = 1
+  pageTitleSeparator = -
+  pageTitleSeparator.noTrimWrap = | | |
 
-    absRefPrefix = auto
-    linkVars = L(int)
-    doctype = html5
+  absRefPrefix = auto
+  linkVars = L(int)
+  doctype = html5
 
-    index_enable = 1
-    index_externals = 1
-    index_metatags = 1
+  index_enable = 1
+  index_externals = 1
+  index_metatags = 1
 
-    spamProtectEmailAddresses = -5
+  spamProtectEmailAddresses = -5
 
-    // Compression and Concatenation of CSS and JS Files
-    compressJs = {$config.compressJs}
-    compressCss = {$config.compressCss}
-    concatenateJs = {$config.concatenateJs}
-    concatenateCss = {$config.concatenateCss}
+  // Compression and Concatenation of CSS and JS Files
+  compressJs = {$config.compressJs}
+  compressCss = {$config.compressCss}
+  concatenateJs = {$config.concatenateJs}
+  concatenateCss = {$config.concatenateCss}
 }

@@ -2,12 +2,12 @@
 #### CATEGORIES ####
 ####################
 mod.wizards.newContentElement.wizardItems {
-    advanced{
-        header = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special
-        after = common
-    }
-    media{
-        header = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_group.media
-        after = advanced
-    }
+  advanced {
+    header = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special
+    after = common
+  }
+  media {
+    header = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_group.media
+    after = advanced
+  }
 }

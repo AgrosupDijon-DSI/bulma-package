@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\ViewHelpers\WebsiteSettings;
 
+use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Resource\FileRepository;
@@ -20,6 +21,7 @@ class MainLogoViewHelper extends AbstractViewHelper
     ) {}
 
     /**
+     * @return FileReference|false
      * @throws Exception
      */
     public function render()

@@ -1,27 +1,27 @@
 plugin.tx_news {
-	view.bulma {
-		# cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:bulma_package/Resources/Private/Templates/News/
-		# cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:bulma_package/Resources/Private/Partials/News/
-	}
-	settings {
-		# cat=plugin.tx_news/file; type=string; label=Path to CSS file
-		cssFile =
-		list {
-			titleClasses = title
-			subtitleClasses = subtitle
-			paginate{
-				additionalClasses = is-centered
-			}
-			showIcons = true
-			linkCategories = true
-			linkTags = true
-		}
-		detail{
-			showIcons = true
-			linkCategories = true
-			linkTags = true
-		}
-	}
+  view.bulma {
+    # cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:bulma_package/Resources/Private/Templates/News/
+    # cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:bulma_package/Resources/Private/Partials/News/
+  }
+  settings {
+    # cat=plugin.tx_news/file; type=string; label=Path to CSS file
+    cssFile = 
+    list {
+      titleClasses = title
+      subtitleClasses = subtitle
+      paginate {
+        additionalClasses = is-centered
+      }
+      showIcons = true
+      linkCategories = true
+      linkTags = true
+    }
+    detail {
+      showIcons = true
+      linkCategories = true
+      linkTags = true
+    }
+  }
 }

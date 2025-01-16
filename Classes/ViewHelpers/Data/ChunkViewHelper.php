@@ -10,20 +10,13 @@
 namespace AgrosupDijon\BulmaPackage\ViewHelpers\Data;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * ChunkViewHelper
  */
 class ChunkViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
-    /**
-     * @return void
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('as', 'string', 'Name of variable to create', true);
@@ -31,14 +24,8 @@ class ChunkViewHelper extends AbstractViewHelper
         $this->registerArgument('length', 'integer', 'Chunk size', true);
     }
 
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     * @return void
-     */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public function render(): void
     {
-        $renderingContext->getVariableProvider()->add($arguments['as'], array_chunk($arguments['data'], $arguments['length']));
+        $this->renderingContext->getVariableProvider()->add($this->arguments['as'], array_chunk($this->arguments['data'], $this->arguments['length']));
     }
 }

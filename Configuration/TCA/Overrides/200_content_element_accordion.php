@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion',
         'value' => 'accordion',
-        'icon' => 'content-bulmapackage-accordion'
+        'icon' => 'content-bulmapackage-accordion',
     ],
     'html',
     'after'
@@ -62,7 +63,7 @@ $GLOBALS['TCA']['tt_content']['types']['accordion'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ]
 );
 
@@ -83,27 +84,27 @@ $additionalColumns = [
                 'enabledControls' => [
                     'localize' => true,
                 ],
-                'levelLinksPosition' => 'both'
+                'levelLinksPosition' => 'both',
             ],
             'behaviour' => [
-                'mode' => 'select'
-            ]
-        ]
+                'mode' => 'select',
+            ],
+        ],
     ],
     'tx_bulmapackage_accordion_item_active' => [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['label' => '-', 'value' => 0]
+                ['label' => '-', 'value' => 0],
             ],
             'foreign_table' => 'tx_bulmapackage_accordion_item',
             'foreign_table_where' => 'AND tx_bulmapackage_accordion_item.tt_content = ###THIS_UID###',
-            'default' => 0
+            'default' => 0,
         ],
         'exclude' => true,
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.tx_bulmapackage_accordion_item_active',
-    ]
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);

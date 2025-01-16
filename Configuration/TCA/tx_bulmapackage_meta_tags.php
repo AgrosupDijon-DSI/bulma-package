@@ -26,14 +26,14 @@ return [
         'security' => [
             'ignoreWebMountRestriction' => true,
             'ignoreRootLevelRestriction' => true,
-        ]
+        ],
     ],
     'types' => [
         '1' => [
             'showitem' => '
                 name,
                 content
-            '
+            ',
         ],
     ],
     'columns' => [
@@ -59,8 +59,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'max' => 255
-            ]
+                'max' => 255,
+            ],
         ],
         'content' => [
             'exclude' => true,
@@ -68,8 +68,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 50,
-                'max' => 255
-            ]
+                'max' => 255,
+            ],
         ],
     ],
 ];

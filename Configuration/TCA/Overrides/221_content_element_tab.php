@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.tab',
         'value' => 'tab',
-        'icon' => 'content-bulmapackage-tab'
+        'icon' => 'content-bulmapackage-tab',
     ],
     'html',
     'after'
@@ -62,7 +63,7 @@ $GLOBALS['TCA']['tt_content']['types']['tab'] = array_replace_recursive(
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ]
 );
 
@@ -84,13 +85,13 @@ $additionalColumns = [
                 'enabledControls' => [
                     'localize' => true,
                 ],
-                'levelLinksPosition' => 'both'
+                'levelLinksPosition' => 'both',
             ],
             'behaviour' => [
-                'mode' => 'select'
-            ]
-        ]
-    ]
+                'mode' => 'select',
+            ],
+        ],
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);

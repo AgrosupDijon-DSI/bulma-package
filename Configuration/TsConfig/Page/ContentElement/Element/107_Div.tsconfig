@@ -2,17 +2,17 @@
 #### NEW CONTENT ELEMENT WIZARD ####
 ####################################
 mod.wizards.newContentElement.wizardItems.advanced {
-    elements {
-        div {
-            iconIdentifier = content-special-div
-            title = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_divider_title
-            description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_divider_description
-            tt_content_defValues {
-                CType = div
-            }
-            saveAndClose = true
-        }
+  elements {
+    div {
+      iconIdentifier = content-special-div
+      title = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_divider_title
+      description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_divider_description
+      tt_content_defValues {
+        CType = div
+      }
+      saveAndClose = true
     }
-    show := addToList(div)
+  }
+  show := addToList(div)
 }
 mod.wizards.newContentElement.wizardItems.special.show := removeFromList(div)

@@ -12,9 +12,9 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
-use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 
 /**
  * Create search page and indexed_search plugin
@@ -55,7 +55,7 @@ class AccordionAndTabsUpdate implements UpgradeWizardInterface
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 
@@ -68,19 +68,27 @@ class AccordionAndTabsUpdate implements UpgradeWizardInterface
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->update('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('tx_mask_content_role',
-                    $queryBuilder->createNamedParameter(""))
+                $queryBuilder->expr()->eq(
+                    'tx_mask_content_role',
+                    $queryBuilder->createNamedParameter('')
+                )
             )
             ->andWhere(
-                $queryBuilder->expr()->eq('colPos',
-                    $queryBuilder->createNamedParameter(999))
+                $queryBuilder->expr()->eq(
+                    'colPos',
+                    $queryBuilder->createNamedParameter(999)
+                )
             )
             ->andWhere(
                 $queryBuilder->expr()->or(
-                    $queryBuilder->expr()->neq('tx_bulmapackage_tab_item_parent',
-                        $queryBuilder->createNamedParameter(0)),
-                    $queryBuilder->expr()->neq('tx_bulmapackage_accordion_item_parent',
-                        $queryBuilder->createNamedParameter(0))
+                    $queryBuilder->expr()->neq(
+                        'tx_bulmapackage_tab_item_parent',
+                        $queryBuilder->createNamedParameter(0)
+                    ),
+                    $queryBuilder->expr()->neq(
+                        'tx_bulmapackage_accordion_item_parent',
+                        $queryBuilder->createNamedParameter(0)
+                    )
                 )
             )
             ->set('tx_mask_content_role', 'record')
@@ -101,19 +109,27 @@ class AccordionAndTabsUpdate implements UpgradeWizardInterface
         $result = $queryBuilder->select('uid')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('tx_mask_content_role',
-                    $queryBuilder->createNamedParameter(""))
+                $queryBuilder->expr()->eq(
+                    'tx_mask_content_role',
+                    $queryBuilder->createNamedParameter('')
+                )
             )
             ->andWhere(
-                $queryBuilder->expr()->eq('colPos',
-                    $queryBuilder->createNamedParameter(999))
+                $queryBuilder->expr()->eq(
+                    'colPos',
+                    $queryBuilder->createNamedParameter(999)
+                )
             )
             ->andWhere(
                 $queryBuilder->expr()->or(
-                    $queryBuilder->expr()->neq('tx_bulmapackage_tab_item_parent',
-                        $queryBuilder->createNamedParameter(0)),
-                    $queryBuilder->expr()->neq('tx_bulmapackage_accordion_item_parent',
-                        $queryBuilder->createNamedParameter(0))
+                    $queryBuilder->expr()->neq(
+                        'tx_bulmapackage_tab_item_parent',
+                        $queryBuilder->createNamedParameter(0)
+                    ),
+                    $queryBuilder->expr()->neq(
+                        'tx_bulmapackage_accordion_item_parent',
+                        $queryBuilder->createNamedParameter(0)
+                    )
                 )
             )
             ->executeQuery();

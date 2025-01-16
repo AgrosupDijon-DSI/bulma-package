@@ -2,7 +2,7 @@
 #### TCEMAIN ####
 #################
 TCEMAIN {
-    table.tt_content{
-        disableHideAtCopy = 1
-    }
+  table.tt_content {
+    disableHideAtCopy = 1
+  }
 }

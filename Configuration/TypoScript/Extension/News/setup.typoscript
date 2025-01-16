@@ -1,176 +1,173 @@
 plugin.tx_news {
-	view {
-		templateRootPaths {
-			0 = EXT:news/Resources/Private/Templates/
-			1 = EXT:bulma_package/Resources/Private/Templates/News/
-			2 = {$plugin.tx_news.view.bulma.templateRootPath}
-		}
-
-		partialRootPaths {
-			0 = EXT:news/Resources/Private/Partials/
-			# To be able to use our owns content elements partials within EXT:news
-			1 = EXT:bulma_package/Resources/Private/Partials/ContentElements/
-			2 = {$plugin.bulma_package_contentelements.view.partialRootPath}
-			3 = EXT:bulma_package/Resources/Private/Partials/News/
-			4 = {$plugin.tx_news.view.bulma.partialRootPath}
-		}
-
-		widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:bulma_package/Resources/Private/Templates/News/
-	}
-
-	settings {
-		displayDummyIfNoMedia = 0
-		list {
-			titleClasses = {$plugin.tx_news.settings.list.titleClasses}
-			subtitleClasses = {$plugin.tx_news.settings.list.subtitleClasses}
-			media {
-				dummyImage = EXT:news/Resources/Public/Images/dummy-preview-image.png
-			}
-			paginate{
-				insertAbove = 0
-				additionalClasses = {$plugin.tx_news.settings.list.paginate.additionalClasses}
-			}
-			showIcons = {$plugin.tx_news.settings.list.showIcons}
-			linkCategories = {$plugin.tx_news.settings.list.linkCategories}
-			linkTags = {$plugin.tx_news.settings.list.linkTags}
-		}
-		detail{
-			showIcons = {$plugin.tx_news.settings.detail.showIcons}
-			linkCategories = {$plugin.tx_news.settings.detail.linkCategories}
-			linkTags = {$plugin.tx_news.settings.detail.linkTags}
-			gallery{
-				cols = 6
-				lightbox = 1
-			}
-			uploads{
-				showDescription = 1
-				showFilesize = 1
-				# 1 : with file icon
-				# 2 : with preview if possible
-				previewType = 2
-			}
-		}
-		header < lib.contentElement.settings.header
-		subheader < lib.contentElement.settings.subheader
-		gallery < lib.contentElement.settings.gallery
-		lightbox < lib.contentElement.settings.lightbox
-		uploads < lib.contentElement.settings.uploads
-		responsiveimages{
-			variants < lib.contentElement.settings.responsiveimages.variants
-			list{
-				1 {
-					class = is-12
-				}
-				2 {
-					class = is-6-desktop is-6-tablet is-6-mobile is-12-mobile-small
-					multiplier {
-						default = 0.5
-						widescreen = 0.5
-						desktop = 0.5
-						tablet = 0.5
-						mobile = 0.5
-					}
-					gutters {
-						default = 24
-						widescreen = 24
-						desktop = 24
-						tablet = 24
-						mobile = 24
-					}
-				}
-				3 {
-					class = is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
-					multiplier {
-						default = 0.3333
-						widescreen = 0.3333
-						desktop = 0.3333
-						tablet = 0.5
-						mobile = 0.5
-					}
-					gutters {
-						default = 48
-						widescreen = 48
-						desktop = 48
-						tablet = 24
-						mobile = 24
-					}
-				}
-				4 {
-					class = is-3-widescreen is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
-					multiplier {
-						default = 0.25
-						widescreen = 0.25
-						desktop = 0.3333
-						tablet = 0.5
-						mobile = 0.5
-					}
-					gutters {
-						default = 72
-						widescreen = 72
-						desktop = 48
-						tablet = 24
-						mobile = 24
-					}
-				}
-			}
-		}
-		layouts {
-			default {
-				list {
-					wrapperCssClasses = news-list-view columns is-multiline is-mobile
-					itemPartial = Item
-				}
-				detail {
-					cols = 3
-					extraCssClasses = column
-				}
-			}
-			carousel{
-				list {
-					wrapperCssClasses = news-list-view carousel
-					itemPartial = ItemCarousel
-					data {
-						autoplay = 3000
-						pagedots = true
-						cellalign = left
-						prevnextbuttons = true
-						wraparound = true
-					}
-					subtitleClasses =
-				}
-				detail {
-					cols = 1
-					extraCssClasses = carousel-item image has-1 has-1-tablet has-1-mobile is-3by1 is-3by1-tablet is-3by2-mobile
-				}
-			}
-			1{
-				detail {
-					cols = 4
-				}
-			}
-			2{
-				detail {
-					cols = 2
-				}
-			}
-			3{
-				detail {
-					cols = 1
-				}
-			}
-		}
-	}
+  view {
+    templateRootPaths {
+      0 = EXT:news/Resources/Private/Templates/
+      1 = EXT:bulma_package/Resources/Private/Templates/News/
+      2 = {$plugin.tx_news.view.bulma.templateRootPath}
+    }
+    partialRootPaths {
+      0 = EXT:news/Resources/Private/Partials/
+      # To be able to use our owns content elements partials within EXT:news
+      1 = EXT:bulma_package/Resources/Private/Partials/ContentElements/
+      2 = {$plugin.bulma_package_contentelements.view.partialRootPath}
+      3 = EXT:bulma_package/Resources/Private/Partials/News/
+      4 = {$plugin.tx_news.view.bulma.partialRootPath}
+    }
+    widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:bulma_package/Resources/Private/Templates/News/
+  }
+  settings {
+    displayDummyIfNoMedia = 0
+    list {
+      titleClasses = {$plugin.tx_news.settings.list.titleClasses}
+      subtitleClasses = {$plugin.tx_news.settings.list.subtitleClasses}
+      media {
+        dummyImage = EXT:news/Resources/Public/Images/dummy-preview-image.png
+      }
+      paginate {
+        insertAbove = 0
+        additionalClasses = {$plugin.tx_news.settings.list.paginate.additionalClasses}
+      }
+      showIcons = {$plugin.tx_news.settings.list.showIcons}
+      linkCategories = {$plugin.tx_news.settings.list.linkCategories}
+      linkTags = {$plugin.tx_news.settings.list.linkTags}
+    }
+    detail {
+      showIcons = {$plugin.tx_news.settings.detail.showIcons}
+      linkCategories = {$plugin.tx_news.settings.detail.linkCategories}
+      linkTags = {$plugin.tx_news.settings.detail.linkTags}
+      gallery {
+        cols = 6
+        lightbox = 1
+      }
+      uploads {
+        showDescription = 1
+        showFilesize = 1
+        # 1 : with file icon
+        # 2 : with preview if possible
+        previewType = 2
+      }
+    }
+    header < lib.contentElement.settings.header
+    subheader < lib.contentElement.settings.subheader
+    gallery < lib.contentElement.settings.gallery
+    lightbox < lib.contentElement.settings.lightbox
+    uploads < lib.contentElement.settings.uploads
+    responsiveimages {
+      variants < lib.contentElement.settings.responsiveimages.variants
+      list {
+        1 {
+          class = is-12
+        }
+        2 {
+          class = is-6-desktop is-6-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.5
+            widescreen = 0.5
+            desktop = 0.5
+            tablet = 0.5
+            mobile = 0.5
+          }
+          gutters {
+            default = 24
+            widescreen = 24
+            desktop = 24
+            tablet = 24
+            mobile = 24
+          }
+        }
+        3 {
+          class = is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.3333
+            widescreen = 0.3333
+            desktop = 0.3333
+            tablet = 0.5
+            mobile = 0.5
+          }
+          gutters {
+            default = 48
+            widescreen = 48
+            desktop = 48
+            tablet = 24
+            mobile = 24
+          }
+        }
+        4 {
+          class = is-3-widescreen is-4-desktop is-6-tablet is-6-mobile is-12-mobile-small
+          multiplier {
+            default = 0.25
+            widescreen = 0.25
+            desktop = 0.3333
+            tablet = 0.5
+            mobile = 0.5
+          }
+          gutters {
+            default = 72
+            widescreen = 72
+            desktop = 48
+            tablet = 24
+            mobile = 24
+          }
+        }
+      }
+    }
+    layouts {
+      default {
+        list {
+          wrapperCssClasses = news-list-view columns is-multiline is-mobile
+          itemPartial = Item
+        }
+        detail {
+          cols = 3
+          extraCssClasses = column
+        }
+      }
+      carousel {
+        list {
+          wrapperCssClasses = news-list-view carousel
+          itemPartial = ItemCarousel
+          data {
+            autoplay = 3000
+            pagedots = true
+            cellalign = left
+            prevnextbuttons = true
+            wraparound = true
+          }
+          subtitleClasses = 
+        }
+        detail {
+          cols = 1
+          extraCssClasses = carousel-item image has-1 has-1-tablet has-1-mobile is-3by1 is-3by1-tablet is-3by2-mobile
+        }
+      }
+      1 {
+        detail {
+          cols = 4
+        }
+      }
+      2 {
+        detail {
+          cols = 2
+        }
+      }
+      3 {
+        detail {
+          cols = 1
+        }
+      }
+    }
+  }
 }
 
 # Improved back links
 # https://docs.typo3.org/p/georgringer/news/master/en-us/AdministratorManual/Templates/Snippets/Index.html#improved-back-links
 page.includeJSFooterlibs {
-	bulma_news = EXT:bulma_package/Resources/Public/Build/bulma.news.min.js
+  bulma_news = EXT:bulma_package/Resources/Public/Build/bulma.news.min.js
 }
 
 # Fake breadcrumb entry on news detail page
 # https://docs.typo3.org/p/georgringer/news/7.3/en-us/Misc/Changelog/7-2-0.html?highlight=addnewstomenuprocessor#id5
-page.10.dataProcessing{
-	50 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
-	50.menus = breadcrumb
+page.10.dataProcessing {
+  50 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+  50.menus = breadcrumb
 }

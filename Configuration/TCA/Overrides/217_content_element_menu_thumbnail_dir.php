@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.thumbnail_dir',
         'value' => 'menu_thumbnail_dir',
-        'icon' => 'content-menu-thumbnail'
+        'icon' => 'content-menu-thumbnail',
     ],
     'menu_thumbnail_list',
     'after'
@@ -66,7 +67,7 @@ $GLOBALS['TCA']['tt_content']['types']['menu_thumbnail_dir'] = array_replace_rec
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ]
 );
 

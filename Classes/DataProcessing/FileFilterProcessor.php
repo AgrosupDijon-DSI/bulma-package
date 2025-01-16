@@ -76,14 +76,14 @@ class FileFilterProcessor implements DataProcessorInterface
             'media' => $confVars['SYS']['mediafile_ext'] ?? 'gif,jpg,jpeg,bmp,png,pdf,svg,ai,mp3,wav,mp4,ogg,flac,opus,webm,youtube,vimeo',
             'text' => $confVars['SYS']['textfile_ext'] ?? 'txt,ts,typoscript,html,htm,css,tmpl,js,sql,xml,csv,xlf,yaml,yml',
         ];
-        $predefinedList = (string) $cObj->stdWrapValue('predefinedList', $processorConfiguration, 'image');
+        $predefinedList = (string)$cObj->stdWrapValue('predefinedList', $processorConfiguration, 'image');
         $allowedFileExtensions = array_key_exists($predefinedList, $predefinedLists) ? $predefinedLists[$predefinedList] : '';
-        $allowedFileExtensions = GeneralUtility::trimExplode(',', (string) $cObj->stdWrapValue('allowedFileExtensions', $processorConfiguration, $allowedFileExtensions));
+        $allowedFileExtensions = GeneralUtility::trimExplode(',', (string)$cObj->stdWrapValue('allowedFileExtensions', $processorConfiguration, $allowedFileExtensions));
         if (empty($allowedFileExtensions)) {
             return $processedData;
         }
 
-        $variableName = (string) $cObj->stdWrapValue('variableName', $processorConfiguration, 'files');
+        $variableName = (string)$cObj->stdWrapValue('variableName', $processorConfiguration, 'files');
         if (!isset($processedData[$variableName]) || count($processedData[$variableName]) === 0) {
             return $processedData;
         }

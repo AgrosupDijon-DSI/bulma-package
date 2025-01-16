@@ -4,36 +4,36 @@
 
 @import 'EXT:indexed_search/Configuration/TypoScript/setup.typoscript'
 plugin.tx_indexedsearch {
-    view {
-        templateRootPaths {
-            20 = EXT:bulma_package/Resources/Private/Templates/IndexedSearch/
-            21 = {$plugin.bulma_package.view.templateRootPath}IndexedSearch/
-        }
-        partialRootPaths {
-            20 = EXT:bulma_package/Resources/Private/Partials/IndexedSearch/
-            21 = {$plugin.bulma_package.view.partialRootPath}IndexedSearch/
-        }
-        layoutRootPaths {
-            20 = EXT:bulma_package/Resources/Private/Layouts/IndexedSearch/
-            21 = {$plugin.bulma_package.view.layoutRootPath}IndexedSearch/
-        }
+  view {
+    templateRootPaths {
+      20 = EXT:bulma_package/Resources/Private/Templates/IndexedSearch/
+      21 = {$plugin.bulma_package.view.templateRootPath}IndexedSearch/
     }
-    settings{
-        results{
-            titleCropAfter = 150
-            summaryCropAfter = 400
-        }
-        blind{
-            numberOfResults = 10,20,25,50,100
-        }
-        bulma{
-            showPercentage = 1
-            showSize = 1
-            showCreated = 1
-            showModified = 1
-            showPath = 1
-        }
+    partialRootPaths {
+      20 = EXT:bulma_package/Resources/Private/Partials/IndexedSearch/
+      21 = {$plugin.bulma_package.view.partialRootPath}IndexedSearch/
     }
+    layoutRootPaths {
+      20 = EXT:bulma_package/Resources/Private/Layouts/IndexedSearch/
+      21 = {$plugin.bulma_package.view.layoutRootPath}IndexedSearch/
+    }
+  }
+  settings {
+    results {
+      titleCropAfter = 150
+      summaryCropAfter = 400
+    }
+    blind {
+      numberOfResults = 10,20,25,50,100
+    }
+    bulma {
+      showPercentage = 1
+      showSize = 1
+      showCreated = 1
+      showModified = 1
+      showPath = 1
+    }
+  }
 }
 
 page.10.settings.searchParams < plugin.tx_indexedsearch.settings.defaultOptions

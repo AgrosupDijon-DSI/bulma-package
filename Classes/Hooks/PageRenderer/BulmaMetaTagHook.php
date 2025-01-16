@@ -10,6 +10,7 @@
 namespace AgrosupDijon\BulmaPackage\Hooks\PageRenderer;
 
 use Doctrine\DBAL\Exception;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
@@ -20,14 +21,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class BulmaMetaTagHook
 {
-
     /**
-     * @return void
      * @throws Exception
      */
     public function execute(): void
     {
-        if (ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend() === false) {
+        if (!($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface ||
+            !ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()) {
             return;
         }
 
@@ -37,7 +37,7 @@ class BulmaMetaTagHook
             ->from('tx_bulmapackage_meta_tags')
             ->executeQuery();
 
-        foreach ($result->fetchAllAssociative()  as $meta){
+        foreach ($result->fetchAllAssociative() as $meta) {
             $manager = $metaTagManagerRegistry->getManagerForProperty($meta['name']);
             $manager->addProperty($meta['name'], $meta['content']);
         }

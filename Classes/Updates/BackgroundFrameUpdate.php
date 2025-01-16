@@ -12,9 +12,9 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
-use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 
 /**
  * Create search page and indexed_search plugin
@@ -55,7 +55,7 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 
@@ -68,12 +68,16 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->update('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter(""))
+                $queryBuilder->expr()->eq(
+                    'background_frame',
+                    $queryBuilder->createNamedParameter('')
+                )
             )
             ->andWhere(
-                $queryBuilder->expr()->neq('background_color_class',
-                    $queryBuilder->createNamedParameter("none"))
+                $queryBuilder->expr()->neq(
+                    'background_color_class',
+                    $queryBuilder->createNamedParameter('none')
+                )
             )
             ->set('background_frame', 'expanded')
             ->executeStatement();
@@ -82,12 +86,16 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->update('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter(""))
+                $queryBuilder->expr()->eq(
+                    'background_frame',
+                    $queryBuilder->createNamedParameter('')
+                )
             )
             ->andWhere(
-                $queryBuilder->expr()->eq('background_color_class',
-                    $queryBuilder->createNamedParameter("none"))
+                $queryBuilder->expr()->eq(
+                    'background_color_class',
+                    $queryBuilder->createNamedParameter('none')
+                )
             )
             ->set('background_frame', 'limited')
             ->executeStatement();
@@ -107,8 +115,10 @@ class BackgroundFrameUpdate implements UpgradeWizardInterface
         $result = $queryBuilder->select('uid')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('background_frame',
-                    $queryBuilder->createNamedParameter(""))
+                $queryBuilder->expr()->eq(
+                    'background_frame',
+                    $queryBuilder->createNamedParameter('')
+                )
             )
             ->executeQuery();
 

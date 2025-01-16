@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -23,17 +25,11 @@ class LightboxViewHelper extends AbstractTagBasedViewHelper
      */
     protected $tagName = 'a';
 
-    /**
-     * @return void
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
-        $this->registerUniversalTagAttributes();
-        $this->registerTagAttribute('rel', 'string', 'Specifies the relationship between the current document and the linked document', false);
 
         $this->registerArgument('caption', 'string', 'Specifies an caption text', false);
-
         $this->registerArgument('image', 'object', 'image', true);
         $this->registerArgument('crop', 'string|bool', 'overrule cropping of image (setting to FALSE disables the cropping set in FileReference)');
         $this->registerArgument('cropVariant', 'string', 'select a cropping variant, in case multiple croppings have been specified or stored in FileReference', false, 'default');

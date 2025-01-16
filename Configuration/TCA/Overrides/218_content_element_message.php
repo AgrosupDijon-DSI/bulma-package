@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message',
         'value' => 'message',
-        'icon' => 'content-panel'
+        'icon' => 'content-panel',
     ],
     'tab',
     'after'
@@ -67,10 +68,10 @@ $GLOBALS['TCA']['tt_content']['types']['message'] = array_replace_recursive(
             'bodytext' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel',
                 'config' => [
-                    'enableRichtext' => true
-                ]
-            ]
-        ]
+                    'enableRichtext' => true,
+                ],
+            ],
+        ],
     ]
 );
 
@@ -88,10 +89,10 @@ $additionalColumns = [
                 ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.warning', 'value' => 'is-warning'],
                 ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.danger', 'value' => 'is-danger'],
                 ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.light', 'value' => 'is-light'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'value' => 'is-dark']
+                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'value' => 'is-dark'],
             ],
         ],
-    ]
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);

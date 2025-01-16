@@ -3,30 +3,30 @@
 #######################################################
 
 lib.bulmaPackage.codeAnalytics =< lib.bulmaPackageSetting
-lib.bulmaPackage.codeAnalytics{
+lib.bulmaPackage.codeAnalytics {
 
-    #############################
-    ### CONTENT OBJECT FIELDS ###
-    #############################
-    select.selectFields = code_analytics, sys_language_uid, l10n_parent
+  #############################
+  ### CONTENT OBJECT FIELDS ###
+  #############################
+  select.selectFields = code_analytics, sys_language_uid, l10n_parent
 
-    renderObj {
-        ################
-        ### TEMPLATE ###
-        ################
-        templateName = Analytics
+  renderObj {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Analytics
 
-        ##########################
-        ### DATA PREPROCESSING ###
-        ##########################
-        dataProcessing {
-            10 = split
-            10 {
-                delimiter = ,
-                fieldName = code_analytics
-                as = trackingCodes
-                removeEmptyEntries = 1
-            }
-        }
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+      10 = split
+      10 {
+        delimiter = ,
+        fieldName = code_analytics
+        as = trackingCodes
+        removeEmptyEntries = 1
+      }
     }
+  }
 }

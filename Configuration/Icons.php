@@ -138,5 +138,5 @@ return [
     'content-bulmapackage-color' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/palette.svg',
-    ]
+    ],
 ];

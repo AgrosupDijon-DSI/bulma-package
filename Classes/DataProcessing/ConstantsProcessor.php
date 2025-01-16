@@ -9,10 +9,10 @@
 
 namespace AgrosupDijon\BulmaPackage\DataProcessing;
 
-use TYPO3\CMS\Core\Http\ServerRequest;
-use TYPO3\CMS\Core\TypoScript\FrontendTypoScript;
+use AgrosupDijon\BulmaPackage\Utility\TypoScriptUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
+use TYPO3\CMS\Frontend\ContentObject\Exception\ContentRenderingException;
 
 /**
  * Minimal TypoScript configuration
@@ -33,78 +33,32 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class ConstantsProcessor implements DataProcessorInterface
 {
     /**
-     * @param ContentObjectRenderer $cObj The data of the content element or page
-     * @param array $contentObjectConfiguration The configuration of Content Object
-     * @param array $processorConfiguration The configuration of this processor
-     * @param array $processedData Key/value store of processed data (e.g. to be passed to a Fluid View)
-     * @return array the processed data as key/value store
+     * @param ContentObjectRenderer $cObj
+     * @param array $contentObjectConfiguration
+     * @param array $processorConfiguration
+     * @param array $processedData
+     * @return array
+     * @throws ContentRenderingException
      */
-    public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)
+    public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
     {
         // The key to process
-        $key = (string) $cObj->stdWrapValue('key', $processorConfiguration);
-        if (empty($key)) {
+        $key = (string)$cObj->stdWrapValue('key', $processorConfiguration);
+        if ($key === '') {
             $key = 'page';
         }
 
-        $settings = $this->getSettings($key);
+        $constants = TypoScriptUtility::getConstantsByPrefix($cObj->getRequest(), $key);
+        $constants = TypoScriptUtility::unflatten($constants);
 
         // Set the target variable
         $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration);
-        if (!empty($targetVariableName)) {
-            $processedData[$targetVariableName] = $settings;
+        if ($targetVariableName !== '') {
+            $processedData[$targetVariableName] = $constants;
         } else {
-            $processedData['constants'] = $settings;
+            $processedData['constants'] = $constants;
         }
 
         return $processedData;
-    }
-
-    protected function getSettings(string $key): array
-    {
-        $settings = $flatSettings = [];
-        $prefix = $key . '.';
-
-        /** @var FrontendTypoScript $frontendTyposcript */
-        $frontendTyposcript = $this->getRequest()->getAttribute('frontend.typoscript');
-
-        if($frontendTyposcript->hasSetup()){
-            $flatSettings = array_filter($frontendTyposcript->getFlatSettings(), function ($key) use ($prefix) {
-                return str_starts_with($key, $prefix);
-            }, ARRAY_FILTER_USE_KEY);
-        }
-
-        foreach ($flatSettings as $key => $value){
-            $this->array_set($settings, substr($key, strlen($prefix)), $value);
-        }
-
-        return $settings;
-    }
-
-    protected function array_set(array &$array, string $key, mixed $value): array
-    {
-        $keys = explode('.', $key);
-
-        while (count($keys) > 1) {
-            $key = array_shift($keys);
-
-            // If the key doesn't exist at this depth, we will just create an empty array
-            // to hold the next value, allowing us to create the arrays to hold final
-            // values at the correct depth. Then we'll keep digging into the array.
-            if (! isset($array[$key]) || ! is_array($array[$key])) {
-                $array[$key] = [];
-            }
-
-            $array = &$array[$key];
-        }
-
-        $array[array_shift($keys)] = $value;
-
-        return $array;
-    }
-
-    protected function getRequest(): ServerRequest
-    {
-        return $GLOBALS['TYPO3_REQUEST'];
     }
 }

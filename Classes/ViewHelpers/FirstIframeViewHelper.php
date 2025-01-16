@@ -11,55 +11,39 @@ namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * FirstIframeViewHelper
  */
 class FirstIframeViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeChildren = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeOutput = false;
 
-    /**
-     * @return void
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('serviceName', 'string', 'Name of service, for usage with Consent Manager');
     }
 
-
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     *
-     * @return false|string
-     */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public function render(): string|false
     {
         $dom = new \DOMDocument();
-
         try {
-            $dom->loadHTML($renderChildrenClosure());
+            $dom->loadHTML($this->renderChildren());
         } catch (\Exception $e) {
-            $headerLabel = LocalizationUtility::translate('tt_content.iframe.invalidHtml', 'bulma_package');
+            $headerLabel = LocalizationUtility::translate('tt_content.iframe.invalidHtml', 'BulmaPackage');
             $errorMessage = '';
 
-            if ($error = libxml_get_last_error()){
-                $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'bulma_package') . '<strong>'. $error->message .'</strong></div>';
+            if ($error = libxml_get_last_error()) {
+                $errorMessage = '<div class="message-body">' . LocalizationUtility::translate('tt_content.iframe.error', 'BulmaPackage') . '<strong>' . $error->message . '</strong></div>';
             }
             $bulmaMessage = <<<EOD
 <div class="message is-danger">
@@ -69,25 +53,22 @@ class FirstIframeViewHelper extends AbstractViewHelper
 EOD;
             return $bulmaMessage;
         }
-
         $iframe = $dom->getElementsByTagName('iframe')->item(0);
-
         // Render only 1st iframe found
         if ($iframe instanceof \DOMElement) {
             $iframe->removeAttribute('width');
             $iframe->removeAttribute('height');
 
-            if(!empty($arguments['serviceName'])){
-                if($iframe->hasAttribute('src')){
+            if (!empty($this->arguments['serviceName'])) {
+                if ($iframe->hasAttribute('src')) {
                     $iframe->setAttribute('data-src', $iframe->getAttribute('src'));
                     $iframe->removeAttribute('src');
                 }
-                $iframe->setAttribute('data-name', $arguments['serviceName']);
+                $iframe->setAttribute('data-name', $this->arguments['serviceName']);
             }
 
             return $iframe->C14N();
-        } else {
-            return false;
         }
+        return false;
     }
 }

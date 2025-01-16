@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -42,6 +44,7 @@ class ScssParser extends AbstractParser
         $cacheIdentifier = $this->getCacheIdentifier($file, $settings);
         $cacheFile = $this->getCacheFile($cacheIdentifier, $settings['cache']['tempDirectory']);
         $cacheFileMeta = $this->getCacheFileMeta($cacheFile);
+        $cacheFileMap = $this->getCacheFileMap($cacheFile);
         $compile = false;
 
         if (!$this->isCached($file, $settings)
@@ -51,7 +54,18 @@ class ScssParser extends AbstractParser
 
         if ($compile) {
             $result = $this->parseFile($file, $settings);
-            GeneralUtility::writeFile(GeneralUtility::getFileAbsFileName($cacheFile), $result['css']);
+            if ($settings['options']['sourceMap']) {
+                // Write css file and append reference to source map file
+                GeneralUtility::writeFile(
+                    GeneralUtility::getFileAbsFileName($cacheFile),
+                    sprintf('%s /*# sourceMappingURL=%s */', $result['css'], basename($cacheFileMap))
+                );
+                // Write map file
+                GeneralUtility::writeFile(GeneralUtility::getFileAbsFileName($cacheFileMap), $result['sourceMap']);
+            } else {
+                // Write css file
+                GeneralUtility::writeFile(GeneralUtility::getFileAbsFileName($cacheFile), $result['css']);
+            }
             GeneralUtility::writeFile(GeneralUtility::getFileAbsFileName($cacheFileMeta), serialize($result['cache']));
             $this->clearPageCaches();
         }
@@ -70,10 +84,11 @@ class ScssParser extends AbstractParser
         $scss->setOutputStyle(OutputStyle::COMPRESSED);
         $scss->addVariables($settings['variables']);
         if ($settings['options']['sourceMap']) {
-            $scss->setSourceMap(Compiler::SOURCE_MAP_INLINE);
+            $scss->setSourceMap(Compiler::SOURCE_MAP_FILE);
             $scss->setSourceMapOptions([
                 'sourceMapRootpath' => $settings['cache']['tempDirectoryRelativeToRoot'],
-                'sourceMapBasepath' => '<PATH DOES NOT EXIST BUT SUPRESSES WARNINGS>'
+                'sourceMapBasepath' => Environment::getProjectPath(),
+                'outputSourceFiles' => true,
             ]);
         }
         $absoluteFilename = $settings['file']['absolute'];
@@ -92,7 +107,7 @@ class ScssParser extends AbstractParser
             $full = GeneralUtility::getFileAbsFileName(PathUtility::getCanonicalPath($fileName));
             // The API forces us to check the existence of files paths, with or without url.
             // We must only return a string if the file to be imported actually exists.
-            $hasExtension = (bool) preg_match('/[.]s?css$/', $url);
+            $hasExtension = (bool)preg_match('/[.]s?css$/', $url);
             if (
                 is_file($file = $full . '.scss') ||
                 ($hasExtension && is_file($file = $full))
@@ -120,7 +135,7 @@ class ScssParser extends AbstractParser
                 $relativeFilePath,
                 $absoluteBulmaPackageThemePath,
                 $relativeBulmaPackageThemePath
-            ) : array {
+            ): array {
                 $marker = $args[0][1];
                 $args[0][1] = '';
                 $result = $scss->compileValue($args[0]);
@@ -139,18 +154,19 @@ class ScssParser extends AbstractParser
             ['args']
         );
 
-        // Compile file
-        $compilationResult = $scss->compileString('@import "' . $absoluteFilename . '"');
+        // Compile file. Second parameter is needed for source mapping
+        $compilationResult = $scss->compileString('@import "' . $absoluteFilename . '"', $absoluteFilename);
         $css = $compilationResult->getCss();
 
         // Fix paths in url() statements to be relative to temp directory
         $relativeTempPath = $settings['cache']['tempDirectoryRelativeToRoot'];
         $search = '%url\s*\(\s*[\\\'"]?(?!(((?:https?:)?\/\/)|(?:data:?:)))([^\\\'")]+)[\\\'"]?\s*\)%';
         $replace = 'url("' . $relativeTempPath . '$3")';
-        $css = (string) preg_replace($search, $replace, $css);
+        $css = (string)preg_replace($search, $replace, $css);
 
         return [
             'css' => $css,
+            'sourceMap' => $compilationResult->getSourceMap(),
             'cache' => [
                 'version' => Version::VERSION,
                 'date' => date('r'),
@@ -158,8 +174,8 @@ class ScssParser extends AbstractParser
                 'etag' => md5($css),
                 'files' => $compilationResult->getIncludedFiles(),
                 'variables' => $settings['variables'],
-                'sourceMap' => $settings['options']['sourceMap']
-            ]
+                'sourceMap' => $settings['options']['sourceMap'],
+            ],
         ];
     }
 }

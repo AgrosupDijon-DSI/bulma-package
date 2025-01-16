@@ -69,7 +69,7 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
         $result = $queryBuilder->count('uid')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter("accordion"))
+                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('accordion'))
             )
             ->andWhere(
                 $queryBuilder->expr()->gt('tx_bootstrappackage_accordion_item', 0)
@@ -88,7 +88,7 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 
@@ -104,7 +104,7 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
         $result = $queryBuilder->select('uid', 'tx_bootstrappackage_accordion_item')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter("accordion"))
+                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('accordion'))
             )
             ->andWhere(
                 $queryBuilder->expr()->gt('tx_bootstrappackage_accordion_item', 0)
@@ -114,7 +114,7 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
             )
             ->executeQuery();
 
-        foreach ($result->fetchAllAssociative() as $accordionContent){
+        foreach ($result->fetchAllAssociative() as $accordionContent) {
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bootstrappackage_accordion_item');
             $result = $queryBuilder->select('*')
                 ->from('tx_bootstrappackage_accordion_item')
@@ -123,7 +123,7 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
                 )
                 ->executeQuery();
 
-            foreach ($result->fetchAllAssociative() as $bootstrapAccordionItem){
+            foreach ($result->fetchAllAssociative() as $bootstrapAccordionItem) {
                 $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
                 $connection = $connectionPool->getConnectionForTable('tx_bulmapackage_accordion_item');
                 $connection->insert(
@@ -133,10 +133,10 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
                         'title' => $bootstrapAccordionItem['header'],
                         'sorting' => $bootstrapAccordionItem['sorting'],
                         'tt_content' => $bootstrapAccordionItem['tt_content'],
-                        'record' => 1
+                        'record' => 1,
                     ]
                 );
-                $uidBulmaAccordionItemUid = (int)$connection->lastInsertId('tx_bulmapackage_accordion_item');
+                $uidBulmaAccordionItemUid = (int)$connection->lastInsertId();
 
                 $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
                 $connection = $connectionPool->getConnectionForTable('tt_content');
@@ -151,7 +151,7 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
                         'imageorient' => $this->imageOrient[$bootstrapAccordionItem['mediaorient']],
                         'imagecols' => $bootstrapAccordionItem['imagecols'],
                         'image_zoom' => $bootstrapAccordionItem['image_zoom'],
-                        'tx_bulmapackage_accordion_item_parent' => $uidBulmaAccordionItemUid
+                        'tx_bulmapackage_accordion_item_parent' => $uidBulmaAccordionItemUid,
                     ]
                 );
             }

@@ -1,7 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileType;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -52,11 +52,11 @@ return [
         ],
         'security' => [
             'ignorePageTypeRestriction' => true,
-        ]
+        ],
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;;link,--palette--;;hiddenLanguagePalette'
+            'showitem' => '--palette--;;link,--palette--;;hiddenLanguagePalette',
         ],
     ],
     'palettes' => [
@@ -66,7 +66,7 @@ return [
                 link,--linebreak--,
                 icon_custom,--linebreak--,
                 icon, icon_file, standalone
-            '
+            ',
         ],
         // hidden but needs to be included all the time, so sys_language_uid is set correctly
         'hiddenLanguagePalette' => [
@@ -93,12 +93,12 @@ return [
             'config' => [
                 'type' => 'check',
                 'default' => 0,
-            ]
+            ],
         ],
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language']
+            'config' => ['type' => 'language'],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -114,13 +114,13 @@ return [
                 ],
                 'foreign_table' => 'tx_bulmapackage_settings_link_item',
                 'foreign_table_where' => 'AND tx_bulmapackage_settings_link_item.pid=###CURRENT_PID### AND tx_bulmapackage_settings_link_item.sys_language_uid IN (-1,0)',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'l10n_diffsource' => [
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'label' => [
             'exclude' => true,
@@ -129,7 +129,7 @@ return [
                 'type' => 'input',
                 'size' => 50,
                 'eval' => 'trim',
-                'required' => true
+                'required' => true,
             ],
         ],
         'link' => [
@@ -165,7 +165,7 @@ return [
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.map_marker', 'value' => 'fas fa-map-marker-alt', 'icon' => 'settings-bulmapackage-map-marker'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.book', 'value' => 'fas fa-book-open', 'icon' => 'settings-bulmapackage-book-open'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.student', 'value' => 'fas fa-user-graduate', 'icon' => 'settings-bulmapackage-user-graduate'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user', 'value' => 'fas fa-user','icon' =>  'settings-bulmapackage-user'],
+                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user', 'value' => 'fas fa-user', 'icon' =>  'settings-bulmapackage-user'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user-lock', 'value' => 'fas fa-user-lock', 'icon' => 'settings-bulmapackage-user-lock'],
                     ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.lock', 'value' => 'fas fa-lock', 'icon' => 'settings-bulmapackage-lock'],
                     ['label' => 'Facebook', 'value' => 'fab fa-facebook-f', 'icon' => 'settings-bulmapackage-facebook'],
@@ -192,40 +192,40 @@ return [
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
-                        File::FILETYPE_UNKNOWN => [
+                        FileType::UNKNOWN->value => [
                             'showitem' => '
                                     --palette--;;filePalette
-                                '
+                                ',
                         ],
-                        File::FILETYPE_TEXT => [
+                        FileType::TEXT->value => [
                             'showitem' => '
                                     --palette--;;filePalette
-                                '
+                                ',
                         ],
-                        File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '
                                 --palette--;;basicImageoverlayPaletteWithoutCrop,
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
-                        File::FILETYPE_AUDIO => [
+                        FileType::AUDIO->value => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
-                        File::FILETYPE_VIDEO => [
+                        FileType::VIDEO->value => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
-                        File::FILETYPE_APPLICATION => [
+                        FileType::APPLICATION->value => [
                             'showitem' => '
                                 --palette--;;filePalette
-                            '
+                            ',
                         ],
                     ],
                 ],

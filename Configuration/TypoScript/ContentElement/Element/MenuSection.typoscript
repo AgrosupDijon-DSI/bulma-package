@@ -6,55 +6,54 @@ tt_content.menu_section >
 tt_content.menu_section =< lib.contentElement
 tt_content.menu_section {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = MenuSection
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = MenuSection
 
-    ##########################
-    ### DATA PREPROCESSING ###
-    ##########################
-    dataProcessing {
-        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-        10 {
-            special = list
-            special {
-                value {
-                    field = pages
-                    override {
-                        data = page:uid
-                        if {
-                            isFalse.field = pages
-                        }
-                    }
-                }
-            }
-            includeNotInMenu = 1
-            dataProcessing {
-                10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-                10 {
-                    table = tt_content
-                    pidInList.field = uid
-                    as = content
-                    where = sectionIndex = 1 AND CType != "menu_section"
-                    orderBy = sorting
-                }
-            }
-        }
-        90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-        90 {
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    10 {
+      special = list
+      special {
+        value {
+          field = pages
+          override {
+            data = page:uid
             if {
-                isTrue.field = accessibility_bypass
+              isFalse.field = pages
             }
-            table = tt_content
-            pidInList = this
-            orderBy = sorting
-            max = 1
-            where {
-                dataWrap = colPos = {field:colPos} AND sorting > {field:sorting}
-            }
-            as = nextContentElement
+          }
         }
+      }
+      includeNotInMenu = 1
+      dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        10 {
+          table = tt_content
+          pidInList.field = uid
+          as = content
+          where = sectionIndex = 1 AND CType != "menu_section"
+          orderBy = sorting
+        }
+      }
     }
-
+    90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    90 {
+      if {
+        isTrue.field = accessibility_bypass
+      }
+      table = tt_content
+      pidInList = this
+      orderBy = sorting
+      max = 1
+      where {
+        dataWrap = colPos = {field:colPos} AND sorting > {field:sorting}
+      }
+      as = nextContentElement
+    }
+  }
 }

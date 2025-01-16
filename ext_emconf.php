@@ -13,9 +13,9 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '12.4.0-12.4.99',
+            'typo3' => '13.4.0-13.4.99',
             'rte_ckeditor' => '12.4.0-12.4.99',
-            'seo' => '12.4.0-12.4.99'
+            'seo' => '12.4.0-12.4.99',
         ],
         'conflicts' => [
             'css_styled_content' => '*',
@@ -29,11 +29,11 @@ $EM_CONF[$_EXTKEY] = [
             'news' => '11.0.0-11.99.99',
             'gridelements' => '',
             'container' => '',
-        ]
+        ],
     ],
     'autoload' => [
         'psr-4' => [
-            'AgrosupDijon\\BulmaPackage\\' => 'Classes'
+            'AgrosupDijon\\BulmaPackage\\' => 'Classes',
         ],
     ],
     'state' => 'stable',

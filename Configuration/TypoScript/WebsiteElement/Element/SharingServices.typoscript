@@ -3,70 +3,69 @@
 ####################################################
 
 lib.bulmaPackage.sharingServices =< lib.bulmaPackageSetting
-lib.bulmaPackage.sharingServices{
+lib.bulmaPackage.sharingServices {
 
-    ##############
-    ### FIELDS ###
-    ##############
-    select.selectFields = sharing_services, sys_language_uid, l10n_parent
+  ##############
+  ### FIELDS ###
+  ##############
+  select.selectFields = sharing_services, sys_language_uid, l10n_parent
 
-    renderObj {
-        ################
-        ### TEMPLATE ###
-        ################
-        templateName = SocialMediaButtons
+  renderObj {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = SocialMediaButtons
 
-        ################
-        ### SETTINGS ###
-        ################
-        settings {
-            wrapperClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperClasses}
-            wrapperExtraClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperExtraClasses}
-            titleClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.titleClasses}
-            services{
-                common{
-                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.linkClasses}
-                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.iconClasses}
-                }
-                facebook {
-                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.facebook.linkClasses}
-                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.facebook.iconClasses}
-                }
-                twitter {
-                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.twitter.linkClasses}
-                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.twitter.iconClasses}
-                }
-                linkedin {
-                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.linkedin.linkClasses}
-                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.linkedin.iconClasses}
-                }
-                email {
-                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.email.linkClasses}
-                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.email.iconClasses}
-                }
-                print {
-                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.print.linkClasses}
-                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.print.iconClasses}
-                }
-                copy-url {
-                    linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.copy-url.linkClasses}
-                    iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.copy-url.iconClasses}
-                }
-            }
-            defaultServices = {$plugin.bulma_package_websiteelements.socialMediaButtons.defaultServices}
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+      wrapperClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperClasses}
+      wrapperExtraClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.wrapperExtraClasses}
+      titleClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.titleClasses}
+      services {
+        common {
+          linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.linkClasses}
+          iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.common.iconClasses}
         }
-
-        ##########################
-        ### DATA PREPROCESSING ###
-        ##########################
-        dataProcessing {
-            10 = split
-            10 {
-                delimiter = ,
-                fieldName = sharing_services
-                as = services
-                removeEmptyEntries = 1
-            }
+        facebook {
+          linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.facebook.linkClasses}
+          iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.facebook.iconClasses}
         }
+        twitter {
+          linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.twitter.linkClasses}
+          iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.twitter.iconClasses}
+        }
+        linkedin {
+          linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.linkedin.linkClasses}
+          iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.linkedin.iconClasses}
+        }
+        email {
+          linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.email.linkClasses}
+          iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.email.iconClasses}
+        }
+        print {
+          linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.print.linkClasses}
+          iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.print.iconClasses}
+        }
+        copy-url {
+          linkClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.copy-url.linkClasses}
+          iconClasses = {$plugin.bulma_package_websiteelements.socialMediaButtons.services.copy-url.iconClasses}
+        }
+      }
+      defaultServices = {$plugin.bulma_package_websiteelements.socialMediaButtons.defaultServices}
     }
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+      10 = split
+      10 {
+        delimiter = ,
+        fieldName = sharing_services
+        as = services
+        removeEmptyEntries = 1
+      }
+    }
+  }
 }

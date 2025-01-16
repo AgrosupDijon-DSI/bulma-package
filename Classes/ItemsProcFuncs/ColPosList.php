@@ -39,7 +39,7 @@ class ColPosList
                 [
                     'label' => $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tt_content.colPos.nestedContentColPos'),
                     'value' => 999,
-                    'icon' => null
+                    'icon' => null,
                 ],
             ];
 

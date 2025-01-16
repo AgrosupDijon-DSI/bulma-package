@@ -32,7 +32,7 @@ return [
         'hideTable' => true,
         'security' => [
             'ignorePageTypeRestriction' => true,
-        ]
+        ],
     ],
     'types' => [
         '1' => [
@@ -48,19 +48,19 @@ return [
                 starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
                 endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel
             ',
-            'canNotCollapse' => 1
+            'canNotCollapse' => 1,
         ],
         'general' => [
             'showitem' => '
                 tt_content,
                 item_type;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType_formlabel,
-            '
+            ',
         ],
         'tab' => [
             'showitem' => '
                 title,--linebreak--,
                 record
-            '
+            ',
         ],
         'visibility' => [
             'showitem' => '
@@ -101,9 +101,9 @@ return [
         ],
         'l10n_diffsource' => [
             'config' => [
-                    'type' => 'passthrough',
-                ],
+                'type' => 'passthrough',
             ],
+        ],
         't3ver_label' => [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
             'config' => [
@@ -131,10 +131,10 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
-                'default' => 0
+                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'endtime' => [
             'exclude' => true,
@@ -147,7 +147,7 @@ return [
                 ],
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'tt_content' => [
             'config' => [
@@ -202,8 +202,8 @@ return [
                 'type' => 'inline',
                 'foreign_field' => 'tx_bulmapackage_tab_item_parent',
                 'foreign_match_fields' => [
-                    'tx_mask_content_role' => 'record'
-                ]
+                    'tx_mask_content_role' => 'record',
+                ],
             ],
             'exclude' => true,
             'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tab_item.record',

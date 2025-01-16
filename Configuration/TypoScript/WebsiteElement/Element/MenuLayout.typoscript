@@ -3,13 +3,13 @@
 ####################################################
 
 lib.bulmaPackage.menuLayout =< lib.bulmaPackageSetting
-lib.bulmaPackage.menuLayout{
+lib.bulmaPackage.menuLayout {
 
-    ##############
-    ### FIELDS ###
-    ##############
-    select.selectFields = menu_layout, sys_language_uid, l10n_parent
+  ##############
+  ### FIELDS ###
+  ##############
+  select.selectFields = menu_layout, sys_language_uid, l10n_parent
 
-    renderObj = TEXT
-    renderObj.value.field = menu_layout
+  renderObj = TEXT
+  renderObj.value.field = menu_layout
 }

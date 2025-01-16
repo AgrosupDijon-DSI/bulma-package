@@ -1,0 +1,3 @@
+
+# Remove "Save and create new" button for tx_bulmapackage_settings table
+options.saveDocNew.tx_bulmapackage_settings = 0

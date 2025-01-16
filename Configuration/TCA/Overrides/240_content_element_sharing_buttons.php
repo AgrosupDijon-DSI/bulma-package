@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
  *
@@ -26,7 +27,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     [
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.sharing_buttons',
         'value' => 'sharing_buttons',
-        'icon' => 'actions-share-alt'
+        'icon' => 'actions-share-alt',
     ],
     'thumbnail_group',
     'after'
@@ -69,9 +70,9 @@ $GLOBALS['TCA']['tt_content']['types']['sharing_buttons'] = array_replace_recurs
                 'description' => '',
                 'config' => [
                     'minitems' => 1,
-                ]
-            ]
-        ]
+                ],
+            ],
+        ],
     ]
 );
 
@@ -88,7 +89,7 @@ $additionalColumns = [
             'size' => 50,
             'max' => 255,
             'placeholder' => 'LLL:EXT:bulma_package/Resources/Private/Language/locallang.xlf:social_media_buttons.shareon.share',
-        ]
+        ],
     ],
 ];
 

@@ -55,7 +55,7 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 
@@ -69,8 +69,10 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->update('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('CType',
-                    $queryBuilder->createNamedParameter("media"))
+                $queryBuilder->expr()->eq(
+                    'CType',
+                    $queryBuilder->createNamedParameter('media')
+                )
             )
             ->set('CType', 'video')
             ->executeStatement();
@@ -90,8 +92,10 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
         $result = $queryBuilder->select('uid')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->eq('CType',
-                    $queryBuilder->createNamedParameter("media"))
+                $queryBuilder->expr()->eq(
+                    'CType',
+                    $queryBuilder->createNamedParameter('media')
+                )
             )
             ->executeQuery();
 

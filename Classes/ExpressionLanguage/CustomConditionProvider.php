@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package agrosup-dijon/bulma-package.
@@ -14,14 +15,15 @@ use TYPO3\CMS\Core\ExpressionLanguage\AbstractProvider;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * CustomTypoScriptConditionProvider
+ * CustomConditionProvider
  */
-class CustomTypoScriptConditionProvider extends AbstractProvider
+class CustomConditionProvider extends AbstractProvider
 {
     public function __construct()
     {
         $this->expressionLanguageVariables = [
             'extension' => GeneralUtility::makeInstance(ExtensionWrapper::class),
+            'extensionConfiguration' => GeneralUtility::makeInstance(ExtensionConfigurationWrapper::class),
         ];
     }
 }

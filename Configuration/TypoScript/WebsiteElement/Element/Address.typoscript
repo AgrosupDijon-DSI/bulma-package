@@ -5,15 +5,15 @@
 lib.bulmaPackage.address =< lib.bulmaPackageSetting
 lib.bulmaPackage.address {
 
-    ##############
-    ### FIELDS ###
-    ##############
-    select.selectFields = address_title, address, zip, city, country, phone, fax, email, latitude, longitude, sys_language_uid, l10n_parent
+  ##############
+  ### FIELDS ###
+  ##############
+  select.selectFields = address_title, address, zip, city, country, phone, fax, email, latitude, longitude, sys_language_uid, l10n_parent
 
-    renderObj {
-        ################
-        ### TEMPLATE ###
-        ################
-        templateName = Address
-    }
+  renderObj {
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Address
+  }
 }

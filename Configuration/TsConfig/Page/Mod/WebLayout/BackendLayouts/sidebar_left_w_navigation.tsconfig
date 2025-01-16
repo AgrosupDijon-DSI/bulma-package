@@ -2,50 +2,50 @@
 #### BACKENDLAYOUT: DEFAULT ####
 ################################
 mod {
-    web_layout {
-        BackendLayouts {
-            sidebar_left_w_navigation {
-                title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.sidebar_left_w_navigation
-                config {
-                    backend_layout {
-                        colCount = 4
-                        rowCount = 3
-                        rows {
-                            1{
-                                columns {
-                                    1 {
-                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.before_content
-                                        colPos = 3
-                                        colspan = 4
-                                    }
-                                }
-                            }
-                            2 {
-                                columns {
-                                    1 {
-                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.sidebar_w_navigation
-                                        colPos = 2
-                                    }
-                                    2 {
-                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.content
-                                        colPos = 0
-                                        colspan = 3
-                                    }
-                                }
-                            }
-                            3 {
-                                columns {
-                                    1 {
-                                        name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.after_content
-                                        colPos = 9
-                                        colspan = 4
-                                    }
-                                }
-                            }
-                        }
-                    }
+  web_layout {
+    BackendLayouts {
+      sidebar_left_w_navigation {
+        title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.sidebar_left_w_navigation
+        config {
+          backend_layout {
+            colCount = 4
+            rowCount = 3
+            rows {
+              1 {
+                columns {
+                  1 {
+                    name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.before_content
+                    colPos = 3
+                    colspan = 4
+                  }
                 }
+              }
+              2 {
+                columns {
+                  1 {
+                    name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.sidebar_w_navigation
+                    colPos = 2
+                  }
+                  2 {
+                    name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.content
+                    colPos = 0
+                    colspan = 3
+                  }
+                }
+              }
+              3 {
+                columns {
+                  1 {
+                    name = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:backend_layout.column.after_content
+                    colPos = 9
+                    colspan = 4
+                  }
+                }
+              }
             }
+          }
         }
+      }
     }
+  }
 }

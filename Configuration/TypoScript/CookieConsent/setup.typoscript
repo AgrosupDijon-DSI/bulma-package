@@ -2,10 +2,10 @@
 #### COOKIE CONSENT ####
 ########################
 [{$page.theme.cookieconsent.enable} == 1]
-    page {
-        includeJSFooterlibs {
-            contrib_cookieconsent = EXT:bulma_package/Resources/Public/Contrib/cookieconsent/cookieconsent.min.js
-            bulma_cookieconsent = EXT:bulma_package/Resources/Public/Build/bulma.cookieconsent.min.js
-        }
-    }
-[end]
+page {
+  includeJSFooterlibs {
+    contrib_cookieconsent = EXT:bulma_package/Resources/Public/Contrib/cookieconsent/cookieconsent.min.js
+    bulma_cookieconsent = EXT:bulma_package/Resources/Public/Build/bulma.cookieconsent.min.js
+  }
+}
+[global]

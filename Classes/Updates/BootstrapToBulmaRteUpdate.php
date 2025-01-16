@@ -56,7 +56,7 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
         '*' => [
             'text-center' => 'has-text-centered',
             'text-right' => 'has-text-right',
-        ]
+        ],
     ];
 
     /**
@@ -114,7 +114,7 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 

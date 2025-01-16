@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -10,27 +11,26 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\Controller;
 
-use Psr\Http\Message\ResponseInterface;
 use Doctrine\DBAL\Exception;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Backend\Attribute\AsController;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Template\Components\ButtonBar;
 use TYPO3\CMS\Backend\Template\ModuleTemplate;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
-use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
+use TYPO3\CMS\Core\Imaging\IconSize;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-/**
- *
- */
+#[AsController]
 class WebsiteModuleController extends ActionController
 {
     protected ModuleTemplate $moduleTemplate;
@@ -43,8 +43,7 @@ class WebsiteModuleController extends ActionController
         protected readonly ModuleTemplateFactory $moduleTemplateFactory,
         protected UriBuilder $backendUriBuilder,
         protected IconFactory $iconFactory
-    ) {
-    }
+    ) {}
 
     public function initializeAction(): void
     {
@@ -72,14 +71,13 @@ class WebsiteModuleController extends ActionController
 
         $this->moduleTemplate->assignMultiple([
             'pages' => $pages,
-            'languages' => $languages
+            'languages' => $languages,
         ]);
 
         $this->addMainMenu('overview');
         $this->configureCommonDocHeader('overview', $this->getLanguageService()->sL('LLL:EXT:backend/Resources/Private/Language/locallang_siteconfiguration_module.xlf:mlang_labels_tablabel'));
 
-
-        return $this->moduleTemplate->renderResponse();
+        return $this->moduleTemplate->renderResponse('WebsiteModule/Overview');
     }
 
     public function addMainMenu(string $currentAction): void
@@ -103,11 +101,11 @@ class WebsiteModuleController extends ActionController
         } catch (\Exception $e) {
             $bulmaPackageConfiguration = [
                 'disableCustomColorsAction' => false,
-                'disableMetaTagsAction' => false
+                'disableMetaTagsAction' => false,
             ];
         }
 
-        if(!$bulmaPackageConfiguration['disableCustomColorsAction']){
+        if (!$bulmaPackageConfiguration['disableCustomColorsAction']) {
             $menu->addMenuItem(
                 $menu->makeMenuItem()
                     ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title'))
@@ -116,7 +114,7 @@ class WebsiteModuleController extends ActionController
             );
         }
 
-        if(!$bulmaPackageConfiguration['disableMetaTagsAction']){
+        if (!$bulmaPackageConfiguration['disableMetaTagsAction']) {
             $menu->addMenuItem(
                 $menu->makeMenuItem()
                     ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title'))
@@ -134,7 +132,7 @@ class WebsiteModuleController extends ActionController
         $reloadButton = $buttonBar->makeLinkButton()
             ->setHref((string)$this->request->getAttribute('normalizedParams')?->getRequestUri())
             ->setTitle($this->getLanguageService()->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.reload'))
-            ->setIcon($this->iconFactory->getIcon('actions-refresh', Icon::SIZE_SMALL));
+            ->setIcon($this->iconFactory->getIcon('actions-refresh', IconSize::SMALL));
         $buttonBar->addButton($reloadButton, ButtonBar::BUTTON_POSITION_RIGHT);
         $shortcutButton = $buttonBar->makeShortcutButton()
             ->setRouteIdentifier('system_BulmaPackageWebsitesettings')
@@ -162,14 +160,14 @@ class WebsiteModuleController extends ActionController
         $this->configureCommonDocHeader('customColors', $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title'));
         $this->configureCustomColorsDocHeader();
 
-        return $this->moduleTemplate->renderResponse();
+        return $this->moduleTemplate->renderResponse('WebsiteModule/CustomColors');
     }
 
     protected function configureCustomColorsDocHeader(): void
     {
         $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
         $addCustomColorButton = $buttonBar->makeLinkButton()
-            ->setIcon($this->iconFactory->getIcon('actions-plus', Icon::SIZE_SMALL))
+            ->setIcon($this->iconFactory->getIcon('actions-plus', IconSize::SMALL))
             ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.color.create'))
             ->setShowLabelText(true)
             ->setHref((string)$this->backendUriBuilder->buildUriFromRoute('record_edit', [
@@ -198,14 +196,14 @@ class WebsiteModuleController extends ActionController
         $this->configureCommonDocHeader('metaTags', $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title'));
         $this->configureMetaTagsDocHeader();
 
-        return $this->moduleTemplate->renderResponse();
+        return $this->moduleTemplate->renderResponse('WebsiteModule/MetaTags');
     }
 
     protected function configureMetaTagsDocHeader(): void
     {
         $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
         $addMetaTagsButton = $buttonBar->makeLinkButton()
-            ->setIcon($this->iconFactory->getIcon('actions-plus', Icon::SIZE_SMALL))
+            ->setIcon($this->iconFactory->getIcon('actions-plus', IconSize::SMALL))
             ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.meta.create'))
             ->setShowLabelText(true)
             ->setHref((string)$this->backendUriBuilder->buildUriFromRoute('record_edit', [
@@ -251,8 +249,10 @@ class WebsiteModuleController extends ActionController
                 $queryBuilder->expr()->eq('is_siteroot', 1)
             )
             ->orWhere(
-                $queryBuilder->expr()->eq('module',
-                    $queryBuilder->createNamedParameter('tx_bulmapackage_settings'))
+                $queryBuilder->expr()->eq(
+                    'module',
+                    $queryBuilder->createNamedParameter('tx_bulmapackage_settings')
+                )
             )
             ->orderBy('pid')
             ->addOrderBy('sorting')

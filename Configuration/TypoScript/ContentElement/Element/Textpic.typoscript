@@ -6,52 +6,50 @@ tt_content.textpic >
 tt_content.textpic =< lib.contentElement
 tt_content.textpic {
 
-    ################
-    ### TEMPLATE ###
-    ################
-    templateName = TEXT
-    templateName.stdWrap.cObject = CASE
-    templateName.stdWrap.cObject {
-        key.field = imageorient
-        8 = TEXT
-        8.value = TextmediaBelow
-        17 = TEXT
-        17.value = TextmediaInTextRight
-        18 = TEXT
-        18.value = TextmediaInTextLeft
-        125 = TEXT
-        25 = TEXT
-        25.value = TextmediaRight
-        26 = TEXT
-        26.value = TextmediaLeft
-        125 = TEXT
-        125.value = TextmediaRight
-        126 = TEXT
-        126.value = TextmediaLeft
-        default = TEXT
-        default.value = TextmediaAbove
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = TEXT
+  templateName.stdWrap.cObject = CASE
+  templateName.stdWrap.cObject {
+    key.field = imageorient
+    8 = TEXT
+    8.value = TextmediaBelow
+    17 = TEXT
+    17.value = TextmediaInTextRight
+    18 = TEXT
+    18.value = TextmediaInTextLeft
+    125 = TEXT
+    25 = TEXT
+    25.value = TextmediaRight
+    26 = TEXT
+    26.value = TextmediaLeft
+    125 = TEXT
+    125.value = TextmediaRight
+    126 = TEXT
+    126.value = TextmediaLeft
+    default = TEXT
+    default.value = TextmediaAbove
+  }
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      references.fieldName = image
+      folders.field = file_folder
+      sorting.field = filelink_sorting
     }
-
-    ##########################
-    ### DATA PREPROCESSING ###
-    ##########################
-    dataProcessing {
-        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-        10 {
-            references.fieldName = image
-            folders.field = file_folder
-            sorting.field = filelink_sorting
-        }
-        20 = AgrosupDijon\BulmaPackage\DataProcessing\FileFilterProcessor
-        20 {
-            predefinedList = image
-        }
-        30 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
-        30 {
-            delimiter = ,
-            fieldName = table_class
-            as = layoutClasses
-        }
+    20 = AgrosupDijon\BulmaPackage\DataProcessing\FileFilterProcessor
+    20 {
+      predefinedList = image
     }
-
+    30 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+    30 {
+      delimiter = ,
+      fieldName = table_class
+      as = layoutClasses
+    }
+  }
 }
