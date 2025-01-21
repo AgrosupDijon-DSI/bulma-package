@@ -1,70 +1,73 @@
 {
-  "name": "agrosup-dijon/bulma-package",
-  "type": "typo3-cms-extension",
-  "description": "Bulma Package delivers a full configured frontend theme for TYPO3, based on the Bulma CSS Framework.",
-  "keywords": [
-    "TYPO3 CMS",
-    "bulma",
-    "responsive",
-    "frontend",
-    "theme",
-    "web"
-  ],
-  "homepage": "https://bulma-package.cnerta-web.fr/",
-  "authors": [
-    {
-      "name": "Sébastien Convers",
-      "email": "sebastien.convers@agrosupdijon.fr",
-      "role": "Developer",
-      "homepage": "https://cnerta-web.fr"
-    }
-  ],
-  "license": "GPL-2.0-or-later",
-  "require": {
-    "typo3/cms-backend": "^13.4",
-    "typo3/cms-core": "^13.4",
-    "typo3/cms-extbase": "^13.4",
-    "typo3/cms-extensionmanager": "^13.4",
-    "typo3/cms-fluid": "^13.4",
-    "typo3/cms-frontend": "^13.4",
-    "typo3/cms-install": "^13.4",
-    "typo3/cms-rte-ckeditor": "^13.4",
-    "typo3/cms-seo": "^13.4",
-    "scssphp/scssphp": "^1.13",
-    "ext-dom": "*",
-    "ext-simplexml": "*",
-    "symfony/dom-crawler": "^7.1",
-    "symfony/css-selector": "^7.1"
-  },
-  "suggest": {
-    "georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS",
-    "image_autoresize": "Let TYPO3 automatically resize down huge images/pictures on-the-fly during upload (or using a scheduler task for batch processing)",
-    "b13/container": "Create Custom Container Content Elements for TYPO3",
-    "gridelementsteam/gridelements": "Extends the grid-based concept known from the backend layout of pages to regular content elements"
-  },
-  "autoload": {
-    "psr-4": {
-      "AgrosupDijon\\BulmaPackage\\": "Classes"
-    }
-  },
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "bulma_package"
-    }
-  },
-  "scripts": {
-    "pre-archive-cmd": [
-      "@dependencies-for-ter"
-    ],
-    "dependencies-for-ter": [
-      "@composer install -d Resources/Private/Contrib/Php"
-    ]
-  },
-  "archive": {
-    "exclude": [
-      ".gitignore",
-      ".crowdin.yaml",
-      "node_modules"
-    ]
-  }
+	"name": "agrosup-dijon/bulma-package",
+	"type": "typo3-cms-extension",
+	"description": "Bulma Package delivers a full configured frontend theme for TYPO3, based on the Bulma CSS Framework.",
+	"keywords": [
+		"TYPO3 CMS",
+		"bulma",
+		"responsive",
+		"frontend",
+		"theme",
+		"web"
+	],
+	"homepage": "https://bulma-package.cnerta-web.fr/",
+	"authors": [
+		{
+			"name": "Sébastien Convers",
+			"email": "sebastien.convers@agrosupdijon.fr",
+			"role": "Developer",
+			"homepage": "https://cnerta-web.fr"
+		}
+	],
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"typo3/cms-backend": "^13.4",
+		"typo3/cms-core": "^13.4",
+		"typo3/cms-extbase": "^13.4",
+		"typo3/cms-extensionmanager": "^13.4",
+		"typo3/cms-fluid": "^13.4",
+		"typo3/cms-frontend": "^13.4",
+		"typo3/cms-install": "^13.4",
+		"typo3/cms-rte-ckeditor": "^13.4",
+		"typo3/cms-seo": "^13.4",
+		"scssphp/scssphp": "^1.13",
+		"ext-dom": "*",
+		"ext-simplexml": "*",
+		"symfony/dom-crawler": "^7.1",
+		"symfony/css-selector": "^7.1"
+	},
+	"suggest": {
+		"georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS",
+		"image_autoresize": "Let TYPO3 automatically resize down huge images/pictures on-the-fly during upload (or using a scheduler task for batch processing)",
+		"b13/container": "Create Custom Container Content Elements for TYPO3",
+		"gridelementsteam/gridelements": "Extends the grid-based concept known from the backend layout of pages to regular content elements"
+	},
+	"autoload": {
+		"psr-4": {
+			"AgrosupDijon\\BulmaPackage\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "bulma_package"
+		},
+		"branch-alias": {
+			"dev-master": "4.0.x-dev"
+		}
+	},
+	"scripts": {
+		"pre-archive-cmd": [
+			"@dependencies-for-ter"
+		],
+		"dependencies-for-ter": [
+			"@composer install -d Resources/Private/Contrib/Php"
+		]
+	},
+	"archive": {
+		"exclude": [
+			".gitignore",
+			".crowdin.yaml",
+			"node_modules"
+		]
+	}
 }
