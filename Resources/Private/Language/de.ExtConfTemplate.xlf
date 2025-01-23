@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf" date="2013-09-19T09:11:39Z" product-name="bulma_package" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="pageTs.disablePageTsRTE">
+        <source>Disable RTE: If this option is set the config for RTE will not load automatically. Include "FILE:EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig" in your PageTsConfig to load the config manually.</source>
+        <target state="translated">RTE deaktivieren: Wenn diese Option gesetzt ist, wird die Konfiguration für RTE nicht automatisch geladen. Fügen Sie "FILE:EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig" in Ihre PageTsConfig ein, um die Konfiguration manuell zu laden.</target>
+      </trans-unit>
+      <trans-unit id="pageTs.disablePageTsTCEFORM">
+        <source>Disable TCEFORM: If this option is set the config for TCEFORM will not load automatically. Include "FILE:EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig" in your PageTsConfig to load the config manually.</source>
+        <target state="translated">TCEFORM deaktivieren: Wenn diese Option gesetzt ist, wird die Konfiguration für TCEFORM nicht automatisch geladen. Fügen Sie "FILE:EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig" in Ihre PageTsConfig ein, um die Konfiguration manuell zu laden.</target>
+      </trans-unit>
+      <trans-unit id="pageTs.disablePageTsTCEMAIN">
+        <source>Disable TCEMAIN: If this option is set the config for TCEMAIN will not load automatically. Include "FILE:EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig" in your PageTsConfig to load the config manually.</source>
+        <target state="translated">TCEMAIN deaktivieren: Wenn diese Option gesetzt ist, wird die Konfiguration für TCEMAIN nicht automatisch geladen. Fügen Sie "FILE:EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig" in Ihre PageTsConfig ein, um die Konfiguration manuell zu laden.</target>
+      </trans-unit>
+      <trans-unit id="pageTs.disablePageTsBackendLayouts">
+        <source>Disable BackendLayouts: If this option is set the included backend layouts will not load automatically. Include "FILE:EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig" in your PageTsConfig to load the config manually.</source>
+        <target state="translated">BackendLayouts deaktivieren: Wenn diese Option gesetzt ist, werden die enthaltenen Backend-Layouts nicht automatisch geladen. Fügen Sie "FILE:EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig" in Ihre PageTsConfig ein, um die Konfiguration manuell zu laden.</target>
+      </trans-unit>
+      <trans-unit id="pageTs.disablePageTsContentElements">
+        <source>Disable Content Element PageTS Configuration: If this option is set, the included configuration for content elements will not be loaded automatically. Include "FILE:EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig" in your PageTsConfig to load the config manually.</source>
+        <target state="translated">Inhaltselement-SeitenTS-Konfiguration deaktivieren: Wenn diese Option gesetzt ist, wird die enthaltene Konfiguration für Inhaltselemente nicht automatisch geladen. Fügen Sie "FILE:EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig" in Ihre PageTsConfig ein, um die Konfiguration manuell zu laden.</target>
+      </trans-unit>
+      <trans-unit id="feature.disableScssProcessing">
+        <source>Disable Processing of Scss files: WARNING: If this option is set there no more automatic processing of Scss files in the frontend. You will need to provide CSS files instead or handle the processing of the Scss files yourself.</source>
+        <target state="translated">Verarbeitung von SCSS-Dateien deaktivieren: WARNUNG: Wenn diese Option gesetzt ist, werden SCSS-Dateien nicht mehr automatisch im Frontend verarbeitet. Sie müssen stattdessen CSS-Dateien bereitstellen oder die Verarbeitung der SCSS-Dateien selbst übernehmen.</target>
+      </trans-unit>
+      <trans-unit id="feature.disableCustomColorsAction">
+        <source>Disable access to custom colors management inside Bulma Website Module</source>
+        <target state="translated">Zugriff auf benutzerdefinierte Farbverwaltung innerhalb des Bulma Website-Moduls deaktivieren</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
