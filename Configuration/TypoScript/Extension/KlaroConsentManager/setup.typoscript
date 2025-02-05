@@ -1,0 +1,7 @@
+lib.contentElement {
+  layoutRootPaths {
+    1720091199 >
+  }
+}
+lib.bulmaPackage.codeAnalytics.renderObj.settings.klaro = 1
+lib.bulmaPackage.matomo.renderObj.settings.klaro = 1

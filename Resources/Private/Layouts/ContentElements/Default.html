@@ -17,6 +17,9 @@
             <f:then>
                 <div class="container {containerDesktop}">
                     <div class="frame-inner {backgroundClassLimited}">
+                        <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '0'">
+                            <f:format.raw value='<div data-name="{contextualconsentService.0.data.name}" data-replace="{settings.contextualconsent.replaceAttributes}">'/>
+                        </f:if>
                         <f:render section="Header" optional="true">
                             <f:comment>
                                 Do not render header section for specific list_type or CType, so it can be managed directly by the plugin
@@ -25,22 +28,43 @@
                                 <f:render partial="Header/All" arguments="{_all}"/>
                             </f:if>
                         </f:render>
+                        <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '1'">
+                            <f:format.raw value='<div data-name="{contextualconsentService.0.data.name}" data-replace="{settings.contextualconsent.replaceAttributes}">'/>
+                        </f:if>
                         <f:render section="Main" optional="true"/>
+                        <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '1'">
+                            <f:format.raw value='</div>'/>
+                        </f:if>
                         <f:render section="Footer" optional="true">
                             <f:render partial="Footer/All" arguments="{_all}"/>
                         </f:render>
+                        <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '0'">
+                            <f:format.raw value='</div>'/>
+                        </f:if>
                     </div>
                 </div>
             </f:then>
             <f:else>
                 <div class="frame-inner">
+                    <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '0'">
+                        <f:format.raw value='<div data-name="{contextualconsentService.0.data.name}" data-replace="{settings.contextualconsent.replaceAttributes}">'/>
+                    </f:if>
                     <f:render section="Header" optional="true">
                         <f:render partial="Header/All" arguments="{_all}"/>
                     </f:render>
+                    <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '1'">
+                        <f:format.raw value='<div data-name="{contextualconsentService.0.data.name}" data-replace="{settings.contextualconsent.replaceAttributes}">'/>
+                    </f:if>
                     <f:render section="Main" optional="true"/>
+                    <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '1'">
+                        <f:format.raw value='</div>'/>
+                    </f:if>
                     <f:render section="Footer" optional="true">
                         <f:render partial="Footer/All" arguments="{_all}"/>
                     </f:render>
+                    <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '0'">
+                        <f:format.raw value='</div>'/>
+                    </f:if>
                 </div>
             </f:else>
         </f:if>

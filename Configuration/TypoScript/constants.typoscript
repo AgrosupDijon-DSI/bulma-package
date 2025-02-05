@@ -33,15 +33,15 @@ page {
       entryPoint := getEnv(BULMA_QUICKLINKS_ENTRYPOINT)
     }
     # cat=bulma package: navigation/120/110; type=string; label=login page uid
-    loginPid = 
+    loginPid =
     loginPid := getEnv(BULMA_LOGIN_PAGE_UID)
     # cat=bulma package: navigation/120/120; type=string; label=search page uid
-    searchPid = 
+    searchPid =
     searchPid := getEnv(BULMA_SEARCH_PAGE_UID)
   }
   searchForm {
     # cat=bulma package: search form/130/100; type=string; label=Classes for form
-    classes = 
+    classes =
     # cat=bulma package: search form/130/110; type=string; label=Classes for form
     fieldWrapperClasses = field has-addons
     # cat=bulma package: search form/130/120; type=string; label=Classes for input wrapper
@@ -129,7 +129,6 @@ plugin.bulma_package {
 ####################
 #### COMPONENTS ####
 ####################
-@import 'EXT:bulma_package/Configuration/TypoScript/CookieConsent/constants.typoscript'
 
 #############################################################
 #### EXTENSIONS                                          ####
