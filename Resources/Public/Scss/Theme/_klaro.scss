@@ -4,13 +4,13 @@ button[data-klaro-trigger] {
     @extend .button;
     overflow: hidden;
     z-index: 1080;
-    transform: translateY(1.5rem);
+    //transform: translateY(1.5rem);
     bottom: 0;
     left: 3rem;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     &:hover {
-        transform: translateY(0);
+        //transform: translateY(0);
         background-color: $primary-dark;
         color: white;
     }

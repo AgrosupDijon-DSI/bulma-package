@@ -5,3 +5,5 @@ lib.contentElement {
 }
 lib.bulmaPackage.codeAnalytics.renderObj.settings.klaro = 1
 lib.bulmaPackage.matomo.renderObj.settings.klaro = 1
+
+tt_content.video.settings.klaro = 1
