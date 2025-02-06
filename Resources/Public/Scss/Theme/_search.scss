@@ -20,7 +20,7 @@
   li + li{
     margin-top: 0;
   }
-  li.tx-indexedsearch-browselist-currentPage a{
+  li strong a{
     @extend .is-current;
   }
 }
