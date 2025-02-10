@@ -29,7 +29,6 @@
                 additionalAttributes="{type:type}"
                 data="{dataKlaro}"
 >
-    console.log('GA enabled');
 <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
     var gaProperty<f:format.raw>{i.cycle}</f:format.raw> = '<f:format.raw>{trackingCode}</f:format.raw>';
 </f:for>
