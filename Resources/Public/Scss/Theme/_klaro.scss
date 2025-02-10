@@ -2,16 +2,95 @@ button[data-klaro-trigger] {
     background-color: $primary;
     color: white;
     @extend .button;
-    overflow: hidden;
-    z-index: 1080;
+    //overflow: hidden;
+    //z-index: 1080;
     //transform: translateY(1.5rem);
+    //bottom: 0;
+    //left: 3rem;
+    //border-top-left-radius: 0.5rem;
+    //border-top-right-radius: 0.5rem;
+    //&:hover {
+    //    //transform: translateY(0);
+    //    background-color: $primary-dark;
+    //    color: white;
+    //}
+}
+//
+// Cookie Consent
+//
+
+//
+// Variables
+//
+$cookieconsent-zindex: 1080 !default;
+$cookieconsent-bg: $primary !default;
+$cookieconsent-color: $primary-invert !default;
+
+//
+// Animation
+//
+button[data-klaro-trigger] {
+    transition: transform 1s ease;
+    transform: translateY(2rem);
+}
+button[data-klaro-trigger]:hover {
+    transform: translateY(0);
+}
+
+
+//
+// Base
+//
+button[data-klaro-trigger] {
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    z-index: $cookieconsent-zindex;
+}
+
+button[data-klaro-trigger] {
+    padding: .5rem;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+button[data-klaro-trigger] {
+    cursor: pointer;
+}
+
+.cc-highlight {
+    .cc-btn:first-child {
+        background-color: transparent;
+        border-color: transparent;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+
+//
+// Styling
+//
+button[data-klaro-trigger] {
     bottom: 0;
     left: 3rem;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    &:hover {
-        //transform: translateY(0);
-        background-color: $primary-dark;
-        color: white;
-    }
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    //bottom: ($gap / 2);
+}
+
+//
+// Colors
+//
+button[data-klaro-trigger] {
+    color: $cookieconsent-color;
+    background-color: $cookieconsent-bg;
 }
