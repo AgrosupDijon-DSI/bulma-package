@@ -18,6 +18,7 @@
                 async="true"
                 priority="true"
                 data="{dataKlaro}"
+                useNonce="1"
 />
 <f:if condition="{settings.klaro}">
     <f:then>
@@ -28,6 +29,7 @@
                 identifier="analytics"
                 additionalAttributes="{type:type}"
                 data="{dataKlaro}"
+                useNonce="1"
 >
 <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
     var gaProperty<f:format.raw>{i.cycle}</f:format.raw> = '<f:format.raw>{trackingCode}</f:format.raw>';
