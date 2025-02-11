@@ -1,3 +1,9 @@
+###############################
+#### KLARO CONSENT MANAGER ####
+###############################
+
+@import 'EXT:klaro_consent_manager/Configuration/TypoScript/setup.typoscript'
+
 lib.contentElement {
   layoutRootPaths {
     1720091199 >

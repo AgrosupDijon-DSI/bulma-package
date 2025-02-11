@@ -146,3 +146,6 @@ plugin.bulma_package {
 [extension.isLoaded('seo')]
 @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/constants.typoscript'
 [global]
+[extension.isLoaded('klaro_consent_manager')]
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/KlaroConsentManager/constants.typoscript'
+[global]
