@@ -133,7 +133,7 @@ plugin.tx_news {
             prevnextbuttons = true
             wraparound = true
           }
-          subtitleClasses = 
+          subtitleClasses =
         }
         detail {
           cols = 1

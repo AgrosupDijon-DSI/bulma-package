@@ -1,15 +1,15 @@
 plugin.bulma_package_news_rss {
   settings {
     # cat=bulma package: News Rss Configuration/001_categories; type=string; label=Categories filter
-    categories = 
+    categories =
     # cat=bulma package: News Rss Configuration/002_categoryConjunction; type=string; label=Categories conjuction
     categoryConjunction = notor
     # cat=bulma package: News Rss Configuration/003_limit; type=string; label=Limit
     limit = 30
     # cat=bulma package: News Rss Configuration/004_detailPid; type=string; label=DetailPid
-    detailPid = 
+    detailPid =
     # cat=bulma package: News Rss Configuration/005_startingpoint; type=string; label=Startingpoint
-    startingpoint = 
+    startingpoint =
     # cat=bulma package: News Rss Configuration/006_format; type=string; label=Format
     format = xml
   }

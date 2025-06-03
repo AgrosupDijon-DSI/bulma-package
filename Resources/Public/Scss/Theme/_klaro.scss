@@ -1,7 +1,8 @@
 button[data-klaro-trigger] {
     background-color: $primary;
-    color: white;
     @extend .button;
+    color: white;
+
     //overflow: hidden;
     //z-index: 1080;
     //transform: translateY(1.5rem);
@@ -35,6 +36,8 @@ button[data-klaro-trigger] {
 }
 button[data-klaro-trigger]:hover {
     transform: translateY(0);
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -51,9 +54,9 @@ button[data-klaro-trigger] {
 
 button[data-klaro-trigger] {
     padding: .5rem;
-    &:hover {
-        text-decoration: underline;
-    }
+    //&:hover {
+    //    text-decoration: underline;
+    //}
 }
 
 
@@ -93,4 +96,146 @@ button[data-klaro-trigger] {
 button[data-klaro-trigger] {
     color: $cookieconsent-color;
     background-color: $cookieconsent-bg;
+}
+
+
+.cookie-notice{
+    @extend .notification;
+    @extend .is-primary;
+
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    z-index: 1080;
+    bottom: 1rem;
+    right: 1rem;
+    max-width: 600px;
+}
+
+.cn-ok{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    .cm-link{
+        margin-right: auto;
+        color: grey;
+    }
+    .cm-link.cm-learn-more {
+        color: grey;
+    }
+}
+
+.cn-buttons, .cm-buttons{
+    @extend .buttons;
+}
+
+.cm-buttons{
+    margin-top: 1rem;
+    @extend .is-justify-content-space-around;
+}
+
+.cm-btn{
+    @extend .button;
+}
+
+.cm-btn-danger{
+    @extend .is-danger;
+}
+
+.cm-btn-success{
+    @extend .is-success;
+}
+
+.cm-btn-success-var{
+    @extend .is-primary;
+}
+
+.cookie-modal{
+    @extend .modal;
+    @extend .is-active;
+}
+
+.cm-bg{
+    @extend .modal-background;
+}
+
+.cm-modal{
+    @extend .modal-card;
+    overflow: auto;
+}
+
+.cm-header{
+    @extend .modal-card-head;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    .title{
+        margin-right: 1.5rem;
+    }
+}
+
+.cm-body{
+    @extend .modal-card-body;
+    overflow: initial;
+}
+
+.cm-footer{
+    @extend .modal-card-foot;
+    flex-wrap: wrap;
+    .cm-footer-buttons{
+        width: 100%;
+        @extend .buttons;
+        margin-bottom: 0 !important;
+        justify-content: space-between;
+    }
+}
+
+.hide{
+    @extend .delete;
+    position: absolute;
+    right: 20px;
+}
+
+.cm-content{
+    display: none;
+    &.expanded{
+        display: block;
+    }
+}
+
+.cm-list-input{
+    @extend .is-rounded;
+}
+
+.cm-list-title{
+    font-weight: $weight-semibold;
+}
+
+.cm-services, .purposes, .cm-list-description{
+    padding-left: 3.5rem;
+}
+
+.purposes, .cm-powered-by{
+    font-size: $size-small;
+    font-color: $text-light;
+}
+
+.cm-powered-by{
+    width: 100%;
+    text-align: right;
+}
+
+div[data-type=placeholder]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $light;
+    .cm-as-context-notice{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+    }
 }

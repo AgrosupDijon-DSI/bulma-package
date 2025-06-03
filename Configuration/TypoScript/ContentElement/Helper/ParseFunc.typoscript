@@ -97,7 +97,7 @@ lib.parseFunc_RTE {
           parseFunc {
             nonTypoTagStdWrap {
               encapsLines {
-                nonWrappedTag = 
+                nonWrappedTag =
               }
             }
           }
