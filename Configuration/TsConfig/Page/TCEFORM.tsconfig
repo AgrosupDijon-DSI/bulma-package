@@ -345,4 +345,9 @@ TCEFORM {
       removeItems = 1,2,3
     }
   }
+  tx_klaroconsentmanager_configuration {
+    color_scheme {
+      removeItems = light_neutral, dark_neutral
+    }
+  }
 }
