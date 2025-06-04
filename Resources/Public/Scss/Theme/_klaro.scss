@@ -1,0 +1,128 @@
+
+$klaro-trigger-zindex: 1080 !default;
+$klaro-trigger-bg: $primary !default;
+$klaro-trigger-color: $primary-invert !default;
+
+.cookie-notice{
+    outline: none;
+}
+
+#id-cookie-title {
+    font-weight: $title-weight;
+    font-size: $title-size;
+}
+
+.cn-ok {
+    @extend .buttons;
+}
+
+.cm-link {
+    @extend .button, .is-info;
+    font-size: 1em;
+    flex-grow: 0;
+
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
+    flex-grow: 0;
+}
+
+.cm-btn {
+    @extend .button;
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
+    align-items: flex-end;
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
+    display: inline-flex;
+}
+
+.klaro .cookie-modal .cm-btn, .klaro .context-notice .cm-btn, .klaro .cookie-notice .cm-btn {
+    padding-bottom: $button-padding-vertical;
+    padding-left: $button-padding-horizontal;
+    padding-right: $button-padding-horizontal;
+    padding-top: $button-padding-vertical;
+    &.cm-btn-danger {
+        @extend .is-danger;
+    }
+}
+
+.klaro {
+    --green1: #{$success};
+    --blue1: #{$info};
+}
+
+.klaro.cm-as-context-notice {
+    --green2: #{$success};
+    --blue1: #{$info};
+}
+
+.klaro .cookie-notice a {
+    --green1: #{$white};
+}
+
+.klaro .cookie-modal .cm-btn.cm-btn-success, .klaro .cookie-notice .cm-btn.cm-btn-success {
+    @extend .is-success;
+
+    &.cm-btn-info {
+        @extend .is-info;
+    }
+}
+
+.klaro .context-notice .cm-btn.cm-btn-success{
+    @extend .is-primary;
+}
+
+#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger],
+#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]
+{
+    @extend .button;
+    font-size: $small-font-size;
+
+    transition: transform 1s ease;
+    transform: translateY(1.2rem);
+
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    z-index: $klaro-trigger-zindex;
+
+    color: $klaro-trigger-color;
+    background-color: $klaro-trigger-bg;
+
+    padding: .5rem;
+
+    cursor: pointer;
+
+    bottom: 0;
+    left: 3rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &:hover {
+        transform: translateY(0);
+        color: white;
+        text-decoration: none;
+    }
+}
+
+#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]{
+    left: calc(3rem + 200px);
+}
+
+
+@media screen and (max-width: 480px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+    #klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger],
+    #klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]
+    {
+        transform: none;
+    }
+}

@@ -20,6 +20,9 @@
 [extension.isLoaded('seo')]
 @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
 [global]
+[extension.isLoaded('klaro_consent_manager')]
+@import 'EXT:bulma_package/Configuration/TypoScript/Extension/KlaroConsentManager/setup.typoscript'
+[global]
 ###################
 #### FRAMEWORK ####
 ###################
@@ -221,7 +224,6 @@ page {
 ####################
 #### COMPONENTS ####
 ####################
-@import 'EXT:bulma_package/Configuration/TypoScript/CookieConsent/setup.typoscript'
 
 ################
 #### CONFIG ####

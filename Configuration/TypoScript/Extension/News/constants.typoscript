@@ -7,7 +7,7 @@ plugin.tx_news {
   }
   settings {
     # cat=plugin.tx_news/file; type=string; label=Path to CSS file
-    cssFile = 
+    cssFile =
     list {
       titleClasses = title
       subtitleClasses = subtitle

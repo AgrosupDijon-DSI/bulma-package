@@ -57,7 +57,7 @@ plugin.bulma_package_websiteelements {
         # cat=bulma package: website elements/160_websiteelement/003_services_common_linkclasses; type=string; label=Common Css classes for links
         linkClasses = button
         # cat=bulma package: website elements/160_websiteelement/004_services_common_iconclasses; type=string; label=Common Css classes for icons
-        iconClasses = 
+        iconClasses =
       }
       facebook {
         # cat=bulma package: website elements/160_websiteelement/005_services_facebook_linkclasses; type=string; label=Specific Css classes for facebook link
@@ -99,6 +99,6 @@ plugin.bulma_package_websiteelements {
     # cat=bulma package: website elements/160_websiteelement/017_wrapperclasses; type=string; label=Css classes for title
     titleClasses = title is-5 mb-2 mr-3
     # cat=bulma package: website elements/160_websiteelement/018_wrapperclasses; type=string; label=Default services to be shown if none selected. Eg: facebook,twitter,linkedin
-    defaultServices = 
+    defaultServices =
   }
 }

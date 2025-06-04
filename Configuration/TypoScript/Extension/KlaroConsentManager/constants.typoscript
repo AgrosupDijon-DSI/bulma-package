@@ -1,0 +1,5 @@
+###############################
+#### KLARO CONSENT MANAGER ####
+###############################
+
+@import 'EXT:klaro_consent_manager/Configuration/TypoScript/constants.typoscript'

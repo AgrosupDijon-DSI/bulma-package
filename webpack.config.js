@@ -22,7 +22,6 @@ Encore
      */
     .addEntry('bulma.accordion.min', './Resources/Public/JavaScript/bulma.accordion.js')
     .addEntry('bulma.burger.min', './Resources/Public/JavaScript/bulma.burger.js')
-    .addEntry('bulma.cookieconsent.min', './Resources/Public/JavaScript/bulma.cookieconsent.js')
     .addEntry('bulma.dropdown.min', './Resources/Public/JavaScript/bulma.dropdown.js')
     .addEntry('bulma.flickity.min', './Resources/Public/JavaScript/bulma.flickity.js')
     .addEntry('bulma.form.min', './Resources/Public/JavaScript/bulma.form.js')
@@ -47,8 +46,6 @@ Encore
         {from: './node_modules/flickity/dist', to: '../Contrib/flickity/[path][name].[ext]', pattern: /\.min.js$/},
         {from: './node_modules/flickity-fade', to: '../Contrib/flickity/[path][name].[ext]', includeSubdirectories: false, pattern: /\.js$/},
 
-        {from: './node_modules/cookieconsent/build', to: '../Contrib/cookieconsent/[path][name].[ext]', pattern: /\.min.js$/},
-        {from: './node_modules/cookieconsent', to: '../Contrib/cookieconsent/[name]', includeSubdirectories: false, pattern: /licence$/},
 
         {from: './node_modules/@fortawesome/fontawesome-free/css', to: `../Contrib/fontawesome-free/css/[path][name].[ext]`, pattern: /brands.min.css$/},
         {from: './node_modules/@fortawesome/fontawesome-free/css', to: `../Contrib/fontawesome-free/css/[path][name].[ext]`, pattern: /fontawesome.min.css$/},

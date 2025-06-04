@@ -1,0 +1,15 @@
+###############################
+#### KLARO CONSENT MANAGER ####
+###############################
+
+@import 'EXT:klaro_consent_manager/Configuration/TypoScript/setup.typoscript'
+
+lib.contentElement {
+  layoutRootPaths {
+    1720091199 >
+  }
+}
+lib.bulmaPackage.codeAnalytics.renderObj.settings.klaro = 1
+lib.bulmaPackage.matomo.renderObj.settings.klaro = 1
+
+tt_content.video.settings.klaro = 1

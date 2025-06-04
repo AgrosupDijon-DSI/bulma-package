@@ -1,42 +1,39 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{data.code_analytics}">
-<f:asset.script identifier="analytics_load" src="https://www.googletagmanager.com/gtag/js?id={trackingCodes -> f:first()}" async="true" priority="true" />
-<f:asset.script priority="true" identifier="analytics">
+
+<f:variable name="type" value="application/javascript" />
+<f:variable name="src" value="https://www.googletagmanager.com/gtag/js?id={trackingCodes -> f:first()}" />
+<f:if condition="{settings.klaro}">
+    <f:then>
+        <f:variable name="type" value="text/plain" />
+        <f:variable name="dataType" value="application/javascript" />
+        <f:variable name="name" value="google-analytics" />
+        <f:variable name="dataKlaro" value="{type:dataType,name:name,src:src}" />
+    </f:then>
+</f:if>
+
+<f:asset.script identifier="analytics_load"
+                additionalAttributes="{type:type}"
+                src="{src}"
+                async="true"
+                priority="true"
+                data="{dataKlaro}"
+                useNonce="1"
+/>
+<f:if condition="{settings.klaro}">
+    <f:then>
+        <f:variable name="dataKlaro" value="{type:dataType,name:name}" />
+    </f:then>
+</f:if>
+<f:asset.script priority="true"
+                identifier="analytics"
+                additionalAttributes="{type:type}"
+                data="{dataKlaro}"
+                useNonce="1"
+>
 <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
     var gaProperty<f:format.raw>{i.cycle}</f:format.raw> = '<f:format.raw>{trackingCode}</f:format.raw>';
-    var disableStr<f:format.raw>{i.cycle}</f:format.raw> = 'ga-disable-' + gaProperty<f:format.raw>{i.cycle}</f:format.raw>;
 </f:for>
-<f:for each="{trackingCodes}" as="trackingCode" iteration="i">
-    if (document.cookie.indexOf(disableStr<f:format.raw>{i.cycle}</f:format.raw> + '=true') > -1) {
-        window[disableStr<f:format.raw>{i.cycle}</f:format.raw>] = true;
-    }
-</f:for>
-
-    function googleAnalyticsOptOut() {
-    <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
-        document.cookie = disableStr<f:format.raw>{i.cycle}</f:format.raw> + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/; SameSite=None; Secure';
-        window[disableStr<f:format.raw>{i.cycle}</f:format.raw>] = true;
-    </f:for>
-    }
-    function googleAnalyticsOptIn() {
-    <f:for each="{trackingCodes}" as="trackingCode" iteration="i">
-        document.cookie = disableStr<f:format.raw>{i.cycle}</f:format.raw> + '=; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/; SameSite=None; Secure';
-        window[disableStr<f:format.raw>{i.cycle}</f:format.raw>] = false;
-    </f:for>
-    }
-
-    window.addEventListener('asd.cookie.enable', () => {
-        googleAnalyticsOptIn();
-    });
-
-    window.addEventListener('asd.cookie.disable', () => {
-        googleAnalyticsOptOut();
-    });
-
-    window.addEventListener('asd.cookie.revoke', () => {
-        googleAnalyticsOptOut();
-    });
-
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
