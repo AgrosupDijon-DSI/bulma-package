@@ -1,241 +1,128 @@
-button[data-klaro-trigger] {
-    background-color: $primary;
+
+$klaro-trigger-zindex: 1080 !default;
+$klaro-trigger-bg: $primary !default;
+$klaro-trigger-color: $primary-invert !default;
+
+.cookie-notice{
+    outline: none;
+}
+
+#id-cookie-title {
+    font-weight: $title-weight;
+    font-size: $title-size;
+}
+
+.cn-ok {
+    @extend .buttons;
+}
+
+.cm-link {
+    @extend .button, .is-info;
+    font-size: 1em;
+    flex-grow: 0;
+
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
+    flex-grow: 0;
+}
+
+.cm-btn {
     @extend .button;
-    color: white;
-
-    //overflow: hidden;
-    //z-index: 1080;
-    //transform: translateY(1.5rem);
-    //bottom: 0;
-    //left: 3rem;
-    //border-top-left-radius: 0.5rem;
-    //border-top-right-radius: 0.5rem;
-    //&:hover {
-    //    //transform: translateY(0);
-    //    background-color: $primary-dark;
-    //    color: white;
-    //}
 }
-//
-// Cookie Consent
-//
 
-//
-// Variables
-//
-$cookieconsent-zindex: 1080 !default;
-$cookieconsent-bg: $primary !default;
-$cookieconsent-color: $primary-invert !default;
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
+    align-items: flex-end;
+}
 
-//
-// Animation
-//
-button[data-klaro-trigger] {
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
+    display: inline-flex;
+}
+
+.klaro .cookie-modal .cm-btn, .klaro .context-notice .cm-btn, .klaro .cookie-notice .cm-btn {
+    padding-bottom: $button-padding-vertical;
+    padding-left: $button-padding-horizontal;
+    padding-right: $button-padding-horizontal;
+    padding-top: $button-padding-vertical;
+    &.cm-btn-danger {
+        @extend .is-danger;
+    }
+}
+
+.klaro {
+    --green1: #{$success};
+    --blue1: #{$info};
+}
+
+.klaro.cm-as-context-notice {
+    --green2: #{$success};
+    --blue1: #{$info};
+}
+
+.klaro .cookie-notice a {
+    --green1: #{$white};
+}
+
+.klaro .cookie-modal .cm-btn.cm-btn-success, .klaro .cookie-notice .cm-btn.cm-btn-success {
+    @extend .is-success;
+
+    &.cm-btn-info {
+        @extend .is-info;
+    }
+}
+
+.klaro .context-notice .cm-btn.cm-btn-success{
+    @extend .is-primary;
+}
+
+#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger],
+#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]
+{
+    @extend .button;
+    font-size: $small-font-size;
+
     transition: transform 1s ease;
-    transform: translateY(2rem);
-}
-button[data-klaro-trigger]:hover {
-    transform: translateY(0);
-    color: white;
-    text-decoration: none;
-}
+    transform: translateY(1.2rem);
 
-
-//
-// Base
-//
-button[data-klaro-trigger] {
     position: fixed;
     overflow: hidden;
     display: flex;
     flex-wrap: nowrap;
-    z-index: $cookieconsent-zindex;
-}
+    z-index: $klaro-trigger-zindex;
 
-button[data-klaro-trigger] {
+    color: $klaro-trigger-color;
+    background-color: $klaro-trigger-bg;
+
     padding: .5rem;
-    //&:hover {
-    //    text-decoration: underline;
-    //}
-}
 
-
-button[data-klaro-trigger] {
     cursor: pointer;
-}
 
-.cc-highlight {
-    .cc-btn:first-child {
-        background-color: transparent;
-        border-color: transparent;
-        &:hover,
-        &:focus {
-            background-color: transparent;
-            text-decoration: underline;
-        }
-    }
-}
-
-
-
-
-//
-// Styling
-//
-button[data-klaro-trigger] {
     bottom: 0;
     left: 3rem;
     border-top-left-radius: .5rem;
     border-top-right-radius: .5rem;
-    //bottom: ($gap / 2);
-}
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
-//
-// Colors
-//
-button[data-klaro-trigger] {
-    color: $cookieconsent-color;
-    background-color: $cookieconsent-bg;
-}
-
-
-.cookie-notice{
-    @extend .notification;
-    @extend .is-primary;
-
-    position: fixed;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: nowrap;
-    z-index: 1080;
-    bottom: 1rem;
-    right: 1rem;
-    max-width: 600px;
-}
-
-.cn-ok{
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    .cm-link{
-        margin-right: auto;
-        color: grey;
-    }
-    .cm-link.cm-learn-more {
-        color: grey;
+    &:hover {
+        transform: translateY(0);
+        color: white;
+        text-decoration: none;
     }
 }
 
-.cn-buttons, .cm-buttons{
-    @extend .buttons;
+#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]{
+    left: calc(3rem + 200px);
 }
 
-.cm-buttons{
-    margin-top: 1rem;
-    @extend .is-justify-content-space-around;
-}
 
-.cm-btn{
-    @extend .button;
-}
-
-.cm-btn-danger{
-    @extend .is-danger;
-}
-
-.cm-btn-success{
-    @extend .is-success;
-}
-
-.cm-btn-success-var{
-    @extend .is-primary;
-}
-
-.cookie-modal{
-    @extend .modal;
-    @extend .is-active;
-}
-
-.cm-bg{
-    @extend .modal-background;
-}
-
-.cm-modal{
-    @extend .modal-card;
-    overflow: auto;
-}
-
-.cm-header{
-    @extend .modal-card-head;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    .title{
-        margin-right: 1.5rem;
-    }
-}
-
-.cm-body{
-    @extend .modal-card-body;
-    overflow: initial;
-}
-
-.cm-footer{
-    @extend .modal-card-foot;
-    flex-wrap: wrap;
-    .cm-footer-buttons{
-        width: 100%;
-        @extend .buttons;
-        margin-bottom: 0 !important;
-        justify-content: space-between;
-    }
-}
-
-.hide{
-    @extend .delete;
-    position: absolute;
-    right: 20px;
-}
-
-.cm-content{
-    display: none;
-    &.expanded{
-        display: block;
-    }
-}
-
-.cm-list-input{
-    @extend .is-rounded;
-}
-
-.cm-list-title{
-    font-weight: $weight-semibold;
-}
-
-.cm-services, .purposes, .cm-list-description{
-    padding-left: 3.5rem;
-}
-
-.purposes, .cm-powered-by{
-    font-size: $size-small;
-    font-color: $text-light;
-}
-
-.cm-powered-by{
-    width: 100%;
-    text-align: right;
-}
-
-div[data-type=placeholder]{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $light;
-    .cm-as-context-notice{
-        display: flex;
-        align-items: center;
-        height: 100%;
-        justify-content: center;
+@media screen and (max-width: 480px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+    #klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger],
+    #klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]
+    {
+        transform: none;
     }
 }
