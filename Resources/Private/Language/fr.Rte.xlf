@@ -3,17 +3,9 @@
   <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/Rte.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
     <header/>
     <body>
-      <trans-unit id="style.box" approved="yes">
-        <source>Box</source>
-        <target state="final">Box</target>
-      </trans-unit>
       <trans-unit id="style.table.bordered" approved="yes">
         <source>Table Bordered</source>
         <target state="final">Tableau avec bordure</target>
-      </trans-unit>
-      <trans-unit id="style.notification" approved="yes">
-        <source>Notification</source>
-        <target state="final">Notification</target>
       </trans-unit>
       <trans-unit id="style.notification.primary" approved="yes">
         <source>Notification Primary</source>
@@ -155,17 +147,9 @@
         <source>Success</source>
         <target state="final">Succès</target>
       </trans-unit>
-      <trans-unit id="style.info" approved="yes">
-        <source>Info</source>
-        <target state="final">Info</target>
-      </trans-unit>
       <trans-unit id="style.warning" approved="yes">
         <source>Warning</source>
         <target state="final">Avertissement</target>
-      </trans-unit>
-      <trans-unit id="style.danger" approved="yes">
-        <source>Danger</source>
-        <target state="final">Danger</target>
       </trans-unit>
       <trans-unit id="style.light" approved="yes">
         <source>Light</source>
