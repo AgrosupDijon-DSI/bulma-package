@@ -3,10 +3,6 @@
   <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/Rte.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="de">
     <header/>
     <body>
-      <trans-unit id="style.box">
-        <source>Box</source>
-        <target state="translated">Box</target>
-      </trans-unit>
       <trans-unit id="style.table.bordered">
         <source>Table Bordered</source>
         <target state="translated">Tabellenumrandung</target>
@@ -66,10 +62,6 @@
       <trans-unit id="style.size.6">
         <source>Size 6</source>
         <target state="translated">Größe 6</target>
-      </trans-unit>
-      <trans-unit id="style.button">
-        <source>Button</source>
-        <target state="translated">Button</target>
       </trans-unit>
       <trans-unit id="style.button.primary">
         <source>Button Primary</source>
