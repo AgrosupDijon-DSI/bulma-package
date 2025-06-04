@@ -27,10 +27,6 @@
         <source>Choose an image</source>
         <target state="final">Sélectionner une image</target>
       </trans-unit>
-      <trans-unit id="footer-title-contact" approved="yes">
-        <source>Contact</source>
-        <target state="final">Contact</target>
-      </trans-unit>
       <trans-unit id="footer-title-menu" approved="yes">
         <source>Links</source>
         <target state="final">Liens</target>
@@ -71,34 +67,6 @@
         <source>Remove filter</source>
         <target state="final">Supprimer le filtre</target>
       </trans-unit>
-      <trans-unit id="cookieconsent.common.header" approved="yes">
-        <source>Cookies used on the website!</source>
-        <target state="final">Cookies utilisés sur le site !</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.message" approved="yes">
-        <source>This website uses cookies to ensure you get the best experience on our website.</source>
-        <target state="final">Ce site utilise des cookies pour vous garantir une meilleure expérience de navigation.</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.dismiss" approved="yes">
-        <source>Got it!</source>
-        <target state="final">C'est compris !</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.allow" approved="yes">
-        <source>Allow cookies</source>
-        <target state="final">Autoriser les cookies</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.deny" approved="yes">
-        <source>Decline</source>
-        <target state="final">Refuser</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.link" approved="yes">
-        <source>Learn more</source>
-        <target state="final">En savoir plus</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.policy" approved="yes">
-        <source>Cookie settings</source>
-        <target state="final">Paramétrage des cookies</target>
-      </trans-unit>
       <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.header.label" approved="yes">
         <source>Clear cache</source>
         <target state="final">Vider le cache</target>
@@ -106,18 +74,6 @@
       <trans-unit id="tt_content.finishersDefinition.ClearCache.label" approved="yes">
         <source>Clear cache</source>
         <target state="final">Vider le cache</target>
-      </trans-unit>
-      <trans-unit id="tt_content.finishersDefinition.ClearCache.pageUid.label" approved="yes">
-        <source>Page</source>
-        <target state="final">Page</target>
-      </trans-unit>
-      <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.pageUid.label" approved="yes">
-        <source>Page</source>
-        <target state="final">Page</target>
-      </trans-unit>
-      <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.pageUid.buttonLabel" approved="yes">
-        <source>Page</source>
-        <target state="final">Page</target>
       </trans-unit>
       <trans-unit id="tt_content.iframe.invalidHtml" approved="yes">
         <source>Invalid HTML syntax</source>
