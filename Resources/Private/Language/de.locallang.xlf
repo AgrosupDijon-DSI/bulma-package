@@ -31,10 +31,6 @@
         <source>Contact</source>
         <target state="translated">Kontakt</target>
       </trans-unit>
-      <trans-unit id="footer-title-menu">
-        <source>Links</source>
-        <target state="translated">Links</target>
-      </trans-unit>
       <trans-unit id="footer-title-social">
         <source>Follow us</source>
         <target state="translated">Folgen Sie uns</target>
@@ -66,34 +62,6 @@
       <trans-unit id="news_remove_filter">
         <source>Remove filter</source>
         <target state="translated">Filter entfernen</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.header">
-        <source>Cookies used on the website!</source>
-        <target state="translated">Diese Webseite benutzt Cookies!</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.message">
-        <source>This website uses cookies to ensure you get the best experience on our website.</source>
-        <target state="translated">Diese Website verwendet Cookies, um Ihnen die bestmögliche Funktionalität bieten zu können.</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.dismiss">
-        <source>Got it!</source>
-        <target state="translated">Verstanden!</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.allow">
-        <source>Allow cookies</source>
-        <target state="translated">Cookies erlauben</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.deny">
-        <source>Decline</source>
-        <target state="translated">Ablehnen</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.link">
-        <source>Learn more</source>
-        <target state="translated">Mehr erfahren</target>
-      </trans-unit>
-      <trans-unit id="cookieconsent.common.policy">
-        <source>Cookie settings</source>
-        <target state="translated">Cookie-Einstellungen</target>
       </trans-unit>
     </body>
   </file>
