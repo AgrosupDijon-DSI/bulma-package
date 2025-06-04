@@ -11,46 +11,6 @@
         <source>Hide breadcrumb</source>
         <target state="translated">Skjul brødkrumme</target>
       </trans-unit>
-      <trans-unit id="ratio.16_9">
-        <source>16:9</source>
-        <target state="translated">16:9</target>
-      </trans-unit>
-      <trans-unit id="ratio.3_2">
-        <source>3:2</source>
-        <target state="translated">3:2</target>
-      </trans-unit>
-      <trans-unit id="ratio.3_1">
-        <source>3:1</source>
-        <target state="translated">3:1</target>
-      </trans-unit>
-      <trans-unit id="ratio.4_1">
-        <source>4:1</source>
-        <target state="translated">4:1</target>
-      </trans-unit>
-      <trans-unit id="ratio.6_1">
-        <source>6:1</source>
-        <target state="translated">6:1</target>
-      </trans-unit>
-      <trans-unit id="ratio.4_3">
-        <source>4:3</source>
-        <target state="translated">4:3</target>
-      </trans-unit>
-      <trans-unit id="ratio.1_1">
-        <source>1:1</source>
-        <target state="translated">1:1</target>
-      </trans-unit>
-      <trans-unit id="ratio.2_3">
-        <source>2:3</source>
-        <target state="translated">2:3</target>
-      </trans-unit>
-      <trans-unit id="ratio.1_2">
-        <source>1:2</source>
-        <target state="translated">1:2</target>
-      </trans-unit>
-      <trans-unit id="ratio.4_5">
-        <source>4:5</source>
-        <target state="translated">4:5</target>
-      </trans-unit>
       <trans-unit id="ratio.9_16">
         <source>9:16</source>
         <target state="translated">9/16</target>
@@ -87,10 +47,6 @@
         <source>Unfolded Element</source>
         <target state="translated">Udfoldet Element</target>
       </trans-unit>
-      <trans-unit id="tablayout.field.table_class">
-        <source>Styles</source>
-        <target state="translated">Styles</target>
-      </trans-unit>
       <trans-unit id="tablayout.field.table_class.boxed">
         <source>Boxed</source>
         <target state="translated">Indrammet</target>
@@ -115,17 +71,9 @@
         <source>Left</source>
         <target state="translated">Venstre</target>
       </trans-unit>
-      <trans-unit id="option.center">
-        <source>Center</source>
-        <target state="translated">Center</target>
-      </trans-unit>
       <trans-unit id="option.right">
         <source>Right</source>
         <target state="translated">Højre</target>
-      </trans-unit>
-      <trans-unit id="option.top">
-        <source>Top</source>
-        <target state="translated">Top</target>
       </trans-unit>
       <trans-unit id="option.bottom">
         <source>Bottom</source>
@@ -138,10 +86,6 @@
       <trans-unit id="option.none">
         <source>None</source>
         <target state="translated">Ingen</target>
-      </trans-unit>
-      <trans-unit id="option.medium">
-        <source>Medium</source>
-        <target state="translated">Medium</target>
       </trans-unit>
     </body>
   </file>
