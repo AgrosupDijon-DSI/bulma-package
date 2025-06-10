@@ -78,9 +78,13 @@ $klaro-trigger-color: $primary-invert !default;
     @extend .is-primary;
 }
 
-#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger],
-#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]
+#klaro:has(> .klaro > #klaro-cookie-notice) + button[data-klaro-trigger],
+#klaro:has(> .klaro > #klaro-cookie-notice) + button[data-klaro-trigger] + button[data-klaro-trigger]
 {
+    display: none;
+}
+
+button[data-klaro-trigger] {
     @extend .button;
     font-size: $small-font-size;
 
@@ -114,14 +118,13 @@ $klaro-trigger-color: $primary-invert !default;
     }
 }
 
-#klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]{
+button[data-klaro-trigger] + button[data-klaro-trigger] {
     left: calc(3rem + 200px);
 }
 
 
 @media screen and (max-width: 480px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
-    #klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger],
-    #klaro:not(:has(> .klaro > #klaro-cookie-notice)) + button[data-klaro-trigger] + button[data-klaro-trigger]
+    button[data-klaro-trigger]
     {
         transform: none;
     }
