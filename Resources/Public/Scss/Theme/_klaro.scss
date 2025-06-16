@@ -55,6 +55,7 @@ $klaro-trigger-color: $primary-invert !default;
 .klaro {
     --green1: #{$success};
     --blue1: #{$info};
+    --notice-max-width: 450px;
 }
 
 .klaro.cm-as-context-notice {
