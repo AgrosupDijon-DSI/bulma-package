@@ -86,14 +86,28 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
-        $result = $queryBuilder->select('uid', 'bodytext')
+        $queryBuilder->select('uid', 'bodytext')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('deleted', '0')
-            )
-            ->executeQuery();
+            );
 
-        foreach ($result->fetchAllAssociative() as $item) {
+        foreach ($this->classes as $tag => $replacements) {
+            foreach ($replacements as $classBefore => $classAfter) {
+                $predicates[] = $queryBuilder->expr()->like(
+                    'bodytext',
+                    $queryBuilder->createNamedParameter('%' . $queryBuilder->escapeLikeWildcards($classBefore) . '%')
+                );
+            }
+        }
+
+        $queryBuilder->andWhere(
+            $queryBuilder->expr()->or(
+                ...$predicates
+            )
+        );
+
+        foreach ($queryBuilder->executeQuery()->fetchAllAssociative() as $item) {
             $crawler = new Crawler($item['bodytext']);
 
             foreach ($this->classes as $tag => $replacements) {
@@ -129,14 +143,28 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
-        $result = $queryBuilder->select('uid', 'bodytext')
+        $queryBuilder->select('uid', 'bodytext')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('deleted', '0')
-            )
-            ->executeQuery();
+            );
 
-        foreach ($result->fetchAllAssociative() as $item) {
+        foreach ($this->classes as $tag => $replacements) {
+            foreach ($replacements as $classBefore => $classAfter) {
+                $predicates[] = $queryBuilder->expr()->like(
+                    'bodytext',
+                    $queryBuilder->createNamedParameter('%' . $queryBuilder->escapeLikeWildcards($classBefore) . '%')
+                );
+            }
+        }
+
+        $queryBuilder->andWhere(
+            $queryBuilder->expr()->or(
+                ...$predicates
+            )
+        );
+
+        foreach ($queryBuilder->executeQuery()->fetchAllAssociative() as $item) {
             $crawler = new Crawler($item['bodytext']);
             $needUpdate = false;
             foreach ($this->classes as $tag => $replacements) {
