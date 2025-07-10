@@ -765,6 +765,15 @@
             <trans-unit id="news.templateLayouts.1cols">
                 <source>1 Column</source>
             </trans-unit>
+			<trans-unit id="news.templateLayouts.carousel">
+				<source>Carousel</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.agenda">
+				<source>Agenda</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.media_list">
+				<source>Media list</source>
+			</trans-unit>
             <trans-unit id="tx_bulmapackage_meta_tags">
                 <source>Meta Tag</source>
             </trans-unit>

@@ -31,4 +31,52 @@ $news-carousel-content-background-dark-color: $carousel-content-background-dark-
       }
     }
   }
+
+  .agenda {
+      time{
+          display: flex;
+          align-items: center;
+          span{
+              display: block;
+          }
+          width: 160px;
+      }
+      .news-day{
+          color: $link;
+          font-size: $size-1;
+          font-weight: $weight-bold;
+          border-right: 1px solid currentColor;
+          padding-right: 0.75rem;
+          margin-right: 0.75rem;
+          line-height: 0.8;
+          .has-background-primary &{
+              color: findColorInvert($primary);
+          }
+      }
+
+      .news-month{
+          font-weight: $weight-semibold;
+          line-height: $title-line-height;
+      }
+
+      .media-content{
+          padding-left: 1rem;
+      }
+      & + .agenda{
+          border-top: 0;
+          .media-content{
+              position: relative;
+              &:after{
+                  display: block;
+                  content: "";
+                  height: 1px;
+                  background-color: $border;
+                  position: absolute;
+                  top: -$media-spacing;
+                  left: 0;
+                  width: 100%;
+              }
+          }
+      }
+  }
 }

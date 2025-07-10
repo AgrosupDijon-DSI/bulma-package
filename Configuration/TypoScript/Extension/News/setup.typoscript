@@ -140,6 +140,31 @@ plugin.tx_news {
           extraCssClasses = carousel-item image has-1 has-1-tablet has-1-mobile is-3by1 is-3by1-tablet is-3by2-mobile
         }
       }
+      agenda {
+        list {
+          wrapperCssClasses = news-list-view agenda-list
+          itemPartial = ItemAgenda
+        }
+        detail {
+          extraCssClasses = agenda media
+          titleClasses = title is-6 is-marginless
+        }
+      }
+      media_list {
+        list {
+          wrapperCssClasses = news-list-view media-list
+          itemPartial = ItemMedia
+        }
+        detail {
+          variants {
+            default {
+              width = 200
+            }
+          }
+          flexBasis = 200px
+          extraCssClasses = media
+        }
+      }
       1 {
         detail {
           cols = 4

@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:asd="http://typo3.org/ns/AgrosupDijon/BulmaPackage/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} {settings.layouts.{settings.templateLayout}.detail.extraCssClasses -> f:or(alternative:settings.layouts.default.detail.extraCssClasses)}" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+    <div class="media-left">
+        <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+            <span class="news-day"><f:format.date format="%d">{newsItem.datetime}</f:format.date></span>
+            <div>
+                <span class="news-month"><f:format.date format="%B">{newsItem.datetime}</f:format.date></span>
+                <span class="news-year"><f:format.date format="%Y">{newsItem.datetime}</f:format.date></span>
+            </div>
+        </time>
+    </div>
+
+    <div class="media-content">
+        <h3 class="{settings.layouts.{settings.templateLayout}.detail.titleClasses -> f:or(alternative:settings.list.titleClasses)}" itemprop="headline">
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                {newsItem.title}
+            </n:link>
+        </h3>
+    </div>
+</div>
+</html>

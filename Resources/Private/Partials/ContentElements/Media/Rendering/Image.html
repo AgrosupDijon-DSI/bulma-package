@@ -8,7 +8,7 @@
             <f:for each="{variants}" key="name" as="variant">
                 <f:variable name="breakpoint">{variant.breakpoint as integer}</f:variable>
                 <f:variable name="width">{variant.width as integer}</f:variable>
-                <f:if condition="{width}">
+                <f:if condition="{width} && {variant.sizes}">
                     <f:variable name="mediaQuery">{f:if(condition: breakpoint, then: 'media="(min-width: {breakpoint}px)"')}</f:variable>
                     <f:if condition="{variant.sizes}">
                         <f:variable name="srcset" value="" />
