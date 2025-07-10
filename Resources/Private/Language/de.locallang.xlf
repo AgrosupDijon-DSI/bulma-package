@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/locallang.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="linktop">
+        <source>To top</source>
+        <target state="translated">Nach oben</target>
+      </trans-unit>
+      <trans-unit id="skiptomaincontent">
+        <source>Skip to main content</source>
+        <target state="translated">Überspringen und zum Hauptinhalt gehen</target>
+      </trans-unit>
+      <trans-unit id="skipnavigation">
+        <source>Skip navigation block</source>
+        <target state="translated">Navigation überspringen</target>
+      </trans-unit>
+      <trans-unit id="lightbox-link-label">
+        <source>See more</source>
+        <target state="translated">Mehr anzeigen</target>
+      </trans-unit>
+      <trans-unit id="form.selectfile">
+        <source>Choose a file</source>
+        <target state="translated">Dateien auswählen</target>
+      </trans-unit>
+      <trans-unit id="form.selectimage">
+        <source>Choose an image</source>
+        <target state="translated">Wählen Sie ein Bild</target>
+      </trans-unit>
+      <trans-unit id="footer-title-contact">
+        <source>Contact</source>
+        <target state="translated">Kontakt</target>
+      </trans-unit>
+      <trans-unit id="footer-title-social">
+        <source>Follow us</source>
+        <target state="translated">Folgen Sie uns</target>
+      </trans-unit>
+      <trans-unit id="address.phone">
+        <source>Tel: </source>
+        <target state="translated">Tel:</target>
+      </trans-unit>
+      <trans-unit id="address.fax">
+        <source>Fax: </source>
+        <target state="translated">Fax:</target>
+      </trans-unit>
+      <trans-unit id="scrolltop">
+        <source>Scroll to top</source>
+        <target state="translated">Zum Seitenanfang</target>
+      </trans-unit>
+      <trans-unit id="news_list_see_all">
+        <source>See all news</source>
+        <target state="translated">Alle Bestellungen anzeigen</target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_cat">
+        <source>Filtered by category: </source>
+        <target state="translated">Nach Kategorie filtern:</target>
+      </trans-unit>
+      <trans-unit id="news_filter_by_tag">
+        <source>Filtered by tag: </source>
+        <target state="translated">Nach Tag filtern:</target>
+      </trans-unit>
+      <trans-unit id="news_remove_filter">
+        <source>Remove filter</source>
+        <target state="translated">Filter entfernen</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
