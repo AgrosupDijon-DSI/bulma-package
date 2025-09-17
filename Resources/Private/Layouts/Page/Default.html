@@ -14,9 +14,6 @@
 
     <f:render partial="Structure/Footer" arguments="{_all}" />
     <f:render partial="Structure/ScrollTop" arguments="{_all}" />
-
-    <f:cObject typoscriptObjectPath="lib.bulmaPackage.codeAnalytics" />
-    <f:cObject typoscriptObjectPath="lib.bulmaPackage.matomo" />
-
+    <f:render partial="Structure/Analytics" arguments="{_all}" />
 </f:spaceless>
 </html>
