@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.card_group',
         'value' => 'card_group',
         'icon' => 'content-bulmapackage-card-group',
+        'group' => 'special',
     ],
     'audio',
     'after'

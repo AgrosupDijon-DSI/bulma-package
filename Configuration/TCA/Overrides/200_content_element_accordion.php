@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion',
         'value' => 'accordion',
         'icon' => 'content-bulmapackage-accordion',
+        'group' => 'special',
     ],
     'html',
     'after'

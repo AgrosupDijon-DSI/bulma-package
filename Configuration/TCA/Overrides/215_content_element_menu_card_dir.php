@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card_dir',
         'value' => 'menu_card_dir',
         'icon' => 'content-bulmapackage-menu-card',
+        'group' => 'menu',
     ],
     'menu_card_list',
     'after'

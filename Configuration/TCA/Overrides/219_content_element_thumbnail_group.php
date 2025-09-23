@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.thumbnail_group',
         'value' => 'thumbnail_group',
         'icon' => 'content-menu-thumbnail',
+        'group' => 'special',
     ],
     'audio',
     'after'

@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message',
         'value' => 'message',
         'icon' => 'content-panel',
+        'group' => 'special',
     ],
     'tab',
     'after'

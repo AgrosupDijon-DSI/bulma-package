@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.sharing_buttons',
         'value' => 'sharing_buttons',
         'icon' => 'actions-share-alt',
+        'group' => 'special',
     ],
     'thumbnail_group',
     'after'

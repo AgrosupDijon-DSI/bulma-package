@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.thumbnail_dir',
         'value' => 'menu_thumbnail_dir',
         'icon' => 'content-menu-thumbnail',
+        'group' => 'menu',
     ],
     'menu_thumbnail_list',
     'after'

@@ -28,6 +28,7 @@ ExtensionManagementUtility::addTcaSelectItem(
         'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video',
         'value' => 'video',
         'icon' => 'mimetypes-x-content-multimedia',
+        'group' => 'media',
     ],
     'textmedia',
     'after'
