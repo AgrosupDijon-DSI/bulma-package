@@ -50,7 +50,12 @@
                         <f:format.raw value='<div data-name="{contextualconsentService.0.data.name}" data-replace="{settings.contextualconsent.replaceAttributes}">'/>
                     </f:if>
                     <f:render section="Header" optional="true">
-                        <f:render partial="Header/All" arguments="{_all}"/>
+                        <f:comment>
+                            Do not render header section for specific list_type or CType, so it can be managed directly by the plugin
+                        </f:comment>
+                        <f:if condition="!{settings.skip_header_rendering.{data.list_type}} && !{settings.skip_header_rendering.{data.CType}}">
+                            <f:render partial="Header/All" arguments="{_all}"/>
+                        </f:if>
                     </f:render>
                     <f:if condition="{contextualconsentService} && {settings.contextualconsent.mainSectionOnly} == '1'">
                         <f:format.raw value='<div data-name="{contextualconsentService.0.data.name}" data-replace="{settings.contextualconsent.replaceAttributes}">'/>
