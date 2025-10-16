@@ -80,6 +80,11 @@ $mega-menu-dropdown-tablet-max-columns: 2 !default;
 }
 
 @include until($navbar-breakpoint) {
+    .navbar-item.is-mega:not(.is-hoverable):not(.is-active) {
+        .navbar-dropdown {
+            display: none;
+        }
+    }
   .navbar-dropdown {
     .container {
       padding: 0;
