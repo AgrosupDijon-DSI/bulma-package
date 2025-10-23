@@ -1,29 +1,64 @@
+$icon-group-background-color: $box-background-color !default;
+$icon-group-background-color-hover: $primary-light !default;
+$icon-group-radius: $box-radius !default;
+$icon-group-border: none !default;
+$icon-group-shadow: $box-shadow !default;
+$icon-group-padding: $box-padding !default;
+$icon-group-link-hover-shadow: $box-link-hover-shadow !default;
+$icon-group-link-active-shadow: $box-link-active-shadow !default;
 
 .icon-group{
   .column > a {
-    position: relative;
+    .content *{
+      color: $link !important;
+    }
     &:hover {
-      z-index: 0;
-      &:before{
-        background-color: $primary-light;
-        bottom: -0.75em;
-        left: -0.75em;
-        position: absolute;
-        right: -0.75em;
-        top: -0.75em;
-        content: "";
-        z-index: -1;
-      }
       .icon, .content *{
         color: $text !important;
       }
       text-decoration: none;
+      background-color: $icon-group-background-color-hover;
+    }
+  }
+  &:not(.boxed) {
+    .column > a {
+      position: relative;
+      &:hover {
+        z-index: 0;
+        &:before{
+          background-color: inherit;
+          bottom: -0.75em;
+          left: -0.75em;
+          position: absolute;
+          right: -0.75em;
+          top: -0.75em;
+          content: "";
+          z-index: -1;
+        }
+      }
     }
   }
   &-item{
     display: flex;
     align-content: stretch;
     height: 100%;
+    .boxed & {
+        @extend .box;
+        border-radius: $icon-group-radius;
+        background-color: $icon-group-background-color;
+        border: $icon-group-border;
+        padding: $icon-group-padding;
+        box-shadow: $icon-group-shadow;
+    }
+    .boxed a& {
+        &:hover,
+        &:focus {
+            box-shadow: $icon-group-link-hover-shadow;
+        }
+        &:active {
+            box-shadow: $icon-group-link-active-shadow;
+        }
+    }
   }
   .content{
     flex-grow: 1;
