@@ -5,8 +5,16 @@ $collapse-transition-style: ease !default;
 $message-body-padding: 1.25em 1.5em !default;
 $accordion-content-padding: $card-content-padding !default;
 $accordion-header-padding: $card-header-padding !default;
+$accordion-header-color: $link !default;
 $accordion-header-hover-color: $link-active !default;
 $accordion-header-active-color: $link-active !default;
+$accordion-border-width: $card-border-width !default;
+$accordion-border-style: $card-border-style !default;
+$accordion-border-color: $card-border-color !default;
+$accordion-radius: $radius !default;
+$accordion-shadow: $card-shadow !default;
+$accordion-header-shadow: $card-header-shadow !default;
+$accordion-background-color: $scheme-main !default;
 
 .is-collapsible {
   height: 0;
@@ -28,6 +36,10 @@ $accordion-header-active-color: $link-active !default;
 
 .accordion {
   .card {
+    border: $accordion-border-width $accordion-border-style $accordion-border-color;
+    border-radius: $accordion-radius;
+    box-shadow: $accordion-shadow;
+    background-color: $accordion-background-color;
     &:not(:last-of-type) {
       margin-bottom: 0.5rem;
     }
@@ -37,32 +49,35 @@ $accordion-header-active-color: $link-active !default;
     padding: $accordion-content-padding;
   }
 
-  .card-header-title {
-    padding: $accordion-header-padding;
-  }
-}
-
-.card-header {
-  &:hover {
-    cursor: pointer;
-
+  .card-header {
+    box-shadow: $accordion-header-shadow;
     a {
-      color: $accordion-header-hover-color;
+      color: $accordion-header-color
     }
-  }
-
-  i {
-    transition: transform $collapse-transition-speed $collapse-transition-style;
-  }
-
-  &.is-active {
-    a {
-      color: $accordion-header-active-color;
+    &:hover {
+      cursor: pointer;
+      a {
+        color: $accordion-header-hover-color;
+      }
     }
 
     i {
-      transform: rotate(-180deg);
+      transition: transform $collapse-transition-speed $collapse-transition-style;
     }
+
+    &.is-active {
+      a {
+        color: $accordion-header-active-color;
+      }
+
+      i {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .card-header-title {
+    padding: $accordion-header-padding;
   }
 }
 
