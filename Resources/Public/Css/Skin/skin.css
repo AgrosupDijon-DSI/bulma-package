@@ -14,12 +14,7 @@ div[id$=tx_bulmapackage_settings_link_item] .icon-list .item .icon-size-small{
     line-height: 32px;
 }
 
-div[id$="tx_bulmapackage_icon_group_item_records"] .form-wizard-icon-list-item button:not(.active):not(:hover),
-div[id$="tx_bulmapackage_settings_link_item_records"] .form-wizard-icon-list-item button:not(.active):not(:hover) {
+div[id$="tx_bulmapackage_icon_group_item_records"] .form-wizard-icon-list-item button:not(.active, :hover),
+div[id$="tx_bulmapackage_settings_link_item_records"] .form-wizard-icon-list-item button:not(.active, :hover) {
     background-color: var(--token-color-neutral-3);
 }
-
-
-
-
-
