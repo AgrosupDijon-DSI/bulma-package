@@ -51,8 +51,8 @@
 				</f:if>
 				<f:if condition="{settings.listPid}">
 					<!-- Link to list -->
-					<div class="column is-full has-text-centered">
-						<f:link.page class="button is-primary" pageUid="{settings.listPid}">
+					<div class="{settings.layouts.{settings.templateLayout}.list.seeAll.wrapperCssClasses -> f:or(alternative:settings.layouts.default.list.seeAll.wrapperCssClasses)}">
+						<f:link.page class="{settings.layouts.{settings.templateLayout}.list.seeAll.buttonCssClasses -> f:or(alternative:settings.layouts.default.list.seeAll.buttonCssClasses)}" pageUid="{settings.listPid}">
 							<f:translate key="news_list_see_all" extensionName="bulma_package" />
 						</f:link.page>
 					</div>

@@ -116,6 +116,10 @@ plugin.tx_news {
         list {
           wrapperCssClasses = news-list-view columns is-multiline is-mobile
           itemPartial = Item
+          seeAll {
+            wrapperCssClasses = column is-full has-text-centered
+            buttonCssClasses = button is-primary
+          }
         }
         detail {
           cols = 3
