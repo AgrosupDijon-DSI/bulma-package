@@ -1,4 +1,4 @@
-.container {
+.container:not(#content > *) {
   @include until($tablet) {
     padding-left: $gap / 2;
     padding-right: $gap / 2;
