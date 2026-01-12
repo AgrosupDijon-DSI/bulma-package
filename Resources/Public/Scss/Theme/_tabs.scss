@@ -1,37 +1,76 @@
 @import "EXT:bulma_package/Resources/Public/Build/simplebar.min.css";
 
 .simplebar-scrollbar::before {
-  background-color: $link;
+    background-color: $link;
 }
 
-.simplebar-wrapper{
-  padding-bottom: 0.75rem;
+.simplebar-wrapper {
+    padding-bottom: 0.75rem;
 }
 
 $tabs-content-padding: 1.5rem 0 0 0 !default;
+$tabs-boxed-link-border-color: transparent !default;
+$tabs-boxed-margin-left: 0 !default;
+$tabs-weight: $weight-normal !default;
+$tabs-boxed-link-color: $tabs-link-color !default;
+$tabs-boxed-link-active-color: $tabs-link-active-color !default;
 
 .tabs {
-  &:not(:last-child) {
-    margin-bottom: 0;
-  }
+    a {
+        font-weight: $tabs-weight;
+    }
+
+    li {
+        &.is-active {
+            a:hover {
+                cursor: default;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    &.is-boxed {
+        a {
+            border-color: $tabs-boxed-link-border-color;
+            color: $tabs-boxed-link-color;
+        }
+
+        li {
+            &.is-active {
+                a {
+                    color: $tabs-boxed-link-active-color;
+                }
+            }
+
+            &:not(:first-child) {
+                margin-left: $tabs-boxed-margin-left;
+            }
+        }
+    }
 }
 
 .tabs-content {
-  padding: $tabs-content-padding;
-  & > ul > li {
-    display: none;
+    padding: $tabs-content-padding;
 
-    &.is-active {
-      display: block;
-    }
-  }
+    & > ul > li {
+        display: none;
 
-  .frame{
-    &:first-of-type{
-      margin-top: 0 !important;
+        &.is-active {
+            display: block;
+        }
     }
-    &:last-of-type {
-      padding-bottom: 0;
+
+    .frame {
+        &:first-of-type {
+            margin-top: 0 !important;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
     }
-  }
 }
