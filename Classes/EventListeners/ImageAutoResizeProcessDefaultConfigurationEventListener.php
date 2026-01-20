@@ -3,7 +3,11 @@
 namespace AgrosupDijon\BulmaPackage\EventListeners;
 
 use Causal\ImageAutoresize\Event\ProcessDefaultConfigurationEvent;
+use TYPO3\CMS\Core\Attribute\AsEventListener;
 
+#[AsEventListener(
+    identifier: 'bulma-package/imageAutoResize-processDefaultConfiguration'
+)]
 final class ImageAutoResizeProcessDefaultConfigurationEventListener
 {
     public function __invoke(ProcessDefaultConfigurationEvent $event): void

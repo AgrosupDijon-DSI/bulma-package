@@ -18,10 +18,14 @@ declare(strict_types=1);
 namespace AgrosupDijon\BulmaPackage\EventListeners;
 
 use TYPO3\CMS\Backend\View\Event\IsContentUsedOnPageLayoutEvent;
+use TYPO3\CMS\Core\Attribute\AsEventListener;
 
 /**
  * Allow the usage of records in colPos 999 for Mask nested content elements.
  */
+#[AsEventListener(
+    identifier: 'bulma-package/nested-content-used'
+)]
 class NestedContentElementsUsedEventListener
 {
     public function __invoke(IsContentUsedOnPageLayoutEvent $event): void
