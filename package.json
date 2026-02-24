@@ -24,7 +24,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "shareon": "^2.5.0",
     "simplebar": "^6.2.7",
-    "slim-select": "^2.9.2"
+    "slim-select": "^3.0"
   },
   "scripts": {
     "dev-server": "encore dev-server",
