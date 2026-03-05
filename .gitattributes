@@ -5,3 +5,10 @@
 /yarn.lock export-ignore
 /webpack.config.js export-ignore
 /.ddev export-ignore
+/phpstan.neon export-ignore
+/rector.php export-ignore
+/fractor.php export-ignore
+/.editorconfig export-ignore
+/.php-cs-fixer.dist.php export-ignore
+/.tools export-ignore
+/phpcs.xml export-ignore

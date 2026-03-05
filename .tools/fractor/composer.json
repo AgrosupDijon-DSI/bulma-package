@@ -1,0 +1,10 @@
+{
+  "require": {
+    "a9f/typo3-fractor": "^0.5"
+  },
+  "config": {
+    "allow-plugins": {
+      "a9f/fractor-extension-installer": true
+    }
+  }
+}

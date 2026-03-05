@@ -1,0 +1,25 @@
+parameters:
+	level: 8
+
+	paths:
+		- .
+
+	excludePaths:
+		analyseAndScan:
+			- public
+			- Resources/Private/Contrib/Php
+		analyse:
+			- vendor
+
+	scanDirectories:
+		- .tools/fractor/vendor
+
+	ignoreErrors:
+		-
+			message: "#^Variable \\$_EXTKEY might not be defined\\.$#"
+			path: */ext_emconf.php
+
+		-
+			identifier: missingType.iterableValue
+
+	treatPhpDocTypesAsCertain: false

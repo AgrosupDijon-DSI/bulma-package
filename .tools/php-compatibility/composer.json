@@ -1,0 +1,10 @@
+{
+	"require": {
+		"phpcompatibility/php-compatibility": "^10.0.0@dev"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

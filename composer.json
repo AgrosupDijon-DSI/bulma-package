@@ -36,6 +36,10 @@
 		"symfony/dom-crawler": "^7.1",
 		"symfony/css-selector": "^7.1"
 	},
+	"require-dev": {
+		"typo3/cms-form": "^13.4",
+		"causal/image_autoresize": "^2.5"
+	},
 	"suggest": {
 		"georgringer/news": "Versatile news extension, based on extbase & fluid for TYPO3 CMS",
 		"image_autoresize": "Let TYPO3 automatically resize down huge images/pictures on-the-fly during upload (or using a scheduler task for batch processing)",
@@ -59,13 +63,79 @@
 		],
 		"dependencies-for-ter": [
 			"@composer install -d Resources/Private/Contrib/Php"
+		],
+		"post-update-cmd": [
+			"@install-tools"
+		],
+		"install-tools": [
+			"@composer -d .tools/typo3-coding-standards install",
+			"@composer -d .tools/typo3-rector install",
+			"@composer -d .tools/fractor install",
+			"@composer -d .tools/php-compatibility install"
+		],
+		"update-tools": [
+			"@composer -d .tools/typo3-coding-standards update",
+			"@composer -d .tools/typo3-rector update",
+			"@composer -d .tools/fractor update",
+			"@composer -d .tools/php-compatibility update"
+		],
+		"check": [
+			"@check:rector",
+			"@check:fractor",
+			"@check:cs",
+			"@check:phpstan",
+			"@check:compatibility"
+		],
+		"check:phpstan": [
+			"@composer -d $(pwd)/.tools/typo3-rector exec -- vendor/bin/phpstan analyse -c $(pwd)/phpstan.neon"
+		],
+		"check:rector": [
+			"@composer -d $(pwd)/.tools/typo3-rector exec -- vendor/bin/rector process -c $(pwd)/rector.php --dry-run"
+		],
+		"check:cs": [
+			"@composer exec -- .tools/typo3-coding-standards/vendor/bin/php-cs-fixer check --diff"
+		],
+		"check:fractor": [
+			"@composer -d $(pwd)/.tools/fractor exec -- vendor/bin/fractor process -c $(pwd)/fractor.php --dry-run"
+		],
+		"check:compatibility": [
+			"@composer -d $(pwd)/.tools/php-compatibility exec -- vendor/bin/phpcs --standard=$(pwd)/phpcs.xml"
+		],
+		"fix": [
+			"@fix:rector",
+			"@fix:fractor",
+			"@fix:cs",
+			"@fix:compatibility"
+		],
+		"fix:rector": [
+			"@composer -d $(pwd)/.tools/typo3-rector exec -- vendor/bin/rector process -c $(pwd)/rector.php"
+		],
+		"fix:cs": [
+			"@composer exec -- .tools/typo3-coding-standards/vendor/bin/php-cs-fixer fix"
+		],
+		"fix:fractor": [
+			"@composer -d $(pwd)/.tools/fractor exec -- vendor/bin/fractor process -c $(pwd)/fractor.php"
+		],
+		"fix:compatibility": [
+			"@composer -d $(pwd)/.tools/php-compatibility exec -- vendor/bin/phpcbf --standard=$(pwd)/phpcs.xml"
+		],
+		"t3cs:update": [
+			"@composer exec -- .tools/typo3-coding-standards/vendor/bin/typo3-coding-standards update"
 		]
 	},
 	"archive": {
 		"exclude": [
-			".gitignore",
-			".crowdin.yaml",
-			"node_modules"
+			"node_modules",
+			"public",
+			"vendor",
+			".php-cs-fixer.cache",
+			"composer.lock"
 		]
+	},
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
 	}
 }
