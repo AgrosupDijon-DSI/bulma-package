@@ -14,6 +14,7 @@ return FractorConfiguration::configure()
     ])
     ->withSkip([
         __DIR__ . '/vendor/*',
+        __DIR__ . '/phpcs.xml',
         __DIR__ . '/node_modules/*',
         __DIR__ . '/public/*',
         __DIR__ . '/Resources/Public/Contrib/*',

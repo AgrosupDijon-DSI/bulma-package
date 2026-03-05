@@ -14,6 +14,7 @@ namespace AgrosupDijon\BulmaPackage\Parser;
 use ScssPhp\ScssPhp\Compiler;
 use ScssPhp\ScssPhp\OutputStyle;
 use ScssPhp\ScssPhp\Type;
+use ScssPhp\ScssPhp\ValueConverter;
 use ScssPhp\ScssPhp\Version;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -84,7 +85,7 @@ class ScssParser extends AbstractParser
     {
         $scss = new Compiler();
         $scss->setOutputStyle(OutputStyle::COMPRESSED);
-        $scss->addVariables($settings['variables']);
+        $scss->addVariables(array_map(fn($value) => ValueConverter::parseValue($value), $settings['variables']));
         if ($settings['options']['sourceMap']) {
             $scss->setSourceMap(Compiler::SOURCE_MAP_FILE);
             $scss->setSourceMapOptions([
@@ -104,8 +105,8 @@ class ScssParser extends AbstractParser
             // Resolve potential back paths manually using PathUtility::getCanonicalPath,
             // but make sure we do not break out of TYPO3 application path using GeneralUtility::getFileAbsFileName
             // Also resolve EXT: paths if given
-            $isTypo3Absolute = str_starts_with($url, 'EXT:') || PathUtility::isAbsolutePath($url);
-            $fileName = $isTypo3Absolute ? $url : $visualImportPath . '/' . $url;
+            $isTypo3Absolute = str_starts_with($url, 'ext:') || PathUtility::isAbsolutePath($url);
+            $fileName = $isTypo3Absolute ? str_replace('ext:', 'EXT:', $url) : $visualImportPath . '/' . $url;
             $full = GeneralUtility::getFileAbsFileName(PathUtility::getCanonicalPath($fileName));
             // The API forces us to check the existence of files paths, with or without url.
             // We must only return a string if the file to be imported actually exists.
@@ -120,6 +121,7 @@ class ScssParser extends AbstractParser
 
             return null;
         });
+
         // Add extensions path to import paths, so that we can use paths relative to this directory to resolve imports
         $scss->addImportPath(Environment::getExtensionsPath());
 
@@ -138,9 +140,10 @@ class ScssParser extends AbstractParser
                 $absoluteBulmaPackageThemePath,
                 $relativeBulmaPackageThemePath
             ): array {
-                $marker = $args[0][1];
-                $args[0][1] = '';
-                $result = $scss->compileValue($args[0]);
+                /** @var array $value */
+                $value = $args[0];
+                $value[1] = '';
+                $result = $scss->compileValue($value);
                 if (substr_compare($result, 'data:', 0, 5, true) !== 0) {
                     if (is_file(PathUtility::getCanonicalPath($absoluteFilePath . '/' . $result))) {
                         $result = PathUtility::getCanonicalPath($relativeFilePath . '/' . $result);
@@ -156,8 +159,7 @@ class ScssParser extends AbstractParser
             ['args']
         );
 
-        // Compile file. Second parameter is needed for source mapping
-        $compilationResult = $scss->compileString('@import "' . $absoluteFilename . '"', $absoluteFilename);
+        $compilationResult = $scss->compileString('@import "' . $absoluteFilename . '"');
         $css = $compilationResult->getCss();
 
         // Fix paths in url() statements to be relative to temp directory

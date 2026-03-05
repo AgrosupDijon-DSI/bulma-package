@@ -30,7 +30,7 @@
 		"typo3/cms-install": "^13.4",
 		"typo3/cms-rte-ckeditor": "^13.4",
 		"typo3/cms-seo": "^13.4",
-		"scssphp/scssphp": "^1.13",
+		"scssphp/scssphp": "^2.1",
 		"ext-dom": "*",
 		"ext-simplexml": "*",
 		"symfony/dom-crawler": "^7.1",

@@ -5,7 +5,7 @@
 
     <file>.</file>
 
-    <config name="testVersion" value="8.2-8.3"/>
+    <config name="testVersion" value="8.2-"/>
 
     <exclude-pattern>*/node_modules/*</exclude-pattern>
     <exclude-pattern type="relative">^.tools/*</exclude-pattern>
@@ -14,13 +14,17 @@
     <arg name="colors"/>
     <arg value="sp"/>
 
-    <rule ref="PHPCompatibility" />
+    <rule ref="PHPCompatibility"/>
 
     <rule ref="PSR12">
         <exclude name="Generic.Files.LineLength.TooLong"/>
         <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
         <exclude-pattern>*public/*</exclude-pattern>
         <exclude-pattern>*Resources/Private/Contrib/Php/*</exclude-pattern>
+    </rule>
+
+    <rule ref="PHPCompatibility.FunctionUse.NewFunctions.fpowFound">
+        <exclude-pattern>*Resources/Private/Contrib/Php/vendor/scssphp/scssphp/src/Util/NumberUtil.php</exclude-pattern>
     </rule>
 
 </ruleset>

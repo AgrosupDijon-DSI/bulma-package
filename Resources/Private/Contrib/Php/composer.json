@@ -4,7 +4,7 @@
     "prepend-autoloader": false
   },
   "require": {
-    "scssphp/scssphp": "^1.13",
+    "scssphp/scssphp": "^2.1",
     "symfony/dom-crawler": "^7.1",
     "symfony/css-selector": "^7.1"
   }

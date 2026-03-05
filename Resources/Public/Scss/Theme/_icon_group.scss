@@ -50,7 +50,7 @@ $icon-group-link-active-shadow: $box-link-active-shadow !default;
         padding: $icon-group-padding;
         box-shadow: $icon-group-shadow;
     }
-    .boxed a& {
+    .boxed a & {
         &:hover,
         &:focus {
             box-shadow: $icon-group-link-hover-shadow;
