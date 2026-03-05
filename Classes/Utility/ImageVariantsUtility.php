@@ -106,10 +106,11 @@ class ImageVariantsUtility
             $sizes['1x'] = ['multiplier' => 1];
         }
         foreach ($sizes as $key => $settings) {
-            if (!array_key_exists('multiplier', $settings) ||
-                !is_numeric($settings['multiplier']) ||
-                $settings['multiplier'] < 1 ||
-                !self::isValidSizeKey($key)
+            if (
+                !array_key_exists('multiplier', $settings)
+                || !is_numeric($settings['multiplier'])
+                || $settings['multiplier'] < 1
+                || !self::isValidSizeKey($key)
             ) {
                 continue;
             }

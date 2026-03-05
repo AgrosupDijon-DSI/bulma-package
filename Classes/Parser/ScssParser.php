@@ -47,8 +47,10 @@ class ScssParser extends AbstractParser
         $cacheFileMap = $this->getCacheFileMap($cacheFile);
         $compile = false;
 
-        if (!$this->isCached($file, $settings)
-            || $this->needsCompile($cacheFile, $cacheFileMeta, $settings)) {
+        if (
+            !$this->isCached($file, $settings)
+            || $this->needsCompile($cacheFile, $cacheFileMeta, $settings)
+        ) {
             $compile = true;
         }
 

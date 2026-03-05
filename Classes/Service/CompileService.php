@@ -70,13 +70,15 @@ class CompileService
         ];
 
         // Parser
-        if (isset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
+        if (
+            isset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
             && is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'])
         ) {
             foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/bulma-package/css']['parser'] as $className) {
                 /** @var class-string<ParserInterface> $className */
                 $parser = GeneralUtility::makeInstance($className);
-                if ($parser instanceof ParserInterface
+                if (
+                    $parser instanceof ParserInterface
                     && isset($settings['file']['info']['extension'])
                     && $parser->supports($settings['file']['info']['extension'])
                 ) {

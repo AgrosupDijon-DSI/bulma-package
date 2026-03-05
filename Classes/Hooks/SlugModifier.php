@@ -7,13 +7,11 @@ declare(strict_types=1);
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
+ *
+ * Mostly copy paste from https://github.com/b13/masi
  */
 
 namespace AgrosupDijon\BulmaPackage\Hooks;
-
-/**
- * Mostly copy paste from https://github.com/b13/masi
- */
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\DataHandling\SlugHelper;
@@ -111,6 +109,7 @@ class SlugModifier
                 if (!empty($this->recordData[$fieldName])) {
                     $pieceOfSlug = $this->recordData[$fieldName];
                     $pieceOfSlug = str_replace(
+                        // @phpstan-ignore argument.type
                         array_keys($replaceConfiguration),
                         array_values($replaceConfiguration),
                         $pieceOfSlug

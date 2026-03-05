@@ -34,8 +34,10 @@ class BulmaPageTitleHook
      */
     public function execute(array &$params): void
     {
-        if (!($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface ||
-            !ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()) {
+        if (
+            !($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface
+            || !ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()
+        ) {
             return;
         }
 
@@ -48,7 +50,6 @@ class BulmaPageTitleHook
         $pageInformation = $this->getRequest()?->getAttribute('frontend.page.information');
 
         foreach ($pageInformation->getRootLine() as $page) {
-
             $result = $queryBuilder
                 ->select('title_seo')
                 ->from('tx_bulmapackage_settings')

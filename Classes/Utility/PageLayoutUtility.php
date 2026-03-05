@@ -41,5 +41,4 @@ class PageLayoutUtility
             $parameters['items'][] = [$row['label'], $row['uid'] * 100];
         }
     }
-
 }

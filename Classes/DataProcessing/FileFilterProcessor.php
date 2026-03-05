@@ -89,7 +89,8 @@ class FileFilterProcessor implements DataProcessorInterface
         }
 
         foreach ($processedData[$variableName] as $key => $value) {
-            if (($value instanceof FileReference || $value instanceof File)
+            if (
+                ($value instanceof FileReference || $value instanceof File)
                 && !in_array($value->getExtension(), $allowedFileExtensions, true)
             ) {
                 unset($processedData[$variableName][$key]);

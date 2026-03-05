@@ -168,5 +168,4 @@ class BootstrapToBulmaAccordionUpdate implements UpgradeWizardInterface, Repeata
 
         return true;
     }
-
 }

@@ -282,5 +282,4 @@ class WebsiteModuleController extends ActionController
     {
         return $GLOBALS['LANG'];
     }
-
 }

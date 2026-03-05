@@ -70,6 +70,7 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
                 $queryBuilder->expr()->eq('deleted', '0')
             );
 
+        $predicates = [];
         foreach ($this->classes as $tag => $replacements) {
             foreach ($replacements as $classBefore => $classAfter) {
                 $predicates[] = $queryBuilder->expr()->like(
@@ -127,6 +128,7 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
                 $queryBuilder->expr()->eq('deleted', '0')
             );
 
+        $predicates = [];
         foreach ($this->classes as $tag => $replacements) {
             foreach ($replacements as $classBefore => $classAfter) {
                 $predicates[] = $queryBuilder->expr()->like(
@@ -188,5 +190,4 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
 
         return true;
     }
-
 }

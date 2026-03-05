@@ -92,6 +92,7 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
                 $queryBuilder->expr()->eq('deleted', '0')
             );
 
+        $predicates = [];
         foreach ($this->classes as $tag => $replacements) {
             foreach ($replacements as $classBefore => $classAfter) {
                 $predicates[] = $queryBuilder->expr()->like(
@@ -149,6 +150,7 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
                 $queryBuilder->expr()->eq('deleted', '0')
             );
 
+        $predicates = [];
         foreach ($this->classes as $tag => $replacements) {
             foreach ($replacements as $classBefore => $classAfter) {
                 $predicates[] = $queryBuilder->expr()->like(
@@ -198,5 +200,4 @@ class BootstrapToBulmaRteUpdate implements UpgradeWizardInterface, RepeatableInt
 
         return true;
     }
-
 }

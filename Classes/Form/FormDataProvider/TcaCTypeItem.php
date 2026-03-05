@@ -69,14 +69,16 @@ class TcaCTypeItem implements FormDataProviderInterface
      */
     public function addData(array $result)
     {
-        if ($result['tableName'] !== 'tt_content'
+        if (
+            $result['tableName'] !== 'tt_content'
             || empty($result['databaseRow']['colPos'][0])
             || (int)$result['databaseRow']['colPos'][0] !== 999
         ) {
             return $result;
         }
 
-        if (!empty($result['inlineParentUid'])
+        if (
+            !empty($result['inlineParentUid'])
             && in_array($result['inlineParentConfig']['foreign_field'], array_keys($this->supportedInlineParentFields), true)
         ) {
             $cTypes = $this->supportedInlineParentFields[$result['inlineParentConfig']['foreign_field']];

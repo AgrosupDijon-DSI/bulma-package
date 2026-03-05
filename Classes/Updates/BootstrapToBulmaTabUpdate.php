@@ -168,5 +168,4 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
 
         return true;
     }
-
 }
