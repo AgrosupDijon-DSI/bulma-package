@@ -13,17 +13,15 @@ use AgrosupDijon\BulmaPackage\Service\CompileService;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * PreProcessHook
  */
 class PreProcessHook
 {
-    /**
-     * @var CompileService
-     */
-    protected $compileService;
+    public function __construct(
+        protected readonly CompileService $compileService
+    ) {}
 
     /**
      * @param array $params
@@ -43,7 +41,7 @@ class PreProcessHook
             $files = [];
             if (is_array($params[$key])) {
                 foreach ($params[$key] as $file => $settings) {
-                    $compiledFile = $this->getCompileService()->getCompiledFile($GLOBALS['TYPO3_REQUEST'], $file);
+                    $compiledFile = $this->compileService->getCompiledFile($GLOBALS['TYPO3_REQUEST'], $file);
                     if (!is_null($compiledFile)) {
                         $settings['file'] = $compiledFile;
                         $files[$compiledFile] = $settings;
@@ -54,18 +52,5 @@ class PreProcessHook
                 $params[$key] = $files;
             }
         }
-    }
-
-    /**
-     * Get the compile service
-     *
-     * @return CompileService
-     */
-    protected function getCompileService(): CompileService
-    {
-        if ($this->compileService === null) {
-            $this->compileService = GeneralUtility::makeInstance(CompileService::class);
-        }
-        return $this->compileService;
     }
 }

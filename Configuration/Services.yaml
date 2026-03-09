@@ -9,3 +9,12 @@ services:
 
   AgrosupDijon\BulmaPackage\ViewHelpers\WebsiteSettings\MainLogoViewHelper:
     public: true
+
+  AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaMetaTagHook:
+    public: true
+
+  AgrosupDijon\BulmaPackage\Hooks\PageRenderer\BulmaPageTitleHook:
+    public: true
+
+  AgrosupDijon\BulmaPackage\Hooks\PageRenderer\PreProcessHook:
+    public: true
