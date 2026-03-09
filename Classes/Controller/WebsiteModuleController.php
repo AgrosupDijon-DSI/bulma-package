@@ -42,7 +42,8 @@ class WebsiteModuleController extends ActionController
         protected readonly SiteFinder $siteFinder,
         protected readonly ModuleTemplateFactory $moduleTemplateFactory,
         protected UriBuilder $backendUriBuilder,
-        protected IconFactory $iconFactory
+        protected IconFactory $iconFactory,
+        private readonly ConnectionPool $connectionPool
     ) {}
 
     public function initializeAction(): void
@@ -147,7 +148,7 @@ class WebsiteModuleController extends ActionController
      */
     protected function customColorsAction(): ResponseInterface
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_custom_color');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_custom_color');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
         $result = $queryBuilder
             ->select('*')
@@ -183,7 +184,7 @@ class WebsiteModuleController extends ActionController
      */
     protected function metaTagsAction(): ResponseInterface
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
         $result = $queryBuilder
             ->select('*')
@@ -219,7 +220,7 @@ class WebsiteModuleController extends ActionController
      */
     protected function getBulmaPackageSettings(array &$pages): void
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_settings');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_settings');
         $result = $queryBuilder
             ->select('uid', 'pid', 'sys_language_uid')
             ->from('tx_bulmapackage_settings')
@@ -239,7 +240,7 @@ class WebsiteModuleController extends ActionController
      */
     protected function getAllSitePages(array $languages): array
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('pages');
         $queryBuilder->getRestrictions()->removeByType(HiddenRestriction::class);
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(WorkspaceRestriction::class, 0));
         $statement = $queryBuilder

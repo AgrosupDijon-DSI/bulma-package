@@ -12,7 +12,6 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\RepeatableInterface;
@@ -33,6 +32,10 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
         'right' => 25,
         'bottom' => 8,
     ];
+
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
 
     /**
      * @return string Title of this updater
@@ -58,14 +61,14 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
      */
     public function updateNecessary(): bool
     {
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tt_content');
+        $connection = $this->connectionPool->getConnectionForTable('tt_content');
         $tableColumns = $connection->createSchemaManager()->listTableColumns('tt_content');
         // Only proceed if tx_bootstrappackage_tab_item field still exists
         if (!isset($tableColumns['tx_bootstrappackage_tab_item'])) {
             return false;
         }
 
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $result = $queryBuilder->count('uid')
             ->from('tt_content')
             ->where(
@@ -100,7 +103,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
      */
     public function executeUpdate(): bool
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $result = $queryBuilder->select('uid', 'tx_bootstrappackage_tab_item')
             ->from('tt_content')
             ->where(
@@ -115,7 +118,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
             ->executeQuery();
 
         foreach ($result->fetchAllAssociative() as $tabContent) {
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bootstrappackage_tab_item');
+            $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bootstrappackage_tab_item');
             $result = $queryBuilder->select('*')
                 ->from('tx_bootstrappackage_tab_item')
                 ->where(
@@ -124,8 +127,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
                 ->executeQuery();
 
             foreach ($result->fetchAllAssociative() as $bootstrapTabItem) {
-                $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
-                $connection = $connectionPool->getConnectionForTable('tx_bulmapackage_tab_item');
+                $connection = $this->connectionPool->getConnectionForTable('tx_bulmapackage_tab_item');
                 $connection->insert(
                     'tx_bulmapackage_tab_item',
                     [
@@ -138,8 +140,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
                 );
                 $uidBulmaTabItemUid = (int)$connection->lastInsertId();
 
-                $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
-                $connection = $connectionPool->getConnectionForTable('tt_content');
+                $connection = $this->connectionPool->getConnectionForTable('tt_content');
                 $connection->insert(
                     'tt_content',
                     [
@@ -156,8 +157,7 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
                 );
             }
 
-            $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
-            $connection = $connectionPool->getConnectionForTable('tt_content');
+            $connection = $this->connectionPool->getConnectionForTable('tt_content');
             $connection->update(
                 'tt_content',
                 ['tx_bulmapackage_tab_item' => $tabContent['tx_bootstrappackage_tab_item']],

@@ -12,7 +12,6 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
@@ -23,6 +22,10 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 #[UpgradeWizard('cardImageToMediaUpdate')]
 class CardImageToMediaUpdate implements UpgradeWizardInterface
 {
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
+
     /**
      * @return string Title of this updater
      */
@@ -47,13 +50,13 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
      */
     public function updateNecessary(): bool
     {
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tx_bulmapackage_card_group_item');
+        $connection = $this->connectionPool->getConnectionForTable('tx_bulmapackage_card_group_item');
         $tableColumns = $connection->createSchemaManager()->listTableColumns('tx_bulmapackage_card_group_item');
         // Only proceed if image field still exists
         if (!isset($tableColumns['image'])) {
             return false;
         }
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_card_group_item');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_card_group_item');
         $queryBuilder->getRestrictions()->removeAll();
         $result = $queryBuilder->count('uid')
             ->from('tx_bulmapackage_card_group_item')
@@ -82,7 +85,7 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
      */
     public function executeUpdate(): bool
     {
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('tx_bulmapackage_card_group_item');
+        $connection = $this->connectionPool->getConnectionForTable('tx_bulmapackage_card_group_item');
         $queryBuilder = $connection->createQueryBuilder();
         $queryBuilder->getRestrictions()->removeAll();
         $statement = $queryBuilder->select('uid', 'image')

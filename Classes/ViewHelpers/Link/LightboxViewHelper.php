@@ -13,7 +13,6 @@ namespace AgrosupDijon\BulmaPackage\ViewHelpers\Link;
 
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
@@ -24,6 +23,14 @@ class LightboxViewHelper extends AbstractTagBasedViewHelper
      * @var string
      */
     protected $tagName = 'a';
+    /**
+     * Constructor
+     */
+    public function __construct(
+        private readonly ImageService $imageService
+    ) {
+        parent::__construct();
+    }
 
     public function initializeArguments(): void
     {
@@ -97,6 +104,6 @@ class LightboxViewHelper extends AbstractTagBasedViewHelper
      */
     protected function getImageService(): ImageService
     {
-        return GeneralUtility::makeInstance(ImageService::class);
+        return $this->imageService;
     }
 }

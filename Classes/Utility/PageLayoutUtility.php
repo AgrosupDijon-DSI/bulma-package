@@ -11,20 +11,23 @@ namespace AgrosupDijon\BulmaPackage\Utility;
 
 use Doctrine\DBAL\Driver\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * PageLayoutUtility
  */
 class PageLayoutUtility
 {
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
+
     /**
      * @param array $parameters
      * @throws Exception
      */
     public function addLayoutItems(array $parameters): void
     {
-        $resultRows = GeneralUtility::makeInstance(ConnectionPool::class)
+        $resultRows = $this->connectionPool
             ->getConnectionForTable('tx_bulmapackage_custom_color')
             ->select(
                 ['uid', 'label'],

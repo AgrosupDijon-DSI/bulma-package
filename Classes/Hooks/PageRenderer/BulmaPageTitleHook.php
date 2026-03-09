@@ -28,6 +28,10 @@ use TYPO3\CMS\Frontend\Page\PageInformation;
  */
 class BulmaPageTitleHook
 {
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
+
     /**
      * @param array $params
      * @throws Exception
@@ -41,7 +45,7 @@ class BulmaPageTitleHook
             return;
         }
 
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_settings');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_settings');
 
         $bulmaSettingsTitleSeo = '';
         $settingsPid = 0;

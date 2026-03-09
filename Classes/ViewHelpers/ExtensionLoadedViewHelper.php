@@ -10,6 +10,7 @@
 namespace AgrosupDijon\BulmaPackage\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
 
 /**
@@ -27,10 +28,10 @@ class ExtensionLoadedViewHelper extends AbstractConditionViewHelper
     }
 
     /**
-     * @param array|null $arguments
+     * @param array{key: string} $arguments
      * @return bool
      */
-    protected static function evaluateCondition($arguments = null): bool
+    public static function verdict(array $arguments, RenderingContextInterface $renderingContext): bool
     {
         if (isset($arguments['key'])) {
             return ExtensionManagementUtility::isLoaded($arguments['key']);

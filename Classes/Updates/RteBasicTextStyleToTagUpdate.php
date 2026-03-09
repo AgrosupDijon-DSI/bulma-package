@@ -12,7 +12,6 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 use Doctrine\DBAL\Exception;
 use Symfony\Component\DomCrawler\Crawler;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\RepeatableInterface;
@@ -36,6 +35,10 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
             'text-striked' => 's',
         ],
     ];
+
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
 
     /**
      * @return string Title of this updater
@@ -61,7 +64,7 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
      */
     public function updateNecessary(): bool
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
         $queryBuilder->select('uid', 'bodytext')
@@ -119,7 +122,7 @@ class RteBasicTextStyleToTagUpdate implements UpgradeWizardInterface, Repeatable
      */
     public function executeUpdate(): bool
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
         $queryBuilder->select('uid', 'bodytext')

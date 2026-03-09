@@ -11,7 +11,6 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
@@ -22,6 +21,10 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 #[UpgradeWizard('accordionAndTabsUpdate')]
 class AccordionAndTabsUpdate implements UpgradeWizardInterface
 {
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
+
     /**
      * @return string Title of this updater
      */
@@ -64,7 +67,7 @@ class AccordionAndTabsUpdate implements UpgradeWizardInterface
      */
     public function executeUpdate(): bool
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->update('tt_content')
             ->where(
@@ -103,7 +106,7 @@ class AccordionAndTabsUpdate implements UpgradeWizardInterface
      */
     private function getContentsWithEmptyContentRole(): array
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
         $result = $queryBuilder->select('uid')

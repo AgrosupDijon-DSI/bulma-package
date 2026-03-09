@@ -14,13 +14,17 @@ use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * BulmaMetaTagHook
  */
 class BulmaMetaTagHook
 {
+    public function __construct(
+        private readonly MetaTagManagerRegistry $metaTagManagerRegistry,
+        private readonly ConnectionPool $connectionPool
+    ) {}
+
     /**
      * @throws Exception
      */
@@ -33,8 +37,8 @@ class BulmaMetaTagHook
             return;
         }
 
-        $metaTagManagerRegistry = GeneralUtility::makeInstance(MetaTagManagerRegistry::class);
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
+        $metaTagManagerRegistry = $this->metaTagManagerRegistry;
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_meta_tags');
         $result = $queryBuilder->select('*')
             ->from('tx_bulmapackage_meta_tags')
             ->executeQuery();

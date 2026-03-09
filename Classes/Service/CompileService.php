@@ -34,6 +34,10 @@ class CompileService
      */
     protected string $tempDirectoryRelativeToRoot = '../../../../';
 
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
+
     /**
      * @param ServerRequestInterface $request
      * @param string $file
@@ -152,7 +156,7 @@ class CompileService
     protected function getLayoutFromDatabase(int $layoutUid): array
     {
         $layout = [];
-        $result = GeneralUtility::makeInstance(ConnectionPool::class)
+        $result = $this->connectionPool
             ->getConnectionForTable('tx_bulmapackage_custom_color')
             ->select(
                 ['*'],

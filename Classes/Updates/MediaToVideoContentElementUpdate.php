@@ -11,7 +11,6 @@ namespace AgrosupDijon\BulmaPackage\Updates;
 
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
@@ -22,6 +21,10 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 #[UpgradeWizard('mediaToVideoContentElementUpdate')]
 class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
 {
+    public function __construct(
+        private readonly ConnectionPool $connectionPool
+    ) {}
+
     /**
      * @return string Title of this updater
      */
@@ -66,7 +69,7 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
      */
     public function executeUpdate(): bool
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $queryBuilder->update('tt_content')
             ->where(
                 $queryBuilder->expr()->eq(
@@ -86,7 +89,7 @@ class MediaToVideoContentElementUpdate implements UpgradeWizardInterface
      */
     private function getMediaContentElement()
     {
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
 
         $result = $queryBuilder->select('uid')
