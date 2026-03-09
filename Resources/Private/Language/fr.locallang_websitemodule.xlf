@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
+    <header/>
+    <body>
+      <trans-unit id="overview.title" approved="yes">
+        <source>Website Management</source>
+        <target state="final">Configuration du site</target>
+      </trans-unit>
+      <trans-unit id="overview.noRootPages.title" approved="yes">
+        <source>No root pages found!</source>
+        <target state="final">Aucune page "racine" trouvée !</target>
+      </trans-unit>
+      <trans-unit id="overview.noRootPages.message" approved="yes">
+        <source>Please set at least one page as "Root Page" through page properties.</source>
+        <target state="final">Au moins une page doit être définie en tant que "Page racine" dans les propriétés de la page.</target>
+      </trans-unit>
+      <trans-unit id="overview.website" approved="yes">
+        <source>Website</source>
+        <target state="final">Site</target>
+      </trans-unit>
+      <trans-unit id="overview.configuration.create" approved="yes">
+        <source>Create new configuration</source>
+        <target state="final">Créer une nouvelle configuration</target>
+      </trans-unit>
+      <trans-unit id="overview.configuration.edit" approved="yes">
+        <source>Edit configuration</source>
+        <target state="final">Modifier la configuration</target>
+      </trans-unit>
+      <trans-unit id="overview.configuration.translate" approved="yes">
+        <source>Translate configuration</source>
+        <target state="final">Traduire la configuration</target>
+      </trans-unit>
+      <trans-unit id="customColors.title" approved="yes">
+        <source>Colors Management</source>
+        <target state="final">Gestion des couleurs</target>
+      </trans-unit>
+      <trans-unit id="customColors.noColor.message" approved="yes">
+        <source>No color yet!</source>
+        <target state="final">Aucune couleur à lister pour l'instant !</target>
+      </trans-unit>
+      <trans-unit id="customColors.color.create" approved="yes">
+        <source>Create new color</source>
+        <target state="final">Créer une nouvelle couleur</target>
+      </trans-unit>
+      <trans-unit id="metaTags.title" approved="yes">
+        <source>Meta tags Management</source>
+        <target state="final">Gestion des balises Meta</target>
+      </trans-unit>
+      <trans-unit id="metaTags.noMeta.message" approved="yes">
+        <source>No meta tag yet!</source>
+        <target state="final">Aucune balise Meta à lister pour l'instant !</target>
+      </trans-unit>
+      <trans-unit id="metaTags.meta.create" approved="yes">
+        <source>Create new meta tag</source>
+        <target state="final">Créer une nouvelle balise Meta</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
