@@ -10,6 +10,7 @@
     <exclude-pattern>*/node_modules/*</exclude-pattern>
     <exclude-pattern type="relative">^.tools/*</exclude-pattern>
     <exclude-pattern type="relative">^vendor/*</exclude-pattern>
+    <exclude-pattern type="relative">^public/*</exclude-pattern>
 
     <arg name="colors"/>
     <arg value="sp"/>
@@ -19,7 +20,6 @@
     <rule ref="PSR12">
         <exclude name="Generic.Files.LineLength.TooLong"/>
         <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
-        <exclude-pattern>*public/*</exclude-pattern>
         <exclude-pattern>*Resources/Private/Contrib/Php/*</exclude-pattern>
     </rule>
 
