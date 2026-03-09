@@ -27,6 +27,10 @@
         <source>Choose an image</source>
         <target state="final">Sélectionner une image</target>
       </trans-unit>
+      <trans-unit id="form.multiselect.defaultPlaceholder" approved="yes">
+        <source>Choose one or more elements</source>
+        <target state="final">Sélectionner un ou plusieurs éléments</target>
+      </trans-unit>
       <trans-unit id="footer-title-menu" approved="yes">
         <source>Links</source>
         <target state="final">Liens</target>
