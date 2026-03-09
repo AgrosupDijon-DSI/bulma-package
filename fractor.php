@@ -13,6 +13,7 @@ return FractorConfiguration::configure()
         Typo3LevelSetList::UP_TO_TYPO3_13,
     ])
     ->withSkip([
+        __DIR__ . '/.tools/*',
         __DIR__ . '/vendor/*',
         __DIR__ . '/phpcs.xml',
         __DIR__ . '/node_modules/*',
