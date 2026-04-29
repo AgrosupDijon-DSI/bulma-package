@@ -104,6 +104,9 @@
 			<trans-unit id="header-nav-aria-label">
                 <source>main navigation</source>
             </trans-unit>
+			<trans-unit id="breadcrumb-nav-aria-label">
+                <source>breadcrumbs</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
