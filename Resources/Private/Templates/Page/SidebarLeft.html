@@ -13,7 +13,7 @@
             <section id="content">
                 <div class="container{f:if(condition: '{breadcrumb} && !{data.hide_breadcrumb}', then: ' after-breadcrumb')}">
                     <div class="{settings.layouts.{current}.columns.wrapperClasses}">
-                        <main id="main" class="{settings.layouts.{current}.columns.mainClasses}">
+                        <main id="main" role="main" class="{settings.layouts.{current}.columns.mainClasses}">
                             <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
                         </main>
                         <aside class="{settings.layouts.{current}.columns.asideClasses}">
@@ -24,7 +24,7 @@
             </section>
         </f:then>
         <f:else>
-            <main id="main">
+            <main id="main" role="main">
                 <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
             </main>
         </f:else>
