@@ -101,6 +101,9 @@
             <trans-unit id="social_media_buttons.shareon.share">
                 <source>Share</source>
             </trans-unit>
+			<trans-unit id="header-nav-aria-label">
+                <source>main navigation</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
