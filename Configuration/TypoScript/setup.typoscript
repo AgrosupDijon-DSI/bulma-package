@@ -48,6 +48,7 @@ plugin.tx_bulmapackage {
 #### PAGE ####
 ##############
 page = PAGE
+page.bodyTag = <body id="top">
 page {
   typeNum = 0
 
