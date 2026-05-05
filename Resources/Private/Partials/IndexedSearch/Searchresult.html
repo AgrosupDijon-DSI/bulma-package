@@ -1,6 +1,6 @@
 <div class="media">
     <div class="media-content">
-        <h4 class="media-heading">
+        <h2 class="media-heading mb-1 title is-4">
             <f:if condition="{settings.displayResultNumber}">
                 <span class="tx-indexedsearch-result-number">{row.result_number}</span>
             </f:if>
@@ -8,7 +8,7 @@
             <f:if condition="{settings.bulma.showPercentage}">
                 <span>{row.rating}</span>
             </f:if>
-        </h4>
+        </h2>
         <f:if condition="{row.headerOnly} == 0">
             <p><f:format.crop maxCharacters="{settings.results.summaryCropAfter}">{row.description -> f:format.raw() -> f:format.htmlentitiesDecode()}</f:format.crop></p>
             <ul class="is-inline-block">
