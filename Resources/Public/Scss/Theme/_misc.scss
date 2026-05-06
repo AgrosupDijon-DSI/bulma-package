@@ -19,7 +19,7 @@ img{
   overflow: hidden;
   transition: all .3s ease-in-out;
   z-index: 1020;
-  background-color: $black-opacity;
+  background-color: $black;
   color: #ffffff;
   bottom: ($gap / 2);
   right: ($gap / 2);
@@ -30,8 +30,8 @@ img{
   &:active,
   &:focus,
   &:hover {
-    color: #ffffff;
-    background-color: $primary;
+    color: $black;
+    background-color: #ffffff;
   }
   .scroll-top-icon {
     @extend .css-arrow;
