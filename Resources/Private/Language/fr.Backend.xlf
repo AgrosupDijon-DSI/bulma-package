@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/Backend.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
+    <header/>
+    <body>
+      <trans-unit id="pages.exclude_slug_for_subpages" approved="yes">
+        <source>Exclude slug for subpages</source>
+        <target state="final">Exclure le segment d'url pour les sous-pages</target>
+      </trans-unit>
+      <trans-unit id="pages.hide_breadcrumb" approved="yes">
+        <source>Hide breadcrumb</source>
+        <target state="final">Masquer le fil d'Ariane</target>
+      </trans-unit>
+      <trans-unit id="ratio.free" approved="yes">
+        <source>Free</source>
+        <target state="final">Libre</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.125" approved="yes">
+        <source>Beside Text, Centered Right</source>
+        <target state="final">À côté du texte, centré verticalement sur la droite</target>
+      </trans-unit>
+      <trans-unit id="field.imageorient.126" approved="yes">
+        <source>Beside Text, Centered Left</source>
+        <target state="final">À côté du texte, centré verticalement sur la gauche</target>
+      </trans-unit>
+      <trans-unit id="field.readmore_label" approved="yes">
+        <source>Read More Label</source>
+        <target state="final">Libellé En savoir plus</target>
+      </trans-unit>
+      <trans-unit id="field.ignore_nav_hide" approved="yes">
+        <source>Display "menu excluded" pages</source>
+        <target state="final">Afficher les pages hors menu</target>
+      </trans-unit>
+      <trans-unit id="field.max_items" approved="yes">
+        <source>Max pages displayed</source>
+        <target state="final">Nombre maximum d'éléments affichés</target>
+      </trans-unit>
+      <trans-unit id="field.gallery_size" approved="yes">
+        <source>Size</source>
+        <target state="final">Taille</target>
+      </trans-unit>
+      <trans-unit id="field.tx_bulmapackage_accordion_item_active" approved="yes">
+        <source>Unfolded Element</source>
+        <target state="final">Élement déplié</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.boxed" approved="yes">
+        <source>Boxed</source>
+        <target state="final">Box</target>
+      </trans-unit>
+      <trans-unit id="tablayout.field.table_class.toggle-rounded" approved="yes">
+        <source>Toggle rounded</source>
+        <target state="final">Toggle arrondi</target>
+      </trans-unit>
+      <trans-unit id="field.alignement" approved="yes">
+        <source>Alignment</source>
+        <target state="final">Alignement</target>
+      </trans-unit>
+      <trans-unit id="field.icon-alignement" approved="yes">
+        <source>Icon alignment</source>
+        <target state="final">Alignment de l'icône</target>
+      </trans-unit>
+      <trans-unit id="option.left" approved="yes">
+        <source>Left</source>
+        <target state="final">gauche</target>
+      </trans-unit>
+      <trans-unit id="option.center" approved="yes">
+        <source>Center</source>
+        <target state="final">Centré</target>
+      </trans-unit>
+      <trans-unit id="option.right" approved="yes">
+        <source>Right</source>
+        <target state="final">Droite</target>
+      </trans-unit>
+      <trans-unit id="option.top" approved="yes">
+        <source>Top</source>
+        <target state="final">Dessus</target>
+      </trans-unit>
+      <trans-unit id="option.bottom" approved="yes">
+        <source>Bottom</source>
+        <target state="final">Dessous</target>
+      </trans-unit>
+      <trans-unit id="option.default" approved="yes">
+        <source>Default</source>
+        <target state="final">Par défaut</target>
+      </trans-unit>
+      <trans-unit id="option.none" approved="yes">
+        <source>None</source>
+        <target state="final">Aucun</target>
+      </trans-unit>
+      <trans-unit id="option.medium" approved="yes">
+        <source>Medium</source>
+        <target state="final">Moyen</target>
+      </trans-unit>
+      <trans-unit id="option.large" approved="yes">
+        <source>Large</source>
+        <target state="final">Grand</target>
+      </trans-unit>
+      <trans-unit id="option.primary" approved="yes">
+        <source>Primary</source>
+        <target state="final">Principal</target>
+      </trans-unit>
+      <trans-unit id="option.success" approved="yes">
+        <source>Success</source>
+        <target state="final">Succès</target>
+      </trans-unit>
+      <trans-unit id="option.warning" approved="yes">
+        <source>Warning</source>
+        <target state="final">Avertissement</target>
+      </trans-unit>
+      <trans-unit id="option.light" approved="yes">
+        <source>Light</source>
+        <target state="final">Clair</target>
+      </trans-unit>
+      <trans-unit id="option.dark" approved="yes">
+        <source>Dark</source>
+        <target state="final">Sombre</target>
+      </trans-unit>
+      <trans-unit id="option.has-background-transparent-light" approved="yes">
+        <source>Light transparent background</source>
+        <target state="final">Clair avec fond transparent</target>
+      </trans-unit>
+      <trans-unit id="option.has-background-transparent-dark" approved="yes">
+        <source>Dark transparent background</source>
+        <target state="final">Sombre avec fond transparent</target>
+      </trans-unit>
+      <trans-unit id="option.tablet" approved="yes">
+        <source>Tablet</source>
+        <target state="final">Tablette</target>
+      </trans-unit>
+      <trans-unit id="option.widescreen" approved="yes">
+        <source>Widescreen</source>
+        <target state="final">Écran large</target>
+      </trans-unit>
+      <trans-unit id="option.text-center" approved="yes">
+        <source>Centered text</source>
+        <target state="final">Texte centré</target>
+      </trans-unit>
+      <trans-unit id="option.text-right" approved="yes">
+        <source>Right aligned text</source>
+        <target state="final">Texte aligné à droite</target>
+      </trans-unit>
+      <trans-unit id="option.inverted" approved="yes">
+        <source>Inverted</source>
+        <target state="final">Inversé</target>
+      </trans-unit>
+      <trans-unit id="menu.card_dir.description" approved="yes">
+        <source>Insert menu to display subpages as cards</source>
+        <target state="final">Insérer un menu pour afficher les sous-pages en tant que cards</target>
+      </trans-unit>
+      <trans-unit id="menu.card_list.description" approved="yes">
+        <source>Insert menu to display selected pages as cards</source>
+        <target state="final">Insérer un menu pour afficher les pages sélectionnées en tant que cards</target>
+      </trans-unit>
+      <trans-unit id="menu.card_dir" approved="yes">
+        <source>Cards of subpages</source>
+        <target state="final">Cards de sous-pages</target>
+      </trans-unit>
+      <trans-unit id="menu.card.align" approved="yes">
+        <source>Alignment (Header)</source>
+        <target state="final">Alignement (Titre)</target>
+      </trans-unit>
+      <trans-unit id="menu.card.columns" approved="yes">
+        <source>Columns</source>
+        <target state="final">Colonnes</target>
+      </trans-unit>
+      <trans-unit id="menu.card.style.no-border" approved="yes">
+        <source>No border</source>
+        <target state="final">Sans bordure</target>
+      </trans-unit>
+      <trans-unit id="option.is-centered" approved="yes">
+        <source>Centered</source>
+        <target state="final">Centré</target>
+      </trans-unit>
+      <trans-unit id="option.is-gapless" approved="yes">
+        <source>Gapless</source>
+        <target state="final">Sans marge</target>
+      </trans-unit>
+      <trans-unit id="option.is-vcentered" approved="yes">
+        <source>Vertical alignment</source>
+        <target state="final">Alignement vertical</target>
+      </trans-unit>
+      <trans-unit id="option.has-items-center" approved="yes">
+        <source>Centered items</source>
+        <target state="final">Éléments centrés</target>
+      </trans-unit>
+      <trans-unit id="option.has-items-end" approved="yes">
+        <source>Flex-end items</source>
+        <target state="final">Éléments "Flex-end"</target>
+      </trans-unit>
+      <trans-unit id="option.is-spaced" approved="yes">
+        <source>Spaced</source>
+        <target state="final">Espacé</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_dir" approved="yes">
+        <source>Thumbnails of subpages</source>
+        <target state="final">Vignettes de sous-pages</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_dir.description" approved="yes">
+        <source>Insert menu to display subpages as thumbnail</source>
+        <target state="final">Insérer un menu pour afficher les sous-pages en tant que vignettes</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_list" approved="yes">
+        <source>Thumbnails</source>
+        <target state="final">Vignettes</target>
+      </trans-unit>
+      <trans-unit id="menu.thumbnail_list.description" approved="yes">
+        <source>Insert menu to display selected pages as thumbnail</source>
+        <target state="final">Insérer un menu pour afficher les pages sélectionnées en tant que vignettes</target>
+      </trans-unit>
+      <trans-unit id="settings" approved="yes">
+        <source>Settings</source>
+        <target state="final">Paramètres</target>
+      </trans-unit>
+      <trans-unit id="advanced" approved="yes">
+        <source>Advanced</source>
+        <target state="final">Avancé</target>
+      </trans-unit>
+      <trans-unit id="pages.thumbnail" approved="yes">
+        <source>Thumbnail</source>
+        <target state="final">Vignette</target>
+      </trans-unit>
+      <trans-unit id="content_element.iframe.description" approved="yes">
+        <source>This element will make your iframe responsive.</source>
+        <target state="final">Cet élément va générer votre code iframe de façon adaptative.</target>
+      </trans-unit>
+      <trans-unit id="content_element.carousel" approved="yes">
+        <source>Carousel</source>
+        <target state="final">Carrousel</target>
+      </trans-unit>
+      <trans-unit id="content_element.carousel.description" approved="yes">
+        <source>Insert Carousel element with different contents</source>
+        <target state="final">Insérér un carrousel avec différents contenus</target>
+      </trans-unit>
+      <trans-unit id="content_element.accordion" approved="yes">
+        <source>Accordion</source>
+        <target state="final">Accordéon</target>
+      </trans-unit>
+      <trans-unit id="content_element.accordion.description" approved="yes">
+        <source>Insert several Accordion element(s)</source>
+        <target state="final">Insérer plusieurs élements sous forme d'accordéon</target>
+      </trans-unit>
+      <trans-unit id="carousel.options" approved="yes">
+        <source>Carousel Options</source>
+        <target state="final">Options du carrousel</target>
+      </trans-unit>
+      <trans-unit id="carousel.ratio" approved="yes">
+        <source>Cell ratio</source>
+        <target state="final">Ratio de la cellule</target>
+      </trans-unit>
+      <trans-unit id="carousel.cells" approved="yes">
+        <source>Cells displayed on carousel viewport</source>
+        <target state="final">Nombre de cellules pour le carrousel</target>
+      </trans-unit>
+      <trans-unit id="carousel.autoPlay" approved="yes">
+        <source>Interval in ms (0 to deactivate autoplay)</source>
+        <target state="final">Intervalle en ms (0 pour désactiver la lecture automatique)</target>
+      </trans-unit>
+      <trans-unit id="carousel.wrapAround" approved="yes">
+        <source>wrapAround</source>
+        <target state="final">Défilement infini</target>
+      </trans-unit>
+      <trans-unit id="carousel.wrapAround.description" approved="yes">
+        <source>At the end of cells, wrap-around to the other end for infinite scrolling</source>
+        <target state="final">À la fin des cellules, on rejoint l'autre extrémité pour un défilement infini</target>
+      </trans-unit>
+      <trans-unit id="carousel.cellAlign" approved="yes">
+        <source>Cells alignment within the carousel element</source>
+        <target state="final">Alignement des cellules à l'intérieur du carrousel</target>
+      </trans-unit>
+      <trans-unit id="carousel.pageDots" approved="yes">
+        <source>pageDots</source>
+        <target state="final">Points de navigation</target>
+      </trans-unit>
+      <trans-unit id="carousel.pageDots.description" approved="yes">
+        <source>Enables page dots</source>
+        <target state="final">Activer les points de navigation</target>
+      </trans-unit>
+      <trans-unit id="carousel.prevNextButtons" approved="yes">
+        <source>prevNextButtons</source>
+        <target state="final">Boutons précédant/suivant</target>
+      </trans-unit>
+      <trans-unit id="carousel.prevNextButtons.description" approved="yes">
+        <source>Enables previous &amp; next buttons</source>
+        <target state="final">Activer les boutons précédant &amp; suivant</target>
+      </trans-unit>
+      <trans-unit id="carousel.fade" approved="yes">
+        <source>fade</source>
+        <target state="final">fondu</target>
+      </trans-unit>
+      <trans-unit id="carousel.fade.description" approved="yes">
+        <source>Fades between transitioning slides instead of moving</source>
+        <target state="final">La transition entre les cellules se fait avec un fondu au lieu d'un déplacement</target>
+      </trans-unit>
+      <trans-unit id="carousel_item" approved="yes">
+        <source>Carousel Item</source>
+        <target state="final">Élément de carrousel</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.add" approved="yes">
+        <source>Create new carousel item</source>
+        <target state="final">Créer un nouvel élément de carrousel</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.tt_content" approved="yes">
+        <source>Carousel</source>
+        <target state="final">Carrousel</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Lien</target>
+      </trans-unit>
+      <trans-unit id="palette.text" approved="yes">
+        <source>Text</source>
+        <target state="final">Texte</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.header" approved="yes">
+        <source>Header</source>
+        <target state="final">Titre</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.subheader" approved="yes">
+        <source>Subheader</source>
+        <target state="final">Sous-titre</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.text_color" approved="yes">
+        <source>Text color</source>
+        <target state="final">Couleur du texte</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.button_class" approved="yes">
+        <source>Button type</source>
+        <target state="final">Type de bouton</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.button_text" approved="yes">
+        <source>Label</source>
+        <target state="final">Libellé</target>
+      </trans-unit>
+      <trans-unit id="carousel_item.background_color" approved="yes">
+        <source>Background color</source>
+        <target state="final">Couleur de fond</target>
+      </trans-unit>
+      <trans-unit id="accordion_item" approved="yes">
+        <source>Accordion Item</source>
+        <target state="final">Élément Accordéon</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.add" approved="yes">
+        <source>Create new accordion</source>
+        <target state="final">Créer un nouvel accordéon</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.record" approved="yes">
+        <source>Content Elements</source>
+        <target state="final">Élements de contenu</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.record.add" approved="yes">
+        <source>Create new content</source>
+        <target state="final">Créer un nouveau contenu</target>
+      </trans-unit>
+      <trans-unit id="accordion_item.title" approved="yes">
+        <source>Accordion title</source>
+        <target state="final">Titre de l'accordéon</target>
+      </trans-unit>
+      <trans-unit id="content_element.tab" approved="yes">
+        <source>Tab</source>
+        <target state="final">Onglet</target>
+      </trans-unit>
+      <trans-unit id="content_element.tab.description" approved="yes">
+        <source>Insert several Tab element(s)</source>
+        <target state="final">Insérer plusieurs élements sous forme d'onglets</target>
+      </trans-unit>
+      <trans-unit id="tab_item" approved="yes">
+        <source>Tab Item</source>
+        <target state="final">Onglet</target>
+      </trans-unit>
+      <trans-unit id="tab_item.add" approved="yes">
+        <source>Create new tab item</source>
+        <target state="final">Créer un nouvel onglet</target>
+      </trans-unit>
+      <trans-unit id="tab_item.record" approved="yes">
+        <source>Content Elements</source>
+        <target state="final">Éléments de contenu</target>
+      </trans-unit>
+      <trans-unit id="tab_item.record.add" approved="yes">
+        <source>Create new content</source>
+        <target state="final">Créer un nouveau contenu</target>
+      </trans-unit>
+      <trans-unit id="tab_item.title" approved="yes">
+        <source>Tab title</source>
+        <target state="final">Titre de l'onglet</target>
+      </trans-unit>
+      <trans-unit id="content_element.card_group" approved="yes">
+        <source>Card Group</source>
+        <target state="final">Groupe de cards</target>
+      </trans-unit>
+      <trans-unit id="content_element.card_group.description" approved="yes">
+        <source>Insert a element with several content cards</source>
+        <target state="final">Insérer un élement avec plusieurs cards</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.add" approved="yes">
+        <source>Create new card</source>
+        <target state="final">Créer une nouvelle card</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.header" approved="yes">
+        <source>Header</source>
+        <target state="final">Titre</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.subheader" approved="yes">
+        <source>Subheader</source>
+        <target state="final">Sous-titre</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.media" approved="yes">
+        <source>Media</source>
+        <target state="final">Média</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.bodytext" approved="yes">
+        <source>Text</source>
+        <target state="final">Texte</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Lien</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.link_title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titre</target>
+      </trans-unit>
+      <trans-unit id="card_group_item.tt_content" approved="yes">
+        <source>Card Group</source>
+        <target state="final">Groupe de cards</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item" approved="yes">
+        <source>Icon Group Item</source>
+        <target state="final">Élément groupe d'icônes</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.tt_content" approved="yes">
+        <source>Icon Group</source>
+        <target state="final">Groupe d'icônes</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.header" approved="yes">
+        <source>Header</source>
+        <target state="final">Titre</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.subheader" approved="yes">
+        <source>Subheader</source>
+        <target state="final">Sous-titre</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Lien</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_set" approved="yes">
+        <source>Icon Set</source>
+        <target state="final">Ensemble d'icônes</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon" approved="yes">
+        <source>Icon</source>
+        <target state="final">Icône</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_file" approved="yes">
+        <source>Icon File</source>
+        <target state="final">Fichier icône</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_size" approved="yes">
+        <source>Icon Size</source>
+        <target state="final">Taille de l'icône</target>
+      </trans-unit>
+      <trans-unit id="icon_group_item.icon_color" approved="yes">
+        <source>Icon Color</source>
+        <target state="final">Couleur de l'icône</target>
+      </trans-unit>
+      <trans-unit id="content_element.video" approved="yes">
+        <source>Video</source>
+        <target state="final">Vidéo</target>
+      </trans-unit>
+      <trans-unit id="content_element.message.description" approved="yes">
+        <source>Insert Message element with simple text.</source>
+        <target state="final">Insérer plusieurs message avec un texte simple.</target>
+      </trans-unit>
+      <trans-unit id="content_element.video.description" approved="yes">
+        <source>Any number of youtube and vimeo videos in columns and rows with a caption.</source>
+        <target state="final">Plusieurs vidéos youtube et vimeo en ligne et colonnes, avec une description.</target>
+      </trans-unit>
+      <trans-unit id="content_element.icon_group" approved="yes">
+        <source>Icon Group</source>
+        <target state="final">Groupe d'icônes</target>
+      </trans-unit>
+      <trans-unit id="content_element.icon_group.description" approved="yes">
+        <source>Insert a element with several icons.</source>
+        <target state="final">Insérer un élément avec plusieurs icônes.</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class" approved="yes">
+        <source>Background Color</source>
+        <target state="final">Couleur de fond</target>
+      </trans-unit>
+      <trans-unit id="field.background_frame" approved="yes">
+        <source>Background frame</source>
+        <target state="final">Type de fond</target>
+      </trans-unit>
+      <trans-unit id="field.background_frame.expanded" approved="yes">
+        <source>Expanded</source>
+        <target state="final">Étendu</target>
+      </trans-unit>
+      <trans-unit id="field.message_class" approved="yes">
+        <source>Message Class</source>
+        <target state="final">Type du message</target>
+      </trans-unit>
+      <trans-unit id="field.file_folder" approved="yes">
+        <source>File Folder</source>
+        <target state="final">Dossier de fichiers</target>
+      </trans-unit>
+      <trans-unit id="tablelayout.fullwidth" approved="yes">
+        <source>Full width</source>
+        <target state="final">Pleine largeur</target>
+      </trans-unit>
+      <trans-unit id="tablelayout.hoverable" approved="yes">
+        <source>Hoverable</source>
+        <target state="final">Survolable</target>
+      </trans-unit>
+      <trans-unit id="tablelayout.narrow" approved="yes">
+        <source>Narrow</source>
+        <target state="final">Étroit</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.none" approved="yes">
+        <source>None</source>
+        <target state="final">Aucune</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.primary" approved="yes">
+        <source>Primary</source>
+        <target state="final">Principale</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.success" approved="yes">
+        <source>Success</source>
+        <target state="final">Succès</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.warning" approved="yes">
+        <source>Warning</source>
+        <target state="final">Avertissement</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.light" approved="yes">
+        <source>Light</source>
+        <target state="final">Claire</target>
+      </trans-unit>
+      <trans-unit id="field.background_color_class.dark" approved="yes">
+        <source>Dark</source>
+        <target state="final">Sombre</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.1_column" approved="yes">
+        <source>Default</source>
+        <target state="final">Défaut</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.sidebar_left" approved="yes">
+        <source>Sidebar Left (optional)</source>
+        <target state="final">Barre latérale gauche (optionnelle)</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.sidebar_left_w_navigation" approved="yes">
+        <source>Sidebar Left with navigation</source>
+        <target state="final">Barre latérale gauche avec navigation</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.sidebar_right" approved="yes">
+        <source>Sidebar Right (optional)</source>
+        <target state="final">Barre latérale droite (optionnelle)</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.sidebar_right_w_navigation" approved="yes">
+        <source>Sidebar Right with navigation</source>
+        <target state="final">Barre latérale droite avec navigation</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.column.content" approved="yes">
+        <source>Content</source>
+        <target state="final">Contenu</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.column.before_content" approved="yes">
+        <source>Before content</source>
+        <target state="final">Pré-contenu</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.column.after_content" approved="yes">
+        <source>After content</source>
+        <target state="final">Post-contenu</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.column.sidebar" approved="yes">
+        <source>Sidebar (optional)</source>
+        <target state="final">Barre latérale (optionnelle)</target>
+      </trans-unit>
+      <trans-unit id="backend_layout.column.sidebar_w_navigation" approved="yes">
+        <source>Sidebar (with navigation)</source>
+        <target state="final">Barre latérale (avec navigation)</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings" approved="yes">
+        <source>Website Settings</source>
+        <target state="final">Configuration du site</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color" approved="yes">
+        <source>Custom color</source>
+        <target state="final">Couleur personnalisée</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.layout_category" approved="yes">
+        <source>Custom</source>
+        <target state="final">Personnalisé</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.label" approved="yes">
+        <source>Label</source>
+        <target state="final">Libellé</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_primary" approved="yes">
+        <source>Primary</source>
+        <target state="final">Principale</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_link" approved="yes">
+        <source>Links</source>
+        <target state="final">Liens</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_success" approved="yes">
+        <source>Success</source>
+        <target state="final">Succès</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_warning" approved="yes">
+        <source>Warning</source>
+        <target state="final">Avertissement</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_custom_color.var_text_dark" approved="yes">
+        <source>Text dark</source>
+        <target state="final">Texte sombre</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.warning" approved="yes">
+        <source>A configuration already exists for this website.</source>
+        <target state="final">Une configuration existe déjà pour ce site web.</target>
+      </trans-unit>
+      <trans-unit id="palette.bulmapackage_address" approved="yes">
+        <source>Address</source>
+        <target state="final">Adresse</target>
+      </trans-unit>
+      <trans-unit id="palette.google_settings" approved="yes">
+        <source>Google Settings</source>
+        <target state="final">Paramètres Google</target>
+      </trans-unit>
+      <trans-unit id="palette.tablayout" approved="yes">
+        <source>Tab Layout</source>
+        <target state="final">Disposition des onglets</target>
+      </trans-unit>
+      <trans-unit id="palette.cardlayout" approved="yes">
+        <source>Card Layout</source>
+        <target state="final">Disposition des cards</target>
+      </trans-unit>
+      <trans-unit id="palette.icongrouplayout" approved="yes">
+        <source>Icon group Layout</source>
+        <target state="final">Disposition des groupes d'icônes</target>
+      </trans-unit>
+      <trans-unit id="palette.iframelayout" approved="yes">
+        <source>Iframe Layout</source>
+        <target state="final">Disposition Iframe</target>
+      </trans-unit>
+      <trans-unit id="palette.icon" approved="yes">
+        <source>Icon</source>
+        <target state="final">Icône</target>
+      </trans-unit>
+      <trans-unit id="palette.thumbnaillayout" approved="yes">
+        <source>Thumbnail Layout</source>
+        <target state="final">Disposition des vignettes</target>
+      </trans-unit>
+      <trans-unit id="tabs.bulmapackage_links" approved="yes">
+        <source>Networks links</source>
+        <target state="final">Liens des réseaux</target>
+      </trans-unit>
+      <trans-unit id="tabs.bulmapackage_sharing" approved="yes">
+        <source>Sharing buttons</source>
+        <target state="final">Boutons de partage</target>
+      </trans-unit>
+      <trans-unit id="tabs.colors" approved="yes">
+        <source>Colors</source>
+        <target state="final">Couleurs</target>
+      </trans-unit>
+      <trans-unit id="field.header" approved="yes">
+        <source>Header</source>
+        <target state="final">Titre</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.menu_layout.megamenu" approved="yes">
+        <source>Mega menu (Hover)</source>
+        <target state="final">Mega menu (Survol)</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.menu_layout.megamenu_clickable" approved="yes">
+        <source>Mega menu (Click)</source>
+        <target state="final">Mega menu (Clic)</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.title_seo" approved="yes">
+        <source>Seo title</source>
+        <target state="final">Titre SEO</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.title_seo.description" approved="yes">
+        <source>Will be added to every page title</source>
+        <target state="final">Ce titre sera ajouté à chaque titre de page</target>
+      </trans-unit>
+      <trans-unit id="palette.bulmapackage_wsd.title" approved="yes">
+        <source>Provide a site name to Google Search</source>
+        <target state="final">Fournir un nom de site pour la recherche Google</target>
+      </trans-unit>
+      <trans-unit id="palette.bulmapackage_wsd.description" approved="yes">
+        <source>See https://developers.google.com/search/docs/appearance/site-names for recommendations</source>
+        <target state="final">Voir https://developers.google.com/search/docs/appearance/site-names pour des recommandations</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.wsd_name" approved="yes">
+        <source>Name</source>
+        <target state="final">Nom</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.wsd_name.description" approved="yes">
+        <source>Ex: Burnt Toast (see https://developers.google.com/search/docs/appearance/site-names#choosing-site-name)</source>
+        <target state="final">Ex : Pain Grillé (voir https://developers.google.com/search/docs/appearance/site-names#choosing-site-name)</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.wsd_alternate_name" approved="yes">
+        <source>Alternate name</source>
+        <target state="final">Nom alternatif</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.logo_main" approved="yes">
+        <source>Main logo</source>
+        <target state="final">Logo principal</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.logos_partners" approved="yes">
+        <source>Partners logos</source>
+        <target state="final">Logos des partenaires</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.code_analytics" approved="yes">
+        <source>Tracking code</source>
+        <target state="final">Code de suivi</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.code_analytics.description" approved="yes">
+        <source>Add multiple tracking codes by separating them with a comma. Eg: UA-12345678-9, UA-98765432-1</source>
+        <target state="final">Ajouter plusieurs codes de suivi en les séparant par une virgule. Ex : UA-12345678-9, UA-98765432-1</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.address_title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titre</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.address" approved="yes">
+        <source>Address</source>
+        <target state="final">Adresse</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.zip" approved="yes">
+        <source>Zip</source>
+        <target state="final">Code postal</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.city" approved="yes">
+        <source>City</source>
+        <target state="final">Ville</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.country" approved="yes">
+        <source>Country</source>
+        <target state="final">Pays</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.phone" approved="yes">
+        <source>Phone</source>
+        <target state="final">Téléphone</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.email" approved="yes">
+        <source>Email</source>
+        <target state="final">Mèl</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.tx_bulmapackage_settings_link_item" approved="yes">
+        <source>Links</source>
+        <target state="final">Liens</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.tx_bulmapackage_settings_link_item.add" approved="yes">
+        <source>Create new link</source>
+        <target state="final">Créer un nouveau lien</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item" approved="yes">
+        <source>Link</source>
+        <target state="final">Lien</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.label" approved="yes">
+        <source>Label</source>
+        <target state="final">Libellé</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Lien</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.force_label" approved="yes">
+        <source>Always show label</source>
+        <target state="final">Toujours afficher le label</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon" approved="yes">
+        <source>Icon</source>
+        <target state="final">Icône</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon_custom" approved="yes">
+        <source>Custom icon</source>
+        <target state="final">Icône personnalisée</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.envelope" approved="yes">
+        <source>Envelope</source>
+        <target state="final">Enveloppe</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.map" approved="yes">
+        <source>Map</source>
+        <target state="final">Plan</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.map_marker" approved="yes">
+        <source>Map marker</source>
+        <target state="final">Repère de plan</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.book" approved="yes">
+        <source>Book</source>
+        <target state="final">Livre</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.user" approved="yes">
+        <source>User</source>
+        <target state="final">Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.student" approved="yes">
+        <source>Student</source>
+        <target state="final">Étudiant</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.lock" approved="yes">
+        <source>Lock</source>
+        <target state="final">Cadenas</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.icon.user-lock" approved="yes">
+        <source>User Lock</source>
+        <target state="final">Utilisateur et cadenas</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings_link_item.standalone" approved="yes">
+        <source>Standalone</source>
+        <target state="final">Autonome</target>
+      </trans-unit>
+      <trans-unit id="bulma-website" approved="yes">
+        <source>Bulma website</source>
+        <target state="final">Site Bulma</target>
+      </trans-unit>
+      <trans-unit id="content_frame.fullwidth" approved="yes">
+        <source>Full width</source>
+        <target state="final">Pleine largeur</target>
+      </trans-unit>
+      <trans-unit id="content_frame.desktop" approved="yes">
+        <source>Reduced</source>
+        <target state="final">Réduit</target>
+      </trans-unit>
+      <trans-unit id="tt_content.colPos.nestedContentColPos" approved="yes">
+        <source>Nested content</source>
+        <target state="final">Contenu imbriqué</target>
+      </trans-unit>
+      <trans-unit id="content_group.media" approved="yes">
+        <source>Media</source>
+        <target state="final">Média</target>
+      </trans-unit>
+      <trans-unit id="news.templateLayouts.4cols" approved="yes">
+        <source>4 Columns</source>
+        <target state="final">4 Colonnes</target>
+      </trans-unit>
+      <trans-unit id="news.templateLayouts.2cols" approved="yes">
+        <source>2 Columns</source>
+        <target state="final">2 Colonnes</target>
+      </trans-unit>
+      <trans-unit id="news.templateLayouts.1cols" approved="yes">
+        <source>1 Column</source>
+        <target state="final">1 Colonne</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_meta_tags" approved="yes">
+        <source>Meta Tag</source>
+        <target state="final">Balise Meta</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_meta_tags.name" approved="yes">
+        <source>Name</source>
+        <target state="final">Attribut name</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_meta_tags.content" approved="yes">
+        <source>Content</source>
+        <target state="final">Attribut content</target>
+      </trans-unit>
+      <trans-unit id="field.default_thumbnail" approved="yes">
+        <source>Default thumbnail</source>
+        <target state="final">Vignette par défaut</target>
+      </trans-unit>
+      <trans-unit id="space_class_negative_large" approved="yes">
+        <source>Negative Large</source>
+        <target state="final">Négative Large</target>
+      </trans-unit>
+      <trans-unit id="space_class_negative_extra_large" approved="yes">
+        <source>Negative Extra Large</source>
+        <target state="final">Négative Extra Large</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.sharing_services.description" approved="yes">
+        <source>Display a sharing widget in news records detail</source>
+        <target state="final">Afficher un widget de partage dans le détail des actualités</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.sharing_services.email" approved="yes">
+        <source>Email</source>
+        <target state="final">Courriel</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.sharing_services.print" approved="yes">
+        <source>Print</source>
+        <target state="final">Imprimer la page</target>
+      </trans-unit>
+      <trans-unit id="tx_bulmapackage_settings.sharing_services.copy-url" approved="yes">
+        <source>Copy url</source>
+        <target state="final">Copier l'adresse de la page</target>
+      </trans-unit>
+      <trans-unit id="content_element.thumbnail_group" approved="yes">
+        <source>Thumbnail Group</source>
+        <target state="final">Groupe de vignettes</target>
+      </trans-unit>
+      <trans-unit id="content_element.thumbnail_group.description" approved="yes">
+        <source>Insert a element with several thumbnails</source>
+        <target state="final">Insérer un élément avec plusieurs vignettes</target>
+      </trans-unit>
+      <trans-unit id="thumbnail_group_item" approved="yes">
+        <source>Thumbnail</source>
+        <target state="final">Vignette</target>
+      </trans-unit>
+      <trans-unit id="thumbnail_group_item.add" approved="yes">
+        <source>Create new thumbnail</source>
+        <target state="final">Créer une nouvelle vignette</target>
+      </trans-unit>
+      <trans-unit id="content_element.sharing_buttons" approved="yes">
+        <source>Sharing buttons</source>
+        <target state="final">Boutons de partage</target>
+      </trans-unit>
+      <trans-unit id="content_element.sharing_buttons.description" approved="yes">
+        <source>Insert buttons allowing to share page in multiple ways.</source>
+        <target state="final">Insérer des boutons permettant de partager la page de plusieurs façons.</target>
+      </trans-unit>
+      <trans-unit id="field.tx_bulmapackage_sharing_services_label" approved="yes">
+        <source>Label</source>
+        <target state="final">Libellé</target>
+      </trans-unit>
+      <trans-unit id="palette.sharingbuttonslayout" approved="yes">
+        <source>Sharing buttons layout</source>
+        <target state="final">Disposition des boutons de partage</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
