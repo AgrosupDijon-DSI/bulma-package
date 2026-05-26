@@ -77,40 +77,40 @@ $flickity-page-dots-padding: 0 !default;
   @include desktop{
     @for $i from 1 through $maxCols {
       &.has-#{$i} {
-        width: (100 / $i) + '%';
+        width: (100% / $i);
         font-size: map_get($fontsizeByCols, $i);
         &.image.is-3by1{
-          padding-top: (33.3333 / $i) + '%';
+          padding-top: (33.3333% / $i);
         }
         &.image.is-3by2{
-          padding-top: (66.6666 / $i) + '%';
+          padding-top: (66.6666% / $i);
         }
         &.image.is-16by9{
-          padding-top: (56.25 / $i) + '%';
+          padding-top: (56.25% / $i);
         }
         &.image.is-4by3{
-          padding-top: (75 / $i) + '%';
+          padding-top: (75% / $i);
         }
         &.image.is-1by1{
-          padding-top: (100 / $i) + '%';
+          padding-top: (100% / $i);
         }
         &.image.is-2by3{
-          padding-top: (150 / $i) + '%';
+          padding-top: (150% / $i);
         }
         &.image.is-4by1{
-          padding-top: (25 / $i) + '%';
+          padding-top: (25% / $i);
         }
         &.image.is-6by1{
-          padding-top: (16.6666 / $i) + '%';
+          padding-top: (16.6666% / $i);
         }
         &.image.is-1by2{
-          padding-top: (200 / $i) + '%';
+          padding-top: (200% / $i);
         }
         &.image.is-4by5{
-          padding-top: (125 / $i) + '%';
+          padding-top: (125% / $i);
         }
         &.image.is-9by16{
-          padding-top: (177.7777 / $i) + '%';
+          padding-top: (177.7777% / $i);
         }
       }
     }
@@ -119,40 +119,40 @@ $flickity-page-dots-padding: 0 !default;
   @include tablet-only{
     @for $i from 1 through $maxCols {
       &.has-#{$i}-tablet {
-        width: (100 / $i) + '%';
+        width: (100% / $i);
         font-size: map_get($fontsizeByCols, $i);
         &.image.is-3by1-tablet{
-          padding-top: (33.3333 / $i) + '%';
+          padding-top: (33.3333% / $i);
         }
         &.image.is-3by2-tablet{
-          padding-top: (66.6666 / $i) + '%';
+          padding-top: (66.6666% / $i);
         }
         &.image.is-16by9-tablet{
-          padding-top: (56.25 / $i) + '%';
+          padding-top: (56.25% / $i);
         }
         &.image.is-4by3-tablet{
-          padding-top: (75 / $i) + '%';
+          padding-top: (75% / $i);
         }
         &.image.is-1by1-tablet{
-          padding-top: (100 / $i) + '%';
+          padding-top: (100% / $i);
         }
         &.image.is-2by3-tablet{
-          padding-top: (150 / $i) + '%';
+          padding-top: (150% / $i);
         }
         &.image.is-4by1-tablet{
-          padding-top: (25 / $i) + '%';
+          padding-top: (25% / $i);
         }
         &.image.is-6by1-tablet{
-          padding-top: (16.6666 / $i) + '%';
+          padding-top: (16.6666% / $i);
         }
         &.image.is-1by2-tablet{
-          padding-top: (200 / $i) + '%';
+          padding-top: (200% / $i);
         }
         &.image.is-4by5-tablet{
-          padding-top: (125 / $i) + '%';
+          padding-top: (125% / $i);
         }
         &.image.is-9by16-tablet{
-          padding-top: (177.7777 / $i) + '%';
+          padding-top: (177.7777% / $i);
         }
       }
     }
@@ -161,40 +161,40 @@ $flickity-page-dots-padding: 0 !default;
   @include mobile {
     @for $i from 1 through $maxCols {
       &.has-#{$i}-mobile {
-        width: (100 / $i) + '%';
+        width: (100% / $i);
         font-size: map_get($fontsizeByCols, $i);
         &.image.is-3by1-mobile{
-          padding-top: (33.3333 / $i) + '%';
+          padding-top: (33.3333% / $i);
         }
         &.image.is-3by2-mobile{
-          padding-top: (66.6666 / $i) + '%';
+          padding-top: (66.6666% / $i);
         }
         &.image.is-16by9-mobile{
-          padding-top: (56.25 / $i) + '%';
+          padding-top: (56.25% / $i);
         }
         &.image.is-4by3-mobile{
-          padding-top: (75 / $i) + '%';
+          padding-top: (75% / $i);
         }
         &.image.is-1by1-mobile{
-          padding-top: (100 / $i) + '%';
+          padding-top: (100% / $i);
         }
         &.image.is-2by3-mobile{
-          padding-top: (150 / $i) + '%';
+          padding-top: (150% / $i);
         }
         &.image.is-4by1-mobile{
-          padding-top: (25 / $i) + '%';
+          padding-top: (25% / $i);
         }
         &.image.is-6by1-mobile{
-          padding-top: (16.6666 / $i) + '%';
+          padding-top: (16.6666% / $i);
         }
         &.image.is-1by2-mobile{
-          padding-top: (200 / $i) + '%';
+          padding-top: (200% / $i);
         }
         &.image.is-4by5-mobile{
-          padding-top: (125 / $i) + '%';
+          padding-top: (125% / $i);
         }
         &.image.is-9by16-mobile{
-          padding-top: (177.7777 / $i) + '%';
+          padding-top: (177.7777% / $i);
         }
       }
     }
