@@ -62,9 +62,9 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
     public function updateNecessary(): bool
     {
         $connection = $this->connectionPool->getConnectionForTable('tt_content');
-        $tableColumns = $connection->createSchemaManager()->listTableColumns('tt_content');
+        $table = $connection->createSchemaManager()->introspectTableByUnquotedName('tt_content');
         // Only proceed if tx_bootstrappackage_tab_item field still exists
-        if (!isset($tableColumns['tx_bootstrappackage_tab_item'])) {
+        if (!$table->hasColumn('tx_bootstrappackage_tab_item')) {
             return false;
         }
 

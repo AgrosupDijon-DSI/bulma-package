@@ -51,9 +51,9 @@ class CardImageToMediaUpdate implements UpgradeWizardInterface
     public function updateNecessary(): bool
     {
         $connection = $this->connectionPool->getConnectionForTable('tx_bulmapackage_card_group_item');
-        $tableColumns = $connection->createSchemaManager()->listTableColumns('tx_bulmapackage_card_group_item');
+        $table = $connection->createSchemaManager()->introspectTableByUnquotedName('tx_bulmapackage_card_group_item');
         // Only proceed if image field still exists
-        if (!isset($tableColumns['image'])) {
+        if (!$table->hasColumn('image')) {
             return false;
         }
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_bulmapackage_card_group_item');
