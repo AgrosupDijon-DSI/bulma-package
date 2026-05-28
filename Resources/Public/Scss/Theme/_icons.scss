@@ -8,6 +8,14 @@ $icon-font-size-xl: $icon-dimensions-xl !default;
 $icon-font-size-xxl: $icon-dimensions-xxl !default;
 
 .icon{
+  & > span {
+    &.fa, &.fas {
+      font-weight: 900;
+    }
+    &.far {
+      font-weight: 400;
+    }
+  }
   flex-shrink: 0;
   & > svg{
     max-height: 100%;
@@ -24,11 +32,11 @@ $icon-font-size-xxl: $icon-dimensions-xxl !default;
       height: $icon-font-size;
     }
   }
-  i{
+  i, span{
     font-size: $icon-font-size;
   }
   &.is-small{
-    i{
+    i, span{
       font-size: $icon-font-size-small;
     }
     .button & {
@@ -38,7 +46,7 @@ $icon-font-size-xxl: $icon-dimensions-xxl !default;
     }
   }
   &.is-medium{
-    i{
+    i, span{
       font-size: $icon-font-size-medium;
     }
     .button & {
@@ -48,7 +56,7 @@ $icon-font-size-xxl: $icon-dimensions-xxl !default;
     }
   }
   &.is-large{
-    i{
+    i, span{
       font-size: $icon-font-size-large;
     }
     .button & {
@@ -60,14 +68,14 @@ $icon-font-size-xxl: $icon-dimensions-xxl !default;
   &.is-xl{
     width: $icon-dimensions-xl;
     height: $icon-dimensions-xl;
-    i{
+    i, span{
       font-size: $icon-font-size-xl;
     }
   }
   &.is-xxl{
     width: $icon-dimensions-xxl;
     height: $icon-dimensions-xxl;
-    i{
+    i, span{
       font-size: $icon-font-size-xxl;
     }
   }
