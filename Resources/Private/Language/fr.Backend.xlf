@@ -919,6 +919,14 @@
         <source>Sharing buttons layout</source>
         <target state="final">Disposition des boutons de partage</target>
       </trans-unit>
+      <trans-unit id="content_element.site_update.label" approved="yes">
+        <source>Last updated date</source>
+        <target state="final">Date de dernière mise à jour</target>
+      </trans-unit>
+      <trans-unit id="content_element.site_update.description" approved="yes">
+        <source>Displays the date the site was last updated, based on updates to content or pages.</source>
+        <target state="final">Affiche la date de la dernière mise à jour du site, en fonction des mises à jour du contenu ou des pages.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
