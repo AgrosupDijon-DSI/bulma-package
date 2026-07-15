@@ -289,6 +289,17 @@ TCEFORM {
         }
       }
     }
+    message_class {
+      types {
+        site_update {
+          removeItems = is-dark, is-light
+          addItems {
+            has-text-grey-light = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.grey-light
+          }
+          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+        }
+      }
+    }
     cols {
       types {
         table {

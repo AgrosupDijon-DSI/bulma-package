@@ -135,6 +135,9 @@
             <trans-unit id="option.light">
                 <source>Light</source>
             </trans-unit>
+			<trans-unit id="option.grey-light">
+				<source>Grey light</source>
+			</trans-unit>
             <trans-unit id="option.dark">
                 <source>Dark</source>
             </trans-unit>

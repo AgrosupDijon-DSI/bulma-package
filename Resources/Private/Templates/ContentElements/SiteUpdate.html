@@ -4,13 +4,16 @@
     <f:if condition="{lastUpdate}">
         <f:variable name="alignClass">
             <f:switch expression="{data.table_header_position}">
-                <f:case value="1">has-text-centered</f:case>
-                <f:case value="2">has-text-right</f:case>
+                <f:case value="1">is-justify-content-center</f:case>
+                <f:case value="2">is-justify-content-flex-end</f:case>
             </f:switch>
         </f:variable>
-        <div class="page-last-update {alignClass}">
-            <span class="icon-text has-text-grey">
-                <span class="icon">
+        <f:variable name="colorClass">
+            <f:replace value="{data.message_class}" search="is-" replace="has-text-" />
+        </f:variable>
+        <div class="page-last-update">
+            <div class="icon-text {alignClass} is-align-items-center {colorClass}">
+                <span class="icon is-small">
                     <i class="fas fa-calendar-alt"></i>
                 </span>
                 <span>
@@ -19,7 +22,7 @@
                         <f:format.date format="%d %B %Y">{lastUpdate}</f:format.date>
                     </time>
                 </span>
-            </span>
+            </div>
         </div>
     </f:if>
 </f:section>
