@@ -1,0 +1,27 @@
+############################
+#### CTYPE: site_update ####
+############################
+
+tt_content.site_update >
+tt_content.site_update =< lib.contentElement
+tt_content.site_update {
+
+  ################
+  ### TEMPLATE ###
+  ################
+  templateName = SiteUpdate
+
+  ##########################
+  ### DATA PREPROCESSING ###
+  ##########################
+  dataProcessing {
+    10 = last-update
+
+    20 = TYPO3\CMS\Frontend\DataProcessing\SplitProcessor
+    20 {
+      delimiter = ,
+      fieldName = table_class
+      as = layoutClasses
+    }
+  }
+}

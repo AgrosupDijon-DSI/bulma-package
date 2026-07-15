@@ -21,3 +21,8 @@ services:
 
   AgrosupDijon\BulmaPackage\Utility\PageLayoutUtility:
     public: true
+
+  AgrosupDijon\BulmaPackage\DataProcessing\LastUpdateProcessor:
+    tags:
+      - name: data.processor
+        identifier: 'last-update'

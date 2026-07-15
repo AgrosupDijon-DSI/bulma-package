@@ -840,6 +840,12 @@
             <trans-unit id="palette.sharingbuttonslayout">
                 <source>Sharing buttons layout</source>
             </trans-unit>
+			<trans-unit id="content_element.site_update.label">
+				<source>Last updated date</source>
+			</trans-unit>
+			<trans-unit id="content_element.site_update.description">
+				<source>Displays the date the site was last updated, based on updates to content or pages.</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

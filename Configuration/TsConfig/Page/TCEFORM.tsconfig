@@ -279,6 +279,14 @@ TCEFORM {
           }
           label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.alignement
         }
+        site_update {
+          altLabels {
+            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
+            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
+            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+          }
+          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.alignement
+        }
       }
     }
     cols {

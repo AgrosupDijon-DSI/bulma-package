@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{lastUpdate}">
+        <f:variable name="alignClass">
+            <f:switch expression="{data.table_header_position}">
+                <f:case value="1">has-text-centered</f:case>
+                <f:case value="2">has-text-right</f:case>
+            </f:switch>
+        </f:variable>
+        <div class="page-last-update {alignClass}">
+            <span class="icon-text has-text-grey">
+                <span class="icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </span>
+                <span>
+                    <f:format.nl2br>{f:translate(key: 'site.lastupdate', extensionName: 'bulma_package')}</f:format.nl2br>
+                    <time pubdate datetime="{f:format.date(date: lastUpdate, format: 'c')}">
+                        <f:format.date format="%d %B %Y">{lastUpdate}</f:format.date>
+                    </time>
+                </span>
+            </span>
+        </div>
+    </f:if>
+</f:section>
+</html>

@@ -107,6 +107,9 @@
 			<trans-unit id="breadcrumb-nav-aria-label">
                 <source>breadcrumbs</source>
             </trans-unit>
+			<trans-unit id="site.lastupdate">
+                <source>Website updated on </source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
