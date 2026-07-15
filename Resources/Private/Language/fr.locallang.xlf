@@ -115,6 +115,10 @@
         <source>Share</source>
         <target state="final">Partager</target>
       </trans-unit>
+      <trans-unit id="site.lastupdate" approved="yes">
+        <source>Website updated on </source>
+        <target state="final">Site mis à jour le </target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
