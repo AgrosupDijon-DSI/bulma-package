@@ -371,3 +371,13 @@ TCEFORM {
     }
   }
 }
+
+# Disable automatic_title by default
+TCEFORM.pages.automatic_title.disabled = 1
+
+# Enable automatic_title field, and change default to 1
+# when automaticPageTitle is set to 1
+[traverse(site("configuration"), "settings/automaticPageTitle") == 1]
+  TCEFORM.pages.automatic_title.disabled = 0
+  TCAdefaults.pages.automatic_title = 1
+[END]

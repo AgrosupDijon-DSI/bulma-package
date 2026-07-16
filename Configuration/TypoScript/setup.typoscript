@@ -222,6 +222,10 @@ page {
   }
 }
 
+[traverse(site("configuration"), "settings/automaticPageTitle") == 1]
+  page.10.settings.automaticTitle = 1
+[END]
+
 ####################
 #### COMPONENTS ####
 ####################

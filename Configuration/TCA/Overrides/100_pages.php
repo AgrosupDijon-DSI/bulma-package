@@ -88,11 +88,20 @@ $additionalColumns = [
             'renderType' => 'checkboxToggle',
         ],
     ],
+    'automatic_title' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.automatic_title',
+        'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.automatic_title.description',
+        'config' => [
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+        ],
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns('pages', $additionalColumns);
 ExtensionManagementUtility::addToAllTCAtypes('pages', 'thumbnail', '1,3,4', 'after:backend_layout_next_level');
-ExtensionManagementUtility::addToAllTCAtypes('pages', 'hide_breadcrumb', (string)PageRepository::DOKTYPE_DEFAULT, 'after:thumbnail');
+ExtensionManagementUtility::addToAllTCAtypes('pages', 'hide_breadcrumb, automatic_title', (string)PageRepository::DOKTYPE_DEFAULT, 'after:thumbnail');
 ExtensionManagementUtility::addFieldsToPalette('pages', 'title', 'exclude_slug_for_subpages', 'after:slug');
 ExtensionManagementUtility::addFieldsToPalette('pages', 'titleonly', 'exclude_slug_for_subpages', 'after:slug');
 
