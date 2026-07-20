@@ -111,6 +111,10 @@
         <source>Light</source>
         <target state="final">Clair</target>
       </trans-unit>
+      <trans-unit id="option.grey-light" approved="yes">
+        <source>Grey light</source>
+        <target state="final">Gris clair</target>
+      </trans-unit>
       <trans-unit id="option.dark" approved="yes">
         <source>Dark</source>
         <target state="final">Sombre</target>
