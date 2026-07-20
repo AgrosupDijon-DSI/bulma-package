@@ -849,6 +849,12 @@
 			<trans-unit id="content_element.site_update.description">
 				<source>Displays the date the site was last updated, based on updates to content or pages.</source>
 			</trans-unit>
+			<trans-unit id="pages.automatic_title">
+				<source>Automatic title</source>
+			</trans-unit>
+			<trans-unit id="pages.automatic_title.description">
+				<source>Automatically displays the page title as a level 1 heading, at the top of the main content area.</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

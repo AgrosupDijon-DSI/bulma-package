@@ -1,0 +1,12 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{settings.automaticTitle} && {data.automatic_title} && {breadcrumb}">
+    <header id="page-title" class="container frame">
+        <h1 class="title is-1">{data.title}</h1>
+        <f:if condition="{data.subtitle}">
+            <h2 class="subtitle is-2">{data.subtitle}</h2>
+        </f:if>
+    </header>
+</f:if>
+
+</html>
