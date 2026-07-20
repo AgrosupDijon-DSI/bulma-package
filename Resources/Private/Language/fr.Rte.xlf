@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/Rte.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package" target-language="fr">
+    <header/>
+    <body>
+      <trans-unit id="style.table.bordered" approved="yes">
+        <source>Table Bordered</source>
+        <target state="final">Tableau avec bordure</target>
+      </trans-unit>
+      <trans-unit id="style.notification.primary" approved="yes">
+        <source>Notification Primary</source>
+        <target state="final">Notification Principale</target>
+      </trans-unit>
+      <trans-unit id="style.notification.success" approved="yes">
+        <source>Notification Success</source>
+        <target state="final">Notification Succès</target>
+      </trans-unit>
+      <trans-unit id="style.notification.info" approved="yes">
+        <source>Notification Info</source>
+        <target state="final">Infos</target>
+      </trans-unit>
+      <trans-unit id="style.notification.warning" approved="yes">
+        <source>Notification Warning</source>
+        <target state="final">Notification Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.notification.danger" approved="yes">
+        <source>Notification Danger</source>
+        <target state="final">Notification Sombre</target>
+      </trans-unit>
+      <trans-unit id="style.notification.light" approved="yes">
+        <source>Notification Light</source>
+        <target state="final">Notification Claire</target>
+      </trans-unit>
+      <trans-unit id="style.notification.dark" approved="yes">
+        <source>Notification Dark</source>
+        <target state="final">Notification Sombre</target>
+      </trans-unit>
+      <trans-unit id="style.size.1" approved="yes">
+        <source>Size 1</source>
+        <target state="final">Taille 1</target>
+      </trans-unit>
+      <trans-unit id="style.size.2" approved="yes">
+        <source>Size 2</source>
+        <target state="final">Taille 2</target>
+      </trans-unit>
+      <trans-unit id="style.size.3" approved="yes">
+        <source>Size 3</source>
+        <target state="final">Taille 3</target>
+      </trans-unit>
+      <trans-unit id="style.size.4" approved="yes">
+        <source>Size 4</source>
+        <target state="final">Taille 4</target>
+      </trans-unit>
+      <trans-unit id="style.size.5" approved="yes">
+        <source>Size 5</source>
+        <target state="final">Taille 5</target>
+      </trans-unit>
+      <trans-unit id="style.size.6" approved="yes">
+        <source>Size 6</source>
+        <target state="final">Taille 6</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.1" approved="yes">
+        <source>Bloc size 1</source>
+        <target state="final">Bloc taille 1</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.2" approved="yes">
+        <source>Bloc size 2</source>
+        <target state="final">Bloc taille 2</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.3" approved="yes">
+        <source>Bloc size 3</source>
+        <target state="final">Bloc taille 3</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.4" approved="yes">
+        <source>Bloc size 4</source>
+        <target state="final">Bloc taille 4</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.5" approved="yes">
+        <source>Bloc size 5</source>
+        <target state="final">Bloc taille 5</target>
+      </trans-unit>
+      <trans-unit id="style.bloc-size.6" approved="yes">
+        <source>Bloc size 6</source>
+        <target state="final">Bloc taille 6</target>
+      </trans-unit>
+      <trans-unit id="style.buttons" approved="yes">
+        <source>List of buttons</source>
+        <target state="final">Liste de boutons</target>
+      </trans-unit>
+      <trans-unit id="style.button" approved="yes">
+        <source>Button</source>
+        <target state="final">Bouton</target>
+      </trans-unit>
+      <trans-unit id="style.button.primary" approved="yes">
+        <source>Button Primary</source>
+        <target state="final">Bouton Principal</target>
+      </trans-unit>
+      <trans-unit id="style.button.success" approved="yes">
+        <source>Button Success</source>
+        <target state="final">Bouton Succès</target>
+      </trans-unit>
+      <trans-unit id="style.button.info" approved="yes">
+        <source>Button Info</source>
+        <target state="final">Bouton Info</target>
+      </trans-unit>
+      <trans-unit id="style.button.warning" approved="yes">
+        <source>Button Warning</source>
+        <target state="final">Bouton Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.button.danger" approved="yes">
+        <source>Button Danger</source>
+        <target state="final">Bouton Danger</target>
+      </trans-unit>
+      <trans-unit id="style.button.light" approved="yes">
+        <source>Button Light</source>
+        <target state="final">Bouton Clair</target>
+      </trans-unit>
+      <trans-unit id="style.button.dark" approved="yes">
+        <source>Button Dark</source>
+        <target state="final">Bouton Foncé</target>
+      </trans-unit>
+      <trans-unit id="style.link.mail" approved="yes">
+        <source>Icon Mail</source>
+        <target state="final">Icône Enveloppe</target>
+      </trans-unit>
+      <trans-unit id="style.link.phone" approved="yes">
+        <source>Icon Phone</source>
+        <target state="final">Icône Téléphone</target>
+      </trans-unit>
+      <trans-unit id="style.link.file" approved="yes">
+        <source>Icon File</source>
+        <target state="final">Icône Fichier</target>
+      </trans-unit>
+      <trans-unit id="style.link.url" approved="yes">
+        <source>Icon Url</source>
+        <target state="final">Icône Url</target>
+      </trans-unit>
+      <trans-unit id="style.link.localisation" approved="yes">
+        <source>Icon Localisation</source>
+        <target state="final">Icône Marqueur</target>
+      </trans-unit>
+      <trans-unit id="style.primary" approved="yes">
+        <source>Primary</source>
+        <target state="final">Principal</target>
+      </trans-unit>
+      <trans-unit id="style.success" approved="yes">
+        <source>Success</source>
+        <target state="final">Succès</target>
+      </trans-unit>
+      <trans-unit id="style.warning" approved="yes">
+        <source>Warning</source>
+        <target state="final">Avertissement</target>
+      </trans-unit>
+      <trans-unit id="style.light" approved="yes">
+        <source>Light</source>
+        <target state="final">Clair</target>
+      </trans-unit>
+      <trans-unit id="style.dark" approved="yes">
+        <source>Dark</source>
+        <target state="final">Sombre</target>
+      </trans-unit>
+      <trans-unit id="style.highlighted" approved="yes">
+        <source>Highlighted</source>
+        <target state="final">Surlignage</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
