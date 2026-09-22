@@ -24,4 +24,5 @@ return FractorConfiguration::configure()
         TypoScriptProcessorOption::INDENT_SIZE => 2,
         TypoScriptProcessorOption::INDENT_CHARACTER => PrettyPrinterConfiguration::INDENTATION_STYLE_SPACES,
         TypoScriptProcessorOption::INCLUDE_EMPTY_LINE_BREAKS => true,
+        TypoScriptProcessorOption::INDENT_CONDITIONS => true,
     ]);

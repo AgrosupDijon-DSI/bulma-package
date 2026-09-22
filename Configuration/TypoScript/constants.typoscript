@@ -135,17 +135,17 @@ plugin.bulma_package {
 #### Manual inclusion to keep control over loading order ####
 #############################################################
 [extension.isLoaded('form')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/constants.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/constants.typoscript'
 [global]
 [extension.isLoaded('felogin')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/constants.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/constants.typoscript'
 [global]
 [extension.isLoaded('indexed_search')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/constants.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/constants.typoscript'
 [global]
 [extension.isLoaded('seo')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/constants.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/constants.typoscript'
 [global]
 [extension.isLoaded('klaro_consent_manager')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/KlaroConsentManager/constants.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/KlaroConsentManager/constants.typoscript'
 [global]

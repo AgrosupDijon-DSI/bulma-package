@@ -9,19 +9,19 @@
 #### Manual inclusion to keep control over loading order ####
 #############################################################
 [extension.isLoaded('form')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/setup.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Form/setup.typoscript'
 [global]
 [extension.isLoaded('felogin')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/setup.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/FrontendLogin/setup.typoscript'
 [global]
 [extension.isLoaded('indexed_search')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/IndexedSearch/setup.typoscript'
 [global]
 [extension.isLoaded('seo')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/Seo/setup.typoscript'
 [global]
 [extension.isLoaded('klaro_consent_manager')]
-@import 'EXT:bulma_package/Configuration/TypoScript/Extension/KlaroConsentManager/setup.typoscript'
+  @import 'EXT:bulma_package/Configuration/TypoScript/Extension/KlaroConsentManager/setup.typoscript'
 [global]
 ###################
 #### FRAMEWORK ####
@@ -224,7 +224,7 @@ page {
 
 [traverse(site("configuration"), "settings/automaticPageTitle") == 1]
   page.10.settings.automaticTitle = 1
-[END]
+[end]
 
 ####################
 #### COMPONENTS ####

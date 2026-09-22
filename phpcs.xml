@@ -20,6 +20,7 @@
     <rule ref="PSR12">
         <exclude name="Generic.Files.LineLength.TooLong"/>
         <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
+        <exclude name="PHPCompatibility.ParameterValues.NewTrimCharactersDefault.NotSet"/>
         <exclude-pattern>*Resources/Private/Contrib/Php/*</exclude-pattern>
     </rule>
 

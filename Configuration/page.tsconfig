@@ -4,29 +4,29 @@
 
 # Register EXT:news extra templateLayouts
 [extension.isLoaded('news')]
-@import 'EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig'
+  @import 'EXT:bulma_package/Configuration/TsConfig/Page/Extension/News.tsconfig'
 [global]
 #
 # Add Content Elements
 [!extensionConfiguration.isToggleEnabled('bulma_package', 'disablePageTsContentElements')]
-@import 'EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig'
+  @import 'EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig'
 [global]
 #
 # Add BackendLayouts
 [!extensionConfiguration.isToggleEnabled('bulma_package', 'disablePageTsBackendLayouts')]
-@import 'EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
+  @import 'EXT:bulma_package/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
 [global]
 #
 # Add TCEFORM
 [!extensionConfiguration.isToggleEnabled('bulma_package', 'disablePageTsTCEFORM')]
-@import 'EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig'
+  @import 'EXT:bulma_package/Configuration/TsConfig/Page/TCEFORM.tsconfig'
 [global]
 #
 # Add TCEMAIN
 [!extensionConfiguration.isToggleEnabled('bulma_package', 'disablePageTsTCEMAIN')]
-@import 'EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
+  @import 'EXT:bulma_package/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
 [global]
 #
 [!extensionConfiguration.isToggleEnabled('bulma_package', 'disablePageTsRTE')]
-@import 'EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig'
+  @import 'EXT:bulma_package/Configuration/TsConfig/Page/RTE.tsconfig'
 [global]
