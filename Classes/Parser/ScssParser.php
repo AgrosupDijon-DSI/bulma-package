@@ -85,7 +85,7 @@ class ScssParser extends AbstractParser
     {
         $scss = new Compiler();
         $scss->setOutputStyle(OutputStyle::COMPRESSED);
-        $scss->addVariables(array_map(fn($value) => ValueConverter::parseValue($value), $settings['variables']));
+        $scss->addVariables(array_map(fn ($value) => ValueConverter::parseValue($value), $settings['variables']));
         if ($settings['options']['sourceMap']) {
             $scss->setSourceMap(Compiler::SOURCE_MAP_FILE);
             $scss->setSourceMapOptions([

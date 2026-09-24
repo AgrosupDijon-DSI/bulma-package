@@ -11,7 +11,7 @@ TCEFORM {
     header {
       types {
         div {
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.header
+          label = bulma_package.backend:field.header
         }
       }
     }
@@ -27,7 +27,7 @@ TCEFORM {
     header_position {
       removeItems = center
       addItems {
-        centered = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position.I.1
+        centered = frontend.ttc:header_position.I.1
       }
     }
     layout {
@@ -37,7 +37,7 @@ TCEFORM {
         uploads {
           removeItems = 1,2
           altLabels {
-            3 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_layout.cards
+            3 = bulma_package.backend:content_layout.cards
           }
         }
       }
@@ -46,9 +46,9 @@ TCEFORM {
     frame_class {
       removeItems = none, ruler-before, ruler-after, indent, indent-left, indent-right
       addItems {
-        fullwidth = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_frame.fullwidth
-        hero = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_frame.hero
-        desktop = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_frame.desktop
+        fullwidth = bulma_package.backend:content_frame.fullwidth
+        hero = bulma_package.backend:content_frame.hero
+        desktop = bulma_package.backend:content_frame.desktop
       }
       types.shortcut.disabled = 1
     }
@@ -58,146 +58,146 @@ TCEFORM {
 
     table_class {
       addItems {
-        hoverable = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablelayout.hoverable
-        narrow = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablelayout.narrow
+        hoverable = bulma_package.backend:tablelayout.hoverable
+        narrow = bulma_package.backend:tablelayout.narrow
       }
       types {
         tab {
           removeItems = striped, bordered, hoverable, narrow
           addItems {
-            boxed = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablayout.field.table_class.boxed
-            toggle = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablayout.field.table_class.toggle
-            toggle-rounded = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablayout.field.table_class.toggle-rounded
+            boxed = bulma_package.backend:tablayout.field.table_class.boxed
+            toggle = bulma_package.backend:tablayout.field.table_class.toggle
+            toggle-rounded = bulma_package.backend:tablayout.field.table_class.toggle-rounded
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablayout.field.table_class
+          label = bulma_package.backend:tablayout.field.table_class
         }
         card_group {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            no-border = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.style.no-border
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+            no-border = bulma_package.backend:menu.card.style.no-border
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         menu_card_dir {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            no-border = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.style.no-border
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+            no-border = bulma_package.backend:menu.card.style.no-border
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         menu_card_list {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            no-border = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.style.no-border
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+            no-border = bulma_package.backend:menu.card.style.no-border
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         uploads {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            no-border = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.style.no-border
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+            no-border = bulma_package.backend:menu.card.style.no-border
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         icon_group {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            has-text-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.text-center
-            has-text-right = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.text-right
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
-            has-items-center = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.has-items-center
-            has-items-end = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.has-items-end
-            boxed = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablayout.field.table_class.boxed
+            has-text-centered = bulma_package.backend:option.text-center
+            has-text-right = bulma_package.backend:option.text-right
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
+            has-items-center = bulma_package.backend:option.has-items-center
+            has-items-end = bulma_package.backend:option.has-items-end
+            boxed = bulma_package.backend:tablayout.field.table_class.boxed
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         thumbnail_group {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
-            inverted-thumbnail = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.inverted
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
+            inverted-thumbnail = bulma_package.backend:option.inverted
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         menu_thumbnail_dir {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
-            inverted-thumbnail = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.inverted
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
+            inverted-thumbnail = bulma_package.backend:option.inverted
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         menu_thumbnail_list {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
-            inverted-thumbnail = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.inverted
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
+            inverted-thumbnail = bulma_package.backend:option.inverted
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         image {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
-            is-justify-content-space-between = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-spaced
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
+            is-justify-content-space-between = bulma_package.backend:option.is-spaced
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         video {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         textmedia {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         textpic {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            is-centered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
-            is-gapless = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-gapless
-            is-vcentered = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-vcentered
+            is-centered = bulma_package.backend:option.is-centered
+            is-gapless = bulma_package.backend:option.is-gapless
+            is-vcentered = bulma_package.backend:option.is-vcentered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
         iframe {
           removeItems = fullwidth, striped, bordered, hoverable, narrow
           addItems {
-            mx-auto = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.is-centered
+            mx-auto = bulma_package.backend:option.is-centered
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
       }
     }
@@ -205,87 +205,87 @@ TCEFORM {
       types {
         tab {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.center
+            2 = bulma_package.backend:option.right
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.alignement
+          label = bulma_package.backend:field.alignement
         }
         card_group {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.center
+            2 = bulma_package.backend:option.right
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.align
+          label = bulma_package.backend:menu.card.align
         }
         icon_group {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.top
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.top
+            2 = bulma_package.backend:option.right
           }
           addItems {
-            3 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.bottom
+            3 = bulma_package.backend:option.bottom
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.icon-alignement
+          label = bulma_package.backend:field.icon-alignement
         }
         menu_card_list {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.center
+            2 = bulma_package.backend:option.right
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.align
+          label = bulma_package.backend:menu.card.align
         }
         menu_card_dir {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.center
+            2 = bulma_package.backend:option.right
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.align
+          label = bulma_package.backend:menu.card.align
         }
         uploads {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.center
+            2 = bulma_package.backend:option.right
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card.align
+          label = bulma_package.backend:menu.card.align
         }
         iframe {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2
+            0 = bulma_package.backend:ratio.16_9
+            1 = bulma_package.backend:ratio.3_1
+            2 = bulma_package.backend:ratio.3_2
           }
           addItems {
-            3 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3
-            4 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1
-            5 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1
-            6 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1
-            7 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3
-            8 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2
-            9 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5
+            3 = bulma_package.backend:ratio.4_3
+            4 = bulma_package.backend:ratio.4_1
+            5 = bulma_package.backend:ratio.6_1
+            6 = bulma_package.backend:ratio.1_1
+            7 = bulma_package.backend:ratio.2_3
+            8 = bulma_package.backend:ratio.1_2
+            9 = bulma_package.backend:ratio.4_5
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:iframe.ratio
+          label = bulma_package.backend:iframe.ratio
         }
         sharing_buttons {
           removeItems = 2
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.right
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.alignement
+          label = bulma_package.backend:field.alignement
         }
         site_update {
           altLabels {
-            0 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.left
-            1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.center
-            2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.right
+            0 = bulma_package.backend:option.left
+            1 = bulma_package.backend:option.center
+            2 = bulma_package.backend:option.right
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.alignement
+          label = bulma_package.backend:field.alignement
         }
       }
     }
@@ -294,9 +294,9 @@ TCEFORM {
         site_update {
           removeItems = is-dark, is-light
           addItems {
-            has-text-grey-light = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.grey-light
+            has-text-grey-light = bulma_package.backend:option.grey-light
           }
-          label = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.style
+          label = bulma_package.backend:field.style
         }
       }
     }

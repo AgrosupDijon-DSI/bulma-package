@@ -8,7 +8,7 @@
             <f:if condition="!{label} && {label -> asd:data.isNull()} || {label}">
                 <p class="{settings.titleClasses}">
                     <f:if condition="!{label} && {label -> asd:data.isNull()}">
-                        <f:then><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang.xlf:social_media_buttons.shareon.share" /></f:then>
+                        <f:then><f:translate key="bulma_package.messages:social_media_buttons.shareon.share" /></f:then>
                         <f:else>{label}</f:else>
                     </f:if>
                 </p>

@@ -25,7 +25,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.carousel',
+        'label' => 'bulma_package.backend:content_element.carousel',
         'value' => 'carousel',
         'icon' => 'content-bulmapackage-carousel',
         'group' => 'special',
@@ -46,38 +46,38 @@ $GLOBALS['TCA']['tt_content']['types']['carousel'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['types']['carousel'],
     [
         'showitem' => '
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+            --div--;core.form.tabs:general,
+                --palette--;frontend.ttc:palette.general;general,
+                --palette--;frontend.ttc:palette.headers;headers,
                 tx_bulmapackage_carousel_item,
-            --div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel.options,
-                pi_flexform;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:advanced,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+            --div--;bulma_package.backend:carousel.options,
+                pi_flexform;bulma_package.backend:advanced,
+            --div--;frontend.ttc:tabs.appearance,
+                --palette--;frontend.ttc:palette.frames;frames,
+                --palette--;frontend.ttc:palette.appearanceLinks;appearanceLinks,
+            --div--;core.form.tabs:language,
                 --palette--;;language,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --div--;core.form.tabs:access,
                 --palette--;;hidden,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                --palette--;frontend.ttc:palette.access;access,
+            --div--;core.form.tabs:categories,
                 categories,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+            --div--;core.form.tabs:notes,
                 rowDescription,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+            --div--;core.form.tabs:extended,
         ',
     ]
 );
 
 $additionalColumns = [
     'tx_bulmapackage_carousel_item' => [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel_item',
+        'label' => 'bulma_package.backend:carousel_item',
         'config' => [
             'type' => 'inline',
             'foreign_table' => 'tx_bulmapackage_carousel_item',
             'foreign_field' => 'tt_content',
             'appearance' => [
-                'newRecordLinkTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:carousel_item.add',
+                'newRecordLinkTitle' => 'bulma_package.backend:carousel_item.add',
                 'useSortable' => true,
                 'showSynchronizationLink' => true,
                 'showAllLocalizationLink' => true,
@@ -99,8 +99,4 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', $additionalColumns);
 /***************
  * Add flexForms for content element configuration
  */
-ExtensionManagementUtility::addPiFlexFormValue(
-    '*',
-    'FILE:EXT:bulma_package/Configuration/FlexForms/Carousel.xml',
-    'carousel'
-);
+$GLOBALS['TCA']['tt_content']['types']['carousel']['columnsOverrides']['pi_flexform']['config']['ds'] = 'FILE:EXT:bulma_package/Configuration/FlexForms/Carousel.xml';

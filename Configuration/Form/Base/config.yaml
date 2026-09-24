@@ -25,6 +25,10 @@ imports:
   - { resource: './Finishers/EmailToSender.yaml' }
   - { resource: './Finishers/ClearCache.yaml' }
 
+name: bulma-package/form-base
+label: 'Bulma Package — Form Base Configuration'
+priority: 200
+
 persistenceManager:
   allowedExtensionPaths:
     110: 'EXT:bulma_package/Resources/Private/Forms/'

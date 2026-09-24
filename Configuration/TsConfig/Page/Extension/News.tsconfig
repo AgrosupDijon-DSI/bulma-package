@@ -1,8 +1,8 @@
 tx_news.templateLayouts {
-  1 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.4cols
-  2 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.2cols
-  3 = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.1cols
-  carousel = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.carousel
-  agenda = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.agenda
-  media_list = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:news.templateLayouts.media_list
+  1 = bulma_package.backend:news.templateLayouts.4cols
+  2 = bulma_package.backend:news.templateLayouts.2cols
+  3 = bulma_package.backend:news.templateLayouts.1cols
+  carousel = bulma_package.backend:news.templateLayouts.carousel
+  agenda = bulma_package.backend:news.templateLayouts.agenda
+  media_list = bulma_package.backend:news.templateLayouts.media_list
 }

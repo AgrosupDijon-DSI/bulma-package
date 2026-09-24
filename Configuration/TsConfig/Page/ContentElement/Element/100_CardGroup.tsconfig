@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.advanced {
   elements {
     card_group {
       iconIdentifier = content-bulmapackage-card-group
-      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.card_group
-      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.card_group.description
+      title = bulma_package.backend:content_element.card_group
+      description = bulma_package.backend:content_element.card_group.description
       tt_content_defValues {
         CType = card_group
       }

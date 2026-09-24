@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/locallang.xlf" date="2019-07-05T09:11:39Z"
-          product-name="bulma_package">
+    <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/locallang.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package">
         <header/>
         <body>
             <trans-unit id="linktop">
@@ -50,15 +49,14 @@
                 <source>See all news</source>
             </trans-unit>
             <trans-unit id="news_filter_by_cat">
-                <source>Filtered by category:&#160;</source>
+                <source>Filtered by category: </source>
             </trans-unit>
             <trans-unit id="news_filter_by_tag">
-                <source>Filtered by tag:&#160;</source>
+                <source>Filtered by tag: </source>
             </trans-unit>
             <trans-unit id="news_remove_filter">
                 <source>Remove filter</source>
             </trans-unit>
-
             <trans-unit id="formEditor.elements.Form.finisher.ClearCache.editor.header.label">
                 <source>Clear cache</source>
             </trans-unit>
@@ -101,13 +99,13 @@
             <trans-unit id="social_media_buttons.shareon.share">
                 <source>Share</source>
             </trans-unit>
-			<trans-unit id="header-nav-aria-label">
+            <trans-unit id="header-nav-aria-label">
                 <source>main navigation</source>
             </trans-unit>
-			<trans-unit id="breadcrumb-nav-aria-label">
+            <trans-unit id="breadcrumb-nav-aria-label">
                 <source>breadcrumbs</source>
             </trans-unit>
-			<trans-unit id="site.lastupdate">
+            <trans-unit id="site.lastupdate">
                 <source>Website updated on </source>
             </trans-unit>
         </body>

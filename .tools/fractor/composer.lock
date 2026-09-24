@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d17dfd2add98374f6df16da3feceebca",
+    "content-hash": "ea831ee33551c7955c1379ecdf395cd9",
     "packages": [
         {
             "name": "a9f/fractor",
-            "version": "v0.5.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreaswolf/fractor-fractor.git",
-                "reference": "696f5853e45fb8da24177316b5c609df11e162dd"
+                "reference": "3b85f11ac8fc5588bb8d7bc15b8543873728b283"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreaswolf/fractor-fractor/zipball/696f5853e45fb8da24177316b5c609df11e162dd",
-                "reference": "696f5853e45fb8da24177316b5c609df11e162dd",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-fractor/zipball/3b85f11ac8fc5588bb8d7bc15b8543873728b283",
+                "reference": "3b85f11ac8fc5588bb8d7bc15b8543873728b283",
                 "shasum": ""
             },
             "require": {
@@ -70,14 +70,13 @@
                 "upgrade"
             ],
             "support": {
-                "issues": "https://github.com/andreaswolf/fractor-fractor/issues",
-                "source": "https://github.com/andreaswolf/fractor-fractor/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-fractor/tree/v1.0.0"
             },
-            "time": "2026-06-17T11:43:19+00:00"
+            "time": "2026-07-07T17:09:53+00:00"
         },
         {
             "name": "a9f/fractor-extension-installer",
-            "version": "v0.5.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreaswolf/fractor-extension-installer.git",
@@ -122,27 +121,27 @@
             ],
             "description": "Installer for Fractor extensions.",
             "support": {
-                "source": "https://github.com/andreaswolf/fractor-extension-installer/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-extension-installer/tree/v1.0.0"
             },
             "time": "2025-04-30T21:48:47+00:00"
         },
         {
             "name": "a9f/fractor-fluid",
-            "version": "v0.5.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreaswolf/fractor-fluid.git",
-                "reference": "c7d15551f3cb48f6eda28633212f597f93df6d09"
+                "reference": "44b38084b52cfc99604aa62e58ddcb96336723a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreaswolf/fractor-fluid/zipball/c7d15551f3cb48f6eda28633212f597f93df6d09",
-                "reference": "c7d15551f3cb48f6eda28633212f597f93df6d09",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-fluid/zipball/44b38084b52cfc99604aa62e58ddcb96336723a8",
+                "reference": "44b38084b52cfc99604aa62e58ddcb96336723a8",
                 "shasum": ""
             },
             "require": {
-                "a9f/fractor": "^0.5.11",
-                "a9f/fractor-extension-installer": "^0.5.11",
+                "a9f/fractor": "^1.0",
+                "a9f/fractor-extension-installer": "^1.0",
                 "nette/utils": "^4.0",
                 "php": "^8.2",
                 "symplify/rule-doc-generator-contracts": "^11.2",
@@ -181,27 +180,27 @@
             ],
             "support": {
                 "issues": "https://github.com/andreaswolf/fractor-fluid/issues",
-                "source": "https://github.com/andreaswolf/fractor-fluid/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-fluid/tree/v1.0.0"
             },
-            "time": "2026-06-17T11:43:19+00:00"
+            "time": "2026-07-07T17:09:53+00:00"
         },
         {
             "name": "a9f/fractor-htaccess",
-            "version": "v0.5.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreaswolf/fractor-htaccess.git",
-                "reference": "d5b8b6ab9dcd849323ed4bf26cef9a344fc38f43"
+                "reference": "ed39a10a413d3137934cca323d5c8cb35257073d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreaswolf/fractor-htaccess/zipball/d5b8b6ab9dcd849323ed4bf26cef9a344fc38f43",
-                "reference": "d5b8b6ab9dcd849323ed4bf26cef9a344fc38f43",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-htaccess/zipball/ed39a10a413d3137934cca323d5c8cb35257073d",
+                "reference": "ed39a10a413d3137934cca323d5c8cb35257073d",
                 "shasum": ""
             },
             "require": {
-                "a9f/fractor": "^0.5.11",
-                "a9f/fractor-extension-installer": "^0.5.11",
+                "a9f/fractor": "^1.0",
+                "a9f/fractor-extension-installer": "^1.0",
                 "nette/utils": "^4.0",
                 "php": "^8.2",
                 "symplify/rule-doc-generator-contracts": "^11.2",
@@ -240,27 +239,27 @@
                 "upgrade"
             ],
             "support": {
-                "source": "https://github.com/andreaswolf/fractor-htaccess/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-htaccess/tree/v1.0.0"
             },
-            "time": "2026-06-17T11:43:19+00:00"
+            "time": "2026-07-07T17:09:53+00:00"
         },
         {
             "name": "a9f/fractor-typoscript",
-            "version": "v0.5.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreaswolf/fractor-typoscript.git",
-                "reference": "c170ff14c48e678ceeada2f7cfec35debfebcb94"
+                "reference": "34a7a362cc7b7b95709dcbabfdd10965e71ff8b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreaswolf/fractor-typoscript/zipball/c170ff14c48e678ceeada2f7cfec35debfebcb94",
-                "reference": "c170ff14c48e678ceeada2f7cfec35debfebcb94",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-typoscript/zipball/34a7a362cc7b7b95709dcbabfdd10965e71ff8b6",
+                "reference": "34a7a362cc7b7b95709dcbabfdd10965e71ff8b6",
                 "shasum": ""
             },
             "require": {
-                "a9f/fractor": "^0.5.11",
-                "a9f/fractor-extension-installer": "^0.5.11",
+                "a9f/fractor": "^1.0",
+                "a9f/fractor-extension-installer": "^1.0",
                 "helmich/typo3-typoscript-parser": "^2.8.0",
                 "php": "^8.2",
                 "symplify/rule-doc-generator-contracts": "^11.2",
@@ -298,27 +297,85 @@
                 "upgrade"
             ],
             "support": {
-                "source": "https://github.com/andreaswolf/fractor-typoscript/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-typoscript/tree/v1.0.0"
             },
-            "time": "2026-06-17T11:43:19+00:00"
+            "time": "2026-07-07T17:09:53+00:00"
         },
         {
-            "name": "a9f/fractor-xml",
-            "version": "v0.5.11",
+            "name": "a9f/fractor-xliff",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/andreaswolf/fractor-xml.git",
-                "reference": "ed69f6d6c12a82739a6272e58e66ea2c2c53fffd"
+                "url": "https://github.com/andreaswolf/fractor-xliff.git",
+                "reference": "cda7af6850f992d9ba82f4b621590455e05f0231"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreaswolf/fractor-xml/zipball/ed69f6d6c12a82739a6272e58e66ea2c2c53fffd",
-                "reference": "ed69f6d6c12a82739a6272e58e66ea2c2c53fffd",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-xliff/zipball/cda7af6850f992d9ba82f4b621590455e05f0231",
+                "reference": "cda7af6850f992d9ba82f4b621590455e05f0231",
                 "shasum": ""
             },
             "require": {
-                "a9f/fractor": "^0.5.11",
-                "a9f/fractor-extension-installer": "^0.5.11",
+                "a9f/fractor": "^1.0",
+                "a9f/fractor-extension-installer": "^1.0",
+                "ext-dom": "*",
+                "ext-xml": "*",
+                "php": "^8.2",
+                "simonschaufi/pretty-xml": "^3.0.0",
+                "symplify/rule-doc-generator-contracts": "^11.2",
+                "webmozart/assert": "^1.11"
+            },
+            "type": "fractor-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "a9f\\FractorXliff\\": [
+                        "src/",
+                        "rules/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "XLIFF extension for the File Read-Analyse-Change Tool. Allows modifying XLIFF translation files",
+            "keywords": [
+                "automation",
+                "dev",
+                "fractor",
+                "migration",
+                "refactoring",
+                "translation",
+                "upgrade",
+                "xliff"
+            ],
+            "support": {
+                "source": "https://github.com/andreaswolf/fractor-xliff/tree/v1.0.0"
+            },
+            "time": "2026-07-07T17:09:53+00:00"
+        },
+        {
+            "name": "a9f/fractor-xml",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andreaswolf/fractor-xml.git",
+                "reference": "410bc1472316c809c7ea45d8747ef25766271d3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-xml/zipball/410bc1472316c809c7ea45d8747ef25766271d3e",
+                "reference": "410bc1472316c809c7ea45d8747ef25766271d3e",
+                "shasum": ""
+            },
+            "require": {
+                "a9f/fractor": "^1.0",
+                "a9f/fractor-extension-installer": "^1.0",
                 "ext-dom": "*",
                 "ext-xml": "*",
                 "php": "^8.2",
@@ -358,27 +415,27 @@
                 "upgrade"
             ],
             "support": {
-                "source": "https://github.com/andreaswolf/fractor-xml/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-xml/tree/v1.0.0"
             },
-            "time": "2026-06-17T11:43:19+00:00"
+            "time": "2026-07-07T17:09:53+00:00"
         },
         {
             "name": "a9f/fractor-yaml",
-            "version": "v0.5.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreaswolf/fractor-yaml.git",
-                "reference": "3ba12f547b41ec9d0287e2b0714386a0c5a3bd6a"
+                "reference": "655351e5f0a74a448d53ab90db4101639c1a801a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreaswolf/fractor-yaml/zipball/3ba12f547b41ec9d0287e2b0714386a0c5a3bd6a",
-                "reference": "3ba12f547b41ec9d0287e2b0714386a0c5a3bd6a",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-yaml/zipball/655351e5f0a74a448d53ab90db4101639c1a801a",
+                "reference": "655351e5f0a74a448d53ab90db4101639c1a801a",
                 "shasum": ""
             },
             "require": {
-                "a9f/fractor": "^0.5.11",
-                "a9f/fractor-extension-installer": "^0.5.11",
+                "a9f/fractor": "^1.0",
+                "a9f/fractor-extension-installer": "^1.0",
                 "php": "^8.2",
                 "symfony/yaml": "^5.4 || ^6.4 || ^7.0 || ^8.0",
                 "symplify/rule-doc-generator-contracts": "^11.2",
@@ -416,32 +473,33 @@
                 "upgrade"
             ],
             "support": {
-                "source": "https://github.com/andreaswolf/fractor-yaml/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-yaml/tree/v1.0.0"
             },
-            "time": "2026-06-17T11:43:19+00:00"
+            "time": "2026-07-07T17:09:53+00:00"
         },
         {
             "name": "a9f/typo3-fractor",
-            "version": "v0.5.11",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreaswolf/fractor-typo3-fractor.git",
-                "reference": "4867d5fb16e5e3bd91d60d801b9231c827c05738"
+                "reference": "14f6cd94e40a375b8dd711b342d3d8b7e3a5426b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreaswolf/fractor-typo3-fractor/zipball/4867d5fb16e5e3bd91d60d801b9231c827c05738",
-                "reference": "4867d5fb16e5e3bd91d60d801b9231c827c05738",
+                "url": "https://api.github.com/repos/andreaswolf/fractor-typo3-fractor/zipball/14f6cd94e40a375b8dd711b342d3d8b7e3a5426b",
+                "reference": "14f6cd94e40a375b8dd711b342d3d8b7e3a5426b",
                 "shasum": ""
             },
             "require": {
-                "a9f/fractor": "^0.5.11",
-                "a9f/fractor-extension-installer": "^0.5.11",
-                "a9f/fractor-fluid": "^0.5.11",
-                "a9f/fractor-htaccess": "^0.5.11",
-                "a9f/fractor-typoscript": "^0.5.11",
-                "a9f/fractor-xml": "^0.5.11",
-                "a9f/fractor-yaml": "^0.5.11",
+                "a9f/fractor": "^1.0",
+                "a9f/fractor-extension-installer": "^1.0",
+                "a9f/fractor-fluid": "^1.0",
+                "a9f/fractor-htaccess": "^1.0",
+                "a9f/fractor-typoscript": "^1.0",
+                "a9f/fractor-xliff": "^1.0",
+                "a9f/fractor-xml": "^1.0",
+                "a9f/fractor-yaml": "^1.0",
                 "ext-dom": "*",
                 "php": "^8.2",
                 "symplify/rule-doc-generator-contracts": "^11.2"
@@ -485,9 +543,9 @@
                 "upgrade"
             ],
             "support": {
-                "source": "https://github.com/andreaswolf/fractor-typo3-fractor/tree/v0.5.11"
+                "source": "https://github.com/andreaswolf/fractor-typo3-fractor/tree/v1.0.0"
             },
-            "time": "2026-06-17T11:43:19+00:00"
+            "time": "2026-07-07T17:09:53+00:00"
         },
         {
             "name": "helmich/typo3-typoscript-parser",
@@ -2482,23 +2540,23 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "2.4.1",
+            "version": "1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "2ccb7c2e821038c03a3e6e1700c570c158c55f70"
+                "reference": "9be6926d8b485f55b9229203f962b51ed377ba68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/2ccb7c2e821038c03a3e6e1700c570c158c55f70",
-                "reference": "2ccb7c2e821038c03a3e6e1700c570c158c55f70",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/9be6926d8b485f55b9229203f962b51ed377ba68",
+                "reference": "9be6926d8b485f55b9229203f962b51ed377ba68",
                 "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
                 "ext-date": "*",
                 "ext-filter": "*",
-                "php": "^8.2"
+                "php": "^7.2 || ^8.0"
             },
             "suggest": {
                 "ext-intl": "",
@@ -2507,12 +2565,8 @@
             },
             "type": "library",
             "extra": {
-                "psalm": {
-                    "pluginClass": "Webmozart\\Assert\\PsalmPlugin"
-                },
                 "branch-alias": {
-                    "dev-master": "2.0-dev",
-                    "dev-feature/2-0": "2.0-dev"
+                    "dev-master": "1.10-dev"
                 }
             },
             "autoload": {
@@ -2528,10 +2582,6 @@
                 {
                     "name": "Bernhard Schussek",
                     "email": "bschussek@gmail.com"
-                },
-                {
-                    "name": "Woody Gilk",
-                    "email": "woody.gilk@gmail.com"
                 }
             ],
             "description": "Assertions to validate method input/output with nice error messages.",
@@ -2542,9 +2592,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/2.4.1"
+                "source": "https://github.com/webmozarts/assert/tree/1.12.1"
             },
-            "time": "2026-06-15T15:31:57+00:00"
+            "time": "2025-10-29T15:56:20+00:00"
         }
     ],
     "packages-dev": [],

@@ -36,7 +36,8 @@ class CompileService
 
     public function __construct(
         private readonly ConnectionPool $connectionPool
-    ) {}
+    ) {
+    }
 
     /**
      * @param ServerRequestInterface $request

@@ -8,7 +8,7 @@ return [
         'position' => ['before' => '*'],
         'access' => 'user',
         'path' => '/module/system/WebsiteSettings',
-        'labels' => 'LLL:EXT:bulma_package/Resources/Private/Language/locallang_mod.xlf',
+        'labels' => 'bulma_package.modules.website',
         'iconIdentifier' => 'module-dashboard',
         'extensionName' => 'BulmaPackage',
         'controllerActions' => [

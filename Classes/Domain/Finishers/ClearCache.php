@@ -12,13 +12,21 @@ class ClearCache extends AbstractFinisher
 {
     public function __construct(
         public CacheService $cacheService
-    ) {}
+    ) {
+    }
 
-    protected function executeInternal()
+    /**
+     * @var array
+     */
+    protected $defaultOptions = [
+        'pageUid' => 0,
+    ];
+
+    protected function executeInternal(): void
     {
         $pageUid = $this->parseOption('pageUid');
 
-        if (empty($pageUid)) {
+        if (!is_string($pageUid) || empty((int)$pageUid)) {
             /** @var PageArguments $routing */
             $routing = $this->finisherContext->getRequest()->getAttribute('routing');
             $pageUid = $routing->getPageId();

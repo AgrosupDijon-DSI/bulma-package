@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.advanced {
   elements {
     accordion {
       iconIdentifier = content-bulmapackage-accordion
-      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion
-      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion.description
+      title = bulma_package.backend:content_element.accordion
+      description = bulma_package.backend:content_element.accordion.description
       tt_content_defValues {
         CType = accordion
       }

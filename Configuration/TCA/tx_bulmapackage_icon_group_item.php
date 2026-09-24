@@ -14,13 +14,13 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item',
+        'title' => 'bulma_package.backend:icon_group_item',
         'delete' => 'deleted',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
         'hideTable' => true,
         'hideAtCopy' => true,
-        'prependAtCopy' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
+        'prependAtCopy' => 'core.general:LGL.prependAtCopy',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'languageField' => 'sys_language_uid',
@@ -38,7 +38,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.icon,--palette--;;icon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.text,bodytext,link,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette',
+            'showitem' => '--div--;bulma_package.backend:palette.icon,--palette--;;icon,--div--;bulma_package.backend:palette.text,bodytext,link,--div--;frontend.ttc:tabs.access,--palette--;frontend.ttc:palette.visibility;visibility,--palette--;frontend.ttc:palette.access;access,--palette--;;hiddenLanguagePalette',
         ],
     ],
     'palettes' => [
@@ -47,8 +47,8 @@ return [
         ],
         'access' => [
             'showitem' => '
-                starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
-                endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel
+                starttime;core.db.general:starttime,
+                endtime;core.db.general:endtime
             ',
         ],
         'general' => [
@@ -65,7 +65,7 @@ return [
         ],
         'visibility' => [
             'showitem' => '
-                hidden;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item
+                hidden;bulma_package.backend:icon_group_item
             ',
             'isHiddenPalette' => true,
         ],
@@ -78,7 +78,7 @@ return [
     'columns' => [
         'tt_content' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.tt_content',
+            'label' => 'bulma_package.backend:icon_group_item.tt_content',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -90,7 +90,7 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'core.general:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -104,7 +104,7 @@ return [
         ],
         'starttime' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+            'label' => 'core.general:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
                 'default' => 0,
@@ -114,7 +114,7 @@ return [
         ],
         'endtime' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+            'label' => 'core.general:LGL.endtime',
             'config' => [
                 'type' => 'datetime',
                 'default' => 0,
@@ -127,12 +127,12 @@ return [
         ],
         'sys_language_uid' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'label' => 'core.general:LGL.language',
             'config' => ['type' => 'language'],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'core.general:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -153,31 +153,31 @@ return [
             ],
         ],
         'bodytext' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.text',
+            'label' => 'frontend.db.tt_content:bodytext',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
             ],
         ],
         'link' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.link',
+            'label' => 'bulma_package.backend:icon_group_item.link',
             'config' => [
                 'type' => 'link',
                 'size' => 50,
                 'appearance' => [
-                    'browserTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.link',
+                    'browserTitle' => 'bulma_package.backend:icon_group_item.link',
                 ],
             ],
             'l10n_mode' => 'exclude',
         ],
         'icon_set' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_set',
+            'label' => 'bulma_package.backend:icon_group_item.icon_set',
             'onChange' => 'reload',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.none', 'value' => ''],
+                    ['label' => 'bulma_package.backend:option.none', 'value' => ''],
                     ['label' => 'Ionicons', 'value' => 'EXT:bulma_package/Resources/Public/Icons/Ionicons/'],
                     ['label' => 'Font Awesome Regular', 'value' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/regular/'],
                     ['label' => 'Font Awesome Solid', 'value' => 'EXT:bulma_package/Resources/Public/Icons/FontAwesome/solid/'],
@@ -186,13 +186,13 @@ return [
             ],
         ],
         'icon' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon',
+            'label' => 'bulma_package.backend:icon_group_item.icon',
             'displayCond' => 'FIELD:icon_set:REQ:true',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.none', 'value' => 0, 'icon' => 'EXT:bulma_package/Resources/Public/Icons/none.jpg'],
+                    ['label' => 'bulma_package.backend:option.none', 'value' => 0, 'icon' => 'EXT:bulma_package/Resources/Public/Icons/none.jpg'],
                 ],
                 'itemsProcFunc' => 'AgrosupDijon\BulmaPackage\Utility\TextIconUtility->addIconItems',
                 'fieldWizard' => [
@@ -203,12 +203,12 @@ return [
             ],
         ],
         'icon_file' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_file',
+            'label' => 'bulma_package.backend:icon_group_item.icon_file',
             'displayCond' => 'FIELD:icon_set:REQ:false',
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
@@ -252,34 +252,34 @@ return [
             'l10n_mode' => 'exclude',
         ],
         'icon_size' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_size',
+            'label' => 'bulma_package.backend:icon_group_item.icon_size',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'value' => ''],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.medium', 'value' => 'is-medium'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.large', 'value' => 'is-large'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.xl', 'value' => 'is-xl'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.xxl', 'value' => 'is-xxl'],
+                    ['label' => 'bulma_package.backend:option.default', 'value' => ''],
+                    ['label' => 'bulma_package.backend:option.medium', 'value' => 'is-medium'],
+                    ['label' => 'bulma_package.backend:option.large', 'value' => 'is-large'],
+                    ['label' => 'bulma_package.backend:option.xl', 'value' => 'is-xl'],
+                    ['label' => 'bulma_package.backend:option.xxl', 'value' => 'is-xxl'],
                 ],
             ],
         ],
         'icon_color' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_color',
+            'label' => 'bulma_package.backend:icon_group_item.icon_color',
             'displayCond' => 'FIELD:icon_set:REQ:true',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.none', 'value' => 0],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.primary', 'value' => 'has-text-primary'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.success', 'value' => 'has-text-success'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.info', 'value' => 'has-text-info'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.warning', 'value' => 'has-text-warning'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.danger', 'value' => 'has-text-danger'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.light', 'value' => 'has-text-light'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.dark', 'value' => 'has-text-dark'],
+                    ['label' => 'bulma_package.backend:option.none', 'value' => 0],
+                    ['label' => 'bulma_package.backend:option.primary', 'value' => 'has-text-primary'],
+                    ['label' => 'bulma_package.backend:option.success', 'value' => 'has-text-success'],
+                    ['label' => 'bulma_package.backend:option.info', 'value' => 'has-text-info'],
+                    ['label' => 'bulma_package.backend:option.warning', 'value' => 'has-text-warning'],
+                    ['label' => 'bulma_package.backend:option.danger', 'value' => 'has-text-danger'],
+                    ['label' => 'bulma_package.backend:option.light', 'value' => 'has-text-light'],
+                    ['label' => 'bulma_package.backend:option.dark', 'value' => 'has-text-dark'],
                 ],
             ],
         ],

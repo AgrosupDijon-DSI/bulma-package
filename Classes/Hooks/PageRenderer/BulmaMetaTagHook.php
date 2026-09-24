@@ -23,7 +23,8 @@ class BulmaMetaTagHook
     public function __construct(
         private readonly MetaTagManagerRegistry $metaTagManagerRegistry,
         private readonly ConnectionPool $connectionPool
-    ) {}
+    ) {
+    }
 
     /**
      * @throws Exception

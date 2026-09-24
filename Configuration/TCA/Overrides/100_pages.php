@@ -16,7 +16,7 @@ defined('TYPO3') or die();
 
 // Adds new "module" type
 $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
-    'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:bulma-website',
+    'label' => 'bulma_package.backend:bulma-website',
     'value' => 'tx_bulmapackage_settings',
     'icon' => 'mimetypes-x-content-page-language-overlay',
 ];
@@ -25,13 +25,13 @@ $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-tx_bulmapackage_s
 $additionalColumns = [
     'thumbnail' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.thumbnail',
+        'label' => 'bulma_package.backend:pages.thumbnail',
         'config' => [
             'type' => 'file',
             'maxitems' => 1,
             'allowed' => 'common-image-types',
             'appearance' => [
-                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
             ],
             'overrideChildTca' => [
                 'types' => [
@@ -74,7 +74,7 @@ $additionalColumns = [
     ],
     'exclude_slug_for_subpages' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.exclude_slug_for_subpages',
+        'label' => 'bulma_package.backend:pages.exclude_slug_for_subpages',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -82,7 +82,7 @@ $additionalColumns = [
     ],
     'hide_breadcrumb' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.hide_breadcrumb',
+        'label' => 'bulma_package.backend:pages.hide_breadcrumb',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -90,8 +90,8 @@ $additionalColumns = [
     ],
     'automatic_title' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.automatic_title',
-        'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:pages.automatic_title.description',
+        'label' => 'bulma_package.backend:pages.automatic_title',
+        'description' => 'bulma_package.backend:pages.automatic_title.description',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',

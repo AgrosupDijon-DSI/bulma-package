@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
     <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/Backend.xlf" date="2019-07-05T09:11:39Z" product-name="bulma_package">
         <header/>
@@ -135,9 +135,9 @@
             <trans-unit id="option.light">
                 <source>Light</source>
             </trans-unit>
-			<trans-unit id="option.grey-light">
-				<source>Grey light</source>
-			</trans-unit>
+            <trans-unit id="option.grey-light">
+                <source>Grey light</source>
+            </trans-unit>
             <trans-unit id="option.dark">
                 <source>Dark</source>
             </trans-unit>
@@ -759,6 +759,9 @@
             <trans-unit id="content_group.media">
                 <source>Media</source>
             </trans-unit>
+			<trans-unit id="content_group.special">
+				<source>Special elements</source>
+			</trans-unit>
             <trans-unit id="news.templateLayouts.4cols">
                 <source>4 Columns</source>
             </trans-unit>
@@ -768,15 +771,15 @@
             <trans-unit id="news.templateLayouts.1cols">
                 <source>1 Column</source>
             </trans-unit>
-			<trans-unit id="news.templateLayouts.carousel">
-				<source>Carousel</source>
-			</trans-unit>
-			<trans-unit id="news.templateLayouts.agenda">
-				<source>Agenda</source>
-			</trans-unit>
-			<trans-unit id="news.templateLayouts.media_list">
-				<source>Media list</source>
-			</trans-unit>
+            <trans-unit id="news.templateLayouts.carousel">
+                <source>Carousel</source>
+            </trans-unit>
+            <trans-unit id="news.templateLayouts.agenda">
+                <source>Agenda</source>
+            </trans-unit>
+            <trans-unit id="news.templateLayouts.media_list">
+                <source>Media list</source>
+            </trans-unit>
             <trans-unit id="tx_bulmapackage_meta_tags">
                 <source>Meta Tag</source>
             </trans-unit>
@@ -843,18 +846,18 @@
             <trans-unit id="palette.sharingbuttonslayout">
                 <source>Sharing buttons layout</source>
             </trans-unit>
-			<trans-unit id="content_element.site_update.label">
-				<source>Last updated date</source>
-			</trans-unit>
-			<trans-unit id="content_element.site_update.description">
-				<source>Displays the date the site was last updated, based on updates to content or pages.</source>
-			</trans-unit>
-			<trans-unit id="pages.automatic_title">
-				<source>Automatic title</source>
-			</trans-unit>
-			<trans-unit id="pages.automatic_title.description">
-				<source>Automatically displays the page title as a level 1 heading, at the top of the main content area.</source>
-			</trans-unit>
+            <trans-unit id="content_element.site_update.label">
+                <source>Last updated date</source>
+            </trans-unit>
+            <trans-unit id="content_element.site_update.description">
+                <source>Displays the date the site was last updated, based on updates to content or pages.</source>
+            </trans-unit>
+            <trans-unit id="pages.automatic_title">
+                <source>Automatic title</source>
+            </trans-unit>
+            <trans-unit id="pages.automatic_title.description">
+                <source>Automatically displays the page title as a level 1 heading, at the top of the main content area.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

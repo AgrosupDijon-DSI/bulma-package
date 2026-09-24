@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.advanced {
   elements {
     shortcut {
       iconIdentifier = content-special-shortcut
-      title = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_shortcut_title
-      description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_shortcut_description
+      title = frontend.ttc:CType.shortcut
+      description = frontend.ttc:CType.shortcut.description
       tt_content_defValues {
         CType = shortcut
       }

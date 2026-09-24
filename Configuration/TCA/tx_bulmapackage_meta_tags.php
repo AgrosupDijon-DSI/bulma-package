@@ -9,7 +9,7 @@
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_meta_tags',
+        'title' => 'bulma_package.backend:tx_bulmapackage_meta_tags',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -18,7 +18,6 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'label',
         'typeicon_classes' => [
             'default' => 'content-bulmapackage-meta',
         ],
@@ -38,16 +37,17 @@ return [
     ],
     'columns' => [
         't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+            'label' => 'core.general:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'core.general:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'default' => 0,
@@ -55,20 +55,22 @@ return [
         ],
         'name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_meta_tags.name',
+            'label' => 'bulma_package.backend:tx_bulmapackage_meta_tags.name',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
         'content' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_meta_tags.content',
+            'label' => 'bulma_package.backend:tx_bulmapackage_meta_tags.content',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
     ],

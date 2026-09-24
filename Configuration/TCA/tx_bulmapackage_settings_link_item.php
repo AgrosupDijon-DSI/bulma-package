@@ -14,13 +14,13 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item',
+        'title' => 'bulma_package.backend:tx_bulmapackage_settings_link_item',
         'delete' => 'deleted',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
         'hideTable' => true,
         'hideAtCopy' => true,
-        'prependAtCopy' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
+        'prependAtCopy' => 'core.general:LGL.prependAtCopy',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'languageField' => 'sys_language_uid',
@@ -77,7 +77,7 @@ return [
     'columns' => [
         'tx_bulmapackage_settings' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -89,7 +89,7 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'core.general:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'default' => 0,
@@ -97,12 +97,12 @@ return [
         ],
         'sys_language_uid' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'label' => 'core.general:LGL.language',
             'config' => ['type' => 'language'],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'core.general:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -124,7 +124,7 @@ return [
         ],
         'label' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.label',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.label',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -133,7 +133,7 @@ return [
             ],
         ],
         'link' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.link',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.link',
             'config' => [
                 'type' => 'link',
                 'size' => 50,
@@ -146,28 +146,28 @@ return [
         ],
         'force_label' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.force_label',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.force_label',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
             ],
         ],
         'icon' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon',
             'displayCond' => 'FIELD:icon_custom:REQ:false',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'value' => 'fas fa-link', 'icon' => 'settings-bulmapackage-link'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.envelope', 'value' => 'fas fa-envelope', 'icon' => 'settings-bulmapackage-envelope'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.map', 'value' => 'fas fa-map', 'icon' => 'settings-bulmapackage-map'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.map_marker', 'value' => 'fas fa-map-marker-alt', 'icon' => 'settings-bulmapackage-map-marker'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.book', 'value' => 'fas fa-book-open', 'icon' => 'settings-bulmapackage-book-open'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.student', 'value' => 'fas fa-user-graduate', 'icon' => 'settings-bulmapackage-user-graduate'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user', 'value' => 'fas fa-user', 'icon' =>  'settings-bulmapackage-user'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.user-lock', 'value' => 'fas fa-user-lock', 'icon' => 'settings-bulmapackage-user-lock'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon.lock', 'value' => 'fas fa-lock', 'icon' => 'settings-bulmapackage-lock'],
+                    ['label' => 'bulma_package.backend:option.default', 'value' => 'fas fa-link', 'icon' => 'settings-bulmapackage-link'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.envelope', 'value' => 'fas fa-envelope', 'icon' => 'settings-bulmapackage-envelope'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.map', 'value' => 'fas fa-map', 'icon' => 'settings-bulmapackage-map'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.map_marker', 'value' => 'fas fa-map-marker-alt', 'icon' => 'settings-bulmapackage-map-marker'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.book', 'value' => 'fas fa-book-open', 'icon' => 'settings-bulmapackage-book-open'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.student', 'value' => 'fas fa-user-graduate', 'icon' => 'settings-bulmapackage-user-graduate'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.user', 'value' => 'fas fa-user', 'icon' =>  'settings-bulmapackage-user'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.user-lock', 'value' => 'fas fa-user-lock', 'icon' => 'settings-bulmapackage-user-lock'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon.lock', 'value' => 'fas fa-lock', 'icon' => 'settings-bulmapackage-lock'],
                     ['label' => 'Facebook', 'value' => 'fab fa-facebook-f', 'icon' => 'settings-bulmapackage-facebook'],
                     ['label' => 'Twitter', 'value' => 'fab fa-twitter', 'icon' => 'settings-bulmapackage-twitter'],
                     ['label' => 'Youtube', 'value' => 'fab fa-youtube', 'icon' => 'settings-bulmapackage-youtube'],
@@ -187,12 +187,12 @@ return [
             ],
         ],
         'icon_file' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:icon_group_item.icon_file',
+            'label' => 'bulma_package.backend:icon_group_item.icon_file',
             'displayCond' => 'FIELD:icon_custom:REQ:true',
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
@@ -238,7 +238,7 @@ return [
         'icon_custom' => [
             'exclude' => true,
             'onChange' => 'reload',
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.icon_custom',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.icon_custom',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -246,7 +246,7 @@ return [
         ],
         'standalone' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings_link_item.standalone',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings_link_item.standalone',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',

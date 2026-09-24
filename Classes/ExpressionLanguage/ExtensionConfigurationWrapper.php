@@ -19,7 +19,8 @@ final class ExtensionConfigurationWrapper
 {
     public function __construct(
         private readonly ExtensionConfiguration $extensionConfiguration,
-    ) {}
+    ) {
+    }
 
     /**
      * True if a bool toggle in ext_conf_template is true'ish.

@@ -26,6 +26,13 @@ class ChunkViewHelper extends AbstractViewHelper
 
     public function render(): void
     {
-        $this->renderingContext->getVariableProvider()->add($this->arguments['as'], array_chunk($this->arguments['data'], $this->arguments['length']));
+        $renderingContext = $this->renderingContext;
+        if ($renderingContext === null) {
+            throw new \RuntimeException(
+                'ViewHelper asd:data.chunk needs a rendering context.',
+                3946292803
+            );
+        }
+        $renderingContext->getVariableProvider()->add($this->arguments['as'], array_chunk($this->arguments['data'], $this->arguments['length']));
     }
 }

@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.menu {
   elements {
     menu_card_list {
       iconIdentifier = content-bulmapackage-menu-card
-      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card_list
-      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:menu.card_list.description
+      title = bulma_package.backend:menu.card_list
+      description = bulma_package.backend:menu.card_list.description
       tt_content_defValues {
         CType = menu_card_list
       }

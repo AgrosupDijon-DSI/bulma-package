@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.media {
   elements {
     video {
       iconIdentifier = mimetypes-x-content-multimedia
-      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video
-      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.video.description
+      title = bulma_package.backend:content_element.video
+      description = bulma_package.backend:content_element.video.description
       tt_content_defValues {
         CType = video
       }

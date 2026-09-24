@@ -9,13 +9,13 @@
 
 namespace AgrosupDijon\BulmaPackage\Updates;
 
+use TYPO3\CMS\Core\Attribute\UpgradeWizard;
+use TYPO3\CMS\Core\Upgrades\UpgradeWizardInterface;
+use TYPO3\CMS\Core\Upgrades\RepeatableInterface;
+use TYPO3\CMS\Core\Upgrades\DatabaseUpdatedPrerequisite;
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Install\Attribute\UpgradeWizard;
-use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
-use TYPO3\CMS\Install\Updates\RepeatableInterface;
-use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Migrate Accordions Content Element from Bootstrap to Bulma
@@ -35,7 +35,8 @@ class BootstrapToBulmaTabUpdate implements UpgradeWizardInterface, RepeatableInt
 
     public function __construct(
         private readonly ConnectionPool $connectionPool
-    ) {}
+    ) {
+    }
 
     /**
      * @return string Title of this updater

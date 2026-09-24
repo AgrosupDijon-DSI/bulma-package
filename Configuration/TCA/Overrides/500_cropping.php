@@ -13,54 +13,54 @@ defined('TYPO3') or die();
  * Add crop variants
  */
 $defaultCropSettings = [
-    'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default',
+    'title' => 'bulma_package.backend:option.default',
     'allowedAspectRatios' => [
         '16:9' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.16_9',
+            'title' => 'bulma_package.backend:ratio.16_9',
             'value' => 16 / 9,
         ],
         '3:2' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_2',
+            'title' => 'bulma_package.backend:ratio.3_2',
             'value' => 3 / 2,
         ],
         '3:1' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.3_1',
+            'title' => 'bulma_package.backend:ratio.3_1',
             'value' => 3.0,
         ],
         '4:1' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_1',
+            'title' => 'bulma_package.backend:ratio.4_1',
             'value' => 4.0,
         ],
         '6:1' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.6_1',
+            'title' => 'bulma_package.backend:ratio.6_1',
             'value' => 6.0,
         ],
         '4:3' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_3',
+            'title' => 'bulma_package.backend:ratio.4_3',
             'value' => 4 / 3,
         ],
         '1:1' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_1',
+            'title' => 'bulma_package.backend:ratio.1_1',
             'value' => 1.0,
         ],
         '2:3' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.2_3',
+            'title' => 'bulma_package.backend:ratio.2_3',
             'value' => 2 / 3,
         ],
         '1:2' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.1_2',
+            'title' => 'bulma_package.backend:ratio.1_2',
             'value' => 1 / 2,
         ],
         '4:5' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.4_5',
+            'title' => 'bulma_package.backend:ratio.4_5',
             'value' => 4 / 5,
         ],
         '9:16' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.9_16',
+            'title' => 'bulma_package.backend:ratio.9_16',
             'value' => 9 / 16,
         ],
         'NaN' => [
-            'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:ratio.free',
+            'title' => 'bulma_package.backend:ratio.free',
             'value' => 0.0,
         ],
     ],

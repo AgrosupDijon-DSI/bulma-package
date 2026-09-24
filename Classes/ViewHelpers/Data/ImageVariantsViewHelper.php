@@ -29,10 +29,17 @@ class ImageVariantsViewHelper extends AbstractViewHelper
 
     public function render(): void
     {
+        $renderingContext = $this->renderingContext;
+        if ($renderingContext === null) {
+            throw new \RuntimeException(
+                'ViewHelper asd:data.imageVariants needs a rendering context.',
+                2539356793
+            );
+        }
         if ($this->arguments['gutters'] === '') {
             $this->arguments['gutters'] = null;
         }
         $variants = ImageVariantsUtility::getImageVariants($this->arguments['variants'], $this->arguments['multiplier'], $this->arguments['gutters'], $this->arguments['corrections']);
-        $this->renderingContext->getVariableProvider()->add($this->arguments['as'], $variants);
+        $renderingContext->getVariableProvider()->add($this->arguments['as'], $variants);
     }
 }

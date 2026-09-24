@@ -15,6 +15,6 @@ ExtensionManagementUtility::addTcaSelectItemGroup(
     'tt_content',
     'CType',
     'media',
-    'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_group.media',
+    'bulma_package.backend:content_group.media',
     'after:default',
 );

@@ -1,6 +1,6 @@
 {
   "require": {
-    "a9f/typo3-fractor": "^0.5"
+    "a9f/typo3-fractor": "^1.0"
   },
   "config": {
     "allow-plugins": {

@@ -10,7 +10,7 @@ use TYPO3\CMS\Core\Resource\FileType;
  */
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings',
+        'title' => 'bulma_package.backend:tx_bulmapackage_settings',
         'label' => 'title_seo',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -22,7 +22,6 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'title_seo,wsd_name,wsd_alternate_name,logo_main,logos_partners,code_analytics,address_title,address,zip,city,country,phone,fax,email',
         'typeicon_classes' => [
             'default' => 'actions-system-extension-configure',
         ],
@@ -32,7 +31,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_menu,menu_layout,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.google_settings,code_analytics,--palette--;;bulmapackage_wsd,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_links,tx_bulmapackage_settings_link_item,--div--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tabs.bulmapackage_sharing,sharing_services,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language',
+            'showitem' => '--palette--;;bulmapackage_sitetitle,--div--;Logos,logo_main,logos_partners,favicon,--div--;bulma_package.backend:tabs.bulmapackage_menu,menu_layout,--div--;bulma_package.backend:palette.google_settings,code_analytics,--palette--;;bulmapackage_wsd,--div--;bulma_package.backend:palette.bulmapackage_address,--palette--;;bulmapackage_address,--div--;bulma_package.backend:tabs.bulmapackage_links,tx_bulmapackage_settings_link_item,--div--;bulma_package.backend:tabs.bulmapackage_sharing,sharing_services,--div--;core.form.tabs:language,--palette--;;language',
         ],
     ],
     'palettes' => [
@@ -42,8 +41,8 @@ return [
             ',
         ],
         'bulmapackage_wsd' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_wsd.title',
-            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.bulmapackage_wsd.description',
+            'label' => 'bulma_package.backend:palette.bulmapackage_wsd.title',
+            'description' => 'bulma_package.backend:palette.bulmapackage_wsd.description',
             'showitem' => '
                 wsd_name, --linebreak--, wsd_alternate_name
             ',
@@ -70,21 +69,21 @@ return [
         ],
         'language' => [
             'showitem' => '
-                sys_language_uid;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:sys_language_uid_formlabel,l18n_parent
+                sys_language_uid,l18n_parent
             ',
         ],
     ],
     'columns' => [
         'sys_language_uid' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'label' => 'core.general:LGL.language',
             'config' => [
                 'type' => 'language',
             ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'core.general:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -104,16 +103,17 @@ return [
             ],
         ],
         't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+            'label' => 'core.general:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'core.general:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'default' => 0,
@@ -121,8 +121,8 @@ return [
         ],
         'title_seo' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.title_seo',
-            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.title_seo.description',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.title_seo',
+            'description' => 'bulma_package.backend:tx_bulmapackage_settings.title_seo.description',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -132,8 +132,8 @@ return [
         ],
         'wsd_name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_name',
-            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_name.description',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.wsd_name',
+            'description' => 'bulma_package.backend:tx_bulmapackage_settings.wsd_name.description',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -143,8 +143,8 @@ return [
         ],
         'wsd_alternate_name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_alternate_name',
-            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.wsd_alternate_name.description',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.wsd_alternate_name',
+            'description' => 'bulma_package.backend:tx_bulmapackage_settings.wsd_alternate_name.description',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -155,11 +155,11 @@ return [
         ],
         'logo_main' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.logo_main',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.logo_main',
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
@@ -183,11 +183,11 @@ return [
         ],
         'logos_partners' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.logos_partners',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.logos_partners',
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
@@ -211,11 +211,11 @@ return [
         ],
         'favicon' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.favicon',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.favicon',
             'config' => [
                 'type' => 'file',
                 'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    'createNewRelationLinkTitle' => 'frontend.ttc:images.addFileReference',
                 ],
                 'overrideChildTca' => [
                     'types' => [
@@ -239,8 +239,8 @@ return [
         ],
         'code_analytics' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.code_analytics',
-            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.code_analytics.description',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.code_analytics',
+            'description' => 'bulma_package.backend:tx_bulmapackage_settings.code_analytics.description',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -251,7 +251,7 @@ return [
         ],
         'address_title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.address_title',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.address_title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -261,7 +261,7 @@ return [
         ],
         'address' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.address',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.address',
             'config' => [
                 'type' => 'text',
                 'cols' => 20,
@@ -271,7 +271,7 @@ return [
         ],
         'zip' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.zip',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.zip',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
@@ -281,7 +281,7 @@ return [
         ],
         'city' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.city',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.city',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -291,7 +291,7 @@ return [
         ],
         'country' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.country',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.country',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -301,7 +301,7 @@ return [
         ],
         'phone' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.phone',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.phone',
             'config' => [
                 'type' => 'input',
                 'eval' => 'trim',
@@ -311,7 +311,7 @@ return [
         ],
         'fax' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.fax',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.fax',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
@@ -321,7 +321,7 @@ return [
         ],
         'email' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.email',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.email',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -332,32 +332,34 @@ return [
         ],
         'latitude' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.latitude',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.latitude',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
                 'max' => 30,
+                'searchable' => false,
             ],
         ],
         'longitude' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.longitude',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.longitude',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
                 'max' => 30,
+                'searchable' => false,
             ],
         ],
         'tx_bulmapackage_settings_link_item' => [
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.tx_bulmapackage_settings_link_item',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.tx_bulmapackage_settings_link_item',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_bulmapackage_settings_link_item',
                 'foreign_field' => 'tx_bulmapackage_settings',
                 'appearance' => [
-                    'newRecordLinkTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.tx_bulmapackage_settings_link_item.add',
+                    'newRecordLinkTitle' => 'bulma_package.backend:tx_bulmapackage_settings.tx_bulmapackage_settings_link_item.add',
                     'useSortable' => true,
                     'showSynchronizationLink' => true,
                     'showAllLocalizationLink' => true,
@@ -374,21 +376,21 @@ return [
         ],
         'menu_layout' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.menu_layout',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.menu_layout',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     [
-                        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                        'label' => 'core.general:LGL.default_value',
                         'value' => '',
                     ],
                     [
-                        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.menu_layout.megamenu',
+                        'label' => 'bulma_package.backend:tx_bulmapackage_settings.menu_layout.megamenu',
                         'value' => 'megamenu',
                     ],
                     [
-                        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.menu_layout.megamenu_clickable',
+                        'label' => 'bulma_package.backend:tx_bulmapackage_settings.menu_layout.megamenu_clickable',
                         'value' => 'megamenu_clickable',
                     ],
                 ],
@@ -396,18 +398,18 @@ return [
         ],
         'sharing_services' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services',
-            'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.description',
+            'label' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services',
+            'description' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectCheckBox',
                 'items' => [
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.facebook', 'value' => 'facebook'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.twitter', 'value' => 'twitter'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.linkedin', 'value' => 'linkedin'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.email', 'value' => 'email'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.print', 'value' => 'print'],
-                    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_settings.sharing_services.copy-url', 'value' => 'copy-url'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services.facebook', 'value' => 'facebook'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services.twitter', 'value' => 'twitter'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services.linkedin', 'value' => 'linkedin'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services.email', 'value' => 'email'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services.print', 'value' => 'print'],
+                    ['label' => 'bulma_package.backend:tx_bulmapackage_settings.sharing_services.copy-url', 'value' => 'copy-url'],
                 ],
             ],
         ],

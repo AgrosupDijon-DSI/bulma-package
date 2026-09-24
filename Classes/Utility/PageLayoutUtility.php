@@ -19,7 +19,8 @@ class PageLayoutUtility
 {
     public function __construct(
         private readonly ConnectionPool $connectionPool
-    ) {}
+    ) {
+    }
 
     /**
      * @param array $parameters
@@ -36,7 +37,7 @@ class PageLayoutUtility
             ->fetchAllAssociative();
 
         if (!empty($resultRows)) {
-            $parameters['items'][] = ['LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.layout_category', '--div--'];
+            $parameters['items'][] = ['bulma_package.backend:tx_bulmapackage_custom_color.layout_category', '--div--'];
         }
 
         foreach ($resultRows as $row) {

@@ -9,7 +9,7 @@
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tab_item',
+        'title' => 'bulma_package.backend:tab_item',
         'label' => 'title',
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
@@ -24,7 +24,6 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'record,title',
         'dynamicConfigFile' => '',
         'typeicon_classes' => [
             'default' => 'content-bulmapackage-tab-item',
@@ -36,7 +35,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,--palette--;;tab,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--palette--;;hiddenLanguagePalette',
+            'showitem' => '--palette--;frontend.ttc:palette.general;general,--palette--;;tab,--div--;frontend.ttc:tabs.access,--palette--;frontend.ttc:palette.visibility;visibility,--palette--;frontend.ttc:palette.access;access,--palette--;;hiddenLanguagePalette',
         ],
     ],
     'palettes' => [
@@ -45,15 +44,15 @@ return [
         ],
         'access' => [
             'showitem' => '
-                starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
-                endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel
+                starttime;core.db.general:starttime,
+                endtime;core.db.general:endtime
             ',
             'canNotCollapse' => 1,
         ],
         'general' => [
             'showitem' => '
                 tt_content,
-                item_type;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType_formlabel,
+                item_type;frontend.ttc:CType_formlabel,
             ',
         ],
         'tab' => [
@@ -64,7 +63,7 @@ return [
         ],
         'visibility' => [
             'showitem' => '
-                hidden;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tab_item
+                hidden;bulma_package.backend:tab_item
             ',
             'isHiddenPalette' => true,
         ],
@@ -77,14 +76,14 @@ return [
     'columns' => [
         'sys_language_uid' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'label' => 'core.general:LGL.language',
             'config' => [
                 'type' => 'language',
             ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'core.general:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -105,16 +104,17 @@ return [
             ],
         ],
         't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+            'label' => 'core.general:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'core.general:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -128,23 +128,25 @@ return [
         ],
         'starttime' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+            'label' => 'core.general:LGL.starttime',
             'config' => [
                 'type' => 'datetime',
                 'default' => 0,
+                'searchable' => false,
             ],
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
         ],
         'endtime' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+            'label' => 'core.general:LGL.endtime',
             'config' => [
                 'type' => 'datetime',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038),
                 ],
+                'searchable' => false,
             ],
             'l10n_mode' => 'exclude',
             'l10n_display' => 'defaultAsReadonly',
@@ -171,7 +173,7 @@ return [
         'record' => [
             'config' => [
                 'appearance' => [
-                    'newRecordLinkTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tab_item.record.add',
+                    'newRecordLinkTitle' => 'bulma_package.backend:tab_item.record.add',
                     'collapseAll' => '1',
                     'enabledControls' => [
                         'dragdrop' => '1',
@@ -206,14 +208,14 @@ return [
                 ],
             ],
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tab_item.record',
+            'label' => 'bulma_package.backend:tab_item.record',
         ],
         'title' => [
             'config' => [
                 'type' => 'input',
             ],
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tab_item.title',
+            'label' => 'bulma_package.backend:tab_item.title',
         ],
     ],
 ];

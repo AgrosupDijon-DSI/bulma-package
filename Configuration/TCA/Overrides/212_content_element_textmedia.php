@@ -16,8 +16,8 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.textmedia',
-        'description' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.textmedia.description',
+        'label' => 'frontend.ttc:CType.textmedia',
+        'description' => 'frontend.ttc:CType.textmedia.description',
         'value' => 'textmedia',
         'icon' => 'mimetypes-x-content-text-media',
         'group' => 'media',

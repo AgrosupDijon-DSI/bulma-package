@@ -4,12 +4,12 @@
 		"phpstan/extension-installer": "^1.4",
 		"phpstan/phpstan-symfony": "^2.0",
 		"phpstan/phpstan-deprecation-rules": "^2.0",
-		"saschaegerer/phpstan-typo3": "^2.1"
+		"saschaegerer/phpstan-typo3": "^3.0"
 	},
 	"config": {
 		"allow-plugins": {
 			"phpstan/extension-installer": true,
-			"typo3/cms-composer-installers": true,
+			"typo3/cms-composer-installers": false,
 			"typo3/class-alias-loader": true
 		}
 	}

@@ -25,7 +25,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.thumbnail_group',
+        'label' => 'bulma_package.backend:content_element.thumbnail_group',
         'value' => 'thumbnail_group',
         'icon' => 'content-menu-thumbnail',
         'group' => 'special',
@@ -46,37 +46,37 @@ $GLOBALS['TCA']['tt_content']['types']['thumbnail_group'] = array_replace_recurs
     $GLOBALS['TCA']['tt_content']['types']['thumbnail_group'],
     [
         'showitem' => '
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+            --div--;core.form.tabs:general,
+                --palette--;frontend.ttc:palette.general;general,
+                --palette--;frontend.ttc:palette.headers;headers,
                 tx_bulmapackage_thumbnail_group_item,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-                --palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.thumbnaillayout;thumbnaillayout,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+            --div--;frontend.ttc:tabs.appearance,
+                --palette--;frontend.ttc:palette.frames;frames,
+                --palette--;bulma_package.backend:palette.thumbnaillayout;thumbnaillayout,
+                --palette--;frontend.ttc:palette.appearanceLinks;appearanceLinks,
+            --div--;core.form.tabs:language,
                 --palette--;;language,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --div--;core.form.tabs:access,
                 --palette--;;hidden,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                --palette--;frontend.ttc:palette.access;access,
+            --div--;core.form.tabs:categories,
                 categories,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+            --div--;core.form.tabs:notes,
                 rowDescription,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+            --div--;core.form.tabs:extended,
         ',
     ]
 );
 
 $additionalColumns = [
     'tx_bulmapackage_thumbnail_group_item' => [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:thumbnail_group_item',
+        'label' => 'bulma_package.backend:thumbnail_group_item',
         'config' => [
             'type' => 'inline',
             'foreign_table' => 'tx_bulmapackage_thumbnail_group_item',
             'foreign_field' => 'tt_content',
             'appearance' => [
-                'newRecordLinkTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:thumbnail_group_item.add',
+                'newRecordLinkTitle' => 'bulma_package.backend:thumbnail_group_item.add',
                 'useSortable' => true,
                 'showSynchronizationLink' => true,
                 'showAllLocalizationLink' => true,

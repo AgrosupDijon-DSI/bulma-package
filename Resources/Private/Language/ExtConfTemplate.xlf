@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
     <file source-language="en" datatype="plaintext" original="EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf" date="2013-09-19T09:11:39Z" product-name="bulma_package">
         <header/>
@@ -18,7 +18,6 @@
             <trans-unit id="pageTs.disablePageTsContentElements">
                 <source>Disable Content Element PageTS Configuration: If this option is set, the included configuration for content elements will not be loaded automatically. Include "FILE:EXT:bulma_package/Configuration/TsConfig/Page/ContentElement/All.tsconfig" in your PageTsConfig to load the config manually.</source>
             </trans-unit>
-
             <trans-unit id="feature.disableScssProcessing">
                 <source>Disable Processing of Scss files: WARNING: If this option is set there no more automatic processing of Scss files in the frontend. You will need to provide CSS files instead or handle the processing of the Scss files yourself.</source>
             </trans-unit>

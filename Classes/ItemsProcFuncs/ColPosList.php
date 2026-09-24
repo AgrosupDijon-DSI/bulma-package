@@ -37,7 +37,7 @@ class ColPosList
             // only allow mask nested element column
             $params['items'] = [
                 [
-                    'label' => $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tt_content.colPos.nestedContentColPos'),
+                    'label' => $this->getLanguageService()->sL('bulma_package.backend:tt_content.colPos.nestedContentColPos'),
                     'value' => 999,
                     'icon' => null,
                 ],

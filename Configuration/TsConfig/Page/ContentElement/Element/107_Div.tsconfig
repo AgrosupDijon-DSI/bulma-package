@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.advanced {
   elements {
     div {
       iconIdentifier = content-special-div
-      title = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_divider_title
-      description = LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special_divider_description
+      title = frontend.ttc:CType.div
+      description = frontend.ttc:CType.div.description
       tt_content_defValues {
         CType = div
       }

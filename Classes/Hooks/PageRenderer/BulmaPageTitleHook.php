@@ -30,7 +30,8 @@ class BulmaPageTitleHook
 {
     public function __construct(
         private readonly ConnectionPool $connectionPool
-    ) {}
+    ) {
+    }
 
     /**
      * @param array $params

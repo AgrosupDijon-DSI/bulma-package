@@ -8,19 +8,19 @@ defined('TYPO3') or die();
 
 ExtensionManagementUtility::addRecordType(
     [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.site_update.label',
-        'description' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.site_update.description',
+        'label' => 'bulma_package.backend:content_element.site_update.label',
+        'description' => 'bulma_package.backend:content_element.site_update.description',
         'value' => 'site_update',
         'icon' => 'actions-calendar',
         'group' => 'plugins',
     ],
     '
         --palette--;;headers,
-        --palette--;LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:palette.siteupdatelayout;siteupdatelayout,
-        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+        --palette--;bulma_package.backend:palette.siteupdatelayout;siteupdatelayout,
+        --div--;frontend.ttc:tabs.appearance,
+            --palette--;frontend.ttc:palette.frames;frames,
+            --palette--;frontend.ttc:palette.appearanceLinks;appearanceLinks,
+        --div--;core.form.tabs:categories,
             categories
     ',
 );

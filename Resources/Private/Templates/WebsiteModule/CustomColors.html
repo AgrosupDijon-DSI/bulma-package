@@ -7,15 +7,15 @@
 <f:layout name="Module"/>
 
 <f:section name="Content">
-    <h1><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title" /></h1>
+    <h1><f:translate key="bulma_package.websitemodule:customColors.title" /></h1>
     <f:if condition="{customColors}">
         <f:then>
             <div class="table-fit">
                 <table class="table table-striped table-hover table-condensed">
                     <thead>
                     <tr>
-                        <th><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color" /></th>
-                        <th><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_primary" /></th>
+                        <th><f:translate key="bulma_package.backend:tx_bulmapackage_custom_color" /></th>
+                        <th><f:translate key="bulma_package.backend:tx_bulmapackage_custom_color.var_primary" /></th>
                         <th></th>
                     </tr>
                     </thead>
@@ -32,23 +32,23 @@
                             </td>
                             <td class="col-control">
                                 <div class="btn-group" role="group">
-                                    <be:link.editRecord class="btn btn-default" table="tx_bulmapackage_custom_color" uid="{customColor.uid}" title="{f:translate(key:'LLL:EXT:core/Resources/Private/Language/locallang_mod_web_list.xlf:edit')}">
+                                    <be:link.editRecord class="btn btn-default" table="tx_bulmapackage_custom_color" uid="{customColor.uid}" title="{f:translate(key:'core.mod_web_list:edit')}">
                                         <core:icon identifier="actions-open" />
                                     </be:link.editRecord>
                                     <f:if condition="{customColor.hidden} == 1">
                                         <f:then>
-                                            <a class="btn btn-default" href="{be:moduleLink(route:'tce_db', query:'data[tx_bulmapackage_custom_color][{customColor.uid}][hidden]=0', currentUrlParameterName:'redirect')}" title="{f:translate(key:'LLL:EXT:core/Resources/Private/Language/locallang_mod_web_list.xlf:unHide')}"><core:icon identifier="actions-edit-unhide" /></a>
+                                            <a class="btn btn-default" href="{be:moduleLink(route:'tce_db', query:'data[tx_bulmapackage_custom_color][{customColor.uid}][hidden]=0', currentUrlParameterName:'redirect')}" title="{f:translate(key:'core.mod_web_list:unHide')}"><core:icon identifier="actions-edit-unhide" /></a>
                                         </f:then>
                                         <f:else>
-                                            <a class="btn btn-default" href="{be:moduleLink(route:'tce_db', query:'data[tx_bulmapackage_custom_color][{customColor.uid}][hidden]=1', currentUrlParameterName:'redirect')}" title="{f:translate(key:'LLL:EXT:core/Resources/Private/Language/locallang_mod_web_list.xlf:hide')}"><core:icon identifier="actions-edit-hide" /></a>
+                                            <a class="btn btn-default" href="{be:moduleLink(route:'tce_db', query:'data[tx_bulmapackage_custom_color][{customColor.uid}][hidden]=1', currentUrlParameterName:'redirect')}" title="{f:translate(key:'core.mod_web_list:hide')}"><core:icon identifier="actions-edit-hide" /></a>
                                         </f:else>
                                     </f:if>
                                     <a class="btn btn-default t3js-modal-trigger" href="{be:moduleLink(route:'tce_db', query:'cmd[tx_bulmapackage_custom_color][{customColor.uid}][delete]=1', currentUrlParameterName:'redirect')}"
-                                       title="{f:translate(key:'LLL:EXT:core/Resources/Private/Language/locallang_mod_web_list.xlf:delete')}"
+                                       title="{f:translate(key:'core.mod_web_list:delete')}"
                                        data-severity="warning"
-                                       data-title="{f:translate(key:'LLL:EXT:backend/Resources/Private/Language/locallang_alt_doc.xlf:label.confirm.delete_record.title')}"
-                                       data-content="{f:translate(key:'LLL:EXT:core/Resources/Private/Language/locallang_mod_web_list.xlf:deleteWarning')} {customColor.label}"
-                                       data-button-close-text="{f:translate(key:'LLL:EXT:core/Resources/Private/Language/locallang_common.xlf:cancel')}">
+                                       data-title="{f:translate(key:'backend.alt_doc:label.confirm.delete_record.title')}"
+                                       data-content="{f:translate(key:'core.mod_web_list:deleteWarning')} {customColor.label}"
+                                       data-button-close-text="{f:translate(key:'core.common:cancel')}">
                                         <core:icon identifier="actions-edit-delete" />
                                     </a>
                                 </div>
@@ -61,7 +61,7 @@
         </f:then>
         <f:else>
             <f:be.infobox state="-1">
-                <p><f:translate key="LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.noColor.message"/></p>
+                <p><f:translate key="bulma_package.websitemodule:customColors.noColor.message"/></p>
             </f:be.infobox>
         </f:else>
     </f:if>

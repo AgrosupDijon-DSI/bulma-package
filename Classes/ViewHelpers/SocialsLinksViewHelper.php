@@ -27,8 +27,15 @@ class SocialsLinksViewHelper extends AbstractViewHelper
 
     public function render(): void
     {
+        $renderingContext = $this->renderingContext;
+        if ($renderingContext === null) {
+            throw new \RuntimeException(
+                'ViewHelper asd:socialsLinks needs a rendering context.',
+                1146259412
+            );
+        }
         $linksByType = self::buildLinksByType($this->arguments['links']);
-        $this->renderingContext->getVariableProvider()->add($this->arguments['as'], $linksByType);
+        $renderingContext->getVariableProvider()->add($this->arguments['as'], $linksByType);
     }
 
     /**

@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.advanced {
   elements {
     tab {
       iconIdentifier = content-bulmapackage-tab
-      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.tab
-      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.tab.description
+      title = bulma_package.backend:content_element.tab
+      description = bulma_package.backend:content_element.tab.description
       tt_content_defValues {
         CType = tab
       }

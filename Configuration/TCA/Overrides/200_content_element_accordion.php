@@ -25,7 +25,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.accordion',
+        'label' => 'bulma_package.backend:content_element.accordion',
         'value' => 'accordion',
         'icon' => 'content-bulmapackage-accordion',
         'group' => 'special',
@@ -46,37 +46,37 @@ $GLOBALS['TCA']['tt_content']['types']['accordion'] = array_replace_recursive(
     $GLOBALS['TCA']['tt_content']['types']['accordion'],
     [
         'showitem' => '
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+            --div--;core.form.tabs:general,
+                --palette--;frontend.ttc:palette.general;general,
+                --palette--;frontend.ttc:palette.headers;headers,
                 tx_bulmapackage_accordion_item,
                 tx_bulmapackage_accordion_item_active,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+            --div--;frontend.ttc:tabs.appearance,
+                --palette--;frontend.ttc:palette.frames;frames,
+                --palette--;frontend.ttc:palette.appearanceLinks;appearanceLinks,
+            --div--;core.form.tabs:language,
                 --palette--;;language,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --div--;core.form.tabs:access,
                 --palette--;;hidden,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                --palette--;frontend.ttc:palette.access;access,
+            --div--;core.form.tabs:categories,
                 categories,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+            --div--;core.form.tabs:notes,
                 rowDescription,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+            --div--;core.form.tabs:extended,
         ',
     ]
 );
 
 $additionalColumns = [
     'tx_bulmapackage_accordion_item' => [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:accordion_item',
+        'label' => 'bulma_package.backend:accordion_item',
         'config' => [
             'type' => 'inline',
             'foreign_table' => 'tx_bulmapackage_accordion_item',
             'foreign_field' => 'tt_content',
             'appearance' => [
-                'newRecordLinkTitle' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:accordion_item.add',
+                'newRecordLinkTitle' => 'bulma_package.backend:accordion_item.add',
                 'useSortable' => true,
                 'showSynchronizationLink' => true,
                 'showAllLocalizationLink' => true,
@@ -104,7 +104,7 @@ $additionalColumns = [
             'default' => 0,
         ],
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.tx_bulmapackage_accordion_item_active',
+        'label' => 'bulma_package.backend:field.tx_bulmapackage_accordion_item_active',
     ],
 ];
 

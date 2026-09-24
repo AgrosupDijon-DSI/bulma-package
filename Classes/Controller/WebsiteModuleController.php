@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\Controller;
 
+use TYPO3\CMS\Backend\Template\Components\ComponentFactory;
 use Doctrine\DBAL\Exception;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Attribute\AsController;
@@ -43,13 +44,15 @@ class WebsiteModuleController extends ActionController
         protected readonly ModuleTemplateFactory $moduleTemplateFactory,
         protected UriBuilder $backendUriBuilder,
         protected IconFactory $iconFactory,
-        private readonly ConnectionPool $connectionPool
-    ) {}
+        private readonly ConnectionPool $connectionPool,
+        private readonly ComponentFactory $componentFactory
+    ) {
+    }
 
     public function initializeAction(): void
     {
         $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
-        $this->moduleTemplate->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_mod.xlf:mlang_labels_tablabel'));
+        $this->moduleTemplate->setTitle($this->getLanguageService()->sL('bulma_package.mod:mlang_labels_tablabel'));
     }
 
     /**
@@ -76,7 +79,7 @@ class WebsiteModuleController extends ActionController
         ]);
 
         $this->addMainMenu('overview');
-        $this->configureCommonDocHeader('overview', $this->getLanguageService()->sL('LLL:EXT:backend/Resources/Private/Language/locallang_siteconfiguration_module.xlf:mlang_labels_tablabel'));
+        $this->configureCommonDocHeader('overview', $this->getLanguageService()->sL('backend.siteconfiguration_module:mlang_labels_tablabel'));
 
         return $this->moduleTemplate->renderResponse('WebsiteModule/Overview');
     }
@@ -84,11 +87,11 @@ class WebsiteModuleController extends ActionController
     public function addMainMenu(string $currentAction): void
     {
         $this->uriBuilder->setRequest($this->request);
-        $menu = $this->moduleTemplate->getDocHeaderComponent()->getMenuRegistry()->makeMenu();
+        $menu = $this->componentFactory->createMenu();
         $menu->setIdentifier('BulmaPackageWebsiteModuleMenu');
         $menu->addMenuItem(
-            $menu->makeMenuItem()
-                ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:overview.title'))
+            $this->componentFactory->createMenuItem()
+                ->setTitle($this->getLanguageService()->sL('bulma_package.websitemodule:overview.title'))
                 ->setHref($this->uriBuilder->uriFor('overview'))
                 ->setActive($currentAction === 'overview')
         );
@@ -108,8 +111,8 @@ class WebsiteModuleController extends ActionController
 
         if (!$bulmaPackageConfiguration['disableCustomColorsAction']) {
             $menu->addMenuItem(
-                $menu->makeMenuItem()
-                    ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title'))
+                $this->componentFactory->createMenuItem()
+                    ->setTitle($this->getLanguageService()->sL('bulma_package.websitemodule:customColors.title'))
                     ->setHref($this->uriBuilder->uriFor('customColors'))
                     ->setActive($currentAction === 'customColors')
             );
@@ -117,8 +120,8 @@ class WebsiteModuleController extends ActionController
 
         if (!$bulmaPackageConfiguration['disableMetaTagsAction']) {
             $menu->addMenuItem(
-                $menu->makeMenuItem()
-                    ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title'))
+                $this->componentFactory->createMenuItem()
+                    ->setTitle($this->getLanguageService()->sL('bulma_package.websitemodule:metaTags.title'))
                     ->setHref($this->uriBuilder->uriFor('metaTags'))
                     ->setActive($currentAction === 'metaTags')
             );
@@ -130,12 +133,12 @@ class WebsiteModuleController extends ActionController
     protected function configureCommonDocHeader(string $currentAction, string $shortcutDisplayName): void
     {
         $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
-        $reloadButton = $buttonBar->makeLinkButton()
+        $reloadButton = $this->componentFactory->createLinkButton()
             ->setHref((string)$this->request->getAttribute('normalizedParams')?->getRequestUri())
-            ->setTitle($this->getLanguageService()->sL('LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.reload'))
+            ->setTitle($this->getLanguageService()->sL('core.core:labels.reload'))
             ->setIcon($this->iconFactory->getIcon('actions-refresh', IconSize::SMALL));
         $buttonBar->addButton($reloadButton, ButtonBar::BUTTON_POSITION_RIGHT);
-        $shortcutButton = $buttonBar->makeShortcutButton()
+        $shortcutButton = $this->componentFactory->createShortcutButton()
             ->setRouteIdentifier('system_BulmaPackageWebsitesettings')
             ->setArguments(['action' => $currentAction])
             ->setDisplayName($shortcutDisplayName);
@@ -158,7 +161,7 @@ class WebsiteModuleController extends ActionController
         $this->moduleTemplate->assign('customColors', $result->fetchAllAssociative());
 
         $this->addMainMenu('customColors');
-        $this->configureCommonDocHeader('customColors', $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.title'));
+        $this->configureCommonDocHeader('customColors', $this->getLanguageService()->sL('bulma_package.websitemodule:customColors.title'));
         $this->configureCustomColorsDocHeader();
 
         return $this->moduleTemplate->renderResponse('WebsiteModule/CustomColors');
@@ -167,9 +170,9 @@ class WebsiteModuleController extends ActionController
     protected function configureCustomColorsDocHeader(): void
     {
         $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
-        $addCustomColorButton = $buttonBar->makeLinkButton()
+        $addCustomColorButton = $this->componentFactory->createLinkButton()
             ->setIcon($this->iconFactory->getIcon('actions-plus', IconSize::SMALL))
-            ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:customColors.color.create'))
+            ->setTitle($this->getLanguageService()->sL('bulma_package.websitemodule:customColors.color.create'))
             ->setShowLabelText(true)
             ->setHref((string)$this->backendUriBuilder->buildUriFromRoute('record_edit', [
                 'edit' => ['tx_bulmapackage_custom_color' => [0 => 'new']],
@@ -194,7 +197,7 @@ class WebsiteModuleController extends ActionController
         $this->moduleTemplate->assign('metaTags', $result->fetchAllAssociative());
 
         $this->addMainMenu('metaTags');
-        $this->configureCommonDocHeader('metaTags', $this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.title'));
+        $this->configureCommonDocHeader('metaTags', $this->getLanguageService()->sL('bulma_package.websitemodule:metaTags.title'));
         $this->configureMetaTagsDocHeader();
 
         return $this->moduleTemplate->renderResponse('WebsiteModule/MetaTags');
@@ -203,9 +206,9 @@ class WebsiteModuleController extends ActionController
     protected function configureMetaTagsDocHeader(): void
     {
         $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
-        $addMetaTagsButton = $buttonBar->makeLinkButton()
+        $addMetaTagsButton = $this->componentFactory->createLinkButton()
             ->setIcon($this->iconFactory->getIcon('actions-plus', IconSize::SMALL))
-            ->setTitle($this->getLanguageService()->sL('LLL:EXT:bulma_package/Resources/Private/Language/locallang_websitemodule.xlf:metaTags.meta.create'))
+            ->setTitle($this->getLanguageService()->sL('bulma_package.websitemodule:metaTags.meta.create'))
             ->setShowLabelText(true)
             ->setHref((string)$this->backendUriBuilder->buildUriFromRoute('record_edit', [
                 'edit' => ['tx_bulmapackage_meta_tags' => [0 => 'new']],

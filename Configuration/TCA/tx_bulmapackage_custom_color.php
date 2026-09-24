@@ -9,7 +9,7 @@
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color',
+        'title' => 'bulma_package.backend:tx_bulmapackage_custom_color',
         'label' => 'label',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -18,7 +18,6 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'label',
         'typeicon_classes' => [
             'default' => 'content-bulmapackage-color',
         ],
@@ -43,16 +42,17 @@ return [
     ],
     'columns' => [
         't3ver_label' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+            'label' => 'core.general:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'core.general:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'default' => 0,
@@ -60,7 +60,7 @@ return [
         ],
         'label' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.label',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.label',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -69,55 +69,61 @@ return [
         ],
         'var_primary' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_primary',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.var_primary',
             'config' => [
                 'type' => 'color',
                 'size' => 10,
+                'searchable' => false,
             ],
         ],
         'var_link' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_link',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.var_link',
             'config' => [
                 'type' => 'color',
                 'size' => 10,
+                'searchable' => false,
             ],
         ],
         'var_success' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_success',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.var_success',
             'config' => [
                 'type' => 'color',
                 'size' => 10,
+                'searchable' => false,
             ],
         ],
         'var_info' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_info',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.var_info',
             'config' => [
                 'type' => 'color',
                 'size' => 10,
+                'searchable' => false,
             ],
         ],
         'var_warning' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_warning',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.var_warning',
             'config' => [
                 'type' => 'color',
                 'size' => 10,
+                'searchable' => false,
             ],
         ],
         'var_danger' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_danger',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.var_danger',
             'config' => [
                 'type' => 'color',
                 'size' => 10,
+                'searchable' => false,
             ],
         ],
         'var_text_dark' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tx_bulmapackage_custom_color.var_text_dark',
+            'label' => 'bulma_package.backend:tx_bulmapackage_custom_color.var_text_dark',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',

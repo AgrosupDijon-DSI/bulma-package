@@ -18,7 +18,8 @@ class MainLogoViewHelper extends AbstractViewHelper
     public function __construct(
         private readonly ConnectionPool $connectionPool,
         private readonly FileRepository $fileRepository,
-    ) {}
+    ) {
+    }
 
     /**
      * @return FileReference|false

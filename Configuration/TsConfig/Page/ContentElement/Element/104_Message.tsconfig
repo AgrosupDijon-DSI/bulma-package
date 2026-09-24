@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.advanced {
   elements {
     message {
       iconIdentifier = content-panel
-      title = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message
-      description = LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:content_element.message.description
+      title = bulma_package.backend:content_element.message
+      description = bulma_package.backend:content_element.message.description
       tt_content_defValues {
         CType = message
       }

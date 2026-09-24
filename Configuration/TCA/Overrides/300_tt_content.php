@@ -15,43 +15,43 @@ defined('TYPO3') or die();
 $additionalColumns = [
     'background_color_class' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class',
+        'label' => 'bulma_package.backend:field.background_color_class',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.none', 'value' => 'none'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.primary', 'value' => 'primary'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.info', 'value' => 'info'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.success', 'value' => 'success'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.warning', 'value' => 'warning'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.danger', 'value' => 'danger'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.light', 'value' => 'light'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_color_class.dark', 'value' => 'dark'],
+                ['label' => 'bulma_package.backend:field.background_color_class.none', 'value' => 'none'],
+                ['label' => 'bulma_package.backend:field.background_color_class.primary', 'value' => 'primary'],
+                ['label' => 'bulma_package.backend:field.background_color_class.info', 'value' => 'info'],
+                ['label' => 'bulma_package.backend:field.background_color_class.success', 'value' => 'success'],
+                ['label' => 'bulma_package.backend:field.background_color_class.warning', 'value' => 'warning'],
+                ['label' => 'bulma_package.backend:field.background_color_class.danger', 'value' => 'danger'],
+                ['label' => 'bulma_package.backend:field.background_color_class.light', 'value' => 'light'],
+                ['label' => 'bulma_package.backend:field.background_color_class.dark', 'value' => 'dark'],
             ],
         ],
         'l10n_mode' => 'exclude',
     ],
     'background_frame' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_frame',
+        'label' => 'bulma_package.backend:field.background_frame',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'value' => 'limited'],
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.background_frame.expanded', 'value' => 'expanded'],
+                ['label' => 'bulma_package.backend:option.default', 'value' => 'limited'],
+                ['label' => 'bulma_package.backend:field.background_frame.expanded', 'value' => 'expanded'],
             ],
         ],
     ],
     'gallery_size' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.gallery_size',
+        'label' => 'bulma_package.backend:field.gallery_size',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:option.default', 'value' => ''],
+                ['label' => 'bulma_package.backend:option.default', 'value' => ''],
                 ['label' => '80%', 'value' => '80'],
                 ['label' => '60%', 'value' => '60'],
                 ['label' => '40%', 'value' => '40'],
@@ -62,14 +62,14 @@ $additionalColumns = [
     ],
     'file_folder' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.file_folder',
+        'label' => 'bulma_package.backend:field.file_folder',
         'config' => [
             'type' => 'folder',
         ],
     ],
     'readmore_label' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.readmore_label',
+        'label' => 'bulma_package.backend:field.readmore_label',
         'config' => [
             'type' => 'input',
             'eval' => 'trim',
@@ -79,7 +79,7 @@ $additionalColumns = [
     ],
     'ignore_nav_hide' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.ignore_nav_hide',
+        'label' => 'bulma_package.backend:field.ignore_nav_hide',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -90,7 +90,7 @@ $additionalColumns = [
     ],
     'max_items' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.max_items',
+        'label' => 'bulma_package.backend:field.max_items',
         'config' => [
             'type' => 'input',
             'eval' => 'num',
@@ -115,7 +115,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'imageorient',
     [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.imageorient.125',
+        'label' => 'bulma_package.backend:field.imageorient.125',
         'value' => '125',
         'icon' => 'content-bulmapackage-beside-text-img-centered-right',
     ],
@@ -126,7 +126,7 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'imageorient',
     [
-        'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:field.imageorient.126',
+        'label' => 'bulma_package.backend:field.imageorient.126',
         'value' => '126',
         'icon' => 'content-bulmapackage-beside-text-img-centered-left',
     ],
@@ -150,26 +150,26 @@ $GLOBALS['TCA']['tt_content']['columns']['imagecols']['config']['default'] = 1;
 
 // override space_before_class / space_after_class
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [
-    ['label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 'value' => ''],
-    ['label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', 'value' => 'no-space'],
-    ['label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'value' => 'large'],
-    ['label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'value' => 'xl'],
-    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_large', 'value' => 'negative-large'],
-    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_extra_large', 'value' => 'negative-xl'],
+    ['label' => 'core.general:LGL.default_value', 'value' => ''],
+    ['label' => 'frontend.ttc:space_class_none', 'value' => 'no-space'],
+    ['label' => 'frontend.ttc:space_class_large', 'value' => 'large'],
+    ['label' => 'frontend.ttc:space_class_extra_large', 'value' => 'xl'],
+    ['label' => 'bulma_package.backend:space_class_negative_large', 'value' => 'negative-large'],
+    ['label' => 'bulma_package.backend:space_class_negative_extra_large', 'value' => 'negative-xl'],
 ];
 $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items'] = [
-    ['label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 'value' => ''],
-    ['label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', 'value' => 'no-space'],
-    ['label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'value' => 'large'],
-    ['label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'value' => 'xl'],
-    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_large', 'value' => 'negative-large'],
-    ['label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:space_class_negative_extra_large', 'value' => 'negative-xl'],
+    ['label' => 'core.general:LGL.default_value', 'value' => ''],
+    ['label' => 'frontend.ttc:space_class_none', 'value' => 'no-space'],
+    ['label' => 'frontend.ttc:space_class_large', 'value' => 'large'],
+    ['label' => 'frontend.ttc:space_class_extra_large', 'value' => 'xl'],
+    ['label' => 'bulma_package.backend:space_class_negative_large', 'value' => 'negative-large'],
+    ['label' => 'bulma_package.backend:space_class_negative_extra_large', 'value' => 'negative-xl'],
 ];
 
 // Override table_class
 $GLOBALS['TCA']['tt_content']['columns']['table_class']['config']['renderType'] = 'selectCheckBox';
 $GLOBALS['TCA']['tt_content']['columns']['table_class']['config']['items'][0] = [
-    'label' => 'LLL:EXT:bulma_package/Resources/Private/Language/Backend.xlf:tablelayout.fullwidth',
+    'label' => 'bulma_package.backend:tablelayout.fullwidth',
     'value' => 'fullwidth',
 ];
 

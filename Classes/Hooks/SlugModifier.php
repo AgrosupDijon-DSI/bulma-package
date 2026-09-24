@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace AgrosupDijon\BulmaPackage\Hooks;
 
+use TYPO3\CMS\Backend\Domain\Repository\Localization\LocalizationRepository;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\DataHandling\SlugHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -189,10 +190,9 @@ class SlugModifier
     protected function tryRecordOverlay(array $page, int $languageId): array
     {
         if ($languageId > 0) {
-            $localizedParentPageRecord = BackendUtility::getRecordLocalization('pages', $page['uid'], $languageId);
-            if (!empty($localizedParentPageRecord)) {
-                $page = reset($localizedParentPageRecord);
-            }
+            $localizationRepository = GeneralUtility::makeInstance(LocalizationRepository::class);
+            $localizedParentPageRecord = $localizationRepository->getRecordTranslation('pages', $page['uid'], $languageId);
+            $page = $localizedParentPageRecord ? $localizedParentPageRecord->toArray() : $page;
         }
         return $page;
     }

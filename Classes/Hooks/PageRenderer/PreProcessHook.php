@@ -21,7 +21,8 @@ class PreProcessHook
 {
     public function __construct(
         protected readonly CompileService $compileService
-    ) {}
+    ) {
+    }
 
     /**
      * @param array $params

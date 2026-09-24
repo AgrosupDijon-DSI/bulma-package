@@ -44,19 +44,3 @@ page {
     slim-select = EXT:bulma_package/Resources/Public/Build/slim-select.min.js
   }
 }
-
-// Override form configuration
-module.tx_form {
-  settings {
-    yamlConfigurations {
-      110 = EXT:bulma_package/Configuration/Form/Setup.yaml
-    }
-  }
-}
-plugin.tx_form {
-  settings {
-    yamlConfigurations {
-      110 = EXT:bulma_package/Configuration/Form/Setup.yaml
-    }
-  }
-}
