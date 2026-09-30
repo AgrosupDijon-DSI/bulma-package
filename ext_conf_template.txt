@@ -2,19 +2,19 @@
 ### PAGETS ###
 ##############
 
-# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsRTE
+# cat=PageTS; type=boolean; label=bulma_package.ext_conf_template:pageTs.disablePageTsRTE
 disablePageTsRTE = 0
 
-# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsBackendLayouts
+# cat=PageTS; type=boolean; label=bulma_package.ext_conf_template:pageTs.disablePageTsBackendLayouts
 disablePageTsBackendLayouts = 0
 
-# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsTCEMAIN
+# cat=PageTS; type=boolean; label=bulma_package.ext_conf_template:pageTs.disablePageTsTCEMAIN
 disablePageTsTCEMAIN = 0
 
-# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsTCEFORM
+# cat=PageTS; type=boolean; label=bulma_package.ext_conf_template:pageTs.disablePageTsTCEFORM
 disablePageTsTCEFORM = 0
 
-# cat=PageTS; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsContentElements
+# cat=PageTS; type=boolean; label=bulma_package.ext_conf_template:pageTs.disablePageTsContentElements
 disablePageTsContentElements = 0
 
 
@@ -22,11 +22,11 @@ disablePageTsContentElements = 0
 ### FEATURES ###
 ################
 
-# cat=Features; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:feature.disableScssProcessing
+# cat=Features; type=boolean; label=bulma_package.ext_conf_template:feature.disableScssProcessing
 disableScssProcessing = 0
 
-# cat=Features; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:feature.disableCustomColorsAction
+# cat=Features; type=boolean; label=bulma_package.ext_conf_template:feature.disableCustomColorsAction
 disableCustomColorsAction = 0
 
-# cat=Features; type=boolean; label=LLL:EXT:bulma_package/Resources/Private/Language/ExtConfTemplate.xlf:feature.disableMetaTagsAction
+# cat=Features; type=boolean; label=bulma_package.ext_conf_template:feature.disableMetaTagsAction
 disableMetaTagsAction = 0
