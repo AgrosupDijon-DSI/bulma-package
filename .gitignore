@@ -3,8 +3,6 @@
 /Resources/Private/Contrib/Php/vendor
 /vendor/
 /composer.lock
-/public/
 /.php-cs-fixer.cache
 /.tools/*/vendor/
 /.tools/*/public/
-/var

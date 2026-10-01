@@ -35,8 +35,6 @@ return RectorConfig::configure()
     // If you use withImportNames(), you should consider excluding some TYPO3 files.
     ->withSkip([
         __DIR__ . '/vendor/*',
-        __DIR__ . '/public/*',
-        __DIR__ . '/var/*',
         __DIR__ . '/Resources/Private/Contrib/*',
         NameImportingPostRector::class => [
             'ClassAliasMap.php',

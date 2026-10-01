@@ -759,9 +759,9 @@
             <trans-unit id="content_group.media">
                 <source>Media</source>
             </trans-unit>
-			<trans-unit id="content_group.special">
-				<source>Special elements</source>
-			</trans-unit>
+            <trans-unit id="content_group.special">
+                <source>Special elements</source>
+            </trans-unit>
             <trans-unit id="news.templateLayouts.4cols">
                 <source>4 Columns</source>
             </trans-unit>
