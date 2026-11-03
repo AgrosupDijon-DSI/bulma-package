@@ -1,0 +1,1 @@
+var e=document.querySelector(`.navbar-burger`);if(e){let t=e.dataset.target,n=document.getElementById(t);e.addEventListener(`click`,()=>{e.classList.toggle(`is-active`),n.classList.toggle(`is-active`)}),window.addEventListener(`click`,function(t){!n.contains(t.target)&&!e.contains(t.target)&&(e.classList.remove(`is-active`),n.classList.remove(`is-active`))})}

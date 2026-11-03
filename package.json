@@ -1,38 +1,28 @@
 {
-  "devDependencies": {
-    "@babel/core": "^7.22.20",
-    "@babel/plugin-transform-class-properties": "^7.28.6",
-    "@babel/preset-env": "^7.22.20",
-    "@symfony/webpack-encore": "^5.3.0",
-    "file-loader": "^6.2.0",
-    "sass": "^1.67.0",
-    "sass-loader": "^16.0.7",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^6.0.1"
-  },
-  "dependencies": {
-    "@creativebulma/bulma-collapsible": "1.0.3",
-    "@fortawesome/fontawesome-free": "5.11.2",
-    "@vizuaalog/bulmajs": "0.12.2",
-    "bulma-scss": "0.9.4",
-    "core-js": "^3.32.2",
-    "flickity": "2.2.1",
-    "flickity-fade": "1.0.0",
-    "ionicons": "4.5.10-0",
-    "photoswipe": "4.1.3",
-    "resize-observer-polyfill": "^1.5.1",
-    "shareon": "^2.5.0",
-    "simplebar": "^6.2.7",
-    "slim-select": "^3.0"
-  },
-  "scripts": {
-    "dev-server": "encore dev-server",
-    "dev": "encore dev",
-    "watch": "encore dev --watch",
-    "build": "yarn clean && yarn extra && encore production --progress",
-    "clean": "rm -Rf ./Resources/Public/Contrib/*;rm -Rf ./Resources/Public/Icons/FontAwesome/*;rm -Rf ./Resources/Public/Icons/Ionicons/*",
-    "extra": "yarn extra-bulma && yarn extra-bulma-collapsible",
-    "extra-bulma": "cp -R ./node_modules/bulma-scss ./Resources/Public/Contrib/",
-    "extra-bulma-collapsible": "mkdir ./Resources/Public/Contrib/bulma-collapsible;cp ./node_modules/@creativebulma/bulma-collapsible/dist/js/bulma-collapsible.min.js ./Resources/Public/Contrib/bulma-collapsible/"
-  }
+	"name": "bulma-package",
+	"author": "sebastien.convers@agrosupdijon.fr",
+	"dependencies": {
+		"@creativebulma/bulma-collapsible": "1.0.3",
+		"@fortawesome/fontawesome-free": "^5.15",
+		"@vizuaalog/bulmajs": "^0.12.2",
+		"bulma": "^1.0.4",
+		"flickity": "^2.2.1",
+		"flickity-fade": "^1.0.0",
+		"ionicons": "^4.5",
+		"photoswipe": "^5.4.4",
+		"resize-observer-polyfill": "^1.5.1",
+		"shareon": "^2.8.1",
+		"simplebar": "^6.3.3",
+		"slim-select": "^4.6.0"
+	},
+	"devDependencies": {
+		"sass-embedded": "^1.105.1",
+		"vite": "^8.3.3",
+		"vite-plugin-static-copy": "^4.1.1",
+		"vite-plugin-typo3": "^3.0.0"
+	},
+	"scripts": {
+		"clean": "rm -Rf ./Resources/Public/Icons/FontAwesome/*;rm -Rf ./Resources/Public/Icons/Ionicons/*",
+		"build": "yarn clean && vite build"
+	}
 }

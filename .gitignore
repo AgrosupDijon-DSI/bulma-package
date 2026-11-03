@@ -1,5 +1,5 @@
 /node_modules
-/Resources/Public/Build/*.json
+/Resources/Public/Vite/*.mjs
 /Resources/Private/Contrib/Php/vendor
 /vendor/
 /composer.lock

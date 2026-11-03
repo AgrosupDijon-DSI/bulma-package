@@ -1,0 +1,1 @@
+var e=document.querySelectorAll(`.scroll-top`);e.length>0&&window.addEventListener(`scroll`,()=>{window.scrollY>300?e.forEach(e=>{e.classList.contains(`scroll-top-visible`)||e.classList.add(`scroll-top-visible`)}):e.forEach(e=>{e.classList.contains(`scroll-top-visible`)&&e.classList.remove(`scroll-top-visible`)})});

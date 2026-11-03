@@ -1,0 +1,1 @@
+var e=Array.prototype.slice.call(document.querySelectorAll(`.news-backlink-wrap a`),0);e.length>0&&document.referrer.indexOf(window.location.hostname)!==-1&&e.forEach(e=>{e.setAttribute(`href`,`javascript:history.back();`)});

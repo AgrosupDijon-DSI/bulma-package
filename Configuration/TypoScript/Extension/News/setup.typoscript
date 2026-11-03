@@ -191,7 +191,8 @@ plugin.tx_news {
 # Improved back links
 # https://docs.typo3.org/p/georgringer/news/master/en-us/AdministratorManual/Templates/Snippets/Index.html#improved-back-links
 page.includeJSFooterlibs {
-  bulma_news = EXT:bulma_package/Resources/Public/Build/bulma.news.min.js
+  bulma_news = EXT:bulma_package/Resources/Public/Vite/News.entry.js
+  bulma_news.type = module
 }
 
 # Fake breadcrumb entry on news detail page
