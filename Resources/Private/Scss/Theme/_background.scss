@@ -8,9 +8,5 @@
       #{cv.getVar($name, "", "-s")},
       #{cv.getVar($name, "", "-invert-l")}
     );
-
-    [class="notification"] {
-      color: cv.getVar("text");
-    }
   }
 }
