@@ -3,6 +3,12 @@ prototypes:
     formElementsDefinition:
       Form:
         renderingOptions:
+          fieldProperties:
+            errorMsgClassAttribute: help is-danger
+            errorClassAttribute: is-danger
+            descriptionClassAttribute: help
+            requiredMarkClassAttribute: required
+            visuallyHiddenClassAttribute: visually-hidden
           translation:
             translationFiles:
               110: 'EXT:bulma_package/Resources/Private/Language/locallang.xlf'

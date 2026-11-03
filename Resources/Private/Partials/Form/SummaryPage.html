@@ -10,7 +10,7 @@
 			<table class="table is-fullwidth">
 				<formvh:renderAllFormValues renderable="{page.rootForm}" as="formValue">
 					<tr>
-						<th class="summary-table-first-col">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</th>
+						<th class="summary-table-first-col">{formvh:translateElementProperty(element: formValue.element, property: 'label') -> f:sanitize.html() -> f:transform.html()}</th>
 						<td>
 							<f:if condition="{formValue.value}">
 								<f:then>

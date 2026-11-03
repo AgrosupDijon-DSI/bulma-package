@@ -6,3 +6,4 @@ prototypes:
           elementClassAttribute: is-checkradio
           containerClassAttribute: control
           elementErrorClassAttribute: is-danger
+          labelTextClassAttribute: checkbox
