@@ -1,33 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
+import bulmaCollapsible from "@creativebulma/bulma-collapsible/src/js";
 
-    const isInViewport = function (elem) {
-        const bounding = elem.getBoundingClientRect();
-        return (
-            bounding.top >= 0 &&
-            bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-        );
-    };
+const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
 
-    const sleep = (milliseconds) => {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-    };
+const isInViewport = function (elem) {
+  const bounding = elem.getBoundingClientRect();
+  return (
+    bounding.top >= 0 &&
+    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  );
+};
 
-    bulmaCollapsibleInstances.forEach(accordionElement => {
-        accordionElement.on('before:expand', (e) => {
-            sleep(250).then(() => {
-                if(!isInViewport(accordionElement.element.previousSibling)){
-                    accordionElement.element.previousSibling.scrollIntoView();
-                }
-            });
-        });
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+};
 
-        const currentAnchor = (document.URL.split('#').length > 1) ? document.URL.split('#')[1] : null;
-        if(currentAnchor){
-            if(accordionElement.element.id === currentAnchor){
-                accordionElement.expand();
-            }
-        }
+bulmaCollapsibleInstances.forEach(accordionElement => {
+  accordionElement.on('before:expand', (e) => {
+    sleep(250).then(() => {
+      if (!isInViewport(accordionElement.element.previousSibling)) {
+        accordionElement.element.previousSibling.scrollIntoView();
+      }
     });
+  });
 
+  const currentAnchor = (document.URL.split('#').length > 1) ? document.URL.split('#')[1] : null;
+  if (currentAnchor) {
+    if (accordionElement.element.id === currentAnchor) {
+      accordionElement.expand();
+    }
+  }
 });
+
