@@ -1,3 +1,23 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "bulma/sass/elements/content" as c;
+@use "bulma/sass/utilities/functions" as fn;
+@use "bulma/sass/elements/button";
+@use "bulma/sass/elements/table";
+
+$subtitle-negative-margin: -1.25rem !default;
+$blockquote-color: cv.getVar("text") !default;
+
+.#{iv.$class-prefix}content {
+  @include cv.register-vars(
+    (
+      "subtitle-negative-margin": #{$subtitle-negative-margin},
+      "blockquote-color": #{$blockquote-color},
+    )
+  );
+}
+
 .text-underline {
   text-decoration: underline;
 }
@@ -7,20 +27,20 @@
 }
 
 .subtitle + .subtitle {
-  margin-top: $subtitle-negative-margin;
+  margin-top: cv.getVar("subtitle-negative-margin");
 }
 
-.content{
+.content {
 
-  figure.table{
+  figure.table {
     text-align: inherit;
     margin: 0;
-    @extend .table-container;
+    @extend .#{iv.$class-prefix}table-container;
   }
 
-  dl{
-    dt{
-      font-weight: $weight-bold;
+  dl {
+    dt {
+      font-weight: cv.getVar("weight-bold");
     }
   }
 
@@ -34,7 +54,7 @@
     padding: 0;
   }
 
-  ul.media-list{
+  ul.media-list {
     @extend .is-unstyled;
   }
 
@@ -44,21 +64,22 @@
   h4,
   h5,
   h6 {
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
   }
 
-  blockquote{
-    color: findColorInvert($content-blockquote-background-color);
+  blockquote {
+    color: cv.getVar("blockquote-color");
   }
 }
 
-.buttons{
-  &.has-text-centered{
-    @extend .is-centered;
+.buttons {
+  &.has-text-centered {
+    @extend .#{iv.$class-prefix}is-centered;
   }
-  &.has-text-right{
-    @extend .is-right;
+
+  &.has-text-right {
+    @extend .#{iv.$class-prefix}is-right;
   }
 }

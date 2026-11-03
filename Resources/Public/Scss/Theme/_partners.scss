@@ -1,3 +1,7 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/mixins";
+
 //
 // Partners
 //
@@ -11,23 +15,35 @@ $partner-flex-justify: center !default;
 $partner-margin: 0.25rem 1rem !default;
 $partner-text-align: center !default;
 
+.#{iv.$class-prefix}partners {
+  @include cv.register-vars(
+    (
+      "partner-min-width": #{$partner-min-width},
+      "partner-flex-alignment": #{$partner-flex-alignment},
+      "partner-flex-justify": #{$partner-flex-justify},
+      "partner-margin": #{$partner-margin},
+      "partner-text-align": #{$partner-text-align},
+    )
+  );
+}
+
 //
 // Component
 //
-.partners{
+.partners {
   display: flex;
   flex-wrap: wrap;
-  align-items: $partner-flex-alignment;
-  justify-content: $partner-flex-justify;
+  align-items: cv.getVar("partner-flex-alignment");
+  justify-content: cv.getVar("partner-flex-justify");
 }
 
-.partner{
-  text-align: $partner-text-align;
-  margin: $partner-margin
+.partner {
+  text-align: cv.getVar("partner-text-align");
+  margin: cv.getVar("partner-margin");
 }
 
-@include from($tablet){
-  .partner{
-    min-width: $partner-min-width;
+@include mixins.from(iv.$tablet) {
+  .partner {
+    min-width: cv.getVar("partner-min-width");
   }
 }

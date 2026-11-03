@@ -1,46 +1,49 @@
 
-a[class*="icon-"]{
+a[class*="icon-"] {
   position: relative;
   padding-left: 1.25em;
-  &:before{
+
+  &:before {
     font-family: "Font Awesome\ 5 Free";
-    font-weight:400;
+    font-weight: 400;
     position: absolute;
     left: 0;
-    top: 0;
+    //top: 0;
   }
 }
 
-a.icon-mail{
-  &:before{
+a.icon-mail {
+  &:before {
     content: "\f0e0";
   }
 }
 
-a.icon-phone{
-  &:before{
+a.icon-phone {
+  &:before {
     content: "\f879";
     font-weight: 900;
   }
 }
 
-a.icon-file{
+a.icon-file {
   padding-left: 1em;
-  &:before{
+
+  &:before {
     content: "\f15c";
   }
 }
 
-a.icon-url{
-  &:before{
+a.icon-url {
+  &:before {
     font-weight: 900;
     content: "\f0c1";
   }
 }
 
-a.icon-location{
+a.icon-location {
   padding-left: 1em;
-  &:before{
+
+  &:before {
     font-weight: 900;
     content: "\f3c5";
   }

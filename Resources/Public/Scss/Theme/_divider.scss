@@ -1,46 +1,78 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "bulma/sass/utilities/functions" as fn;
+@use "bulma/sass/utilities/mixins";
+
 // https://wikiki.github.io/layout/divider/
 
-$divider-background-color: $grey-lighter !default;
+$divider-background-color: cv.getVar("grey-lighter") !default;
 $divider-thickness: .1rem !default;
-$divider-font-size: $size-4 !default;
-$divider-color: $grey-light !default;
+$divider-font-size: cv.getVar("size-4") !default;
+$divider-color: cv.getVar("grey-light") !default;
 $divider-content-background-color: #fff !default;
+$divider-content-translate: -1.7rem !default;
+
+.#{iv.$class-prefix}is-divider, .#{iv.$class-prefix}is-divider-vertical {
+  @include cv.register-vars(
+    (
+      "divider-background-color": #{$divider-background-color},
+      "divider-thickness": #{$divider-thickness},
+      "divider-font-size": #{$divider-font-size},
+      "divider-color": #{$divider-color},
+      "divider-content-background-color": #{$divider-content-background-color},
+      "divider-content-translate": #{$divider-content-translate},
+    )
+  );
+}
 
 .is-divider, .is-divider-vertical {
   display: block;
   position: relative;
-  border-top: $divider-thickness solid $divider-background-color;
-  height: $divider-thickness;
+  border-top: cv.getVar("divider-thickness") solid cv.getVar("divider-background-color");
+  height: cv.getVar("divider-thickness");
   margin: 2rem 0;
   text-align: center;
 
-  @each $name, $pair in $colors {
-    $color-invert: nth($pair, 2);
+  @each $name, $pair in dv.$colors {
+    $color-invert: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-invert-l")}
+    );
 
-    .has-background-#{$name} &{
+    .has-background-#{$name} & {
       border-top-color: $color-invert;
     }
   }
 }
 
 .is-divider[data-content]:after, .is-divider-vertical[data-content]:after {
-  background: $divider-content-background-color;
-  color: $divider-color;
+  background: cv.getVar("divider-content-background-color");
+  color: cv.getVar("divider-color");
   content: attr(data-content);
   display: inline-block;
-  font-size: $divider-font-size;
+  font-size: cv.getVar("divider-font-size");
   padding: .4rem .8rem;
-  -webkit-transform: translateY(-1.7rem);
-  -ms-transform: translateY(-1.7rem);
-  transform: translateY(-1.7rem);
+  -webkit-transform: translateY(cv.getVar("divider-content-translate"));
+  -ms-transform: translateY(cv.getVar("divider-content-translate"));
+  transform: translateY(cv.getVar("divider-content-translate"));
   text-align: center;
 
   // Notification colors
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+  @each $name, $pair in dv.$colors {
+    $color: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-l")}
+    );
+    $color-invert: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-invert-l")}
+    );
 
-    .has-background-#{$name} &{
+    .has-background-#{$name} & {
       background: $color !important;
       color: $color-invert;
     }
@@ -48,7 +80,7 @@ $divider-content-background-color: #fff !default;
 }
 
 .is-divider-vertical {
-  @include tablet {
+  @include mixins.tablet {
     display: block;
     flex: none;
     width: auto;
@@ -59,7 +91,7 @@ $divider-content-background-color: #fff !default;
     border-top: none;
     min-height: 2rem;
     &:before {
-      border-left: $divider-thickness solid $divider-background-color;
+      border-left: cv.getVar("divider-thickness") solid cv.getVar("divider-background-color");
       bottom: 1rem;
       content: "";
       display: block;
@@ -84,9 +116,17 @@ $divider-content-background-color: #fff !default;
 
 .is-divider,
 .is-divider-vertical {
-  @each $name, $pair in mergeColorMaps($colors, $shades) {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+  @each $name, $pair in fn.mergeColorMaps(dv.$colors, dv.$shades) {
+    $color: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-l")}
+    );
+    $color-invert: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-invert-l")}
+    );
     &.is-#{$name} {
       border-top-color: $color;
 

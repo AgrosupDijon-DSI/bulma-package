@@ -1,8 +1,23 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/components/navbar" as n;
+@use "bulma/sass/utilities/mixins";
+
 $mega-menu-dropdown-padding: 1rem 0 !default;
-$mega-menu-dropdown-item-text-decoration-hover: $navbar-dropdown-item-text-decoration-hover !default;
-$mega-menu-dropdown-item-text-decoration-active: $navbar-dropdown-item-text-decoration-active !default;
+$mega-menu-dropdown-item-text-decoration-hover: cv.getVar("navbar-dropdown-item-text-decoration-hover") !default;
+$mega-menu-dropdown-item-text-decoration-active: cv.getVar("navbar-dropdown-item-text-decoration-active") !default;
 $mega-menu-dropdown-max-columns: 3 !default;
 $mega-menu-dropdown-tablet-max-columns: 2 !default;
+
+.#{iv.$class-prefix}navbar-item {
+  @include cv.register-vars(
+    (
+      "mega-menu-dropdown-padding": #{$mega-menu-dropdown-padding},
+      "mega-menu-dropdown-item-text-decoration-hover": #{$mega-menu-dropdown-item-text-decoration-hover},
+      "mega-menu-dropdown-item-text-decoration-active": #{$mega-menu-dropdown-item-text-decoration-active},
+    )
+  );
+}
 
 .navbar-item.is-mega {
   position: static;
@@ -13,9 +28,9 @@ $mega-menu-dropdown-tablet-max-columns: 2 !default;
   }
 }
 
-@include from($tablet) {
+@include mixins.from(iv.$tablet) {
   .navbar-item.is-mega {
-    .columns:has(> .auto-column){
+    .columns:has(> .auto-column) {
       column-count: $mega-menu-dropdown-tablet-max-columns;
       @for $i from 1 to $mega-menu-dropdown-tablet-max-columns {
         &:has(> :nth-child(#{$i}):last-child) {
@@ -33,11 +48,12 @@ $mega-menu-dropdown-tablet-max-columns: 2 !default;
   }
 }
 
-@include from($navbar-breakpoint) {
+@include mixins.from(n.$navbar-breakpoint) {
   .navbar-item.is-mega {
     display: block;
-    & > .navbar-link{
-      min-height: $navbar-height;
+
+    & > .navbar-link {
+      min-height: cv.getVar("navbar-height");
       height: 100%;
     }
 
@@ -45,33 +61,36 @@ $mega-menu-dropdown-tablet-max-columns: 2 !default;
       right: 0;
       top: initial;
 
-      padding: $mega-menu-dropdown-padding;
+      padding: cv.getVar("mega-menu-dropdown-padding");
 
       .navbar-item {
         white-space: normal;
-        &:hover{
-          text-decoration: $mega-menu-dropdown-item-text-decoration-hover;
+
+        &:hover {
+          text-decoration: cv.getVar("mega-menu-dropdown-item-text-decoration-hover");
         }
+
         &.is-active:not(:focus):not(:hover) {
-          text-decoration: $mega-menu-dropdown-item-text-decoration-active;
+          text-decoration: cv.getVar("mega-menu-dropdown-item-text-decoration-active");
         }
       }
     }
 
     .column {
-      & > a{
-        font-weight: $weight-semibold;
+      & > a {
+        font-weight: cv.getVar("weight-semibold");
       }
+
       ul {
         margin-left: 1rem;
-        border-left: 1px solid $primary;
+        border-left: 1px solid cv.getVar("primary");
       }
     }
 
-    .columns:has(> .auto-column){
+    .columns:has(> .auto-column) {
       column-count: $mega-menu-dropdown-max-columns;
       @for $i from 1 to $mega-menu-dropdown-max-columns {
-        &:has(> :nth-child(#{$i}):last-child){
+        &:has(> :nth-child(#{$i}):last-child) {
           column-count: $i;
         }
       }
@@ -79,12 +98,12 @@ $mega-menu-dropdown-tablet-max-columns: 2 !default;
   }
 }
 
-@include until($navbar-breakpoint) {
-    .navbar-item.is-mega:not(.is-hoverable):not(.is-active) {
-        .navbar-dropdown {
-            display: none;
-        }
+@include mixins.until(n.$navbar-breakpoint) {
+  .navbar-item.is-mega:not(.is-hoverable):not(.is-active) {
+    .navbar-dropdown {
+      display: none;
     }
+  }
   .navbar-dropdown {
     .container {
       padding: 0;
@@ -99,7 +118,7 @@ $mega-menu-dropdown-tablet-max-columns: 2 !default;
 
       ul {
         margin-left: 1.5rem;
-        border-left: 1px solid $primary;
+        border-left: 1px solid cv.getVar("primary");
       }
     }
   }

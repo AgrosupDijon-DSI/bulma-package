@@ -1,3 +1,6 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
 //
 // Thumbnail Menu
 //
@@ -5,34 +8,68 @@
 //
 // Variables
 //
-$thumbnail-menu-background: $primary !default;
+$thumbnail-menu-background: cv.getVar("primary") !default;
 $thumbnail-menu-background-opacity: 0.85 !default;
 $thumbnail-menu-background-opacity-hover: 0.5 !default;
 $thumbnail-menu-border: none !default;
 $thumbnail-menu-picture-filter: grayscale(1) !default;
 $thumbnail-menu-picture-filter-hover: none !default;
-$thumbnail-menu-color: findColorInvert($thumbnail-menu-background) !default;
+$thumbnail-menu-color: cv.getVar("primary-invert") !default;
 $thumbnail-menu-caption-title-size: 1.25em !default;
-$thumbnail-menu-caption-subtitle-size: $body-font-size !default;
+$thumbnail-menu-caption-subtitle-size: cv.getVar("body-font-size") !default;
 $thumbnail-menu-caption-title-transform: none !default;
 $thumbnail-menu-caption-subtitle-transform: none !default;
 $thumbnail-menu-radius: 0 !default;
 $thumbnail-menu-caption-flex-alignment: center !default;
 $thumbnail-menu-caption-flex-justify: center !default;
-$thumbnail-menu-caption-inner-alignement: center !default;
+$thumbnail-menu-caption-inner-alignment: center !default;
 $thumbnail-menu-caption-inner-padding: 1.5em !default;
 $thumbnail-menu-caption-inner-max-width: 100% !default;
 $thumbnail-menu-caption-inner-width: auto !default;
 $thumbnail-menu-caption-inner-background-color: transparent !default;
 $thumbnail-menu-caption-inner-background-color-hover: transparent !default;
-$thumbnail-menu-caption-title-weight: $weight-bold !default;
-$thumbnail-menu-caption-subtitle-weight: $weight-normal !default;
+$thumbnail-menu-caption-title-weight: cv.getVar("weight-bold") !default;
+$thumbnail-menu-caption-subtitle-weight: cv.getVar("weight-normal") !default;
 $thumbnail-menu-caption-title-color: $thumbnail-menu-color !default;
 $thumbnail-menu-caption-subtitle-color: $thumbnail-menu-color !default;
 $thumbnail-menu-caption-title-color-hover: $thumbnail-menu-caption-title-color !default;
 $thumbnail-menu-caption-subtitle-color-hover: $thumbnail-menu-caption-subtitle-color !default;
 $thumbnail-menu-caption-title-color-focus: $thumbnail-menu-caption-title-color-hover !default;
 $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-color-hover !default;
+
+.#{iv.$class-prefix}thumbnail-menu {
+  @include cv.register-vars(
+    (
+      "thumbnail-menu-background": #{$thumbnail-menu-background},
+      "thumbnail-menu-background-opacity": #{$thumbnail-menu-background-opacity},
+      "thumbnail-menu-background-opacity-hover": #{$thumbnail-menu-background-opacity-hover},
+      "thumbnail-menu-border": #{$thumbnail-menu-border},
+      "thumbnail-menu-picture-filter": #{$thumbnail-menu-picture-filter},
+      "thumbnail-menu-color": #{$thumbnail-menu-color},
+      "thumbnail-menu-caption-title-size": #{$thumbnail-menu-caption-title-size},
+      "thumbnail-menu-caption-subtitle-size": #{$thumbnail-menu-caption-subtitle-size},
+      "thumbnail-menu-caption-title-transform": #{$thumbnail-menu-caption-title-transform},
+      "thumbnail-menu-caption-subtitle-transform": #{$thumbnail-menu-caption-subtitle-transform},
+      "thumbnail-menu-radius": #{$thumbnail-menu-radius},
+      "thumbnail-menu-caption-flex-alignment": #{$thumbnail-menu-caption-flex-alignment},
+      "thumbnail-menu-caption-flex-justify": #{$thumbnail-menu-caption-flex-justify},
+      "thumbnail-menu-caption-inner-alignment": #{$thumbnail-menu-caption-inner-alignment},
+      "thumbnail-menu-caption-inner-padding": #{$thumbnail-menu-caption-inner-padding},
+      "thumbnail-menu-caption-inner-max-width": #{$thumbnail-menu-caption-inner-max-width},
+      "thumbnail-menu-caption-inner-width": #{$thumbnail-menu-caption-inner-width},
+      "thumbnail-menu-caption-inner-background-color": #{$thumbnail-menu-caption-inner-background-color},
+      "thumbnail-menu-caption-inner-background-color-hover": #{$thumbnail-menu-caption-inner-background-color-hover},
+      "thumbnail-menu-caption-title-weight": #{$thumbnail-menu-caption-title-weight},
+      "thumbnail-menu-caption-subtitle-weight": #{$thumbnail-menu-caption-subtitle-weight},
+      "thumbnail-menu-caption-title-color": #{$thumbnail-menu-caption-title-color},
+      "thumbnail-menu-caption-subtitle-color": #{$thumbnail-menu-caption-subtitle-color},
+      "thumbnail-menu-caption-title-color-hover": #{$thumbnail-menu-caption-title-color-hover},
+      "thumbnail-menu-caption-subtitle-color-hover": #{$thumbnail-menu-caption-subtitle-color-hover},
+      "thumbnail-menu-caption-title-color-focus": #{$thumbnail-menu-caption-title-color-focus},
+      "thumbnail-menu-caption-subtitle-color-focus": #{$thumbnail-menu-caption-subtitle-color-focus},
+    )
+  );
+}
 
 //
 // Component
@@ -42,13 +79,14 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
   overflow: hidden;
   position: relative;
   height: 100%;
-  border-radius: $thumbnail-menu-radius;
-  border: $thumbnail-menu-border;
+  border-radius: cv.getVar("thumbnail-menu-radius");
+  border: cv.getVar("thumbnail-menu-border");
 }
 
 .thumbnail-menu-image {
   overflow: hidden;
   height: 100%;
+
   picture,
   img,
   svg {
@@ -67,8 +105,8 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
     .thumbnail-menu-caption {
       position: absolute;
       display: flex;
-      align-items: $thumbnail-menu-caption-flex-alignment;
-      justify-content: $thumbnail-menu-caption-flex-justify;
+      align-items: cv.getVar("thumbnail-menu-caption-flex-alignment");
+      justify-content: cv.getVar("thumbnail-menu-caption-flex-justify");
       top: 0;
       left: 0;
       height: 100%;
@@ -82,16 +120,15 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity);
+      background-color: rgba(#{cv.getVar("thumbnail-menu-background")}, #{cv.getVar("thumbnail-menu-background-opacity")});
     }
 
     .thumbnail-menu-caption-inner {
-      padding: $thumbnail-menu-caption-inner-padding;
-      text-align: $thumbnail-menu-caption-inner-alignement;
-      max-width: $thumbnail-menu-caption-inner-max-width;
-      width: $thumbnail-menu-caption-inner-width;
-      background-color: $thumbnail-menu-caption-inner-background-color;
-
+      padding: cv.getVar("thumbnail-menu-caption-inner-padding");
+      text-align: cv.getVar("thumbnail-menu-caption-inner-alignment");
+      max-width: cv.getVar("thumbnail-menu-caption-inner-max-width");
+      width: cv.getVar("thumbnail-menu-caption-inner-width");
+      background-color: cv.getVar("thumbnail-menu-caption-inner-background-color");
       > *:first-child {
         margin-top: 0;
       }
@@ -102,17 +139,17 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
     }
 
     .thumbnail-menu-caption-title {
-      font-size: $thumbnail-menu-caption-title-size;
-      text-transform: $thumbnail-menu-caption-title-transform;
+      font-size: cv.getVar("thumbnail-menu-caption-title-size");
+      text-transform: cv.getVar("thumbnail-menu-caption-title-transform");
       margin-bottom: 0.25em;
-      font-weight: $thumbnail-menu-caption-title-weight;
+      font-weight: cv.getVar("thumbnail-menu-caption-title-weight");
     }
 
     .thumbnail-menu-caption-subtitle {
       line-height: 1.2em;
-      font-size: $thumbnail-menu-caption-subtitle-size;
-      text-transform: $thumbnail-menu-caption-subtitle-transform;
-      font-weight: $thumbnail-menu-caption-subtitle-weight;
+      font-size: cv.getVar("thumbnail-menu-caption-subtitle-size");
+      text-transform: cv.getVar("thumbnail-menu-caption-subtitle-transform");
+      font-weight: cv.getVar("thumbnail-menu-caption-subtitle-weight");
     }
 
     .thumbnail-menu-link {
@@ -124,65 +161,65 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
         picture,
         img {
           transition: filter 0.25s ease-in-out;
-          filter: $thumbnail-menu-picture-filter;
+          filter: cv.getVar("thumbnail-menu-picture-filter");
         }
       }
 
       .thumbnail-menu-caption-title {
-        color: $thumbnail-menu-caption-title-color;
+        color: cv.getVar("thumbnail-menu-caption-title-color");
       }
 
       .thumbnail-menu-caption-subtitle {
-        color: $thumbnail-menu-caption-subtitle-color;
+        color: cv.getVar("thumbnail-menu-caption-subtitle-color");
       }
 
       &:hover,
       &:focus {
         .thumbnail-menu-caption-inner {
-          background-color: $thumbnail-menu-caption-inner-background-color-hover;
+          background-color: cv.getVar("thumbnail-menu-caption-inner-background-color-hover");
         }
 
         .thumbnail-menu-caption-title {
-          color: $thumbnail-menu-caption-title-color-hover;
+          color: cv.getVar("thumbnail-menu-caption-title-color-hover");
         }
 
         .thumbnail-menu-caption-subtitle {
-          color: $thumbnail-menu-caption-subtitle-color-hover;
+          color: cv.getVar("thumbnail-menu-caption-subtitle-color-hover");
         }
 
         .thumbnail-menu-image {
           &:after {
-            background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity-hover);
+            background-color: rgba(#{cv.getVar("thumbnail-menu-background")}, #{cv.getVar("thumbnail-menu-background-opacity-hover")});
           }
 
           picture,
           img {
-            filter: $thumbnail-menu-picture-filter-hover;
+            filter: cv.getVar("thumbnail-menu-picture-filter-hover");
           }
         }
       }
 
-      &:focus{
+      &:focus {
         .thumbnail-menu-caption-title {
-          color: $thumbnail-menu-caption-title-color-focus;
+          color: cv.getVar("thumbnail-menu-caption-title-color-focus");
         }
 
         .thumbnail-menu-caption-subtitle {
-          color: $thumbnail-menu-caption-subtitle-color-focus;
+          color: cv.getVar("thumbnail-menu-caption-subtitle-color-focus");
         }
       }
     }
 
-    .inverted-thumbnail{
+    .inverted-thumbnail {
       .thumbnail-menu-image:after {
-        background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity-hover);
+        background-color: rgba(#{cv.getVar("thumbnail-menu-background")}, #{cv.getVar("thumbnail-menu-background-opacity-hover")});
       }
 
       .thumbnail-menu-link {
         .thumbnail-menu-image {
           picture,
           img {
-            filter: $thumbnail-menu-picture-filter-hover;
+            filter: cv.getVar("thumbnail-menu-picture-filter-hover");
           }
         }
 
@@ -190,12 +227,12 @@ $thumbnail-menu-caption-subtitle-color-focus: $thumbnail-menu-caption-subtitle-c
         &:focus {
           .thumbnail-menu-image {
             &:after {
-              background-color: rgba($thumbnail-menu-background, $thumbnail-menu-background-opacity);
+              background-color: rgba(#{cv.getVar("thumbnail-menu-background")}, #{cv.getVar("thumbnail-menu-background-opacity")});
             }
 
             picture,
             img {
-              filter: $thumbnail-menu-picture-filter;
+              filter: cv.getVar("thumbnail-menu-picture-filter");
             }
           }
         }

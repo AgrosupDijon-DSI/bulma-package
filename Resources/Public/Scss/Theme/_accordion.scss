@@ -1,73 +1,108 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "utilities/functions" as bpk_fn;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
 // https://creativebulma.net/product/bulmacollapsible
 
 $collapse-transition-speed: .2s !default;
 $collapse-transition-style: ease !default;
-$message-body-padding: 1.25em 1.5em !default;
-$accordion-content-padding: $card-content-padding !default;
-$accordion-header-padding: $card-header-padding !default;
-$accordion-header-color: $link !default;
-$accordion-header-hover-color: $link-active !default;
-$accordion-header-active-color: $link-active !default;
-$accordion-border-width: $card-border-width !default;
-$accordion-border-style: $card-border-style !default;
-$accordion-border-color: $card-border-color !default;
-$accordion-radius: $radius !default;
-$accordion-shadow: $card-shadow !default;
-$accordion-header-shadow: $card-header-shadow !default;
-$accordion-background-color: $scheme-main !default;
+$accordion-content-padding: cv.getVar("card-content-padding") !default;
+$accordion-header-padding: cv.getVar("card-header-padding") !default;
+$accordion-header-color: cv.getVar("link") !default;
+$accordion-header-hover-color: cv.getVar("text") !default;
+$accordion-header-active-color: cv.getVar("text") !default;
+$accordion-border-width: cv.getVar("card-border-width") !default;
+$accordion-border-style: cv.getVar("card-border-style") !default;
+$accordion-border-color: cv.getVar("card-border-color") !default;
+$accordion-radius: cv.getVar("radius") !default;
+$accordion-shadow: cv.getVar("card-shadow") !default;
+$accordion-header-shadow: cv.getVar("card-header-shadow") !default;
+$accordion-background-color: cv.getVar("scheme-main") !default;
+
+#{iv.$variables-host} {
+  @include cv.register-vars(
+    (
+      "collapse-transition-speed": #{$collapse-transition-speed},
+      "collapse-transition-style": #{$collapse-transition-style},
+    )
+  );
+}
+
+.#{iv.$class-prefix}accordion .card {
+  @include cv.register-vars(
+    (
+      "accordion-content-padding": #{$accordion-content-padding},
+      "accordion-header-padding": #{$accordion-header-padding},
+      "accordion-header-color": #{$accordion-header-color},
+      "accordion-header-hover-color": #{$accordion-header-hover-color},
+      "accordion-header-active-color": #{$accordion-header-active-color},
+      "accordion-border-width": #{$accordion-border-width},
+      "accordion-border-style": #{$accordion-border-style},
+      "accordion-border-color": #{$accordion-border-color},
+      "accordion-radius": #{$accordion-radius},
+      "accordion-shadow": #{$accordion-shadow},
+      "accordion-header-shadow": #{$accordion-header-shadow},
+      "accordion-background-color": #{$accordion-background-color},
+    )
+  );
+}
 
 .is-collapsible {
   height: 0;
   overflow-y: hidden;
-  transition: height $collapse-transition-speed $collapse-transition-style;
+  transition: height cv.getVar("collapse-transition-speed") cv.getVar("collapse-transition-style");
 
   &.is-active {
-    transition: height $collapse-transition-speed $collapse-transition-style;
+    transition: height cv.getVar("collapse-transition-speed") cv.getVar("collapse-transition-style");
   }
 
   &.message-body {
     padding: 0 !important;
 
     .message-body-content {
-      padding: $message-body-padding
+      padding: cv.getVar("message-body-padding");
     }
   }
 }
 
 .accordion {
   .card {
-    border: $accordion-border-width $accordion-border-style $accordion-border-color;
-    border-radius: $accordion-radius;
-    box-shadow: $accordion-shadow;
-    background-color: $accordion-background-color;
+    border: cv.getVar("accordion-border-width") cv.getVar("accordion-border-style") cv.getVar("accordion-border-color");
+    border-radius: cv.getVar("accordion-radius");
+    box-shadow: cv.getVar("accordion-shadow");
+    background-color: cv.getVar("accordion-background-color");
+
     &:not(:last-of-type) {
       margin-bottom: 0.5rem;
     }
   }
 
   .card-content {
-    padding: $accordion-content-padding;
+    padding: cv.getVar("accordion-content-padding");
   }
 
   .card-header {
-    box-shadow: $accordion-header-shadow;
+    box-shadow: cv.getVar("accordion-header-shadow");
+
     a {
-      color: $accordion-header-color
+      color: cv.getVar("accordion-header-color")
     }
+
     &:hover {
       cursor: pointer;
+
       a {
-        color: $accordion-header-hover-color;
+        color: cv.getVar("accordion-header-hover-color");
       }
     }
 
     i {
-      transition: transform $collapse-transition-speed $collapse-transition-style;
+      transition: transform cv.getVar("collapse-transition-speed") cv.getVar("collapse-transition-style");
     }
 
     &.is-active {
       a {
-        color: $accordion-header-active-color;
+        color: cv.getVar("accordion-header-active-color");
       }
 
       i {
@@ -77,15 +112,16 @@ $accordion-background-color: $scheme-main !default;
   }
 
   .card-header-title {
-    padding: $accordion-header-padding;
+    padding: cv.getVar("accordion-header-padding");
   }
 }
 
 .accordion-body {
-  .frame{
-    &:first-of-type{
+  .frame {
+    &:first-of-type {
       margin-top: 0 !important;
     }
+
     &:last-of-type {
       padding-bottom: 0;
     }

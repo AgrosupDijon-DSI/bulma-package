@@ -1,9 +1,11 @@
-.button{
+@use "bulma/sass/utilities/css-variables" as cv;
+
+.button {
   white-space: normal;
-  min-height: $control-height;
+  min-height: cv.getVar("control-height");
   height: auto;
 }
 
-.buttons .dropdown:not(last-child):not(.is-fullwidth){
+.buttons .dropdown:not(:last-child):not(.is-fullwidth) {
   margin-right: 0.5rem;
 }

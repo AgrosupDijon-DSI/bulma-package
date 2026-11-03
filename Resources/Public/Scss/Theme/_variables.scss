@@ -1,3 +1,13 @@
+// Custom
+$social-button-colors: (
+  "facebook": #1877f2,
+  "twitter": #1da1f2,
+  "linkedin": #0a66c2,
+  "email": #7d7d7d,
+  "print": #cccccc,
+  "copy-url": #333333
+) !default;
+$black-opacity: hsla(0, 0%, 0%, 0.2) !default;
 
 // Generic
 $strong-color: currentColor !default;
@@ -18,12 +28,14 @@ $table-head-cell-color: $table-cell-heading-color !default;
 // Navbar
 $navbar-item-img-max-height: 6em !default;
 $navbar-z: 30 !default;
+//$navbar-item-background-l: 100%;
+$navbar-item-selected-background-l: 100%;
+$navbar-item-selected-h: 221;
+$navbar-item-selected-s: 14%;
+//$navbar-dropdown-item-background-l: 100%;
 
 // Spacing
 $block-spacing: 2rem !default;
-
-// Colors
-$black-opacity: hsla(0, 0%, 0%, 0.2) !default;
 
 // Dropdown
 $dropdown-content-z: $navbar-z + 1 !default;
@@ -31,3 +43,6 @@ $dropdown-content-z: $navbar-z + 1 !default;
 // Card
 $card-radius: 0 !default;
 $card-media-margin: 1.5rem !default;
+
+// Derived
+$custom-colors: $social-button-colors !default;

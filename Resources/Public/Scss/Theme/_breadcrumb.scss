@@ -1,13 +1,31 @@
-$breadcrumb-font-size: $size-normal !default;
-$breadcrumb-font-weight: $weight-normal !default;
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "utilities/functions";
+@use "frame";
+
+$breadcrumb-font-size: cv.getVar("size-normal") !default;
+$breadcrumb-font-weight: cv.getVar("weight-normal") !default;
 $breadcrumb-white-space: nowrap !default;
-$breadcrumb-item-alignement: center !default;
+$breadcrumb-item-alignment: center !default;
+
+.#{iv.$class-prefix}breadcrumb {
+  @include cv.register-vars(
+    (
+      "breadcrumb-font-size": #{$breadcrumb-font-size},
+      "breadcrumb-font-weight": #{$breadcrumb-font-weight},
+      "breadcrumb-white-space": #{$breadcrumb-white-space},
+      "breadcrumb-item-alignment": #{$breadcrumb-item-alignment},
+    )
+  );
+}
 
 .breadcrumb {
-  font-size: $breadcrumb-font-size;
-  font-weight: $breadcrumb-font-weight;
-  white-space: $breadcrumb-white-space;
+  font-size: cv.getVar("breadcrumb-font-size");
+  font-weight: cv.getVar("breadcrumb-font-weight");
+  white-space: cv.getVar("breadcrumb-white-space");
+  margin: functions.getVarWithFallback("frame-spacing", frame.$frame-spacing) 0;
+
   li {
-    align-items: $breadcrumb-item-alignement;
+    align-items: cv.getVar("breadcrumb-item-alignment");
   }
 }

@@ -1,4 +1,7 @@
-$card-subtitle-color: $subtitle-color !default;
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
+$card-subtitle-color: cv.getVar("subtitle-color") !default;
 $card-border-color: transparent !default;
 $card-border-style: none !default;
 $card-border-width: 0 !default;
@@ -6,41 +9,66 @@ $card-image-padding: 0 !default;
 $card-image-link-position: initial !default;
 $card-image-link-display: initial !default;
 
-.card-equal-height{
+.#{iv.$class-prefix}card {
+  @include cv.register-vars(
+    (
+      "card-border-color": #{$card-border-color},
+      "card-border-style": #{$card-border-style},
+      "card-border-width": #{$card-border-width},
+      "card-image-padding": #{$card-image-padding},
+      "card-image-link-position": #{$card-image-link-position},
+      "card-image-link-display": #{$card-image-link-display},
+      "card-subtitle-color": #{$card-subtitle-color},
+    )
+  );
+}
+
+.#{iv.$class-prefix}card .subtitle{
+  @include cv.register-vars(
+    (
+      "card-subtitle-color": #{$card-subtitle-color},
+    )
+  );
+}
+
+.card-equal-height {
   display: flex;
   flex-direction: column;
   height: 100%;
+
   & .card-footer {
     margin-top: auto;
   }
 }
 
 .card-image {
-  padding: $card-image-padding;
-  a{
-    position: $card-image-link-position;
-    display: $card-image-link-display;
+  padding: cv.getVar("card-image-padding");
+
+  a {
+    position: cv.getVar("card-image-link-position");
+    display: cv.getVar("card-image-link-display");
   }
 }
 
-.card-footer{
+.card-footer {
   justify-content: space-evenly;
 }
 
-.card{
-  border: $card-border-width $card-border-style $card-border-color;
+.card {
+  border: cv.getVar("card-border-width") cv.getVar("card-border-style") cv.getVar("card-border-color");
   overflow: hidden;
-  .no-border &{
+
+  .no-border & {
     border: none;
     box-shadow: none;
 
-    .card-footer{
+    .card-footer {
       border-top: none;
       margin-top: 0;
     }
   }
 
   .subtitle {
-    color: $card-subtitle-color;
+    color: cv.getVar("card-subtitle-color");
   }
 }

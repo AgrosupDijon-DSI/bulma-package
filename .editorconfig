@@ -67,3 +67,6 @@ indent_size = 2
 # .htaccess
 [{_.htaccess,.htaccess}]
 indent_style = tab
+
+[{*.scss,*.css}]
+indent_size = 2

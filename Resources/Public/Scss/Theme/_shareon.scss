@@ -1,7 +1,10 @@
-.shareon{
-  .copy-url.done{
-    background-color: $success;
-    .fa-link::before{
+@use "bulma/sass/utilities/css-variables" as cv;
+
+.shareon {
+  .copy-url.done {
+    background-color: cv.getVar("success");
+
+    .fa-link::before {
       content: "\f00c";
     }
   }

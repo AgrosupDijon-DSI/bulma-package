@@ -1,31 +1,54 @@
-$news-carousel-content-background-dark-color: $carousel-content-background-dark-color !default;
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "utilities/functions";
+@use "bulma/sass/elements/title";
+@use "bulma/sass/layout/media";
 
-.news{
-  .news-additional-informations{
-    font-size: $small-font-size;
-    .icon-text{
+$news-carousel-content-background-dark-color: cv.getVar("carousel-content-background-dark-color") !default;
+$news-title-line-height: functions.getVarWithFallback("title-line-height", title.$title-line-height) !default;
+$news-media-spacing: functions.getVarWithFallback("media-spacing", media.$media-spacing) !default;
+
+.#{iv.$class-prefix}news {
+  @include cv.register-vars(
+    (
+      "news-carousel-content-background-dark-color": #{$news-carousel-content-background-dark-color},
+      "news-title-line-height": #{$news-title-line-height},
+      "news-media-spacing": #{$news-media-spacing},
+    )
+  );
+}
+
+.news {
+  .news-additional-informations {
+    font-size: cv.getVar("small-font-size");
+
+    .icon-text {
       align-items: center;
     }
   }
 
-  .news-gallery, .news-related{
-    margin-bottom: $block-spacing;
+  .news-gallery, .news-related {
+    margin-bottom: cv.getVar("block-spacing");
   }
-  .news-related-links{
-    p{
+
+  .news-related-links {
+    p {
       margin-top: 0.25em;
     }
   }
-  .carousel{
-    .content{
-      *{
-        color: $news-carousel-content-background-dark-color;
+
+  .carousel {
+    .content {
+      * {
+        color: cv.getVar("news-carousel-content-background-dark-color");
       }
     }
-    .news-additional-informations{
+
+    .news-additional-informations {
       display: flex;
-      .icon-text{
-        &:not(:last-of-type){
+
+      .icon-text {
+        &:not(:last-of-type) {
           padding-right: 1rem;
         }
       }
@@ -33,50 +56,57 @@ $news-carousel-content-background-dark-color: $carousel-content-background-dark-
   }
 
   .agenda {
-      time{
-          display: flex;
-          align-items: center;
-          span{
-              display: block;
-          }
-          width: 160px;
-      }
-      .news-day{
-          color: $link;
-          font-size: $size-1;
-          font-weight: $weight-bold;
-          border-right: 1px solid currentColor;
-          padding-right: 0.75rem;
-          margin-right: 0.75rem;
-          line-height: 0.8;
-          .has-background-primary &{
-              color: findColorInvert($primary);
-          }
+    time {
+      display: flex;
+      align-items: center;
+
+      span {
+        display: block;
       }
 
-      .news-month{
-          font-weight: $weight-semibold;
-          line-height: $title-line-height;
-      }
+      width: 160px;
+    }
 
-      .media-content{
-          padding-left: 1rem;
+    .news-day {
+      color: cv.getVar("link");
+      font-size: cv.getVar("size-1");
+      font-weight: cv.getVar("weight-bold");
+      border-right: 1px solid currentColor;
+      padding-right: 0.75rem;
+      margin-right: 0.75rem;
+      line-height: 0.8;
+
+      .has-background-primary & {
+        color: cv.getVar("primary-invert");
       }
-      & + .agenda{
-          border-top: 0;
-          .media-content{
-              position: relative;
-              &:after{
-                  display: block;
-                  content: "";
-                  height: 1px;
-                  background-color: $border;
-                  position: absolute;
-                  top: -$media-spacing;
-                  left: 0;
-                  width: 100%;
-              }
-          }
+    }
+
+    .news-month {
+      font-weight: cv.getVar("weight-semibold");
+      line-height: cv.getVar("news-title-line-height");
+    }
+
+    .media-content {
+      padding-left: 1rem;
+    }
+
+    & + .agenda {
+      border-top: 0;
+
+      .media-content {
+        position: relative;
+
+        &:after {
+          display: block;
+          content: "";
+          height: 1px;
+          background-color: cv.getVar("border");
+          position: absolute;
+          top: calc(-1 * #{cv.getVar("news-media-spacing")});
+          left: 0;
+          width: 100%;
+        }
       }
+    }
   }
 }

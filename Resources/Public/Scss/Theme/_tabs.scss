@@ -1,76 +1,93 @@
-@import "../../Build/simplebar.min";
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "bulma/sass/components/tabs" as t;
+@import "simplebar/dist/simplebar.min.css";
 
 .simplebar-scrollbar::before {
-    background-color: $link;
+  background-color: cv.getVar("link");
 }
 
 .simplebar-wrapper {
-    padding-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 $tabs-content-padding: 1.5rem 0 0 0 !default;
 $tabs-boxed-link-border-color: transparent !default;
 $tabs-boxed-margin-left: 0 !default;
-$tabs-weight: $weight-normal !default;
-$tabs-boxed-link-color: $tabs-link-color !default;
-$tabs-boxed-link-active-color: $tabs-link-active-color !default;
+$tabs-weight: cv.getVar("weight-normal") !default;
+$tabs-boxed-link-color: cv.getVar("tabs-link-color") !default;
+$tabs-boxed-link-active-color: cv.getVar("tabs-link-active-color") !default;
+
+.#{iv.$class-prefix}tabs {
+  @include cv.register-vars(
+    (
+      "tabs-content-padding": #{$tabs-content-padding},
+      "tabs-boxed-link-border-color": #{$tabs-boxed-link-border-color},
+      "tabs-boxed-margin-left": #{$tabs-boxed-margin-left},
+      "tabs-weight": #{$tabs-weight},
+      "tabs-boxed-link-color": #{$tabs-boxed-link-color},
+      "tabs-boxed-link-active-color": #{$tabs-boxed-link-active-color},
+    )
+  );
+}
 
 .tabs {
+  a {
+    font-weight: cv.getVar("tabs-weight");
+  }
+
+  li {
+    &.is-active {
+      a:hover {
+        cursor: default;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  &.is-boxed {
     a {
-        font-weight: $tabs-weight;
+      border-color: cv.getVar("tabs-boxed-link-border-color");
+      color: cv.getVar("tabs-boxed-link-color");
     }
 
     li {
-        &.is-active {
-            a:hover {
-                cursor: default;
-                text-decoration: none;
-            }
-        }
-    }
-
-    &:not(:last-child) {
-        margin-bottom: 0;
-    }
-
-    &.is-boxed {
+      &.is-active {
         a {
-            border-color: $tabs-boxed-link-border-color;
-            color: $tabs-boxed-link-color;
+          color: cv.getVar("tabs-boxed-link-active-color");
         }
+      }
 
-        li {
-            &.is-active {
-                a {
-                    color: $tabs-boxed-link-active-color;
-                }
-            }
-
-            &:not(:first-child) {
-                margin-left: $tabs-boxed-margin-left;
-            }
-        }
+      &:not(:first-child) {
+        margin-left: cv.getVar("tabs-boxed-margin-left");
+      }
     }
+  }
 }
 
 .tabs-content {
-    padding: $tabs-content-padding;
+  padding: cv.getVar("tabs-content-padding");
 
-    & > ul > li {
-        display: none;
+  & > ul > li {
+    display: none;
 
-        &.is-active {
-            display: block;
-        }
+    &.is-active {
+      display: block;
+    }
+  }
+
+  .frame {
+    &:first-of-type {
+      margin-top: 0 !important;
     }
 
-    .frame {
-        &:first-of-type {
-            margin-top: 0 !important;
-        }
-
-        &:last-of-type {
-            padding-bottom: 0;
-        }
+    &:last-of-type {
+      padding-bottom: 0;
     }
+  }
 }

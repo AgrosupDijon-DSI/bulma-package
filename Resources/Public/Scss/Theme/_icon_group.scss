@@ -1,31 +1,55 @@
-$icon-group-background-color: $box-background-color !default;
-$icon-group-background-color-hover: $primary-light !default;
-$icon-group-radius: $box-radius !default;
-$icon-group-border: none !default;
-$icon-group-shadow: $box-shadow !default;
-$icon-group-padding: $box-padding !default;
-$icon-group-link-hover-shadow: $box-link-hover-shadow !default;
-$icon-group-link-active-shadow: $box-link-active-shadow !default;
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/elements/box";
 
-.icon-group{
+$icon-group-background-color: cv.getVar("box-background-color") !default;
+$icon-group-background-color-hover: cv.getVar("primary-light") !default;
+$icon-group-radius: cv.getVar("box-radius") !default;
+$icon-group-border: none !default;
+$icon-group-shadow: cv.getVar("box-shadow") !default;
+$icon-group-padding: cv.getVar("box-padding") !default;
+$icon-group-link-hover-shadow: cv.getVar("box-link-hover-shadow") !default;
+$icon-group-link-active-shadow: cv.getVar("box-link-active-shadow") !default;
+
+.#{iv.$class-prefix}icon-group {
+  @include cv.register-vars(
+    (
+      "icon-group-background-color": #{$icon-group-background-color},
+      "icon-group-background-color-hover": #{$icon-group-background-color-hover},
+      "icon-group-radius": #{$icon-group-radius},
+      "icon-group-border": #{$icon-group-border},
+      "icon-group-shadow": #{$icon-group-shadow},
+      "icon-group-padding": #{$icon-group-padding},
+      "icon-group-link-hover-shadow": #{$icon-group-link-hover-shadow},
+      "icon-group-link-active-shadow": #{$icon-group-link-active-shadow},
+    )
+  );
+}
+
+.icon-group {
   .column > a {
-    .content *{
-      color: $link !important;
+    .content * {
+      color: cv.getVar("link") !important;
     }
+
     &:hover {
-      .icon, .content *{
-        color: $text !important;
+      .icon, .content * {
+        color: cv.getVar("text") !important;
       }
+
       text-decoration: none;
-      background-color: $icon-group-background-color-hover;
+      background-color: cv.getVar("icon-group-background-color-hover");
     }
   }
+
   &:not(.boxed) {
     .column > a {
       position: relative;
+
       &:hover {
         z-index: 0;
-        &:before{
+
+        &:before {
           background-color: inherit;
           bottom: -0.75em;
           left: -0.75em;
@@ -38,85 +62,102 @@ $icon-group-link-active-shadow: $box-link-active-shadow !default;
       }
     }
   }
-  &-item{
+
+  &-item {
     display: flex;
     align-content: stretch;
     height: 100%;
+
     .boxed & {
-        @extend .box;
-        border-radius: $icon-group-radius;
-        background-color: $icon-group-background-color;
-        border: $icon-group-border;
-        padding: $icon-group-padding;
-        box-shadow: $icon-group-shadow;
+      @extend .#{iv.$class-prefix}box;
+      border-radius: cv.getVar("icon-group-radius");
+      background-color: cv.getVar("icon-group-background-color");
+      border: cv.getVar("icon-group-border");
+      padding: cv.getVar("icon-group-padding");
+      box-shadow: cv.getVar("icon-group-shadow");
     }
+
     .boxed a & {
-        &:hover,
-        &:focus {
-            box-shadow: $icon-group-link-hover-shadow;
-        }
-        &:active {
-            box-shadow: $icon-group-link-active-shadow;
-        }
+      &:hover,
+      &:focus {
+        box-shadow: cv.getVar("icon-group-link-hover-shadow");
+      }
+
+      &:active {
+        box-shadow: cv.getVar("icon-group-link-active-shadow");
+      }
     }
   }
-  .content{
+
+  .content {
     flex-grow: 1;
     word-break: break-word;
   }
-  &-top{
-    .icon-group-item{
+
+  &-top {
+    .icon-group-item {
       flex-direction: column;
-      .icon, picture{
+
+      .icon, picture {
         margin-left: auto;
         margin-right: auto;
-        & + .content{
+
+        & + .content {
           margin-top: 1rem;
         }
       }
     }
   }
-  &-left{
-    .icon, picture{
-      & + .content{
+
+  &-left {
+    .icon, picture {
+      & + .content {
         margin-left: 1rem;
       }
     }
   }
-  &-right{
+
+  &-right {
     .icon-group-item {
       flex-direction: row-reverse;
-      .icon, picture{
-        & + .content{
+
+      .icon, picture {
+        & + .content {
           margin-right: 1rem;
         }
       }
     }
   }
-  &-bottom{
+
+  &-bottom {
     .icon-group-item {
       flex-direction: column-reverse;
-      .icon, picture{
+
+      .icon, picture {
         margin-left: auto;
         margin-right: auto;
-        & + .content{
+
+        & + .content {
           margin-bottom: 1rem;
         }
       }
     }
   }
-  &-right, &-left{
-    .is-xxl{
+
+  &-right, &-left {
+    .is-xxl {
       max-width: 50%;
     }
   }
-  &.has-items-center{
-    .icon-group-item{
+
+  &.has-items-center {
+    .icon-group-item {
       align-items: center;
     }
   }
-  &.has-items-end{
-    .icon-group-item{
+
+  &.has-items-end {
+    .icon-group-item {
       align-items: flex-end;
     }
   }

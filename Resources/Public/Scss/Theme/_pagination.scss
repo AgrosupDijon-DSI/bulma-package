@@ -1,8 +1,9 @@
+@use "bulma/sass/utilities/css-variables" as cv;
 
-.pagination{
+.pagination {
   align-items: flex-start;
 }
 
-.pagination-link{
-  margin-bottom: $pagination-item-margin;
+.pagination-link {
+  margin-bottom: cv.getVar("pagination-item-margin");
 }

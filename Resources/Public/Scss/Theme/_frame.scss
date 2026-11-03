@@ -1,11 +1,25 @@
-$frame-spacing: $block-spacing !default;
-$frame-spacing-large: $frame-spacing * 2 !default;
-$frame-spacing-xl: $frame-spacing * 4 !default;
-$frame-spacing-negative-large: $frame-spacing-large !default;
-$frame-spacing-negative-xl: $frame-spacing-xl !default;
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/mixins";
+@use "bulma/sass/layout/container";
+@use "bulma/sass/elements/content";
 
-.breadcrumb {
-  margin: $frame-spacing 0;
+$frame-spacing: cv.getVar("block-spacing") !default;
+$frame-spacing-large: calc(#{cv.getVar("frame-spacing")} * 2) !default;
+$frame-spacing-xl: calc(#{cv.getVar("frame-spacing")} * 4) !default;
+$frame-spacing-negative-large: cv.getVar("frame-spacing-large") !default;
+$frame-spacing-negative-xl: cv.getVar("frame-spacing-xl") !default;
+
+.#{iv.$class-prefix}frame {
+  @include cv.register-vars(
+    (
+      "frame-spacing": #{$frame-spacing},
+      "frame-spacing-large": #{$frame-spacing-large},
+      "frame-spacing-xl": #{$frame-spacing-xl},
+      "frame-spacing-negative-large": #{$frame-spacing-negative-large},
+      "frame-spacing-negative-xl": #{$frame-spacing-negative-xl},
+    )
+  );
 }
 
 #main {
@@ -16,13 +30,13 @@ $frame-spacing-negative-xl: $frame-spacing-xl !default;
   position: relative;
 
   &:not(.is-background-limited) {
-    padding: $frame-spacing 0;
+    padding: cv.getVar("frame-spacing") 0;
   }
 
   &:not(.frame ~ .frame) {
     &:not([class*="frame-space-before-"]):not([class*="has-background-"]):not(.is-background-limited) {
       padding-top: 0;
-      margin-top: $frame-spacing;
+      margin-top: cv.getVar("frame-spacing");
     }
   }
 
@@ -32,7 +46,7 @@ $frame-spacing-negative-xl: $frame-spacing-xl !default;
 }
 
 [class*="has-background-"].frame-inner {
-  padding: $frame-spacing;
+  padding: cv.getVar("frame-spacing");
 }
 
 .frame-space-before-no-space {
@@ -49,66 +63,70 @@ $frame-spacing-negative-xl: $frame-spacing-xl !default;
 }
 
 .frame-space-before-large {
-  &:not([class*="has-background-"]){
-    padding-top: $frame-spacing-large;
+  &:not([class*="has-background-"]) {
+    padding-top: cv.getVar("frame-spacing-large");
   }
-  &[class*="has-background-"]{
-    margin-top: $frame-spacing-large;
+
+  &[class*="has-background-"] {
+    margin-top: cv.getVar("frame-spacing-large");
   }
 }
 
 .frame-space-after-large {
-  &:not([class*="has-background-"]){
-    padding-bottom: $frame-spacing-large;
+  &:not([class*="has-background-"]) {
+    padding-bottom: cv.getVar("frame-spacing-large");
   }
-  &[class*="has-background-"]{
-    margin-bottom: $frame-spacing-large;
+
+  &[class*="has-background-"] {
+    margin-bottom: cv.getVar("frame-spacing-large");
   }
 }
 
 .frame-space-before-xl {
-  &:not([class*="has-background-"]){
-    padding-top: $frame-spacing-xl;
+  &:not([class*="has-background-"]) {
+    padding-top: cv.getVar("frame-spacing-xl");
   }
-  &[class*="has-background-"]{
-    margin-top: $frame-spacing-xl;
+
+  &[class*="has-background-"] {
+    margin-top: cv.getVar("frame-spacing-xl");
   }
 }
 
 .frame-space-after-xl {
-  &:not([class*="has-background-"]){
-    padding-bottom: $frame-spacing-xl;
+  &:not([class*="has-background-"]) {
+    padding-bottom: cv.getVar("frame-spacing-xl");
   }
-  &[class*="has-background-"]{
-    margin-bottom: $frame-spacing-xl;
+
+  &[class*="has-background-"] {
+    margin-bottom: cv.getVar("frame-spacing-xl");
   }
 }
 
 .frame-space-before-negative-large {
-  margin-top: -$frame-spacing-negative-large;
+  margin-top: calc(-1 * #{cv.getVar("frame-spacing-negative-large")});
   padding-top: 0;
 }
 
 .frame-space-after-negative-large {
   padding-bottom: 0;
-  margin-bottom: -$frame-spacing-negative-large;
+  margin-bottom: calc(-1 * #{cv.getVar("frame-spacing-negative-large")});
   position: relative;
   z-index: 1;
 }
 
 .frame-space-before-negative-xl {
-  margin-top: -$frame-spacing-negative-xl;
+  margin-top: calc(-1 * #{cv.getVar("frame-spacing-negative-xl")});
 }
 
 .frame-space-after-negative-xl {
-  margin-bottom: -$frame-spacing-negative-xl;
+  margin-bottom: calc(-1 * #{cv.getVar("frame-spacing-negative-xl")});
   position: relative;
   z-index: 1;
 }
 
 #main:not(.column) > .frame-fullwidth {
   .container {
-    @extend .is-fluid;
+    @extend .#{iv.$class-prefix}is-fluid;
 
     .container {
       padding: 0;
@@ -119,11 +137,11 @@ $frame-spacing-negative-xl: $frame-spacing-xl !default;
 .frame-inner {
   // Login
   .frame-type-felogin_login & {
-    @extend .content;
+    @extend .#{iv.$class-prefix}content;
   }
 }
 
-@include touch {
+@include mixins.touch {
   #content {
     & > .container > .columns {
       margin-left: 0;

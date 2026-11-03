@@ -1,10 +1,15 @@
+@use "sass:math";
+@use "bulma/sass/utilities/mixins";
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
 .container:not(#content > *) {
-  @include until($tablet) {
-    padding-left: $gap / 2;
-    padding-right: $gap / 2;
+  @include mixins.until(iv.$tablet) {
+    padding-left: math.div(iv.$gap, 2);
+    padding-right: math.div(iv.$gap, 2);
   }
-  @include tablet-only {
-    padding-left: $gap;
-    padding-right: $gap;
+  @include mixins.tablet-only {
+    padding-left: iv.$gap;
+    padding-right: iv.$gap;
   }
 }

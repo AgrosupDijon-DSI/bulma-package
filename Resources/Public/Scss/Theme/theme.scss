@@ -1,59 +1,83 @@
-//
-// Variables
-//
-@import "variables";
-@import "derived_variables";
+@use "variables" as bpk_v;
 
-//
-// Import needed Bulma Files
-//
-@import "../../Contrib/bulma-scss/bulma";
+@use "bulma/sass" with (
+  // Generic
+  $strong-color: bpk_v.$strong-color,
 
-//
-// Components
-//
-@import "visibility";
-@import "misc";
-@import "background";
-@import "mobile-small";
-@import "container";
-@import "header";
-@import "navbar";
-@import "content";
-@import "frame";
-@import "message";
-@import "textmedia";
-@import "tabs";
-@import "card";
-@import "accordion";
-@import "photoswipe";
-@import "thumbnail-menu";
-@import "divider";
-@import "flickity";
-@import "flickity_fade";
-@import "carousel";
-@import "checkradio";
-@import "form";
-@import "search";
-@import "list";
-@import "megamenu";
-@import "address";
-@import "uploads";
-@import "icon_group";
-@import "button";
-@import "media-gallery";
-@import "news";
-@import "dropdown";
-@import "icons";
-@import "iframe";
-@import "ratio";
-@import "flashmessages";
-@import "partners";
-@import "breadcrumb";
-@import "generic";
-@import "scroll";
-@import "pagination";
-@import "links";
-@import "shareon";
-@import "slimSelect";
-@import "klaro";
+  // Content
+  $content-heading-color: bpk_v.$content-heading-color,
+  $content-table-cell-heading-color: bpk_v.$content-table-cell-heading-color,
+  $content-table-head-cell-color: bpk_v.$content-table-head-cell-color,
+
+  // Title
+  $title-color: bpk_v.$title-color,
+  $subtitle-color: bpk_v.$subtitle-color,
+
+  // Table
+  $table-cell-heading-color: bpk_v.$table-cell-heading-color,
+  $table-head-cell-color: bpk_v.$table-head-cell-color,
+
+  // Navbar
+  $navbar-item-img-max-height: bpk_v.$navbar-item-img-max-height,
+  $navbar-z: bpk_v.$navbar-z,
+
+  // Spacing
+  $block-spacing: bpk_v.$block-spacing,
+
+  // Dropdown
+  $dropdown-content-z: bpk_v.$dropdown-content-z,
+
+  // Card
+  $card-radius: bpk_v.$card-radius,
+  $card-media-margin: bpk_v.$card-media-margin,
+
+  // Derived
+  $custom-colors: bpk_v.$custom-colors,
+);
+
+@forward "visibility";
+@forward "misc";
+@forward "background";
+@forward "mobile-small";
+@forward "container";
+@forward "header";
+@forward "navbar";
+@forward "content";
+@forward "frame";
+@forward "message";
+@forward "textmedia";
+@forward "tabs";
+@forward "card";
+@forward "accordion";
+@forward "photoswipe";
+@forward "thumbnail-menu";
+@forward "divider";
+@forward "flickity";
+@forward "flickity_fade";
+@forward "carousel";
+@forward "checkradio";
+@forward "form";
+@forward "search";
+@forward "list";
+@forward "megamenu";
+@forward "address";
+@forward "uploads";
+@forward "icon_group";
+@forward "button";
+@forward "media-gallery";
+@forward "news";
+@forward "dropdown";
+@forward "icons";
+@forward "iframe";
+@forward "ratio";
+@forward "flashmessages";
+@forward "partners";
+@forward "breadcrumb";
+@forward "generic";
+@forward "scroll";
+@forward "pagination";
+@forward "links";
+@forward "shareon";
+@forward "slimSelect";
+@forward "klaro";
+@forward "notification";

@@ -1,20 +1,35 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
 $address-spacing-top-phone-email: 2rem !default;
 
-address{
+#{iv.$variables-host} {
+  @include cv.register-vars(
+    (
+      "address-spacing-top-phone-email": #{$address-spacing-top-phone-email},
+    )
+  );
+}
+
+address {
   font-style: normal;
-  #phone, #email{
-    &:not(:first-child){
-      margin-top: $address-spacing-top-phone-email;
+
+  #phone, #email {
+    &:not(:first-child) {
+      margin-top: cv.getVar("address-spacing-top-phone-email");
     }
   }
-  #phone + #email{
+
+  #phone + #email {
     margin-top: auto;
   }
-  #phone{
-    font-weight: $weight-bold;
+
+  #phone {
+    font-weight: cv.getVar("weight-bold");
   }
-  #geo{
-    a{
+
+  #geo {
+    a {
       font-size: 0.7rem;
     }
   }

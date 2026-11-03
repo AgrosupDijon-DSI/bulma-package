@@ -1,7 +1,11 @@
+@use "bulma/sass/utilities/extends";
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/elements/image";
 
-.iframe-wrapper{
-  @extend .image;
-  iframe{
+.iframe-wrapper {
+  @extend .#{iv.$class-prefix}image;
+
+  iframe {
     @extend %overlay;
 
     height: 100%;

@@ -1,13 +1,18 @@
-img{
+@use "sass:math";
+@use "variables" as v;
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
+img {
   display: block;
   margin: auto;
 }
 
-.is-cover{
+.is-cover {
   object-fit: cover;
 }
 
-.is-disable{
+.is-disable {
   pointer-events: none;
   opacity: .65;
 }
@@ -19,27 +24,31 @@ img{
   overflow: hidden;
   transition: all .3s ease-in-out;
   z-index: 1020;
-  background-color: $black-opacity;
+  background-color: v.$black-opacity;
   color: #ffffff;
-  bottom: ($gap / 2);
-  right: ($gap / 2);
+  bottom: math.div(iv.$gap, 2);
+  right: math.div(iv.$gap, 2);
   position: fixed;
   opacity: 0;
   width: 3em;
   height: 3em;
+
   &:active,
   &:focus,
   &:hover {
     color: #ffffff;
-    background-color: $primary;
+    background-color: cv.getVar("primary");
   }
+
   .scroll-top-icon {
     @extend .css-arrow;
   }
+
   &.scroll-top-visible {
     opacity: 1;
   }
 }
+
 .css-arrow {
   transform: rotate(45deg);
   position: absolute;
@@ -47,6 +56,7 @@ img{
   left: 0;
   height: 100%;
   width: 100%;
+
   &:before {
     content: '';
     position: absolute;
@@ -60,26 +70,27 @@ img{
   }
 }
 
-a{
-  figure &{
+a {
+  figure & {
     display: inline-block;
     position: relative;
   }
-  figure &, .card-image &{
-    picture:after{
+
+  figure &, .card-image & {
+    picture:after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: $primary;
+      background-color: cv.getVar("primary");
       opacity: 0;
       transition: opacity 0.25s ease-in-out;
     }
 
-    &:hover{
-      picture:after{
+    &:hover {
+      picture:after {
         opacity: 0.4;
       }
     }

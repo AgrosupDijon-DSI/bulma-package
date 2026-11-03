@@ -1,26 +1,35 @@
-#tx_indexedsearch{
-  & + .notification{
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/helpers/color";
+@use "bulma/sass/components/pagination";
+@use "content";
+
+#tx_indexedsearch {
+  & + .notification {
     margin-top: 3rem;
   }
-  & + div.content{
+
+  & + div.content {
     margin-top: 3rem;
   }
 }
 
-.tx-indexedsearch-redMarkup{
-  @extend .has-text-success;
+.tx-indexedsearch-redMarkup {
+  @extend .#{iv.$class-prefix}#{iv.$helpers-has-prefix}text-success;
 }
 
-.tx-indexedsearch-browsebox{
-  @extend .pagination-list;
+.tx-indexedsearch-browsebox {
+  @extend .#{iv.$class-prefix}pagination-list;
   @extend .is-unstyled;
-  a{
-    @extend .pagination-link;
+
+  a {
+    @extend .#{iv.$class-prefix}pagination-link;
   }
-  li + li{
+
+  li + li {
     margin-top: 0;
   }
-  li strong a{
-    @extend .is-current;
+
+  li strong a {
+    @extend .#{iv.$class-prefix}is-current;
   }
 }

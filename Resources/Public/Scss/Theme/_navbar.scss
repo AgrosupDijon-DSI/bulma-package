@@ -1,19 +1,80 @@
-$navbar-item-weight: $weight-semibold !default;
-$navbar-item-size: $body-font-size !default;
+@use "sass:meta";
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "bulma/sass/utilities/functions" as fn;
+@use "bulma/sass/utilities/mixins";
+@use "bulma/sass/components/navbar" as n;
+
+$navbar-item-weight: cv.getVar("weight-semibold") !default;
+$navbar-item-size: cv.getVar("body-font-size") !default;
 $navbar-item-text-decoration-hover: none !default;
 $navbar-item-text-decoration-active: none !default;
-$navbar-dropdown-box-shadow: 0 8px 8px bulmaRgba($scheme-invert, 0.1) !default;
+$navbar-dropdown-box-shadow: 0 8px 8px fn.bulmaRgba(dv.$scheme-invert, 0.1) !default;
 $navbar-dropdown-border-bottom: 0 !default;
-$navbar-dropdown-border-top-color: $primary !default;
-$navbar-dropdown-item-color: $navbar-item-color !default;
+$navbar-dropdown-border-top: 2px solid cv.getVar("border") !default;
+$navbar-dropdown-border-top-color: cv.getVar("primary") !default;
+$navbar-dropdown-item-color: cv.getVar("navbar-item-color") !default;
 $navbar-dropdown-item-text-decoration-hover: none !default;
 $navbar-dropdown-item-text-decoration-active: none !default;
-$navbar-height-touch: $navbar-height !default;
+$navbar-height-touch: cv.getVar("navbar-height") !default;
+
+$navbar-dropdown-item-active-background-color: cv.getVar("background") !default;
+$navbar-dropdown-item-active-color: cv.getVar("link") !default;
+$navbar-dropdown-item-hover-background-color: cv.getVar("background") !default;
+$navbar-dropdown-item-hover-color: cv.getVar("scheme-invert") !default;
 //$navbar-with-background-item-hover-background-color;
 //$navbar-with-background-item-active-background-color
 //$navbar-with-background-item-hover-color;
 //$navbar-with-background-item-active-color;
 //$navbar-with-background-dropdown-arrow;
+
+$navbar-item-selected-background-l: cv.getVar("navbar-item-background-l") !default;
+$navbar-item-active-background-l-delta: cv.getVar("navbar-item-hover-background-l-delta") !default;
+$navbar-item-selected-h: cv.getVar("navbar-h") !default;
+$navbar-item-selected-s: cv.getVar("navbar-s") !default;
+
+.#{iv.$class-prefix}navbar {
+  @include cv.register-vars(
+    (
+      "navbar-item-weight": #{$navbar-item-weight},
+      "navbar-item-size": #{$navbar-item-size},
+      "navbar-item-text-decoration-hover": #{$navbar-item-text-decoration-hover},
+      "navbar-item-text-decoration-active": #{$navbar-item-text-decoration-active},
+      "navbar-dropdown-box-shadow": #{$navbar-dropdown-box-shadow},
+      "navbar-dropdown-border-bottom": #{$navbar-dropdown-border-bottom},
+      "navbar-dropdown-border-top": #{$navbar-dropdown-border-top},
+      "navbar-dropdown-item-color": #{$navbar-dropdown-item-color},
+      "navbar-dropdown-item-text-decoration-hover": #{$navbar-dropdown-item-text-decoration-hover},
+      "navbar-dropdown-item-text-decoration-active": #{$navbar-dropdown-item-text-decoration-active},
+      "navbar-height-touch": #{$navbar-height-touch},
+      "navbar-dropdown-item-active-background-color": #{$navbar-dropdown-item-active-background-color},
+      "navbar-dropdown-item-active-color": #{$navbar-dropdown-item-active-color},
+      "navbar-dropdown-item-hover-background-color": #{$navbar-dropdown-item-hover-background-color},
+      "navbar-dropdown-item-hover-color": #{$navbar-dropdown-item-hover-color},
+
+      // Overrides of original navbar component
+      "navbar-item-selected-background-l": #{$navbar-item-selected-background-l},
+      "navbar-item-active-background-l-delta": #{$navbar-item-active-background-l-delta},
+      "navbar-item-selected-h": #{$navbar-item-selected-h},
+      "navbar-item-selected-s": #{$navbar-item-selected-s},
+    )
+  );
+}
+
+a.#{iv.$class-prefix}navbar-item,
+.#{iv.$class-prefix}navbar-link {
+  &.#{iv.$class-prefix}is-active,
+  &.#{iv.$class-prefix}is-selected {
+    @include cv.register-vars(
+      (
+        "navbar-item-background-l-delta": #{cv.getVar(
+            "navbar-item-active-background-l-delta"
+          )},
+      )
+    );
+  }
+}
 
 .navbar-item {
   &:empty {
@@ -27,8 +88,8 @@ $navbar-height-touch: $navbar-height !default;
 
 .navbar-start, .navbar-end {
   & > a, & > .navbar-item > a {
-    font-weight: $navbar-item-weight;
-    font-size: $navbar-item-size;
+    font-weight: cv.getVar("navbar-item-weight");
+    font-size: cv.getVar("navbar-item-size");
   }
 }
 
@@ -44,22 +105,23 @@ $navbar-height-touch: $navbar-height !default;
   }
 }
 
-@include until($navbar-breakpoint) {
-  .navbar{
-    min-height: $navbar-height-touch;
+@include mixins.until(n.$navbar-breakpoint) {
+  .navbar {
+    min-height: cv.getVar("navbar-height-touch");
+
     & > .container {
-      min-height: $navbar-height-touch;
+      min-height: cv.getVar("navbar-height-touch");
     }
   }
   .navbar-menu {
     display: block;
     position: absolute;
     width: 100%;
-    border-top: $navbar-dropdown-border-top;
-    border-color: $primary;
+    border-top: cv.getVar("navbar-dropdown-border-top");
+    border-color: cv.getVar("primary");
     box-shadow: none;
     padding: 0;
-    border-bottom: $navbar-dropdown-border-bottom;
+    border-bottom: cv.getVar("navbar-dropdown-border-bottom");
     right: 100%;
     transition: 0.5s ease-in-out transform;
     max-height: 100vh;
@@ -72,7 +134,7 @@ $navbar-height-touch: $navbar-height !default;
       overflow: initial;
     }
 
-    html[dir="rtl"] &{
+    html[dir="rtl"] & {
       right: initial;
       left: 100%;
 
@@ -84,8 +146,8 @@ $navbar-height-touch: $navbar-height !default;
 
     .navbar-start, .navbar-end {
       & > .navbar-item {
-        border-bottom: $navbar-dropdown-border-top;
-        border-color: $navbar-dropdown-border-top-color;
+        border-bottom: cv.getVar("navbar-dropdown-border-top");
+        border-color: cv.getVar("navbar-dropdown-border-top-color");
       }
     }
 
@@ -106,7 +168,7 @@ $navbar-height-touch: $navbar-height !default;
 
     .navbar-dropdown {
       margin-left: 1.5rem;
-      border-left: 1px solid $primary;
+      border-left: 1px solid cv.getVar("primary");
     }
   }
   .navbar > .container {
@@ -114,10 +176,10 @@ $navbar-height-touch: $navbar-height !default;
   }
 }
 
-@include from($navbar-breakpoint) {
+@include mixins.from(n.$navbar-breakpoint) {
   .navbar-start, .navbar-end {
-    & > .navbar-item{
-      min-height: $navbar-height;
+    & > .navbar-item {
+      min-height: cv.getVar("navbar-height");
     }
   }
 
@@ -149,12 +211,14 @@ $navbar-height-touch: $navbar-height !default;
   }
 
   .navbar-dropdown {
-    border-top-color: $navbar-dropdown-border-top-color;
-    box-shadow: $navbar-dropdown-box-shadow;
-    border-bottom: $navbar-dropdown-border-bottom;
+    border-top-color: cv.getVar("navbar-dropdown-border-top-color");
+    box-shadow: cv.getVar("navbar-dropdown-box-shadow");
+    border-bottom: cv.getVar("navbar-dropdown-border-bottom");
+
     .navbar-item {
-      color: $navbar-dropdown-item-color;
-      & > .navbar-link{
+      color: cv.getVar("navbar-dropdown-item-color");
+
+      & > .navbar-link {
         padding: 0.375rem 1rem;
       }
     }
@@ -176,9 +240,10 @@ $navbar-height-touch: $navbar-height !default;
       border-top-right-radius: 6px;
       box-shadow: 0 4px 10px rgba(10, 10, 10, 0.1);
       border-top: 0;
-      border-left: 2px solid $primary;
-      &.is-right{
-        border-right: 2px solid $primary;
+      border-left: 2px solid cv.getVar("primary");
+
+      &.is-right {
+        border-right: 2px solid cv.getVar("primary");
         border-left: 0;
         border-radius: 6px 0 0 6px;
         margin-right: 100%;
@@ -186,129 +251,152 @@ $navbar-height-touch: $navbar-height !default;
     }
   }
 
-  .navbar-item.has-dropdown-up{
-    .nested{
-      .navbar-dropdown{
+  .navbar-item.has-dropdown-up {
+    .nested {
+      .navbar-dropdown {
         bottom: auto;
       }
     }
-    .navbar-dropdown{
+
+    .navbar-dropdown {
       border-bottom: 0;
     }
   }
 }
 
-.navbar-menu{
-  a.navbar-item, .navbar-link{
-    &.is-active{
-      text-decoration: $navbar-item-text-decoration-active;
+.navbar-menu {
+  a.navbar-item, .navbar-link {
+    &.is-active {
+      text-decoration: cv.getVar("navbar-item-text-decoration-active");
     }
-    &:hover{
-      text-decoration: $navbar-item-text-decoration-hover;
+
+    &:hover {
+      text-decoration: cv.getVar("navbar-item-text-decoration-hover");
     }
-    &.has-dropdown{
-      .navbar-item{
-        &:hover{
-          text-decoration: $navbar-dropdown-item-text-decoration-hover;
+
+    &.has-dropdown {
+      .navbar-item {
+        &:hover {
+          text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-hover");
         }
-        &.is-active{
-          text-decoration: $navbar-dropdown-item-text-decoration-active;
+
+        &.is-active {
+          text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-active");
         }
       }
     }
   }
 }
 
-@include from($navbar-breakpoint) {
+@include mixins.from(n.$navbar-breakpoint) {
   .navbar-start, .navbar-end {
-    .navbar-item.nested{
-      .navbar-link{
-        &:hover{
-          background-color: $navbar-dropdown-item-hover-background-color;
-          color: $navbar-dropdown-item-hover-color;
+    .navbar-item.nested {
+      .navbar-link {
+        &:hover {
+          background-color: cv.getVar("navbar-dropdown-item-hover-background-color");
+          color: cv.getVar("navbar-dropdown-item-hover-color");
         }
+
         background-color: transparent;
         color: unset;
-        &.is-active{
-          background-color: $navbar-dropdown-item-active-background-color;
-          color: $navbar-dropdown-item-active-color;
+
+        &.is-active {
+          background-color: cv.getVar("navbar-dropdown-item-active-background-color");
+          color: cv.getVar("navbar-dropdown-item-active-color");
         }
       }
     }
-    & > .navbar-item.has-dropdown{
-      .navbar-item.nested{
+
+    & > .navbar-item.has-dropdown {
+      .navbar-item.nested {
         &:focus,
-        &:hover{
-          & > .navbar-link:not(.is-active){
-            background-color: $navbar-dropdown-item-hover-background-color;
-            color: $navbar-dropdown-item-hover-color;
+        &:hover {
+          & > .navbar-link:not(.is-active) {
+            background-color: cv.getVar("navbar-dropdown-item-hover-background-color");
+            color: cv.getVar("navbar-dropdown-item-hover-color");
           }
         }
       }
     }
-    .navbar-dropdown{
-      a.navbar-item{
-        &.is-active{
-          background-color: $navbar-dropdown-item-active-background-color;
-          color: $navbar-dropdown-item-active-color;
+
+    .navbar-dropdown {
+      a.navbar-item {
+        &.is-active {
+          background-color: cv.getVar("navbar-dropdown-item-active-background-color");
+          color: cv.getVar("navbar-dropdown-item-active-color");
         }
       }
     }
   }
 
-  @each $name, $pair in $navbar-colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+  @each $name, $pair in n.$navbar-colors {
+    $color: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-l")}
+    );
+    $color-invert: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-invert-l")}
+    );
 
     .navbar.is-#{$name} {
       .navbar-start, .navbar-end {
         & > a.navbar-item,
         .navbar-link {
           &.is-active {
-            @if variable-exists(navbar-with-background-item-active-background-color) {
+            @if meta.variable-exists(navbar-with-background-item-active-background-color) {
               background-color: $navbar-with-background-item-active-background-color;
             }
-            @if variable-exists(navbar-with-background-item-active-color) {
+            @if meta.variable-exists(navbar-with-background-item-active-color) {
               color: $navbar-with-background-item-active-color;
             }
           }
+
           &:focus,
           &:hover {
-            @if variable-exists(navbar-with-background-item-hover-background-color) {
+            @if meta.variable-exists(navbar-with-background-item-hover-background-color) {
               background-color: $navbar-with-background-item-hover-background-color;
             }
-            @if variable-exists(navbar-with-background-item-hover-color) {
+            @if meta.variable-exists(navbar-with-background-item-hover-color) {
               color: $navbar-with-background-item-hover-color;
             }
           }
-          &:after{
+
+          &:after {
             border-color: currentColor;
-            @if variable-exists(navbar-with-background-dropdown-arrow) {
+            @if meta.variable-exists(navbar-with-background-dropdown-arrow) {
               border-color: $navbar-with-background-dropdown-arrow;
             }
           }
         }
+
         & > .navbar-item.has-dropdown:hover > .navbar-link {
-          @if variable-exists(navbar-with-background-item-hover-background-color) {
+          @if meta.variable-exists(navbar-with-background-item-hover-background-color) {
             background-color: $navbar-with-background-item-hover-background-color;
           }
-          @if variable-exists(navbar-with-background-item-hover-color) {
+          @if meta.variable-exists(navbar-with-background-item-hover-color) {
             color: $navbar-with-background-item-hover-color;
-            text-decoration: $navbar-dropdown-item-text-decoration-hover;
+            text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-hover");
           }
         }
-        .navbar-item.nested{
-          .navbar-link{
+
+        .navbar-item.nested {
+          .navbar-link {
             &::after {
               border-color: currentColor;
             }
-            &:hover{
-              background-color: $navbar-dropdown-item-hover-background-color;
-              color: $navbar-dropdown-item-hover-color;
+
+            &:hover {
+              background-color: cv.getVar("navbar-dropdown-item-hover-background-color");
+              color: cv.getVar("navbar-dropdown-item-hover-color");
             }
+
             background-color: transparent;
             color: unset;
-            &.is-active{
+
+            &.is-active {
               background-color: $color;
               color: $color-invert;
             }

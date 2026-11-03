@@ -1,15 +1,19 @@
+@use "bulma/sass/elements/image";
+@use "bulma/sass/utilities/initial-variables" as iv;
 
-.image{
+.image {
   // First extend existing ratio to inherit all bulma configuration
   &.is-4by1,
-  &.is-6by1{
-    @extend .is-3by1;
+  &.is-6by1 {
+    @extend .#{iv.$class-prefix}is-3by1;
   }
+
   // Then define our own dimensions
-  &.is-4by1{
+  &.is-4by1 {
     padding-top: 25%;
   }
-  &.is-6by1{
+
+  &.is-6by1 {
     padding-top: 16.6666%;
   }
 }

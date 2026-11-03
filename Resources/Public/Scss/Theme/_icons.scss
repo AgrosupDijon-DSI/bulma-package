@@ -1,82 +1,117 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
 $icon-dimensions-xl: 6.25rem !default;
 $icon-dimensions-xxl: 12.5rem !default;
 $icon-font-size: 1.3rem !default;
-$icon-font-size-small: $icon-dimensions-small !default;
-$icon-font-size-medium: $icon-dimensions-medium !default;
-$icon-font-size-large: $icon-dimensions-large !default;
+$icon-font-size-small: cv.getVar("icon-dimensions-small") !default;
+$icon-font-size-medium: cv.getVar("icon-dimensions-medium") !default;
+$icon-font-size-large: cv.getVar("icon-dimensions-large") !default;
 $icon-font-size-xl: $icon-dimensions-xl !default;
 $icon-font-size-xxl: $icon-dimensions-xxl !default;
 
-.icon{
+.#{iv.$class-prefix}icon {
+  @include cv.register-vars(
+    (
+      "icon-dimensions-xl": #{$icon-dimensions-xl},
+      "icon-dimensions-xxl": #{$icon-dimensions-xxl},
+      "icon-font-size": #{$icon-font-size},
+      "icon-font-size-small": #{$icon-font-size-small},
+      "icon-font-size-medium": #{$icon-font-size-medium},
+      "icon-font-size-large": #{$icon-font-size-large},
+      "icon-font-size-xl": #{$icon-font-size-xl},
+      "icon-font-size-xxl": #{$icon-font-size-xxl},
+    )
+  );
+}
+
+.icon {
   & > span {
     &.fa, &.fas {
       font-weight: 900;
     }
+
     &.far {
       font-weight: 400;
     }
   }
+
   flex-shrink: 0;
-  & > svg{
+
+  & > svg {
     max-height: 100%;
   }
-  & > picture{
+
+  & > picture {
     height: 100%;
     display: flex;
-    img{
+
+    img {
       max-height: 100%;
     }
   }
-  .button &{
-    svg{
-      height: $icon-font-size;
+
+  .button & {
+    svg {
+      height: cv.getVar("icon-font-size");
     }
   }
-  i, span{
-    font-size: $icon-font-size;
+
+  i, span {
+    font-size: cv.getVar("icon-font-size");
   }
-  &.is-small{
-    i, span{
-      font-size: $icon-font-size-small;
+
+  &.is-small {
+    i, span {
+      font-size: cv.getVar("icon-font-size-small");
     }
+
     .button & {
       svg {
-        height: $icon-font-size-small;
+        height: cv.getVar("icon-font-size-small");
       }
     }
   }
-  &.is-medium{
-    i, span{
-      font-size: $icon-font-size-medium;
+
+  &.is-medium {
+    i, span {
+      font-size: cv.getVar("icon-font-size-medium");
     }
+
     .button & {
       svg {
-        height: $icon-font-size-medium;
+        height: cv.getVar("icon-font-size-medium");
       }
     }
   }
-  &.is-large{
-    i, span{
-      font-size: $icon-font-size-large;
+
+  &.is-large {
+    i, span {
+      font-size: cv.getVar("icon-font-size-large");
     }
+
     .button & {
       svg {
-        height: $icon-font-size-large;
+        height: cv.getVar("icon-font-size-large");
       }
     }
   }
-  &.is-xl{
-    width: $icon-dimensions-xl;
-    height: $icon-dimensions-xl;
-    i, span{
-      font-size: $icon-font-size-xl;
+
+  &.is-xl {
+    width: cv.getVar("icon-dimensions-xl");
+    height: cv.getVar("icon-dimensions-xl");
+
+    i, span {
+      font-size: cv.getVar("icon-font-size-xl");
     }
   }
-  &.is-xxl{
-    width: $icon-dimensions-xxl;
-    height: $icon-dimensions-xxl;
-    i, span{
-      font-size: $icon-font-size-xxl;
+
+  &.is-xxl {
+    width: cv.getVar("icon-dimensions-xxl");
+    height: cv.getVar("icon-dimensions-xxl");
+
+    i, span {
+      font-size: cv.getVar("icon-font-size-xxl");
     }
   }
 }

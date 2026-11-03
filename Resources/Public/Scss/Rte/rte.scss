@@ -1,68 +1,92 @@
-// Use to generate rte.css
-@import "../Theme/variables";
-@import "../../Contrib/bulma-scss/utilities/all";
-@import "../../Contrib/bulma-scss/base/all";
-@import "../../Contrib/bulma-scss/elements/content";
-@import "../../Contrib/bulma-scss/elements/button";
-@import "../../Contrib/bulma-scss/elements/box";
-@import "../../Contrib/bulma-scss/elements/notification";
-@import "../../Contrib/bulma-scss/elements/table";
-@import "../../Contrib/bulma-scss/elements/title";
-@import "../../Contrib/bulma-scss/helpers/color";
-@import "../../Contrib/bulma-scss/helpers/typography";
-@import "../Theme/content";
-@import "../Theme/links";
+@use "../Theme/variables" as bpk_v;
 
-body{
+@use "bulma/sass/utilities" with (
+  // Initial: Spacing
+  $block-spacing: bpk_v.$block-spacing,
+
+  // Derived
+  $custom-colors: bpk_v.$custom-colors,
+);
+
+// Use to generate rte.css
+@forward "bulma/sass/base" with (
+  $strong-color: bpk_v.$strong-color,
+);
+@use "bulma/sass/elements/content" with (
+$content-heading-color: bpk_v.$content-heading-color,
+  $content-table-cell-heading-color: bpk_v.$content-table-cell-heading-color,
+  $content-table-head-cell-color: bpk_v.$content-table-head-cell-color,
+);
+@forward "bulma/sass/elements/button";
+@forward "bulma/sass/elements/box";
+@forward "bulma/sass/elements/notification";
+@use "bulma/sass/elements/table" with (
+  $table-cell-heading-color: bpk_v.$table-cell-heading-color,
+  $table-head-cell-color: bpk_v.$table-head-cell-color,
+);
+@use "bulma/sass/elements/title" with (
+  $title-color: bpk_v.$title-color,
+  $subtitle-color: bpk_v.$subtitle-color,
+);
+@forward "bulma/sass/helpers/color";
+@forward "bulma/sass/helpers/typography";
+@forward "../Theme/content";
+@forward "../Theme/links";
+
+@forward "bulma/sass/themes";
+
+body {
   padding: 1rem;
   font-size: 16px;
   @extend .content;
+  @extend .theme-light;
 }
 
 // Make button selectable again
-.button{
+.button {
   user-select: auto;
 }
 
-a.icon-mail{
-  &:before{
+a.icon-mail {
+  &:before {
     content: "\1F4E7";
   }
 }
 
-a.icon-phone{
-  &:before{
+a.icon-phone {
+  &:before {
     content: "\1F4DE";
   }
 }
 
-a.icon-file{
+a.icon-file {
   padding-left: 1.25em;
-  &:before{
+
+  &:before {
     content: "\1F4C4";
   }
 }
 
-a.icon-url{
-  &:before{
+a.icon-url {
+  &:before {
     content: "\1F517";
   }
 }
 
-a.icon-location{
-  &:before{
+a.icon-location {
+  &:before {
     content: "\1F4CD";
   }
 }
 
 // Remove overflow to keep controls on table
-.content{
-  figure.table{
+.content {
+  figure.table {
     overflow: initial;
     overflow-y: initial;
   }
 }
 
-blockquote{
+blockquote {
   font-style: inherit;
 }

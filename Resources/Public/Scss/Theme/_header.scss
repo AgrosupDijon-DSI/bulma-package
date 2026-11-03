@@ -1,26 +1,44 @@
+@use "bulma/sass/utilities/mixins";
+@use "bulma/sass/components/navbar" as n;
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
 $header-navbar-menu-position: relative !default;
 $header-navbar-container-position: relative !default;
 
-header{
-  .navbar{
-    @extend .has-shadow;
+#{iv.$variables-host} {
+  @include cv.register-vars(
+    (
+      "header-navbar-menu-position": #{$header-navbar-menu-position},
+      "header-navbar-container-position": #{$header-navbar-container-position},
+    )
+  );
+}
+
+header {
+  .navbar {
+    &.#{iv.$class-prefix}has-shadow {
+      box-shadow: cv.getVar("navbar-box-shadow-size") cv.getVar("navbar-box-shadow-color");
+    }
+
     & > .container {
-      position: $header-navbar-container-position;
+      position: cv.getVar("header-navbar-container-position");
     }
   }
 
-  #navbarMainMenu{
+  #navbarMainMenu {
     flex-shrink: 1;
-    .navbar-start, .navbar-end{
+
+    .navbar-start, .navbar-end {
       flex-wrap: wrap;
     }
   }
 }
 
-@include from($navbar-breakpoint) {
-  header{
-    #navbarMainMenu{
-      position: $header-navbar-menu-position;
+@include mixins.from(n.$navbar-breakpoint) {
+  header {
+    #navbarMainMenu {
+      position: cv.getVar("header-navbar-menu-position");
     }
   }
 }

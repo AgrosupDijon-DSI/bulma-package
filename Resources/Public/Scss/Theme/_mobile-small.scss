@@ -1,3 +1,7 @@
+@use "sass:math";
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/helpers/visibility" as vis;
+
 $mobile-small: 576px !default;
 
 @mixin mobile-small {
@@ -104,11 +108,11 @@ $mobile-small: 576px !default;
     @for $i from 1 through 12 {
       &.is-#{$i}-mobile-small {
         flex: none;
-        width: percentage($i / 12);
+        width: math.percentage(math.div($i, 12));
       }
 
       &.is-offset-#{$i}-mobile-small {
-        margin-left: percentage($i / 12);
+        margin-left: math.percentage(math.div($i, 12));
       }
     }
   }
@@ -117,12 +121,11 @@ $mobile-small: 576px !default;
 /**
  * Visibility
  */
-$displays: "block" "flex" "inline" "inline-block" "inline-flex";
-
-@each $display in $displays {
+@each $display in vis.$displays {
   @include mobile-small {
-    .is-#{$display}-mobile-small {
-      display: #{$display} !important;
+    .#{iv.$class-prefix}#{iv.$helpers-prefix}display-#{$display}-mobile-small,
+    .#{iv.$class-prefix}#{iv.$helpers-prefix}#{$display}-mobile-small {
+      display: $display !important;
     }
   }
 }

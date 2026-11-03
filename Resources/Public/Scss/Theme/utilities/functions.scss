@@ -1,0 +1,6 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+
+@function getVarWithFallback($name, $backup, $prefix: "", $suffix: "") {
+  $varName: cv.buildVarName($name, $prefix, $suffix);
+  @return var(#{$varName}, #{$backup});
+}

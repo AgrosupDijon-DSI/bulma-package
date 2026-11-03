@@ -1,6 +1,7 @@
+@use "bulma/sass/utilities/mixins";
 
-@include mobile {
-  a.dropdown-item, button.dropdown-item{
+@include mixins.mobile {
+  a.dropdown-item, button.dropdown-item {
     white-space: normal;
   }
 }

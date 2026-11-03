@@ -1,0 +1,12 @@
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+
+// Fix double named variables
+#{iv.$variables-host} {
+  @include cv.register-vars(
+      (
+        "dark-dark-invert-l": #{cv.getVar("dark-invert-l")},
+        "light-light-invert-l": #{cv.getVar("light-invert-l")},
+      )
+  )
+}

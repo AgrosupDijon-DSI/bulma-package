@@ -1,33 +1,61 @@
+@use "sass:math";
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/derived-variables" as dv;
+@use "bulma/sass/utilities/functions" as fn;
+
 // https://wikiki.github.io/form/checkradio/
 
-$checkbox-radius: $radius !default;
-$checkbox-border: $control-border-width solid  $input-border-color !default;
-$checkbox-block-background:  $input-background-color !default;
+$checkbox-radius: cv.getVar("radius") !default;
+$checkbox-border: cv.getVar("control-border-width") solid cv.getVar("input-border-color") !default;
+$checkbox-block-background: cv.getVar("scheme-main") !default;
+$checkbox-block-background-invert: fn.bulmaFindColorInvert(dv.$scheme-main) !default;
+$checkbox-block-background-dark: fn.bulmaDarken(dv.$scheme-main, 5%) !default;
 $checkbox-checked-width: 0.1rem !default;
-$checkradio-focus: 1px dotted  $input-focus-border-color !default;
+$checkradio-focus: 1px dotted cv.getVar("link") !default;
 $checkradio-top-offset: 0rem !default;
-$checkradio-hover-border-color: $input-hover-border-color !default;
-$checkradio-checked-color: $input-focus-border-color !default;
+$checkradio-hover-border-color: cv.getVar("link") !default;
+$checkradio-checked-color: cv.getVar("link") !default;
 $radio-scale: 0.5 !default;
+
+.#{iv.$class-prefix}control {
+  @include cv.register-vars(
+    (
+      "checkbox-radius": #{$checkbox-radius},
+      "checkbox-border": #{$checkbox-border},
+      "checkbox-block-background": #{$checkbox-block-background},
+      "checkbox-block-background-invert": #{$checkbox-block-background-invert},
+      "checkbox-block-background-dark": #{$checkbox-block-background-dark},
+      "checkbox-checked-width": #{$checkbox-checked-width},
+      "checkradio-focus": #{$checkradio-focus},
+      "checkradio-top-offset": #{$checkradio-top-offset},
+      "checkradio-hover-border-color": #{$checkradio-hover-border-color},
+      "checkradio-checked-color": #{$checkradio-checked-color},
+      "radio-scale": #{$radio-scale},
+    )
+  );
+}
 
 @mixin checkbox-size($size) {
   $newSize: $size * 1.5;
-  $height: $newSize / 2.5;
-  $width: $newSize / 4;
+  $height: math.div($newSize, 2.5);
+  $width: math.div($newSize, 4);
   + label {
     font-size: $size;
     // line-height: $newSize
     padding-left: $size * 2;
+
     &::before,
     &:before {
       width: $newSize;
       height: $newSize;
     }
+
     &::after,
     &:after {
       width: $width;
       height: $height;
-      top: ($newSize / 2 - $height / 2) * 0.9;
+      top: (math.div($newSize, 2) - math.div($height, 2)) * 0.9;
       left: $height;
     }
   }
@@ -40,6 +68,7 @@ $radio-scale: 0.5 !default;
         left: 0.175rem;
         top: 0.175rem;
       }
+
       &::after,
       &:after {
         top: 0.2rem + $size * 0.125;
@@ -51,6 +80,7 @@ $radio-scale: 0.5 !default;
     + label {
       padding-left: 0;
       padding-right: $size * 2;
+
       &::after,
       &:after {
         left: auto;
@@ -69,6 +99,7 @@ $radio-scale: 0.5 !default;
     font-size: $size;
     line-height: $newSize;
     padding-left: $size * 2;
+
     &::before,
     &:before,
     &::after,
@@ -91,6 +122,7 @@ $radio-scale: 0.5 !default;
   display: inline-block;
   position: absolute;
   opacity: 0;
+
   + label {
     position: relative;
     display: initial;
@@ -98,10 +130,12 @@ $radio-scale: 0.5 !default;
     vertical-align: middle;
     margin: 0.5em;
     padding: 0.2rem 0.5rem 0.2rem 0;
-    border-radius: $checkbox-radius;
+    border-radius: cv.getVar("checkbox-radius");
+
     &:first-of-type {
       margin-left: 0;
     }
+
     &:hover {
       &::before,
       &:before {
@@ -110,26 +144,30 @@ $radio-scale: 0.5 !default;
         animation-name: hover-color;
       }
     }
+
     &::before,
     &:before {
       position: absolute;
       left: 0;
-      top: $checkradio-top-offset;
+      top: cv.getVar("checkradio-top-offset");
       content: "";
-      border: $checkbox-border;
+      border: cv.getVar("checkbox-border");
     }
+
     &::after,
     &:after {
       position: absolute;
       display: none;
       content: "";
-      top: $checkradio-top-offset;
+      top: cv.getVar("checkradio-top-offset");
     }
   }
+
   &.is-rtl {
     + label {
-      margin-right: 0rem;
+      margin-right: 0;
       margin-left: 0.5rem;
+
       &::before,
       &:before {
         left: auto;
@@ -137,51 +175,61 @@ $radio-scale: 0.5 !default;
       }
     }
   }
+
   &:focus {
     + label {
       &::before,
       &:before {
-        outline: $checkradio-focus;
+        outline: cv.getVar("checkradio-focus");
       }
     }
   }
+
   &:hover:not([disabled]) {
     + label {
       &::before,
       &:before {
-        border-color: $checkradio-hover-border-color;
+        border-color: cv.getVar("checkradio-hover-border-color");
       }
     }
   }
+
   &:checked {
     + label {
       &::before,
       &:before {
-        border: $checkbox-border;
+        border: cv.getVar("checkbox-border");
       }
     }
+
     &[disabled] {
       cursor: not-allowed;
+
       + label {
         opacity: 0.5;
       }
     }
+
     + label {
       &::before,
       &:before {
         animation-name: none;
       }
+
       &::after,
       &:after {
         display: inline-block;
       }
     }
   }
+
   &[disabled] {
     cursor: not-allowed;
+
     + label {
       opacity: 0.5;
       cursor: not-allowed;
+
       &:hover,
       &:before,
       &::before,
@@ -190,22 +238,27 @@ $radio-scale: 0.5 !default;
         cursor: not-allowed;
       }
     }
+
     &:hover {
       cursor: not-allowed;
+
       &::before,
       &:before {
         animation-name: none;
       }
     }
+
     &::before,
     &:before {
       cursor: not-allowed;
     }
+
     &::after,
     &:after {
       cursor: not-allowed;
     }
   }
+
   &.has-no-border {
     + label {
       &::before,
@@ -214,17 +267,20 @@ $radio-scale: 0.5 !default;
       }
     }
   }
+
   &.is-block {
     display: none !important;
+
     + label {
       width: 100% !important;
-      background: $checkbox-block-background;
-      color: findColorInvert($checkbox-block-background);
+      background: cv.getVar("checkbox-block-background");
+      color: cv.getVar("checkbox-block-background-invert");
       padding-right: 0.75em;
     }
+
     &:hover:not([disabled]) {
       + label {
-        background: darken($checkbox-block-background, 5%);
+        background: cv.getVar("checkbox-block-background-dark");
       }
     }
   }
@@ -234,19 +290,21 @@ $radio-scale: 0.5 !default;
   + label {
     &::before,
     &:before {
-      border-radius: $checkbox-radius;
+      border-radius: cv.getVar("checkbox-radius");
     }
+
     &::after,
     &:after {
       box-sizing: border-box;
-      transform: translateY($checkradio-top-offset) rotate(45deg);
-      border-width: $checkbox-checked-width;
+      transform: translateY(#{cv.getVar("checkradio-top-offset")}) rotate(45deg);
+      border-width: cv.getVar("checkbox-checked-width");
       border-style: solid;
-      border-color: $checkradio-checked-color;
+      border-color: cv.getVar("checkradio-checked-color");
       border-top: 0;
       border-left: 0;
     }
   }
+
   &.is-circle {
     + label {
       &::before,
@@ -255,19 +313,33 @@ $radio-scale: 0.5 !default;
       }
     }
   }
-  @include checkbox-size($size-normal);
+
+  @include checkbox-size(dv.$size-normal);
+
   &.is-small {
-    @include checkbox-size($size-small);
+    @include checkbox-size(dv.$size-small);
   }
+
   &.is-medium {
-    @include checkbox-size($size-medium);
+    @include checkbox-size(dv.$size-medium);
   }
+
   &.is-large {
-    @include checkbox-size($size-large);
+    @include checkbox-size(dv.$size-large);
   }
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+
+  @each $name, $pair in dv.$colors {
+    $color: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-l")}
+    );
+    $color-invert: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-invert-l")}
+    );
+
     &.is-#{$name} {
       &.has-background-color {
         + label {
@@ -278,6 +350,7 @@ $radio-scale: 0.5 !default;
           }
         }
       }
+
       &:hover:not([disabled]) {
         + label {
           &::before,
@@ -286,6 +359,7 @@ $radio-scale: 0.5 !default;
           }
         }
       }
+
       &:checked {
         + label {
           &::after,
@@ -293,6 +367,7 @@ $radio-scale: 0.5 !default;
             border-color: $color !important;
           }
         }
+
         &.has-background-color {
           + label {
             &::before,
@@ -300,6 +375,7 @@ $radio-scale: 0.5 !default;
               border-color: transparent !important;
               background-color: $color !important;
             }
+
             &::after,
             &:after {
               border-color: $color-invert !important;
@@ -308,6 +384,7 @@ $radio-scale: 0.5 !default;
           }
         }
       }
+
       &.is-block {
         &:hover:not([disabled]) {
           + label {
@@ -319,24 +396,28 @@ $radio-scale: 0.5 !default;
             }
           }
         }
+
         &:checked {
           + label {
             color: $color-invert;
             border-color: $color !important;
             background: $color;
+
             &::after,
             &:after {
               border-color: $color-invert !important;
             }
           }
+
           &:hover:not([disabled]) {
             + label {
-              background: darken($color, 5%);
+              background: fn.bulmaDarken($color, 5%);
+
               &::after,
               &:after,
               &::before,
               &:before {
-                border-color: darken($color-invert, 5%) !important;
+                border-color: fn.bulmaDarken($color-invert, 5%) !important;
               }
             }
           }
@@ -344,6 +425,7 @@ $radio-scale: 0.5 !default;
       }
     }
   }
+
   &:indeterminate {
     + label {
       &::after,
@@ -353,9 +435,19 @@ $radio-scale: 0.5 !default;
         border-bottom: none;
       }
     }
-    @each $name, $pair in $colors {
-      $color: nth($pair, 1);
-      $color-invert: nth($pair, 2);
+
+    @each $name, $pair in dv.$colors {
+      $color: hsl(
+        #{cv.getVar($name, "", "-h")},
+        #{cv.getVar($name, "", "-s")},
+        #{cv.getVar($name, "", "-l")}
+      );
+      $color-invert: hsl(
+        #{cv.getVar($name, "", "-h")},
+        #{cv.getVar($name, "", "-s")},
+        #{cv.getVar($name, "", "-invert-l")}
+      );
+
       &.is-#{$name} {
         + label {
           &::after,
@@ -374,33 +466,38 @@ $radio-scale: 0.5 !default;
     &:before {
       border-radius: 50%;
     }
+
     &::after,
     &:after {
       border-radius: 50%;
-      background: $checkradio-checked-color;
+      background: cv.getVar("checkradio-checked-color");
       left: 0;
-      transform: scale($radio-scale);
+      transform: scale(#{cv.getVar("radio-scale")});
     }
   }
+
   &:checked {
     &.has-background-color {
       + label {
         &::before,
         &:before {
-          border-color: $text !important;
-          background-color: $text !important;
+          border-color: cv.getVar("text") !important;
+          background-color: cv.getVar("text") !important;
         }
+
         &::after,
         &:after {
-          border-color: $text !important;
-          background-color: $text !important;
+          border-color: cv.getVar("text") !important;
+          background-color: cv.getVar("text") !important;
         }
       }
     }
   }
+
   &.is-rtl {
     + label {
       padding-left: 0;
+
       &::after,
       &:after {
         left: auto;
@@ -408,19 +505,33 @@ $radio-scale: 0.5 !default;
       }
     }
   }
-  @include radio-size($size-normal);
+
+  @include radio-size(dv.$size-normal);
+
   &.is-small {
-    @include radio-size($size-small);
+    @include radio-size(dv.$size-small);
   }
+
   &.is-medium {
-    @include radio-size($size-medium);
+    @include radio-size(dv.$size-medium);
   }
+
   &.is-large {
-    @include radio-size($size-large);
+    @include radio-size(dv.$size-large);
   }
-  @each $name, $pair in $colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
+
+  @each $name, $pair in dv.$colors {
+    $color: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-l")}
+    );
+    $color-invert: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-invert-l")}
+    );
+
     &.is-#{$name} {
       &.has-background-color {
         + label {
@@ -431,6 +542,7 @@ $radio-scale: 0.5 !default;
           }
         }
       }
+
       &:hover:not([disabled]) {
         + label {
           &::before,
@@ -439,6 +551,7 @@ $radio-scale: 0.5 !default;
           }
         }
       }
+
       &:checked {
         + label {
           &::after,
@@ -447,6 +560,7 @@ $radio-scale: 0.5 !default;
             background-color: $color !important;
           }
         }
+
         &.has-background-color {
           + label {
             &::before,
@@ -454,6 +568,7 @@ $radio-scale: 0.5 !default;
               border-color: $color !important;
               background-color: $color !important;
             }
+
             &::after,
             &:after {
               border-color: $color-invert !important;

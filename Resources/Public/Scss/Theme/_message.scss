@@ -1,6 +1,8 @@
+@use "bulma/sass/elements/content";
+@use "bulma/sass/utilities/initial-variables" as iv;
 
-.message{
-  .message-body{
-    @extend .content;
+.message {
+  .message-body {
+    @extend .#{iv.$class-prefix}content;
   }
 }

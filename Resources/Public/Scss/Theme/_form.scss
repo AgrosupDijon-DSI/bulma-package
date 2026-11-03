@@ -1,41 +1,49 @@
-.field{
-  .control{
-    .is-password-confirmation{
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/elements/box";
+@use "bulma/sass/helpers/color";
+@use "bulma/sass/elements/title";
+
+.field {
+  .control {
+    .is-password-confirmation {
       margin-top: 0.75rem;
     }
   }
 }
 
-.input-list-radio, .input-list-checkbox{
-  .form-group:not(:last-child){
+.input-list-radio, .input-list-checkbox {
+  .form-group:not(:last-child) {
     margin-bottom: 0.25rem;
   }
 }
 
-.file-label{
-  .file-name{
+.file-label {
+  .file-name {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     border-left-width: 1px;
-    & ~ .file-cta{
+
+    & ~ .file-cta {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
     }
   }
 }
 
-span.required{
-  @extend .has-text-danger;
+span.required {
+  @extend .#{iv.$class-prefix}#{iv.$helpers-has-prefix}text-danger;
 }
 
-fieldset{
-  @extend .box;
-  legend{
-    @extend .subtitle;
+fieldset {
+  @extend .#{iv.$class-prefix}box;
+
+  legend {
+    @extend .#{iv.$class-prefix}subtitle;
     margin-bottom: 0;
     padding: 0 0.5rem;
-    background-color: $white;
-    border-top-left-radius: $box-radius;
-    border-top-right-radius: $box-radius;
+    background-color: cv.getVar("white");
+    border-top-left-radius: cv.getVar("box-radius");
+    border-top-right-radius: cv.getVar("box-radius");
   }
 }

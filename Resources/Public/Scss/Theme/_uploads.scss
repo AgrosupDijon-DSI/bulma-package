@@ -1,12 +1,13 @@
+@use "bulma/sass/utilities/css-variables" as cv;
 
-.uploads-filesize{
-  font-weight: $weight-bold;
+.uploads-filesize {
+  font-weight: cv.getVar("weight-bold");
 }
 
-.frame-type-uploads{
-  .card-image{
-    .icon{
-      margin-top: $card-content-padding;
+.frame-type-uploads {
+  .card-image {
+    .icon {
+      margin-top: cv.getVar("card-content-padding");
     }
   }
 }

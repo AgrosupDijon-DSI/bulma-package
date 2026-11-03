@@ -1,11 +1,16 @@
-@each $name, $pair in $colors {
-  $color-invert: nth($pair, 2);
+@use "bulma/sass/utilities/css-variables" as cv;
+@use "bulma/sass/utilities/derived-variables" as dv;
 
-  .has-background-#{$name}{
-    color: $color-invert;
+@each $name, $color in dv.$colors {
+  .has-background-#{$name} {
+    color: hsl(
+      #{cv.getVar($name, "", "-h")},
+      #{cv.getVar($name, "", "-s")},
+      #{cv.getVar($name, "", "-invert-l")}
+    );
 
     [class="notification"] {
-      color: $text;
+      color: cv.getVar("text");
     }
   }
 }
