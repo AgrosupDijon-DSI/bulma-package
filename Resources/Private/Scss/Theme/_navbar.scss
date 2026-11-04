@@ -29,11 +29,6 @@ $navbar-dropdown-item-hover-color: cv.getVar("scheme-invert") !default;
 //$navbar-with-background-item-active-color;
 //$navbar-with-background-dropdown-arrow;
 
-$navbar-item-selected-background-l: cv.getVar("navbar-item-background-l") !default;
-$navbar-item-active-background-l-delta: cv.getVar("navbar-item-hover-background-l-delta") !default;
-$navbar-item-selected-h: cv.getVar("navbar-h") !default;
-$navbar-item-selected-s: cv.getVar("navbar-s") !default;
-
 .#{iv.$class-prefix}navbar {
   @include cv.register-vars(
     (
@@ -52,12 +47,6 @@ $navbar-item-selected-s: cv.getVar("navbar-s") !default;
       "navbar-dropdown-item-active-color": #{$navbar-dropdown-item-active-color},
       "navbar-dropdown-item-hover-background-color": #{$navbar-dropdown-item-hover-background-color},
       "navbar-dropdown-item-hover-color": #{$navbar-dropdown-item-hover-color},
-
-      // Overrides of original navbar component
-      "navbar-item-selected-background-l": #{$navbar-item-selected-background-l},
-      "navbar-item-active-background-l-delta": #{$navbar-item-active-background-l-delta},
-      "navbar-item-selected-h": #{$navbar-item-selected-h},
-      "navbar-item-selected-s": #{$navbar-item-selected-s},
     )
   );
 }

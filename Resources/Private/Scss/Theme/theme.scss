@@ -1,38 +1,44 @@
 @use "variables" as bpk_v;
+@forward "bulma/sass/utilities/initial-variables" with (
+  // Spacing
+  $block-spacing: bpk_v.$block-spacing !default,
+);
+@use "bulma/sass/utilities/css-variables" as cv;
 
-@use "bulma/sass" with (
+@forward "bulma/sass" with (
   // Generic
-  $strong-color: bpk_v.$strong-color,
+  $strong-color: bpk_v.$strong-color !default,
 
   // Content
-  $content-heading-color: bpk_v.$content-heading-color,
-  $content-table-cell-heading-color: bpk_v.$content-table-cell-heading-color,
-  $content-table-head-cell-color: bpk_v.$content-table-head-cell-color,
+  $content-heading-color: bpk_v.$content-heading-color !default,
+  $content-table-cell-heading-color: bpk_v.$content-table-cell-heading-color !default,
+  $content-table-head-cell-color: bpk_v.$content-table-head-cell-color !default,
 
   // Title
-  $title-color: bpk_v.$title-color,
-  $subtitle-color: bpk_v.$subtitle-color,
+  $title-color: bpk_v.$title-color !default,
+  $subtitle-color: bpk_v.$subtitle-color !default,
 
   // Table
-  $table-cell-heading-color: bpk_v.$table-cell-heading-color,
-  $table-head-cell-color: bpk_v.$table-head-cell-color,
+  $table-cell-heading-color: bpk_v.$table-cell-heading-color !default,
+  $table-head-cell-color: bpk_v.$table-head-cell-color !default,
 
   // Navbar
-  $navbar-item-img-max-height: bpk_v.$navbar-item-img-max-height,
-  $navbar-z: bpk_v.$navbar-z,
-
-  // Spacing
-  $block-spacing: bpk_v.$block-spacing,
+  $navbar-item-img-max-height: bpk_v.$navbar-item-img-max-height !default,
+  $navbar-z: bpk_v.$navbar-z !default,
+  $navbar-item-selected-background-l: cv.getVar("navbar-item-background-l") !default,
+  $navbar-item-active-background-l-delta: cv.getVar("navbar-item-hover-background-l-delta") !default,
+  $navbar-item-selected-h: cv.getVar("navbar-h") !default,
+  $navbar-item-selected-s: cv.getVar("navbar-s") !default,
 
   // Dropdown
-  $dropdown-content-z: bpk_v.$dropdown-content-z,
+  $dropdown-content-z: bpk_v.$dropdown-content-z !default,
 
   // Card
-  $card-radius: bpk_v.$card-radius,
-  $card-media-margin: bpk_v.$card-media-margin,
+  $card-radius: bpk_v.$card-radius !default,
+  $card-media-margin: bpk_v.$card-media-margin !default,
 
   // Derived
-  $custom-colors: bpk_v.$custom-colors,
+  $custom-colors: bpk_v.$custom-colors !default,
 );
 
 @forward "visibility";
