@@ -10,7 +10,7 @@ $klaro-trigger-color: cv.getVar("primary-invert") !default;
 $klaro-title-weight: functions.getVarWithFallback("title-weight", title.$title-weight) !default;
 $klaro-title-size: functions.getVarWithFallback("title-weight", title.$title-size) !default;
 
-.#{iv.$class-prefix}klaro {
+#{iv.$variables-host} {
   @include cv.register-vars(
     (
       "klaro-trigger-zindex": #{$klaro-trigger-zindex},
