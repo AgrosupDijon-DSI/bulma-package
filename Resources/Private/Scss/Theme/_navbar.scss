@@ -14,15 +14,71 @@ $navbar-dropdown-box-shadow: 0 8px 8px fn.bulmaRgba(dv.$scheme-invert, 0.1) !def
 $navbar-dropdown-border-bottom: 0 !default;
 $navbar-dropdown-border-top: 2px solid cv.getVar("border") !default;
 $navbar-dropdown-border-top-color: cv.getVar("primary") !default;
-$navbar-dropdown-item-color: cv.getVar("navbar-item-color") !default;
 $navbar-dropdown-item-text-decoration-hover: none !default;
 $navbar-dropdown-item-text-decoration-active: none !default;
 $navbar-height-touch: cv.getVar("navbar-height") !default;
 
-$navbar-dropdown-item-active-background-color: cv.getVar("background") !default;
-$navbar-dropdown-item-active-color: cv.getVar("link") !default;
-$navbar-dropdown-item-hover-background-color: cv.getVar("background") !default;
-$navbar-dropdown-item-hover-color: cv.getVar("scheme-invert") !default;
+// Item color
+$navbar-item-color-h: cv.getVar("navbar-h") !default;
+$navbar-item-color-s: cv.getVar("navbar-s") !default;
+// (exists in bulma) $navbar-item-color-l: cv.getVar("text-l") !default;
+
+// Item background
+$navbar-item-background-h: cv.getVar("navbar-h") !default;
+$navbar-item-background-s: cv.getVar("navbar-s") !default;
+// (exists in bulma) $navbar-item-background-l: cv.getVar("scheme-main-l") !default;
+
+// Item hover color
+$navbar-item-hover-color-h: cv.getVar("navbar-h") !default;
+$navbar-item-hover-color-s: cv.getVar("navbar-s") !default;
+$navbar-item-hover-color-l: cv.getVar("navbar-item-color-l") !default;
+
+// Item hover background
+$navbar-item-hover-background-h: $navbar-item-background-h !default;
+$navbar-item-hover-background-s: $navbar-item-background-s !default;
+$navbar-item-hover-background-l: cv.getVar("navbar-item-background-l") !default;
+
+// Item selected color
+$navbar-item-selected-color-h: cv.getVar("navbar-item-selected-h") !default;
+$navbar-item-selected-color-s: cv.getVar("navbar-item-selected-s") !default;
+// (exists in bulma) $navbar-item-selected-color-l: cv.getVar("link-invert-l") !default;
+
+// Item selected background
+$navbar-item-selected-background-h: cv.getVar("navbar-item-selected-h") !default;
+$navbar-item-selected-background-s: cv.getVar("navbar-item-selected-s") !default;
+// (exists in bulma) $navbar-item-selected-background-l: cv.getVar("link-l") !default;
+
+// Dropdown item color
+$navbar-dropdown-item-color-h: cv.getVar("navbar-dropdown-item-h") !default;
+$navbar-dropdown-item-color-s: cv.getVar("navbar-dropdown-item-s") !default;
+// (exists in bulma) $navbar-dropdown-item-color-l: cv.getVar("text-l") !default;
+
+// Dropdown item background
+$navbar-dropdown-item-background-h: cv.getVar("navbar-dropdown-item-h") !default;
+$navbar-dropdown-item-background-s: cv.getVar("navbar-dropdown-item-s") !default;
+// (exists in bulma) $navbar-dropdown-item-background-l: cv.getVar("scheme-main-l") !default;
+
+// Dropdown item hover color
+$navbar-dropdown-item-hover-color-h: $navbar-item-hover-color-h !default;
+$navbar-dropdown-item-hover-color-s: $navbar-item-hover-color-s !default;
+$navbar-dropdown-item-hover-color-l: $navbar-item-hover-color-l !default;
+
+// Dropdown item hover background
+$navbar-dropdown-item-hover-background-h: $navbar-item-hover-background-h !default;
+$navbar-dropdown-item-hover-background-s: $navbar-item-hover-background-s !default;
+$navbar-dropdown-item-hover-background-l: $navbar-item-hover-background-l !default;
+
+// Dropdown item selected color
+$navbar-dropdown-item-selected-color-h: $navbar-item-selected-color-h !default;
+$navbar-dropdown-item-selected-color-s: $navbar-item-selected-color-s !default;
+$navbar-dropdown-item-selected-color-l: cv.getVar("navbar-item-selected-color-l") !default;
+
+// Dropdown item selected background
+$navbar-dropdown-item-selected-background-h: $navbar-item-selected-background-h !default;
+$navbar-dropdown-item-selected-background-s: $navbar-item-selected-background-s !default;
+$navbar-dropdown-item-selected-background-l: cv.getVar("navbar-item-selected-background-l") !default;
+$navbar-dropdown-item-selected-background-l-delta: cv.getVar("navbar-item-background-l-delta") !default;
+
 //$navbar-with-background-item-hover-background-color;
 //$navbar-with-background-item-active-background-color
 //$navbar-with-background-item-hover-color;
@@ -36,32 +92,207 @@ $navbar-dropdown-item-hover-color: cv.getVar("scheme-invert") !default;
       "navbar-item-size": #{$navbar-item-size},
       "navbar-item-text-decoration-hover": #{$navbar-item-text-decoration-hover},
       "navbar-item-text-decoration-active": #{$navbar-item-text-decoration-active},
+      "navbar-item-color-h": #{$navbar-item-color-h},
+      "navbar-item-color-s": #{$navbar-item-color-s},
+      "navbar-item-background-h": #{$navbar-item-background-h},
+      "navbar-item-background-s": #{$navbar-item-background-s},
+      "navbar-item-hover-color-h": #{$navbar-item-hover-color-h},
+      "navbar-item-hover-color-s": #{$navbar-item-hover-color-s},
+      "navbar-item-hover-color-l": #{$navbar-item-hover-color-l},
+      "navbar-item-hover-background-h": #{$navbar-item-hover-background-h},
+      "navbar-item-hover-background-s": #{$navbar-item-hover-background-s},
+      "navbar-item-hover-background-l": #{$navbar-item-hover-background-l},
+      "navbar-item-selected-color-h": #{$navbar-item-selected-color-h},
+      "navbar-item-selected-color-s": #{$navbar-item-selected-color-s},
+      "navbar-item-selected-background-h": #{$navbar-item-selected-background-h},
+      "navbar-item-selected-background-s": #{$navbar-item-selected-background-s},
+      "navbar-dropdown-item-color-h": #{$navbar-dropdown-item-color-h},
+      "navbar-dropdown-item-color-s": #{$navbar-dropdown-item-color-s},
+      "navbar-dropdown-item-background-h": #{$navbar-dropdown-item-background-h},
+      "navbar-dropdown-item-background-s": #{$navbar-dropdown-item-background-s},
+      "navbar-dropdown-item-hover-color-h": #{$navbar-dropdown-item-hover-color-h},
+      "navbar-dropdown-item-hover-color-s": #{$navbar-dropdown-item-hover-color-s},
+      "navbar-dropdown-item-hover-color-l": #{$navbar-dropdown-item-hover-color-l},
+      "navbar-dropdown-item-hover-background-h": #{$navbar-dropdown-item-hover-background-h},
+      "navbar-dropdown-item-hover-background-s": #{$navbar-dropdown-item-hover-background-s},
+      "navbar-dropdown-item-hover-background-l": #{$navbar-dropdown-item-hover-background-l},
+      "navbar-dropdown-item-selected-color-h": #{$navbar-dropdown-item-selected-color-h},
+      "navbar-dropdown-item-selected-color-s": #{$navbar-dropdown-item-selected-color-s},
+      "navbar-dropdown-item-selected-color-l": #{$navbar-dropdown-item-selected-color-l},
+      "navbar-dropdown-item-selected-background-h": #{$navbar-dropdown-item-selected-background-h},
+      "navbar-dropdown-item-selected-background-s": #{$navbar-dropdown-item-selected-background-s},
+      "navbar-dropdown-item-selected-background-l": #{$navbar-dropdown-item-selected-background-l},
+      "navbar-dropdown-item-selected-background-l-delta": #{$navbar-dropdown-item-selected-background-l-delta},
       "navbar-dropdown-box-shadow": #{$navbar-dropdown-box-shadow},
       "navbar-dropdown-border-bottom": #{$navbar-dropdown-border-bottom},
       "navbar-dropdown-border-top": #{$navbar-dropdown-border-top},
-      "navbar-dropdown-item-color": #{$navbar-dropdown-item-color},
+      "navbar-dropdown-border-top-color": #{$navbar-dropdown-border-top-color},
       "navbar-dropdown-item-text-decoration-hover": #{$navbar-dropdown-item-text-decoration-hover},
       "navbar-dropdown-item-text-decoration-active": #{$navbar-dropdown-item-text-decoration-active},
       "navbar-height-touch": #{$navbar-height-touch},
-      "navbar-dropdown-item-active-background-color": #{$navbar-dropdown-item-active-background-color},
-      "navbar-dropdown-item-active-color": #{$navbar-dropdown-item-active-color},
-      "navbar-dropdown-item-hover-background-color": #{$navbar-dropdown-item-hover-background-color},
-      "navbar-dropdown-item-hover-color": #{$navbar-dropdown-item-hover-color},
     )
   );
 }
 
+// Colors customisation for "navbar-item" (level 1)
 a.#{iv.$class-prefix}navbar-item,
 .#{iv.$class-prefix}navbar-link {
+  // Normal state
+  color: hsl(
+    #{cv.getVar("navbar-item-color-h")},
+    #{cv.getVar("navbar-item-color-s")},
+    #{cv.getVar("navbar-item-color-l")}
+  );
+  background-color: hsla(
+    #{cv.getVar("navbar-item-background-h")},
+    #{cv.getVar("navbar-item-background-s")},
+    calc(
+      #{cv.getVar("navbar-item-background-l")} + #{cv.getVar(
+          "navbar-item-background-l-delta"
+        )}
+    ),
+    #{cv.getVar("navbar-item-background-a")}
+  );
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    @include cv.register-vars(
+      (
+        "navbar-item-color-h": #{cv.getVar("navbar-item-hover-color-h")},
+        "navbar-item-color-s": #{cv.getVar("navbar-item-hover-color-s")},
+        "navbar-item-color-l": #{cv.getVar("navbar-item-hover-color-l")},
+        "navbar-item-background-h": #{cv.getVar("navbar-item-hover-background-h")},
+        "navbar-item-background-s": #{cv.getVar("navbar-item-hover-background-s")},
+        "navbar-item-background-l": #{cv.getVar("navbar-item-hover-background-l")},
+      )
+    );
+  }
+
+  &:active {
+    //@include cv.register-vars(
+    //  (
+    //    "navbar-item-background-l-delta": #{cv.getVar(
+    //        "navbar-item-active-background-l-delta"
+    //      )},
+    //    "navbar-item-background-a": 1,
+    //  )
+    //);
+  }
+
   &.#{iv.$class-prefix}is-active,
+  &.#{iv.$class-prefix}is-active:hover,
   &.#{iv.$class-prefix}is-selected {
     @include cv.register-vars(
       (
-        "navbar-item-background-l-delta": #{cv.getVar(
-            "navbar-item-active-background-l-delta"
-          )},
+        "navbar-item-color-h": #{cv.getVar("navbar-item-selected-color-h")},
+        "navbar-item-color-s": #{cv.getVar("navbar-item-selected-color-s")},
+        "navbar-item-color-l": #{cv.getVar("navbar-item-selected-color-l")},
+        "navbar-item-background-h": #{cv.getVar("navbar-item-selected-background-h")},
+        "navbar-item-background-s": #{cv.getVar("navbar-item-selected-background-s")},
+        "navbar-item-background-l": #{cv.getVar("navbar-item-selected-background-l")},
       )
     );
+  }
+}
+
+// Colors customisation for "navbar-dropdown-item" (level 2 and more)
+.#{iv.$class-prefix}navbar-dropdown {
+  a.#{iv.$class-prefix}navbar-item,
+  .#{iv.$class-prefix}navbar-link {
+    &:not(.is-active, .is-selected) {
+      background-color: hsl(
+        #{cv.getVar("navbar-dropdown-item-background-h")},
+        #{cv.getVar("navbar-dropdown-item-background-s")},
+        calc(
+          #{cv.getVar("navbar-dropdown-item-background-l")} + #{cv.getVar(
+              "navbar-item-background-l-delta"
+            )}
+        )
+      );
+      color: hsl(
+        #{cv.getVar("navbar-dropdown-item-color-h")},
+        #{cv.getVar("navbar-dropdown-item-color-s")},
+        #{cv.getVar("navbar-dropdown-item-color-l")}
+      );
+    }
+
+    &:focus,
+    &:focus-within,
+    &:hover {
+      @include cv.register-vars(
+        (
+          "navbar-dropdown-item-background-h": #{cv.getVar("navbar-dropdown-item-hover-background-h")},
+          "navbar-dropdown-item-background-s": #{cv.getVar("navbar-dropdown-item-hover-background-s")},
+          "navbar-dropdown-item-background-l": #{cv.getVar("navbar-dropdown-item-hover-background-l")},
+          "navbar-dropdown-item-color-h": #{cv.getVar("navbar-dropdown-item-hover-color-h")},
+          "navbar-dropdown-item-color-s": #{cv.getVar("navbar-dropdown-item-hover-color-s")},
+          "navbar-dropdown-item-color-l": #{cv.getVar("navbar-dropdown-item-hover-color-l")},
+        )
+      );
+    }
+
+    &.#{iv.$class-prefix}is-active,
+    &.#{iv.$class-prefix}is-active:hover,
+    &.#{iv.$class-prefix}is-selected {
+      @include cv.register-vars(
+        (
+          "navbar-dropdown-item-background-h": #{cv.getVar("navbar-dropdown-item-selected-background-h")},
+          "navbar-dropdown-item-background-s": #{cv.getVar("navbar-dropdown-item-selected-background-s")},
+          "navbar-dropdown-item-background-l": #{cv.getVar("navbar-dropdown-item-selected-background-l")},
+          "navbar-dropdown-item-color-h": #{cv.getVar("navbar-dropdown-item-selected-color-h")},
+          "navbar-dropdown-item-color-s": #{cv.getVar("navbar-dropdown-item-selected-color-s")},
+          "navbar-dropdown-item-color-l": #{cv.getVar("navbar-dropdown-item-selected-color-l")},
+          "navbar-item-background-l-delta": #{cv.getVar("navbar-dropdown-item-selected-background-l-delta")},
+        )
+      );
+      background-color: hsl(
+        #{cv.getVar("navbar-dropdown-item-background-h")},
+        #{cv.getVar("navbar-dropdown-item-background-s")},
+        calc(
+          #{cv.getVar("navbar-dropdown-item-background-l")} + #{cv.getVar(
+              "navbar-item-background-l-delta"
+            )}
+        )
+      );
+      color: hsl(
+        #{cv.getVar("navbar-dropdown-item-color-h")},
+        #{cv.getVar("navbar-dropdown-item-color-s")},
+        #{cv.getVar("navbar-dropdown-item-color-l")}
+      );
+    }
+  }
+}
+
+// Activate "hover" state on navbar-link when hovering parent navbar-item
+.navbar-item.has-dropdown {
+  &:focus,
+  &:focus-within,
+  &:hover {
+    & > .navbar-link {
+      &:not(.is-active, .is-selected) {
+        @include cv.register-vars(
+          (
+            "navbar-item-color-h": #{cv.getVar("navbar-item-hover-color-h")},
+            "navbar-item-color-s": #{cv.getVar("navbar-item-hover-color-s")},
+            "navbar-item-color-l": #{cv.getVar("navbar-item-hover-color-l")},
+            "navbar-item-background-h": #{cv.getVar("navbar-item-hover-background-h")},
+            "navbar-item-background-s": #{cv.getVar("navbar-item-hover-background-s")},
+            "navbar-item-background-l": #{cv.getVar("navbar-item-hover-background-l")},
+            "navbar-item-background-l-delta": #{cv.getVar(
+              "navbar-item-hover-background-l-delta"
+            )},
+            "navbar-item-background-a": 1,
+            "navbar-dropdown-item-background-h": #{cv.getVar("navbar-dropdown-item-hover-background-h")},
+            "navbar-dropdown-item-background-s": #{cv.getVar("navbar-dropdown-item-hover-background-s")},
+            "navbar-dropdown-item-background-l": #{cv.getVar("navbar-dropdown-item-hover-background-l")},
+            "navbar-dropdown-item-color-h": #{cv.getVar("navbar-dropdown-item-hover-color-h")},
+            "navbar-dropdown-item-color-s": #{cv.getVar("navbar-dropdown-item-hover-color-s")},
+            "navbar-dropdown-item-color-l": #{cv.getVar("navbar-dropdown-item-hover-color-l")},
+          )
+        );
+      }
+    }
   }
 }
 
@@ -69,10 +300,6 @@ a.#{iv.$class-prefix}navbar-item,
   &:empty {
     padding: 0;
   }
-}
-
-.navbar-burger {
-  align-self: center;
 }
 
 .navbar-start, .navbar-end {
@@ -101,13 +328,40 @@ a.#{iv.$class-prefix}navbar-item,
     & > .container {
       min-height: cv.getVar("navbar-height-touch");
     }
+    @each $name, $pair in n.$navbar-colors {
+      &.#{iv.$class-prefix}is-#{$name}{
+        @include cv.register-vars(
+          (
+            "navbar-burger-color": #{cv.getVar($name, "", "-invert")},
+            "navbar-dropdown-border-top-color": #{cv.getVar($name)},
+          )
+        );
+      }
+    }
   }
   .navbar-menu {
+    @each $name, $pair in n.$navbar-colors {
+      .#{iv.$class-prefix}is-#{$name} &{
+        @include cv.register-vars(
+          (
+            "navbar-item-color-h": #{cv.getVar($name, "", "-h")},
+            "navbar-item-color-s": #{cv.getVar($name, "", "-s")},
+            "navbar-item-color-l": #{cv.getVar("navbar-dropdown-item-color-l")},
+            "navbar-background-color": hsl(
+              #{cv.getVar($name, "", "-h")},
+              #{cv.getVar($name, "", "-s")},
+              #{cv.getVar("navbar-dropdown-item-background-l")}
+            ),
+            "navbar-dropdown-border-top-color": #{cv.getVar($name)},
+          )
+        );
+      }
+    }
     display: block;
     position: absolute;
     width: 100%;
     border-top: cv.getVar("navbar-dropdown-border-top");
-    border-color: cv.getVar("primary");
+    border-color: cv.getVar("navbar-dropdown-border-top-color");
     box-shadow: none;
     padding: 0;
     border-bottom: cv.getVar("navbar-dropdown-border-bottom");
@@ -205,8 +459,6 @@ a.#{iv.$class-prefix}navbar-item,
     border-bottom: cv.getVar("navbar-dropdown-border-bottom");
 
     .navbar-item {
-      color: cv.getVar("navbar-dropdown-item-color");
-
       & > .navbar-link {
         padding: 0.375rem 1rem;
       }
@@ -262,62 +514,22 @@ a.#{iv.$class-prefix}navbar-item,
     &:hover {
       text-decoration: cv.getVar("navbar-item-text-decoration-hover");
     }
+  }
 
-    &.has-dropdown {
-      .navbar-item {
-        &:hover {
-          text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-hover");
-        }
+  .navbar-dropdown {
+    a.navbar-item, .navbar-link {
+      &:hover {
+        text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-hover");
+      }
 
-        &.is-active {
-          text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-active");
-        }
+      &.is-active {
+        text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-active");
       }
     }
   }
 }
 
 @include mixins.from(n.$navbar-breakpoint) {
-  .navbar-start, .navbar-end {
-    .navbar-item.nested {
-      .navbar-link {
-        &:hover {
-          background-color: cv.getVar("navbar-dropdown-item-hover-background-color");
-          color: cv.getVar("navbar-dropdown-item-hover-color");
-        }
-
-        background-color: transparent;
-        color: unset;
-
-        &.is-active {
-          background-color: cv.getVar("navbar-dropdown-item-active-background-color");
-          color: cv.getVar("navbar-dropdown-item-active-color");
-        }
-      }
-    }
-
-    & > .navbar-item.has-dropdown {
-      .navbar-item.nested {
-        &:focus,
-        &:hover {
-          & > .navbar-link:not(.is-active) {
-            background-color: cv.getVar("navbar-dropdown-item-hover-background-color");
-            color: cv.getVar("navbar-dropdown-item-hover-color");
-          }
-        }
-      }
-    }
-
-    .navbar-dropdown {
-      a.navbar-item {
-        &.is-active {
-          background-color: cv.getVar("navbar-dropdown-item-active-background-color");
-          color: cv.getVar("navbar-dropdown-item-active-color");
-        }
-      }
-    }
-  }
-
   @each $name, $pair in n.$navbar-colors {
     $color: hsl(
       #{cv.getVar($name, "", "-h")},
@@ -335,40 +547,40 @@ a.#{iv.$class-prefix}navbar-item,
         & > a.navbar-item,
         .navbar-link {
           &.is-active {
-            @if meta.variable-exists(navbar-with-background-item-active-background-color) {
-              background-color: $navbar-with-background-item-active-background-color;
-            }
-            @if meta.variable-exists(navbar-with-background-item-active-color) {
-              color: $navbar-with-background-item-active-color;
-            }
+            //@if meta.variable-exists(navbar-with-background-item-active-background-color) {
+            //  background-color: $navbar-with-background-item-active-background-color;
+            //}
+            //@if meta.variable-exists(navbar-with-background-item-active-color) {
+            //  color: $navbar-with-background-item-active-color;
+            //}
           }
 
           &:focus,
           &:hover {
-            @if meta.variable-exists(navbar-with-background-item-hover-background-color) {
-              background-color: $navbar-with-background-item-hover-background-color;
-            }
-            @if meta.variable-exists(navbar-with-background-item-hover-color) {
-              color: $navbar-with-background-item-hover-color;
-            }
+            //@if meta.variable-exists(navbar-with-background-item-hover-background-color) {
+            //  background-color: $navbar-with-background-item-hover-background-color;
+            //}
+            //@if meta.variable-exists(navbar-with-background-item-hover-color) {
+            //  color: $navbar-with-background-item-hover-color;
+            //}
           }
 
           &:after {
             border-color: currentColor;
-            @if meta.variable-exists(navbar-with-background-dropdown-arrow) {
-              border-color: $navbar-with-background-dropdown-arrow;
-            }
+            //@if meta.variable-exists(navbar-with-background-dropdown-arrow) {
+            //  border-color: $navbar-with-background-dropdown-arrow;
+            //}
           }
         }
 
         & > .navbar-item.has-dropdown:hover > .navbar-link {
-          @if meta.variable-exists(navbar-with-background-item-hover-background-color) {
-            background-color: $navbar-with-background-item-hover-background-color;
-          }
-          @if meta.variable-exists(navbar-with-background-item-hover-color) {
-            color: $navbar-with-background-item-hover-color;
-            text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-hover");
-          }
+          //@if meta.variable-exists(navbar-with-background-item-hover-background-color) {
+          //  background-color: $navbar-with-background-item-hover-background-color;
+          //}
+          //@if meta.variable-exists(navbar-with-background-item-hover-color) {
+          //  color: $navbar-with-background-item-hover-color;
+          //  text-decoration: cv.getVar("navbar-dropdown-item-text-decoration-hover");
+          //}
         }
 
         .navbar-item.nested {
@@ -378,17 +590,17 @@ a.#{iv.$class-prefix}navbar-item,
             }
 
             &:hover {
-              background-color: cv.getVar("navbar-dropdown-item-hover-background-color");
-              color: cv.getVar("navbar-dropdown-item-hover-color");
+              //background-color: cv.getVar("navbar-dropdown-item-hover-background-color");
+              //color: cv.getVar("navbar-dropdown-item-hover-color");
             }
 
-            background-color: transparent;
-            color: unset;
+            //background-color: transparent;
+            //color: unset;
 
-            &.is-active {
-              background-color: $color;
-              color: $color-invert;
-            }
+            //&.is-active {
+            //  background-color: $color;
+            //  color: $color-invert;
+            //}
           }
         }
       }

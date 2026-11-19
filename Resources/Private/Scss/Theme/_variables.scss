@@ -12,6 +12,9 @@ $black-opacity: hsla(0, 0%, 0%, 0.2) !default;
 // Generic
 $strong-color: currentColor !default;
 
+// Typography
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
 // Content
 $content-heading-color: currentColor !default;
 $content-table-cell-heading-color: currentColor !default;
@@ -28,6 +31,7 @@ $table-head-cell-color: $table-cell-heading-color !default;
 // Navbar
 $navbar-item-img-max-height: 6em !default;
 $navbar-z: 30 !default;
+$navbar-dropdown-arrow: currentColor !default;
 
 // Spacing
 $block-spacing: 2rem !default;
