@@ -2,6 +2,9 @@
 @forward "bulma/sass/utilities/initial-variables" with (
   // Spacing
   $block-spacing: bpk_v.$block-spacing !default,
+
+  // Typography
+  $family-sans-serif: bpk_v.$family-sans-serif !default,
 );
 @use "bulma/sass/utilities/css-variables" as cv;
 
@@ -17,6 +20,7 @@
   // Title
   $title-color: bpk_v.$title-color !default,
   $subtitle-color: bpk_v.$subtitle-color !default,
+  $title-weight: cv.getVar("weight-semibold") !default,
 
   // Table
   $table-cell-heading-color: bpk_v.$table-cell-heading-color !default,
@@ -25,10 +29,7 @@
   // Navbar
   $navbar-item-img-max-height: bpk_v.$navbar-item-img-max-height !default,
   $navbar-z: bpk_v.$navbar-z !default,
-  $navbar-item-selected-background-l: cv.getVar("navbar-item-background-l") !default,
-  $navbar-item-active-background-l-delta: cv.getVar("navbar-item-hover-background-l-delta") !default,
-  $navbar-item-selected-h: cv.getVar("navbar-h") !default,
-  $navbar-item-selected-s: cv.getVar("navbar-s") !default,
+  $navbar-dropdown-arrow: bpk_v.$navbar-dropdown-arrow !default,
 
   // Dropdown
   $dropdown-content-z: bpk_v.$dropdown-content-z !default,
