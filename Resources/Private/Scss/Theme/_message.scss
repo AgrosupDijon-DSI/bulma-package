@@ -1,7 +1,22 @@
 @use "bulma/sass/elements/content";
+@use "bulma/sass/utilities/css-variables" as cv;
 @use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/components/message" as m;
 
-.message {
+$message-background-l-override: m.$message-background-l !default;
+$message-header-background-l-override: m.$message-header-background-l !default;
+$message-header-color-l-override: m.$message-header-color-l !default;
+$message-border-width-override: m.$message-border-width !default;
+
+.#{iv.$class-prefix}message {
+  @include cv.register-vars(
+    (
+      "message-background-l": #{$message-background-l-override},
+      "message-header-background-l": #{$message-header-background-l-override},
+      "message-border-width": #{$message-border-width-override},
+    )
+  );
+
   .message-body {
     @extend .#{iv.$class-prefix}content;
   }
