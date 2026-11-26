@@ -1,3 +1,4 @@
 [
+	"../Resources/Private/Entrypoints/*.entry.scss",
 	"../Resources/Private/Entrypoints/*.entry.js"
 ]
